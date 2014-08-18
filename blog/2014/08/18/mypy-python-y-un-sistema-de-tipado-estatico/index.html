@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Raul E. Lopez Briega</title>
+  <title>MyPy - Python y un sistema de tipado estático</title>
   <meta name="author" content="Raul E. Lopez Briega">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -1753,12 +1753,10 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/">MyPy - Python y un sistema de tipado estático</a>
-      </h1>
+      <h1 class="entry-title">MyPy - Python y un sistema de tipado estático</h1>
       <p class="meta"><time datetime="2014-08-18T00:00:00" pubdate>lun 18 agosto 2014</time></p>
 </header>
 
@@ -1768,54 +1766,593 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una de las razones por la que solemos amar a <a href="http://python.org/">Python</a>, es por su sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a>, el cual lo convierte en un lenguaje de programación sumamente flexible y fácil de aprender; al no tener que preocuparnos por definir los tipos de los objetos, ya que <a href="http://python.org/">Python</a> los infiere ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2014/05/28/python-librerias-esenciales-para-el-analisis-de-datos/">Python - Librerías esenciales para el análisis de datos</a>
-      </h1>
-      <p class="meta"><time datetime="2014-05-28T00:00:00" pubdate>mié 28 mayo 2014</time></p>
-</header>
+<p>Una de las razones por la que solemos amar a <a href="http://python.org/">Python</a>, es por su sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a>, el cual lo convierte en un lenguaje de programación sumamente flexible y fácil de aprender; al no tener que preocuparnos por definir los tipos de los objetos, ya que <a href="http://python.org/">Python</a> los infiere por nosotros, podemos escribir programas en una forma mucho más productiva, sin verbosidad y utilizando menos líneas de código.</p>
+<p>Ahora bien, este sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> también puede convertirse en una pesadilla en proyectos de gran escala, requiriendo varias horas de <a href="http://es.wikipedia.org/wiki/Unit_testing">pruebas unitarias</a> para evitar que los objetos adquieran un tipo de datos que no deberían y complicando el su mantenimiento o futura <a href="http://es.wikipedia.org/wiki/Refactorizaci%C3%B3n">refactorización</a>. </p>
+<p>Por ejemplo, en un código tan trivial como el siguiente:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
 
-  <div class="entry-content"><p>
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En mi <a href="http://relopezbriega.github.io/blog/2014/05/25/mi-python-blog-introduccion-a-python/">artículo anterior</a> hice una breve introducción al mundo de <a href="http://python.org/">Python</a>, hoy voy a detallar algunas de las librerías que son esenciales para trabajar con <a href="http://python.org/">Python</a> en la comunidad científica o en el análisis de datos. </p>
-<p>Una de las grandes ventajas que ofrece <a href="http://python.org/">Python</a> sobre otros lenguajes de programación ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2014/05/28/python-librerias-esenciales-para-el-analisis-de-datos/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2014/05/25/mi-python-blog-introduccion-a-python/">Mi Python Blog: Introducción a Python</a>
-      </h1>
-      <p class="meta"><time datetime="2014-05-25T00:00:00" pubdate>dom 25 mayo 2014</time></p>
-</header>
+<p>Esta simple función nos va a devolver el texto &#39;Hola&#39; seguido del nombre que le ingresemos; pero como no contiene ningun control sobre el tipo de datos que pude admitir la varible <em>nombre</em>, los siguientes casos serían igualmente válidos:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
 
-  <div class="entry-content"><p>
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Hola Raul
+Hola 1
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hoy comienzo mi nuevo blog en <a href="https://github.com/" target="_blank" title="Pagina de github">github</a>; este nuevo blog, que se suma a a mi otro blog <a href="http://relopezbriega.com.ar" target="_blank" title ="Mi otro blog">relopezbriega.com.ar</a>, lo voy a dedicar enteramente a <a href="http://python.org" target="_blank" title="Python">Python</a>. Por tal motivo, en este primer artículo, voy a explicar a grandes rasgos que es <a href="http://python.org" target="_blank" title="Python">Python</a> y por qué me gusta tanto ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2014/05/25/mi-python-blog-introduccion-a-python/">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
+<p>En cambio, si pusieramos un control sobre el tipo de datos que admitiera la variable <em>nombre</em>, para que siempre fuera un <em>string</em>, entonces el segundo caso ya no sería válido y lo podríamos detectar facilmente antes de que nuestro programa se llegara a ejecutar.</p>
+<p>Obviamente, para poder detectar el segundo error y que nuestra función <em>saludo</em> solo admita una variable del tipo <em>string</em> como argumento, podríamos reescribrir nuestra función, agregando un control del tipo de datos de la siguiente manera:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;Error: el argumento debe ser del tipo String(str)&quot;</span>
+    <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 
-  <br />
-</div></div>
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Hola Raul
+Error: el argumento debe ser del tipo String(str)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pero una solución más sencilla a tener que ir escribiendo condiciones para controlar los tipos de las variables o de las funciones es utilizar <a href="http://www.mypy-lang.org/">MyPy</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="mypy">MyPy</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://www.mypy-lang.org/">MyPy</a> es un proyecto que busca combinar los beneficios de un sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> con los de uno de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a>. Su meta es tener el poder y la expresividad de <a href="http://python.org/">Python</a> combinada con los beneficios que otorga el chequeo de los <em>tipos</em> de datos al momento de la compilación.</p>
+<p>Algunos de los beneficios que proporciona utilizar <a href="http://www.mypy-lang.org/">MyPy</a> son:</p>
+<ul>
+<li><strong>Chequeo de tipos al momento de la compilacion:</strong> Un sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> hace más fácil detectar errores y con menos esfuerzo de <a href="http://es.wikipedia.org/wiki/Debug">debugging</a>. </li>
+<li><strong>Facilita el mantenimiento:</strong> Las declaraciones explícitas de tipos actúan como documentación, haciendo que nuestro código sea más fácil de entender y de modificar sin introducir nuevos errores. </li>
+<li><strong>Permite creecer nuestro programa desde un tipado dinámico hacia uno estático:</strong> Nos permite comenzar desarrollando nuestros programas con un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> y a mediada que el mismo vaya madurando podríamos modificarlo hacia un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> de forma muy sencilla. De esta manera, podríamos beneficiarnos no solo de la comodidad de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> en el desarrollo inicial, sino también aprovecharnos de los beneficios de los <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipos estáticos</a> cuando el código crece en tamaño y complejidad.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tipos-de-datos">Tipos de datos</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Estos son algunos de los tipos de datos más comunes que podemos encontrar en <a href="http://python.org/">Python</a>:</p>
+<ul>
+<li><strong><code>int</code></strong>: Número entero de tamaño arbitrario</li>
+<li><strong><code>float</code></strong>: Número flotante.</li>
+<li><strong><code>bool</code></strong>: Valor booleano (True o False)</li>
+<li><strong><code>str</code></strong>: Unicode string</li>
+<li><strong><code>bytes</code></strong>: 8-bit string</li>
+<li><strong><code>object</code></strong>: Clase base del que derivan todos los objecto en <a href="http://python.org/">Python</a>.</li>
+<li><strong><code>List[str]</code></strong>: lista de objetos del tipo string.</li>
+<li><strong><code>Dict[str, int]</code></strong>: Diccionario de string hacia enteros</li>
+<li><strong><code>Iterable[int]</code></strong>: Objeto iterable que contiene solo enteros.</li>
+<li><strong><code>Sequence[bool]</code></strong>: Secuencia de valores booleanos</li>
+<li><strong><code>Any</code></strong>: Admite cualquier valor. (tipado dinámico)</li>
+</ul>
+<p>El tipo <strong>Any</strong> y los constructores <strong>List, Dict, Iterable y Sequence</strong> estan definidos en el modulo <strong>typing</strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ejemplos">Ejemplos</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Por ejemplo, volviendo al ejemplo del comienzo, podríamos reescribir la función <em>saludo</em> utilizando <a href="http://www.mypy-lang.org/">MyPy</a> de forma tal que los tipos de datos sean explícitos y puedan ser chequeados al momento de la compilación.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<span class="kn">import</span> <span class="nn">typing</span>
+
+<span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Overwriting typeTest.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este ejemplo estoy creando un pequeño script y guardando en un archivo con el nombre &#39;typeTest.py&#39;, en la primer linea del script estoy importando la librería <em>typing</em> que viene con <a href="http://www.mypy-lang.org/">MyPy</a> y es la que nos agrega la funcionalidad del chequeo de los tipos de datos. Luego simplemente ejecutamos este script utlizando el interprete de <a href="http://www.mypy-lang.org/">MyPy</a> y podemos ver que nos va a detectar el error de tipo de datos en la segunda llamada a la función <em>saludo</em>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+typeTest.py, line 7: Argument 1 to &quot;saludo&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Si ejecutaramos este mismo script utilizando el interprete de <a href="http://python.org/">Python</a>, veremos que obtendremos los mismos resultados que al comienzo de este <em>notebook</em>; lo que quiere decir, que la sintaxis que utilizamos al reescribir nuesta función <em>saludo</em> es código <a href="http://python.org/">Python</a> perfectamente válido!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>python3 typeTest.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Hola Raul
+Hola 1
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="tipado-explicito-para-variables-y-colecciones">Tipado explicito para variables y colecciones</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En el ejemplo anterior, vimos como es la sistaxis para asignarle un <em>tipo de datos</em> a una función, la cual utiliza la sintaxis de <a href="http://python.org/">Python3</a>, <em><a href="http://legacy.python.org/dev/peps/pep-3107/">annotations</a></em>. </p>
+<p>Si quisieramos asignarle un <em>tipo</em> a una variable, podríamos utilizar la función <strong><code>Undefined</code></strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Undefined</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="c"># Declaro los tipos de las variables</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="n">Undefined</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="n">Undefined</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]()</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]()</span>
+
+<span class="c"># Asigno valores a las variables.</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s">&#39;Raul&#39;</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;raul&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;ezequiel&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c"># Intento asignar valores de otro tipo.</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="s">&#39;raul&#39;</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;raul&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">&#39;raul&#39;</span><span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Overwriting typeTest.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
+typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
+typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
+typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
+typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&quot;
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Otra alternativa que nos ofrece <a href="http://www.mypy-lang.org/">MyPy</a> para asignar un <em>tipo de datos</em> a las variables, es utilizar comentarios; así, el ejemplo anterior lo podríamos reescribir de la siguiente forma, obteniendo el mismo resultado:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="c"># Declaro los tipos de las variables</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>              <span class="c"># type: str</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="mi">0</span>              <span class="c"># type: int</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="p">[]</span>      <span class="c"># type: List[int]</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c"># type: Dict[str, int]</span>
+
+<span class="c"># Asigno valores a las variables.</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s">&#39;Raul&#39;</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;raul&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;ezequiel&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c"># Intento asignar valores de otro tipo.</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">entero</span> <span class="o">=</span> <span class="s">&#39;raul&#39;</span>
+<span class="n">lista_enteros</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;raul&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">dic_str_int</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">&#39;raul&#39;</span><span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Overwriting typeTest.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
+typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
+typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
+typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
+typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&quot;
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="instalando-mypy">Instalando MyPy</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instalar <a href="http://www.mypy-lang.org/">MyPy</a> es bastante fácil, simplemente debemos seguir los siguientes pasos:</p>
+<p>Si utilizan <a href="https://github.com/">git</a>, pueden clonar el repositorio de mypy:</p>
+<p><strong>$ git clone <a href="https://github.com/JukkaL/mypy.git">https://github.com/JukkaL/mypy.git</a> </strong></p>
+<p>Si no utilizan <a href="https://github.com/">git</a>, como alternativa, se pueden descargar la última versión de mypy en el siguiente link:</p>
+<p><a href="https://github.com/JukkaL/mypy/archive/master.zip">https://github.com/JukkaL/mypy/archive/master.zip</a></p>
+<p>Una vez que ya se lo descargaron, se posicionan dentro de la carpeta de mypy y ejecutan el script <code>setup.py</code> para instalarlo:</p>
+<p><strong>$ python3 setup.py install </strong></p>
+<p>Reemplacen &#39;python3&#39; con su interprete para python3.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="mypy-como-parte-de-python-3-5-">MyPy como parte de Python 3.5 ?</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Guido van Rossum, el creador de <a href="http://python.org/">Python</a>, ha enviado reciente una propuesta a la lista de correo de python-ideas, en la cual sugiere agregar en la próxima versión de <a href="http://python.org/">Python</a> la sintaxis de <a href="http://www.mypy-lang.org/">MyPy</a> para las <a href="http://legacy.python.org/dev/peps/pep-3107/">functions annotations</a>. Pueden encontrar la propuesta en el siguiente link:</p>
+<p><a href="https://mail.python.org/pipermail/python-ideas/2014-August/028618.html">https://mail.python.org/pipermail/python-ideas/2014-August/028618.html</a></p>
+<p>También pueden seguir las discusiones que se generaron sobre este tema en <a href="http://www.reddit.com/r/programming/comments/2disob/proposal_for_python_type_annotations_from_guido/">Reddit</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Saludos!</p>
+<p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/MyPy-Python-Tipado-estatico.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/MyPy-Python-Tipado-estatico.ipynb">nbviewer</a>.</em></p>
+</div>
+</div>
+</div></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Raul E. Lopez Briega</span>
+  </span>
+<time datetime="2014-08-18T00:00:00" pubdate>lun 18 agosto 2014</time>  <span class="categories">
+    <a class="category" href="http://relopezbriega.github.io/tag/python.html">python</a>
+  </span>
+</p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
@@ -1884,6 +2421,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'relopezbriegagithub';
+          var disqus_identifier = '/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/';
+          var disqus_url = 'http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/';
+          var disqus_title = 'MyPy - Python y un sistema de tipado estático';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
