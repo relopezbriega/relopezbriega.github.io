@@ -10,7 +10,7 @@
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
         title="Raul E. Lopez Briega Atom Feed" />
 
-    
+
 <style type="text/css">
 .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
@@ -1779,7 +1779,7 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+<div class="highlight"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 </pre></div>
 
@@ -1804,7 +1804,7 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+<div class="highlight"><pre class="ipynb"><span class="k">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
@@ -1847,7 +1847,7 @@ In&nbsp;[3]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+<div class="highlight"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="s">&quot;Error: el argumento debe ser del tipo String(str)&quot;</span>
     <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
@@ -1968,7 +1968,7 @@ In&nbsp;[4]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
 <span class="kn">import</span> <span class="nn">typing</span>
 
 <span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -2015,7 +2015,7 @@ In&nbsp;[5]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+<div class="highlight"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
 </div>
@@ -2055,7 +2055,7 @@ In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>python3 typeTest.py
+<div class="highlight"><pre class="ipynb"><span class="o">!</span>python3 typeTest.py
 </pre></div>
 
 </div>
@@ -2106,7 +2106,7 @@ In&nbsp;[7]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Undefined</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
 
 <span class="c"># Declaro los tipos de las variables</span>
@@ -2156,7 +2156,7 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+<div class="highlight"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
 </div>
@@ -2200,7 +2200,7 @@ In&nbsp;[9]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">typeTest</span><span class="o">.</span><span class="n">py</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
 
 <span class="c"># Declaro los tipos de las variables</span>
@@ -2250,7 +2250,7 @@ In&nbsp;[10]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+<div class="highlight"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
 </div>
@@ -2369,13 +2369,13 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
     </ul>
   </section>
   <section>
-      
+
     <h1>Categories</h1>
     <ul id="recent_posts">
         <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
     </ul>
   </section>
- 
+
 
   <section>
   <h1>Tags</h1>
