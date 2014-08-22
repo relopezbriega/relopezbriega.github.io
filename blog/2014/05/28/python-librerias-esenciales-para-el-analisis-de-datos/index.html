@@ -10,7 +10,7 @@
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
         title="Raul E. Lopez Briega Atom Feed" />
 
-
+    
 <style type="text/css">
 .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
@@ -2079,7 +2079,7 @@ In&nbsp;[8]:
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#mgrid</span>
 <span class="c">#Con mgrid podemos crear arrays multimensionales.</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="n">x</span>
 </pre></div>
@@ -2616,7 +2616,7 @@ In&nbsp;[18]:
 <span class="n">s</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#variable para modificar el tamaño(size)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#variable para modificar el color(color)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 
@@ -3451,7 +3451,7 @@ In&nbsp;[20]:
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;titulo&#39;</span><span class="p">)</span>
-
+    
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 
@@ -4027,7 +4027,7 @@ In&nbsp;[28]:
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Leyendo el archivo dataset.csv para crear el DataFrame</span>
-<span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 <span class="n">frame2</span>
 </pre></div>
 
@@ -4340,6 +4340,9 @@ Int64Index([0, 1, 2, 3, 4], dtype=&apos;int64&apos;)
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2014/08/22/ipython-y-spark-para-el-analisis-de-datos/">Ipython y Spark para el analisis de datos</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/">MyPy - Python y un sistema de tipado estático</a>
       </li>
       <li class="post">
@@ -4351,13 +4354,13 @@ Int64Index([0, 1, 2, 3, 4], dtype=&apos;int64&apos;)
     </ul>
   </section>
   <section>
-
+      
     <h1>Categories</h1>
     <ul id="recent_posts">
         <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
     </ul>
   </section>
-
+ 
 
   <section>
   <h1>Tags</h1>

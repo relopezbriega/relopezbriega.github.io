@@ -1,5 +1,532 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="http://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/raul-e-lopez-briega.atom.xml" rel="self"></link><id>http://relopezbriega.github.io/</id><updated>2014-08-18T00:00:00-03:00</updated><entry><title>MyPy - Python y un sistema de tipado estático</title><link href="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/" rel="alternate"></link><updated>2014-08-18T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2014-08-18:blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="http://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/raul-e-lopez-briega.atom.xml" rel="self"></link><id>http://relopezbriega.github.io/</id><updated>2014-08-22T00:00:00-03:00</updated><entry><title>Ipython y Spark para el analisis de datos</title><link href="http://relopezbriega.github.io/blog/2014/08/22/ipython-y-spark-para-el-analisis-de-datos/" rel="alternate"></link><updated>2014-08-22T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2014-08-22:blog/2014/08/22/ipython-y-spark-para-el-analisis-de-datos/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Una de las nuevas estrellas en el analisis de datos masivos es &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;. Desarrollado en &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt;, &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; es una plataforma de computación de código abierto para el análisis y procesamiento de grandes volúmenes de datos. &lt;/p&gt;
+&lt;p&gt;Algunas de las ventajas que nos ofrece &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; sobre otros &lt;a href="http://es.wikipedia.org/wiki/Framework"&gt;frameworks&lt;/a&gt;, son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Velocidad:&lt;/strong&gt; Sin dudas la velocidad es una de las principales fortalezas de &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;, como esta diseñado para soportar el &lt;a href="http://en.wikipedia.org/wiki/In-Memory_Processing"&gt;procesameinto en memoria&lt;/a&gt;, puede alcanzar una performance sorprendente en analisis avanzados de datos. Algunos programas escritos utilizando &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;, pueden correr hasta 100x más rápido que utilizando &lt;a href="http://hadoop.apache.org/"&gt;Hadoop&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fácil de usar:&lt;/strong&gt; Podemos escribir programas en &lt;a href="http://python.org/"&gt;Python&lt;/a&gt;, &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt; o &lt;a href="http://java.com/en/"&gt;Java&lt;/a&gt; que hagan uso de las herramientas que ofrece &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;; asismismo nos permite trabajar en forma interactiva (con &lt;a href="http://python.org/"&gt;Python&lt;/a&gt; o con &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt;) y su &lt;a href="http://es.wikipedia.org/wiki/Interfaz_de_programaci%C3%B3n_de_aplicaciones"&gt;API&lt;/a&gt; es muy fácil de aprender. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generalismo:&lt;/strong&gt; El mundo del analisis de datos incluye muchos subgrupos de distinta índole, estan los que hacen un analisis investigativo, los que que realizan analisis exploratorios, los que construyen sistemas de procesamientos de datos, etc. Los usuarios de cada uno de esos subgrupos, al tener objectivos distintos, suelen utilizar una gran variedad de herramientas totalmente diferentes. &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; nos proprociona un gran número de herramientas de alto nivel como &lt;a href="http://spark.apache.org/sql/"&gt;Spark SQL&lt;/a&gt;, &lt;a href="http://spark.apache.org/mllib/"&gt;MLlib&lt;/a&gt; para &lt;a href="http://es.wikipedia.org/wiki/Machine_learning"&gt;machine learning&lt;/a&gt;, &lt;a href="http://spark.apache.org/graphx/"&gt;GraphX&lt;/a&gt;, y &lt;a href="http://spark.apache.org/streaming/"&gt;Spark Streaming&lt;/a&gt;; las cuales pueden ser combinadas para crear aplicaciones multipropósito que ataquen los diferentes dominios del Analisis de datos. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="rdd-o-resilient-distributed-datasets"&gt;RDD o  Resilient Distributed Datasets&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;En el corazón de &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; se encuentran los &lt;a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf"&gt;RDDs&lt;/a&gt;.
+Los &lt;a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf"&gt;RDDs&lt;/a&gt; son una abstracción distribuída que le permite a los programadores realizar computos &lt;a href="http://en.wikipedia.org/wiki/In-Memory_Processing"&gt;en memoria&lt;/a&gt;  sobre grandes &lt;a href='http://es.wikipedia.org/wiki/Cl%C3%BAster_(inform%C3%A1tica)' target='_blank'&gt;clusters&lt;/a&gt; de computadoras sin errores o pérdidas de información. Estan especialmente diseñados para el analisis de datos interactivo (&lt;a href="http://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt;) y para la aplicacion de algoritmos iterativos (&lt;a href="http://es.wikipedia.org/wiki/MapReduce"&gt;MapReduce&lt;/a&gt;). En ambos casos, mantener los datos en la memoria puede mejorar el rendimiento en una gran proproción. Para lograr la tolerancia a fallos de manera eficiente, &lt;a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf"&gt;RDDs&lt;/a&gt; utiliza una forma restringida de memoria compartida. 
+Los &lt;a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf"&gt;RDDs&lt;/a&gt; son los suficientemente experesivos como para capturar una gran variedad de cálculos.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="instalando-apache-spark"&gt;Instalando Apache Spark&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Para instalar &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; en forma local y poder comenzar a utilizarlo, pueden seguir los siguientes pasos:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;En primer lugar, necesitamos tener instalado &lt;a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html"&gt;Oracle JDK&lt;/a&gt;. Para instalarlo en &lt;a href="http://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt; podemos utilizar los siguientes comandos:&lt;/p&gt;
+&lt;pre&gt;
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-jdk7-installer
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Luego nos instalamos las herramientas para trabajar con &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt;, &lt;a href="http://www.scala-sbt.org/"&gt;SBT&lt;/a&gt; con el siguiente comando:&lt;/p&gt;
+&lt;pre&gt;
+$ sudo apt-get install sbt
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Despues nos descargamos la última versión de &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; desde &lt;a href="http://d3kbcqa49mib13.cloudfront.net/spark-1.0.2.tgz"&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ahora descomprimimos el archivo:&lt;/p&gt;
+&lt;pre&gt;
+$ tar -xvf spark-1.0.2.tgz 
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Nos movemos a la carpeta recien descomprimida y realizamos la compilación de &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; utilizando &lt;a href="http://www.scala-sbt.org/"&gt;SBT&lt;/a&gt;. (tener paciencia, es sabido que &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt; tarda mucho en compilar) &lt;/p&gt;
+&lt;pre&gt;
+$ cd spark-1.0.2
+$ sbt/sbt assembly
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opcionalmente, para facilitar la utilización de &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; desde la línea de comando, yo modifique mi archivo .bashrc para incluir los siguientes alias:&lt;/p&gt;
+&lt;pre&gt;
+$ echo "alias ipyspark='IPYTHON_OPTS="notebook --pylab inline" ~/spark-1.0.2/bin/pyspark'" &amp;gt;&amp;gt; ~/.bashrc
+$ echo "alias pyspark='~/spark-1.0.2/bin/pyspark'" &gt;&gt; ~/.bashrc
+$ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" &gt;&gt; ~/.bashrc
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ahora simplemente tipeando &lt;code&gt;pyspark&lt;/code&gt; nos abre el interprete interactivo de &lt;a href="http://python.org/"&gt;Python&lt;/a&gt; con &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;, tipeando &lt;code&gt;spark&lt;/code&gt; nos abre el interprete interactivo de &lt;a href="http://www.scala-lang.org/"&gt;Scala&lt;/a&gt;, y tipeando &lt;code&gt;ipyspark&lt;/code&gt; nos abre el &lt;a href="http://ipython.org/notebook.html"&gt;notebook de Ipython&lt;/a&gt; integrado con &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;!&lt;/p&gt;
+&lt;pre&gt;$ ./bin/pyspark #o pyspark si creamos el alias&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="ejemplo-de-utilizaci-n-de-spark-con-ipython"&gt;Ejemplo de utilización de Spark con Ipython&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Ahora llegó el momento de ensuciarse las manos y probar &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;, vamos a hacer el típico ejercicio de wordcounts; en este caso vamos a contar todas las palabras que posee la Biblia en su versión en inglés y vamos a ver cuantas veces aparece la palabra Dios(God). Para esto nos descargamos la versión de la Biblia en texto plano del &lt;a href="http://www.gutenberg.org/ebooks/10"&gt;proyecto Gutemberg&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Comenzamos con algunos imports.&lt;/span&gt;
+&lt;span class="c"&gt;# No necesitamos importar pyspark porque ya se autoimporta como sc.&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;operator&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[2]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;lineas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;textFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/home/raul/spark-1.0.2/examples/data/Bible.txt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# usamos la función textFile para subir el texto a Spark&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[3]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Mapeamos las funciones para realizar la cuenta de las palabras y generamos el RDD.&lt;/span&gt;
+&lt;span class="n"&gt;cuenta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lineas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flatMap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; \
+                  &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; \
+                  &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reduceByKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[4]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Creamos la lista con las palabras y su respectiva frecuencia.&lt;/span&gt;
+&lt;span class="n"&gt;lista&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cuenta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;collect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[5]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Creamos un DataFrame de Pandas para facilitar el manejo de los datos.&lt;/span&gt;
+&lt;span class="n"&gt;dataframe&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lista&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;palabras&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;cuenta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[6]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Nos quedamos solo con las palabras que hacen referencia a Dios&lt;/span&gt;
+&lt;span class="n"&gt;god&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;palabras&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;GOD&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;LORD&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;JESUS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;FATHER&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+&lt;span class="n"&gt;god&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[6]:&lt;/div&gt;
+
+&lt;div class="output_html rendered_html output_subarea output_pyout"&gt;
+&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;palabras&lt;/th&gt;
+      &lt;th&gt;cuenta&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2867 &lt;/th&gt;
+      &lt;td&gt; FATHER&lt;/td&gt;
+      &lt;td&gt;  814&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7329 &lt;/th&gt;
+      &lt;td&gt;    GOD&lt;/td&gt;
+      &lt;td&gt; 3330&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8902 &lt;/th&gt;
+      &lt;td&gt;   LORD&lt;/td&gt;
+      &lt;td&gt; 6448&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;21404&lt;/th&gt;
+      &lt;td&gt;  JESUS&lt;/td&gt;
+      &lt;td&gt;  893&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[7]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Realizamos un gráfico de barras sobre los datos&lt;/span&gt;
+&lt;span class="n"&gt;god&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;palabras&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[7]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;pre&gt;
+&amp;lt;matplotlib.axes.AxesSubplot at 0x7f071e10ea10&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+SUVORK5CYII=
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[8]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Realizamos la sumatoria de las 4 palabras combinadas&lt;/span&gt;
+&lt;span class="n"&gt;god&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[8]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;pre&gt;
+palabras    FATHERGODLORDJESUS
+cuenta                   11485
+dtype: object
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como demuestra el ejemplo, Dios sería nombrado en la Biblia, ya sea como lord, god, jesus o father; unas 11485 veces!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="conclusi-n"&gt;Conclusión&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; es realmente una herramienta muy prometedora, con ella podemos analizar datos con un rendimiento muy alto y combinado con otras herramientas como &lt;a href="http://python.org/"&gt;Python&lt;/a&gt;, &lt;a href="http://www.numpy.org/"&gt;Numpy&lt;/a&gt;, &lt;a href="http://pandas.pydata.org/"&gt;Pandas&lt;/a&gt; e &lt;a href="http://ipython.org/"&gt;IPython&lt;/a&gt;; se convierten en un &lt;a href="http://es.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt; sumamente completo y efectivo para el analisis de grandes volumenes de datos en forma muy sencilla.&lt;/p&gt;
+&lt;p&gt;Para más información sobre &lt;a href="http://spark.apache.org/"&gt;Apache Spark&lt;/a&gt;, pueden visitar su la sección de &lt;a href="http://spark.apache.org/examples.html"&gt;ejemplos&lt;/a&gt; de su página oficial.&lt;/p&gt;
+&lt;p&gt;Espero les haya sido de utilidad este &lt;a href="(http://ipython.org/notebook.html"&gt;notebook&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Saludos!!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyspark.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyspark.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>MyPy - Python y un sistema de tipado estático</title><link href="http://relopezbriega.github.io/blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/" rel="alternate"></link><updated>2014-08-18T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2014-08-18:blog/2014/08/18/mypy-python-y-un-sistema-de-tipado-estatico/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
