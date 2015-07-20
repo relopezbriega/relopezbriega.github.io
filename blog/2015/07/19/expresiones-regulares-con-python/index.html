@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Raul E. Lopez Briega - matematica</title>
+  <title>Expresiones Regulares con Python</title>
   <meta name="author" content="Raul E. Lopez Briega">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -52,69 +52,68 @@
 
 
 <style type="text/css">
-.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+.highlight-ipynb .hll { background-color: #ffffcc }
+.highlight-ipynb  { background: #f8f8f8; }
+.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
+.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
+.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight-ipynb .o { color: #666666 } /* Operator */
+.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
+.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
+.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
+.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
+.highlight-ipynb .go { color: #888888 } /* Generic.Output */
+.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
+.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
+.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
+.highlight-ipynb .m { color: #666666 } /* Literal.Number */
+.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
+.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
+.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
+.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight-ipynb .no { color: #880000 } /* Name.Constant */
+.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
+.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
+.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
+.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
+.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
+.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
+.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
+.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
+.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -253,22 +252,22 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2015/03/14/el-dia-pi/">El dia Pi</a>
-      </h1>
-      <p class="meta"><time datetime="2015-03-14T00:00:00-03:00" pubdate>Sat 14 March 2015</time></p>
+      <h1 class="entry-title">Expresiones Regulares con Python</h1>
+      <p class="meta"><time datetime="2015-07-19T00:00:00-03:00" pubdate>Sun 19 July 2015</time></p>
 </header>
-
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="relopezbriega" data-size="large" data-hashtags="python">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/" data-counter="right"></script>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="día Pi" title="día Pi" src="http://relopezbriega.github.io/images/pi-dia.jpg"></p>
+<p><img alt="Expresiones regulares" title="Expresiones regulares" src="http://relopezbriega.github.io/images/regex.png" width="700"></p>
+
 </div>
 </div>
 </div>
@@ -277,21 +276,1532 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hoy, 14 de Marzo se celebra el <em><a href="http://es.wikipedia.org/wiki/D%C3%ADa_de_%CF%80">día de Pi</a></em>($\pi$), esta celebración fue una ocurrencia del físico Larry Shaw, quien eligió esta fecha por su semejanza con el valor de dos dígitos de Pi. (en el formato de fecha de Estados Unidos, el 14 de Marzo se escribe 3 ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2015/03/14/el-dia-pi/">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Uno de los problemas más comunes con que nos solemos encontrar al desarrollar cualquier programa infórmatico, es el de procesamiento de texto. Esta tarea puede resultar bastante trivial para el cerebro humano, ya que nosotros podemos detectar con facilidad que es un número y que una letra, o cuales son palabras que cumplen con un determinado patrón y cuales no; pero estas mismas tareas no son tan fáciles para una computadora. Es por esto, que el procesamiento de texto siempre ha sido uno de los temas más relevantes en las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de la computación</a>. Luego de varias décadas de investigación se logró desarrollar un poderoso y versátil lenguaje que cualquier computadora puede utilizar para reconocer patrones de texto; este lenguale es lo que hoy en día se conoce con el nombre de <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>; las operaciones de validación, búsqueda, extracción y sustitución de texto ahora son tareas mucho más sencillas para las computadoras gracias a las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>.</p>
+<h2 id="&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#191;Qu&#233; son las Expresiones Regulares?<a class="anchor-link" href="#&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>, a menudo llamada también <strong>regex</strong>, son unas secuencias de caracteres que forma un patrón de búsqueda, las cuales son formalizadas por medio de una sintaxis espécifica. Los patrones se interpretan como un conjunto de instrucciones, que luego se ejecutan sobre un texto de entrada para producir un subconjunto o una versión modificada del texto original. Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> pueden incluir patrones de coincidencia literal, de repetición, de composición, de ramificación, y otras sofisticadas reglas de reconocimiento de texto . Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> deberían formar parte del arsenal de cualquier buen programador ya que un gran número de problemas de procesamiento de texto pueden ser facilmente resueltos con ellas.</p>
+<h2 id="Componentes-de-las-Expresiones-Regulares">Componentes de las Expresiones Regulares<a class="anchor-link" href="#Componentes-de-las-Expresiones-Regulares">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> son un mini lenguaje en sí mismo, por lo que para poder utilizarlas eficientemente primero debemos entender los componentes de su sintaxsis; ellos son:</p>
+<ul>
+<li><p><strong>Literales</strong>: Cualquier caracter se encuentra a sí mismo, a menos que se trate de un <strong><em>metacaracter</em></strong> con significado especial. Una serie de caracteres encuentra esa misma serie en el texto de entrada, por lo tanto la plantilla "raul" encontrará todas las aparciones de "raul" en el texto que procesamos.</p>
+</li>
+<li><p><strong>Secuencias de escape</strong>: La sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> nos permite utilizar las <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que ya conocemos de otros lenguajes de programación para esos casos especiales como ser finales de linea, tabs, barras diagonales, etc. Las principales <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que podemos encontrar, son:</p>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th>Secuencia de escape</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td>Nueva línea (new line). El cursor pasa a la primera posición de la línea siguiente.</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Tabulador. El cursor pasa a la siguiente posición de tabulación. </td>
+</tr>
+<tr>
+<td>\\</td>
+<td>Barra diagonal inversa</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>Tabulación vertical.</td>
+</tr>
+<tr>
+<td>\ooo</td>
+<td>Carácter ASCII en notación octal.</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>Carácter ASCII en notación hexadecimal.</td>
+</tr>
+<tr>
+<td>\xhhhh</td>
+<td>Carácter Unicode en notación hexadecimal. </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Clases de caracteres</strong>: Se pueden especificar clases de caracteres encerrando una lista de caracteres entre corchetes [], la que que encontrará uno cualquiera de los caracteres de la lista. Si el primer símbolo después del "[" es "^", la clase encuentra cualquier caracter que no está en la lista.</p>
+</li>
+<li><p><strong>Metacaracteres</strong>: Los metacaracteres son caracteres especiales que son la esencia de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Como son sumamente importantes para entender la sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> y existen diferentes tipos, voy a dedicar una seccion a explicarlos un poco más en detalle.</p>
+</li>
+</ul>
 
-  <br />
-</div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Metacaracteres">Metacaracteres<a class="anchor-link" href="#Metacaracteres">&#182;</a></h2><h3 id="Metacaracteres---delimitadores">Metacaracteres - delimitadores<a class="anchor-link" href="#Metacaracteres---delimitadores">&#182;</a></h3><p>Esta clase de metacaracteres nos permite delimitar dónde queremos buscar los patrones de búsqueda. Ellos son:</p>
+<table>
+<thead><tr>
+<th>Metacaracter</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>inicio de línea. </td>
+</tr>
+<tr>
+<td>$</td>
+<td>fin de línea. </td>
+</tr>
+<tr>
+<td>\A</td>
+<td>inicio de texto. </td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>fin de texto. </td>
+</tr>
+<tr>
+<td>.</td>
+<td>cualquier caracter en la línea. </td>
+</tr>
+<tr>
+<td>\b</td>
+<td>encuentra límite de palabra. </td>
+</tr>
+<tr>
+<td>\B</td>
+<td>encuentra distinto a límite de palabra.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Metacaracteres---clases-predefinidas">Metacaracteres - clases predefinidas<a class="anchor-link" href="#Metacaracteres---clases-predefinidas">&#182;</a></h3><p>Estas son clases predefinidas que nos facilitan la utilización de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Ellos son:</p>
+<table>
+<thead><tr>
+<th>Metacaracter</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\w</td>
+<td>un caracter alfanumérico (incluye "_"). </td>
+</tr>
+<tr>
+<td>\W</td>
+<td>un caracter no alfanumérico. </td>
+</tr>
+<tr>
+<td>\d</td>
+<td>un caracter numérico. </td>
+</tr>
+<tr>
+<td>\D</td>
+<td>un caracter no numérico. </td>
+</tr>
+<tr>
+<td>\s</td>
+<td>cualquier espacio (lo mismo que [ \t\n\r\f]).</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>un no espacio.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Metacaracteres---iteradores">Metacaracteres - iteradores<a class="anchor-link" href="#Metacaracteres---iteradores">&#182;</a></h3><p>Cualquier elemento de una <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> puede ser seguido por otro tipo de metacaracteres, los <em>iteradores</em>. Usando estos metacaracteres se puede especificar el número de ocurrencias del caracter previo, de un metacaracter o de una subexpresion. Ellos son:</p>
+<table>
+<thead><tr>
+<th>Metacaracter</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>cero o más, similar a {0,}. </td>
+</tr>
+<tr>
+<td>+</td>
+<td>una o más, similar a {1,}. </td>
+</tr>
+<tr>
+<td>?</td>
+<td>cero o una, similar a {0,1}.</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>exactamente n veces. </td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>por lo menos n veces. </td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>por lo menos n pero no más de m veces.</td>
+</tr>
+<tr>
+<td>*?</td>
+<td>cero o más, similar a {0,}?. </td>
+</tr>
+<tr>
+<td>+?</td>
+<td>una o más, similar a {1,}?.</td>
+</tr>
+<tr>
+<td>??</td>
+<td>cero o una, similar a {0,1}?. </td>
+</tr>
+<tr>
+<td>{n}?</td>
+<td>exactamente n veces.</td>
+</tr>
+<tr>
+<td>{n,}?</td>
+<td>por lo menos n veces. </td>
+</tr>
+<tr>
+<td>{n,m}?</td>
+<td>por lo menos n pero no más de m veces.</td>
+</tr>
+</tbody>
+</table>
+<p>En estos metacaracteres, los dígitos entre llaves de la forma {n,m}, especifican el mínimo número de ocurrencias en n y el máximo en m.</p>
+<h3 id="Metacaracteres---alternativas">Metacaracteres - alternativas<a class="anchor-link" href="#Metacaracteres---alternativas">&#182;</a></h3><p>Se puede especificar una serie de alternativas para una plantilla usando "|" para separarlas, entonces do|re|mi encontrará cualquier "do", "re", o "mi" en el texto de entrada.Las alternativas son evaluadas de izquierda a derecha, por lo tanto la primera alternativa que coincide plenamente con la expresión analizada es la que se selecciona. Por ejemplo: si se buscan foo|foot en "barefoot'', sólo la parte "foo" da resultado positivo, porque es la primera alternativa probada, y porque tiene éxito en la búsqueda de la cadena analizada.</p>
+<p><strong>Ejemplo</strong>:</p>
+<p>foo(bar|foo) --&gt; encuentra las cadenas 'foobar' o 'foofoo'.</p>
+<h3 id="Metacaracteres---subexpresiones">Metacaracteres - subexpresiones<a class="anchor-link" href="#Metacaracteres---subexpresiones">&#182;</a></h3><p>La construcción ( ... ) también puede ser empleada para definir subexpresiones de <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>.</p>
+<p><strong>Ejemplos</strong>:</p>
+<p>(foobar){10} --&gt; encuentra cadenas que contienen 8, 9 o 10 instancias de 'foobar'</p>
+<p>foob([0-9]|a+)r --&gt; encuentra 'foob0r', 'foob1r' , 'foobar', 'foobaar', 'foobaar' etc.</p>
+<h3 id="Metacaracteres---memorias-(backreferences)">Metacaracteres - memorias (backreferences)<a class="anchor-link" href="#Metacaracteres---memorias-(backreferences)">&#182;</a></h3><p>Los metacaracteres \1 a \9 son interpretados como memorias. \<n> encuentra la subexpresión previamente encontrada #<n>.</p>
+<p><strong>Ejemplos</strong>:</p>
+<p>(.)\1+  --&gt; encuentra 'aaaa' y 'cc'.</p>
+<p>(.+)\1+  --&gt; también encuentra 'abab' y '123123'</p>
+<p>(['"]?)(\d+)\1 --&gt; encuentra '"13" (entre comillas dobles), o '4' (entre comillas simples) o 77 (sin comillas) etc.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Expresiones-Regulares-con-Python">Expresiones Regulares con Python<a class="anchor-link" href="#Expresiones-Regulares-con-Python">&#182;</a></h2><p>Luego de esta introducción, llegó el tiempo de empezar a jugar con las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> y <a href="https://www.python.org/">Python</a>.</p>
+<p>Como no podría ser de otra forma tratandose de <a href="https://www.python.org/">Python</a> y su filosofía de <em>todas las baterías incluídas</em>; en la librería estandar de <a href="https://www.python.org/">Python</a> podemos encontrar el módulo <a href="https://docs.python.org/3/library/re.html">re</a>, el cual nos proporciona todas las operaciones necesarias para trabajar con las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>.</p>
+<p>Por lo tanto, en primer lugar lo que debemos hacer es importar el modulo <a href="https://docs.python.org/3/library/re.html">re</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el modulo de regex de python</span>
+<span class="kn">import</span> <span class="nn">re</span>  
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Buscando-coincidencias">Buscando coincidencias<a class="anchor-link" href="#Buscando-coincidencias">&#182;</a></h3><p>Una vez que hemos importado el módulo, podemos empezar a tratar de buscar coincidentcias con un determinado patrón de búsqueda. Para hacer esto, primero debemos <a href="https://es.wikipedia.org/wiki/Compilador">compilar</a> nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> en un <em>objeto de patrones de <a href="https://www.python.org/">Python</a></em>, el cúal posee métodos para diversas operaciones, tales como la búsqueda de coincidencias de patrones o realizar sustituciones de texto.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># compilando la regex</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\bfoo\b&#39;</span><span class="p">)</span>  <span class="c"># busca la palabra foo</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ahora que ya tenemos el <em>objeto de expresion regular</em> compilado podemos utilizar alguno de los siguientes métodos para buscar coincidencias con nuestro texto.</p>
+<ul>
+<li><strong>match()</strong>: El cual determinda si la regex tiene coincidencias en el comienzo del texto.</li>
+<li><strong>search()</strong>: El cual escanea todo el texto buscando cualquier ubicación donde haya una coincidencia.</li>
+<li><strong>findall()</strong>: El cual encuentra todos los subtextos donde haya una coincidencia y nos devuelve estas coincidencias como una lista.</li>
+<li><strong>finditer()</strong>: El cual es similar al anterior pero en lugar de devolvernos una lista nos devuelve un <a href="https://es.wikipedia.org/wiki/Iterador_(patr%C3%B3n_de_dise%C3%B1o)">iterador</a>.</li>
+</ul>
+<p>Veamoslos en accion.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># texto de entrada</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot; bar foo bar</span>
+<span class="s">foo barbarfoo</span>
+<span class="s">foofoo foo bar</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># match nos devuelve None porque no hubo coincidencia al comienzo del texto</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">patron</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">texto</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># match encuentra una coindencia en el comienzo del texto</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;foo bar&#39;</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(0, 3), match=&apos;foo&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># search nos devuelve la coincidencia en cualquier ubicacion.</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(5, 8), match=&apos;foo&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># findall nos devuelve una lista con todas las coincidencias</span>
+<span class="n">fa</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<span class="n">fa</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;foo&apos;, &apos;foo&apos;, &apos;foo&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># finditer nos devuelve un iterador</span>
+<span class="n">fi</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<span class="n">fi</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;callable_iterator at 0x7f413db74240&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># iterando por las distintas coincidencias</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(5, 8), match=&apos;foo&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="nb">next</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(13, 16), match=&apos;foo&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como podemos ver en estos ejemplos, cuando hay coincidencias, <a href="https://www.python.org/">Python</a> nos devuelve un <em>Objeto de coincidencia</em> (salvo por el método <code>findall()</code> que devuelve una lista). Este <em>Objeto de coincidencia</em> tambien tiene sus propios métodos que nos proporcionan información adicional sobre la coincidencia; éstos métodos son:</p>
+<ul>
+<li><strong>group()</strong>: El cual devuelve el texto que coincide con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>.</li>
+<li><strong>start()</strong>: El cual devuelve la posición inicial de la coincidencia.    </li>
+<li><strong>end()</strong>: El cual devuelve la posición final de la coincidencia.</li>
+<li><strong>span()</strong>: El cual devuelve una tupla con la posicion inicial y final de la coincidencia.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Métodos del objeto de coincidencia</span>
+<span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&apos;foo&apos;, 0, 3, (0, 3))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">s</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">s</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">s</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&apos;foo&apos;, 5, 8, (5, 8))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Modificando-el-texto-de-entrada">Modificando el texto de entrada<a class="anchor-link" href="#Modificando-el-texto-de-entrada">&#182;</a></h3><p>Ademas de buscar coicidencias de nuestro patrón de búsqueda en un texto, podemos utilizar ese mismo patron para realizar modificaciones al texto de entrada. Para estos casos podemos utlizar los siguientes métodos:</p>
+<ul>
+<li><strong>split()</strong>:    El cual divide el texto en una lista, realizando las divisiones del texto en cada lugar donde se cumple con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>.</li>
+<li><strong>sub()</strong>: El cual encuentra todos los subtextos donde existe una coincidencia con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> y luego los reemplaza con un nuevo texto.</li>
+<li><strong>subn()</strong>: El cual es similar al anterior pero ademas de devolver el nuevo texto, también devuelve el numero de reemplazos que realizó.</li>
+</ul>
+<p>Veamoslos en acción.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># texto de entrada</span>
+<span class="n">becquer</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;Podrá nublarse el sol eternamente; </span>
+<span class="s">Podrá secarse en un instante el mar; </span>
+<span class="s">Podrá romperse el eje de la tierra </span>
+<span class="s">como un débil cristal. </span>
+<span class="s">¡todo sucederá! Podrá la muerte </span>
+<span class="s">cubrirme con su fúnebre crespón; </span>
+<span class="s">Pero jamás en mí podrá apagarse </span>
+<span class="s">la llama de tu amor.&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># patron para dividir donde no encuentre un caracter alfanumerico</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\W+&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">palabras</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">becquer</span><span class="p">)</span>
+<span class="n">palabras</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c"># 10 primeras palabras</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Podrá&apos;,
+ &apos;nublarse&apos;,
+ &apos;el&apos;,
+ &apos;sol&apos;,
+ &apos;eternamente&apos;,
+ &apos;Podrá&apos;,
+ &apos;secarse&apos;,
+ &apos;en&apos;,
+ &apos;un&apos;,
+ &apos;instante&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando la version no compilada de split.</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r&#39;\n&#39;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c"># Dividiendo por linea.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Podrá nublarse el sol eternamente; &apos;,
+ &apos;Podrá secarse en un instante el mar; &apos;,
+ &apos;Podrá romperse el eje de la tierra &apos;,
+ &apos;como un débil cristal. &apos;,
+ &apos;¡todo sucederá! Podrá la muerte &apos;,
+ &apos;cubrirme con su fúnebre crespón; &apos;,
+ &apos;Pero jamás en mí podrá apagarse &apos;,
+ &apos;la llama de tu amor.&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando el tope de divisiones</span>
+<span class="n">patron</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">becquer</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Podrá&apos;,
+ &apos;nublarse&apos;,
+ &apos;el&apos;,
+ &apos;sol&apos;,
+ &apos;eternamente&apos;,
+ &apos;Podrá secarse en un instante el mar; \nPodrá romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Podrá la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí podrá apagarse \nla llama de tu amor.&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
+<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">)</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Puede nublarse el sol eternamente; 
+Puede secarse en un instante el mar; 
+Puede romperse el eje de la tierra 
+como un débil cristal. 
+¡todo sucederá! Puede la muerte 
+cubrirme con su fúnebre crespón; 
+Pero jamás en mí Puede apagarse 
+la llama de tu amor.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Limitando el número de reemplazos</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Puede nublarse el sol eternamente; 
+Puede secarse en un instante el mar; 
+Podrá romperse el eje de la tierra 
+como un débil cristal. 
+¡todo sucederá! Podrá la muerte 
+cubrirme con su fúnebre crespón; 
+Pero jamás en mí podrá apagarse 
+la llama de tu amor.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando la version no compilada de subn</span>
+<span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="s">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">,</span> <span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c"># se realizaron 5 reemplazos</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&apos;Puede nublarse el sol eternamente; \nPuede secarse en un instante el mar; \nPuede romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Puede la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí Puede apagarse \nla llama de tu amor.&apos;,
+ 5)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Funciones-no-compiladas">Funciones no compiladas<a class="anchor-link" href="#Funciones-no-compiladas">&#182;</a></h3><p>En estos últimos ejemplos, pudimos ver casos donde utilizamos las funciones al nivel del módulo <code>split()</code> y <code>subn()</code>. Para cada uno de los ejemplos que vimos (match, search, findall, finditer, split, sub y subn) existe una versión al nivel del módulo que se puede utilizar sin necesidad de compilar primero el patron de búsqueda; simplemente le pasamos como primer argumento la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> y el resultado será el mismo. La ventaja que tiene la versión compila sobre las funciones no compiladas es que si vamos a utilizar la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> dentro de un <em>bucle</em> nos vamos a ahorrar varias llamadas de funciones y por lo tanto mejorar la performance de nuestro programa.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de findall con la funcion a nivel del modulo</span>
+<span class="c"># findall nos devuelve una lista con todas las coincidencias</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&#39;\bfoo\b&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;foo&apos;, &apos;foo&apos;, &apos;foo&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Banderas-de-compilaci&#243;n">Banderas de compilaci&#243;n<a class="anchor-link" href="#Banderas-de-compilaci&#243;n">&#182;</a></h3><p>Las banderas de compilación permiten modificar algunos aspectos de cómo funcionan las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Todas ellas están disponibles en el módulo <a href="https://docs.python.org/3/library/re.html">re</a> bajo dos nombres, un nombre largo como IGNORECASE y una forma abreviada de una sola letra como I. Múltiples banderas pueden ser especificadas utilizando el operador "|" OR; Por ejemplo, re.I | RE.M establece las banderas de E y M.</p>
+<p>Algunas de las banderas de compilación que podemos encontrar son:</p>
+<ul>
+<li><strong>IGNORECASE, I</strong>: Para realizar búsquedas sin tener en cuenta las minúsculas o mayúsculas.</li>
+<li><strong>VERBOSE, X</strong>: Que habilita la modo verborrágico, el cual permite organizar el patron de búsqueda de una forma que sea más sencilla de entender y leer.</li>
+<li><strong>ASCII, A</strong>: Que hace que las <a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a> \w, \b, \s and \d funciones para coincidencias con los caracteres ASCII.</li>
+<li><strong>DOTALL, S</strong>: La cual hace que el metacaracter . funcione para cualquier caracter, incluyendo el las líneas nuevas.</li>
+<li><strong>LOCALE, L</strong>: Esta opción hace que \w, \W, \b, \B, \s, y \S dependientes de la localización actual.</li>
+<li><strong>MULTILINE, M</strong>: Que    habilita la coincidencia en multiples lineas, afectando el funcionamiento de los metacaracteres ^ and $.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de IGNORECASE</span>
+<span class="c"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
+<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;podrá\b&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>  <span class="c"># el patrón se vuelve más sencillo</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>puede nublarse el sol eternamente; 
+puede secarse en un instante el mar; 
+puede romperse el eje de la tierra 
+como un débil cristal. 
+¡todo sucederá! puede la muerte 
+cubrirme con su fúnebre crespón; 
+Pero jamás en mí puede apagarse 
+la llama de tu amor.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de VERBOSE</span>
+<span class="n">mail</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;&quot;&quot;</span>
+<span class="s">\b             # comienzo de delimitador de palabra</span>
+<span class="s">[\w.%+-]       # usuario: Cualquier caracter alfanumerico mas los signos (.%+-)</span>
+<span class="s">+@             # seguido de @</span>
+<span class="s">[\w.-]         # dominio: Cualquier caracter alfanumerico mas los signos (.-)</span>
+<span class="s">+\.            # seguido de .</span>
+<span class="s">[a-zA-Z]{2,6}  # dominio de alto nivel: 2 a 6 letras en minúsculas o mayúsculas.</span>
+<span class="s">\b             # fin de delimitador de palabra</span>
+<span class="s">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">mails</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;raul.lopez@relopezbriega.com, Raul Lopez Briega,</span>
+<span class="s">foo bar, relopezbriega@relopezbriega.com.ar, raul@github.io, </span>
+<span class="s">http://relopezbriega.com.ar, http://relopezbriega.github.io, </span>
+<span class="s">python@python, river@riverplate.com.ar, pythonAR@python.pythonAR</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># filtrando los mails con estructura válida</span>
+<span class="n">mail</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">mails</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;raul.lopez@relopezbriega.com&apos;,
+ &apos;relopezbriega@relopezbriega.com.ar&apos;,
+ &apos;raul@github.io&apos;,
+ &apos;river@riverplate.com.ar&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como podemos ver en este último ejemplo, la opción VERBOSE puede ser muy util para que cualquier persona que lea nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> pueda entenderla más facilmente.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Nombrando-los-grupos">Nombrando los grupos<a class="anchor-link" href="#Nombrando-los-grupos">&#182;</a></h3><p>Otra de las funciones interesantes que nos ofrece el módulo <a href="https://docs.python.org/3/library/re.html">re</a> de <a href="https://www.python.org/">Python</a>; es la posibilidad de ponerle nombres a los grupos de nuestras <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Así por ejemplo, en lugar de acceder a los grupos por sus indices, como en este caso...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los grupos por sus indices</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;(\w+) (\w+)&quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;Raul Lopez&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo 1</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Raul&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo 2</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Lopez&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Podemos utilizar la sintaxis especial <code>(?P&lt;nombre&gt;patron)</code> que nos ofrece <a href="https://www.python.org/">Python</a> para nombrar estos grupos y que sea más fácil identificarlos.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los grupos por nombres</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;(?P&lt;nombre&gt;\w+) (?P&lt;apellido&gt;\w+)&quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;Raul Lopez&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo nombre</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&quot;nombre&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Raul&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo apellido</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&quot;apellido&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Lopez&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Otros-ejemplos-de-expresiones-regulares">Otros ejemplos de expresiones regulares<a class="anchor-link" href="#Otros-ejemplos-de-expresiones-regulares">&#182;</a></h2><p>Por último, para ir cerrando esta introducción a las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>, les dejo algunos ejemplos de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> más utilizadas.</p>
+<h3 id="Validando-mails">Validando mails<a class="anchor-link" href="#Validando-mails">&#182;</a></h3><p>Para validar que un mail tenga la estructura correcta, podemos utilizar la siguiente <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<p><strong>regex</strong>: <code>\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,6}\b</code></p>
+<p>Este es el patron que utilizamos en el ejemplo de la opción VERBOSE.</p>
+<h3 id="Validando-una-URL">Validando una URL<a class="anchor-link" href="#Validando-una-URL">&#182;</a></h3><p>Para validar que una URL tenga una estructura correcta, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<p><strong>regex</strong>: <code>^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una URL</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$&quot;</span><span class="p">)</span>
+
+<span class="c"># vemos que http://relopezbriega.com.ar lo acepta como una url válida.</span>
+<span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;http://relopezbriega.com.ar&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(0, 27), match=&apos;http://relopezbriega.com.ar&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># pero http://google.com/un/archivo!.html no la acepta por el carcter !</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;http://google.com/un/archivo!.html&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Validando-una-direcci&#243;n-IP">Validando una direcci&#243;n IP<a class="anchor-link" href="#Validando-una-direcci&#243;n-IP">&#182;</a></h3><p>Para validar que una dirección IP tenga una estructura correcta, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<p><strong>regex</strong>: <code>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una dirección IP</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;^(?:(?:25[0-5]|2[0-4][0-9]|&#39;</span>
+          <span class="s">&#39;[01]?[0-9][0-9]?)\.){3}&#39;</span>
+          <span class="s">&#39;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&#39;</span><span class="p">)</span>
+
+<span class="n">ip</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">patron</span><span class="p">)</span>
+
+<span class="c"># la ip 73.60.124.136 es valida</span>
+<span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;73.60.124.136&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(0, 13), match=&apos;73.60.124.136&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># pero la ip 256.60.124.136 no es valida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;256.60.124.136&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Validando-una-fecha">Validando una fecha<a class="anchor-link" href="#Validando-una-fecha">&#182;</a></h3><p>Para validar que una fecha tenga una estructura dd/mm/yyyy, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<p><strong>regex</strong>: <code>^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una fecha</span>
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$&#39;</span><span class="p">)</span>
+
+<span class="c"># validando 13/02/1982</span>
+<span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;13/02/1982&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(0, 10), match=&apos;13/02/1982&apos;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 13-02-1982</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;13-02-1982&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 32/12/2015</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;32/12/2015&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 30/14/2015</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;30/14/2015&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Y con estos ejemplos termino este tutorial, espero que les haya sido de utilidad.</p>
+<p>Saludos!</p>
+<p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/RegexPython.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/RegexPython.ipynb">nbviewer</a>.</em></p>
+
+</div>
+</div>
+</div></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Raul E. Lopez Briega</span>
+  </span>
+<time datetime="2015-07-19T00:00:00-03:00" pubdate>Sun 19 July 2015</time>  <span class="categories">
+    <a class="category" href="http://relopezbriega.github.io/tag/python.html">python</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/regex.html">regex</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>
+  </span>
+</p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/">Expresiones Regulares con Python</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/">Probabilidad y Estadística con Python</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/06/14/algebra-lineal-con-python/">Algebra Lineal con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/03/14/el-dia-pi/">El dia Pi</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/02/01/programacion-funcional-con-python/">Programación Funcional con Python</a>
       </li>
     </ul>
   </section>
@@ -348,6 +1858,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'relopezbriegagithub';
+          var disqus_identifier = '/blog/2015/07/19/expresiones-regulares-con-python/';
+          var disqus_url = 'http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/';
+          var disqus_title = 'Expresiones Regulares con Python';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
