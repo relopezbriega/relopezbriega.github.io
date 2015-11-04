@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Blogen5min slides</title>
+<title>Blog en 5 minutos slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -301,7 +301,7 @@ div.output_prompt {
 <p><code>git clone https://github.com/usuarioGithub/usuarioGithub.github.io.git</code></p>
 <p>También clonamos el repositrio blog_template, que va a tener la plantilla para poder crear el contenido más facilmente con <a href="http://docs.getpelican.com/en/3.6.3/">Pelican</a>. Esto lo hacemos con el siguiente comando:</p>
 <p><code>git clone https://github.com/blogen5minutos/blog_template.git</code></p>
-<p>Si no queremos usar este template, podemos crearnos una nueva carpeta y iniciar el sitio <a href="http://docs.getpelican.com/en/3.6.3/">Pelican</a> con el siguiente comando:</p>
+<p>Si no queremos usar este template, podemos crearnos una nueva carpeta e iniciar el sitio <a href="http://docs.getpelican.com/en/3.6.3/">Pelican</a> con el siguiente comando:</p>
 <p><code>pelican-quickstart</code></p>
 
 </div>
@@ -350,7 +350,7 @@ div.output_prompt {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Generando-contenido-con-Jupyter-notebooks">Generando contenido con Jupyter notebooks<a class="anchor-link" href="#Generando-contenido-con-Jupyter-notebooks">&#182;</a></h1><p>Otra buena alternativa que tenemos para generar los artículos es utilizar <a href="https://jupyter.org/">Jupyter notebooks</a>. Para realizar esto debemos utilizar el plugin <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a>.</p>
-<p>Una vez habilitado este plugin en el archivo de configuración <em>pelicanconf.py</em>; podemos guardar nuestras <em>notebooks</em> en una subcarpeta llamada <code>notebooks</code> dentro de la carpeta <code>content</code>y luego en lugar de escribir todo el contenido con del artículo con <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, utilizamos la siguiente sitaxis:</p>
+<p>Una vez habilitado este plugin en el archivo de configuración <em>pelicanconf.py</em>; podemos guardar nuestras <em>notebooks</em> en una subcarpeta llamada <code>notebooks</code> dentro de la carpeta <code>content</code> y luego en lugar de escribir todo el contenido con del artículo con <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, utilizamos la siguiente sitaxis:</p>
 <p><code>{% notebook filename.ipynb [ cells[start:end] ]%}</code></p>
 <p>Un ejemplo, sería el siguiente:</p>
 <p><code>Title: Batman, ecuaciones y python</code></p>
