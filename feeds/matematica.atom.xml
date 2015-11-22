@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="http://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/matematica.atom.xml" rel="self"></link><id>http://relopezbriega.github.io/</id><updated>2015-11-22T00:00:00-03:00</updated><entry><title>Hasta el infinito y más alla</title><link href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/" rel="alternate"></link><updated>2015-11-22T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-11-22:blog/2015/11/22/hasta-el-infinito-y-mas-alla/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="Números complejos con Python" title="Números complejos con Python" src="http://relopezbriega.github.io/images/python_infinity.jpg
+" width="500px" height="400px"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;blockquote&gt;&lt;p&gt;La línea consta de un número infinito de puntos; el plano, de un número infinito de
+líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número
+infinito de volúmenes... No, decididamente no es éste... el mejor modo de iniciar mi relato.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jorge Luis Borges - El libro de arena&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; ha obsesionado a la mente humana por miles de años. La idea de que las cosas pueden seguir y seguir para siempre, que pueden no tener ni principio ni final, ni centro, ni límites; desafía a la intuición. Científicos, filósofos y teólogos por igual, han tratadado de entenderlo, de cortar su tamaño, de averiguar su forma y dimensión; y en última instancia, de decidir si es un concepto bienvenido en nuestras descripciones del Universo que nos rodea.
+A pesar de todas las dificultades que puede traer el lidiar con el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, éste sigue siendo un tema fascinante. Se encuentra en el corazón de todo tipo de preguntas fundamentales del hombre. ¿Se puede vivir para siempre? ¿El universo tiene un final? ¿Tuvo un comienzo? ¿Tiene el universo un "borde" o simplemente no existen límites a su tamaño? Aunque es fácil pensar en las listas de números o secuencias de 'tics' de un reloj que continúan para siempre, hay otros tipos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; que parecen ser más difíciles de concebir.&lt;/p&gt;
+&lt;h2 id="&amp;#191;Qu&amp;#233;-es-el-infinito?"&gt;&amp;#191;Qu&amp;#233; es el infinito?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-el-infinito?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Generalmente existe la tendencia de pensar en el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; simplemente como un número muy grande, sólo un poco más grande que el mayor número que se pueda imaginar, siempre fuera de su alcance; pero &lt;strong&gt;el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; no es un número&lt;/strong&gt;; sino que es un concepto,  la idea de &lt;strong&gt;&lt;em&gt;algo que no tiene fin&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="El-infinito-en-la-matem&amp;#225;ticas"&gt;El infinito en la matem&amp;#225;ticas&lt;a class="anchor-link" href="#El-infinito-en-la-matem&amp;#225;ticas"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Si bien el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; parece ser un tema elusivo y complejo, aun así no a escapado a su estudio por parte de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;. Su estudio ya comenzó en la antigua Grecia, quienes con &lt;a href="https://es.wikipedia.org/wiki/Teorema"&gt;teoremas&lt;/a&gt; tales como que la cantidad de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;números primos&lt;/a&gt; no tiene límites, se enfrentaron ante la perspectiva de lo &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;. &lt;a href="https://es.wikipedia.org/wiki/Arist%C3%B3teles"&gt;Aristóteles&lt;/a&gt; evitó la actualidad del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; mediante la definición de una &lt;em&gt;infinidad potencial&lt;/em&gt;, de forma de permitir que éstos &lt;a href="https://es.wikipedia.org/wiki/Teorema"&gt;teoremas&lt;/a&gt; continuen como válidos. Según esta distinción hecha por &lt;a href="https://es.wikipedia.org/wiki/Arist%C3%B3teles"&gt;Aristóteles&lt;/a&gt; entre el &lt;a href="https://es.wikipedia.org/wiki/Infinito_potencial_e_infinito_actual"&gt;infinito actual y el infito potencial&lt;/a&gt;, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;números enteros&lt;/a&gt; son potencialmente &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; porque siempre puede sumarse uno para conseguir un número mayor, pero el conjunto &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;números enteros&lt;/a&gt; como tal, es decir el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; actual de números enteros, no existe. Según los griegos el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; actual nunca puede existir, sino que solo puede existir el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; potencial; como reflejo del pensamiento griego, &lt;a href="https://es.wikipedia.org/wiki/Arist%C3%B3teles"&gt;Aristóteles&lt;/a&gt; concluye que el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; es imperfecto, inacabado e impensable. Esta definición de un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; potencial y no real, funcionó y satisfizo a los matemáticos y filósofos por casi dos milenios.&lt;/p&gt;
+&lt;h3 id="Notaci&amp;#243;n-del-infinito"&gt;Notaci&amp;#243;n del infinito&lt;a class="anchor-link" href="#Notaci&amp;#243;n-del-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El simbolo $\infty $ que representa al &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; se lo debemos al matemático ingles &lt;a href="https://es.wikipedia.org/wiki/John_Wallis"&gt;John Wallis&lt;/a&gt;, quien fue un precursor del &lt;a href="https://es.wikipedia.org/wiki/Infinitesimal"&gt;cálculo infinitesimal&lt;/a&gt; e introdujo la notación $\infty$, que representa una curva sin fin, en el siglo diecisiete.&lt;/p&gt;
+&lt;h3 id="En-camino-hacia-un-mejor-entendimiento-del-infinito"&gt;En camino hacia un mejor entendimiento del infinito&lt;a class="anchor-link" href="#En-camino-hacia-un-mejor-entendimiento-del-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A medida que se continuaba explorando el concepto del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, nuevas &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradojas&lt;/a&gt; continuaban apareciendo. En la edad media se entendía que un círculo más grande debería contener más puntos que un círculo más pequeño, sin embargo se puede encontrar una correspondencia de &lt;em&gt;uno a uno&lt;/em&gt; entre los puntos de ambos círculos, como lo demuestra la siguiente figura:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paradoja de los círculos" title="Paradoja de los círculos" src="http://relopezbriega.github.io/images/paradoja-circulos.png
+" width="300px" height="300px"&gt;&lt;/p&gt;
+&lt;p&gt;En 1600, &lt;a href="https://es.wikipedia.org/wiki/Galileo_Galilei"&gt;Galileo&lt;/a&gt; entendió que el problema era el estar utilizando un razonamiento finito sobre cosas infinitas. Postuló que "Es un error hablar de cantidades infinitas como siendo la mayor o menor o igual que a la otra" y afirmó que el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; no es un noción inconsistente, sino que obedece a reglas diferentes.&lt;/p&gt;
+&lt;p&gt;Otro de los temas que confundían a los matemáticos, era el comportamiento de las series infinitas, sobre todo aquellas que no eran &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergentes&lt;/a&gt;. Recordemos que una serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergente&lt;/a&gt; cuando la suma de sus terminos da como resultado un número finito; en caso contrario, se dice que la serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergente&lt;/a&gt;. Así por ejemplo la &lt;a href="https://es.wikipedia.org/wiki/Serie_geom%C3%A9trica"&gt;serie geométrica&lt;/a&gt;, sabemos que converge en 1, y se puede demostrar geometricamente:&lt;/p&gt;
+$$\sum\limits_{i=1}^\infty\frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1$$&lt;p&gt;&lt;img alt="demostracion serie geometrica" title="demostracion serie geometrica" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GeometricSquares.svg/359px-GeometricSquares.svg.png
+" width="300px" height="300px"&gt;&lt;/p&gt;
+&lt;p&gt;Pero en cambio el resultado de la siguiente serie no se puede determinar:&lt;/p&gt;
+$$ S = 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 \dots $$&lt;p&gt;Si por ejemplo agrupamos los terminos de la siguiente forma, el resultado parece ser &lt;em&gt;obviamente&lt;/em&gt; cero.&lt;/p&gt;
+$$ S = (1 - 1) + (1 - 1) + (1 - 1) + (1 - 1) \dots $$&lt;p&gt;Pero si los agrupamos de esta otra forma, el resultado parece ser ahora &lt;em&gt;claramente&lt;/em&gt; uno.&lt;/p&gt;
+$$ S =  1 + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) \dots $$&lt;p&gt;y no termina acá, ya que incluso podríamos agrupar la serie del siguiente modo y el resultado sería $\frac{1}{2}$.&lt;/p&gt;
+$$ S = 1 - ( 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots) \Rightarrow S = 1 - S \Rightarrow 2S = 1 \Rightarrow S = \frac{1}{2} $$&lt;p&gt;es decir que el valor de la serie S, podría ser tanto 1, como 0, como $\frac{1}{2}$.No es sorprendente que argumentos como éste, hacían que los matemáticos se pusieran muy nerviosos al tratar con los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; y quisieran evitarlos o incluso eliminarlos a toda costa.&lt;/p&gt;
+&lt;p&gt;Fuera de toda esta ambigüedad y confusión, la claridad surgió repentinamente en el siglo XIX, debido a los esfuerzos en solitario de un hombre brillante. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt; produjo una teoría que respondió a todas las objeciones de sus predecesores y reveló la riqueza inesperada escondida en el ámbito de lo &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;. De repente, los &lt;a href="https://es.wikipedia.org/wiki/Infinito_potencial_e_infinito_actual"&gt;infinitos actuales&lt;/a&gt; se convirtieron en parte de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;Cantor y la teor&amp;#237;a de conjuntos para explicar el infinito&lt;a class="anchor-link" href="#Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt;, aplicando ideas sumamente originales, postuló la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; y utilizando el concepto de la &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; de los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;, se propuso explicar el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Segun la teoría de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, dos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; se dicen que tienen el mismo número de elementos, es decir, que tienen la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt;, si existe una función definida entre ellos de forma tal que a cada elemento le corresponde sólo otro elemento del otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt;, y viceversa; o sea, que exista una correspondencia de uno a uno entre los elementos de ambos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;. A partir de esta definición se puede establecer la idea de &lt;a href="https://es.wikipedia.org/wiki/Conjunto_infinito"&gt;conjunto infinito&lt;/a&gt;. Se dice que un conjunto es &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; si existe un subconjunto con la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; que él. Esta definición plantea una contradicción con la intuición, pues todo subconjunto como parte del conjunto total parece que deba tener menos elementos. Eso es así, efectivamente, en los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjuntos finitos&lt;/a&gt;, pero no en los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#191;Distintos tipos de infinitos? Infinitos numerables y no numerables&lt;a class="anchor-link" href="#&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Otro de los grandes aportes de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, fue la distinción entre los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;no numerables&lt;/a&gt;.
+&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; definió a los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; como aquellos en los que se puede encontrar una correspondencia uno-a-uno con la lista de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt; 1, 2, 3, 4, 5, 6,. . . Así, por ejemplo, los números pares son un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerable&lt;/a&gt;, también lo son todos los números impares y ambos tienen el mismo tamaño. Por ejemplo, la correspondencia entre los primeros números impares sería la siguiente:&lt;/p&gt;
+$$ 
+1 \longrightarrow 3 \\
+2 \longrightarrow 5 \\
+3 \longrightarrow 7 \\
+4 \longrightarrow 9 \\
+5 \longrightarrow 11 \\
+6 \longrightarrow 13 \\
+7 \longrightarrow 15 \\
+8 \longrightarrow 17 \\
+9 \longrightarrow 19 \\
+10 \longrightarrow \dots \\
+$$&lt;p&gt;Por lo tanto, todos los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjuntos infinitos numerables&lt;/a&gt; tienen el mismo "tamaño" o &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; en el sentido de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;. El también pensaba que éstos eran los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;  más pequeños que pudieran existir y por lo tanto los representó utilizando la primera letra del alfabeto hebreo, el símbolo &lt;a href="https://es.wikipedia.org/wiki/Alef_cero"&gt;Aleph-cero&lt;/a&gt;, $\aleph_{0}$. Un punto importante a tener en cuenta, es que esta definición excluye cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; de objetos, ya que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; sólo puede ponerse en correspondencia uno-a-uno con otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; que contenga el mismo número de miembros.
+Este análisis llevó a algunas conclusiones sorprendentes. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; mostró que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_racional"&gt;números racionales&lt;/a&gt;, los cuales se forman al dividir un &lt;a href="https://es.wikipedia.org/wiki/Numeros_enteros"&gt;número entero&lt;/a&gt; por otro (por ejemplo $\frac{1}{2}$, o $\frac{13}{2}$) son también un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjunto infinito numerable&lt;/a&gt;. El truco fue encontrar un sistema para poder contarlos sin perderse ninguno. Él utilizó el famoso proceso ahora conocido como la &lt;a href="https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor"&gt;diagonal de Cantor&lt;/a&gt; para hacer esto. Fue contando cada uno de ellos de acuerdo al siguiente ordenamiento:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Diagonal de Cantor" title="Diagonal de Cantor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Diagonal_argument.svg/429px-Diagonal_argument.svg.png
+" width="300px" height="300px"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; también pudo demostrar con un nuevo tipo de argumento matemático que existen &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; más grandes y que no se pueden contar. Esto son los que hoy en día se conocen como &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinitos no numerables&lt;/a&gt;. Dentro de esta categoría podemos encontrar al conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt;, los cuales incluyen a los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_irracional"&gt;números irracionales&lt;/a&gt;, quienes no se pueden escribir como &lt;a href="https://es.wikipedia.org/wiki/Fracci%C3%B3n"&gt;fracciones&lt;/a&gt; y tienen una expansión infinita de sus parte decimal.&lt;/p&gt;
+&lt;p&gt;Para demostrar que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt; son un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinito no numerable&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; comenzó por suponer que se podían contar, lo que significaba que debería ser capaz de elaborar una receta sistemática para contar todos los decimales interminables que no terminaran en una cadena infinita de zeros. Los primeros de estos números podrían parecerse a éstos:&lt;/p&gt;
+$$
+1 \longrightarrow 0.\underline{2}34567891\dots \\
+2 \longrightarrow 0.5\underline{7}5603737\dots \\
+3 \longrightarrow 0.46\underline{3}214516\dots \\
+4 \longrightarrow 0.846\underline{2}16388\dots \\
+5 \longrightarrow 0.5621\underline{9}4632\dots \\
+6 \longrightarrow 0.46673\underline{2}271\dots \\
+ \dots
+$$&lt;p&gt;Luego creó un nuevo decimal tomando el primer dígito después del punto decimal del primer número, el segundo dígito del segundo número, y así sucesivamente para siempre(como por ejemplo los dígitos subrayados en la serie de arriba). Siguiendo el ejemplo, el nuevo decimal comienzaría como sigue:&lt;/p&gt;
+&lt;p&gt;$0.273292\dots$&lt;/p&gt;
+&lt;p&gt;Por último a este decimal recién creado, le sumó 1 a cada uno de sus infinitos dígitos. Obteniendo el número&lt;/p&gt;
+&lt;p&gt;$0.384303\dots$&lt;/p&gt;
+&lt;p&gt;El problema es que este número que acabó creando no puede aparecer en la lista ordenada original de todos los decimales que había asumido debía existir. Deberá ser distinto a cada número de la lista por lo menos en uno de sus dígitos, ya que fue construido expresamente de ese modo. Por lo tanto, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt; (a veces llamados los números decimales o el continuo de números) no se pueden contar y son un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinito no numerable&lt;/a&gt;. Así mismo, también deben ser más grande que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt; o los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_racional"&gt;números racionales&lt;/a&gt;. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; representó a este nuevo tipo de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; con el símbolo $\aleph_{1}$; ya que creaía que no debía existir otro tipo de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; que fuera mayor que el de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt; y menor que el de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt;, aunque nunca fue capaz de demostrarlo. Esta es lo que se conoce como la &lt;a href="https://es.wikipedia.org/wiki/Hip%C3%B3tesis_del_continuo"&gt;hipótisis del continuo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Este descubrimiento de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, que existen &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; de diferentes tamaños y se pueden distinguir de una manera completamente inequívoca, fue uno de los grandes descubrimientos de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;. También estaba completamente en contra de la opinión dominante de la época.&lt;/p&gt;
+&lt;h3 id="Una-jerarqu&amp;#237;a-de-infinitos"&gt;Una jerarqu&amp;#237;a de infinitos&lt;a class="anchor-link" href="#Una-jerarqu&amp;#237;a-de-infinitos"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Además de todos los grandes aportes que &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; realizó a la comprensión del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, su descubrimiento más expectacular fue que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; no sólo son incontables, sino que son insuperables!. Descubrió que debe existir una jerarquía ascendente interminable de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;. No hay uno más grande que todos que pueda contener a todos ellos. No hay un universo de universos que podemos anotar y capturar.
+&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; fue capaz de demostrar que existe una jerarquía ascendente de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; sin fin, una jerarquía infinita de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;!. Para demostrar este punto, utilizó el concepto de &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Recordemos que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; A, expresado por $P_{A}$, es el &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; formado por todos los distintos &lt;a href="https://es.wikipedia.org/wiki/Subconjunto"&gt;subconjuntos&lt;/a&gt; de A. Así por ejemplo el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; $A=\{1,2,3\}$; va a ser igual a $P_{A}=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{2,3\}, \{1,3\},\{1,2,3\}\}$.
+Un teorema importante de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; establece que si A es un &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; con k elementos, es decir que n(A) = k; entonces el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de A tiene exactamente $2^k$ elementos. En nuestro ejemplo anterior podemos ver que n(A)=3, por lo tanto $n(P_{A}) = 2^3$, lo que es igual a los 8 elementos que vimos que tiene el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de A.&lt;/p&gt;
+&lt;p&gt;Entonces, si se toma cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_infinito"&gt;conjunto infinito&lt;/a&gt;, siempre es posible generar una que es infinitamente más grande considerando a su &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt;, es decir, el conjunto que contiene todos sus subconjuntos. 
+Así, de un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_infinito"&gt;conjunto infinito&lt;/a&gt; como $\aleph_{0}$ podemos crear un conjunto infinitamente más grande mediante la formación de su conjunto potencia, $P_{\aleph_{0}}$. Luego podemos hacer lo mismo otra vez, formando el conjunto potencia de $P_{\aleph_{0}}$, el cual será infinitamente más grande que $P_{\aleph_{0}}$. Y así sucesivamente, sin fin.
+De esta forma las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt; crean una jerarquía sin fin de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; ascendentes . El &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; nunca puede ser capturado por las fórmulas. También muestra que el número de posibles verdades es &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id="Hotel-infinito"&gt;Hotel infinito&lt;a class="anchor-link" href="#Hotel-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una de las imagenes que se suele utilizar para ilustrar el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; es el relato del &lt;a href="https://es.wikipedia.org/wiki/El_hotel_infinito_de_Hilbert"&gt;hotel infinito&lt;/a&gt; ideado por el gran matemático &lt;a href="https://es.wikipedia.org/wiki/David_Hilbert"&gt;David Hilber&lt;/a&gt;, el cual explica de manera simple e intuitiva, las paradojas relacionadas con el concepto del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/El_hotel_infinito_de_Hilbert"&gt;hotel infinito&lt;/a&gt; es un hotel como cualquier otro, con la única excepción de que cuenta con un número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; de habitaciones!&lt;/p&gt;
+&lt;p&gt;Tan pronto se abrieron las puertas de este hotel la gente comenzó a abarrotarlo y pronto se encontraron con que el hotel de habitaciones infinitas se encontraba lleno de infinitos huéspedes. En ese momento surgió la primera &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradoja&lt;/a&gt;, así que se tomó como medida que los huéspedes siempre tendrían habitación asegurada pero con el acuerdo previo de que tendrían que cambiar de habitación cada vez que se les pidiera.
+Fue entonces cuando llegó un nuevo huesped al hotel que ya se encontraba lleno. El hombre pidió su habitación y el recepcionista, consciente de que no habría ningún problema, tomó un micrófono por el que avisó a todos los huéspedes que por favor revisaran el número de su habitación, le sumaran uno y se cambiaran a ese número de habitación, de esta manera el nuevo huésped pudo dormir tranquilamente en la habitación número 1. Pero, ¿qué pasó entonces con el huésped que se encontraba en la última habitación? Sencillamente no hay última habitación ya que $\infty + 1$ sigue siendo $\infty$.&lt;/p&gt;
+&lt;p&gt;La segunda &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradoja&lt;/a&gt; surgió cuando llegó un representante de una agencia de viajes solicitando hospedar a un infinito número de turistas en el hotel de infinitas habitaciones, las cuales ya estaban todas ellas ocupadas. Pero el recepcionista nuevamente no tuvo ningún problema, tomó el micrófono y pidió a todos los huéspedes que se mudaran a la habitación correspondiente al resultado de multiplicar por 2 el número de su habitación actual. De esa forma todos los huéspedes se mudaron a una habitación par, y todas las habitaciones impares quedaron libres. Como hay infinitos números impares, los infinitos turistas pudieron alojarse sin más problemas.&lt;/p&gt;
+&lt;p&gt;La tercer &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradoja&lt;/a&gt; se presentó cuando llegó otro representante de la agencia de viajes aún más preocupado que el primero y avisó que ahora la agencia tenía un infinito número de excursiones con un infinito número de turistas cada una. ¿cómo podrían hospedar a un número infinito de infinitos turistas en un hotel que ya se encontraba lleno?
+El recepcionista permaneció inmutable, tomó tranquilamente el micrófono y se comunicó solamente con las habitaciones cuyo número fuera &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;primo&lt;/a&gt; o alguna potencia de éstos ($p^n$), les pidió que elevaran el número 2 al número de la habitación en la que se encontraban ($2^{p^n}$) y se cambiaran a esa habitación.
+Entonces asignó a cada una de las excursiones un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;número primo&lt;/a&gt; (distinto de 2), a cada uno de los turistas de cada una de las excursiones un número impar (t), de manera que la habitación de cada uno de los turistas, se calculaba tomando el &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;número primo&lt;/a&gt; de su excursión (p) y elevandolo al número que les tocó dentro de su excursión (t) lo que da $p^t$.
+Existiendo un número infinito de números primos y un número infinito de números impares, fácilmente se logró hospedar a un número infinito de infinitos huéspedes dentro del &lt;a href="https://es.wikipedia.org/wiki/El_hotel_infinito_de_Hilbert"&gt;hotel infinito&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Las-paradojas-de-Zen&amp;#243;n-y-el-concepto-de-l&amp;#237;mite"&gt;Las paradojas de Zen&amp;#243;n y el concepto de l&amp;#237;mite&lt;a class="anchor-link" href="#Las-paradojas-de-Zen&amp;#243;n-y-el-concepto-de-l&amp;#237;mite"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Como venimos viendo, el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; esta repleto de &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradojas&lt;/a&gt;; y algunas de las más famosas de ellas son también de las más antiguas. Se las debemos a  &lt;a href="https://es.wikipedia.org/wiki/Zen%C3%B3n_de_Elea"&gt;Zenón de Elea&lt;/a&gt;, quien fue discípulo del filósofo &lt;a href="https://es.wikipedia.org/wiki/Parm%C3%A9nides_de_Elea"&gt;Parménides&lt;/a&gt; y por lo tanto sostenía, al igual que su maestro, que el universo era intemporal e inmutable y que por lo tanto el movimiento era solo una ilusión.
+Para sostener su tesis, &lt;a href="https://es.wikipedia.org/wiki/Zen%C3%B3n_de_Elea"&gt;Zenón de Elea&lt;/a&gt; propuso una serie de argumentos que hoy en día se conocen como las &lt;a href="https://es.wikipedia.org/wiki/Paradojas_de_Zen%C3%B3n"&gt;paradojas de Zenón&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La primera &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradoja&lt;/a&gt; pretende demostrar que el movimiento es imposible, porque si quisieramos caminar de un punto a otro, primero deberíamos cruzar la mitad de la distancia, luego la mitad de la distancia restante, luego la mitad del resto, y así sucesivamente. O sea, que si los dos puntos están a un kilómetro de distancia,  en primer lugar debemos llegar a $\frac{1}{2}$ km desde su inicio, a continuación, $\frac{3}{4}$ km desde su inicio, luego a $\frac{7}{8}$ km y así sucesivamente. Según el argumento de &lt;a href="https://es.wikipedia.org/wiki/Zen%C3%B3n_de_Elea"&gt;Zenón&lt;/a&gt; sólo se podría llegar si se toma un número infinito de pasos; y como los griegos rechazaban el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, por lo tanto deberíamos rechazar el movimiento también y concluir que este no es posible.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paradoja zenon" title="Paradoja de zenon" src="http://relopezbriega.github.io/images/zenon.png" width="500px" height="300px"&gt;&lt;/p&gt;
+&lt;p&gt;En su segunda &lt;a href="https://es.wikipedia.org/wiki/Paradoja"&gt;paradoja&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Zen%C3%B3n_de_Elea"&gt;Zenón&lt;/a&gt; crea el escenario de una carrera entre el famoso atleta Aquiles y un rival mucho más lento, una tortuga. Aquiles comienza en la posición 0, mientras que la tortuga, que sólo puede correr a la mitad de la velocidad de Aquiles, tiene una ventaja inicial de un kilómetro. Ambos comienzan a correr al mismo tiempo. De acuerdo al planteamiento de este escenario, podríamos pensar que Aquiles, al correr el doble de rápido que la tortuga, la superaría en la marca de 2 kilometros. Sin embargo, cuando Aquiles llega a la marca de  1 km, la tortuga ya ha avanzado a $1 + \frac{1}{2}$ km; cuando Aquiles llega al punto $1\frac{1}{2}$ km, la tortuga ha alcanzado $1 + \frac{1}{2} + \frac{1}{4}$ km; y así sucesivamente. Cuando, después de N pasos, Aquiles alcanza una distancia de $2 - \frac{1}{2}^{N-1}$ desde el punto inicial, la tortuga se encuentra todavía en la delantera, ya que está a una distancia de $2 - \frac{1}{2}^{N+1}$. No importa lo grande que sea N (el número de divisiones del viaje), Aquiles nunca se adelanta a la tortuga!&lt;/p&gt;
+&lt;h3 id="Resolviendo-las-paradojas"&gt;Resolviendo las paradojas&lt;a class="anchor-link" href="#Resolviendo-las-paradojas"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para poder resolver estas paradojas, debemos recurrir al &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo infinitesimal&lt;/a&gt;, y más particularmente al concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt;. El &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt; de una sucesión es la noción intuitiva de que la sucisión se aproxima arbitrariamente a un único punto o valor. Es decir, que la sucesión va a &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converger&lt;/a&gt; en un valor determinado.
+En el caso de las dos &lt;a href="https://es.wikipedia.org/wiki/Paradojas_de_Zen%C3%B3n"&gt;paradojas de Zenón&lt;/a&gt;, nos encontramos ante &lt;a href="https://es.wikipedia.org/wiki/Serie_geom%C3%A9trica"&gt;series geométricas&lt;/a&gt;, las cuales ya vimos que tienen un &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergen&lt;/a&gt; en un valor finito.
+Por tanto se puede demostrar que Aquiles realmente alcanzará a la tortuga. Los tiempos en los que Aquiles recorre la distancia que lo separa del punto anterior en el que se encontraba la tortuga son cada vez más y más pequeños (hasta el infinito más pequeños), y su suma da un resultado finito, que es el momento en que alcanzará a la tortuga.&lt;/p&gt;
+&lt;h2 id="L&amp;#237;mites-al-infinito"&gt;L&amp;#237;mites al infinito&lt;a class="anchor-link" href="#L&amp;#237;mites-al-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Como pudimos ver a lo largo de todo el artículo, el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; es un concepto muy especial. Sabemos que no podemos llegar a el, pero todavía podemos tratar de averiguar el valor de las funciones o sucesiones que tratan con el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.
+Por ejemplo, si quisieramos saber cual es el resultado de $\frac{1}{\infty}$, deberíamos responder que no existe solución, ya que el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; no es un número, y por lo tanto no podríamos determinar el resultado de esa operación. 
+Sin embargo, a pesar de que no podemos trabajar con el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; en sí mismo, podemos aproximarnos bastante a el y ver que sucede a medida que vamos dividiendo a uno por valores cada vez más grandes. Por ejemplo, si reemplazamos al $\infty$, por $x$, tendríamos una ecuación a la que podríamos ir aplicandole valores cada vez más grandes de $x$ y ver a que resultado llegamos.
+Ayudandos de nuestro buen amigo &lt;a href="http://python.org/"&gt;Python&lt;/a&gt; podríamos ver los resultados facilmente y comprobar que a medida que $x$ se hace cada vez más grande, el valor de la función $\frac{1}{x}$ se aproxima cada vez más a cero.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**-&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;  &lt;span class="c"&gt;# 1/x == x**-1&lt;/span&gt;
+
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;tabla&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;tabla&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;1/x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;tabla&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;1/x&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0.500000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;0.250000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;0.100000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;100&lt;/td&gt;
+      &lt;td&gt;0.010000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;0.001000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;10000&lt;/td&gt;
+      &lt;td&gt;0.000100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;100000&lt;/td&gt;
+      &lt;td&gt;0.000010&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;1000000&lt;/td&gt;
+      &lt;td&gt;0.000001&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Graficando 1/x&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;Graficando $\frac{1}{x}$&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;$f(x) = \frac{1}{x}$&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;$\frac{1}{x}$ tiende a cero a medida que x crece&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como nos muestran tanto los cálculos como el gráfico, a medida que vamos aumentando el valor de $x$, la función $\frac{1}{x}$ se va aproximando cada vez más a cero. Por tanto podemos conjeturar que la función $\frac{1}{x}$ tiende a cero.
+Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, si podemos decir que pasa a medida que nos vamos acercando cada vez más a él. Por tanto podríamos decir que a medida que el valor $x$ tiende a $\infty$, el valor de la función $\frac{1}{x}$, se aproxima a su &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt; cero. En el lenguaje de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;, lo expresaríamos de la siguiente forma:&lt;/p&gt;
+$$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;p&gt;El concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; es una de las herramientas principales sobre las que se sustenta el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo&lt;/a&gt;. Muchas veces, una función puede ser indefinida en un punto, pero podemos pensar en lo que pasa a medida que la función "se acerca" cada vez más a ese punto. Otras veces, la función puede ser definida en un punto, pero puede aproximarse a un límite diferente.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Con esto termina este artículo, para concluir cerremos la curva sin fin que representa al &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; con otra frase de &lt;a href="https://es.wikipedia.org/wiki/Jorge_Luis_Borges"&gt;Borges&lt;/a&gt;, que fue con quien comenzamos el artículo!&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Hay un concepto que es el corruptor y el desatinador de los otros. No hablo del Mal cuyo limitado imperio es la ética; hablo del infinito.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jorge Luis Borges - Avatares de la tortuga&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Espero les haya parecido interesante y no se hayan sentido tan desconcertados al toparse con el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; como la probe serpiente pitón de la cabecera del artículo!.&lt;/p&gt;
+&lt;p&gt;Saludos!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyInfinity.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyInfinity.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="infinito"></category></entry></feed>

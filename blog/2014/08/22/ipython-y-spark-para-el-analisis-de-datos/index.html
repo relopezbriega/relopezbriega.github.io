@@ -52,6 +52,7 @@
 
 
 <style type="text/css">
+.dataframe {font-size:80%;}
 .highlight-ipynb .hll { background-color: #ffffcc }
 .highlight-ipynb  { background: #f8f8f8; }
 .highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
@@ -261,20 +262,20 @@ jQuery(document).ready(function($) {
 </header>
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="relopezbriega" data-size="large" data-hashtags="python">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2014/08/22/ipython-y-spark-para-el-analisis-de-datos/" data-counter="right"></script>
-
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una de las nuevas estrellas en el analisis de datos masivos es <a href="http://spark.apache.org/">Apache Spark</a>. Desarrollado en <a href="http://www.scala-lang.org/">Scala</a>, <a href="http://spark.apache.org/">Apache Spark</a> es una plataforma de computación de código abierto para el análisis y procesamiento de grandes volúmenes de datos. </p>
+<p>Una de las nuevas estrellas en el analisis de datos masivos es <a href="http://spark.apache.org/">Apache Spark</a>. Desarrollado en <a href="http://www.scala-lang.org/">Scala</a>, <a href="http://spark.apache.org/">Apache Spark</a> es una plataforma de computación de código abierto para el análisis y procesamiento de grandes volúmenes de datos.</p>
 <p>Algunas de las ventajas que nos ofrece <a href="http://spark.apache.org/">Apache Spark</a> sobre otros <a href="http://es.wikipedia.org/wiki/Framework">frameworks</a>, son:</p>
 <ul>
 <li><strong>Velocidad:</strong> Sin dudas la velocidad es una de las principales fortalezas de <a href="http://spark.apache.org/">Apache Spark</a>, como esta diseñado para soportar el <a href="http://en.wikipedia.org/wiki/In-Memory_Processing">procesameinto en memoria</a>, puede alcanzar una performance sorprendente en analisis avanzados de datos. Algunos programas escritos utilizando <a href="http://spark.apache.org/">Apache Spark</a>, pueden correr hasta 100x más rápido que utilizando <a href="http://hadoop.apache.org/">Hadoop</a>.</li>
 <li><strong>Fácil de usar:</strong> Podemos escribir programas en <a href="http://python.org/">Python</a>, <a href="http://www.scala-lang.org/">Scala</a> o <a href="http://java.com/en/">Java</a> que hagan uso de las herramientas que ofrece <a href="http://spark.apache.org/">Apache Spark</a>; asismismo nos permite trabajar en forma interactiva (con <a href="http://python.org/">Python</a> o con <a href="http://www.scala-lang.org/">Scala</a>) y su <a href="http://es.wikipedia.org/wiki/Interfaz_de_programaci%C3%B3n_de_aplicaciones">API</a> es muy fácil de aprender. </li>
 <li><strong>Generalismo:</strong> El mundo del analisis de datos incluye muchos subgrupos de distinta índole, estan los que hacen un analisis investigativo, los que que realizan analisis exploratorios, los que construyen sistemas de procesamientos de datos, etc. Los usuarios de cada uno de esos subgrupos, al tener objectivos distintos, suelen utilizar una gran variedad de herramientas totalmente diferentes. <a href="http://spark.apache.org/">Apache Spark</a> nos proprociona un gran número de herramientas de alto nivel como <a href="http://spark.apache.org/sql/">Spark SQL</a>, <a href="http://spark.apache.org/mllib/">MLlib</a> para <a href="http://es.wikipedia.org/wiki/Machine_learning">machine learning</a>, <a href="http://spark.apache.org/graphx/">GraphX</a>, y <a href="http://spark.apache.org/streaming/">Spark Streaming</a>; las cuales pueden ser combinadas para crear aplicaciones multipropósito que ataquen los diferentes dominios del Analisis de datos. </li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -283,7 +284,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="rdd-o-resilient-distributed-datasets">RDD o  Resilient Distributed Datasets</h2>
+<h2 id="RDD-o--Resilient-Distributed-Datasets">RDD o  Resilient Distributed Datasets<a class="anchor-link" href="#RDD-o--Resilient-Distributed-Datasets">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -295,6 +296,7 @@ jQuery(document).ready(function($) {
 <p>En el corazón de <a href="http://spark.apache.org/">Apache Spark</a> se encuentran los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs</a>.
 Los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs</a> son una abstracción distribuída que le permite a los programadores realizar computos <a href="http://en.wikipedia.org/wiki/In-Memory_Processing">en memoria</a>  sobre grandes <a href='http://es.wikipedia.org/wiki/Cl%C3%BAster_(inform%C3%A1tica)' target='_blank'>clusters</a> de computadoras sin errores o pérdidas de información. Estan especialmente diseñados para el analisis de datos interactivo (<a href="http://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos">data mining</a>) y para la aplicacion de algoritmos iterativos (<a href="http://es.wikipedia.org/wiki/MapReduce">MapReduce</a>). En ambos casos, mantener los datos en la memoria puede mejorar el rendimiento en una gran proproción. Para lograr la tolerancia a fallos de manera eficiente, <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs</a> utiliza una forma restringida de memoria compartida. 
 Los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs</a> son los suficientemente experesivos como para capturar una gran variedad de cálculos.</p>
+
 </div>
 </div>
 </div>
@@ -303,7 +305,7 @@ Los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="instalando-apache-spark">Instalando Apache Spark</h2>
+<h2 id="Instalando-Apache-Spark">Instalando Apache Spark<a class="anchor-link" href="#Instalando-Apache-Spark">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -313,6 +315,7 @@ Los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs<
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Para instalar <a href="http://spark.apache.org/">Apache Spark</a> en forma local y poder comenzar a utilizarlo, pueden seguir los siguientes pasos:</p>
+
 </div>
 </div>
 </div>
@@ -327,37 +330,32 @@ Los <a href="http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">RDDs<
 $ sudo add-apt-repository ppa:webupd8team/java
 $ sudo apt-get update
 $ sudo apt-get install oracle-jdk7-installer
-</pre>
-</li>
+</pre></li>
 <li><p>Luego nos instalamos las herramientas para trabajar con <a href="http://www.scala-lang.org/">Scala</a>, <a href="http://www.scala-sbt.org/">SBT</a> con el siguiente comando:</p>
 <pre>
 $ sudo apt-get install sbt
-</pre>
-</li>
+</pre></li>
 <li><p>Despues nos descargamos la última versión de <a href="http://spark.apache.org/">Apache Spark</a> desde <a href="http://d3kbcqa49mib13.cloudfront.net/spark-1.0.2.tgz">aquí</a></p>
 <pre></pre></li>
 <li><p>Ahora descomprimimos el archivo:</p>
 <pre>
 $ tar -xvf spark-1.0.2.tgz 
-</pre>
-</li>
-<li><p>Nos movemos a la carpeta recien descomprimida y realizamos la compilación de <a href="http://spark.apache.org/">Apache Spark</a> utilizando <a href="http://www.scala-sbt.org/">SBT</a>. (tener paciencia, es sabido que <a href="http://www.scala-lang.org/">Scala</a> tarda mucho en compilar) </p>
+</pre></li>
+<li><p>Nos movemos a la carpeta recien descomprimida y realizamos la compilación de <a href="http://spark.apache.org/">Apache Spark</a> utilizando <a href="http://www.scala-sbt.org/">SBT</a>. (tener paciencia, es sabido que <a href="http://www.scala-lang.org/">Scala</a> tarda mucho en compilar)</p>
 <pre>
 $ cd spark-1.0.2
 $ sbt/sbt assembly
-</pre>
-</li>
+</pre></li>
 <li><p>Opcionalmente, para facilitar la utilización de <a href="http://spark.apache.org/">Apache Spark</a> desde la línea de comando, yo modifique mi archivo .bashrc para incluir los siguientes alias:</p>
 <pre>
-$ echo "alias ipyspark='IPYTHON_OPTS="notebook --pylab inline" ~/spark-1.0.2/bin/pyspark'" &gt;&gt; ~/.bashrc
+$ echo "alias ipyspark='IPYTHON_OPTS="notebook --pylab inline" ~/spark-1.0.2/bin/pyspark'" >> ~/.bashrc
 $ echo "alias pyspark='~/spark-1.0.2/bin/pyspark'" >> ~/.bashrc
 $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
-</pre>
-</li>
+</pre></li>
 <li><p>Ahora simplemente tipeando <code>pyspark</code> nos abre el interprete interactivo de <a href="http://python.org/">Python</a> con <a href="http://spark.apache.org/">Apache Spark</a>, tipeando <code>spark</code> nos abre el interprete interactivo de <a href="http://www.scala-lang.org/">Scala</a>, y tipeando <code>ipyspark</code> nos abre el <a href="http://ipython.org/notebook.html">notebook de Ipython</a> integrado con <a href="http://spark.apache.org/">Apache Spark</a>!</p>
-<pre>$ ./bin/pyspark #o pyspark si creamos el alias</pre>
-</li>
+<pre>$ ./bin/pyspark #o pyspark si creamos el alias</pre></li>
 </ol>
+
 </div>
 </div>
 </div>
@@ -366,7 +364,7 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ejemplo-de-utilizaci-n-de-spark-con-ipython">Ejemplo de utilización de Spark con Ipython</h2>
+<h2 id="Ejemplo-de-utilizaci&#243;n-de-Spark-con-Ipython">Ejemplo de utilizaci&#243;n de Spark con Ipython<a class="anchor-link" href="#Ejemplo-de-utilizaci&#243;n-de-Spark-con-Ipython">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -376,20 +374,19 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ahora llegó el momento de ensuciarse las manos y probar <a href="http://spark.apache.org/">Apache Spark</a>, vamos a hacer el típico ejercicio de wordcounts; en este caso vamos a contar todas las palabras que posee la Biblia en su versión en inglés y vamos a ver cuantas veces aparece la palabra Dios(God). Para esto nos descargamos la versión de la Biblia en texto plano del <a href="http://www.gutenberg.org/ebooks/10">proyecto Gutemberg</a>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comenzamos con algunos imports.</span>
 <span class="c"># No necesitamos importar pyspark porque ya se autoimporta como sc.</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
 </div>
@@ -399,9 +396,7 @@ In&nbsp;[1]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[2]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">lineas</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s">&quot;/home/raul/spark-1.0.2/examples/data/Bible.txt&quot;</span><span class="p">)</span> <span class="c"># usamos la función textFile para subir el texto a Spark</span>
@@ -414,9 +409,7 @@ In&nbsp;[2]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Mapeamos las funciones para realizar la cuenta de las palabras y generamos el RDD.</span>
@@ -432,9 +425,7 @@ In&nbsp;[3]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creamos la lista con las palabras y su respectiva frecuencia.</span>
@@ -448,9 +439,7 @@ In&nbsp;[4]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[5]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creamos un DataFrame de Pandas para facilitar el manejo de los datos.</span>
@@ -464,9 +453,7 @@ In&nbsp;[5]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[6]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Nos quedamos solo con las palabras que hacen referencia a Dios</span>
@@ -482,10 +469,9 @@ In&nbsp;[6]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[6]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
-<div class="output_html rendered_html output_subarea output_pyout">
+<div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -529,9 +515,7 @@ In&nbsp;[6]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[7]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Realizamos un gráfico de barras sobre los datos</span>
@@ -546,14 +530,11 @@ In&nbsp;[7]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-&lt;matplotlib.axes.AxesSubplot at 0x7f071e10ea10&gt;
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes.AxesSubplot at 0x7f071e10ea10&gt;</pre>
 </div>
 
 </div>
@@ -716,9 +697,7 @@ SUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[8]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Realizamos la sumatoria de las 4 palabras combinadas</span>
@@ -733,16 +712,13 @@ In&nbsp;[8]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-palabras    FATHERGODLORDJESUS
+<div class="output_text output_subarea output_execute_result">
+<pre>palabras    FATHERGODLORDJESUS
 cuenta                   11485
-dtype: object
-</pre>
+dtype: object</pre>
 </div>
 
 </div>
@@ -757,6 +733,7 @@ dtype: object
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como demuestra el ejemplo, Dios sería nombrado en la Biblia, ya sea como lord, god, jesus o father; unas 11485 veces!</p>
+
 </div>
 </div>
 </div>
@@ -765,7 +742,7 @@ dtype: object
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="conclusi-n">Conclusión</h2>
+<h2 id="Conclusi&#243;n">Conclusi&#243;n<a class="anchor-link" href="#Conclusi&#243;n">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -778,6 +755,7 @@ dtype: object
 <p>Para más información sobre <a href="http://spark.apache.org/">Apache Spark</a>, pueden visitar su la sección de <a href="http://spark.apache.org/examples.html">ejemplos</a> de su página oficial.</p>
 <p>Espero les haya sido de utilidad este <a href="(http://ipython.org/notebook.html">notebook</a>).</p>
 <p>Saludos!!</p>
+
 </div>
 </div>
 </div>
@@ -787,6 +765,7 @@ dtype: object
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyspark.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyspark.ipynb">nbviewer</a>.</em></p>
+
 </div>
 </div>
 </div></p></div>
@@ -811,7 +790,7 @@ dtype: object
   </section>
 </div>
 <aside class="sidebar">
-<section>
+  <section>
     <h1>Most Popular</h1>
     <ul id="recent_posts">
       <li class="post">
@@ -835,6 +814,9 @@ dtype: object
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/">Números complejos con Python</a>
       </li>
       <li class="post">
@@ -846,15 +828,13 @@ dtype: object
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/08/28/introduccion-a-finanzas-con-python/">Introducción a Finanzas con Python</a>
-      </li>
     </ul>
   </section>
   <section>
       
     <h1>Categories</h1>
     <ul id="recent_posts">
+        <li><a href="http://relopezbriega.github.io/category/matematica.html">matematica</a></li>
         <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
     </ul>
   </section>
@@ -862,7 +842,7 @@ dtype: object
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>
@@ -890,7 +870,7 @@ dtype: object
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Raul E. Lopez Briega -
+  Copyright &copy; 2015 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

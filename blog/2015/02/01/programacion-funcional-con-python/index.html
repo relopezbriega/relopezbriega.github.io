@@ -52,6 +52,7 @@
 
 
 <style type="text/css">
+.dataframe {font-size:80%;}
 .highlight-ipynb .hll { background-color: #ffffcc }
 .highlight-ipynb  { background: #f8f8f8; }
 .highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
@@ -267,8 +268,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="introducci-n">Introducción</h2>
-<p>Es bien sabido que existen muchas formas de resolver un mismo problema, ésto, llevado al mundo de la programación, a generado que existan o co-existan diferentes <em><a href="http://es.wikipedia.org/wiki/Estilo_de_programaci%C3%B3n">estilos</a></em> en los que podemos programar, los cuales son llamados generalmente <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em>. Así, podemos encontrar basicamente 4 <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em> principales de programación:</p>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Es bien sabido que existen muchas formas de resolver un mismo problema, ésto, llevado al mundo de la programación, a generado que existan o co-existan diferentes <em><a href="http://es.wikipedia.org/wiki/Estilo_de_programaci%C3%B3n">estilos</a></em> en los que podemos programar, los cuales son llamados generalmente <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em>. Así, podemos encontrar basicamente 4 <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em> principales de programación:</p>
 <ul>
 <li><strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_imperativa">Programación imperativa</a></strong>: Este suele ser el primer <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigma</a></em> con el que nos encontramos, el mismo describe a la programación en términos de un conjunto de intrucciones que modifican el <em>estado</em> del programa y especifican claramente <em>cómo</em> se deben realiazar las cosas y modificar ese <em>estado</em>. Este <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigma</a></em> esta representado por el lenguaje <a href="http://es.wikipedia.org/wiki/C_(lenguaje_de_programaci%C3%B3n)#" target="_blank">C</a>.</li>
 </ul>
@@ -282,6 +282,7 @@ jQuery(document).ready(function($) {
 <li><strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a></strong>: Este último <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigma</a></em> enfatiza la utilización de <em>funciones puras</em>, es decir, funciones que no tengan efectos secundarios, que no manejan datos mutables o de <em>estado</em>. Esta en clara contraposición con la <em><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_imperativa">programación imperativa</a></em>. Uno de sus principales representantes es el lenguaje <a href="https://wiki.haskell.org/Haskell">Haskell</a> (lenguaje, que compite en belleza, elegancia y expresibidad con <a href="http://python.org/">Python</a>!).</li>
 </ul>
 <p>La mayoría de los lenguajes modernos son multiparadigma, es decir, nos permiten programar utilizando más de uno de los <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em> arriba descriptos. En este artículo voy a intentar explicar como podemos aplicar la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> con <a href="http://python.org/">Python</a>.</p>
+
 </div>
 </div>
 </div>
@@ -290,13 +291,13 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="-por-qu-programaci-n-funcional-">¿Por qué Programación Funcional?</h2>
-<p>En estos últimos años hemos visto el resurgimiento de la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a>, nuevos lenguajes como <a href="http://www.scala-lang.org/">Scala</a> y <a href="https://developer.apple.com/swift/">Apple Swift</a> ya traen por defecto montones de herramientas para facilitar el  <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigma</a> funcional</em>. La principales razones del crecimiento de la popularidad de la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> son:</p>
+<h2 id="&#191;Por-qu&#233;-Programaci&#243;n-Funcional?">&#191;Por qu&#233; Programaci&#243;n Funcional?<a class="anchor-link" href="#&#191;Por-qu&#233;-Programaci&#243;n-Funcional?">&#182;</a></h2><p>En estos últimos años hemos visto el resurgimiento de la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a>, nuevos lenguajes como <a href="http://www.scala-lang.org/">Scala</a> y <a href="https://developer.apple.com/swift/">Apple Swift</a> ya traen por defecto montones de herramientas para facilitar el  <em><a href="http://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigma</a> funcional</em>. La principales razones del crecimiento de la popularidad de la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> son:</p>
 <ol>
 <li>Los programas escritos en un <em>estilo funcional</em> son más fáciles de testear y <a href="http://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas">depurar</a>.</li>
 <li>Por su característica modular facilita la <a href="http://es.wikipedia.org/wiki/Computaci%C3%B3n_concurrente">computación concurrente</a> y <a href="http://es.wikipedia.org/wiki/Computaci%C3%B3n_paralela">paralela</a>; permitiendonos obtener muchas más ventajas de los <a href="http://es.wikipedia.org/wiki/Procesador_multin%C3%BAcleo">procesadores multinúcleo</a> modernos.</li>
 <li>El <em>estilo funcional</em> se lleva muy bien con los datos; permitiendonos crear algoritmos y programas más expresivos para manejar la enorme cantidad de datos de la <a href="http://es.wikipedia.org/wiki/Big_data">Big Data</a>.(Aplicar el estilo funcional me suele recordar a utilizar las formulas en <a href="http://relopezbriega.com.ar/excel/">Excel</a>).</li>
 </ol>
+
 </div>
 </div>
 </div>
@@ -305,8 +306,8 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="programaci-n-funcional-con-python">Programación Funcional con Python</h2>
-<p>Antes de comenzar con ejemplos les voy a mencionar algunos de los modulos que que nos facilitan la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> en <a href="http://python.org/">Python</a>, ellos son:</p>
+<h2 id="Programaci&#243;n-Funcional-con-Python">Programaci&#243;n Funcional con Python<a class="anchor-link" href="#Programaci&#243;n-Funcional-con-Python">&#182;</a></h2><p>Antes de comenzar con ejemplos les voy a mencionar algunos de los modulos que que nos facilitan la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> en <a href="http://python.org/">Python</a>, ellos son:</p>
+
 </div>
 </div>
 </div>
@@ -322,10 +323,10 @@ jQuery(document).ready(function($) {
 <li><strong><a href="https://docs.python.org/3/library/operator.html">Operator</a></strong>: Este modulo también la vamos a encontrar ya instalado con <a href="http://python.org/">Python</a>, en el vamos a poder encontrar a los principales operadores de <a href="http://python.org/">Python</a> convertidos en funciones.</li>
 </ul>
 <ul>
-<li><strong><a href="https://docs.python.org/3/library/functools.html">Functools</a></strong>: También ya incluido dentro de <a href="http://python.org/">Python</a> este modulo nos ayuda a crear <em><a href="http://es.wikipedia.org/wiki/Funci%C3%B3n_de_orden_superior">Funciones de orden superio</a></em>, es decir, funciones que actuan sobre o nos devuelven otras funciones.</li>
+<li><strong><a href="https://docs.python.org/3/library/functools.html">Functools</a></strong>: También ya incluido dentro de <a href="http://python.org/">Python</a> este modulo nos ayuda a crear <em><a href="http://es.wikipedia.org/wiki/Funci%C3%B3n_de_orden_superior">Funciones de orden superior</a></em>, es decir, funciones que actuan sobre o nos devuelven otras funciones.</li>
 </ul>
 <ul>
-<li><strong><a href="https://github.com/kachayev/fn.py">Fn</a></strong>: Este modulo, creado por <a href="https://github.com/kachayev">Alexey Kachayev</a>, brinda a <a href="http://python.org/">Python</a> las <em>&quot;baterias&quot;</em> adicionales para hacer el <em>estilo funcional</em> de programación mucho más fácil.</li>
+<li><strong><a href="https://github.com/kachayev/fn.py">Fn</a></strong>: Este modulo, creado por <a href="https://github.com/kachayev">Alexey Kachayev</a>, brinda a <a href="http://python.org/">Python</a> las <em>"baterias"</em> adicionales para hacer el <em>estilo funcional</em> de programación mucho más fácil.</li>
 </ul>
 <ul>
 <li><strong><a href="https://github.com/pytoolz/cytoolz">Cytoolz</a></strong>: Modulo creado por <a href="https://github.com/eriknw">Erik Welch</a> que también nos proporciona varias herramientas para la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a>, especialmente orientado a operaciones de analisis de datos.</li>
@@ -333,6 +334,7 @@ jQuery(document).ready(function($) {
 <ul>
 <li><strong><a href="https://github.com/lihaoyi/macropy">Macropy</a></strong>: Este modulo, creado por <a href="https://github.com/lihaoyi">Li Haoyi</a> trae a <a href="http://python.org/">Python</a> características propias de los <em>lenguajes puramente funcionales</em>, como ser, <em><a href="http://es.wikipedia.org/wiki/B%C3%BAsqueda_de_patrones">pattern matching</a></em>, <em><a href="http://en.wikipedia.org/wiki/Tail_call">tail call optimization</a></em>, y <em><a href="http://en.wikipedia.org/wiki/Scala_%28programming_language%29#Case_classes_and_pattern_matching">case classes</a></em>.</li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -341,7 +343,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ejemplos">Ejemplos</h2>
+<h2 id="Ejemplos">Ejemplos<a class="anchor-link" href="#Ejemplos">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -350,22 +352,19 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="utilizando-map-reduce-filter-y-zip">Utilizando Map, Reduce, Filter y Zip</h3>
-<p>Cuando tenemos que realizar operaciones sobre <em>listas</em>, en lugar de utilizar los clásicos <em>loops</em>, podemos utilizar las funciones Map, Reduce, Filter y Zip.</p>
-<h4 id="map">Map</h4>
-<p>La función Map nos permite aplicar una operacion sobre cada uno de los items de una <em>lista</em>. El primer argumento es la <em>función</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+<h3 id="Utilizando-Map,-Reduce,-Filter-y-Zip">Utilizando Map, Reduce, Filter y Zip<a class="anchor-link" href="#Utilizando-Map,-Reduce,-Filter-y-Zip">&#182;</a></h3><p>Cuando tenemos que realizar operaciones sobre <em>listas</em>, en lugar de utilizar los clásicos <em>loops</em>, podemos utilizar las funciones Map, Reduce, Filter y Zip.</p>
+<h4 id="Map">Map<a class="anchor-link" href="#Map">&#182;</a></h4><p>La función Map nos permite aplicar una operacion sobre cada uno de los items de una <em>lista</em>. El primer argumento es la <em>función</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#creamos una lista de números del 1 al 10</span>
-<span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">items</span>
 </pre></div>
 
@@ -377,14 +376,11 @@ In&nbsp;[1]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[1]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</pre>
 </div>
 
 </div>
@@ -395,9 +391,7 @@ In&nbsp;[1]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[2]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#creamos una lista de los cuadrados de la lista items.</span>
@@ -417,14 +411,11 @@ In&nbsp;[2]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[2]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -435,9 +426,7 @@ In&nbsp;[2]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Cuadrados utilizando Map.</span>
@@ -454,14 +443,11 @@ In&nbsp;[3]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[3]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -477,18 +463,17 @@ In&nbsp;[3]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver, al utilizar map las lineas de código se reducen y nuestro programa es mucho más simple de comprender. En el ejemplo le estamos pasando a map una <em>funcion anonima</em> o <em>lambda</em>. Esta es otra característica que nos ofrece <a href="http://python.org/">Python</a> para la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a>.
 Map tambien puede ser utilizado con funciones de más de un argumento y más de una lista, por ejemplo:</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#importamos pow.</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="nb">pow</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="nb">pow</span>
 </pre></div>
 
 </div>
@@ -498,9 +483,7 @@ In&nbsp;[4]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[5]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#como vemos la función pow toma dos argumentos, un número y su potencia.</span>
@@ -515,14 +498,11 @@ In&nbsp;[5]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-8.0
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>8.0</pre>
 </div>
 
 </div>
@@ -533,9 +513,7 @@ In&nbsp;[5]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[6]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#si tenemos las siguientes listas </span>
@@ -550,9 +528,7 @@ In&nbsp;[6]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[7]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#podemos aplicar map con pow y las dos listas.</span>
@@ -569,14 +545,11 @@ In&nbsp;[7]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[8.0, 9.0, 256.0]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[8.0, 9.0, 256.0]</pre>
 </div>
 
 </div>
@@ -590,16 +563,14 @@ In&nbsp;[7]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="reduce">Reduce</h4>
-<p>La función Reduce reduce los valores de la <em>lista</em> a un solo valor aplicandoles una <em>funcion reductora</em>. El primer argumento es la <em>función reductora</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+<h4 id="Reduce">Reduce<a class="anchor-link" href="#Reduce">&#182;</a></h4><p>La función Reduce reduce los valores de la <em>lista</em> a un solo valor aplicandoles una <em>funcion reductora</em>. El primer argumento es la <em>función reductora</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[8]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Sumando los valores de la lista items.</span>
@@ -619,14 +590,11 @@ In&nbsp;[8]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-55
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>55</pre>
 </div>
 
 </div>
@@ -637,16 +605,14 @@ In&nbsp;[8]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[9]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Suma utilizando Reduce.</span>
 <span class="c">#Forma funcional</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span> <span class="c">#en python3 reduce se encuentra en modulo functools</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span> <span class="c">#en python3 reduce se encuentra en modulo functools</span>
 
-<span class="n">suma</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 <span class="n">suma</span>
 </pre></div>
 
@@ -658,14 +624,11 @@ In&nbsp;[9]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-55
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>55</pre>
 </div>
 
 </div>
@@ -680,18 +643,17 @@ In&nbsp;[9]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>La función Reduce también cuenta con un tercer argumento que es el valor inicial o default. Por ejemplo si quisieramos sumarle 10 a la suma de los elementos de la lista items, solo tendríamos que agregar el tercer argumento.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[10]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#10 + suma items</span>
-<span class="n">suma10</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">suma10</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">suma10</span>
 </pre></div>
 
@@ -703,14 +665,11 @@ In&nbsp;[10]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-65
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>65</pre>
 </div>
 
 </div>
@@ -724,16 +683,14 @@ In&nbsp;[10]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="filter">Filter</h4>
-<p>La función Filter nos ofrece una forma muy elegante de filtrar elementos de una lista.El primer argumento es la <em>función filtradora</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+<h4 id="Filter">Filter<a class="anchor-link" href="#Filter">&#182;</a></h4><p>La función Filter nos ofrece una forma muy elegante de filtrar elementos de una lista.El primer argumento es la <em>función filtradora</em> que vamos a aplicar y el segundo argumento es la lista.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[11]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Numeros pares de la lista items.</span>
@@ -754,14 +711,11 @@ In&nbsp;[11]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[2, 4, 6, 8, 10]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[2, 4, 6, 8, 10]</pre>
 </div>
 
 </div>
@@ -772,9 +726,7 @@ In&nbsp;[11]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[12]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Pares utilizando Filter</span>
@@ -791,14 +743,11 @@ In&nbsp;[12]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[12]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[2, 4, 6, 8, 10]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[2, 4, 6, 8, 10]</pre>
 </div>
 
 </div>
@@ -812,16 +761,14 @@ In&nbsp;[12]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="zip">Zip</h4>
-<p>Zip es una función para reorganizar listas. Como parámetros admite un conjunto de listas. Lo hace es tomar el elemento <em>iésimo</em> de cada lista y unirlos en una <em><a href="http://es.wikipedia.org/wiki/Tupla">tupla</a></em>, después une todas las <em><a href="http://es.wikipedia.org/wiki/Tupla">tuplas</a></em> en una sola lista.</p>
+<h4 id="Zip">Zip<a class="anchor-link" href="#Zip">&#182;</a></h4><p>Zip es una función para reorganizar listas. Como parámetros admite un conjunto de listas. Lo hace es tomar el elemento <em>iésimo</em> de cada lista y unirlos en una <em><a href="http://es.wikipedia.org/wiki/Tupla">tupla</a></em>, después une todas las <em><a href="http://es.wikipedia.org/wiki/Tupla">tuplas</a></em> en una sola lista.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[13]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Ejemplo de zip</span>
@@ -836,9 +783,7 @@ In&nbsp;[13]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[14]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#zip une cada nombre con su apellido en una lista de tuplas.</span>
@@ -854,14 +799,11 @@ In&nbsp;[14]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[14]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;Raul&apos;, &apos;Lopez Briega&apos;), (&apos;Pedro&apos;, &apos;Perez&apos;), (&apos;Sofia&apos;, &apos;Gonzalez&apos;)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;Raul&apos;, &apos;Lopez Briega&apos;), (&apos;Pedro&apos;, &apos;Perez&apos;), (&apos;Sofia&apos;, &apos;Gonzalez&apos;)]</pre>
 </div>
 
 </div>
@@ -875,16 +817,14 @@ In&nbsp;[14]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="removiendo-efectos-secundarios">Removiendo Efectos Secundarios</h3>
-<p>Una de las buenas practicas que hace al <em>estilo funcional</em> es siempre tratar de evitar los <em>efectos secundarios</em>, es decir, evitar que nuestran funciones modifiquen los valores de sus parametros, así en lugar de escribir código como el siguiente: </p>
+<h3 id="Removiendo-Efectos-Secundarios">Removiendo Efectos Secundarios<a class="anchor-link" href="#Removiendo-Efectos-Secundarios">&#182;</a></h3><p>Una de las buenas practicas que hace al <em>estilo funcional</em> es siempre tratar de evitar los <em>efectos secundarios</em>, es decir, evitar que nuestran funciones modifiquen los valores de sus parametros, así en lugar de escribir código como el siguiente:</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[15]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Funcion que no sigue las buenas practias de la programacion funcional.</span>
@@ -906,14 +846,13 @@ In&nbsp;[15]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Deberíamos escribir código como el siguiente, el cual evita los efectos secundarios:</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[16]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Version funcional de la funcion anterior.</span>
@@ -928,9 +867,7 @@ In&nbsp;[16]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[17]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Aplicando fcuadrados sobre items.</span>
@@ -945,14 +882,11 @@ In&nbsp;[17]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[17]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -963,9 +897,7 @@ In&nbsp;[17]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[18]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#items no se modifico</span>
@@ -980,14 +912,11 @@ In&nbsp;[18]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[18]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</pre>
 </div>
 
 </div>
@@ -998,9 +927,7 @@ In&nbsp;[18]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[19]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#aplicando cuadrados sobre items</span>
@@ -1015,14 +942,11 @@ In&nbsp;[19]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[19]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -1033,9 +957,7 @@ In&nbsp;[19]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[20]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Esta función tiene efecto secundario.</span>
@@ -1051,14 +973,11 @@ In&nbsp;[20]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[20]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -1073,6 +992,7 @@ In&nbsp;[20]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Al escribir funciones que no tengan efectos secundarios nos vamos a ahorrar muchos dolores de cabeza ocasionados por la modificación involuntaria de objetos.</p>
+
 </div>
 </div>
 </div>
@@ -1081,20 +1001,18 @@ In&nbsp;[20]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="utilizando-el-modulo-fn-py">Utilizando el modulo Fn.py</h3>
-<p>Algunas de las cosas que nos ofrece este modulo son: Estructuras de datos inmutables, lambdas al estilo de <a href="http://www.scala-lang.org/">Scala</a>, <em><a href="http://es.wikipedia.org/wiki/Evaluaci%C3%B3n_perezosa">lazy evaluation</a></em> de <em><a href="http://en.wikipedia.org/wiki/Stream_processing">streams</a></em>, nuevas <em><a href="http://es.wikipedia.org/wiki/Funci%C3%B3n_de_orden_superior">Funciones de orden superio</a></em>, entre otras.</p>
+<h3 id="Utilizando-el-modulo-Fn.py">Utilizando el modulo Fn.py<a class="anchor-link" href="#Utilizando-el-modulo-Fn.py">&#182;</a></h3><p>Algunas de las cosas que nos ofrece este modulo son: Estructuras de datos inmutables, lambdas al estilo de <a href="http://www.scala-lang.org/">Scala</a>, <em><a href="http://es.wikipedia.org/wiki/Evaluaci%C3%B3n_perezosa">lazy evaluation</a></em> de <em><a href="http://en.wikipedia.org/wiki/Stream_processing">streams</a></em>, nuevas <em><a href="http://es.wikipedia.org/wiki/Funci%C3%B3n_de_orden_superior">Funciones de orden superior</a></em>, entre otras.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[21]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Lambdas al estilo scala</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">_</span>
 
 <span class="p">(</span><span class="n">_</span> <span class="o">+</span> <span class="n">_</span><span class="p">)(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -1107,14 +1025,11 @@ In&nbsp;[21]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[21]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-13
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>13</pre>
 </div>
 
 </div>
@@ -1125,12 +1040,10 @@ In&nbsp;[21]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[22]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1140,9 +1053,7 @@ In&nbsp;[22]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[23]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">cuadrados</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span> <span class="n">_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
@@ -1157,14 +1068,11 @@ In&nbsp;[23]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[23]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -1175,13 +1083,11 @@ In&nbsp;[23]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[24]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Streams</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">Stream</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">Stream</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">s</span>
@@ -1195,14 +1101,11 @@ In&nbsp;[24]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[24]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-&lt;fn.stream.Stream at 0x7f873c1d7a70&gt;
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;fn.stream.Stream at 0x7f873c1d7a70&gt;</pre>
 </div>
 
 </div>
@@ -1213,9 +1116,7 @@ In&nbsp;[24]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[25]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1229,14 +1130,11 @@ In&nbsp;[25]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[25]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[1, 2, 3, 4, 5]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4, 5]</pre>
 </div>
 
 </div>
@@ -1247,9 +1145,7 @@ In&nbsp;[25]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[26]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1263,14 +1159,11 @@ In&nbsp;[26]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[26]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-2
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
 </div>
 
 </div>
@@ -1281,9 +1174,7 @@ In&nbsp;[26]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[27]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
@@ -1297,14 +1188,11 @@ In&nbsp;[27]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[27]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-&lt;fn.stream.Stream at 0x7f873c1d7a70&gt;
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;fn.stream.Stream at 0x7f873c1d7a70&gt;</pre>
 </div>
 
 </div>
@@ -1315,9 +1203,7 @@ In&nbsp;[27]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[28]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
@@ -1331,14 +1217,11 @@ In&nbsp;[28]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[28]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-7
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>7</pre>
 </div>
 
 </div>
@@ -1349,14 +1232,12 @@ In&nbsp;[28]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[29]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Stream fibonacci</span>
-<span class="kn">from</span> <span class="nn">fn.iters</span> <span class="kn">import</span> <span class="n">take</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">imap</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
+<span class="kn">from</span> <span class="nn">fn.iters</span> <span class="k">import</span> <span class="n">take</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">imap</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
 <span class="n">fib</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">imap</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
@@ -1373,14 +1254,11 @@ In&nbsp;[29]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[29]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</pre>
 </div>
 
 </div>
@@ -1391,9 +1269,7 @@ In&nbsp;[29]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[30]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#elemento 20 de la secuencia fibonacci</span>
@@ -1408,14 +1284,11 @@ In&nbsp;[30]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[30]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-6765
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>6765</pre>
 </div>
 
 </div>
@@ -1426,9 +1299,7 @@ In&nbsp;[30]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[31]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#elementos 40 al 45 de la secuencia fibonacci</span>
@@ -1443,14 +1314,11 @@ In&nbsp;[31]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[31]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[102334155, 165580141, 267914296, 433494437, 701408733]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[102334155, 165580141, 267914296, 433494437, 701408733]</pre>
 </div>
 
 </div>
@@ -1461,14 +1329,12 @@ In&nbsp;[31]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[32]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Funciones de orden superior</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">F</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c">#operadores de suma y multiplicacion</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c">#operadores de suma y multiplicacion</span>
 
 <span class="c">#composición de funciones</span>
 <span class="n">F</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">1</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
@@ -1482,14 +1348,11 @@ In&nbsp;[32]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[32]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-11
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
 </div>
 
 </div>
@@ -1500,9 +1363,7 @@ In&nbsp;[32]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[33]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#f es una funcion que llama a otra funcion.</span>
@@ -1516,9 +1377,7 @@ In&nbsp;[33]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[34]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#cada valor de la lista primero se multiplica por 100 y luego</span>
@@ -1534,14 +1393,11 @@ In&nbsp;[34]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[34]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[5, 105, 205, 305]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[5, 105, 205, 305]</pre>
 </div>
 
 </div>
@@ -1552,9 +1408,7 @@ In&nbsp;[34]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[35]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">func</span> <span class="o">=</span> <span class="n">F</span><span class="p">()</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">_</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">sum</span>
@@ -1567,14 +1421,12 @@ In&nbsp;[35]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[36]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#func primero filtra los valores menores a 6</span>
 <span class="c">#y luego los suma.</span>
-<span class="n">func</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">func</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1585,14 +1437,11 @@ In&nbsp;[36]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[36]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-15
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>15</pre>
 </div>
 
 </div>
@@ -1606,16 +1455,14 @@ In&nbsp;[36]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="utilizando-el-modulo-cytoolz">Utilizando el modulo cytoolz</h3>
-<p>Este modulo nos provee varias herramienta para trabajar con funtiones, iterados y diccionarios.</p>
+<h3 id="Utilizando-el-modulo-cytoolz">Utilizando el modulo cytoolz<a class="anchor-link" href="#Utilizando-el-modulo-cytoolz">&#182;</a></h3><p>Este modulo nos provee varias herramienta para trabajar con funtiones, iterados y diccionarios.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[37]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Datos a utilizar en los ejemplos</span>
@@ -1633,12 +1480,10 @@ In&nbsp;[37]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[38]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz.curried</span> <span class="kn">import</span> <span class="n">pipe</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">filter</span> <span class="k">as</span> <span class="n">cfilter</span><span class="p">,</span> <span class="n">get</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz.curried</span> <span class="k">import</span> <span class="n">pipe</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">filter</span> <span class="k">as</span> <span class="n">cfilter</span><span class="p">,</span> <span class="n">get</span>
 <span class="c">#seleccionando el id y el nombre de los que tienen un balance mayor a 150</span>
 <span class="n">pipe</span><span class="p">(</span><span class="n">cuentas</span><span class="p">,</span> <span class="n">cfilter</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">sexo</span><span class="p">):</span> <span class="n">balance</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">),</span>
      <span class="n">cmap</span><span class="p">(</span><span class="n">get</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])),</span>
@@ -1653,14 +1498,11 @@ In&nbsp;[38]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[38]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]</pre>
 </div>
 
 </div>
@@ -1671,9 +1513,7 @@ In&nbsp;[38]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[39]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#este mismo resultado tambien lo podemos lograr con las listas por comprensión.</span>
@@ -1690,14 +1530,11 @@ In&nbsp;[39]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[39]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]</pre>
 </div>
 
 </div>
@@ -1708,12 +1545,10 @@ In&nbsp;[39]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[40]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz</span> <span class="kn">import</span> <span class="n">groupby</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">groupby</span>
 
 <span class="c">#agrupando por sexo </span>
 <span class="n">groupby</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">cuentas</span><span class="p">)</span>
@@ -1727,15 +1562,12 @@ In&nbsp;[40]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[40]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-{&apos;F&apos;: [(1, &apos;Alice&apos;, 100, &apos;F&apos;), (5, &apos;Edith&apos;, 300, &apos;F&apos;)],
- &apos;M&apos;: [(2, &apos;Bob&apos;, 200, &apos;M&apos;), (3, &apos;Charlie&apos;, 150, &apos;M&apos;), (4, &apos;Dennis&apos;, 50, &apos;M&apos;)]}
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;F&apos;: [(1, &apos;Alice&apos;, 100, &apos;F&apos;), (5, &apos;Edith&apos;, 300, &apos;F&apos;)],
+ &apos;M&apos;: [(2, &apos;Bob&apos;, 200, &apos;M&apos;), (3, &apos;Charlie&apos;, 150, &apos;M&apos;), (4, &apos;Dennis&apos;, 50, &apos;M&apos;)]}</pre>
 </div>
 
 </div>
@@ -1746,13 +1578,11 @@ In&nbsp;[40]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[41]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#utilizando reduceby</span>
-<span class="kn">from</span> <span class="nn">cytoolz</span> <span class="kn">import</span> <span class="n">reduceby</span>
+<span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">reduceby</span>
 
 <span class="k">def</span> <span class="nf">iseven</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
@@ -1771,14 +1601,11 @@ In&nbsp;[41]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[41]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-{False: 4, True: 6}
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>{False: 4, True: 6}</pre>
 </div>
 
 </div>
@@ -1792,16 +1619,14 @@ In&nbsp;[41]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ordenando-objectos-con-operator-itemgetter-attrgetter-y-methodcaller">Ordenando objectos con operator itemgetter, attrgetter y methodcaller</h3>
-<p>Existen tres funciones dignas de mención en el modulo operator, las cuales nos permiten ordenar todo tipo de objetos en forma muy sencilla, ellas son itemgetter, attrgetter y methodcaller.</p>
+<h3 id="Ordenando-objectos-con-operator-itemgetter,-attrgetter-y-methodcaller">Ordenando objectos con operator itemgetter, attrgetter y methodcaller<a class="anchor-link" href="#Ordenando-objectos-con-operator-itemgetter,-attrgetter-y-methodcaller">&#182;</a></h3><p>Existen tres funciones dignas de mención en el modulo operator, las cuales nos permiten ordenar todo tipo de objetos en forma muy sencilla, ellas son itemgetter, attrgetter y methodcaller.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[42]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Datos para los ejemplos</span>
@@ -1835,12 +1660,10 @@ In&nbsp;[42]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[43]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
 
 <span class="c">#ordenar por edad tupla</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_tupla</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -1854,14 +1677,11 @@ In&nbsp;[43]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[43]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
 </div>
 
 </div>
@@ -1872,9 +1692,7 @@ In&nbsp;[43]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[44]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por edad objetos</span>
@@ -1889,14 +1707,11 @@ In&nbsp;[44]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[44]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
 </div>
 
 </div>
@@ -1907,9 +1722,7 @@ In&nbsp;[44]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[45]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por nota y edad tupla</span>
@@ -1924,14 +1737,11 @@ In&nbsp;[45]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[45]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]</pre>
 </div>
 
 </div>
@@ -1942,9 +1752,7 @@ In&nbsp;[45]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[46]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por nota y edad objetos</span>
@@ -1959,14 +1767,11 @@ In&nbsp;[46]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[46]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]</pre>
 </div>
 
 </div>
@@ -1977,9 +1782,7 @@ In&nbsp;[46]:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[47]:
-</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenando por el resultado del metodo nota_ponderada</span>
@@ -1994,14 +1797,11 @@ In&nbsp;[47]:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">
-    Out[47]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
 
 
-<div class="output_text output_subarea output_pyout">
-<pre>
-[(&apos;jane&apos;, &apos;B&apos;, 12), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;john&apos;, &apos;A&apos;, 15)]
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;jane&apos;, &apos;B&apos;, 12), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
 </div>
 
 </div>
@@ -2016,6 +1816,7 @@ In&nbsp;[47]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Hasta aquí llega esta introducción. Tengan en cuenta que <a href="http://python.org/">Python</a> no es un lenguaje puramente funcional, por lo que algunas soluciones pueden verse más como un <em>hack</em> y no ser del todo <em>pythonicas</em>. El concepto más importante es el de evitar los <strong><em>efectos secundarios</em></strong> en nuestras funciones. Debemos mantener un equilibrio entre los diferentes <em>paradigmas</em> y utilizar las opciones que nos ofrece <a href="http://python.org/">Python</a> que haga más legible nuestro código. Para más información sobre la <a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional">Programación Funcional</a> en <a href="http://python.org/">Python</a> también puede visitar el siguiente <a href="https://docs.python.org/2/howto/functional.html#introduction">documento</a> y darse una vuelta por la ducumentación de los modulos mencionados más arriba. Por último, los que quieran incursionar con un lenguaje puramente funcional, les recomiendo <a href="https://wiki.haskell.org/Haskell">Haskell</a>.</p>
+
 </div>
 </div>
 </div>
@@ -2026,6 +1827,7 @@ In&nbsp;[47]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Saludos!</p>
 <p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/FunctProgramPython.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/FunctProgramPython.ipynb">nbviewer</a>.</em></p>
+
 </div>
 </div>
 </div></p></div>
@@ -2052,7 +1854,7 @@ In&nbsp;[47]:
   </section>
 </div>
 <aside class="sidebar">
-<section>
+  <section>
     <h1>Most Popular</h1>
     <ul id="recent_posts">
       <li class="post">
@@ -2076,6 +1878,9 @@ In&nbsp;[47]:
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/">Números complejos con Python</a>
       </li>
       <li class="post">
@@ -2087,15 +1892,13 @@ In&nbsp;[47]:
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/08/28/introduccion-a-finanzas-con-python/">Introducción a Finanzas con Python</a>
-      </li>
     </ul>
   </section>
   <section>
       
     <h1>Categories</h1>
     <ul id="recent_posts">
+        <li><a href="http://relopezbriega.github.io/category/matematica.html">matematica</a></li>
         <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
     </ul>
   </section>
@@ -2103,7 +1906,7 @@ In&nbsp;[47]:
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>
@@ -2131,7 +1934,7 @@ In&nbsp;[47]:
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Raul E. Lopez Briega -
+  Copyright &copy; 2015 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

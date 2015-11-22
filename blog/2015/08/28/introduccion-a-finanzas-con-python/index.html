@@ -117,6 +117,7 @@
 .highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
+
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
 div.entry-content {
@@ -319,11 +320,11 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conceptos-b&#225;sicos-de-Finanzas">Conceptos b&#225;sicos de Finanzas<a class="anchor-link" href="#Conceptos-b&#225;sicos-de-Finanzas">&#182;</a></h2><p>Los conceptos más básicos que podemos encontrar dentro de las finanzas son: <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>, <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>, y la <a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a>. Estos conceptos nos dicen cuanto nuestro dinero va a crecer si lo depositamos en un banco (<a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>), cuanto vale hoy la promesa de unos pagos que recibiremos en el futuro(<a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>), y qué tasa de rendimiento podemos obtener de nuestras inversiones (<a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a>). Recordemos que todos los activos financieros y toda planificación financiera siempre tiene una dimensión de tiempo; así por ejemplo si depositamos <span class="tex2jax_ignore">$</span>100 en un banco que nos paga una tasa de interes anual de 6% , luego de un año obtendríamos un importe de <span class="tex2jax_ignore">$</span>106.</p>
-<h3 id="Valor-Futuro">Valor Futuro<a class="anchor-link" href="#Valor-Futuro">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> o FV (por sus siglas en inglés), nos indica el valor en el futuro que tendrá el dinero depositado hoy en una cuenta bancaria que nos pague intereses. El <em><a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a></em> de  <span class="tex2jax_ignore">$</span> X depositado hoy en una cuenta que paga r % de interés anual y que es dejado en la cuenta durante n años es $X * (1 + r)^n$. 
+<h2 id="Conceptos-b&#225;sicos-de-Finanzas">Conceptos b&#225;sicos de Finanzas<a class="anchor-link" href="#Conceptos-b&#225;sicos-de-Finanzas">&#182;</a></h2><p>Los conceptos más básicos que podemos encontrar dentro de las finanzas son: <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>, <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>, y la <a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a>. Estos conceptos nos dicen cuanto nuestro dinero va a crecer si lo depositamos en un banco (<a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>), cuanto vale hoy la promesa de unos pagos que recibiremos en el futuro(<a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>), y qué tasa de rendimiento podemos obtener de nuestras inversiones (<a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a>). Recordemos que todos los activos financieros y toda planificación financiera siempre tiene una dimensión de tiempo; así por ejemplo si depositamos USD 100 en un banco que nos paga una tasa de interes anual de 6% , luego de un año obtendríamos un importe de USD 106.</p>
+<h3 id="Valor-Futuro">Valor Futuro<a class="anchor-link" href="#Valor-Futuro">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> o FV (por sus siglas en inglés), nos indica el valor en el futuro que tendrá el dinero depositado hoy en una cuenta bancaria que nos pague intereses. El <em><a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a></em> de  USD X depositado hoy en una cuenta que paga r% de interés anual y que es dejado en la cuenta durante n años es $X * (1 + r)^n$. 
 El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> es nuestro primer ejemplo de <a href="https://es.wikipedia.org/wiki/Inter%C3%A9s_compuesto">interés compuesto</a>, es decir, el principio de que podemos ganar intereses sobre los intereses.
 De la definición que dimos del <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>, podemos obtener su expresión matemática:</p>
-$$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Veamos un ejemplo de como calcular el FV de un depósito de <span class="tex2jax_ignore">$</span> 1000 a 3 años y con una tasa de interes del 6 % anual.</p>
+$$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Veamos un ejemplo de como calcular el FV de un depósito de USD 1000 a 3 años y con una tasa de interes del 6% anual.</p>
 
 </div>
 </div>
@@ -709,7 +710,7 @@ IQDw/wGZ43h61oaJcgAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Al graficar dos funciones de <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">FV</a>, una con una tasa de interes del 6% y otra con una tasa más alta del 12%, podemos ver que el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> suele ser bastante sensitivo a los cambios en la tasa de interes, pequeñas variaciones en ella pueden generar grandes saltos a lo largo del tiempo.</p>
-<h4 id="Anualidades">Anualidades<a class="anchor-link" href="#Anualidades">&#182;</a></h4><p>Como podemos ver en el ejemplo anterior, la función fv de <a href="http://www.numpy.org/">Numpy</a> tiene varios parametros, esto es así, porque existen otros casos en los que el cálculo del <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> se puede volver más complicado; es aquí cuando comenzamos a hablar de <em>anulidades</em>. La idea de las <em>anulidades</em> es no solo quedarse con el cálculo simple de cuanto me va a rendir un solo deposito inicial a fin de un período, sino tambien poder calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> de multiples depositos que se reinvierten a una misma tasa de interes. Supongamos por ejemplo que queremos hacer 10 depositos anuales de <span class="tex2jax_ignore">$</span> 1000 cada uno, los cuales vamos a ir depositando al comienzo de cada año. ¿Cuál sería en este caso el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> de nuestra <em>anualidad</em> luego del décimo año?.
+<h4 id="Anualidades">Anualidades<a class="anchor-link" href="#Anualidades">&#182;</a></h4><p>Como podemos ver en el ejemplo anterior, la función fv de <a href="http://www.numpy.org/">Numpy</a> tiene varios parametros, esto es así, porque existen otros casos en los que el cálculo del <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> se puede volver más complicado; es aquí cuando comenzamos a hablar de <em>anulidades</em>. La idea de las <em>anulidades</em> es no solo quedarse con el cálculo simple de cuanto me va a rendir un solo deposito inicial a fin de un período, sino tambien poder calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> de multiples depositos que se reinvierten a una misma tasa de interes. Supongamos por ejemplo que queremos hacer 10 depositos anuales de USD 1000 cada uno, los cuales vamos a ir depositando al comienzo de cada año. ¿Cuál sería en este caso el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> de nuestra <em>anualidad</em> luego del décimo año?.
 Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la respuesta!</p>
 
 </div>
@@ -756,9 +757,9 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Aquí comenzamos con un <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>(PV) de cero, luego realizamos el primer deposito de <span class="tex2jax_ignore">$</span> 1000 al comienzo del primer año y continuamos con los sucesivos depositos al comienzo de cada uno de los restantes años. Para poder entender mejor como funciona la función <code>fv</code> de <a href="http://www.numpy.org/">Numpy</a> voy a explicar un poco más sus parametros.</p>
+<p>Aquí comenzamos con un <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a>(PV) de cero, luego realizamos el primer deposito de USD 1000 al comienzo del primer año y continuamos con los sucesivos depositos al comienzo de cada uno de los restantes años. Para poder entender mejor como funciona la función <code>fv</code> de <a href="http://www.numpy.org/">Numpy</a> voy a explicar un poco más sus parametros.</p>
 <ul>
-<li><strong>pv</strong> = este parametro es el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de nuestra inversion o <em>anualidad</em>; en nuestro ejemplo empezamos con un valor de cero; ya que luego vamos a ir realizando los diferentes depositos de <span class="tex2jax_ignore">$</span>1000.</li>
+<li><strong>pv</strong> = este parametro es el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de nuestra inversion o <em>anualidad</em>; en nuestro ejemplo empezamos con un valor de cero; ya que luego vamos a ir realizando los diferentes depositos de USD 1000.</li>
 <li><strong>rate</strong> = es la tasa efectiva de interes que nos rendirá la <em>anualidad</em> por cada período.</li>
 <li><strong>nper</strong> = Es el número de períodos. Tener en cuenta que si aquí estamos utilizando como unidad de medida de años, nuestra tasa de interes deberá estar expresada en la misma unidad.</li>
 <li><strong>pmt</strong> = El valor de los depositos que vamos a ir invirtiendo en nuestra <em>anualidad</em>. En nuestro caso el valor de -1000 refleja el importe que vamos a ir depositando año a año.(se expresa con signo negativo, ya que un deposito implica una salida de dinero).</li>
@@ -815,8 +816,8 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Valor-Presente">Valor Presente<a class="anchor-link" href="#Valor-Presente">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> o PV (por sus siglas en inglés), nos indica el valor que tienen hoy un pago o pagos que recibiremos en el futuro. Supongamos por ejemplo que sabemos que un tío nos va a regalar <span class="tex2jax_ignore">$</span>1000 dentro de 3 años porque somos su sobrino favorito, si tambien sabemos que un banco nos pagaría un 6% de interes por los depositos en una caja de ahorro, podríamos calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> que tendría ese pago futuro de nuestro tío en el día de hoy. La formula para cálcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> la podemos derivar de la que utilizamos para calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> y se expresaría del siguiente modo:</p>
-$$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que contamos, podríamos calcular el valor de hoy de la promesa de pago de <span class="tex2jax_ignore">$</span> 1000 de nuestro tío, los que nos daría un <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de <span class="tex2jax_ignore">$</span> 839.62 como se desprende del siguiente cálculo.</p>
+<h3 id="Valor-Presente">Valor Presente<a class="anchor-link" href="#Valor-Presente">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> o PV (por sus siglas en inglés), nos indica el valor que tienen hoy un pago o pagos que recibiremos en el futuro. Supongamos por ejemplo que sabemos que un tío nos va a regalar USD 1000 dentro de 3 años porque somos su sobrino favorito, si tambien sabemos que un banco nos pagaría un 6% de interes por los depositos en una caja de ahorro, podríamos calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> que tendría ese pago futuro de nuestro tío en el día de hoy. La formula para cálcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> la podemos derivar de la que utilizamos para calcular el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> y se expresaría del siguiente modo:</p>
+$$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que contamos, podríamos calcular el valor de hoy de la promesa de pago de USD 1000 de nuestro tío, los que nos daría un <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de USD 839.62 como se desprende del siguiente cálculo.</p>
 
 </div>
 </div>
@@ -890,7 +891,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Estos <span class="tex2jax_ignore">$</span> 839.62 en realidad lo que representan es que si nosotros hoy depositaramos en la caja de ahorro de un banco que nos pague 6% anual de interes el importe de <span class="tex2jax_ignore">$</span> 839.62, obtendríamos dentro de los 3 años los mismos <span class="tex2jax_ignore">$</span> 1000 que nos ofreció dar nuestro tío dentro de 3 años; o lo que es lo mismo que decir que el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> dentro de 3 años de <span class="tex2jax_ignore">$</span> 839.62 son los <span class="tex2jax_ignore">$</span> 1000 de nuestro querido tío.</p>
+<p>Estos USD 839.62 en realidad lo que representan es que si nosotros hoy depositaramos en la caja de ahorro de un banco que nos pague 6% anual de interes el importe de USD 839.62, obtendríamos dentro de los 3 años los mismos USD 1000 que nos ofreció dar nuestro tío dentro de 3 años; o lo que es lo mismo que decir que el <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a> dentro de 3 años de USD 839.62 son los USD 1000 de nuestro querido tío.</p>
 
 </div>
 </div>
@@ -930,7 +931,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Valor-presente-y-anualidades">Valor presente y anualidades<a class="anchor-link" href="#Valor-presente-y-anualidades">&#182;</a></h4><p>Al igual que en el caso del <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>, aquí también podemos encontrarnos con las <em>anualidades</em>, es decir, una serie de pagos iguales que recibiremos. El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de una <em>anualidad</em> nos va a decir el valor que tienen hoy los futuros pagos de la <em>anualidad</em>. Así, por ejemplo si nuestro tío en lugar de regalarnos <span class="tex2jax_ignore">$</span> 1000 dentro de 3 años, decide darnos <span class="tex2jax_ignore">$</span> 250 al final de cada año durante 5 años; y asumiendo la misma tasa de interes que nos ofrece el banco de 6% anual. El valor presente de esta <em>anualidad</em> sería <span class="tex2jax_ignore">$</span> 1053.09.</p>
+<h4 id="Valor-presente-y-anualidades">Valor presente y anualidades<a class="anchor-link" href="#Valor-presente-y-anualidades">&#182;</a></h4><p>Al igual que en el caso del <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor futuro</a>, aquí también podemos encontrarnos con las <em>anualidades</em>, es decir, una serie de pagos iguales que recibiremos. El <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> de una <em>anualidad</em> nos va a decir el valor que tienen hoy los futuros pagos de la <em>anualidad</em>. Así, por ejemplo si nuestro tío en lugar de regalarnos USD 1000 dentro de 3 años, decide darnos USD 250 al final de cada año durante 5 años; y asumiendo la misma tasa de interes que nos ofrece el banco de 6% anual. El valor presente de esta <em>anualidad</em> sería USD 1053.09.</p>
 
 </div>
 </div>
@@ -985,7 +986,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 Cuando estamos <em>descontando</em> flujos de fondos futuros para traerlos a su valor actual, puede ser que éstos flujos no sean homogeneos, por lo que ya no podríamos tratarlos como una <em>anualidad</em>, ya que los pagos son por importes distintos todos los años; para estos casos debemos utilizar el <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">Valor Presente Neto</a>.</p>
 <p>El <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">Valor Presente Neto</a> o NPV (por sus siglas en inglés) de una serie de flujos futuros de fondos es su igual a su <a href="https://es.wikipedia.org/wiki/Valor_tiempo_del_dinero">valor presente</a> menos el importe de la inversion inicial necesaria para obtener esos mismos flujos de fondos futuros. Su expresión matemática sería la siguiente:</p>
 $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ representa el flujo de fondos de cada período $t$; $I_{0}$ es el valor incial de la inversion; $r$ es la <em>tasa de descuento</em> utilizada; y $n$ es la cantidad de períodos considerados.</p>
-<p>Volviendo al ejemplo que veniamos utilizando de nuestro generoso tío, esta vez no ofrece pagarnos <span class="tex2jax_ignore">$</span> 500 al final del primer año, <span class="tex2jax_ignore">$</span> 750 al final del segunto año, <span class="tex2jax_ignore">$</span> 1000 al final del tercer año, <span class="tex2jax_ignore">$</span> 1250 al final del cuarto año y <span class="tex2jax_ignore">$</span>500 al final del quinto año. El <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> de este flujo de fondos sería de <span class="tex2jax_ignore">$</span> 3342.56.</p>
+<p>Volviendo al ejemplo que veniamos utilizando de nuestro generoso tío, esta vez no ofrece pagarnos USD 500 al final del primer año, USD 750 al final del segunto año, USD 1000 al final del tercer año, USD 1250 al final del cuarto año y USD 500 al final del quinto año. El <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> de este flujo de fondos sería de USD 3342.56.</p>
 
 </div>
 </div>
@@ -1027,7 +1028,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">Valor Presente Neto</a> es sumamente utilizado en los analisis financieros, principalmente para evaluar inversiones o proyectos. Como regla general se considera que si el <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> de un proyecto o inversion es positivo, se trata de un proyecto rentable en el que deberíamos invertir; en cambio si el <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> es negativo estamos ante un mal negocio.</p>
-<p>Si por ejemplo, tendríamos que invertir hoy <span class="tex2jax_ignore">$</span>4000 para poder obtener un flujo de fondos de <span class="tex2jax_ignore">$</span>500 al final del primer año, <span class="tex2jax_ignore">$</span>750 al final del segunto año, <span class="tex2jax_ignore">$</span>1000 al final del tercer año, <span class="tex2jax_ignore">$</span>1250 al final del cuarto año y <span class="tex2jax_ignore">$</span>500 al final del quinto año; estaríamos haciendo un mal negocio, ya que como sabemos el valor presente de esos flujos de fondos es de <span class="tex2jax_ignore">$</span>3342.56, un valor mucho menor a los <span class="tex2jax_ignore">$</span>4000 que deberíamos invertir.</p>
+<p>Si por ejemplo, tendríamos que invertir hoy USD 4000 para poder obtener un flujo de fondos de USD 500 al final del primer año, USD 750 al final del segunto año, USD 1000 al final del tercer año, USD 1250 al final del cuarto año y USD 500 al final del quinto año; estaríamos haciendo un mal negocio, ya que como sabemos el valor presente de esos flujos de fondos es de USD 3342.56, un valor mucho menor a los USD 4000 que deberíamos invertir.</p>
 
 </div>
 </div>
@@ -1069,7 +1070,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En el ejemplo podemos ver que al utilizar la función <code>npv</code> de <a href="http://www.numpy.org/">Numpy</a>, el primer valor en la lista de valores que le pasamos al parametro <code>values</code> debe ser el monto de la inversión inicial, y como implica un desembolso de dinero, su signo es negativo.</p>
-<p>Si en lugar de tener que invertir <span class="tex2jax_ignore">$</span>4000, tendríamos que invertir <span class="tex2jax_ignore">$</span>3000 para obtener el mismo flujo de fondos, ya estaríamos realizando una buena inversión, con <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> positivo.</p>
+<p>Si en lugar de tener que invertir USD 4000, tendríamos que invertir USD 3000 para obtener el mismo flujo de fondos, ya estaríamos realizando una buena inversión, con <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">NPV</a> positivo.</p>
 
 </div>
 </div>
@@ -1112,7 +1113,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tasa-interna-de-Retorno">Tasa interna de Retorno<a class="anchor-link" href="#Tasa-interna-de-Retorno">&#182;</a></h3><p>La <a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a> o IRR (por sus siglas en inglés) es la <em>tasa de descuento</em> que hace que el <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">Valor Presente Neto</a> de los flujos de fondos futuros sea igual a <em>cero</em>; también puede ser definida como la tasa de <a href="https://es.wikipedia.org/wiki/Inter%C3%A9s_compuesto">interés compuesto</a> que nos paga nuestra inversión.</p>
 <p>Al igual que como sucede con el <a href="https://es.wikipedia.org/wiki/Valor_actual_neto">Valor Presente Neto</a>, podemos utilizar a la <a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a> para tomar decisiones financieras. Aquí la regla general es que, al momento de decidir entre diferentes inversiones, deberíamos elegir aquella con una <a href="https://es.wikipedia.org/wiki/Tasa_interna_de_retorno">tasa interna de retorno</a> más alta; ya que es la que en menos tiempo no va a devolver nuestra inversión inicial.</p>
-<p>Veamos un ejemplo, supongamos que tenemos <span class="tex2jax_ignore">$</span>1000 para invertir, y que podemos decidir invertir ese dinero en una compañía que nos va a pagar <span class="tex2jax_ignore">$</span>300 al final de cada uno de los proximos cuatro años; o por otra lado, podemos invertir el dinero en una caja de ahorro de un banco que nos va a pagar 5% anual. ¿Dónde deberíamos invertir nuestro dinero?</p>
+<p>Veamos un ejemplo, supongamos que tenemos USD 1000 para invertir, y que podemos decidir invertir ese dinero en una compañía que nos va a pagar USD 300 al final de cada uno de los proximos cuatro años; o por otra lado, podemos invertir el dinero en una caja de ahorro de un banco que nos va a pagar 5% anual. ¿Dónde deberíamos invertir nuestro dinero?</p>
 
 </div>
 </div>
@@ -3878,7 +3879,7 @@ YII=
   </section>
 </div>
 <aside class="sidebar">
-<section>
+  <section>
     <h1>Most Popular</h1>
     <ul id="recent_posts">
       <li class="post">
@@ -3902,6 +3903,9 @@ YII=
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/">Números complejos con Python</a>
       </li>
       <li class="post">
@@ -3913,15 +3917,13 @@ YII=
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/08/28/introduccion-a-finanzas-con-python/">Introducción a Finanzas con Python</a>
-      </li>
     </ul>
   </section>
   <section>
       
     <h1>Categories</h1>
     <ul id="recent_posts">
+        <li><a href="http://relopezbriega.github.io/category/matematica.html">matematica</a></li>
         <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
     </ul>
   </section>
@@ -3929,7 +3931,7 @@ YII=
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>
@@ -3957,7 +3959,7 @@ YII=
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Raul E. Lopez Briega -
+  Copyright &copy; 2015 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">
