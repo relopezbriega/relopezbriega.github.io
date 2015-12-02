@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -319,40 +319,45 @@ Por ejemplo, la siguente función es la que grafica las curvas de la parte infer
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline  
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando lo necesario para los cálculos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando lo necesario para los cálculos</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">sqrt</span> 
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">meshgrid</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">arange</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando la ecuación de Batman.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando la ecuación de Batman.</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">7.25</span><span class="p">,</span> <span class="mf">7.25</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">ys</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
@@ -371,8 +376,9 @@ Por ejemplo, la siguente función es la que grafica las curvas de la parte infer
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -632,6 +638,9 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -642,9 +651,6 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -660,7 +666,7 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

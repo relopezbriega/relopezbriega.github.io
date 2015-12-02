@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -417,9 +417,10 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplos de estadistica descriptiva con python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplos de estadistica descriptiva con python</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c"># importando numpy</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span> <span class="c"># importando scipy.stats</span>
@@ -428,22 +429,25 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2131982</span><span class="p">)</span> <span class="c"># para poder replicar el random</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c"># datos normalmente distribuidos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c"># datos normalmente distribuidos</span>
 <span class="n">datos</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -454,7 +458,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.46038022, -1.08942528, -0.62681496, -0.63329028],
+<pre class="ipynb">array([[ 0.46038022, -1.08942528, -0.62681496, -0.63329028],
        [-0.1074033 , -0.88138082, -0.34466623, -0.28320214],
        [ 0.94051171,  0.86693793,  1.20947882, -0.16894118],
        [-0.12790177, -0.58099931, -0.46188426, -0.18148302],
@@ -470,14 +474,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media arítmetica</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media arítmetica</span>
 <span class="n">datos</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c"># Calcula la media aritmetica de</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -488,7 +494,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-0.14786303590303568</pre>
+<pre class="ipynb">-0.14786303590303568</pre>
 </div>
 
 </div>
@@ -500,13 +506,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> <span class="c"># Mismo resultado desde la funcion de numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> <span class="c"># Mismo resultado desde la funcion de numpy</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -517,7 +525,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-0.14786303590303568</pre>
+<pre class="ipynb">-0.14786303590303568</pre>
 </div>
 
 </div>
@@ -529,13 +537,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c"># media aritmetica de cada fila</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c"># media aritmetica de cada fila</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -546,7 +556,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([-0.47228757, -0.40416312,  0.71199682, -0.33806709, -0.23679421])</pre>
+<pre class="ipynb">array([-0.47228757, -0.40416312,  0.71199682, -0.33806709, -0.23679421])</pre>
 </div>
 
 </div>
@@ -558,13 +568,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c"># media aritmetica de cada columna</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c"># media aritmetica de cada columna</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -575,7 +587,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.0791985 , -0.61180267,  0.23061642, -0.2894644 ])</pre>
+<pre class="ipynb">array([ 0.0791985 , -0.61180267,  0.23061642, -0.2894644 ])</pre>
 </div>
 
 </div>
@@ -587,14 +599,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># mediana</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># mediana</span>
 <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> 
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -605,7 +619,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-0.23234258265023794</pre>
+<pre class="ipynb">-0.23234258265023794</pre>
 </div>
 
 </div>
@@ -617,13 +631,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># media aritmetica de cada columna</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># media aritmetica de cada columna</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -634,7 +650,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([-0.1074033 , -0.88138082, -0.34466623, -0.18148302])</pre>
+<pre class="ipynb">array([-0.1074033 , -0.88138082, -0.34466623, -0.18148302])</pre>
 </div>
 
 </div>
@@ -646,14 +662,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"> <span class="c"># Desviación típica</span>
+        <div class="highlight-ipynb"><pre class="ipynb"> <span class="c"># Desviación típica</span>
 <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -664,7 +682,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.73755354584071608</pre>
+<pre class="ipynb">0.73755354584071608</pre>
 </div>
 
 </div>
@@ -676,13 +694,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Desviación típica de cada columna</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Desviación típica de cada columna</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -693,7 +713,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.58057213,  0.78352862,  0.87384108,  0.17682485])</pre>
+<pre class="ipynb">array([ 0.58057213,  0.78352862,  0.87384108,  0.17682485])</pre>
 </div>
 
 </div>
@@ -705,14 +725,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># varianza</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># varianza</span>
 <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> 
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -723,7 +745,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.54398523298221324</pre>
+<pre class="ipynb">0.54398523298221324</pre>
 </div>
 
 </div>
@@ -735,13 +757,15 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># varianza de cada columna</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># varianza de cada columna</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -752,7 +776,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.337064  ,  0.6139171 ,  0.76359823,  0.03126703])</pre>
+<pre class="ipynb">array([ 0.337064  ,  0.6139171 ,  0.76359823,  0.03126703])</pre>
 </div>
 
 </div>
@@ -764,15 +788,17 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># moda</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># moda</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> <span class="c"># Calcula la moda de cada columna</span>
 <span class="c"># el 2do array devuelve la frecuencia.</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -783,7 +809,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(array([[-0.76959435, -1.37414587, -0.62681496, -0.63329028]]),
+<pre class="ipynb">(array([[-0.76959435, -1.37414587, -0.62681496, -0.63329028]]),
  array([[ 1.,  1.,  1.,  1.]]))</pre>
 </div>
 
@@ -796,14 +822,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">datos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">datos2</span><span class="p">)</span> <span class="c"># aqui la moda es el 6 porque aparece 5 veces en el vector.</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -814,7 +842,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(array([6]), array([ 5.]))</pre>
+<pre class="ipynb">(array([6]), array([ 5.]))</pre>
 </div>
 
 </div>
@@ -826,14 +854,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># correlacion</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># correlacion</span>
 <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> <span class="c"># Crea matriz de correlación.</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -844,7 +874,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 1.        ,  0.82333743,  0.15257202,  0.78798675, -0.02292073],
+<pre class="ipynb">array([[ 1.        ,  0.82333743,  0.15257202,  0.78798675, -0.02292073],
        [ 0.82333743,  1.        , -0.13709662,  0.86873632,  0.41234875],
        [ 0.15257202, -0.13709662,  1.        , -0.47691376,  0.21216856],
        [ 0.78798675,  0.86873632, -0.47691376,  1.        , -0.03445705],
@@ -860,14 +890,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># calculando la correlación entre dos vectores.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># calculando la correlación entre dos vectores.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -878,7 +910,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 1.        ,  0.82333743],
+<pre class="ipynb">array([[ 1.        ,  0.82333743],
        [ 0.82333743,  1.        ]])</pre>
 </div>
 
@@ -891,14 +923,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># covarianza</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># covarianza</span>
 <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span> <span class="c"># calcula matriz de covarianza</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -909,7 +943,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.43350958,  0.18087281,  0.06082243,  0.11328658, -0.01782409],
+<pre class="ipynb">array([[ 0.43350958,  0.18087281,  0.06082243,  0.11328658, -0.01782409],
        [ 0.18087281,  0.11132485, -0.0276957 ,  0.06329134,  0.16249513],
        [ 0.06082243, -0.0276957 ,  0.36658864, -0.06305065,  0.15172255],
        [ 0.11328658,  0.06329134, -0.06305065,  0.04767826, -0.00888624],
@@ -925,14 +959,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># covarianza de dos vectores</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># covarianza de dos vectores</span>
 <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -943,7 +979,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.43350958,  0.18087281],
+<pre class="ipynb">array([[ 0.43350958,  0.18087281],
        [ 0.18087281,  0.11132485]])</pre>
 </div>
 
@@ -956,16 +992,18 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando pandas</span>
 <span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">],</span> 
                         <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">,</span> <span class="s">&#39;col2&#39;</span><span class="p">,</span> <span class="s">&#39;col3&#39;</span><span class="p">,</span> <span class="s">&#39;col4&#39;</span><span class="p">])</span>
 <span class="n">dataframe</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1036,14 +1074,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># resumen estadistadistico con pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># resumen estadistadistico con pandas</span>
 <span class="n">dataframe</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1135,14 +1175,16 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># sumando las columnas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># sumando las columnas</span>
 <span class="n">dataframe</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1153,7 +1195,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>col1    0.395993
+<pre class="ipynb">col1    0.395993
 col2   -3.059013
 col3    1.153082
 col4   -1.447322
@@ -1169,14 +1211,16 @@ dtype: float64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># sumando filas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># sumando filas</span>
 <span class="n">dataframe</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1187,7 +1231,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>a   -1.889150
+<pre class="ipynb">a   -1.889150
 b   -1.616652
 c    2.847987
 d   -1.352268
@@ -1204,13 +1248,15 @@ dtype: float64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">dataframe</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="c"># acumulados</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">dataframe</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="c"># acumulados</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1281,14 +1327,16 @@ dtype: float64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media aritmetica de cada columna con pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media aritmetica de cada columna con pandas</span>
 <span class="n">dataframe</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1299,7 +1347,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>col1    0.079199
+<pre class="ipynb">col1    0.079199
 col2   -0.611803
 col3    0.230616
 col4   -0.289464
@@ -1315,14 +1363,16 @@ dtype: float64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media aritmetica de cada fila con pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># media aritmetica de cada fila con pandas</span>
 <span class="n">dataframe</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1333,7 +1383,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>a   -0.472288
+<pre class="ipynb">a   -0.472288
 b   -0.404163
 c    0.711997
 d   -0.338067
@@ -1393,23 +1443,26 @@ dtype: float64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficos embebidos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficos embebidos.</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline 
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c"># importando matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c"># importando matplotlib</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c"># importando seaborn</span>
 
 <span class="c"># parametros esteticos de seaborn</span>
@@ -1417,39 +1470,44 @@ dtype: float64</pre>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)})</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span> <span class="c"># media y desvio estandar</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span> <span class="c"># media y desvio estandar</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c">#creando muestra de datos</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># histograma de distribución normal.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># histograma de distribución normal.</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="n">normal</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cajas</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span>
          <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="p">(</span><span class="n">cajas</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">),</span>
          <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1708,15 +1766,17 @@ kTBT+YqIiISZyldERCTMVL4iIiJhpvIVEREJM5WviIhImP0/GpEA7DqTnyYAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Dibujando la distribucion Gamma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Dibujando la distribucion Gamma</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
 <span class="n">gamma</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&quot;stepfilled&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1875,14 +1935,16 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando la simetria con scipy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando la simetria con scipy</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1893,7 +1955,7 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.1437199125547868</pre>
+<pre class="ipynb">1.1437199125547868</pre>
 </div>
 
 </div>
@@ -1917,9 +1979,10 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de grafico de cajas en python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de grafico de cajas en python</span>
 
 <span class="n">datos_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">datos_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
@@ -1943,8 +2006,9 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 <span class="c"># los puntos aislados son valores atípicos</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2103,15 +2167,17 @@ hiRJSsagIUmSkjFoSJKkZP4//tEKDi6gfawAAAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando seaborn</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando seaborn</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">datos_graf</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;grupo1&quot;</span><span class="p">,</span> <span class="s">&quot;grupo2&quot;</span><span class="p">,</span> <span class="s">&quot;grupo3&quot;</span><span class="p">,</span> <span class="s">&quot;grupo 4&quot;</span><span class="p">],</span>
             <span class="n">color</span><span class="o">=</span><span class="s">&quot;PaleGreen&quot;</span><span class="p">);</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2258,9 +2324,10 @@ $$ y = \beta_0 + \beta_1 * x$$<p>Uno de los métodos más populares para realiza
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importanto la api de statsmodels</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importanto la api de statsmodels</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 
@@ -2269,8 +2336,9 @@ $$ y = \beta_0 + \beta_1 * x$$<p>Uno de los métodos más populares para realiza
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c"># longley dataset</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2359,15 +2427,17 @@ $$ y = \beta_0 + \beta_1 * x$$<p>Uno de los métodos más populares para realiza
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># utilizando la api de formula de statsmodels</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># utilizando la api de formula de statsmodels</span>
 <span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&#39;Employed ~ GNP&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">est</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> <span class="c"># Employed se estima en base a GNP.</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2464,9 +2534,10 @@ $$ y = \beta_0 + \beta_1 * x$$<p>Uno de los métodos más populares para realiza
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grafico de regresion. que tanto se ajusta el modelo a los datos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grafico de regresion. que tanto se ajusta el modelo a los datos.</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Employed</span>  <span class="c"># Respuesta</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">GNP</span>  <span class="c"># Predictor</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c"># agrega constante</span>
@@ -2484,8 +2555,9 @@ $$ y = \beta_0 + \beta_1 * x$$<p>Uno de los métodos más populares para realiza
 <span class="n">reg</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_1</span><span class="o">.</span><span class="n">GNP</span><span class="p">,</span> <span class="n">y_reg</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>  <span class="c"># linea de regresion</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2675,16 +2747,18 @@ gVLIi4iIBEohLyIiEiiFvIiISKAU8iIiIoFSyIuIiATq/wMth6pQIxiv9QAAAABJRU5ErkJggg==
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grafico de influencia</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grafico de influencia</span>
 <span class="kn">from</span> <span class="nn">statsmodels.graphics.regressionplots</span> <span class="k">import</span> <span class="n">influence_plot</span>
 
 <span class="n">inf</span> <span class="o">=</span><span class="n">influence_plot</span><span class="p">(</span><span class="n">est</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -3138,9 +3212,10 @@ obtenidas. En el caso <em><a href="https://es.wikipedia.org/wiki/Estad%C3%ADstic
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
 
 <span class="n">dist</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span>
 <span class="n">n_trials</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
@@ -3169,8 +3244,9 @@ obtenidas. En el caso <em><a href="https://es.wikipedia.org/wiki/Estad%C3%ADstic
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -4383,6 +4459,9 @@ QmCC
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -4393,9 +4472,6 @@ QmCC
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -4411,7 +4487,7 @@ QmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

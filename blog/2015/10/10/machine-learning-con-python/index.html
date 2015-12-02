@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -404,23 +404,26 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando pandas, numpy y matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando pandas, numpy y matplotlib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -434,8 +437,9 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <span class="n">boston_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c"># estructura de nuestro dataset.</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -566,17 +570,19 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el modelo de regresión lineal</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el modelo de regresión lineal</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
 
 <span class="n">rl</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c"># Creando el modelo.</span>
 <span class="n">rl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> <span class="c"># ajustando el modelo</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -587,7 +593,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)</pre>
+<pre class="ipynb">LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)</pre>
 </div>
 
 </div>
@@ -599,14 +605,16 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Lista de coeficientes B para cada X</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Lista de coeficientes B para cada X</span>
 <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">rl</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -617,7 +625,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(&apos;CRIM&apos;, -0.10717055656035465),
+<pre class="ipynb">[(&apos;CRIM&apos;, -0.10717055656035465),
  (&apos;ZN&apos;, 0.046395219529796909),
  (&apos;INDUS&apos;, 0.020860239532179539),
  (&apos;CHAS&apos;, 2.6885613993179454),
@@ -641,16 +649,18 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># haciendo las predicciones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># haciendo las predicciones</span>
 <span class="n">predicciones</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="n">predicciones_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predicciones</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Pred&#39;</span><span class="p">])</span>
 <span class="n">predicciones_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c"># predicciones de las primeras 5 lineas</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -703,14 +713,16 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el desvio</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el desvio</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">target</span> <span class="o">-</span> <span class="n">predicciones</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -721,7 +733,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-2.2467754490437951e-15</pre>
+<pre class="ipynb">-2.2467754490437951e-15</pre>
 </div>
 
 </div>
@@ -754,24 +766,27 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo </span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_classification</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando el modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando el modelo</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
 
 <span class="n">rlog</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span> <span class="c"># Creando el modelo</span>
@@ -789,25 +804,28 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 <span class="n">y_predic_evaluacion</span> <span class="o">=</span> <span class="n">rlog</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_evaluacion</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando la exactitud del modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando la exactitud del modelo</span>
 <span class="n">entrenamiento</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_predic_entrenamiento</span> <span class="o">==</span> <span class="n">y_entrenamiento</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">y_entrenamiento</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s">&quot;sobre datos de entrenamiento: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">))</span>
 <span class="n">evaluacion</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_predic_evaluacion</span> <span class="o">==</span> <span class="n">y_evaluacion</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">y_evaluacion</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s">&quot;sobre datos de evaluación: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -816,7 +834,7 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>sobre datos de entrenamiento: 0.95
+<pre class="ipynb">sobre datos de entrenamiento: 0.95
 sobre datos de evaluación: 0.94
 </pre>
 </div>
@@ -850,9 +868,10 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c"># Importando el arbol de decisión</span>
@@ -867,22 +886,25 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
     <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">ad</span><span class="p">,</span> <span class="n">out_file</span> <span class="o">=</span> <span class="n">archivo_dot</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># utilizando el lenguaje dot para graficar el arbol.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># utilizando el lenguaje dot para graficar el arbol.</span>
 <span class="o">!</span>dot -Tjpeg mi_arbol.dot -o arbol_decision.jpeg
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
@@ -900,14 +922,16 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando la precisión</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando la precisión</span>
 <span class="nb">print</span><span class="p">(</span><span class="s">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">ad</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -916,7 +940,7 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>precisión del modelo:  0.92
+<pre class="ipynb">precisión del modelo:  0.92
 </pre>
 </div>
 </div>
@@ -950,9 +974,10 @@ Con <a href="http://python.org/">Python</a> los podemos utilizar de la siguiente
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 
 <span class="c"># Importando el random forest</span>
@@ -965,8 +990,9 @@ Con <a href="http://python.org/">Python</a> los podemos utilizar de la siguiente
 <span class="nb">print</span><span class="p">(</span><span class="s">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -975,7 +1001,7 @@ Con <a href="http://python.org/">Python</a> los podemos utilizar de la siguiente
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>precisión del modelo:  1.00
+<pre class="ipynb">precisión del modelo:  1.00
 </pre>
 </div>
 </div>
@@ -998,9 +1024,10 @@ del plano maximiza el margen entre los puntos más cercanos en el plano; éstos 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importanto SVM</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importanto SVM</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
 
 <span class="c"># importando el dataset iris</span>
@@ -1053,8 +1080,9 @@ del plano maximiza el margen entre los puntos más cercanos en el plano; éstos 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1906,17 +1934,19 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset iris</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset iris</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 <span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1927,7 +1957,7 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;sepal length (cm)&apos;,
+<pre class="ipynb">[&apos;sepal length (cm)&apos;,
  &apos;sepal width (cm)&apos;,
  &apos;petal length (cm)&apos;,
  &apos;petal width (cm)&apos;]</pre>
@@ -1942,9 +1972,10 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KNN </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KNN </span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsRegressor</span>
 
 <span class="n">knnr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c"># Creando el modelo con 10 vecinos</span>
@@ -1955,8 +1986,9 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1965,7 +1997,7 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>El error medio del modelo es: 0.02
+<pre class="ipynb">El error medio del modelo es: 0.02
 </pre>
 </div>
 </div>
@@ -1988,9 +2020,10 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset</span>
 <span class="n">grupos</span><span class="p">,</span> <span class="n">pos_correcta</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_blobs</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
 <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.75</span><span class="p">)</span>
 
@@ -2009,8 +2042,9 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2512,9 +2546,10 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KMeans</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KMeans</span>
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">KMeans</span>
 
 <span class="c"># Creando el modelo</span>
@@ -2522,8 +2557,9 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">grupos</span><span class="p">)</span> <span class="c"># Ajustando el modelo</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2534,7 +2570,7 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>KMeans(copy_x=True, init=&apos;k-means++&apos;, max_iter=300, n_clusters=3, n_init=10,
+<pre class="ipynb">KMeans(copy_x=True, init=&apos;k-means++&apos;, max_iter=300, n_clusters=3, n_init=10,
     n_jobs=1, precompute_distances=&apos;auto&apos;, random_state=None, tol=0.0001,
     verbose=0)</pre>
 </div>
@@ -2548,14 +2584,16 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando los centros de los grupos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando los centros de los grupos</span>
 <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2566,7 +2604,7 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 9.11516192,  9.17538524],
+<pre class="ipynb">array([[ 9.11516192,  9.17538524],
        [-4.4747179 ,  5.36904317],
        [ 6.23263898,  3.44671141]])</pre>
 </div>
@@ -2580,9 +2618,10 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando segun modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando segun modelo</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
 
@@ -2600,8 +2639,9 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -3178,6 +3218,9 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -3188,9 +3231,6 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -3206,7 +3246,7 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

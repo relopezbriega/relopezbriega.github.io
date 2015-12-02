@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -332,23 +332,26 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline  
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo FV con python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo FV con python</span>
 <span class="c"># $1000 al 6% anual por 3 años.</span>
 
 <span class="c"># importando librerías</span>
@@ -364,8 +367,9 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 <span class="n">FV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -376,7 +380,7 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1191.0160000000001</pre>
+<pre class="ipynb">1191.0160000000001</pre>
 </div>
 
 </div>
@@ -388,14 +392,16 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Controlando el resultado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Controlando el resultado</span>
 <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -406,7 +412,7 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-1191.016</pre>
+<pre class="ipynb">-1191.016</pre>
 </div>
 
 </div>
@@ -418,9 +424,10 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando las funciones con interes de 6 y 12 % a 20 años.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando las funciones con interes de 6 y 12 % a 20 años.</span>
 <span class="n">t</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">fv6</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -430,25 +437,28 @@ $$FV = X * ( 1 + r )^n$$<p>Como podemos ver, su cálculo es bastante simple. Vea
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">fv</span><span class="p">(</span><span class="n">pv</span><span class="o">=-</span><span class="mi">1000</span><span class="p">,</span> <span class="n">rate</span><span class="o">=.</span><span class="mi">12</span><span class="p">,</span> <span class="n">pmt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="n">num</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Graficando FV 6 y 12 %&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Graficando FV 6 y 12 %&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">fv6</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;interes 6 %&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">fv12</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;interes 12 %&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;upper left&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -719,9 +729,10 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor de la anualidad con 6% anual</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor de la anualidad con 6% anual</span>
 <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span> <span class="c"># valor de depositos</span>
 <span class="n">r</span> <span class="o">=</span> <span class="o">.</span><span class="mi">06</span>   <span class="c"># tasa de interes</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c"># cantidad de años</span>
@@ -731,8 +742,9 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 <span class="n">FV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -743,7 +755,7 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>13971.642638923764</pre>
+<pre class="ipynb">13971.642638923764</pre>
 </div>
 
 </div>
@@ -772,16 +784,18 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># mismo caso pero con la diferencia de que los depositos se </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># mismo caso pero con la diferencia de que los depositos se </span>
 <span class="c"># realizan al final de cada período.</span>
 <span class="n">FV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fv</span><span class="p">(</span><span class="n">pv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">pmt</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s">&#39;end&#39;</span><span class="p">)</span>
 <span class="n">FV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -792,7 +806,7 @@ Ayudemonos de <a href="https://www.python.org/">Python</a> para calcular la resp
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>13180.79494238091</pre>
+<pre class="ipynb">13180.79494238091</pre>
 </div>
 
 </div>
@@ -825,17 +839,19 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">fv</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c"># valor futuro</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">fv</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c"># valor futuro</span>
 <span class="n">r</span> <span class="o">=</span> <span class="o">.</span><span class="mi">06</span>   <span class="c"># tasa de interes</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>     <span class="c"># cantidad de años</span>
 
 <span class="n">fv</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -846,7 +862,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>839.6192830323018</pre>
+<pre class="ipynb">839.6192830323018</pre>
 </div>
 
 </div>
@@ -858,15 +874,17 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando la funcion pv de numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># usando la funcion pv de numpy</span>
 <span class="n">PV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="n">fv</span><span class="o">=</span><span class="n">fv</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">pmt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">PV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -877,7 +895,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-839.61928303230184</pre>
+<pre class="ipynb">-839.61928303230184</pre>
 </div>
 
 </div>
@@ -899,14 +917,16 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor futuro de los 839.62</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor futuro de los 839.62</span>
 <span class="n">np</span><span class="o">.</span><span class="n">fv</span><span class="p">(</span><span class="n">pv</span><span class="o">=-</span><span class="mf">839.62</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">pmt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -917,7 +937,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1000.0008539200001</pre>
+<pre class="ipynb">1000.0008539200001</pre>
 </div>
 
 </div>
@@ -939,15 +959,17 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor de la anualidad</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor de la anualidad</span>
 <span class="n">PV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="n">fv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pmt</span><span class="o">=-</span><span class="mi">250</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s">&#39;end&#39;</span><span class="p">)</span>
 <span class="n">PV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -958,7 +980,7 @@ $$PV =\frac{fv}{(1 + r)^n}$$<p>Aplicando la esta formula sobre los datos con que
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1053.090946391429</pre>
+<pre class="ipynb">1053.090946391429</pre>
 </div>
 
 </div>
@@ -994,15 +1016,17 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor presente neto.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el valor presente neto.</span>
 <span class="n">NPV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="o">=.</span><span class="mi">06</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">750</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1250</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
 <span class="n">NPV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1013,7 +1037,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3342.5608917310828</pre>
+<pre class="ipynb">3342.5608917310828</pre>
 </div>
 
 </div>
@@ -1036,15 +1060,17 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el NPV de la inversión de 4000.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el NPV de la inversión de 4000.</span>
 <span class="n">NPV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="o">=.</span><span class="mi">06</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">750</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1250</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
 <span class="n">NPV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1055,7 +1081,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-657.43910826891715</pre>
+<pre class="ipynb">-657.43910826891715</pre>
 </div>
 
 </div>
@@ -1078,15 +1104,17 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el NPV de la inversión de 3000.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el NPV de la inversión de 3000.</span>
 <span class="n">NPV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="o">=.</span><span class="mi">06</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">750</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1250</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
 <span class="n">NPV</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1097,7 +1125,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>342.56089173108285</pre>
+<pre class="ipynb">342.56089173108285</pre>
 </div>
 
 </div>
@@ -1121,15 +1149,17 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando la tasa interna de retorno de la inversion en la compañía</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando la tasa interna de retorno de la inversion en la compañía</span>
 <span class="n">IRR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">])</span>
 <span class="n">IRR</span> <span class="o">*</span> <span class="mi">100</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1140,7 +1170,7 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>7.713847295208343</pre>
+<pre class="ipynb">7.713847295208343</pre>
 </div>
 
 </div>
@@ -1163,9 +1193,10 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando el NPV en función de la tasa de descuento</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando el NPV en función de la tasa de descuento</span>
 <span class="k">def</span> <span class="nf">npv_irr</span><span class="p">(</span><span class="n">tasas</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">tasa</span> <span class="ow">in</span> <span class="n">tasas</span><span class="p">:</span>
@@ -1184,8 +1215,9 @@ $$NPV = \sum\limits_{t=1}^n \frac{V_{t}}{(1 + r)^t} - I_{0}$$<p>donde, $V_{t}$ r
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1412,9 +1444,10 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando pandas y datetime</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando pandas y datetime</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pandas.io.data</span> <span class="k">as</span> <span class="nn">web</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
@@ -1427,21 +1460,24 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <span class="n">aapl</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s">&quot;AAPL&quot;</span><span class="p">,</span> <span class="s">&#39;yahoo&#39;</span><span class="p">,</span> <span class="n">inicio</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span>  <span class="c"># información de Apple</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">msft</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">msft</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1515,13 +1551,15 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">aapl</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">aapl</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1595,17 +1633,19 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando solo el Adj Close price de Enero 2014</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando solo el Adj Close price de Enero 2014</span>
 <span class="n">msft01</span> <span class="o">=</span> <span class="n">msft</span><span class="p">[</span><span class="s">&#39;2014-01&#39;</span><span class="p">][[</span><span class="s">&#39;Adj Close&#39;</span><span class="p">]]</span>
 <span class="n">aapl01</span> <span class="o">=</span> <span class="n">aapl</span><span class="p">[</span><span class="s">&#39;2014-01&#39;</span><span class="p">][[</span><span class="s">&#39;Adj Close&#39;</span><span class="p">]]</span>
 
 <span class="n">msft01</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1654,13 +1694,15 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">aapl01</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c"># head() nos muestra los primeros 5 registros</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">aapl01</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c"># head() nos muestra los primeros 5 registros</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1717,14 +1759,16 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># tambien se puede seleccionar un rango de tiempo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># tambien se puede seleccionar un rango de tiempo</span>
 <span class="n">msft</span><span class="p">[</span><span class="s">&#39;2014-02&#39;</span><span class="p">:</span><span class="s">&#39;2014-02-13&#39;</span><span class="p">]</span>  <span class="c"># desde el 1 al 13 de febrero</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1852,15 +1896,17 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># combinando ambos resultados</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># combinando ambos resultados</span>
 <span class="n">close</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">msft01</span><span class="p">,</span> <span class="n">aapl01</span><span class="p">],</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s">&#39;AAPL&#39;</span><span class="p">])</span>
 <span class="n">close</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1920,14 +1966,16 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># seleccionando los primeros 5 registros de AAPL</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># seleccionando los primeros 5 registros de AAPL</span>
 <span class="n">close</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="s">&#39;AAPL&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>  
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1984,17 +2032,19 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># insertando una nueva columna con el simbolo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># insertando una nueva columna con el simbolo</span>
 <span class="n">msft</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;Symbol&#39;</span><span class="p">,</span> <span class="s">&#39;MSFT&#39;</span><span class="p">)</span>
 <span class="n">aapl</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;Symbol&#39;</span><span class="p">,</span> <span class="s">&#39;AAPL&#39;</span><span class="p">)</span>
 
 <span class="n">msft</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2093,17 +2143,19 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># concatenando toda la información y reseteando el indice</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># concatenando toda la información y reseteando el indice</span>
 <span class="n">combinado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">msft</span><span class="p">,</span> <span class="n">aapl</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 <span class="n">datos_todo</span> <span class="o">=</span> <span class="n">combinado</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
 <span class="n">datos_todo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2198,17 +2250,19 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Armando una tabla pivot del precio de cierre</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Armando una tabla pivot del precio de cierre</span>
 <span class="n">pivot</span> <span class="o">=</span> <span class="n">datos_todo</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">&#39;Date&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;Symbol&#39;</span><span class="p">,</span> 
                          <span class="n">values</span><span class="o">=</span><span class="s">&#39;Adj Close&#39;</span><span class="p">)</span>
 
 <span class="n">pivot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2272,9 +2326,10 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Obteniendo datos de multiples empresas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Obteniendo datos de multiples empresas</span>
 <span class="k">def</span> <span class="nf">all_stocks</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
        <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="n">symbols</span><span class="p">):</span>
            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="s">&#39;yahoo&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
@@ -2287,8 +2342,9 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <span class="n">all_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2383,13 +2439,15 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">all_data</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="s">&#39;GOOG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c"># información de google</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">all_data</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="s">&#39;GOOG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c"># información de google</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2481,17 +2539,19 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando los datos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando los datos.</span>
 <span class="n">solo_cierre</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[[</span><span class="s">&#39;Adj Close&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">pivot_cierre</span> <span class="o">=</span> <span class="n">solo_cierre</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s">&#39;Date&#39;</span><span class="p">,</span> <span class="s">&#39;symbols&#39;</span><span class="p">,</span> <span class="s">&#39;Adj Close&#39;</span><span class="p">)</span>
 
 <span class="n">pivot_cierre</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2569,14 +2629,16 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando la información de Apple</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando la información de Apple</span>
 <span class="n">pivot_cierre</span><span class="p">[</span><span class="s">&#39;AAPL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>  
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2587,7 +2649,7 @@ D+LX+Z5POENYAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f5445826080&gt;</pre>
+<pre class="ipynb">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f5445826080&gt;</pre>
 </div>
 
 </div>
@@ -3135,14 +3197,16 @@ WxrYBZNOwwAAAABJRU5ErkJggg==
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando todos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando todos</span>
 <span class="n">pivot_cierre</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span> 
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -3153,7 +3217,7 @@ WxrYBZNOwwAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f54457194e0&gt;</pre>
+<pre class="ipynb">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f54457194e0&gt;</pre>
 </div>
 
 </div>
@@ -3903,6 +3967,9 @@ YII=
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -3913,9 +3980,6 @@ YII=
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -3931,7 +3995,7 @@ YII=
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

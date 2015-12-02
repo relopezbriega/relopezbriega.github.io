@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -307,13 +307,15 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
@@ -345,16 +347,18 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creando un vector desde una lista de Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creando un vector desde una lista de Python</span>
 <span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
 <span class="n">vector</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -365,7 +369,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([1, 2, 3, 4])</pre>
+<pre class="ipynb">array([1, 2, 3, 4])</pre>
 </div>
 
 </div>
@@ -377,17 +381,19 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Para crear una matriz, simplemente le pasamos una lista anidada al objeto array de Numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Para crear una matriz, simplemente le pasamos una lista anidada al objeto array de Numpy</span>
 <span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
 <span class="n">matriz</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -398,7 +404,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[1, 2],
+<pre class="ipynb">array([[1, 2],
        [3, 4]])</pre>
 </div>
 
@@ -411,14 +417,16 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#El tipo de objeto de tanto de los vectores como de las matrices es ndarray</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#El tipo de objeto de tanto de los vectores como de las matrices es ndarray</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -429,7 +437,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(numpy.ndarray, numpy.ndarray)</pre>
+<pre class="ipynb">(numpy.ndarray, numpy.ndarray)</pre>
 </div>
 
 </div>
@@ -441,16 +449,18 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Los objetos ndarray de Numpy cuentan con las propiedades shape y size que nos muestran sus dimensiones.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Los objetos ndarray de Numpy cuentan con las propiedades shape y size que nos muestran sus dimensiones.</span>
 <span class="nb">print</span> <span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vector</span><span class="o">.</span><span class="n">size</span>
 
 <span class="nb">print</span> <span class="n">matriz</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">matriz</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -459,7 +469,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4,) 4
+<pre class="ipynb">(4,) 4
 (2, 2) 4
 </pre>
 </div>
@@ -481,17 +491,19 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#arange</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#arange</span>
 <span class="c">#La funcion arange nos facilita la creación de matrices</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># argumentos: start, stop, step</span>
 
 <span class="n">x</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -502,7 +514,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])</pre>
+<pre class="ipynb">array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])</pre>
 </div>
 
 </div>
@@ -514,15 +526,17 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#linspace</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#linspace</span>
 <span class="c">#linspace nos devuelve un vector con la cantidad de muestras que le ingresemos y separados uniformamente entre sí.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>  <span class="c"># argumentos: start, stop, samples</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -533,7 +547,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([  1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.,
+<pre class="ipynb">array([  1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.,
         12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.,  21.,  22.,
         23.,  24.,  25.])</pre>
 </div>
@@ -547,17 +561,19 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#mgrid</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#mgrid</span>
 <span class="c">#Con mgrid podemos crear arrays multimensionales.</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="n">x</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -568,7 +584,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[0, 0, 0, 0, 0],
+<pre class="ipynb">array([[0, 0, 0, 0, 0],
        [1, 1, 1, 1, 1],
        [2, 2, 2, 2, 2],
        [3, 3, 3, 3, 3],
@@ -584,13 +600,15 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">y</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">y</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -601,7 +619,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[0, 1, 2, 3, 4],
+<pre class="ipynb">array([[0, 1, 2, 3, 4],
        [0, 1, 2, 3, 4],
        [0, 1, 2, 3, 4],
        [0, 1, 2, 3, 4],
@@ -617,15 +635,17 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#zeros y ones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#zeros y ones</span>
 <span class="c">#Estas funciones nos permiten crear matrices de ceros o de unos.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -636,7 +656,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.,  0.,  0.],
+<pre class="ipynb">array([[ 0.,  0.,  0.],
        [ 0.,  0.,  0.],
        [ 0.,  0.,  0.]])</pre>
 </div>
@@ -650,13 +670,15 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -667,7 +689,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 1.,  1.,  1.],
+<pre class="ipynb">array([[ 1.,  1.,  1.],
        [ 1.,  1.,  1.],
        [ 1.,  1.,  1.]])</pre>
 </div>
@@ -681,15 +703,17 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#random.randn</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#random.randn</span>
 <span class="c">#Esta funcion nos permite generar una matriz con una distribución estándar de números.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -700,7 +724,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 1.39342127,  0.27553779,  1.60499887,  0.49998319,  0.70528917],
+<pre class="ipynb">array([[ 1.39342127,  0.27553779,  1.60499887,  0.49998319,  0.70528917],
        [ 0.77384386,  0.13082401, -0.94628073,  1.11938778, -0.03671148],
        [-1.26643358, -0.49647634,  0.02653584,  1.69748904,  0.83353017],
        [ 2.37892618, -1.21239237,  1.12638933,  1.70430737,  0.50932112],
@@ -716,15 +740,17 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#diag</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#diag</span>
 <span class="c">#Nos permite crear una matriz con la diagonal de números que le ingresemos.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -735,7 +761,7 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[1, 0, 0],
+<pre class="ipynb">array([[1, 0, 0],
        [0, 1, 0],
        [0, 0, 1]])</pre>
 </div>
@@ -785,14 +811,16 @@ propósitos principales con respecto al análisis de datos es la utilizacion de 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Generalmente se suele importar matplotlib de la siguiente forma.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Generalmente se suele importar matplotlib de la siguiente forma.</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
@@ -809,38 +837,43 @@ $$f(x) = e^{-x^2}$$
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definimos nuestra función.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definimos nuestra función.</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creamos un vector con los puntos que le pasaremos a la funcion previamente creada.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creamos un vector con los puntos que le pasaremos a la funcion previamente creada.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Representeamos la función utilizando el objeto plt de matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Representeamos la función utilizando el objeto plt de matplotlib</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Eje $x$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;$f(x)$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -849,8 +882,9 @@ $$f(x) = e^{-x^2}$$
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;Función f(x)&quot;</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1041,9 +1075,10 @@ gg==
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Grafico de puntos con matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Grafico de puntos con matplotlib</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#creando vector x</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#creando vector x</span>
@@ -1058,8 +1093,9 @@ gg==
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1618,9 +1654,10 @@ AElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c"># Conjunto de puntos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c"># Conjunto de puntos</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="c"># Funcion</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1641,8 +1678,9 @@ AElFTkSuQmCC
 <span class="n">axes2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;insertado&#39;</span><span class="p">);</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -1873,9 +1911,10 @@ AAAASUVORK5CYII=
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo con más de una figura.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo con más de una figura.</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
@@ -1887,8 +1926,9 @@ AAAASUVORK5CYII=
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2145,14 +2185,16 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando pandas</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
@@ -2168,16 +2210,18 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Las series son matrices de una sola dimension similares a los vectores, pero con su propio indice.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Las series son matrices de una sola dimension similares a los vectores, pero con su propio indice.</span>
 <span class="c"># Creando una Serie</span>
 <span class="n">serie</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">serie</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2188,7 +2232,7 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0    2
+<pre class="ipynb">0    2
 1    4
 2   -8
 3    3
@@ -2204,15 +2248,17 @@ dtype: int64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># podemos ver tantos los índices como los valores de las Series.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># podemos ver tantos los índices como los valores de las Series.</span>
 <span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">values</span>
 <span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2221,7 +2267,7 @@ dtype: int64</pre>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 2  4 -8  3]
+<pre class="ipynb">[ 2  4 -8  3]
 Int64Index([0, 1, 2, 3], dtype=&apos;int64&apos;)
 </pre>
 </div>
@@ -2234,15 +2280,17 @@ Int64Index([0, 1, 2, 3], dtype=&apos;int64&apos;)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando Series con nuestros propios índices.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando Series con nuestros propios índices.</span>
 <span class="n">serie2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">])</span>
 <span class="n">serie2</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2253,7 +2301,7 @@ Int64Index([0, 1, 2, 3], dtype=&apos;int64&apos;)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>d    2
+<pre class="ipynb">d    2
 b    4
 a   -8
 c    3
@@ -2269,16 +2317,18 @@ dtype: int64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los datos a través de los índices</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los datos a través de los índices</span>
 <span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
 <span class="nb">print</span> <span class="n">serie2</span><span class="p">[[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]]</span>
 <span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="n">serie2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2287,7 +2337,7 @@ dtype: int64</pre>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>-8
+<pre class="ipynb">-8
 b    4
 c    3
 d    2
@@ -2316,9 +2366,10 @@ dtype: int64
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># El DataFrame es una estructura de datos tabular similar a las hojas de cálculo de Excel.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># El DataFrame es una estructura de datos tabular similar a las hojas de cálculo de Excel.</span>
 <span class="c"># Posee tanto indices de columnas como de filas.</span>
 
 <span class="c"># Creando un DataFrame.</span>
@@ -2329,8 +2380,9 @@ dtype: int64
 <span class="n">frame</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2396,14 +2448,16 @@ dtype: int64
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un DataFrame desde un archivo.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un DataFrame desde un archivo.</span>
 <span class="o">!</span>cat <span class="s1">&#39;dataset.csv&#39;</span> # ejemplo archivo csv.
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2412,7 +2466,7 @@ dtype: int64
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>pop,state,year
+<pre class="ipynb">pop,state,year
 1.5,Ohio,2000
 1.7,Ohio,2001
 3.6,Ohio,2002
@@ -2429,15 +2483,17 @@ dtype: int64
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Leyendo el archivo dataset.csv para crear el DataFrame</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Leyendo el archivo dataset.csv para crear el DataFrame</span>
 <span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 <span class="n">frame2</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2503,14 +2559,16 @@ dtype: int64
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una columna como una Serie</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una columna como una Serie</span>
 <span class="n">frame</span><span class="p">[</span><span class="s">&#39;state&#39;</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2521,7 +2579,7 @@ dtype: int64
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0      Ohio
+<pre class="ipynb">0      Ohio
 1      Ohio
 2      Ohio
 3    Nevada
@@ -2538,14 +2596,16 @@ Name: state, dtype: object</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una línea como una Serie.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una línea como una Serie.</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2556,7 +2616,7 @@ Name: state, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>pop       1.7
+<pre class="ipynb">pop       1.7
 state    Ohio
 year     2001
 Name: 1, dtype: object</pre>
@@ -2571,14 +2631,16 @@ Name: 1, dtype: object</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando las columnas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando las columnas</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2589,7 +2651,7 @@ Name: 1, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([u&apos;pop&apos;, u&apos;state&apos;, u&apos;year&apos;], dtype=&apos;object&apos;)</pre>
+<pre class="ipynb">Index([u&apos;pop&apos;, u&apos;state&apos;, u&apos;year&apos;], dtype=&apos;object&apos;)</pre>
 </div>
 
 </div>
@@ -2601,14 +2663,16 @@ Name: 1, dtype: object</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando los índices.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando los índices.</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -2619,7 +2683,7 @@ Name: 1, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Int64Index([0, 1, 2, 3, 4], dtype=&apos;int64&apos;)</pre>
+<pre class="ipynb">Int64Index([0, 1, 2, 3, 4], dtype=&apos;int64&apos;)</pre>
 </div>
 
 </div>
@@ -2747,6 +2811,9 @@ Name: 1, dtype: object</pre>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -2757,9 +2824,6 @@ Name: 1, dtype: object</pre>
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -2775,7 +2839,7 @@ Name: 1, dtype: object</pre>
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

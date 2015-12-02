@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -278,14 +278,16 @@ jQuery(document).ready(function($) {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
@@ -302,14 +304,16 @@ jQuery(document).ready(function($) {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -318,7 +322,7 @@ jQuery(document).ready(function($) {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hola Raul
+<pre class="ipynb">Hola Raul
 Hola 1
 </pre>
 </div>
@@ -342,9 +346,10 @@ Hola 1
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="s">&quot;Error: el argumento debe ser del tipo String(str)&quot;</span>
     <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
@@ -353,8 +358,9 @@ Hola 1
 <span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -363,7 +369,7 @@ Hola 1
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hola Raul
+<pre class="ipynb">Hola Raul
 Error: el argumento debe ser del tipo String(str)
 </pre>
 </div>
@@ -463,9 +469,10 @@ Error: el argumento debe ser del tipo String(str)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
 import typing
 
 def saludo(nombre: str) -&gt; str:
@@ -475,8 +482,9 @@ print(saludo(&#39;Raul&#39;))
 print(saludo(1))
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -485,7 +493,7 @@ print(saludo(1))
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting typeTest.py
+<pre class="ipynb">Overwriting typeTest.py
 </pre>
 </div>
 </div>
@@ -507,13 +515,15 @@ print(saludo(1))
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -522,7 +532,7 @@ print(saludo(1))
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>typeTest.py, line 7: Argument 1 to &quot;saludo&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;
+<pre class="ipynb">typeTest.py, line 7: Argument 1 to &quot;saludo&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;
 </pre>
 </div>
 </div>
@@ -544,13 +554,15 @@ print(saludo(1))
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>python3 typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>python3 typeTest.py
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -559,7 +571,7 @@ print(saludo(1))
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hola Raul
+<pre class="ipynb">Hola Raul
 Hola 1
 </pre>
 </div>
@@ -592,9 +604,10 @@ Hola 1
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
 from typing import Undefined, List, Dict
 
 # Declaro los tipos de las variables
@@ -616,8 +629,9 @@ lista_enteros = [&#39;raul&#39;, 1, &#39;2&#39;]
 dic_str_int = {1: &#39;raul&#39;}
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -626,7 +640,7 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting typeTest.py
+<pre class="ipynb">Overwriting typeTest.py
 </pre>
 </div>
 </div>
@@ -638,13 +652,15 @@ dic_str_int = {1: &#39;raul&#39;}
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -653,7 +669,7 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
+<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
 typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
 typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
 typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
@@ -679,9 +695,10 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> typeTest.py
 from typing import List, Dict
 
 # Declaro los tipos de las variables
@@ -703,8 +720,9 @@ lista_enteros = [&#39;raul&#39;, 1, &#39;2&#39;]
 dic_str_int = {1: &#39;raul&#39;}
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -713,7 +731,7 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting typeTest.py
+<pre class="ipynb">Overwriting typeTest.py
 </pre>
 </div>
 </div>
@@ -725,13 +743,15 @@ dic_str_int = {1: &#39;raul&#39;}
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>mypy typeTest.py
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -740,7 +760,7 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
+<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
 typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
 typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
 typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
@@ -856,6 +876,9 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -866,9 +889,6 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -884,7 +904,7 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

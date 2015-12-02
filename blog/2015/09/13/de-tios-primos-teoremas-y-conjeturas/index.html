@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -306,9 +306,10 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factorizando primos en Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factorizando primos en Python</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">criba_eratostenes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -351,8 +352,9 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <span class="n">factorizar_primos</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>  <span class="c"># Factores primos de 28</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -363,7 +365,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[2, 2, 7]</pre>
+<pre class="ipynb">[2, 2, 7]</pre>
 </div>
 
 </div>
@@ -375,14 +377,16 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factores primos de 1982</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factores primos de 1982</span>
 <span class="n">factorizar_primos</span><span class="p">(</span><span class="mi">1982</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -393,7 +397,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[2, 991]</pre>
+<pre class="ipynb">[2, 991]</pre>
 </div>
 
 </div>
@@ -405,14 +409,16 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factores primos de 2015</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Factores primos de 2015</span>
 <span class="n">factorizar_primos</span><span class="p">(</span><span class="mi">2015</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -423,7 +429,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[5, 13, 31]</pre>
+<pre class="ipynb">[5, 13, 31]</pre>
 </div>
 
 </div>
@@ -447,9 +453,10 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># La conjetura de Goldbach en Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># La conjetura de Goldbach en Python</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">criba_primos</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -517,8 +524,9 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <span class="n">goldbach_list</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -527,7 +535,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2000 = 3 + 1997
+<pre class="ipynb">2000 = 3 + 1997
 2002 = 3 + 1999
 2004 = 5 + 1999
 2006 = 3 + 2003
@@ -547,14 +555,16 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Goldbach entre 9.999.980 y 10.000.000</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Goldbach entre 9.999.980 y 10.000.000</span>
 <span class="n">goldbach_list</span><span class="p">(</span><span class="mi">9999980</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -563,7 +573,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>9999980 = 7 + 9999973
+<pre class="ipynb">9999980 = 7 + 9999973
 9999982 = 11 + 9999971
 9999984 = 11 + 9999973
 9999986 = 13 + 9999973
@@ -585,14 +595,16 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Goldbach entre 99.999.980 y 100.000.000</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Goldbach entre 99.999.980 y 100.000.000</span>
 <span class="n">goldbach_list</span><span class="p">(</span><span class="mi">99999980</span><span class="p">,</span> <span class="mi">100000000</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -601,7 +613,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>99999980 = 193 + 99999787
+<pre class="ipynb">99999980 = 193 + 99999787
 99999982 = 11 + 99999971
 99999984 = 13 + 99999971
 99999986 = 139 + 99999847
@@ -679,6 +691,9 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -689,9 +704,6 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -707,7 +719,7 @@ A pesar de que los <em><a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>

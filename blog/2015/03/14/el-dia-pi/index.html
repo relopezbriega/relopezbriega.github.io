@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
         });
     });
 });
@@ -452,15 +452,17 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi utilizando el módulo math</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi utilizando el módulo math</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -471,7 +473,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3.141592653589793</pre>
+<pre class="ipynb">3.141592653589793</pre>
 </div>
 
 </div>
@@ -483,16 +485,18 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi utiizando sympy, dps nos permite variar el número de dígitos de Pi</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi utiizando sympy, dps nos permite variar el número de dígitos de Pi</span>
 <span class="kn">from</span> <span class="nn">sympy.mpmath</span> <span class="k">import</span> <span class="n">mp</span>
 <span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">33</span>  <span class="c"># número de dígitos</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -501,7 +505,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.1415926535897932384626433832795
+<pre class="ipynb">3.1415926535897932384626433832795
 </pre>
 </div>
 </div>
@@ -523,9 +527,10 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Implementacion de aproximación de Arquímedes</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Implementacion de aproximación de Arquímedes</span>
 <span class="kn">from</span> <span class="nn">decimal</span> <span class="k">import</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">getcontext</span>
 
 <span class="k">def</span> <span class="nf">pi_archimedes</span><span class="p">(</span><span class="n">digitos</span><span class="p">):</span>
@@ -556,22 +561,25 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
         <span class="n">old_result</span> <span class="o">=</span> <span class="n">result</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aproximacion de Arquímedes con 33 dígitos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aproximacion de Arquímedes con 33 dígitos</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pi_archimedes</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -580,7 +588,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.14159265358979323846264338327950
+<pre class="ipynb">3.14159265358979323846264338327950
 </pre>
 </div>
 </div>
@@ -602,9 +610,10 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">pi_leibniz</span><span class="p">(</span><span class="n">precision</span><span class="p">):</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">pi_leibniz</span><span class="p">(</span><span class="n">precision</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calcula Pi utilizando las series infinitas de Gregory-Leibniz&quot;&quot;&quot;</span>
     <span class="n">pi</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">modificador</span> <span class="o">=</span> <span class="mi">1</span>
@@ -615,22 +624,25 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
     <span class="k">return</span> <span class="n">pi</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi con una precision de 10000000 repeticiones.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Pi con una precision de 10000000 repeticiones.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pi_leibniz</span><span class="p">(</span><span class="mi">10000000</span><span class="p">))</span>
 </pre></div>
 
+    </div>
 </div>
-</div>
+
 </div>
 
 <div class="output_wrapper">
@@ -639,7 +651,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.1415924535897797
+<pre class="ipynb">3.1415924535897797
 </pre>
 </div>
 </div>
@@ -719,6 +731,9 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
       <li class="post">
@@ -729,9 +744,6 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">De tíos, primos, teoremas y conjeturas</a>
       </li>
     </ul>
   </section>
@@ -747,7 +759,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
 
 
     <section>
