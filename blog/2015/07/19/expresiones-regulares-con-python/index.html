@@ -278,13 +278,13 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Uno de los problemas más comunes con que nos solemos encontrar al desarrollar cualquier programa infórmatico, es el de procesamiento de texto. Esta tarea puede resultar bastante trivial para el cerebro humano, ya que nosotros podemos detectar con facilidad que es un número y que una letra, o cuales son palabras que cumplen con un determinado patrón y cuales no; pero estas mismas tareas no son tan fáciles para una computadora. Es por esto, que el procesamiento de texto siempre ha sido uno de los temas más relevantes en las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de la computación</a>. Luego de varias décadas de investigación se logró desarrollar un poderoso y versátil lenguaje que cualquier computadora puede utilizar para reconocer patrones de texto; este lenguale es lo que hoy en día se conoce con el nombre de <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>; las operaciones de validación, búsqueda, extracción y sustitución de texto ahora son tareas mucho más sencillas para las computadoras gracias a las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>.</p>
-<h2 id="&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#191;Qu&#233; son las Expresiones Regulares?<a class="anchor-link" href="#&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>, a menudo llamada también <strong>regex</strong>, son unas secuencias de caracteres que forma un patrón de búsqueda, las cuales son formalizadas por medio de una sintaxis espécifica. Los patrones se interpretan como un conjunto de instrucciones, que luego se ejecutan sobre un texto de entrada para producir un subconjunto o una versión modificada del texto original. Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> pueden incluir patrones de coincidencia literal, de repetición, de composición, de ramificación, y otras sofisticadas reglas de reconocimiento de texto . Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> deberían formar parte del arsenal de cualquier buen programador ya que un gran número de problemas de procesamiento de texto pueden ser facilmente resueltos con ellas.</p>
-<h2 id="Componentes-de-las-Expresiones-Regulares">Componentes de las Expresiones Regulares<a class="anchor-link" href="#Componentes-de-las-Expresiones-Regulares">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> son un mini lenguaje en sí mismo, por lo que para poder utilizarlas eficientemente primero debemos entender los componentes de su sintaxsis; ellos son:</p>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Uno de los problemas más comunes con que nos solemos encontrar al desarrollar cualquier programa informático, es el de procesamiento de texto. Esta tarea puede resultar bastante trivial para el cerebro humano, ya que nosotros podemos detectar con facilidad que es un número y que una letra, o cuales son palabras que cumplen con un determinado patrón y cuales no; pero estas mismas tareas no son tan fáciles para una computadora. Es por esto, que el procesamiento de texto siempre ha sido uno de los temas más relevantes en las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de la computación</a>. Luego de varias décadas de investigación se logró desarrollar un poderoso y versátil lenguaje que cualquier computadora puede utilizar para reconocer patrones de texto; este lenguale es lo que hoy en día se conoce con el nombre de <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>; las operaciones de validación, búsqueda, extracción y sustitución de texto ahora son tareas mucho más sencillas para las computadoras gracias a las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>.</p>
+<h2 id="&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#191;Qu&#233; son las Expresiones Regulares?<a class="anchor-link" href="#&#191;Qu&#233;-son-las-Expresiones-Regulares?">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>, a menudo llamada también <strong>regex</strong>, son unas secuencias de caracteres que forma un patrón de búsqueda, las cuales son formalizadas por medio de una sintaxis específica. Los patrones se interpretan como un conjunto de instrucciones, que luego se ejecutan sobre un texto de entrada para producir un subconjunto o una versión modificada del texto original. Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> pueden incluir patrones de coincidencia literal, de repetición, de composición, de ramificación, y otras sofisticadas reglas de reconocimiento de texto . Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> deberían formar parte del arsenal de cualquier buen programador ya que un gran número de problemas de procesamiento de texto pueden ser fácilmente resueltos con ellas.</p>
+<h2 id="Componentes-de-las-Expresiones-Regulares">Componentes de las Expresiones Regulares<a class="anchor-link" href="#Componentes-de-las-Expresiones-Regulares">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> son un mini lenguaje en sí mismo, por lo que para poder utilizarlas eficientemente primero debemos entender los componentes de su sintaxis; ellos son:</p>
 <ul>
-<li><p><strong>Literales</strong>: Cualquier caracter se encuentra a sí mismo, a menos que se trate de un <strong><em>metacaracter</em></strong> con significado especial. Una serie de caracteres encuentra esa misma serie en el texto de entrada, por lo tanto la plantilla "raul" encontrará todas las aparciones de "raul" en el texto que procesamos.</p>
+<li><p><strong>Literales</strong>: Cualquier caracter se encuentra a sí mismo, a menos que se trate de un <strong><em>metacaracter</em></strong> con significado especial. Una serie de caracteres encuentra esa misma serie en el texto de entrada, por lo tanto la plantilla "raul" encontrará todas las apariciones de "raul" en el texto que procesamos.</p>
 </li>
-<li><p><strong>Secuencias de escape</strong>: La sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> nos permite utilizar las <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que ya conocemos de otros lenguajes de programación para esos casos especiales como ser finales de linea, tabs, barras diagonales, etc. Las principales <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que podemos encontrar, son:</p>
+<li><p><strong>Secuencias de escape</strong>: La sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> nos permite utilizar las <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que ya conocemos de otros lenguajes de programación para esos casos especiales como ser finales de línea, tabs, barras diagonales, etc. Las principales <em><a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a></em> que podemos encontrar, son:</p>
 </li>
 </ul>
 <table>
@@ -327,7 +327,7 @@ jQuery(document).ready(function($) {
 <ul>
 <li><p><strong>Clases de caracteres</strong>: Se pueden especificar clases de caracteres encerrando una lista de caracteres entre corchetes [], la que que encontrará uno cualquiera de los caracteres de la lista. Si el primer símbolo después del "[" es "^", la clase encuentra cualquier caracter que no está en la lista.</p>
 </li>
-<li><p><strong>Metacaracteres</strong>: Los metacaracteres son caracteres especiales que son la esencia de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Como son sumamente importantes para entender la sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> y existen diferentes tipos, voy a dedicar una seccion a explicarlos un poco más en detalle.</p>
+<li><p><strong>Metacaracteres</strong>: Los metacaracteres son caracteres especiales que son la esencia de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Como son sumamente importantes para entender la sintaxis de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> y existen diferentes tipos, voy a dedicar una sección a explicarlos un poco más en detalle.</p>
 </li>
 </ul>
 
@@ -343,7 +343,7 @@ jQuery(document).ready(function($) {
 <table>
 <thead><tr>
 <th>Metacaracter</th>
-<th>Descripcion</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -381,7 +381,7 @@ jQuery(document).ready(function($) {
 <table>
 <thead><tr>
 <th>Metacaracter</th>
-<th>Descripcion</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -411,11 +411,11 @@ jQuery(document).ready(function($) {
 </tr>
 </tbody>
 </table>
-<h3 id="Metacaracteres---iteradores">Metacaracteres - iteradores<a class="anchor-link" href="#Metacaracteres---iteradores">&#182;</a></h3><p>Cualquier elemento de una <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> puede ser seguido por otro tipo de metacaracteres, los <em>iteradores</em>. Usando estos metacaracteres se puede especificar el número de ocurrencias del caracter previo, de un metacaracter o de una subexpresion. Ellos son:</p>
+<h3 id="Metacaracteres---iteradores">Metacaracteres - iteradores<a class="anchor-link" href="#Metacaracteres---iteradores">&#182;</a></h3><p>Cualquier elemento de una <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> puede ser seguido por otro tipo de metacaracteres, los <em>iteradores</em>. Usando estos metacaracteres se puede especificar el número de ocurrencias del caracter previo, de un metacaracter o de una subexpresión. Ellos son:</p>
 <table>
 <thead><tr>
 <th>Metacaracter</th>
-<th>Descripcion</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -519,7 +519,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Buscando-coincidencias">Buscando coincidencias<a class="anchor-link" href="#Buscando-coincidencias">&#182;</a></h3><p>Una vez que hemos importado el módulo, podemos empezar a tratar de buscar coincidentcias con un determinado patrón de búsqueda. Para hacer esto, primero debemos <a href="https://es.wikipedia.org/wiki/Compilador">compilar</a> nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> en un <em>objeto de patrones de <a href="https://www.python.org/">Python</a></em>, el cúal posee métodos para diversas operaciones, tales como la búsqueda de coincidencias de patrones o realizar sustituciones de texto.</p>
+<h3 id="Buscando-coincidencias">Buscando coincidencias<a class="anchor-link" href="#Buscando-coincidencias">&#182;</a></h3><p>Una vez que hemos importado el módulo, podemos empezar a tratar de buscar coincidencias con un determinado patrón de búsqueda. Para hacer esto, primero debemos <a href="https://es.wikipedia.org/wiki/Compilador">compilar</a> nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> en un <em>objeto de patrones de <a href="https://www.python.org/">Python</a></em>, el cual posee métodos para diversas operaciones, tales como la búsqueda de coincidencias de patrones o realizar sustituciones de texto.</p>
 
 </div>
 </div>
@@ -545,14 +545,14 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ahora que ya tenemos el <em>objeto de expresion regular</em> compilado podemos utilizar alguno de los siguientes métodos para buscar coincidencias con nuestro texto.</p>
+<p>Ahora que ya tenemos el <em>objeto de expresión regular</em> compilado podemos utilizar alguno de los siguientes métodos para buscar coincidencias con nuestro texto.</p>
 <ul>
-<li><strong>match()</strong>: El cual determinda si la regex tiene coincidencias en el comienzo del texto.</li>
+<li><strong>match()</strong>: El cual determinada si la regex tiene coincidencias en el comienzo del texto.</li>
 <li><strong>search()</strong>: El cual escanea todo el texto buscando cualquier ubicación donde haya una coincidencia.</li>
 <li><strong>findall()</strong>: El cual encuentra todos los subtextos donde haya una coincidencia y nos devuelve estas coincidencias como una lista.</li>
 <li><strong>finditer()</strong>: El cual es similar al anterior pero en lugar de devolvernos una lista nos devuelve un <a href="https://es.wikipedia.org/wiki/Iterador_(patr%C3%B3n_de_dise%C3%B1o)">iterador</a>.</li>
 </ul>
-<p>Veamoslos en accion.</p>
+<p>Veamoslos en acción.</p>
 
 </div>
 </div>
@@ -806,12 +806,12 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Como podemos ver en estos ejemplos, cuando hay coincidencias, <a href="https://www.python.org/">Python</a> nos devuelve un <em>Objeto de coincidencia</em> (salvo por el método <code>findall()</code> que devuelve una lista). Este <em>Objeto de coincidencia</em> tambien tiene sus propios métodos que nos proporcionan información adicional sobre la coincidencia; éstos métodos son:</p>
+<p>Como podemos ver en estos ejemplos, cuando hay coincidencias, <a href="https://www.python.org/">Python</a> nos devuelve un <em>Objeto de coincidencia</em> (salvo por el método <code>findall()</code> que devuelve una lista). Este <em>Objeto de coincidencia</em> también tiene sus propios métodos que nos proporcionan información adicional sobre la coincidencia; éstos métodos son:</p>
 <ul>
 <li><strong>group()</strong>: El cual devuelve el texto que coincide con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>.</li>
-<li><strong>start()</strong>: El cual devuelve la posición inicial de la coincidencia.    </li>
+<li><strong>start()</strong>: El cual devuelve la posición inicial de la coincidencia.</li>
 <li><strong>end()</strong>: El cual devuelve la posición final de la coincidencia.</li>
-<li><strong>span()</strong>: El cual devuelve una tupla con la posicion inicial y final de la coincidencia.</li>
+<li><strong>span()</strong>: El cual devuelve una tupla con la posición inicial y final de la coincidencia.</li>
 </ul>
 
 </div>
@@ -885,11 +885,11 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Modificando-el-texto-de-entrada">Modificando el texto de entrada<a class="anchor-link" href="#Modificando-el-texto-de-entrada">&#182;</a></h3><p>Ademas de buscar coicidencias de nuestro patrón de búsqueda en un texto, podemos utilizar ese mismo patron para realizar modificaciones al texto de entrada. Para estos casos podemos utlizar los siguientes métodos:</p>
+<h3 id="Modificando-el-texto-de-entrada">Modificando el texto de entrada<a class="anchor-link" href="#Modificando-el-texto-de-entrada">&#182;</a></h3><p>Además de buscar coincidencias de nuestro patrón de búsqueda en un texto, podemos utilizar ese mismo patrón para realizar modificaciones al texto de entrada. Para estos casos podemos utilizar los siguientes métodos:</p>
 <ul>
 <li><strong>split()</strong>:    El cual divide el texto en una lista, realizando las divisiones del texto en cada lugar donde se cumple con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>.</li>
 <li><strong>sub()</strong>: El cual encuentra todos los subtextos donde existe una coincidencia con la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> y luego los reemplaza con un nuevo texto.</li>
-<li><strong>subn()</strong>: El cual es similar al anterior pero ademas de devolver el nuevo texto, también devuelve el numero de reemplazos que realizó.</li>
+<li><strong>subn()</strong>: El cual es similar al anterior pero además de devolver el nuevo texto, también devuelve el numero de reemplazos que realizó.</li>
 </ul>
 <p>Veamoslos en acción.</p>
 
@@ -1167,7 +1167,7 @@ la llama de tu amor.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Funciones-no-compiladas">Funciones no compiladas<a class="anchor-link" href="#Funciones-no-compiladas">&#182;</a></h3><p>En estos últimos ejemplos, pudimos ver casos donde utilizamos las funciones al nivel del módulo <code>split()</code> y <code>subn()</code>. Para cada uno de los ejemplos que vimos (match, search, findall, finditer, split, sub y subn) existe una versión al nivel del módulo que se puede utilizar sin necesidad de compilar primero el patron de búsqueda; simplemente le pasamos como primer argumento la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> y el resultado será el mismo. La ventaja que tiene la versión compila sobre las funciones no compiladas es que si vamos a utilizar la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> dentro de un <em>bucle</em> nos vamos a ahorrar varias llamadas de funciones y por lo tanto mejorar la performance de nuestro programa.</p>
+<h3 id="Funciones-no-compiladas">Funciones no compiladas<a class="anchor-link" href="#Funciones-no-compiladas">&#182;</a></h3><p>En estos últimos ejemplos, pudimos ver casos donde utilizamos las funciones al nivel del módulo <code>split()</code> y <code>subn()</code>. Para cada uno de los ejemplos que vimos (match, search, findall, finditer, split, sub y subn) existe una versión al nivel del módulo que se puede utilizar sin necesidad de compilar primero el patrón de búsqueda; simplemente le pasamos como primer argumento la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> y el resultado será el mismo. La ventaja que tiene la versión compila sobre las funciones no compiladas es que si vamos a utilizar la <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> dentro de un <em>bucle</em> nos vamos a ahorrar varias llamadas de funciones y por lo tanto mejorar la performance de nuestro programa.</p>
 
 </div>
 </div>
@@ -1214,11 +1214,11 @@ la llama de tu amor.
 <p>Algunas de las banderas de compilación que podemos encontrar son:</p>
 <ul>
 <li><strong>IGNORECASE, I</strong>: Para realizar búsquedas sin tener en cuenta las minúsculas o mayúsculas.</li>
-<li><strong>VERBOSE, X</strong>: Que habilita la modo verborrágico, el cual permite organizar el patron de búsqueda de una forma que sea más sencilla de entender y leer.</li>
+<li><strong>VERBOSE, X</strong>: Que habilita la modo verborrágico, el cual permite organizar el patrón de búsqueda de una forma que sea más sencilla de entender y leer.</li>
 <li><strong>ASCII, A</strong>: Que hace que las <a href="https://msdn.microsoft.com/es-es/library/h21280bw.aspx">secuencias de escape</a> \w, \b, \s and \d funciones para coincidencias con los caracteres ASCII.</li>
 <li><strong>DOTALL, S</strong>: La cual hace que el metacaracter . funcione para cualquier caracter, incluyendo el las líneas nuevas.</li>
 <li><strong>LOCALE, L</strong>: Esta opción hace que \w, \W, \b, \B, \s, y \S dependientes de la localización actual.</li>
-<li><strong>MULTILINE, M</strong>: Que    habilita la coincidencia en multiples lineas, afectando el funcionamiento de los metacaracteres ^ and $.</li>
+<li><strong>MULTILINE, M</strong>: Que habilita la coincidencia en múltiples líneas, afectando el funcionamiento de los metacaracteres ^ and $.</li>
 </ul>
 
 </div>
@@ -1347,7 +1347,7 @@ la llama de tu amor.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Como podemos ver en este último ejemplo, la opción VERBOSE puede ser muy util para que cualquier persona que lea nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> pueda entenderla más facilmente.</p>
+<p>Como podemos ver en este último ejemplo, la opción VERBOSE puede ser muy util para que cualquier persona que lea nuestra <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a> pueda entenderla más fácilmente.</p>
 
 </div>
 </div>
@@ -1357,7 +1357,7 @@ la llama de tu amor.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Nombrando-los-grupos">Nombrando los grupos<a class="anchor-link" href="#Nombrando-los-grupos">&#182;</a></h3><p>Otra de las funciones interesantes que nos ofrece el módulo <a href="https://docs.python.org/3/library/re.html">re</a> de <a href="https://www.python.org/">Python</a>; es la posibilidad de ponerle nombres a los grupos de nuestras <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Así por ejemplo, en lugar de acceder a los grupos por sus indices, como en este caso...</p>
+<h3 id="Nombrando-los-grupos">Nombrando los grupos<a class="anchor-link" href="#Nombrando-los-grupos">&#182;</a></h3><p>Otra de las funciones interesantes que nos ofrece el módulo <a href="https://docs.python.org/3/library/re.html">re</a> de <a href="https://www.python.org/">Python</a>; es la posibilidad de ponerle nombres a los grupos de nuestras <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>. Así por ejemplo, en lugar de acceder a los grupos por sus índices, como en este caso...</p>
 
 </div>
 </div>
@@ -1542,7 +1542,7 @@ la llama de tu amor.
 <h2 id="Otros-ejemplos-de-expresiones-regulares">Otros ejemplos de expresiones regulares<a class="anchor-link" href="#Otros-ejemplos-de-expresiones-regulares">&#182;</a></h2><p>Por último, para ir cerrando esta introducción a las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a>, les dejo algunos ejemplos de las <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> más utilizadas.</p>
 <h3 id="Validando-mails">Validando mails<a class="anchor-link" href="#Validando-mails">&#182;</a></h3><p>Para validar que un mail tenga la estructura correcta, podemos utilizar la siguiente <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
 <p><strong>regex</strong>: <code>\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,6}\b</code></p>
-<p>Este es el patron que utilizamos en el ejemplo de la opción VERBOSE.</p>
+<p>Este es el patrón que utilizamos en el ejemplo de la opción VERBOSE.</p>
 <h3 id="Validando-una-URL">Validando una URL<a class="anchor-link" href="#Validando-una-URL">&#182;</a></h3><p>Para validar que una URL tenga una estructura correcta, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
 <p><strong>regex</strong>: <code>^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$</code></p>
 
@@ -1619,7 +1619,7 @@ la llama de tu amor.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Validando-una-direcci&#243;n-IP">Validando una direcci&#243;n IP<a class="anchor-link" href="#Validando-una-direcci&#243;n-IP">&#182;</a></h3><p>Para validar que una dirección IP tenga una estructura correcta, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<h3 id="Validando-una-direcci&#243;n-IP">Validando una direcci&#243;n IP<a class="anchor-link" href="#Validando-una-direcci&#243;n-IP">&#182;</a></h3><p>Para validar que una dirección IP tenga una estructura correcta, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresión regular</a>:</p>
 <p><strong>regex</strong>: <code>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</code></p>
 
 </div>
@@ -1699,7 +1699,7 @@ la llama de tu amor.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Validando-una-fecha">Validando una fecha<a class="anchor-link" href="#Validando-una-fecha">&#182;</a></h3><p>Para validar que una fecha tenga una estructura dd/mm/yyyy, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresion regular</a>:</p>
+<h3 id="Validando-una-fecha">Validando una fecha<a class="anchor-link" href="#Validando-una-fecha">&#182;</a></h3><p>Para validar que una fecha tenga una estructura dd/mm/yyyy, podemos utilizar esta <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresión regular</a>:</p>
 <p><strong>regex</strong>: <code>^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$</code></p>
 
 </div>

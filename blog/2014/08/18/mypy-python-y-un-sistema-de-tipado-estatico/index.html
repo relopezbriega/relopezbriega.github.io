@@ -296,7 +296,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Esta simple función nos va a devolver el texto 'Hola' seguido del nombre que le ingresemos; pero como no contiene ningun control sobre el tipo de datos que pude admitir la varible <em>nombre</em>, los siguientes casos serían igualmente válidos:</p>
+<p>Esta simple función nos va a devolver el texto 'Hola' seguido del nombre que le ingresemos; pero como no contiene ningún control sobre el tipo de datos que pude admitir la variable <em>nombre</em>, los siguientes casos serían igualmente válidos:</p>
 
 </div>
 </div>
@@ -337,8 +337,8 @@ Hola 1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En cambio, si pusieramos un control sobre el tipo de datos que admitiera la variable <em>nombre</em>, para que siempre fuera un <em>string</em>, entonces el segundo caso ya no sería válido y lo podríamos detectar facilmente antes de que nuestro programa se llegara a ejecutar.</p>
-<p>Obviamente, para poder detectar el segundo error y que nuestra función <em>saludo</em> solo admita una variable del tipo <em>string</em> como argumento, podríamos reescribrir nuestra función, agregando un control del tipo de datos de la siguiente manera:</p>
+<p>En cambio, si pusiéramos un control sobre el tipo de datos que admitiera la variable <em>nombre</em>, para que siempre fuera un <em>string</em>, entonces el segundo caso ya no sería válido y lo podríamos detectar fácilmente antes de que nuestro programa se llegara a ejecutar.</p>
+<p>Obviamente, para poder detectar el segundo error y que nuestra función <em>saludo</em> solo admita una variable del tipo <em>string</em> como argumento, podríamos reescribir nuestra función, agregando un control del tipo de datos de la siguiente manera:</p>
 
 </div>
 </div>
@@ -406,9 +406,9 @@ Error: el argumento debe ser del tipo String(str)
 <p><a href="http://www.mypy-lang.org/">MyPy</a> es un proyecto que busca combinar los beneficios de un sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> con los de uno de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a>. Su meta es tener el poder y la expresividad de <a href="http://python.org/">Python</a> combinada con los beneficios que otorga el chequeo de los <em>tipos</em> de datos al momento de la compilación.</p>
 <p>Algunos de los beneficios que proporciona utilizar <a href="http://www.mypy-lang.org/">MyPy</a> son:</p>
 <ul>
-<li><strong>Chequeo de tipos al momento de la compilacion:</strong> Un sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> hace más fácil detectar errores y con menos esfuerzo de <a href="http://es.wikipedia.org/wiki/Debug">debugging</a>. </li>
+<li><strong>Chequeo de tipos al momento de la compilación:</strong> Un sistema de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> hace más fácil detectar errores y con menos esfuerzo de <a href="http://es.wikipedia.org/wiki/Debug">debugging</a>. </li>
 <li><strong>Facilita el mantenimiento:</strong> Las declaraciones explícitas de tipos actúan como documentación, haciendo que nuestro código sea más fácil de entender y de modificar sin introducir nuevos errores. </li>
-<li><strong>Permite creecer nuestro programa desde un tipado dinámico hacia uno estático:</strong> Nos permite comenzar desarrollando nuestros programas con un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> y a mediada que el mismo vaya madurando podríamos modificarlo hacia un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> de forma muy sencilla. De esta manera, podríamos beneficiarnos no solo de la comodidad de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> en el desarrollo inicial, sino también aprovecharnos de los beneficios de los <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipos estáticos</a> cuando el código crece en tamaño y complejidad.</li>
+<li><strong>Permite crecer nuestro programa desde un tipado dinámico hacia uno estático:</strong> Nos permite comenzar desarrollando nuestros programas con un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> y a mediada que el mismo vaya madurando podríamos modificarlo hacia un <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipado estático</a> de forma muy sencilla. De esta manera, podríamos beneficiarnos no solo de la comodidad de <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_din.C3.A1mico">tipado dinámico</a> en el desarrollo inicial, sino también aprovecharnos de los beneficios de los <a href="http://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">tipos estáticos</a> cuando el código crece en tamaño y complejidad.</li>
 </ul>
 
 </div>
@@ -442,7 +442,7 @@ Error: el argumento debe ser del tipo String(str)
 <li><strong><code>Sequence[bool]</code></strong>: Secuencia de valores booleanos</li>
 <li><strong><code>Any</code></strong>: Admite cualquier valor. (tipado dinámico)</li>
 </ul>
-<p>El tipo <strong>Any</strong> y los constructores <strong>List, Dict, Iterable y Sequence</strong> estan definidos en el modulo <strong>typing</strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
+<p>El tipo <strong>Any</strong> y los constructores <strong>List, Dict, Iterable y Sequence</strong> están definidos en el modulo <strong>typing</strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
 
 </div>
 </div>
@@ -507,7 +507,7 @@ print(saludo(1))
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En este ejemplo estoy creando un pequeño script y guardando en un archivo con el nombre 'typeTest.py', en la primer linea del script estoy importando la librería <em>typing</em> que viene con <a href="http://www.mypy-lang.org/">MyPy</a> y es la que nos agrega la funcionalidad del chequeo de los tipos de datos. Luego simplemente ejecutamos este script utlizando el interprete de <a href="http://www.mypy-lang.org/">MyPy</a> y podemos ver que nos va a detectar el error de tipo de datos en la segunda llamada a la función <em>saludo</em>.</p>
+<p>En este ejemplo estoy creando un pequeño script y guardando en un archivo con el nombre 'typeTest.py', en la primer línea del script estoy importando la librería <em>typing</em> que viene con <a href="http://www.mypy-lang.org/">MyPy</a> y es la que nos agrega la funcionalidad del chequeo de los tipos de datos. Luego simplemente ejecutamos este script utilizando el interprete de <a href="http://www.mypy-lang.org/">MyPy</a> y podemos ver que nos va a detectar el error de tipo de datos en la segunda llamada a la función <em>saludo</em>.</p>
 
 </div>
 </div>
@@ -546,7 +546,7 @@ print(saludo(1))
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Si ejecutaramos este mismo script utilizando el interprete de <a href="http://python.org/">Python</a>, veremos que obtendremos los mismos resultados que al comienzo de este <em>notebook</em>; lo que quiere decir, que la sintaxis que utilizamos al reescribir nuesta función <em>saludo</em> es código <a href="http://python.org/">Python</a> perfectamente válido!</p>
+<p>Si ejecutáramos este mismo script utilizando el interprete de <a href="http://python.org/">Python</a>, veremos que obtendremos los mismos resultados que al comienzo de este <em>notebook</em>; lo que quiere decir, que la sintaxis que utilizamos al reescribir nuestra función <em>saludo</em> es código <a href="http://python.org/">Python</a> perfectamente válido!</p>
 
 </div>
 </div>
@@ -595,8 +595,8 @@ Hola 1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En el ejemplo anterior, vimos como es la sistaxis para asignarle un <em>tipo de datos</em> a una función, la cual utiliza la sintaxis de <a href="http://python.org/">Python3</a>, <em><a href="http://legacy.python.org/dev/peps/pep-3107/">annotations</a></em>.</p>
-<p>Si quisieramos asignarle un <em>tipo</em> a una variable, podríamos utilizar la función <strong><code>Undefined</code></strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
+<p>En el ejemplo anterior, vimos como es la sintaxis para asignarle un <em>tipo de datos</em> a una función, la cual utiliza la sintaxis de <a href="http://python.org/">Python3</a>, <em><a href="http://legacy.python.org/dev/peps/pep-3107/">annotations</a></em>.</p>
+<p>Si quisiéramos asignarle un <em>tipo</em> a una variable, podríamos utilizar la función <strong><code>Undefined</code></strong> que viene junto con <a href="http://www.mypy-lang.org/">MyPy</a>.</p>
 
 </div>
 </div>
