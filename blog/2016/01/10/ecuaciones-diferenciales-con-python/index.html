@@ -2042,16 +2042,12 @@ $$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$<p>Tengan en cuenta, 
 <tr>
 <td style="text-align:center">$\cosh at$</td>
 <td style="text-align:center">$\frac{s}{s^2 - a^2}$</td>
-<td style="text-align:center">$s&gt;</td>
-<td>a</td>
-<td>$</td>
+<td style="text-align:center">$s>|a|$</td>
 </tr>
 <tr>
 <td style="text-align:center">$\sinh at$</td>
 <td style="text-align:center">$\frac{a}{s^2 - a^2}$</td>
-<td style="text-align:center">$s&gt;</td>
-<td>a</td>
-<td>$</td>
+<td style="text-align:center">$s>|a|$</td>
 </tr>
 <tr>
 <td style="text-align:center">$e^{at}\cos bt$</td>
@@ -2085,7 +2081,8 @@ $$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}
 $$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$<ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de derivadas de orden superior</em></strong>: Esta propiedad es la generalización de la propiedad anterior para derivadas de orden n. Su formula es:</li>
 </ul>
-$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) = s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$<h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">&#182;</a></h4><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que queramos resolver. Veamos entonces como <a href="https://www.python.org/">Python</a> y <a href="http://www.sympy.org/es/">SymPy</a> nos ayudan a resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> utilizando las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>. Vamos a intentar resolver la siguiente ecuación:</p>
+$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\ 
+= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$<h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">&#182;</a></h4><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que queramos resolver. Veamos entonces como <a href="https://www.python.org/">Python</a> y <a href="http://www.sympy.org/es/">SymPy</a> nos ayudan a resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> utilizando las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>. Vamos a intentar resolver la siguiente ecuación:</p>
 $$y'' + 3y' + 2y = 0$$<p>con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$</p>
 
 </div>
