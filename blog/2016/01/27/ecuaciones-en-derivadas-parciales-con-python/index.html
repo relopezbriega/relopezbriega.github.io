@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Batman, ecuaciones y python</title>
+  <title>Ecuaciones en derivadas parciales con Python</title>
   <meta name="author" content="Raul E. Lopez Briega">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -257,18 +257,19 @@ jQuery(document).ready(function($) {
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">Batman, ecuaciones y python</h1>
-      <p class="meta"><time datetime="2015-08-20T00:00:00-03:00" pubdate>Thu 20 August 2015</time></p>
+      <h1 class="entry-title">Ecuaciones en derivadas parciales con Python</h1>
+      <p class="meta"><time datetime="2016-01-27T00:00:00-03:00" pubdate>Wed 27 January 2016</time></p>
 </header>
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="relopezbriega" data-size="large" data-hashtags="python">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/" data-counter="right"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" data-counter="right"></script>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="Ecuación Batman" title="Ecuación Batman" src="http://relopezbriega.github.io/images/ecnbatmancolor.png"></p>
+<p><img alt="Ecuaciones en Derivadas Parciales con python" title="Ecuaciones en Derivadas Parciales con python" src="http://relopezbriega.github.io/images/PDE.png
+" height="120" width="500"></p>
 
 </div>
 </div>
@@ -278,9 +279,81 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://es.wikipedia.org/wiki/Batman">Batman</a> siempre fue mi superhéroe favorito porque es uno de los pocos héroes que no posee ningún superpoder, sino que debe recurrir a su intelecto y a la ciencia para construir las bati-herramientas que utiliza para combatir al crimen. Además posee ese toque de oscuridad producto de la dualidad entre realizar el bien, protegiendo a la gente de ciudad gótica, y su sed de venganza contra el crimen y la corrupción que acabó con la vida de su familia.</p>
-<p>Es un personaje con muchos recursos, en cada nueva aparición podemos verlo utilizar nuevas y muy modernas bati-herramientas; su intelecto es tan agudo que incluso escondió una ecuación matemática en su bati-señal!!</p>
-<p>La <a href="http://www.wolframalpha.com/input/?i=batman+equation">ecuación de batman</a> fue creada por el profesor de matemáticas <a href="http://www.quora.com/J-Matthew-Register">Matthew Register</a> y se popularizó a través de un post de uno de sus alumnos en la red social <a href="https://www.reddit.com/r/pics/comments/j2qjc/do_you_like_batman_do_you_like_math_my_math/">reddit</a>; su expresión matemática es la siguiente:</p>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las interacciones entre fotones y electrones, y la radiación de ondas electromagnéticas. Las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> también juegan un papel central en las matemáticas modernas, especialmente en la <a href="https://es.wikipedia.org/wiki/Geometr%C3%ADa">geometría</a> y el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_matem%C3%A1tico">análisis</a>; lo que las convierte en una herramienta de suma utilidad que debemos conocer.</p>
+<p><strong><em>Nota</em></strong>: Este artículo corresponde a la tercer entrega de mi serie de artículos sobre <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal">Cálculo</a> con <a href="https://www.python.org/">Python</a>; los anteriores fueron: <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo</a> y <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones Diferenciales con Python</a>, los cuales es recomendable haber leído previamente.</p>
+<h2 id="&#191;Qu&#233;-es-una-ecuaci&#243;n-en-derivadas-parciales?">&#191;Qu&#233; es una ecuaci&#243;n en derivadas parciales?<a class="anchor-link" href="#&#191;Qu&#233;-es-una-ecuaci&#243;n-en-derivadas-parciales?">&#182;</a></h2><p>Una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> es una ecuación que, como su nombre lo indica, contiene <a href="https://es.wikipedia.org/wiki/Derivada_parcial">derivadas parciales</a>. A diferencia de lo que habíamos visto con las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, en donde la función incógnita depende <strong>solo</strong> de <em>una variable</em>; en las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>, o <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> para abreviar, la función incógnita va a depender de <strong>dos o más</strong> <em>variables independientes</em> $x, y, \dots$. Generalmente a la función incógnita la vamos a expresar como $u(x, y, \dots)$ y a sus derivadas parciales como $\partial u / \partial x = u_x$ o  $\partial u / \partial y = u_y$ dependiendo de sobre que variable estemos derivando. Entonces una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> va a ser la identidad que relaciona a las <em>variables independientes</em> ($x, y, \dots$), con la <em>variable dependiente</em> $u$ (nuestra función incógnita), y las <a href="https://es.wikipedia.org/wiki/Derivada_parcial">derivadas parciales</a> de $u$. Lo podríamos expresar de la siguiente forma:</p>
+$$F(x, y, u(x, y), u_x(x, y), u_y(x, y)) = F(x, y, u, u_x, u_y) = 0$$<p>Al igual de como pasaba con las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, el <strong><em>orden</em></strong> de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> va a estar dado por la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente. Por lo tanto, el caso que expresamos más arriba corresponde a una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, con dos <em>variables independientes</em>, de <em>primer orden</em>. Si quisiéramos expresar una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de <em>segundo orden</em>, podríamos hacerlo de la siguiente manera:</p>
+$$F(x, y, u, u_x, u_y, u_{xx}, u_{xy}, u_{yy})=0.$$<h3 id="Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">Clasificaci&#243;n de ecuaciones en derivadas parciales<a class="anchor-link" href="#Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">&#182;</a></h3><p>La clasificación de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> va a ser algo fundamental, ya que la teoría y los métodos para poder solucionarlas van a depender de la <em>clase</em> de ecuación con la que estemos tratando. Las clasificaciones más importantes que debemos tener en cuenta, son:</p>
+<p>1- <strong>El <em>orden</em> de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</strong> Como ya mencionamos, el mismo va a estar dado por el <em>orden</em> de la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente.</p>
+<p>2- <strong>Número de variables:</strong> Esta clasificación va a estar dada por la cantidad de <em>variables independientes</em> que contenga la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>.</p>
+<p>3- <strong>Linealidad:</strong> Esta es una de las clasificaciones más importantes, vamos a poder clasificar a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> en <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a> o <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineales</a>. En las <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a>, la <em>variable dependiente</em> $u$ y todas sus derivadas, van a aparecer en una forma <em>lineal</em>, es decir, que van a tener <em>grado</em> uno (no van a estar elevadas al cuadrado, o multiplicadas entre sí). Más precisamente, una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> de segundo orden con dos variables, va a tomar la siguiente forma:</p>
+$$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$<p>en donde $A, B, C, D, E, F,$ y $G$ pueden ser <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> o una <em>función</em> dada de $x$ e $y$. Por ejemplo:</p>
+<p>$u_{tt} = e^tu_{xx} + \sin t$,    sería una ecuación <a href="https://es.wikipedia.org/wiki/Lineal">lineal</a>.</p>
+<p>$uu_{xx} + u_y = 0$,  sería una ecuación <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineal</a>.</p>
+<p>$u_{xx} + yu_{yy} + u_x = 0$, sería una ecuación <a href="https://es.wikipedia.org/wiki/Lineal">lineal</a>.</p>
+<p>$xu_x + yu_y + u^2 = 0$, sería una ecuación <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineal</a>.</p>
+<p><strong>Tipos de ecuaciones lineales:</strong> Asimismo, a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a> de segundo orden las vamos a poder subdividir en las siguientes categorías:</p>
+<ul>
+<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_parab%C3%B3lica_en_derivadas_parciales">Ecuaciones parabólicas</a></strong>: Las cuales van a describir el <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">flujo del calor</a></em> y el proceso de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>. Éstas ecuaciones van a satisfacer la condición $B^2 -4AC = 0$.</p>
+</li>
+<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_hiperb%C3%B3lica_en_derivadas_parciales">Ecuaciones hiperbólicas</a></strong>: Las cuales describen los <em><a href="https://es.wikipedia.org/wiki/Vibraci%C3%B3n">sistemas de vibración</a></em> y los <em><a href="https://es.wikipedia.org/wiki/Onda">movimientos de ondas</a></em>. Satisfacen la condición $B^2 -4AC > 0$.</p>
+</li>
+<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_el%C3%ADptica_en_derivadas_parciales">Ecuaciones Elípticas</a></strong>: Las cuales describen los fenómenos de <em><a href="https://es.wikipedia.org/wiki/Estado_estacionario">estados estacionarios</a></em> y satisfacen la condición $B^2 -4AC < 0$.</p>
+</li>
+</ul>
+<p>4- <strong>Homogeneidad:</strong> Otra clasificación que podemos utilizar, es la de homogeneidad. Una ecuación va a ser <em>homogénea</em>, si el lado derecho de la ecuación, $G(x, y)$, es idénticamente cero para todo $x$ e $y$. En caso contrario, se la llama <em>no homogénea</em>.</p>
+<p>5- <strong>Tipos de coeficientes:</strong> Por último, podemos clasificar a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de acuerdo a sus coeficientes $A, B, C, D, E, $ y $F$, si los mismos son <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em>, se dice que la ecuación es de <em>coeficientes constantes</em>, en caso contrario será de <em>coeficientes variables</em>.</p>
+<h3 id="&#191;C&#243;mo-resolver-ecuaciones-en-derivadas-parciales?">&#191;C&#243;mo resolver ecuaciones en derivadas parciales?<a class="anchor-link" href="#&#191;C&#243;mo-resolver-ecuaciones-en-derivadas-parciales?">&#182;</a></h3><p>Existen varios métodos que podemos utilizar para intentar resolver las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>, la principal idea detrás la mayoría de estos métodos es la transformar a estas ecuaciones en <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a> (<a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a>), o en alguna <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>; las cuales son más sencillas de resolver. Algunos los métodos que podemos utilizar son:</p>
+<p>1- <strong>El <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_separaci%C3%B3n_de_variables">método de separación de variables</a>:</strong> Este método es uno de los más importantes y más productivos a la hora de resolver a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. La idea es reducir a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de $n$ variables, en $n$ <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a>.</p>
+<p>2- <strong>El método de la <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a>:</strong> Este método es similar al que ya vimos al resolver <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>. La idea es aplicar una <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a> para reducir una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de $n$ variables, en otra de $n - 1$ variables. De esta forma una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de 2 variables, puede ser transformada en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a>.</p>
+<p>3- <strong>El método del <a href="https://es.wikipedia.org/wiki/Sistema_de_coordenadas#Cambios_de_coordenadas">cambio de coordenadas</a>:</strong> Este método intenta cambiar a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> original en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a> o en otra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> más sencilla de resolver por medio del cambio de coordenadas del problema.</p>
+<p>4- <strong>El método de <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_perturbacional">perturbación</a>:</strong> Este método aplica la <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_perturbacional">teoría perturbacional</a> para intentar cambiar un problema de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineal</a> en una serie de problemas <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a> que se aproximan al <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineal</a> original.</p>
+<p>5- <strong>El método de expansión de <a href="https://es.wikipedia.org/wiki/Autofunci%C3%B3n">autofunciones</a>:</strong> Este método intentan encontrar la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> como una suma infinita de <a href="https://es.wikipedia.org/wiki/Autofunci%C3%B3n">autofunciones</a>. Estas <a href="https://es.wikipedia.org/wiki/Autofunci%C3%B3n">autofunciones</a> son halladas por medio de la resolución del problema del <a href="https://es.wikipedia.org/wiki/Vector_propio_y_valor_propio">valor propio</a> que corresponde al problema original.</p>
+<p>6- <strong>El método de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_integral">ecuaciones integrales</a></strong>: Este método convierte a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_integral">ecuación integral</a>; la cual luego es resuelta aplicando ciertas técnicas particulares que se aplican a ese tipo ecuaciones.</p>
+<p>7- <strong>Métodos numéricos</strong>: La mayoría de las técnicas para resolver numéricamente a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> se basan en la idea
+de discretizar el problema en cada variable independiente que se produce en la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, y de esta forma, reformular el problema en una forma algebraica. Esto usualmente resulta en problemas de <a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal">álgebra lineal</a> de gran escala. Dos  de las técnicas principales para reformular las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> a una forma algebraica son, los <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_las_diferencias_finitas">métodos de diferencias finitas</a> (MDF), donde las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> del problema son aproximadas por medio de la fórmula de <a href="https://es.wikipedia.org/wiki/Diferencia_finita">diferencias finitas</a>; y los <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a> (MEF), en donde la función incógnita se escribe como combinación lineal de funciones de base simple que pueden ser derivadas e integradas fácilmente. En muchos casos, estos métodos numéricos van a ser las únicas herramientas que podamos utilizar para resolver a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>.</p>
+<h3 id="Soluci&#243;n-de-ecuaciones-en-derivadas-parciales-b&#225;sicas">Soluci&#243;n de ecuaciones en derivadas parciales b&#225;sicas<a class="anchor-link" href="#Soluci&#243;n-de-ecuaciones-en-derivadas-parciales-b&#225;sicas">&#182;</a></h3><p>Como resolver este tipo de ecuaciones es una tarea realmente complicada, vamos a empezar por resolver analíticamente las más fáciles para ganar confianza y así luego poder pasar a ecuaciones más complicadas.</p>
+<p>La más simple de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> que nos podemos encontrar es:</p>
+<p>$u_x = 0$, en donde $u = u(x, y)$.</p>
+<p>Esta ecuación nos dice que la <a href="https://es.wikipedia.org/wiki/Derivada_parcial">derivada parcial</a> de $u$ con respecto a $x$ es cero, lo que significa que $u$ no depende de $x$. Por lo tanto, la solución de esta ecuación va a ser $u=f(y)$, en donde $f$ es una función arbitraria de una variable. Por ejemplo, $u = y^2 - y$ podría ser una posible solución.</p>
+<p>Subiendo un poco más la complejidad, podemos pasar a una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de segundo orden, como la siguiente:</p>
+<p>$u_{xx} = 0$</p>
+<p>En este caso, podemos integrar una vez $u_{xx}$ para obtener $u_x(x, y) = f(y)$. Si volvemos a integrar este resultado, podemos arribar a la solución final $u(x, y) = f(y)x + g(y)$, en donde $f$ y $g$ son dos funciones arbitrarias.</p>
+<p>Por último, si quisiéramos resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</p>
+<p>$u_{xy} = 0$</p>
+<p>Primero integramos con respecto a $x$ tomando a $y$ como fija, de esta forma obtenemos $u_y(x, y) = f(y)$. Luego podemos integrar con respecto a $y$ tomando a $x$ como fija, y llegamos a la solución:</p>
+<p>$u(x, y) = F(y) + g(x)$, en donde $F' = f$</p>
+<p>Como podemos ver de estos ejemplos, las soluciones analíticas de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> dependen de <strong>funciones arbitrarias</strong> (en lugar de <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> arbitrarias como era el caso de las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDO</a>). Por lo tanto vamos a necesitar condiciones auxiliares para poder determinar una única solución.</p>
+<h3 id="La-condici&#243;n-inicial-y-la-condici&#243;n-de-frontera">La condici&#243;n inicial y la condici&#243;n de frontera<a class="anchor-link" href="#La-condici&#243;n-inicial-y-la-condici&#243;n-de-frontera">&#182;</a></h3><p>Al igual que nos pasaba cuando vimos las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>; las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> pueden tener muchas soluciones, pero a nosotros nos va a interesar encontrar la solución para un caso particular; para lograr esto, debemos imponer unas condiciones auxiliares al problema original. Estas condiciones van a estar motivadas por la <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a> del problema que estemos analizando y pueden llevar a ser de dos tipos diferentes: <a href="https://en.wikipedia.org/wiki/Initial_condition">condiciones iniciales</a> y <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>.</p>
+<p>La <a href="https://en.wikipedia.org/wiki/Initial_condition">condición inicial</a> va a establecer el estado del problema al momento de tiempo cero, $t_0$. Por ejemplo para el problema de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>, la <a href="https://en.wikipedia.org/wiki/Initial_condition">condición inicial</a> va a ser:</p>
+$$u(x, t_0) = \phi(x)$$<p>donde $\phi(x)= \phi(x, y, z)$ es una función que puede representar el estado de concentración inicial. Para el problema del <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">flujo del calor</a></em>, $\phi(x)$ va a representar la temperatura inicial.</p>
+<p>La <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condición de frontera</a> nos va a delimitar el <em>dominio</em> en el que nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> es válida. Así por ejemplo, volviendo al problema de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>, el <em>dominio</em> en el que nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> es válida, puede estar delimitado por la superficie del objeto que contiene al líquido. Existen varios tipos de <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>, de las cuales las más importantes son:</p>
+<ul>
+<li><p>La <strong><a href="https://es.wikipedia.org/wiki/Condici%C3%B3n_de_frontera_de_Dirichlet">condición de frontera de Dirichlet</a></strong>, en dónde los valores válidos de la función incógnita $u$ son especificados.</p>
+</li>
+<li><p>La <strong><a href="https://es.wikipedia.org/wiki/Condici%C3%B3n_de_frontera_de_Neumann">condición de frontera de Neumann</a></strong>, en donde los valores válidos especificados son dados para alguna de las derivadas de $u$.</p>
+</li>
+<li><p>La <strong><a href="https://es.wikipedia.org/wiki/Condici%C3%B3n_de_frontera_de_Robin">condición de frontera de Robin</a></strong>, en donde los valores válidos son especificados por una <a href="https://es.wikipedia.org/wiki/Combinaci%C3%B3n_lineal">combinación lineal</a> de una función y las derivadas de $u$.</p>
+</li>
+</ul>
+<h3 id="Interpretaci&#243;n-geom&#233;trica-de-EDP-de-primer-orden">Interpretaci&#243;n geom&#233;trica de EDP de primer orden<a class="anchor-link" href="#Interpretaci&#243;n-geom&#233;trica-de-EDP-de-primer-orden">&#182;</a></h3><p>Las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de primer orden poseen una interpretación geométrica la cual nos puede facilitar alcanzar una solución general para ellas.</p>
+<h4 id="Coeficientes-constantes">Coeficientes constantes<a class="anchor-link" href="#Coeficientes-constantes">&#182;</a></h4><p>Tomemos la siguiente ecuación de coeficientes constantes:</p>
+<p>$au_x + bu_y = 0$, en donde $a$ y $b$ son <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> y ambas no pueden ser cero.</p>
+<p>En esta ecuación la cantidad  $au_x + bu_y$ es la derivada direccional de $u$ en la dirección del <a href="https://es.wikipedia.org/wiki/Vector">vector</a> $V = (a, b) = ai + bj$. Como esta cantidad tiene que ser cero, esto significa que $u (x, y)$ debe ser constante en la dirección de $V$. El <a href="https://es.wikipedia.org/wiki/Vector">vector</a> $(b, -a)$ es <a href="https://es.wikipedia.org/wiki/Ortogonalidad_(matem%C3%A1ticas)">ortogonal</a> a $V$, por lo tanto, las líneas paralelas a $V$ (ver el gráfico más abajo) tienen las ecuaciones $bx - ay$ constantes. (Se las llama las <em>líneas características</em>.) Entonces, la solución es constante en cada una de esas líneas. Por lo tanto, $u (x, y)$ depende de $bx - ay$ solamente. De esta forma podemos llegar a la solución general para este tipo de ecuaciones, que va a ser:</p>
+<p>$u(x, y) = f(bx - ay)$, en donde $f$ es una función arbitraria de una variable.</p>
+<p><img alt="EDP de 1er orden con coef constantes" title="EDP de 1er orden con coef constantes" src="http://relopezbriega.github.io/images/PDE_Const.png
+" ></p>
+<p>Entonces, si por ejemplo, quisiéramos resolver la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, $4u_x - 3u_y= 0$, con la <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condición de frontera</a> que $u(0, y) = y^3$. Podemos aplicar la solución general que obtuvimos arriba y llegar al resultado $u(x, y) = f(-3x - 4y)$. Ahora, solo nos faltaría aplicar la condición para poder determinar cual es la función arbitraria $f$. Si sustituimos $x=0$ en nuestra solución, obtenemos $y^3 = f(-4y)$. Si decimos que $z = -4y$, entonces nuestra función es $f(z) = -z^3 / 64$. Por lo tanto la solución de nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> que satisface la <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condición de frontera</a> es $u(x, y) = (3x + 4y)^3 / 64$.</p>
+<h4 id="Coeficientes-variables">Coeficientes variables<a class="anchor-link" href="#Coeficientes-variables">&#182;</a></h4><p>Consideremos ahora la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de coeficientes variables:</p>
+<p>$u_x + yu_y = 0$</p>
+<p>Esta ecuación es similar a la que vimos anteriormente, con la diferencia de que ahora tenemos al coeficiente variable $y$. Utilizando la misma intuición geométrica que usamos antes, podemos ver que aquí también la derivada direccional de $u$ en el vector $v=(1, y)$ es constante, pero esta vez el vector no es constante, sino que es variable con $y$. Las curvas que tienen a $v$ como su vector tangente, tienen pendiente $y/1$, es decir:</p>
+<p>$\frac{dy}{dx} = \frac{y}{1}$.</p>
+<p>Podemos resolver esta ecuación como una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a> y así obtener:</p>
+<p>$y = Ce^x$, o lo que es lo mismo $e^{-x}y = C$.</p>
+<p>La solución de nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> entonces va a ser constante en estas <em>curvas características</em> (ver gráfico); y van a responder a la siguiente solución general:</p>
+<p>$u(x, y) = f(e^{-x}y)$, en donde $f$ es una función arbitraria.</p>
+<p><img alt="EDP de 1er orden con coef variables" title="EDP de 1er orden con coef variables" src="http://relopezbriega.github.io/images/PDE_Var.png
+" ></p>
 
 </div>
 </div>
@@ -290,28 +363,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$
-((\frac{x}{7})^2 \cdot \sqrt{\frac{||x|-3|}{(|x|-3)}}+ (\frac{y}{3})^2 \cdot \sqrt{\frac{|y+3 \cdot \frac{\sqrt{33}}{7}|}{y+3 \cdot \frac{\sqrt{33}}{7}}}-1) \cdot (|\frac{x}{2}|-((3 \cdot \frac{\sqrt{33}-7)}{112}) \cdot x^2-3+\sqrt{1-(||x|-2|-1)^2}-y) \cdot (9 \cdot \sqrt{\frac{|(|x|-1) \cdot (|x|-0.75)|}{((1-|x|)*(|x|-0.75))}}-8 \cdot |x|-y) \cdot (3 \cdot |x|+0.75 \cdot \sqrt{\frac{|(|x|-0.75) \cdot (|x|-0.5)|}{((0.75-|x|) \cdot (|x|-0.5))}}-y) \cdot (2.25 \cdot \sqrt{\frac{|(x-0.5) \cdot (x+0.5)|}{((0.5-x) \cdot (0.5+x))}}-y) \cdot (\frac{6 \cdot \sqrt{10}}{7}+(1.5-0.5 \cdot |x|) \cdot \sqrt{\frac{||x|-1|}{|x|-1}}-(\frac{6 \cdot \sqrt{10}}{14}) \cdot \sqrt{4-(|x|-1)^2}-y) =0
-$$
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Si bien a simple vista la ecuación parece sumamente compleja e imposible de graficar, la misma se puede descomponer en seis curvas distintas, mucho más simples.</p>
-<p>La primera de estas curvas, es la función del elipse $(\frac{x}{7})^2 + (\frac{y}{3})^2 = 1$, restringida a la región $\sqrt{\frac{||x|-3|}{(|x|-3)}}$ y $\sqrt{\frac{|y+3 \cdot \frac{\sqrt{33}}{7}|}{y+3 \cdot \frac{\sqrt{33}}{7}}}$ para cortar la parte central.</p>
-<p>Los cinco términos siguientes pueden ser entendidos como simples funciones de x, tres de los cuales son lineales.
-Por ejemplo, la siguiente función es la que grafica las curvas de la parte inferior de la bati-señal.</p>
-<p>$y = |\frac{x}{2}|-(\frac{3 \cdot \sqrt{33} -7}{112})\cdot x^2 - 3 + \sqrt{1-(||x|-2| -1)^2}$</p>
-<p>Las restantes ecuaciones de las curvas que completan el gráfico, son las siguientes:</p>
-<p>$y = \frac{6\cdot\sqrt{10}}{7} + (-0.5|x| + 1.5) - \frac{3\cdot\sqrt{10}}{7}\cdot\sqrt{4 - (|x|-1)^2}, |x| > 1$</p>
-<p>$y = 9 -8|x|, 0.75 < |x| < 1$</p>
-<p>$y = 3|x| + 0.75, 0.5 < |x| < 0.75$</p>
-<p>$y = 2.25, |x| < 0.5$</p>
-<p>La <a href="http://www.wolframalpha.com/input/?i=batman+equation">ecuación de batman</a> puede ser fácilmente graficada utilizando <a href="http://matplotlib.org/">Matplotlib</a> del siguiente modo:</p>
+<h2 id="Resolviendo-ecuaciones-en-derivadas-parciales-con-Python">Resolviendo ecuaciones en derivadas parciales con Python<a class="anchor-link" href="#Resolviendo-ecuaciones-en-derivadas-parciales-con-Python">&#182;</a></h2><p>Es tiempo de nuevamente recurrir a nuestros queridos paquetes científicos de <a href="https://www.python.org/">Python</a>, <a href="http://www.numpy.org/">NumPy</a>, <a href="http://matplotlib.org/">Matplotlib</a>, <a href="http://www.sympy.org/es/">SymPy</a> y <a href="http://www.scipy.org/">SciPy</a> para ayudarnos a resolver las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. Así como en el caso de las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales ordinarias</a> vimos que existía dentro del paquete <a href="http://www.sympy.org/es/">SymPy</a>, el solucionador genérico <code>sympy.dsolve</code>; para el caso de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, vamos a tener al solucionador <a href="http://docs.sympy.org/dev/modules/solvers/pde.html"><code>sympy.pdsolve</code></a>. Aunque en este caso, es mucho más limitado que su versión para <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDO</a>; ya que solo vamos a poder resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de primer orden. Veamos como funciona:</p>
 
 </div>
 </div>
@@ -320,13 +372,21 @@ Por ejemplo, la siguiente función es la que grafica las curvas de la parte infe
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 
-<div class="inner_cell">
-    <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline  
+<div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
+<div class="input_area" style="display:none">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando modulos necesarios</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> 
+
+<span class="c"># imprimir con notación matemática.</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s">&#39;mathjax&#39;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 
 </div>
@@ -338,11 +398,9 @@ Por ejemplo, la siguiente función es la que grafica las curvas de la parte infe
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando lo necesario para los cálculos</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">sqrt</span> 
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">meshgrid</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">arange</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino las variables</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;x y u z&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -357,23 +415,586 @@ Por ejemplo, la siguiente función es la que grafica las curvas de la parte infe
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando la ecuación de Batman.</span>
-<span class="n">xs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">7.25</span><span class="p">,</span> <span class="mf">7.25</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-<span class="n">ys</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino la EDP 4u_x - 3u_y = 0</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">u_x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">u_y</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">u_x</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">u_y</span><span class="p">)</span>
+<span class="n">eq</span>
+</pre></div>
 
-<span class="n">eq1</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">/</span><span class="mi">7</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="o">/</span><span class="mi">7</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="o">/</span><span class="mi">7</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">33</span><span class="p">)))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">eq2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span><span class="o">/</span><span class="mi">112</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">+</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="n">eq3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-.</span><span class="mi">75</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-.</span><span class="mi">75</span><span class="p">)))</span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="n">eq4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+.</span><span class="mi">75</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-.</span><span class="mi">75</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-.</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="o">.</span><span class="mi">75</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-.</span><span class="mi">5</span><span class="p">)))</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="n">eq5</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.25</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">x</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+.</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="o">+</span><span class="n">x</span><span class="p">)))</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="n">eq6</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="mi">7</span><span class="o">+</span><span class="p">(</span><span class="mf">1.5</span><span class="o">-.</span><span class="mi">5</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">-</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="mi">14</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    </div>
+</div>
 
-<span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">eq1</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">eq2</span><span class="p">,</span> <span class="s">&quot;purple&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">eq3</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">),</span>
-             <span class="p">(</span><span class="n">eq4</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">eq5</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">eq6</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">)]:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+</div>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$4 \frac{\partial}{\partial x} f{\left (x,y \right )} - 3 \frac{\partial}{\partial y} f{\left (x,y \right )} = 0$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resuelvo la ecuación</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">pdsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$f{\left (x,y \right )} = F{\left (- 3 x - 4 y \right )}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino la EDP u_x + yu_y = 0</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">u_x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">u_y</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">u_x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">u_y</span><span class="p">)</span>
+<span class="n">eq2</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$y \frac{\partial}{\partial y} f{\left (x,y \right )} + \frac{\partial}{\partial x} f{\left (x,y \right )} = 0$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resuelvo la ecuación</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">pdsolve</span><span class="p">(</span><span class="n">eq2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calsificación de EDP.</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">classify_pde</span><span class="p">(</span><span class="n">eq2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">(&apos;1st_linear_variable_coeff&apos;,)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como podemos comprobar, obtuvimos los mismos resultados utilizando <a href="http://docs.sympy.org/dev/modules/solvers/pde.html"><code>sympy.pdsolve</code></a> que en nuestro análisis manual con la interpretación geométrica. Otra limitación que vamos a tener al trabajar con <a href="http://docs.sympy.org/dev/modules/solvers/pde.html"><code>sympy.pdsolve</code></a> es que no podemos aplicar nuestras condiciones auxiliares al problema, por lo que para despejar la función arbitraria, deberíamos hacer un trabajo manual. Asimismo, <a href="http://www.sympy.org/es/">SymPy</a> también nos ofrece la función <code>classify_pde</code> la cual nos ayuda a saber con que tipo de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> estamos tratando. (Recordemos que <code>pdsolve</code> solo puede resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDPs</a> de primer orden).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Separaci&#243;n-de-variables">Separaci&#243;n de variables<a class="anchor-link" href="#Separaci&#243;n-de-variables">&#182;</a></h3><p>Otra forma en que nos podemos ayudar de <a href="http://www.sympy.org/es/">SymPy</a> para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDPs</a>, es utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_separaci%C3%B3n_de_variables">método de separación de variables</a>. La característica esencial de esta técnica es transformar la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> en un conjunto de <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a> (las cuales podemos solucionar con la ayuda de <a href="http://www.sympy.org/es/">SymPy</a>). De esta forma, la solución requerida de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> se expresa como
+un producto $u (x, y) = X (x) Y (y) \ne 0$, o como una suma $u (x, y) = X (x) + Y (y)$, donde $X (x)$ e $Y (y)$ son funciones de $x$ e $y$, respectivamente. Muchos de los problemas significativos en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">ecuaciones en derivadas parciales</a> pueden ser resueltos por este método. Para ilustrar como funciona esta técnica, veamos un ejemplo. Vamos a resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>.</p>
+<p>$y^2u_x^2 + x^2u_y^2 = (xyu)^2$, que cumple con la condición $u(x, 0) = 3e^{x^2/4}$.</p>
+<p>Podemos entonces asumir que $u(x, y) = f(x) g(y) \ne 0$ es una <em>solución separable</em> de ella; por tanto lo reemplazamos en la ecuación para obtener:</p>
+$$y^2(f'(x) g(y))^2 + x^2(f(x) g'(y))^2 = x^2 y^2 (f(x) g(y))^2$$<p></p>
+<p>lo que es equivalente a decir;</p>
+$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 + \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = 1$$<p>Luego, ayudándonos de la <em>constante de separación</em> $\lambda^2$, podemos separar a esta ecuación en dos <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>, del siguiente modo; primero igualamos la ecuación anterior a $\lambda^2$:</p>
+$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 = 1 - \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = \lambda^2$$<p>y luego separamos ambas ecuaciones para obtener:</p>
+$$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lambda^2}$$<p>Ahora podemos utilizar <code>sympy.dsolve</code> para resolver ambas <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># EDO n° 1</span>
+<span class="n">edo1</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">edo1</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$- z + \frac{\frac{d}{d x} f{\left (x \right )}}{x f{\left (x \right )}} = 0$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo EDO n° 1</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">edo1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$f{\left (x \right )} = C_{1} e^{\frac{x^{2} z}{2}}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># EDO n° 2</span>
+<span class="n">edo2</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">((</span><span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">-</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">edo2</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$- \sqrt{- z^{2} + 1} + \frac{\frac{d}{d y} f{\left (y \right )}}{y f{\left (y \right )}} = 0$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo EDO n° 2</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">edo2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ f{\left (y \right )} = C_{1} e^{- \frac{1}{2} \sqrt{y^{4} \left(- z^{2} + 1\right)}}, \quad f{\left (y \right )} = C_{1} e^{\frac{1}{2} \sqrt{y^{4} \left(- z^{2} + 1\right)}}\right ]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Entonces ahora podemos utilizar estos resultados para armar la solución final a nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> original, el cual va a ser:</p>
+$$u(x, y) = C e^{\frac{\lambda}{2}x^2 + \frac{1}{2}y^2\sqrt{1 - \lambda^2}}$$<p>En donde $C = C_1 C_2$ es una <em>constante arbitraria</em>.</p>
+<p>Por último, utilizando la condición $u(x, 0) = 3e^{x^2/4}$, podemos despejar tanto a $C$ ($C=3$) como a $\lambda$ ($\lambda = 1/2$) y arribar a la solución final:</p>
+$$u(x, y) = 3 e^{\frac{1}{4}\left(x^2 + y^2\sqrt{3}\right)}$$<p>Si bien debemos realizar un trabajo manual previo, aun así <a href="http://www.sympy.org/es/">SymPy</a> sigue siendo de gran ayuda para facilitarnos llegar a la solución final.</p>
+<h3 id="M&#233;todos-num&#233;ricos---M&#233;todo-de-Elementos-Finitos">M&#233;todos num&#233;ricos - M&#233;todo de Elementos Finitos<a class="anchor-link" href="#M&#233;todos-num&#233;ricos---M&#233;todo-de-Elementos-Finitos">&#182;</a></h3><p>Por último, para cerrar este artículo, veamos como podemos aplicar el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a> (MEF) con <a href="https://www.python.org/">Python</a>. Para esto nos vamos ayudar de la librería <a href="http://fenicsproject.org/">FEniCS</a>, la cual es un <em>framework</em> para resolver numéricamente problemas generales de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>. Para instalar esta librería en <a href="http://www.ubuntulinux.org/">Ubuntu</a>, pueden utilizar los siguientes comandos:</p>
+
+<pre><code>sudo add-apt-repository ppa:fenics-packages/fenics
+sudo apt-get update
+sudo apt-get install fenics</code></pre>
+<p>Deben tener en cuenta que por ahora solo funciona con <a href="https://www.python.org/downloads/release/python-2711/">Python 2</a>. La interfaz principal que vamos a utilizar para trabajar con este <em>framework</em> nos la proporcionan las librerías <code>dolfin</code> y <code>mshr</code>; las cuales debemos importar para poder trabajar con el. Una vez importadas, podemos configurar algunos de sus parámetros para lograr el comportamiento deseado.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando modulos de fenics</span>
+<span class="kn">import</span> <span class="nn">dolfin</span>
+<span class="kn">import</span> <span class="nn">mshr</span>
+
+<span class="n">dolfin</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s">&quot;reorder_dofs_serial&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">dolfin</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s">&quot;allow_extrapolation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>El problema que vamos a resolver con la ayuda de <a href="http://fenicsproject.org/">FEniCS</a>, va a ser la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</p>
+$$u_{xx} + u_{yy} = 0$$<p>Con las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
+$$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
+<p>El primer paso en la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>,  es definir una <em>malla</em> que describa la discretización del <em>dominio</em> del problema. Para este caso, vamos a utilizar la función <code>RectangleMesh</code> que nos ofrece <a href="http://fenicsproject.org/">FEniCS</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Discretizando el problema</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="n">N2</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">RectangleMesh</span><span class="p">(</span><span class="n">dolfin</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">N1</span><span class="p">,</span> <span class="n">N2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>El siguiente paso es definir una representación del <a href="https://es.wikipedia.org/wiki/Espacio_funcional">espacio funcional</a> para las funciones de ensayo y prueba. Para esto vamos a utilizar la clase <code>FunctionSpace</code>. El constructor de esta clase tiene al menos tres argumentos: un objeto de <em>malla</em>, el nombre del tipo de función base, y el grado de la función base. En este caso, vamos a utilizar la función de <a href="https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Lagrange">Lagrange</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Funciones bases</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">FunctionSpace</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="s">&#39;Lagrange&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">TrialFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">TestFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre class="ipynb">DEBUG:FFC:Reusing form from cache.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ahora debemos definir a nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> en su <a href="https://es.wikipedia.org/wiki/Formulaci%C3%B3n_d%C3%A9bil_de_una_ecuaci%C3%B3n_diferencial">formulación débil</a> equivalente para poder tratarla como un problema de <a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal">álgebra lineal</a> que podamos resolver con el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">MEF</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Formulación debil de la EDP</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">dolfin</span><span class="o">.</span><span class="n">nabla_grad</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">nabla_grad</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="o">*</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">dx</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">dx</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Por último, solo nos falta definir las <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino condiciones de frontera</span>
+<span class="k">def</span> <span class="nf">u0_top_boundary</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">on_boundary</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">on_boundary</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+
+<span class="k">def</span> <span class="nf">u0_bottom_boundary</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">on_boundary</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">on_boundary</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+
+<span class="k">def</span> <span class="nf">u0_left_boundary</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">on_boundary</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">on_boundary</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+
+<span class="k">def</span> <span class="nf">u0_right_boundary</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">on_boundary</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">on_boundary</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definiendo condiciones de frontera de Dirichlet</span>
+<span class="n">bc_t</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">u0_top_boundary</span><span class="p">)</span>
+<span class="n">bc_b</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="n">u0_bottom_boundary</span><span class="p">)</span>
+<span class="n">bc_l</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">u0_left_boundary</span><span class="p">)</span>
+<span class="n">bc_r</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">u0_right_boundary</span><span class="p">)</span>
+
+<span class="c"># Lista de condiciones de frontera</span>
+<span class="n">bcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">bc_t</span><span class="p">,</span> <span class="n">bc_b</span><span class="p">,</span> <span class="n">bc_r</span><span class="p">,</span> <span class="n">bc_l</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Con esta especificación de las <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>, ya estamos listos para resolver nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando la función <code>dolfin.solve</code>. El vector resultante, luego lo podemos convertir a una matriz de <a href="http://www.numpy.org/">NumPy</a> y utilizarla para graficar la solución con <a href="http://matplotlib.org/">Matplotlib</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo la EDP</span>
+<span class="n">u_sol</span> <span class="o">=</span> <span class="n">dolfin</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">dolfin</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">L</span><span class="p">,</span> <span class="n">u_sol</span><span class="p">,</span> <span class="n">bcs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre class="ipynb">DEBUG:FFC:Reusing form from cache.
+DEBUG:FFC:Reusing form from cache.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando la solución</span>
+<span class="n">u_mat</span> <span class="o">=</span> <span class="n">u_sol</span><span class="o">.</span><span class="n">vector</span><span class="p">()</span><span class="o">.</span><span class="n">array</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">u_mat</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;RdBu_r&#39;</span><span class="p">))</span>
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">r&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">r&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s">r&quot;$u(x_1, x_2)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -389,185 +1010,341 @@ Por ejemplo, la siguiente función es la que grafica las curvas de la parte infe
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -583,9 +1360,10 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ahora ya saben...si están en algún apuro y necesitan la ayuda del bati-héroe, solo necesitan graficar una ecuación para llamarlo con la bati-señal!</p>
+<p>Para profundizar en como utilizar el <em>framework</em> <a href="http://fenicsproject.org/">FEniCS</a>, les recomiendo que visiten la <a href="http://fenicsproject.org/documentation/tutorial/index.html">documentación</a> del sitio, que tienen varios ejemplos.</p>
+<p>Con esto concluyo este artículo. Obviamente, no es más que una introducción al fascinante y complejo mundo de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>, cada clase de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> es un mundo en sí mismo y quedaron muchos temas sin tratar; los cuales tal vez profundice en algún otro artículo. Espero que les pueda servir como referencia y lo hayan encontrado instructivo.</p>
 <p>Saludos!</p>
-<p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/Batman.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/Batman.ipynb">nbviewer</a>.</em></p>
+<p><em>Este post fue escrito utilizando Jupyter notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyPDE.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyPDE.ipynb">nbviewer</a>.</em></p>
 
 </div>
 </div>
@@ -595,14 +1373,17 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
   <span class="byline author vcard">
     Posted by <span class="fn">Raul E. Lopez Briega</span>
   </span>
-<time datetime="2015-08-20T00:00:00-03:00" pubdate>Thu 20 August 2015</time>  <span class="categories">
+<time datetime="2016-01-27T00:00:00-03:00" pubdate>Wed 27 January 2016</time>  <span class="categories">
     <a class="category" href="http://relopezbriega.github.io/tag/python.html">python</a>
     <a class="category" href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>
-    <a class="category" href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>
-    <a class="category" href="http://relopezbriega.github.io/tag/batman.html">batman</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/integral.html">integral</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
     <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
@@ -717,9 +1498,9 @@ hIqJ4A4hhIr5/2WjyF8ofodtAAAAAElFTkSuQmCC
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'relopezbriegagithub';
-          var disqus_identifier = '/blog/2015/08/20/batman-ecuaciones-y-python/';
-          var disqus_url = 'http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/';
-          var disqus_title = 'Batman, ecuaciones y python';
+          var disqus_identifier = '/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/';
+          var disqus_url = 'http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/';
+          var disqus_title = 'Ecuaciones en derivadas parciales con Python';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';

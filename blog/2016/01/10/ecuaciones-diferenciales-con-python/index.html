@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Esconder Código" : "Ver Código";
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
         });
     });
 });
@@ -2071,6 +2071,8 @@ $$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$<p>Tengan en cuenta, 
 </tr>
 </tbody>
 </table>
+
+
 <h4 id="Propiedades-de-las-transformadas-de-Laplace">Propiedades de las transformadas de Laplace<a class="anchor-link" href="#Propiedades-de-las-transformadas-de-Laplace">&#182;</a></h4><p>Las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> poseen algunas propiedades que también nos van a facilitar el trabajo de resolverlas, algunas de ellas son:</p>
 <ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> es un operador lineal</em></strong>: Esta propiedad nos dice la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de una suma, es igual a la suma de las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> de cada uno de los términos. Es decir:</li>
@@ -2081,7 +2083,7 @@ $$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}
 $$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$<ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de derivadas de orden superior</em></strong>: Esta propiedad es la generalización de la propiedad anterior para derivadas de orden n. Su formula es:</li>
 </ul>
-$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\ 
+$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
 = s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$<h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">&#182;</a></h4><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que queramos resolver. Veamos entonces como <a href="https://www.python.org/">Python</a> y <a href="http://www.sympy.org/es/">SymPy</a> nos ayudan a resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> utilizando las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>. Vamos a intentar resolver la siguiente ecuación:</p>
 $$y'' + 3y' + 2y = 0$$<p>con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$</p>
 
@@ -4426,7 +4428,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
           <a href="http://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/">Probabilidad y Estadística con Python</a>
       </li>
         <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2014/05/28/python-librerias-esenciales-para-el-analisis-de-datos/">Python - Librerías esenciales para el Analisis de datos</a>
+          <a href="http://relopezbriega.github.io//blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones Diferenciales con Python</a>
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/06/14/algebra-lineal-con-python/">Algebra lineal con Python</a>
@@ -4435,13 +4437,16 @@ In+7baI/q2QAAAAASUVORK5CYII=
           <a href="http://relopezbriega.github.io/blog/2015/07/19/expresiones-regulares-con-python/">Expresiones regulares con Python</a>
       </li>
       <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo con Python</a>
+          <a href="http://relopezbriega.github.io//blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>
       </li>
     </ul>
   </section>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Ecuaciones en derivadas parciales con Python</a>
+      </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones Diferenciales con Python</a>
       </li>
@@ -4454,9 +4459,6 @@ In+7baI/q2QAAAAASUVORK5CYII=
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/">Hasta el infinito y más alla</a>
       </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/">Números complejos con Python</a>
-      </li>
     </ul>
   </section>
   <section>
@@ -4464,14 +4466,14 @@ In+7baI/q2QAAAAASUVORK5CYII=
     <h1>Categories</h1>
     <ul id="recent_posts">
         <li><a href="http://relopezbriega.github.io/category/matematica.html">matematica</a></li>
-        <li><a href="http://relopezbriega.github.io/category/python.html">Python</a></li>
+        <li><a href="http://relopezbriega.github.io/category/python.html">python</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>  </section>
 
 
     <section>
