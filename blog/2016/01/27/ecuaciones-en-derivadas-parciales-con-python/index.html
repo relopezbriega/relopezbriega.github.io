@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
     console.log($(this).children());
     $codearea.slideToggle(500, function () {
         $header.text(function () {
-            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
         });
     });
 });
@@ -782,7 +782,7 @@ sudo apt-get install fenics</code></pre>
 <p>El problema que vamos a resolver con la ayuda de <a href="http://fenicsproject.org/">FEniCS</a>, va a ser la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</p>
 $$u_{xx} + u_{yy} = 0$$<p>Con las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
 $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
-<p>El primer paso en la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>,  es definir una <em>malla</em> que describa la discretización del <em>dominio</em> del problema. Para este caso, vamos a utilizar la función <code>RectangleMesh</code> que nos ofrece <a href="http://fenicsproject.org/">FEniCS</a>.</p>
+<p>El primer paso en la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>,  es definir una <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">malla</a></em> que describa la discretización del <em>dominio</em> del problema. Para este caso, vamos a utilizar la función <code>RectangleMesh</code> que nos ofrece <a href="http://fenicsproject.org/">FEniCS</a>.</p>
 
 </div>
 </div>
@@ -809,7 +809,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>El siguiente paso es definir una representación del <a href="https://es.wikipedia.org/wiki/Espacio_funcional">espacio funcional</a> para las funciones de ensayo y prueba. Para esto vamos a utilizar la clase <code>FunctionSpace</code>. El constructor de esta clase tiene al menos tres argumentos: un objeto de <em>malla</em>, el nombre del tipo de función base, y el grado de la función base. En este caso, vamos a utilizar la función de <a href="https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Lagrange">Lagrange</a>.</p>
+<p>El siguiente paso es definir una representación del <a href="https://es.wikipedia.org/wiki/Espacio_funcional">espacio funcional</a> para las funciones de ensayo y prueba. Para esto vamos a utilizar la clase <code>FunctionSpace</code>. El constructor de esta clase tiene al menos tres argumentos: un objeto de <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">malla</a></em>, el nombre del tipo de función base, y el grado de la función base. En este caso, vamos a utilizar la función de <a href="https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Lagrange">Lagrange</a>.</p>
 
 </div>
 </div>
@@ -1447,7 +1447,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-leaning.html">Machine Leaning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>  </section>
 
 
     <section>
