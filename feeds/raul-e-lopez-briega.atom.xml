@@ -1,5 +1,810 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="http://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/raul-e-lopez-briega.atom.xml" rel="self"></link><id>http://relopezbriega.github.io/</id><updated>2016-04-08T00:00:00-03:00</updated><entry><title>Ejemplo de Machine Learning con Python - Preprocesamiento y exploración</title><link href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/" rel="alternate"></link><updated>2016-04-08T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-04-08:blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="http://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/raul-e-lopez-briega.atom.xml" rel="self"></link><id>http://relopezbriega.github.io/</id><updated>2016-04-15T00:00:00-03:00</updated><entry><title>Ejemplo de Machine Learning con Python - Selección de atributos</title><link href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/" rel="alternate"></link><updated>2016-04-15T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-04-15:blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="Machine Learning" title="Machine Learning" src="http://relopezbriega.github.io/images/machine-learning.jpg"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Continuando donde nos quedamos en el artículo anterior &lt;a href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/"&gt;Ejemplo de Machine Learning - preprocesamiento y exploración&lt;/a&gt;; ahora es tiempo de ingresar en el terreno de la &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="&amp;#191;En-qu&amp;#233;-consiste-la-selecci&amp;#243;n-de-atributos?"&gt;&amp;#191;En qu&amp;#233; consiste la selecci&amp;#243;n de atributos?&lt;a class="anchor-link" href="#&amp;#191;En-qu&amp;#233;-consiste-la-selecci&amp;#243;n-de-atributos?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; es el proceso por el cual seleccionamos un subconjunto de atributos (representados por cada una de las columnas en un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt; de forma tabular) que son más relevantes para la construcción del modelo predictivo sobre el que estamos trabajando.&lt;/p&gt;
+&lt;p&gt;Este proceso, no se debe confundir con el de &lt;a href="https://en.wikipedia.org/wiki/Dimensionality_reduction"&gt;reducción de dimensiones&lt;/a&gt;; si bien ambos procesos buscan reducir el número de atributos en nuestro &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt;; este último lo hace por medio de la creación de nuevos atributos que son combinaciones de los anteriores; mientras que en el proceso de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;, intentamos incluir y excluir los atributos prácticamente sin modificarlos.&lt;/p&gt;
+&lt;p&gt;El proceso de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; es tanto un arte como una ciencia, en donde el conocimiento sobre el problema y la intuición son sumamente importantes. El objetivo de la &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; es triple: mejorar la capacidad predictiva de nuestro modelo, proporcionando modelos predictivos más rápidos y eficientes, y proporcionar una mejor comprensión del proceso subyacente que generó los datos. Los métodos de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; se pueden utilizar para identificar y eliminar los atributos innecesarios, irrelevantes y redundantes que no contribuyen a la exactitud del modelo predictivo o incluso puedan disminuir su precisión.&lt;/p&gt;
+&lt;h2 id="Beneficios-de-la-selecci&amp;#243;n-de-atributos"&gt;Beneficios de la selecci&amp;#243;n de atributos&lt;a class="anchor-link" href="#Beneficios-de-la-selecci&amp;#243;n-de-atributos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Uno de los principales beneficios de la &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; esta plasmado por la famosa frase &lt;strong&gt;&lt;em&gt;"Menos es más"&lt;/em&gt;&lt;/strong&gt; del arquitecto &lt;a href="https://es.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe"&gt;Ludwig Mies van der Rohe&lt;/a&gt;, precursor del &lt;a href="https://es.wikipedia.org/wiki/Minimalismo"&gt;minimalismo&lt;/a&gt;. Menos atributos son deseables ya que reduce la complejidad del modelo, y un modelo más simple es más fácil de entender y explicar.&lt;/p&gt;
+&lt;p&gt;Otros beneficios adicionales que nos proporciona una buena &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt; antes de comenzar con el armado del modelo, son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reduce el &lt;a href="https://es.wikipedia.org/wiki/Sobreajuste"&gt;sobreentrenamiento&lt;/a&gt;&lt;/strong&gt;: Menos datos redundantes significan menos oportunidades para tomar decisiones sobre la base de ruido.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mejora la precisión&lt;/strong&gt;: Menos datos engañosos se convierten en una mejora en la exactitud del modelo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reduce el tiempo de entrenamiento&lt;/strong&gt;: Menos datos significa que los algoritmos aprenden más rápidamente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="Selecci&amp;#243;n-de-atributos-univariante-o-multivariante"&gt;Selecci&amp;#243;n de atributos univariante o multivariante&lt;a class="anchor-link" href="#Selecci&amp;#243;n-de-atributos-univariante-o-multivariante"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una cosa que no debemos pasar por alto en el proceso de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;, es la relación que puede existir entre ellos. Es decir que debemos considerar seleccionar o eliminar un atributo en forma individual (&lt;a href="https://en.wikipedia.org/wiki/Univariate_analysis"&gt;univariante&lt;/a&gt;) o un un grupo de atributos en forma conjunta (&lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_multivariante"&gt;multivariante&lt;/a&gt;). Esto también va a depender del problema con el que estemos tratando y del modelo que elijamos. Por ejemplo si elegimos como modelo un &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"&gt;clasificador bayesiano ingenuo&lt;/a&gt;, el modelo asume que cada atributo es independiente del resto, por lo tanto, podríamos utilizar un enfoque &lt;a href="https://en.wikipedia.org/wiki/Univariate_analysis"&gt;univariante&lt;/a&gt; sin problemas; en cambio si elegimos como modelo una &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;red neuronal&lt;/a&gt;, este último no asume la independencia de los atributos, sino que utiliza todas la que dispone; por lo tanto aquí deberíamos seguir un enfoque &lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_multivariante"&gt;multivariante&lt;/a&gt; para seleccionar los atributos.&lt;/p&gt;
+&lt;h2 id="Algoritmos-para-selecci&amp;#243;n-de-atributos"&gt;Algoritmos para selecci&amp;#243;n de atributos&lt;a class="anchor-link" href="#Algoritmos-para-selecci&amp;#243;n-de-atributos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Podemos encontrar dos clases generales de algoritmos de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;: los métodos de filtrado, y los métodos empaquetados.&lt;/p&gt;
+&lt;h3 id="M&amp;#233;todos-de-filtrado"&gt;M&amp;#233;todos de filtrado&lt;a class="anchor-link" href="#M&amp;#233;todos-de-filtrado"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Estos métodos aplican una medida estadística para asignar una puntuación a cada atributo. Los atributos luego son clasificados de acuerdo a su puntuación y son, o bien seleccionados para su conservación o eliminados del conjunto de datos. Los métodos de filtrado son a menudo &lt;a href="https://en.wikipedia.org/wiki/Univariate_analysis"&gt;univariantes&lt;/a&gt; y consideran a cada atributo en forma independiente, o con respecto a la variable dependiente.&lt;/p&gt;
+&lt;p&gt;Ejemplos de estos métodos son: &lt;a href="https://es.wikipedia.org/wiki/Prueba_%CF%87%C2%B2"&gt;prueba de Chi cuadrado&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Prueba_F_de_Fisher"&gt;prueba F de Fisher&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/Information_gain_ratio"&gt;ratio de ganancia de información&lt;/a&gt; y los &lt;a href="https://es.wikipedia.org/wiki/Correlaci%C3%B3n"&gt;coeficientes de correlación&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="M&amp;#233;todos-empaquetados"&gt;M&amp;#233;todos empaquetados&lt;a class="anchor-link" href="#M&amp;#233;todos-empaquetados"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Estos métodos consideran la selección de un conjunto de atributos como un problema de búsqueda, en donde las diferentes combinaciones son evaluadas y comparadas. Para hacer estas evaluaciones se utiliza un modelo predictivo y luego se asigna una puntuación a cada combinación basada en la precisión del modelo.&lt;/p&gt;
+&lt;p&gt;Un ejemplo de este método es el algoritmo de eliminación recursiva de atributos.&lt;/p&gt;
+&lt;h2 id="Ejemplo"&gt;Ejemplo&lt;a class="anchor-link" href="#Ejemplo"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pasamos ahora a ver como podemos aplicar todo esto al caso en el que veníamos trabajando en el el &lt;a href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/"&gt;artículo anterior&lt;/a&gt;. Pero antes, terminemos con algunas tareas de preprocesamiento adicionales.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Importando las librerías que vamos a utilizar&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt; 
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SelectKBest&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;f_classif&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RFE&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.ensemble&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ExtraTreesClassifier&lt;/span&gt;
+
+&lt;span class="c"&gt;# graficos incrustados&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+
+&lt;span class="c"&gt;# parametros esteticos de seaborn&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_palette&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;deep&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;desat&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;figure.figsize&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# importando el dataset preprocesado.&lt;/span&gt;
+&lt;span class="n"&gt;ONG_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;LEARNING_procesado.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Agregando la columna AGE2&lt;/span&gt;
+&lt;span class="n"&gt;AGE2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cut&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;AGE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;AGE2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;AGE2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Eliminar columnas con donaciones superiores a 60 (atípicos)&lt;/span&gt;
+&lt;span class="n"&gt;ONG_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DONOR_AMOUNT&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Convertir datos categoricos a numericos&lt;/span&gt;
+&lt;span class="n"&gt;tipos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_series&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dtypes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groups&lt;/span&gt;
+&lt;span class="n"&gt;ctext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tipos&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;object&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ctext&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;factorize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;AGE2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;factorize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;AGE2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Con estas manipulaciones lo que hicimos es cargar en memoria el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt; que prepocesamos anteriormente, le agregamos la nueva columna AGE2, ya que es mejor tener la edad agrupada en rangos en lugar de individualmente, luego eliminamos los &lt;a href="https://es.wikipedia.org/wiki/Valor_at%C3%ADpico"&gt;valores atípicos&lt;/a&gt; que habíamos detectado; y por último, reemplazamos con su equivalente numérico a todas las &lt;a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/"&gt;variables categóricas&lt;/a&gt;; ya que para los algoritmos de &lt;a href="http://scikit-learn.org/stable/"&gt;Scikit-learn&lt;/a&gt; es mucho más eficiente trabajar con variables numéricas.&lt;/p&gt;
+&lt;p&gt;Ahora sí, ya estamos en condiciones de poder comenzar a aplicar algunos de los algoritmos de &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;, comencemos con un simple algoritmo &lt;a href="https://en.wikipedia.org/wiki/Univariate_analysis"&gt;univariante&lt;/a&gt; que aplica el método de filtrado. Para esto vamos a utilizar los objetos &lt;code&gt;SelectKBest&lt;/code&gt; y &lt;code&gt;f_classif&lt;/code&gt; del paquete &lt;code&gt;sklearn.feature_selection&lt;/code&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Separamos las columnas objetivo&lt;/span&gt;
+&lt;span class="n"&gt;donor_flag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_FLAG&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;donor_amount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;indice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;IDX&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Aplicando el algoritmo univariante de prueba F.&lt;/span&gt;
+&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;  &lt;span class="c"&gt;# número de atributos a seleccionar&lt;/span&gt;
+&lt;span class="n"&gt;entrenar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_FLAG&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;IDX&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;columnas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;entrenar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;seleccionadas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SelectKBest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f_classif&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;entrenar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;donor_flag&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;atrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seleccionadas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_support&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;atributos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;columnas&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;atrib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+&lt;span class="n"&gt;atributos&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[&amp;apos;ODATEDW&amp;apos;,
+ &amp;apos;PEPSTRFL&amp;apos;,
+ &amp;apos;HVP3&amp;apos;,
+ &amp;apos;CARDPROM&amp;apos;,
+ &amp;apos;NUMPROM&amp;apos;,
+ &amp;apos;RAMNT_8&amp;apos;,
+ &amp;apos;RAMNT_16&amp;apos;,
+ &amp;apos;NGIFTALL&amp;apos;,
+ &amp;apos;CARDGIFT&amp;apos;,
+ &amp;apos;LASTGIFT&amp;apos;,
+ &amp;apos;LASTDATE&amp;apos;,
+ &amp;apos;FISTDATE&amp;apos;,
+ &amp;apos;AVGGIFT&amp;apos;,
+ &amp;apos;RFA_2F&amp;apos;,
+ &amp;apos;RFA_2A&amp;apos;]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como podemos ver, el algoritmo nos seleccionó la cantidad de atributos que le indicamos; en este ejemplo decidimos seleccionar solo 15; obviamente, cuando armemos nuestro modelo final vamos a tomar un número mayor de atributos.&lt;/p&gt;
+&lt;h3 id="&amp;#191;C&amp;#243;mo-funciona?"&gt;&amp;#191;C&amp;#243;mo funciona?&lt;a class="anchor-link" href="#&amp;#191;C&amp;#243;mo-funciona?"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Este algoritmo selecciona a los mejores atributos basándose en una prueba estadística &lt;a href="https://en.wikipedia.org/wiki/Univariate_analysis"&gt;univariante&lt;/a&gt;. Al objeto &lt;code&gt;SelectKBest&lt;/code&gt; le pasamos la prueba estadística que vamos a a aplicar, en este caso una &lt;a href="https://es.wikipedia.org/wiki/Prueba_F_de_Fisher"&gt;prueba F&lt;/a&gt; definida por el objeto &lt;code&gt;f_classif&lt;/code&gt;, junto con el número de atributos a seleccionar. El algoritmo va a aplicar la prueba a todos los atributos y va a seleccionar los que mejor resultado obtuvieron.&lt;/p&gt;
+&lt;p&gt;Ahora veamos como funciona el algoritmo de &lt;strong&gt;Eliminación Recursiva de atributos&lt;/strong&gt;. Para este caso, vamos a utilizar como nuestro modelo predictivo el algoritmo &lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html"&gt;ExtraTreesClassifier&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Algoritmo de Eliminación Recursiva de atributos con ExtraTrees&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ExtraTreesClassifier&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;era&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RFE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c"&gt;# número de atributos a seleccionar&lt;/span&gt;
+&lt;span class="n"&gt;era&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;era&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;entrenar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;donor_flag&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# imprimir resultados&lt;/span&gt;
+&lt;span class="n"&gt;atrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;era&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;support_&lt;/span&gt;
+&lt;span class="n"&gt;atributos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;columnas&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;atrib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+&lt;span class="n"&gt;atributos&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[&amp;apos;OSOURCE&amp;apos;,
+ &amp;apos;ZIP&amp;apos;,
+ &amp;apos;VIETVETS&amp;apos;,
+ &amp;apos;WWIIVETS&amp;apos;,
+ &amp;apos;POP901&amp;apos;,
+ &amp;apos;HV1&amp;apos;,
+ &amp;apos;PEC2&amp;apos;,
+ &amp;apos;TPE13&amp;apos;,
+ &amp;apos;EIC4&amp;apos;,
+ &amp;apos;EIC14&amp;apos;,
+ &amp;apos;VC2&amp;apos;,
+ &amp;apos;CARDPROM&amp;apos;,
+ &amp;apos;MINRDATE&amp;apos;,
+ &amp;apos;MAXRDATE&amp;apos;,
+ &amp;apos;TIMELAG&amp;apos;]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="&amp;#191;C&amp;#243;mo-funciona?"&gt;&amp;#191;C&amp;#243;mo funciona?&lt;a class="anchor-link" href="#&amp;#191;C&amp;#243;mo-funciona?"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;En este algoritmo, dado un modelo predictivo que asigna un coeficiente de importancia a cada atributo (como ExtraTreesClassifier), el objetivo de la &lt;em&gt;Eliminación Recursiva de atributos&lt;/em&gt; es ir seleccionado en forma recursiva un número cada vez más pequeño de atributos. Primero comienza con todos los atributos del &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt; y luego en cada pasada va eliminando aquellos que tenga el menor coeficiente de importancia hasta alcanzar el número de atributos deseado.&lt;/p&gt;
+&lt;p&gt;Si vemos los 15 atributos seleccionados por este otro algoritmo, existen muchas diferencias con los que selecciono el modelo anterior; en general, la Eliminación Recursiva de atributos suele ser mucho más precisa, pero también consume mucho más tiempo y recursos, ya que requiere que entrenemos a un &lt;em&gt;modelo predictivo&lt;/em&gt; para poder obtener sus resultados.&lt;/p&gt;
+&lt;p&gt;Por último, también podríamos utilizar ese coeficiente de importancia que nos proporciona el modelo como una guía adicional para refinar nuestra &lt;a href="https://en.wikipedia.org/wiki/Feature_selection"&gt;selección de atributos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Importancia de atributos.&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;entrenar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;donor_flag&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;feature_importances_&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;array([  2.59616058e-03,   3.03252110e-03,   2.71464477e-03,
+         2.51952243e-03,   2.34433609e-03,   6.01722535e-04,
+         4.82782938e-04,   2.24732045e-03,   2.07872966e-03,
+         1.29249803e-03,   1.17189225e-03,   9.77218420e-06,
+         6.12421074e-04,   5.79137133e-05,   2.40594405e-03])&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# 15 coeficientes más altos&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;feature_importances_&lt;/span&gt;&lt;span class="p"&gt;)[::&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;][:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;array([ 0.00369165,  0.00353173,  0.00348298,  0.00336095,  0.00331946,
+        0.00331828,  0.00331345,  0.00326505,  0.00316758,  0.00316587,
+        0.00313431,  0.00311334,  0.00310065,  0.00307309,  0.00304518])&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Analicemos algunos de estos atributos en forma individual para tener una idea de cuanto puede ser que aporten a la exactitud del modelo. Podríamos comparar por ejemplo, el promedio de donaciones que podríamos obtener con este atributo contra el promedio de todo el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt;. Tomemos por ejemplo al atributo LASTGIFT que representa el importe de la última donación que realizó cada persona incluida en el conjunto de datos. En principio parece lógico que este atributo sea significativo para el modelo, ya que si donó en el pasado, hay bastantes posibilidades de que vuelva a donar en esta oportunidad.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[11]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Probabilidad de ser donante de todo el dataset.&lt;/span&gt;
+&lt;span class="n"&gt;prob_gral&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DONOR_AMOUNT&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  \
+                   &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;100.0&lt;/span&gt;
+&lt;span class="n"&gt;prob_gral&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;5.0377358490566033&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Probabilidad de realizar donanción con LASTGIFT &amp;lt;= 10&lt;/span&gt;
+&lt;span class="n"&gt;lastgift10&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DONOR_AMOUNT&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+                            &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LASTGIFT&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  \
+      &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LASTGIFT&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;100.0&lt;/span&gt;
+&lt;span class="n"&gt;lastgift10&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;6.9347104389524157&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[13]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# graficando los resultados&lt;/span&gt;
+&lt;span class="n"&gt;lastgift&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;promedio gral&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;prob_gral&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;lastgift&amp;lt;=10&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;lastgift10&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;lastgift&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;barh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                   &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;blue&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;green&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Pobabilidad de donar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+/R/g6om1pIQt9wAAAABJRU5ErkJggg==
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Este último gráfico nos muestra claramente que con un valor del atributo LASTGIFT menor o igual a 10 las probabilidades de que esa persona realice una donación mejoran, pero veamos que pasa con el importe de la donación.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[14]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# importe promedio de donación general&lt;/span&gt;
+&lt;span class="n"&gt;donacion_prom&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DONOR_AMOUNT&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;donacion_prom&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;14.889109446525177&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[15]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# importe promedio de donación lastgift &amp;lt;= 10&lt;/span&gt;
+&lt;span class="n"&gt;lastgift10_imp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DONOR_AMOUNT&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; 
+                         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ONG_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LASTGIFT&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;DONOR_AMOUNT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;lastgift10_imp&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;8.7553191489361701&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[16]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# graficando los resultados&lt;/span&gt;
+&lt;span class="n"&gt;lastgift&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;imp promedio gral&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;donacion_prom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                      &lt;span class="s"&gt;&amp;#39;lastgift&amp;lt;=10&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;lastgift10_imp&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;lastgift&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;barh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                   &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;blue&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;green&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                  &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;importe promedio de donación&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+YII=
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Aquí vemos, que si bien las probabilidades de que sea un donador mejoran, el importe que se dona esta por debajo del promedio. En el caso de este atributo podemos ver que &lt;a href="https://es.wikipedia.org/wiki/Correlaci%C3%B3n"&gt;correlación&lt;/a&gt; inversa entre el importe de donación y la probabilidad de hacer una donación a la ONG.&lt;/p&gt;
+&lt;p&gt;Hasta aquí llegamos en este artículo, la idea es que luego, cuando tengamos armado el modelo, podamos jugar con distintas combinaciones de atributos y ver como se comporta el modelo hasta alcanzar la combinación ideal de atributos. No se pierdan los próximos artículos!&lt;/p&gt;
+&lt;p&gt;Saludos!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/MachineLearningPractica2.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/MachineLearningPractica2.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="Machine Learning"></category></entry><entry><title>Ejemplo de Machine Learning con Python - Preprocesamiento y exploración</title><link href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/" rel="alternate"></link><updated>2016-04-08T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-04-08:blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;

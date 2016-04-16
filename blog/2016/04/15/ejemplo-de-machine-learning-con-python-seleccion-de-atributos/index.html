@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Raul E. Lopez Briega - batman</title>
+  <title>Ejemplo de Machine Learning con Python - Selección de atributos</title>
   <meta name="author" content="Raul E. Lopez Briega">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -254,21 +254,21 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/">Batman, ecuaciones y python</a>
-      </h1>
-      <p class="meta"><time datetime="2015-08-20T00:00:00-03:00" pubdate>Thu 20 August 2015</time></p>
+      <h1 class="entry-title">Ejemplo de Machine Learning con Python - Selección de atributos</h1>
+      <p class="meta"><time datetime="2016-04-15T00:00:00-03:00" pubdate>Fri 15 April 2016</time></p>
 </header>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="relopezbriega" data-size="large" data-hashtags="python">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/" data-counter="right"></script>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="Ecuación Batman" title="Ecuación Batman" src="http://relopezbriega.github.io/images/ecnbatmancolor.png"></p>
+<p><img alt="Machine Learning" title="Machine Learning" src="http://relopezbriega.github.io/images/machine-learning.jpg"></p>
 
 </div>
 </div>
@@ -278,15 +278,820 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://es.wikipedia.org/wiki/Batman">Batman</a> siempre fue mi superhéroe favorito porque es uno de los pocos héroes que no posee ningún superpoder, sino que debe recurrir a su intelecto y a la ciencia para construir las bati-herramientas que utiliza para combatir al crimen. Además posee ese toque de oscuridad producto de la dualidad entre ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Continuando donde nos quedamos en el artículo anterior <a href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">Ejemplo de Machine Learning - preprocesamiento y exploración</a>; ahora es tiempo de ingresar en el terreno de la <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>.</p>
+<h2 id="&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#191;En qu&#233; consiste la selecci&#243;n de atributos?<a class="anchor-link" href="#&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#182;</a></h2><p>La <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es el proceso por el cual seleccionamos un subconjunto de atributos (representados por cada una de las columnas en un <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> de forma tabular) que son más relevantes para la construcción del modelo predictivo sobre el que estamos trabajando.</p>
+<p>Este proceso, no se debe confundir con el de <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">reducción de dimensiones</a>; si bien ambos procesos buscan reducir el número de atributos en nuestro <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a>; este último lo hace por medio de la creación de nuevos atributos que son combinaciones de los anteriores; mientras que en el proceso de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>, intentamos incluir y excluir los atributos prácticamente sin modificarlos.</p>
+<p>El proceso de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es tanto un arte como una ciencia, en donde el conocimiento sobre el problema y la intuición son sumamente importantes. El objetivo de la <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es triple: mejorar la capacidad predictiva de nuestro modelo, proporcionando modelos predictivos más rápidos y eficientes, y proporcionar una mejor comprensión del proceso subyacente que generó los datos. Los métodos de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> se pueden utilizar para identificar y eliminar los atributos innecesarios, irrelevantes y redundantes que no contribuyen a la exactitud del modelo predictivo o incluso puedan disminuir su precisión.</p>
+<h2 id="Beneficios-de-la-selecci&#243;n-de-atributos">Beneficios de la selecci&#243;n de atributos<a class="anchor-link" href="#Beneficios-de-la-selecci&#243;n-de-atributos">&#182;</a></h2><p>Uno de los principales beneficios de la <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> esta plasmado por la famosa frase <strong><em>"Menos es más"</em></strong> del arquitecto <a href="https://es.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe">Ludwig Mies van der Rohe</a>, precursor del <a href="https://es.wikipedia.org/wiki/Minimalismo">minimalismo</a>. Menos atributos son deseables ya que reduce la complejidad del modelo, y un modelo más simple es más fácil de entender y explicar.</p>
+<p>Otros beneficios adicionales que nos proporciona una buena <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> antes de comenzar con el armado del modelo, son:</p>
+<ul>
+<li><strong>Reduce el <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreentrenamiento</a></strong>: Menos datos redundantes significan menos oportunidades para tomar decisiones sobre la base de ruido.</li>
+<li><strong>Mejora la precisión</strong>: Menos datos engañosos se convierten en una mejora en la exactitud del modelo.</li>
+<li><strong>Reduce el tiempo de entrenamiento</strong>: Menos datos significa que los algoritmos aprenden más rápidamente.</li>
+</ul>
+<h2 id="Selecci&#243;n-de-atributos-univariante-o-multivariante">Selecci&#243;n de atributos univariante o multivariante<a class="anchor-link" href="#Selecci&#243;n-de-atributos-univariante-o-multivariante">&#182;</a></h2><p>Una cosa que no debemos pasar por alto en el proceso de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>, es la relación que puede existir entre ellos. Es decir que debemos considerar seleccionar o eliminar un atributo en forma individual (<a href="https://en.wikipedia.org/wiki/Univariate_analysis">univariante</a>) o un un grupo de atributos en forma conjunta (<a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_multivariante">multivariante</a>). Esto también va a depender del problema con el que estemos tratando y del modelo que elijamos. Por ejemplo si elegimos como modelo un <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo">clasificador bayesiano ingenuo</a>, el modelo asume que cada atributo es independiente del resto, por lo tanto, podríamos utilizar un enfoque <a href="https://en.wikipedia.org/wiki/Univariate_analysis">univariante</a> sin problemas; en cambio si elegimos como modelo una <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red neuronal</a>, este último no asume la independencia de los atributos, sino que utiliza todas la que dispone; por lo tanto aquí deberíamos seguir un enfoque <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_multivariante">multivariante</a> para seleccionar los atributos.</p>
+<h2 id="Algoritmos-para-selecci&#243;n-de-atributos">Algoritmos para selecci&#243;n de atributos<a class="anchor-link" href="#Algoritmos-para-selecci&#243;n-de-atributos">&#182;</a></h2><p>Podemos encontrar dos clases generales de algoritmos de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>: los métodos de filtrado, y los métodos empaquetados.</p>
+<h3 id="M&#233;todos-de-filtrado">M&#233;todos de filtrado<a class="anchor-link" href="#M&#233;todos-de-filtrado">&#182;</a></h3><p>Estos métodos aplican una medida estadística para asignar una puntuación a cada atributo. Los atributos luego son clasificados de acuerdo a su puntuación y son, o bien seleccionados para su conservación o eliminados del conjunto de datos. Los métodos de filtrado son a menudo <a href="https://en.wikipedia.org/wiki/Univariate_analysis">univariantes</a> y consideran a cada atributo en forma independiente, o con respecto a la variable dependiente.</p>
+<p>Ejemplos de estos métodos son: <a href="https://es.wikipedia.org/wiki/Prueba_%CF%87%C2%B2">prueba de Chi cuadrado</a>, <a href="https://es.wikipedia.org/wiki/Prueba_F_de_Fisher">prueba F de Fisher</a>, <a href="https://en.wikipedia.org/wiki/Information_gain_ratio">ratio de ganancia de información</a> y los <a href="https://es.wikipedia.org/wiki/Correlaci%C3%B3n">coeficientes de correlación</a>.</p>
+<h3 id="M&#233;todos-empaquetados">M&#233;todos empaquetados<a class="anchor-link" href="#M&#233;todos-empaquetados">&#182;</a></h3><p>Estos métodos consideran la selección de un conjunto de atributos como un problema de búsqueda, en donde las diferentes combinaciones son evaluadas y comparadas. Para hacer estas evaluaciones se utiliza un modelo predictivo y luego se asigna una puntuación a cada combinación basada en la precisión del modelo.</p>
+<p>Un ejemplo de este método es el algoritmo de eliminación recursiva de atributos.</p>
+<h2 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">&#182;</a></h2><p>Pasamos ahora a ver como podemos aplicar todo esto al caso en el que veníamos trabajando en el el <a href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">artículo anterior</a>. Pero antes, terminemos con algunas tareas de preprocesamiento adicionales.</p>
 
-  <br />
-</div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+
+<div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
+<div class="input_area" style="display:none">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando las librerías que vamos a utilizar</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">f_classif</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">RFE</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">ExtraTreesClassifier</span>
+
+<span class="c"># graficos incrustados</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c"># parametros esteticos de seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s">&quot;deep&quot;</span><span class="p">,</span> <span class="n">desat</span><span class="o">=.</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)})</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el dataset preprocesado.</span>
+<span class="n">ONG_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;LEARNING_procesado.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c"># Agregando la columna AGE2</span>
+<span class="n">AGE2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE&#39;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AGE2</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Eliminar columnas con donaciones superiores a 60 (atípicos)</span>
+<span class="n">ONG_data</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Convertir datos categoricos a numericos</span>
+<span class="n">tipos</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
+<span class="n">ctext</span> <span class="o">=</span> <span class="n">tipos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&#39;object&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ctext</span><span class="p">:</span>
+    <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+
+<span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Con estas manipulaciones lo que hicimos es cargar en memoria el <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> que prepocesamos anteriormente, le agregamos la nueva columna AGE2, ya que es mejor tener la edad agrupada en rangos en lugar de individualmente, luego eliminamos los <a href="https://es.wikipedia.org/wiki/Valor_at%C3%ADpico">valores atípicos</a> que habíamos detectado; y por último, reemplazamos con su equivalente numérico a todas las <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">variables categóricas</a>; ya que para los algoritmos de <a href="http://scikit-learn.org/stable/">Scikit-learn</a> es mucho más eficiente trabajar con variables numéricas.</p>
+<p>Ahora sí, ya estamos en condiciones de poder comenzar a aplicar algunos de los algoritmos de <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>, comencemos con un simple algoritmo <a href="https://en.wikipedia.org/wiki/Univariate_analysis">univariante</a> que aplica el método de filtrado. Para esto vamos a utilizar los objetos <code>SelectKBest</code> y <code>f_classif</code> del paquete <code>sklearn.feature_selection</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Separamos las columnas objetivo</span>
+<span class="n">donor_flag</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_FLAG&#39;</span><span class="p">]</span>
+<span class="n">donor_amount</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;IDX&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aplicando el algoritmo univariante de prueba F.</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c"># número de atributos a seleccionar</span>
+<span class="n">entrenar</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;DONOR_FLAG&#39;</span><span class="p">,</span> <span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">,</span> <span class="s">&#39;IDX&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">columnas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">entrenar</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">seleccionadas</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
+<span class="n">atrib</span> <span class="o">=</span> <span class="n">seleccionadas</span><span class="o">.</span><span class="n">get_support</span><span class="p">()</span>
+<span class="n">atributos</span> <span class="o">=</span> <span class="p">[</span><span class="n">columnas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">atrib</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="n">atributos</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">[&apos;ODATEDW&apos;,
+ &apos;PEPSTRFL&apos;,
+ &apos;HVP3&apos;,
+ &apos;CARDPROM&apos;,
+ &apos;NUMPROM&apos;,
+ &apos;RAMNT_8&apos;,
+ &apos;RAMNT_16&apos;,
+ &apos;NGIFTALL&apos;,
+ &apos;CARDGIFT&apos;,
+ &apos;LASTGIFT&apos;,
+ &apos;LASTDATE&apos;,
+ &apos;FISTDATE&apos;,
+ &apos;AVGGIFT&apos;,
+ &apos;RFA_2F&apos;,
+ &apos;RFA_2A&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como podemos ver, el algoritmo nos seleccionó la cantidad de atributos que le indicamos; en este ejemplo decidimos seleccionar solo 15; obviamente, cuando armemos nuestro modelo final vamos a tomar un número mayor de atributos.</p>
+<h3 id="&#191;C&#243;mo-funciona?">&#191;C&#243;mo funciona?<a class="anchor-link" href="#&#191;C&#243;mo-funciona?">&#182;</a></h3><p>Este algoritmo selecciona a los mejores atributos basándose en una prueba estadística <a href="https://en.wikipedia.org/wiki/Univariate_analysis">univariante</a>. Al objeto <code>SelectKBest</code> le pasamos la prueba estadística que vamos a a aplicar, en este caso una <a href="https://es.wikipedia.org/wiki/Prueba_F_de_Fisher">prueba F</a> definida por el objeto <code>f_classif</code>, junto con el número de atributos a seleccionar. El algoritmo va a aplicar la prueba a todos los atributos y va a seleccionar los que mejor resultado obtuvieron.</p>
+<p>Ahora veamos como funciona el algoritmo de <strong>Eliminación Recursiva de atributos</strong>. Para este caso, vamos a utilizar como nuestro modelo predictivo el algoritmo <a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html">ExtraTreesClassifier</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Algoritmo de Eliminación Recursiva de atributos con ExtraTrees</span>
+<span class="n">modelo</span> <span class="o">=</span> <span class="n">ExtraTreesClassifier</span><span class="p">()</span>
+<span class="n">era</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="c"># número de atributos a seleccionar</span>
+<span class="n">era</span> <span class="o">=</span> <span class="n">era</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># imprimir resultados</span>
+<span class="n">atrib</span> <span class="o">=</span> <span class="n">era</span><span class="o">.</span><span class="n">support_</span>
+<span class="n">atributos</span> <span class="o">=</span> <span class="p">[</span><span class="n">columnas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">atrib</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="n">atributos</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">[&apos;OSOURCE&apos;,
+ &apos;ZIP&apos;,
+ &apos;VIETVETS&apos;,
+ &apos;WWIIVETS&apos;,
+ &apos;POP901&apos;,
+ &apos;HV1&apos;,
+ &apos;PEC2&apos;,
+ &apos;TPE13&apos;,
+ &apos;EIC4&apos;,
+ &apos;EIC14&apos;,
+ &apos;VC2&apos;,
+ &apos;CARDPROM&apos;,
+ &apos;MINRDATE&apos;,
+ &apos;MAXRDATE&apos;,
+ &apos;TIMELAG&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#191;C&#243;mo-funciona?">&#191;C&#243;mo funciona?<a class="anchor-link" href="#&#191;C&#243;mo-funciona?">&#182;</a></h3><p>En este algoritmo, dado un modelo predictivo que asigna un coeficiente de importancia a cada atributo (como ExtraTreesClassifier), el objetivo de la <em>Eliminación Recursiva de atributos</em> es ir seleccionado en forma recursiva un número cada vez más pequeño de atributos. Primero comienza con todos los atributos del <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> y luego en cada pasada va eliminando aquellos que tenga el menor coeficiente de importancia hasta alcanzar el número de atributos deseado.</p>
+<p>Si vemos los 15 atributos seleccionados por este otro algoritmo, existen muchas diferencias con los que selecciono el modelo anterior; en general, la Eliminación Recursiva de atributos suele ser mucho más precisa, pero también consume mucho más tiempo y recursos, ya que requiere que entrenemos a un <em>modelo predictivo</em> para poder obtener sus resultados.</p>
+<p>Por último, también podríamos utilizar ese coeficiente de importancia que nos proporciona el modelo como una guía adicional para refinar nuestra <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importancia de atributos.</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">array([  2.59616058e-03,   3.03252110e-03,   2.71464477e-03,
+         2.51952243e-03,   2.34433609e-03,   6.01722535e-04,
+         4.82782938e-04,   2.24732045e-03,   2.07872966e-03,
+         1.29249803e-03,   1.17189225e-03,   9.77218420e-06,
+         6.12421074e-04,   5.79137133e-05,   2.40594405e-03])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># 15 coeficientes más altos</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">array([ 0.00369165,  0.00353173,  0.00348298,  0.00336095,  0.00331946,
+        0.00331828,  0.00331345,  0.00326505,  0.00316758,  0.00316587,
+        0.00313431,  0.00311334,  0.00310065,  0.00307309,  0.00304518])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Analicemos algunos de estos atributos en forma individual para tener una idea de cuanto puede ser que aporten a la exactitud del modelo. Podríamos comparar por ejemplo, el promedio de donaciones que podríamos obtener con este atributo contra el promedio de todo el <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a>. Tomemos por ejemplo al atributo LASTGIFT que representa el importe de la última donación que realizó cada persona incluida en el conjunto de datos. En principio parece lógico que este atributo sea significativo para el modelo, ya que si donó en el pasado, hay bastantes posibilidades de que vuelva a donar en esta oportunidad.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Probabilidad de ser donante de todo el dataset.</span>
+<span class="n">prob_gral</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
+                   <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
+<span class="n">prob_gral</span> 
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">5.0377358490566033</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Probabilidad de realizar donanción con LASTGIFT &lt;= 10</span>
+<span class="n">lastgift10</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+                            <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
+      <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
+<span class="n">lastgift10</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">6.9347104389524157</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando los resultados</span>
+<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s">&#39;promedio gral&#39;</span><span class="p">:</span> <span class="n">prob_gral</span><span class="p">,</span> <span class="s">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10</span><span class="p">})</span>
+<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;barh&#39;</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Pobabilidad de donar&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+/R/g6om1pIQt9wAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Este último gráfico nos muestra claramente que con un valor del atributo LASTGIFT menor o igual a 10 las probabilidades de que esa persona realice una donación mejoran, pero veamos que pasa con el importe de la donación.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importe promedio de donación general</span>
+<span class="n">donacion_prom</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">donacion_prom</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">14.889109446525177</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importe promedio de donación lastgift &lt;= 10</span>
+<span class="n">lastgift10_imp</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> 
+                         <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">lastgift10_imp</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre class="ipynb">8.7553191489361701</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+
+<div class="inner_cell">
+    <div class="input_area">
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando los resultados</span>
+<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s">&#39;imp promedio gral&#39;</span><span class="p">:</span> <span class="n">donacion_prom</span><span class="p">,</span> 
+                      <span class="s">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10_imp</span><span class="p">})</span>
+<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;barh&#39;</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">]</span>
+                  <span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;importe promedio de donación&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+YII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Aquí vemos, que si bien las probabilidades de que sea un donador mejoran, el importe que se dona esta por debajo del promedio. En el caso de este atributo podemos ver que <a href="https://es.wikipedia.org/wiki/Correlaci%C3%B3n">correlación</a> inversa entre el importe de donación y la probabilidad de hacer una donación a la ONG.</p>
+<p>Hasta aquí llegamos en este artículo, la idea es que luego, cuando tengamos armado el modelo, podamos jugar con distintas combinaciones de atributos y ver como se comporta el modelo hasta alcanzar la combinación ideal de atributos. No se pierdan los próximos artículos!</p>
+<p>Saludos!</p>
+<p><em>Este post fue escrito utilizando IPython notebook. Pueden descargar este <a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/MachineLearningPractica2.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/MachineLearningPractica2.ipynb">nbviewer</a>.</em></p>
+
+</div>
+</div>
+</div></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Raul E. Lopez Briega</span>
+  </span>
+<time datetime="2016-04-15T00:00:00-03:00" pubdate>Fri 15 April 2016</time>  <span class="categories">
+    <a class="category" href="http://relopezbriega.github.io/tag/python.html">python</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>
+    <a class="category" href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>
+  </span>
+</p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Most Popular</h1>
@@ -312,7 +1117,19 @@ jQuery(document).ready(function($) {
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2015/08/20/batman-ecuaciones-y-python/">Batman, ecuaciones y python</a>
+          <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">Ejemplo de Machine Learning con Python - Preprocesamiento y exploración</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/03/13/analisis-de-datos-cuantitativos-con-python/">Análisis de datos cuantitativos con Python</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -379,6 +1196,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'relopezbriegagithub';
+          var disqus_identifier = '/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/';
+          var disqus_url = 'http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/';
+          var disqus_title = 'Ejemplo de Machine Learning con Python - Selección de atributos';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
