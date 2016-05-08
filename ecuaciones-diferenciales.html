@@ -13240,7 +13240,7 @@ wPH/OKVWNRB20lYAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rango-de-validez-de-la-soluci&#243;n-de-series-de-potencia">Rango de validez de la soluci&#243;n de series de potencia<a class="anchor-link" href="#Rango-de-validez-de-la-soluci&#243;n-de-series-de-potencia">&#182;</a></h2><p>Ahora que ya conocemos a los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a>, volvamos a la solución aproximada con <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> que habiamos obtenido anteriormente. Podemos graficar esa solución en el <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a>, y compararla con una solución por método númericos.</p>
-<p><img title="Campo de direcciones" src="http://relopezbriega.github.io/images/campo_direcciones.png"></p>
+<p><img title="Campo de direcciones" src="http://relopezbriega.github.io/images/campo_direcciones.png" width="600" height="250"></p>
 <p>En el panel de la izquierda podemos ver el gráfico de la solución aproximada por la <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a>. La solución aproximada se alinea bien con el <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">campo de direcciones</a> para los valores de $x$ entre $-1.5$ y $1.5$, luego comienza a desviarse, lo que nos indica que la solución aproximada ya no sería válida.</p>
 
 </div>
@@ -16293,56 +16293,27 @@ AACAXmDRAgAAeoFFCwAA6AUWLQAAoBf+f6xleEbY3G2uAAAAAElFTkSuQmCC
 </div>
 </div>
 
+<script src="http://relopezbriega.github.io/reveal.js/lib/js/head.min.js"></script>
+
+<script src="http://relopezbriega.github.io/reveal.js/js/reveal.js"></script>
+
 <script>
 
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "http://relopezbriega.github.io/reveal.js/lib/js/head.min.js",
-      "http://relopezbriega.github.io/reveal.js/js/reveal.js"
-    ],
+// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
 
-    function(head, Reveal){
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "http://relopezbriega.github.io/reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "http://relopezbriega.github.io/reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
-
-        Reveal.addEventListener('slidechanged', update_scroll);
-
-    }
-);
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: "http://relopezbriega.github.io/reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+{ src: "http://relopezbriega.github.io/reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+]
+});
 </script>
 <script type="text/javascript">
     var _gaq = _gaq || [];
