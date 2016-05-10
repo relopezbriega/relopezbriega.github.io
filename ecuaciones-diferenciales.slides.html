@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Ecuaciones Diferenciales slides</title>
+<title>ecuaciones-diferenciales slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -27,6 +27,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         link.href = 'http://relopezbriega.github.io/reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
+
 
 </script>
 
@@ -11927,73 +11928,6 @@ $$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Clasificaci&#243;n-de-las-Ecuaciones-diferenciales">Clasificaci&#243;n de las Ecuaciones diferenciales<a class="anchor-link" href="#Clasificaci&#243;n-de-las-Ecuaciones-diferenciales">&#182;</a></h1><p>La clasificación de las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a> es algo muy importante, ya que dependiendo del tipo de ecuación con el que estemos tratando, distintos seran los caminos que podemos utilizar para resolverlas.</p>
-<p>Las podemos clasificar de la siguiente manera:</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Segun-su-orden">Segun su orden<a class="anchor-link" href="#Segun-su-orden">&#182;</a></h2><p>El <em>orden</em> de una <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> va a ser igual al <em>orden</em> de la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente. Así, en nuestro primer ejemplo, la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> de la <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">ley del enfriamiento de Newton</a> es de primer orden, ya que nos encontramos ante la primer derivada de la temperatura con respecto al tiempo. 
-La ecuación general de las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a> de grado $n$ es la siguiente:</p>
-$$F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots , \frac{d^ny}{dx^n}\right) = 0 $$<p>o utilizando la notación prima para las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a>,</p>
-$$F(x, y, y', y'', \dots, y^{(n)}) = 0$$<p>La más simple de todas las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a> es la siguiente ecuación de primer orden:</p>
-$$ \frac{dy}{dx} = f(x)$$<p></p>
-<p>y para resolverla simplemente debemos calcular su <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida">integral indefinida</a>:</p>
-$$y = \int f(x) dx + c$$<p>.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Segun-si-es-separable">Segun si es separable<a class="anchor-link" href="#Segun-si-es-separable">&#182;</a></h2><p>Una <em>ecuación separable</em> es una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuación diferencial de primer orden</a> en la que la expresión para
-$dx / dy$ se puede factorizar como una función de x multiplicada por una función de y. En otras palabras, puede ser
-escrita en la forma:</p>
-$$\frac{dy}{dx} = f(x)g(y)$$<p>El nombre <em>separable</em> viene del hecho de que la expresión en el lado derecho se puede "separar" en una función de $x$ y una función de $y$.</p>
-<p>Para resolver este tipo de ecuaciones, podemos reescribirlas en la forma diferencial:</p>
-$$\frac{dy}{g(y)} = f(x)dx$$<p>y luego podemos resolver la ecuación original integrando:</p>
-$$\int \frac{dy}{g(y)} = \int f(x) dx + c$$<p>Éstas suelen ser las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a> más fáciles de resolver, ya que el problema de resolverlas puede ser reducido a un problema de <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integración</a>; a pesar de que igualmente muchas veces estas integrales pueden ser difíciles de calcular.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Segun-si-son-lineales-o-no-lineales">Segun si son lineales o no lineales<a class="anchor-link" href="#Segun-si-son-lineales-o-no-lineales">&#182;</a></h2><p>Uno de los tipos más importantes de <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a> son las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_lineal">Ecuaciones diferenciales lineales</a>. Este tipo de ecuaciones son muy comunes en varias ciencias y tienen la ventaja de que pueden llegar a ser resueltas en forma analítica ya que su <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuación diferencial de primer orden</a> adopta la forma:</p>
-$$\frac{dy}{dx} + P(x)y = Q(x) $$<p>donde, $P$ y $Q$ son funciones continuas de $x$ en un determinado intervalo. Para resolver este tipo de ecuaciones de la forma $ y' + P(x)y = Q(x)$, debemos multiplicar los dos lados de la ecuación por el <em>factor de integración</em> $e^{\int P(x) dx}$ y luego <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> ambos lados.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Otras-clasificaciones">Otras clasificaciones<a class="anchor-link" href="#Otras-clasificaciones">&#182;</a></h2><p>Otras clasificaciones que comúnmente se utilizan son:</p>
-<h3 id="Seg&#250;n-el-n&#250;mero-de-variables:">Seg&#250;n el n&#250;mero de variables:<a class="anchor-link" href="#Seg&#250;n-el-n&#250;mero-de-variables:">&#182;</a></h3><p>Esta clasificación va a estar dada por la cantidad de <em>variables independientes</em> que contenga la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a></p>
-<h3 id="Seg&#250;n-sus-coeficientes:">Seg&#250;n sus coeficientes:<a class="anchor-link" href="#Seg&#250;n-sus-coeficientes:">&#182;</a></h3><p>Aquí clasificamos a la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> según sus coeficientes, si los mismos son <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em>, se dice que la ecuación es de <em>coeficientes constantes</em>, en caso contrario será de <em>coeficientes variables</em>.</p>
-<h3 id="Seg&#250;n-homogeneidad:">Seg&#250;n homogeneidad:<a class="anchor-link" href="#Seg&#250;n-homogeneidad:">&#182;</a></h3><p>Una <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_homog%C3%A9nea">homogénea</a> es una ecuación igual a cero en la que solo hay derivadas de $y$ y términos $y$, como por ejemplo la siguiente ecuación:</p>
-$$\frac{d^4y}{dx^4} + \frac{d^2y}{dx^2} + y^2 = 0$$
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Condici&#243;n-inicial-y-de-frontera">Condici&#243;n inicial y de frontera<a class="anchor-link" href="#Condici&#243;n-inicial-y-de-frontera">&#182;</a></h1><p>Las <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a>  pueden tener muchas soluciones, pero a nosotros nos va a interesar encontrar la solución para un caso particular; para lograr esto, debemos imponer unas condiciones auxiliares al problema original. Estas condiciones van a estar motivadas por la <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a> del problema que estemos analizando y pueden llevar a ser de dos tipos diferentes: <a href="https://en.wikipedia.org/wiki/Initial_condition">condiciones iniciales</a> y <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>.</p>
 
 </div>
@@ -12058,17 +11992,6 @@ $$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$<p>El <em>domini
 <h2 id="Series-de-Taylor">Series de Taylor<a class="anchor-link" href="#Series-de-Taylor">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> son un caso especial de <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> cuyos términos adoptan la forma $(x - a)^n$. Las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> nos van a permitir aproximar <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_continua">funciones continuas</a> que no pueden resolverse en forma analítica y se van a  calcular a partir de las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> de estas <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">funciones</a>. Su definición matemática es la siguiente:</p>
 $$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$<p>Lo que es equivalente a decir:</p>
 $$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$<p>Una de las razones de que las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> sean importantes es que nos permiten <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> funciones que de otra forma no podíamos manejar.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Series-de-Fourier">Series de Fourier<a class="anchor-link" href="#Series-de-Fourier">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Serie_de_Fourier">Series de Fourier</a> son series infinitas expresadas en términos de <a href="https://es.wikipedia.org/wiki/Seno_(trigonometr%C3%ADa)">seno</a> y <a href="https://es.wikipedia.org/wiki/Coseno">coseno</a> que convergen en una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_peri%C3%B3dica">función periódica</a> y <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_continua">continua</a>. Así por ejemplo una función con un período de $2\pi$, va a adaptar la forma de la siguiente serie:</p>
-$$f(x) = \frac{a_{0}}{2} + \sum_{k=1}^{\infty}(a_{k} \cos kx + b_{k} \sin kx)$$<p>El análisis de Fourier suele ser una herramienta muy útil para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>.</p>
 
 </div>
 </div>
@@ -12457,263 +12380,6 @@ $$-3.85$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Transformada-de-Laplace">Transformada de Laplace<a class="anchor-link" href="#Transformada-de-Laplace">&#182;</a></h2><p>Un método alternativo que podemos utilizar para resolver en forma analítica <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales ordinarias</a> complejas, es utilizar la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>, que es un tipo particular de <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a>. La idea es que podemos utilizar esta técnica para transformar nuestra <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> en algo más simple, resolver esta ecuación más simple y, a continuación, invertir la transformación para recuperar la solución a la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> original.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Qu&#233;-es-una-Transformada-de-Laplace?">Qu&#233; es una Transformada de Laplace?<a class="anchor-link" href="#Qu&#233;-es-una-Transformada-de-Laplace?">&#182;</a></h2><p>Para poder comprender la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>, primero debemos revisar la definición general de la <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a>, la cuál adapta la siguiente forma:</p>
-$$T(f(t)) = \int_{\alpha}^{\beta} K (s, t) \ f(t) \ dt = F(s) $$<p>En este caso, $f(t)$ es la función que queremos transformar, y $F(s)$ es la función transformada. Los límites de la integración, $\alpha$ y $\beta$, pueden ser cualquier valor entre $-\infty$ y $+\infty$ y $K(s, t)$ es lo que se conoce como el <em>núcleo</em> o <em>kernel</em> de la transformada, y podemos elegir el <em>kernel</em> que nos plazca.  La idea es poder elegir un <em>kernel</em> que nos dé la oportunidad de simplificar la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> con mayor facilidad.</p>
-<p>Si nos restringimos a <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a> con <em>coeficientes</em> constantes, entonces un <em>kernel</em> que resulta realmente útil es $e^{-st}$, ya que al <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial">diferenciar</a> este <em>kernel</em> con respecto de $t$, terminamos obteniendo potencias de $s$, que podemos equiparar a los <em>coeficientes</em> constantes. De esta forma, podemos arribar a la definición de la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>:</p>
-$$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Transformada-de-Laplace-con-SymPy">Transformada de Laplace con SymPy<a class="anchor-link" href="#Transformada-de-Laplace-con-SymPy">&#182;</a></h2><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> que queramos resolver. Aquí es donde nos podemos ayudar de <a href="http://www.sympy.org/es/">SymPy</a>.</p>
-<p>Vamos a intentar resolver la siguiente ecuación:</p>
-$$y'' + 3y' + 2y = 0$$<p>con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Ejemplo de transformada de Laplace</span>
-<span class="c1"># Defino las incognitas</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-
-<span class="c1"># simbolos adicionales.</span>
-<span class="n">s</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;s, Y&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="c1"># Defino la ecuación</span>
-<span class="n">edo</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">edo</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d t^{2}}  y{\left (t \right )} = 0$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Calculo la transformada de Laplace </span>
-<span class="n">L_edo</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">laplace_transform</span><span class="p">(</span><span class="n">edo</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">noconds</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">L_edo_2</span> <span class="o">=</span> <span class="n">laplace_transform_derivatives</span><span class="p">(</span><span class="n">L_edo</span><span class="p">)</span>
-
-<span class="c1"># reemplazamos la transfomada de Laplace de y(t) por la incognita Y</span>
-<span class="c1"># para facilitar la lectura de la ecuación.</span>
-<span class="n">L_edo_3</span> <span class="o">=</span> <span class="n">L_edo_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">laplace_transform</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">),</span> <span class="n">Y</span><span class="p">)</span>
-<span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">L_edo_3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$Y s^{2} + 3 Y s + 2 Y - s y{\left (0 \right )} - 3 y{\left (0 \right )} - \left. \frac{d}{d t} y{\left (t \right )} \right|_{\substack{ t=0 }} = 0$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Aquí ya logramos convertir a la <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>. Ahora podemos aplicarle las <a href="https://en.wikipedia.org/wiki/Initial_condition">condiciones iniciales</a> para resolverla.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Definimos las condiciones iniciales</span>
-<span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="o">-</span><span class="mi">3</span><span class="p">}</span>
-<span class="n">ics</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\left \{ y{\left (0 \right )} : 2, \quad \left. \frac{d}{d t} y{\left (t \right )} \right|_{\substack{ t=0 }} : -3\right \}$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Aplicamos las condiciones iniciales</span>
-<span class="n">L_edo_4</span> <span class="o">=</span> <span class="n">L_edo_3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ics</span><span class="p">)</span>
-
-<span class="c1"># Resolvemos la ecuación y arribamos a la Transformada de Laplace</span>
-<span class="c1"># que es equivalente a nuestra ecuación diferencial</span>
-<span class="n">Y_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L_edo_4</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-<span class="n">Y_sol</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\left [ \frac{2 s + 3}{s^{2} + 3 s + 2}\right ]$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Por último, calculamos al inversa de la Transformada de Laplace que </span>
-<span class="c1"># obtuvimos arriba, para obtener la solución de nuestra ecuación diferencial.</span>
-<span class="n">y_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">inverse_laplace_transform</span><span class="p">(</span><span class="n">Y_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-<span class="n">y_sol</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\frac{e^{t} + 1}{e^{2 t}}$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span class="c1"># Comprobamos la solución.</span>
-<span class="n">y_sol</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y_sol</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\left ( 2, \quad -3\right )$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>, pueden ser una buena alternativa para resolver <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales</a> en forma analítica. Pero aún así, siguen existiendo ecuaciones que se resisten a ser resueltas por medios analíticos, para estos casos, debemos recurrir a los métodos numéricos.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Series-de-potencias-y-campos-de-direcciones">Series de potencias y campos de direcciones<a class="anchor-link" href="#Series-de-potencias-y-campos-de-direcciones">&#182;</a></h2><p>Supongamos ahora que queremos resolver con <a href="http://www.sympy.org/es/">SymPy</a> la siguiente <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuación diferencial</a>:</p>
 $$\frac{dy}{dx} = x^2 + y^2 -1$$<p>con una <a href="https://en.wikipedia.org/wiki/Initial_condition">condición inicial</a> de $y(0) = 0$.</p>
 <p>Si aplicamos lo que vimos hasta ahora, vamos a obtener el siguiente resultado:</p>
@@ -12767,7 +12433,7 @@ $$y{\left (x \right )} = - x + \frac{2 x^{3}}{3} - \frac{4 x^{5}}{15} + \mathcal
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>El resultado que nos da <a href="http://www.sympy.org/es/">SymPy</a>, es una aproximación con <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a>; y el problema con las <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> es que sus resultados sólo suelen válidos para un rango determinado de valores. Una herramienta que nos puede ayudar a visualizar el rango de validez de una aproximación con <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> son los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a>.</p>
+<p>El resultado que nos da <a href="http://www.sympy.org/es/">SymPy</a>, es una aproximación con <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> (una <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">serie de Taylor</a>); y el problema con las <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> es que sus resultados sólo suelen válidos para un rango determinado de valores. Una herramienta que nos puede ayudar a visualizar el rango de validez de una aproximación con <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a> son los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a>.</p>
 
 </div>
 </div>
@@ -13284,7 +12950,7 @@ wPH/OKVWNRB20lYAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Resolviendo-Ecuaciones-diferenciales-con-SciPy">Resolviendo Ecuaciones diferenciales con SciPy<a class="anchor-link" href="#Resolviendo-Ecuaciones-diferenciales-con-SciPy">&#182;</a></h2><p><a href="http://www.scipy.org/">SciPy</a> nos ofrece dos solucionadores de <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, <code>integrate.odeint</code> y <code>integrate.ode</code>. La principal diferencia entre ambos, es que <code>integrate.ode</code> es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos <em>solucionadores</em>.</p>
+<h2 id="Resolviendo-Ecuaciones-diferenciales-con-SciPy">Resolviendo Ecuaciones diferenciales con SciPy<a class="anchor-link" href="#Resolviendo-Ecuaciones-diferenciales-con-SciPy">&#182;</a></h2><p><a href="http://www.scipy.org/">SciPy</a> nos ofrece dos solucionadores de <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, <code>integrate.odeint</code> y <code>integrate.ode</code>. La principal diferencia entre ambos, es que <code>integrate.ode</code> es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos <em>solucionadores</em>; aunque <code>integrate.odeint</code> es más fácil de utilizar.</p>
 <p>Tratemos de resolver la siguiente ecuación:</p>
 $$\frac{dy}{dx} = x + y^2$$
 </div>
@@ -15238,7 +14904,7 @@ sudo apt-get install fenics</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Problema-a-resolver">Problema a resolver<a class="anchor-link" href="#Problema-a-resolver">&#182;</a></h2><p>El problema que vamos a resolver con la ayuda de <a href="http://fenicsproject.org/">FEniCS</a>, va a ser la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">ecuación del calor</a> en dos dimensiones en estado estacionario, definida por:</p>
-$$u_{xx} + u_{yy} = f$$<p>donde $f$ es la función fuente y donde tenemos las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
+$$u_{xx} + u_{yy} = f$$<p>donde f es la función fuente y donde tenemos las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
 $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 <p>El primer paso en la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>,  es definir una <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">malla</a></em> que describa la discretización del <em>dominio</em> del problema. Para este caso, vamos a utilizar la función <code>RectangleMesh</code> que nos ofrece <a href="http://fenicsproject.org/">FEniCS</a>.</p>
 
@@ -15247,7 +14913,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Discretizando el problema</span>
@@ -15266,7 +14932,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_svg output_subarea output_execute_result">
 
@@ -15734,7 +15400,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Funciones bases</span>
@@ -15774,7 +15440,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Formulación debil de la EDP</span>
@@ -15800,7 +15466,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Defino condiciones de frontera</span>
@@ -15824,7 +15490,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Definiendo condiciones de frontera de Dirichlet</span>
@@ -15854,7 +15520,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="c1"># Resolviendo la EDP</span>
@@ -15891,7 +15557,7 @@ DEBUG:FFC:Reusing form from cache.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
