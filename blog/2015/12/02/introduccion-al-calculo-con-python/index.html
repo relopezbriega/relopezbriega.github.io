@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -346,7 +345,7 @@ Luego utilizamos la instrucción <code>def</code> para definir la función, que 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c"># Creando el vector de valores de x</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># Creando el vector de valores de x</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y</span>
 </pre></div>
@@ -392,7 +391,7 @@ Luego utilizamos la instrucción <code>def</code> para definir la función, que 
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;f(x)&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">tabla</span>
 </pre></div>
 
@@ -484,11 +483,11 @@ Luego utilizamos la instrucción <code>def</code> para definir la función, que 
 <span class="sd">    0 de x para dividir claramente los valores positivos y</span>
 <span class="sd">    negativos.&quot;&quot;&quot;</span>
     <span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;left&quot;</span><span class="p">,</span> <span class="s">&quot;bottom&quot;</span><span class="p">]:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;bottom&quot;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span>
     
-    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;right&quot;</span><span class="p">,</span> <span class="s">&quot;top&quot;</span><span class="p">]:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;top&quot;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">ax</span>
 
@@ -497,9 +496,9 @@ Luego utilizamos la instrucción <code>def</code> para definir la función, que 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">r&quot;Grafico de $f(x)=\sqrt{x + 2}$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;f(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">r&quot;Grafico de $f(x)=\sqrt{x + 2}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -753,7 +752,7 @@ Mv8fMGCXE6lnZw4AAAAASUVORK5CYII=
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.95</span><span class="p">,</span> <span class="mf">1.99</span><span class="p">,</span> <span class="mf">1.999</span><span class="p">,</span> <span class="mf">2.001</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span> <span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;f(x)&#39;</span><span class="p">])</span>
+<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">])</span>
 <span class="n">tabla</span>
 </pre></div>
 
@@ -872,11 +871,11 @@ $$\lim_{x\to 2} \left(x^2 -x + 2\right) = 4$$<p>Gráficamente lo podemos ver del
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;limite cuando x tiende a 2&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;limite cuando x tiende a 2&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">r&quot;Grafico de $f(x)=x^2 -x + 2$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;f(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">r&quot;Grafico de $f(x)=x^2 -x + 2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -1182,11 +1181,11 @@ KeUi/w9xB0XdBcbfYwAAAABJRU5ErkJggg==
         <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">sympy.interactive</span> <span class="k">import</span> <span class="n">printing</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Limit</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span>
 
-<span class="c"># imprimir con notación matemática.</span>
-<span class="n">printing</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s">&#39;mathjax&#39;</span><span class="p">)</span> 
+<span class="c1"># imprimir con notación matemática.</span>
+<span class="n">printing</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s1">&#39;mathjax&#39;</span><span class="p">)</span> 
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span> <span class="c"># Creando el simbolo x.</span>
-<span class="n">Limit</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c"># Creando el objeto Limit</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1"># Creando el simbolo x.</span>
+<span class="n">Limit</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Creando el objeto Limit</span>
 </pre></div>
 
     </div>
@@ -1217,7 +1216,7 @@ $$\lim_{x \to 2^+}\left(x^{2} - x + 2\right)$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo el Limite con el metodo doit()</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo el Limite con el metodo doit()</span>
 <span class="n">Limit</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 
@@ -1249,7 +1248,7 @@ $$4$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># La funcion limit nos da directamente el resultado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># La funcion limit nos da directamente el resultado</span>
 <span class="n">limit</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1281,7 +1280,7 @@ $$4$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo limite 1/x cuando x tiende a infinito</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo limite 1/x cuando x tiende a infinito</span>
 <span class="n">Limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Infinity</span><span class="p">)</span>
 </pre></div>
 
@@ -1496,7 +1495,7 @@ $$2 x^{3} + 3 x^{2} \left(2 x + 1\right) + 4$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># simplificando los resultados</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># simplificando los resultados</span>
 <span class="n">simplify</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
 </pre></div>
 
@@ -1528,7 +1527,7 @@ $$8 x^{3} + 3 x^{2} + 4$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Derivada de segundo orden con el 3er argumento.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Derivada de segundo orden con el 3er argumento.</span>
 <span class="n">Derivative</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 
@@ -1560,7 +1559,7 @@ $$6 x \left(4 x + 1\right)$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando derivada de (3x +1) / (2x)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando derivada de (3x +1) / (2x)</span>
 <span class="n">fx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="n">dx</span> <span class="o">=</span> <span class="n">Derivative</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 <span class="n">simplify</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
@@ -1594,7 +1593,7 @@ $$- \frac{1}{2 x^{2}}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># la función diff nos da directamente el resultado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># la función diff nos da directamente el resultado</span>
 <span class="n">simplify</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 
@@ -1626,8 +1625,8 @@ $$- \frac{1}{2 x^{2}}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># con el metodo subs sustituimos el valor de x </span>
-<span class="c"># para obtener el resultado numérico. Ej x = 1.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># con el metodo subs sustituimos el valor de x </span>
+<span class="c1"># para obtener el resultado numérico. Ej x = 1.</span>
 <span class="n">diff</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -1737,10 +1736,7 @@ $$\sum_{i=1}^n f(x_i^*) \Delta x $$<p>que vemos en la definición, es conocida c
 <td style="text-align:center">$\tan(x) + C$</td>
 </tr>
 </tbody>
-</table>
-
-
-<p>1- <strong>Regla de la función de grado n:</strong> Esta regla nos dice que una función de grado n, donde n es un exponente real distinto de -1, se representa por $f(x)=x^{n}$ y su integral es $\int x^{n} \ dx = \frac{x^{n + 1}}{n + 1} + C$. Así por ejemplo, si quisiéramos saber la integral de $f(x) = x^3$, aplicando la regla obtenemos, $\int x^3 \ dx = \frac{x^4}{4} + C$.</p>
+</table><p>1- <strong>Regla de la función de grado n:</strong> Esta regla nos dice que una función de grado n, donde n es un exponente real distinto de -1, se representa por $f(x)=x^{n}$ y su integral es $\int x^{n} \ dx = \frac{x^{n + 1}}{n + 1} + C$. Así por ejemplo, si quisiéramos saber la integral de $f(x) = x^3$, aplicando la regla obtenemos, $\int x^3 \ dx = \frac{x^4}{4} + C$.</p>
 <p>2- <strong>Regla de la multiplicación por una constante:</strong> Esta regla establece que una función con la forma $f(x) = Cx$, donde $C$ es una constante; entonces la integral de esta función va a ser igual a: $\int Cx \ dx = C\int x \ dx$; es decir a la constante por la integral de $x$. Así por ejemplo si tenemos la función $f(x)=4x^3$, primero debemos a obtener la integral de $x^3$, la cual aplicando la regla anterior sabemos que es $\int x^3 \ dx = \frac{x^4}{4} + C $ y luego a esta integral la multiplicamos por la constante 4, para obtener el resultado final $\int 4 x^3 \ dx = x^4 + C$.</p>
 <p>3- <strong>Regla de la suma:</strong> Esta regla establece que la integral de la suma de dos funciones es igual a la suma de las integrales de cada una de ellas. Es decir, $\int (f + g) \ dx = \int f \ dx + \int g \ dx$. Así por ejemplo la integral de la función $f(x) = 4x^3 + x^2$ va a ser igual a $\int (4x^3 + x^2) \ dx = x^4 + \frac{x^3}{3} + C$.</p>
 <p>4- <strong>Regla de la diferencia:</strong> Esta regla establece que la integral de la diferencia entre dos funciones es igual a la diferencia entre las integrales de cada una de ellas. Es decir, $\int (f - g) \ dx = \int f \ dx - \int g \ dx$. Así por ejemplo la integral de la función $f(x) = 4x^3 - x^2$ va a ser igual a $\int (4x^3 - x^2) \ dx = x^4 - \frac{x^3}{3} + C$.</p>
@@ -1802,7 +1798,7 @@ $$\frac{x^{4}}{4} - 3 x^{2}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># la función integrate nos da el mismo resultado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># la función integrate nos da el mismo resultado</span>
 <span class="n">integrate</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
@@ -1844,7 +1840,7 @@ $$\frac{x^{4}}{4} - 3 x^{2}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando integral definida para [0, 3]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando integral definida para [0, 3]</span>
 <span class="n">Integral</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 
@@ -1876,8 +1872,8 @@ $$- \frac{27}{4}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comprobando Teorema fundamental del calculo.</span>
-<span class="c"># Integración y diferenciacion son operaciones inversas.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comprobando Teorema fundamental del calculo.</span>
+<span class="c1"># Integración y diferenciacion son operaciones inversas.</span>
 <span class="n">diff</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">fx</span><span class="p">))</span>
 </pre></div>
 
@@ -2006,6 +2002,9 @@ $$x^{3} - 6 x$$
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -2016,9 +2015,6 @@ $$x^{3} - 6 x$$
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -2034,7 +2030,7 @@ $$x^{3} - 6 x$$
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

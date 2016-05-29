@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -306,7 +305,7 @@ $$v = \left[ \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array} \right]$$<
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando modulos necesarios</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando modulos necesarios</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -316,8 +315,8 @@ $$v = \left[ \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array} \right]$$<
 <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
 <span class="kn">import</span> <span class="nn">sympy</span>
 
-<span class="c"># imprimir con notación matemática.</span>
-<span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s">&#39;mathjax&#39;</span><span class="p">)</span>
+<span class="c1"># imprimir con notación matemática.</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s1">&#39;mathjax&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -332,24 +331,24 @@ $$v = \left[ \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array} \right]$$<
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando vector en R^2 [2, 4]</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando vector en R^2 [2, 4]</span>
 <span class="k">def</span> <span class="nf">move_spines</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Crea la figura de pyplot y los ejes. Mueve las lineas de la izquierda </span>
 <span class="sd">    y de abajo para que se intersecten con el origen. Elimina las lineas de</span>
 <span class="sd">    la derecha y la de arriba. Devuelve los ejes.&quot;&quot;&quot;</span>
     <span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;left&quot;</span><span class="p">,</span> <span class="s">&quot;bottom&quot;</span><span class="p">]:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;bottom&quot;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span>
     
-    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;right&quot;</span><span class="p">,</span> <span class="s">&quot;top&quot;</span><span class="p">]:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;top&quot;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">ax</span>
 
 <span class="k">def</span> <span class="nf">vect_fig</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span> 
     <span class="sd">&quot;&quot;&quot;Genera el grafico de los vectores en el plano&quot;&quot;&quot;</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">vector</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
                                 <span class="n">shrink</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
@@ -360,7 +359,7 @@ $$v = \left[ \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array} \right]$$<
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">vect_fig</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vect_fig</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -523,22 +522,22 @@ $$v + w
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando suma de vectores en R^2</span>
-<span class="c"># [2, 4] + [2, -2]</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando suma de vectores en R^2</span>
+<span class="c1"># [2, 4] + [2, -2]</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">vecs</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span> <span class="c"># lista de vectores</span>
+<span class="n">vecs</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span> <span class="c1"># lista de vectores</span>
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vecs</span><span class="p">:</span>
-    <span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span> <span class="p">)</span>
 </pre></div>
 
 </div>
@@ -741,8 +740,8 @@ $$\begin{split}\alpha v
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando multiplicación por escalares en R^2</span>
-<span class="c"># [2, 3] * 2</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando multiplicación por escalares en R^2</span>
+<span class="c1"># [2, 3] * 2</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -750,10 +749,10 @@ $$\begin{split}\alpha v
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 
 <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -988,7 +987,7 @@ $$<p>Podemos ayudarnos de <a href="http://www.sympy.org/es/">SymPy</a> para expr
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo sistema de ecuaciones con SymPy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo sistema de ecuaciones con SymPy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">((</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="p">))</span>
 <span class="n">A</span>
 </pre></div>
@@ -1053,7 +1052,7 @@ $$\left[\begin{matrix}52\\61\\75\end{matrix}\right]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo Ax = b</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo Ax = b</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">LUsolve</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
@@ -1086,7 +1085,7 @@ $$\left[\begin{matrix}3\\7\\5\end{matrix}\right]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comprobando la solución</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comprobando la solución</span>
 <span class="n">A</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 
@@ -1142,7 +1141,7 @@ $$\begin{bmatrix}a & b & \\c & d & \\ e & f & \end{bmatrix}^T=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Matriz transpuesta</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz transpuesta</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[[</span> <span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
                    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">],</span>
                    <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> <span class="p">)</span>
@@ -1208,7 +1207,7 @@ $$\left[\begin{matrix}2 & -2 & 1\\-3 & -1 & 0\\-8 & 2 & -3\\7 & -7 & 6\end{matri
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># transpuesta de transpuesta vuelve a A.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># transpuesta de transpuesta vuelve a A.</span>
 <span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 </pre></div>
 
@@ -1240,7 +1239,7 @@ $$\left[\begin{matrix}2 & -3 & -8 & 7\\-2 & -1 & 2 & -7\\1 & 0 & -3 & 6\end{matr
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># creando matriz simetrica</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># creando matriz simetrica</span>
 <span class="n">As</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">As</span>
 </pre></div>
@@ -1273,7 +1272,7 @@ $$\left[\begin{matrix}126 & -66 & 68\\-66 & 58 & -50\\68 & -50 & 46\end{matrix}\
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># comprobando simetria.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># comprobando simetria.</span>
 <span class="n">As</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 </pre></div>
 
@@ -1331,7 +1330,7 @@ $$(A^T)^{-1} = (A^{-1})^T$$<p>.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Matriz invertible</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz invertible</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span> <span class="p">)</span>
 <span class="n">A</span>
@@ -1397,7 +1396,7 @@ $$\left[\begin{matrix}3 & - \frac{2}{3}\\-1 & \frac{1}{3}\end{matrix}\right]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># A * A_inv = I</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># A * A_inv = I</span>
 <span class="n">A</span><span class="o">*</span><span class="n">A_inv</span>
 </pre></div>
 
@@ -1429,7 +1428,7 @@ $$\left[\begin{matrix}1 & 0\\0 & 1\end{matrix}\right]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># forma escalonada igual a indentidad.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># forma escalonada igual a indentidad.</span>
 <span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
 </pre></div>
 
@@ -1461,7 +1460,7 @@ $$\left ( \left[\begin{matrix}1 & 0\\0 & 1\end{matrix}\right], \quad \left [ 0, 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># la inversa de A_inv es A</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># la inversa de A_inv es A</span>
 <span class="n">A_inv</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
 </pre></div>
 
@@ -1560,7 +1559,7 @@ $$<p>Para resolver este <a href="https://es.wikipedia.org/wiki/Sistema_de_ecuaci
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo el sistema de ecuaciones.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo el sistema de ecuaciones.</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.2</span><span class="p">],</span>
               <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">]])</span>
 
@@ -1598,16 +1597,16 @@ $$<p>Para resolver este <a href="https://es.wikipedia.org/wiki/Sistema_de_ecuaci
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Solución gráfica.</span>
-<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c"># crea 50 valores entre 0 y 5</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Solución gráfica.</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># crea 50 valores entre 0 y 5</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.2</span> <span class="o">*</span> <span class="n">x_vals</span><span class="p">)</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.2</span><span class="p">)</span> <span class="c"># grafica 1.2x_1 - 2.2x_2 = 0</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.1</span> <span class="o">*</span> <span class="n">x_vals</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.4</span><span class="p">)</span> <span class="c"># grafica 1.1x + 1.4x_2 = 0</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.2</span> <span class="o">*</span> <span class="n">x_vals</span><span class="p">)</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.2</span><span class="p">)</span> <span class="c1"># grafica 1.2x_1 - 2.2x_2 = 0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.1</span> <span class="o">*</span> <span class="n">x_vals</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.4</span><span class="p">)</span> <span class="c1"># grafica 1.1x + 1.4x_2 = 0</span>
 </pre></div>
 
 </div>
@@ -1805,8 +1804,8 @@ $$\alpha_1 (3, 2, 2, 3) +\alpha_2 (3, 2, 1, 2) + \alpha_3 (3, 2, 0, 1) = (0, 0, 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Sympy para resolver el sistema de ecuaciones lineales</span>
-<span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;a1, a2, a3&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Sympy para resolver el sistema de ecuaciones lineales</span>
+<span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a1, a2, a3&#39;</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">((</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">))</span>
 <span class="n">A</span>
 </pre></div>
@@ -1962,7 +1961,7 @@ $$\left \{ a_{1} : 0, \quad a_{2} : 0, \quad a_{3} : 0\right \}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Espacio nulo de un matriz</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Espacio nulo de un matriz</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
 <span class="n">A</span>
 </pre></div>
@@ -1995,7 +1994,7 @@ $$\left[\begin{matrix}1 & 5 & 7\\0 & 0 & 9\end{matrix}\right]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el espacio nulo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando el espacio nulo</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nullspace</span><span class="p">()</span>
 <span class="n">x</span>
 </pre></div>
@@ -2028,7 +2027,7 @@ $$\left [ \left[\begin{matrix}-5\\1\\0\end{matrix}\right]\right ]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comprobando la solución</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comprobando la solución</span>
 <span class="n">A_aum</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">solve_linear_system</span><span class="p">(</span><span class="n">A_aum</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span><span class="p">)</span>
 </pre></div>
@@ -2061,7 +2060,7 @@ $$\left \{ a_{1} : - 5 a_{2}, \quad a_{3} : 0\right \}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comprobación con numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comprobación con numpy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>
@@ -2112,12 +2111,12 @@ $$\left \{ a_{1} : - 5 a_{2}, \quad a_{3} : 0\right \}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># A.rref() forma escalonada.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># A.rref() forma escalonada.</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
                    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 
-<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span> <span class="c"># [0, 1, 2] es la ubicación de las pivot.</span>
+<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span> <span class="c1"># [0, 1, 2] es la ubicación de las pivot.</span>
 </pre></div>
 
     </div>
@@ -2148,7 +2147,7 @@ $$\left ( \left[\begin{matrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 3\\0 & 0 & 1 & -2\end{m
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Espacio columna</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Espacio columna</span>
 <span class="p">[</span> <span class="n">A</span><span class="p">[:,</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
 </pre></div>
 
@@ -2180,7 +2179,7 @@ $$\left [ \left[\begin{matrix}2\\-2\\1\end{matrix}\right], \quad \left[\begin{ma
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Espacio fila</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Espacio fila</span>
 <span class="p">[</span> <span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="n">r</span><span class="p">,:]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
 </pre></div>
 
@@ -2225,7 +2224,7 @@ $$A = \begin{bmatrix}1 & 1 & 2 & 4\\1 & 2 & 2 & 5
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el rango con SymPy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando el rango con SymPy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
@@ -2260,7 +2259,7 @@ $$\left[\begin{matrix}1 & 1 & 2 & 4\\1 & 2 & 2 & 5\\1 & 3 & 2 & 6\end{matrix}\ri
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Rango con SymPy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Rango con SymPy</span>
 <span class="n">A</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
 </pre></div>
 
@@ -2292,7 +2291,7 @@ $$2$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Rango con numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Rango con numpy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
@@ -2338,8 +2337,8 @@ $$2$$
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando largo de un vector</span>
-<span class="c"># forma un triángulo rectángulo</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando largo de un vector</span>
+<span class="c1"># forma un triángulo rectángulo</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -2347,9 +2346,9 @@ $$2$$
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
-<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2507,7 +2506,7 @@ $$||v|| = \sqrt{v \cdot v} = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$$<p>Es decir q
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Vectores ortogonales</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Vectores ortogonales</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">move_spines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -2516,9 +2515,9 @@ $$||v|| = \sqrt{v \cdot v} = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$$<p>Es decir q
 <span class="n">vecs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])]</span>
 
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vecs</span><span class="p">:</span>
-    <span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">vect_fig</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2700,7 +2699,7 @@ znAwExHpzP8Bxh1HDpz42+sAAAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># comprobando su producto interior.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># comprobando su producto interior.</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
@@ -2751,7 +2750,7 @@ v1 \cdot v3 = 0 $$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># comprobando ortogonalidad del conjunto</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># comprobando ortogonalidad del conjunto</span>
 
 <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -2811,7 +2810,7 @@ v1 \cdot v3 = 0 $$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Determinante con sympy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Determinante con sympy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span> <span class="p">)</span>
@@ -2846,7 +2845,7 @@ $$2$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Determinante con numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Determinante con numpy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span> <span class="p">)</span>
@@ -2881,7 +2880,7 @@ $$2.0$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Determinante como funcion lineal de fila</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Determinante como funcion lineal de fila</span>
 <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
@@ -2914,7 +2913,7 @@ $$10.0$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># cambio de signo de determinante</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># cambio de signo de determinante</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span> <span class="p">)</span>
@@ -2969,13 +2968,13 @@ $$p(\lambda) = \det (A - \lambda I) = \det \begin{bmatrix}3 - \lambda & 2 \\ 7  
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Eigenvalores con numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Eigenvalores con numpy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
 
 <span class="n">x</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-<span class="c"># x Eigenvalor, v Eigenvector</span>
+<span class="c1"># x Eigenvalor, v Eigenvector</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">v</span>
 </pre></div>
 
@@ -3008,11 +3007,11 @@ $$p(\lambda) = \det (A - \lambda I) = \det \begin{bmatrix}3 - \lambda & 2 \\ 7  
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Eigenvalores con SymPy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Eigenvalores con SymPy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
 
-<span class="c"># Eigenvalor</span>
+<span class="c1"># Eigenvalor</span>
 <span class="n">A</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
 </pre></div>
 
@@ -3044,7 +3043,7 @@ $$\left \{ -4 : 1, \quad 5 : 1\right \}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Eigenvector</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Eigenvector</span>
 <span class="n">A</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
 </pre></div>
 
@@ -3076,12 +3075,12 @@ $$\left [ \left ( -4, \quad 1, \quad \left [ \left[\begin{matrix}- \frac{2}{7}\\
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># comprobando la solución Ax = λx</span>
-<span class="c"># x eigenvector, v eigenvalue</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># comprobando la solución Ax = λx</span>
+<span class="c1"># x eigenvector, v eigenvalue</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c"># Ax == vx</span>
+<span class="c1"># Ax == vx</span>
 <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 
@@ -3170,6 +3169,9 @@ $$\left ( \left[\begin{matrix}\frac{8}{7}\\-4\end{matrix}\right], \quad \left[\b
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -3180,9 +3182,6 @@ $$\left ( \left[\begin{matrix}\frac{8}{7}\\-4\end{matrix}\right], \quad \left[\b
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -3198,7 +3197,7 @@ $$\left ( \left[\begin{matrix}\frac{8}{7}\\-4\end{matrix}\right], \quad \left[\b
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

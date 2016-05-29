@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -310,7 +309,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 
     </div>
@@ -350,7 +349,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creando un vector desde una lista de Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Creando un vector desde una lista de Python</span>
 <span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
 <span class="n">vector</span>
@@ -384,7 +383,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Para crear una matriz, simplemente le pasamos una lista anidada al objeto array de Numpy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Para crear una matriz, simplemente le pasamos una lista anidada al objeto array de Numpy</span>
 <span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
@@ -420,7 +419,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#El tipo de objeto de tanto de los vectores como de las matrices es ndarray</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#El tipo de objeto de tanto de los vectores como de las matrices es ndarray</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
 </pre></div>
 
@@ -452,10 +451,10 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Los objetos ndarray de Numpy cuentan con las propiedades shape y size que nos muestran sus dimensiones.</span>
-<span class="nb">print</span> <span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vector</span><span class="o">.</span><span class="n">size</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Los objetos ndarray de Numpy cuentan con las propiedades shape y size que nos muestran sus dimensiones.</span>
+<span class="k">print</span> <span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vector</span><span class="o">.</span><span class="n">size</span>
 
-<span class="nb">print</span> <span class="n">matriz</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">matriz</span><span class="o">.</span><span class="n">size</span>
+<span class="k">print</span> <span class="n">matriz</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">matriz</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 
     </div>
@@ -494,9 +493,9 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#arange</span>
-<span class="c">#La funcion arange nos facilita la creación de matrices</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># argumentos: start, stop, step</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#arange</span>
+<span class="c1">#La funcion arange nos facilita la creación de matrices</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># argumentos: start, stop, step</span>
 
 <span class="n">x</span>
 </pre></div>
@@ -529,9 +528,9 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#linspace</span>
-<span class="c">#linspace nos devuelve un vector con la cantidad de muestras que le ingresemos y separados uniformamente entre sí.</span>
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>  <span class="c"># argumentos: start, stop, samples</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#linspace</span>
+<span class="c1">#linspace nos devuelve un vector con la cantidad de muestras que le ingresemos y separados uniformamente entre sí.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>  <span class="c1"># argumentos: start, stop, samples</span>
 </pre></div>
 
     </div>
@@ -564,8 +563,8 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#mgrid</span>
-<span class="c">#Con mgrid podemos crear arrays multimensionales.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#mgrid</span>
+<span class="c1">#Con mgrid podemos crear arrays multimensionales.</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="n">x</span>
@@ -638,8 +637,8 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#zeros y ones</span>
-<span class="c">#Estas funciones nos permiten crear matrices de ceros o de unos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#zeros y ones</span>
+<span class="c1">#Estas funciones nos permiten crear matrices de ceros o de unos.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
@@ -706,8 +705,8 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#random.randn</span>
-<span class="c">#Esta funcion nos permite generar una matriz con una distribución estándar de números.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#random.randn</span>
+<span class="c1">#Esta funcion nos permite generar una matriz con una distribución estándar de números.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -743,8 +742,8 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#diag</span>
-<span class="c">#Nos permite crear una matriz con la diagonal de números que le ingresemos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#diag</span>
+<span class="c1">#Nos permite crear una matriz con la diagonal de números que le ingresemos.</span>
 <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
@@ -814,8 +813,8 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Generalmente se suele importar matplotlib de la siguiente forma.</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Generalmente se suele importar matplotlib de la siguiente forma.</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </pre></div>
 
     </div>
@@ -840,7 +839,7 @@ $$f(x) = e^{-x^2}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definimos nuestra función.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Definimos nuestra función.</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -857,7 +856,7 @@ $$f(x) = e^{-x^2}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Creamos un vector con los puntos que le pasaremos a la funcion previamente creada.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Creamos un vector con los puntos que le pasaremos a la funcion previamente creada.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 
@@ -873,13 +872,13 @@ $$f(x) = e^{-x^2}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Representeamos la función utilizando el objeto plt de matplotlib</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Eje $x$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;$f(x)$&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Representeamos la función utilizando el objeto plt de matplotlib</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Eje $x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Funcion $f(x)$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;Función f(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Funcion $f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Función f(x)&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1078,16 +1077,16 @@ gg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Grafico de puntos con matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Grafico de puntos con matplotlib</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#creando vector x</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#creando vector x</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#creando vector x</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#creando vector x</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#variable para modificar el tamaño(size)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c">#variable para modificar el color(color)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#variable para modificar el tamaño(size)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#variable para modificar el color(color)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
@@ -1657,25 +1656,25 @@ AElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c"># Conjunto de puntos</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="c"># Funcion</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Conjunto de puntos</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># Funcion</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
-<span class="n">axes1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span> <span class="c"># Eje principal</span>
-<span class="n">axes2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span> <span class="c"># Eje secundario</span>
+<span class="n">axes1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span> <span class="c1"># Eje principal</span>
+<span class="n">axes2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span> <span class="c1"># Eje secundario</span>
 
-<span class="c"># Figura principal</span>
-<span class="n">axes1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">axes1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">axes1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">axes1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Ej OOP&#39;</span><span class="p">)</span>
+<span class="c1"># Figura principal</span>
+<span class="n">axes1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">axes1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">axes1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">axes1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ej OOP&#39;</span><span class="p">)</span>
 
-<span class="c"># Insertada</span>
-<span class="n">axes2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">axes2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">axes2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">axes2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;insertado&#39;</span><span class="p">);</span>
+<span class="c1"># Insertada</span>
+<span class="n">axes2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">axes2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">axes2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">axes2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;insertado&#39;</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1914,14 +1913,14 @@ AAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo con más de una figura.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo con más de una figura.</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;titulo&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;titulo&#39;</span><span class="p">)</span>
     
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
@@ -2188,8 +2187,8 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando pandas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
     </div>
@@ -2213,8 +2212,8 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Las series son matrices de una sola dimension similares a los vectores, pero con su propio indice.</span>
-<span class="c"># Creando una Serie</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Las series son matrices de una sola dimension similares a los vectores, pero con su propio indice.</span>
+<span class="c1"># Creando una Serie</span>
 <span class="n">serie</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">serie</span>
 </pre></div>
@@ -2251,9 +2250,9 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># podemos ver tantos los índices como los valores de las Series.</span>
-<span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">values</span>
-<span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">index</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># podemos ver tantos los índices como los valores de las Series.</span>
+<span class="k">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">values</span>
+<span class="k">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 
     </div>
@@ -2268,7 +2267,7 @@ dtype: int64</pre>
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">[ 2  4 -8  3]
-Int64Index([0, 1, 2, 3], dtype=&apos;int64&apos;)
+Int64Index([0, 1, 2, 3], dtype=&#39;int64&#39;)
 </pre>
 </div>
 </div>
@@ -2283,8 +2282,8 @@ Int64Index([0, 1, 2, 3], dtype=&apos;int64&apos;)
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando Series con nuestros propios índices.</span>
-<span class="n">serie2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">])</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando Series con nuestros propios índices.</span>
+<span class="n">serie2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
 <span class="n">serie2</span>
 </pre></div>
 
@@ -2320,10 +2319,10 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los datos a través de los índices</span>
-<span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="n">serie2</span><span class="p">[[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]]</span>
-<span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="n">serie2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Accediendo a los datos a través de los índices</span>
+<span class="k">print</span> <span class="n">serie2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">serie2</span><span class="p">[[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]]</span>
+<span class="k">print</span> <span class="n">serie2</span><span class="p">[</span><span class="n">serie2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -2369,14 +2368,14 @@ dtype: int64
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># El DataFrame es una estructura de datos tabular similar a las hojas de cálculo de Excel.</span>
-<span class="c"># Posee tanto indices de columnas como de filas.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># El DataFrame es una estructura de datos tabular similar a las hojas de cálculo de Excel.</span>
+<span class="c1"># Posee tanto indices de columnas como de filas.</span>
 
-<span class="c"># Creando un DataFrame.</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;state&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s">&#39;Nevada&#39;</span><span class="p">,</span> <span class="s">&#39;Nevada&#39;</span><span class="p">],</span>
-        <span class="s">&#39;year&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2002</span><span class="p">],</span>
-        <span class="s">&#39;pop&#39;</span>  <span class="p">:</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">]}</span>
-<span class="n">frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c"># Creando un DataFrame desde un diccionario</span>
+<span class="c1"># Creando un DataFrame.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s1">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s1">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;year&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2002</span><span class="p">],</span>
+        <span class="s1">&#39;pop&#39;</span>  <span class="p">:</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">]}</span>
+<span class="n">frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Creando un DataFrame desde un diccionario</span>
 <span class="n">frame</span>
 </pre></div>
 
@@ -2451,8 +2450,8 @@ dtype: int64
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un DataFrame desde un archivo.</span>
-<span class="o">!</span>cat <span class="s1">&#39;dataset.csv&#39;</span> # ejemplo archivo csv.
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando un DataFrame desde un archivo.</span>
+<span class="err">!</span><span class="n">cat</span> <span class="s1">&#39;dataset.csv&#39;</span> <span class="c1"># ejemplo archivo csv.</span>
 </pre></div>
 
     </div>
@@ -2486,8 +2485,8 @@ dtype: int64
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Leyendo el archivo dataset.csv para crear el DataFrame</span>
-<span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Leyendo el archivo dataset.csv para crear el DataFrame</span>
+<span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 <span class="n">frame2</span>
 </pre></div>
 
@@ -2562,8 +2561,8 @@ dtype: int64
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una columna como una Serie</span>
-<span class="n">frame</span><span class="p">[</span><span class="s">&#39;state&#39;</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Seleccionando una columna como una Serie</span>
+<span class="n">frame</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -2599,7 +2598,7 @@ Name: state, dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Seleccionando una línea como una Serie.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Seleccionando una línea como una Serie.</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
@@ -2634,7 +2633,7 @@ Name: 1, dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando las columnas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Verificando las columnas</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
@@ -2651,7 +2650,7 @@ Name: 1, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">Index([u&apos;pop&apos;, u&apos;state&apos;, u&apos;year&apos;], dtype=&apos;object&apos;)</pre>
+<pre class="ipynb">Index([u&#39;pop&#39;, u&#39;state&#39;, u&#39;year&#39;], dtype=&#39;object&#39;)</pre>
 </div>
 
 </div>
@@ -2666,7 +2665,7 @@ Name: 1, dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando los índices.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Verificando los índices.</span>
 <span class="n">frame</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 
@@ -2683,7 +2682,7 @@ Name: 1, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">Int64Index([0, 1, 2, 3, 4], dtype=&apos;int64&apos;)</pre>
+<pre class="ipynb">Int64Index([0, 1, 2, 3, 4], dtype=&#39;int64&#39;)</pre>
 </div>
 
 </div>
@@ -2813,6 +2812,9 @@ Name: 1, dtype: object</pre>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -2823,9 +2825,6 @@ Name: 1, dtype: object</pre>
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -2841,7 +2840,7 @@ Name: 1, dtype: object</pre>
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

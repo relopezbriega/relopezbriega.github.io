@@ -181,7 +181,7 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-              "HTML-CSS": { linebreaks: { automatic: true } },
+            "HTML-CSS": { linebreaks: { automatic: true } },
              SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
@@ -348,7 +348,7 @@ $$\frac{dy}{dx} = -3x^2y + 6x^2$$
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando modulos necesarios</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando modulos necesarios</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -356,8 +356,8 @@ $$\frac{dy}{dx} = -3x^2y + 6x^2$$
 <span class="kn">import</span> <span class="nn">sympy</span> 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 
-<span class="c"># imprimir con notación matemática.</span>
-<span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s">&#39;mathjax&#39;</span><span class="p">)</span>
+<span class="c1"># imprimir con notación matemática.</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s1">&#39;mathjax&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -372,12 +372,12 @@ $$\frac{dy}{dx} = -3x^2y + 6x^2$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo ecuación diferencial</span>
-<span class="c"># defino las incognitas</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo ecuación diferencial</span>
+<span class="c1"># defino las incognitas</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 
-<span class="c"># expreso la ecuacion</span>
+<span class="c1"># expreso la ecuacion</span>
 <span class="n">f</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
@@ -420,7 +420,7 @@ $$\frac{d}{d x} y{\left (x \right )} = - 3 x^{2} y{\left (x \right )} + 6 x^{2}$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolviendo la ecuación</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo la ecuación</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 
@@ -463,13 +463,13 @@ $$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$<p>que cumpla con la condición inicial 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># definiendo la ecuación</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># definiendo la ecuación</span>
 <span class="n">eq</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c"># Condición inicial</span>
+<span class="c1"># Condición inicial</span>
 <span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mi">2</span><span class="p">}</span>
 
-<span class="c"># Resolviendo la ecuación</span>
+<span class="c1"># Resolviendo la ecuación</span>
 <span class="n">edo_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">eq</span><span class="p">)</span>
 <span class="n">edo_sol</span>
 </pre></div>
@@ -596,7 +596,7 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Solución con serie de potencias</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Solución con serie de potencias</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
@@ -645,7 +645,7 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$<p>entonces, con la ayuda de <a href="https://ww
 <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">plot_direction_field</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_x</span><span class="p">,</span> <span class="n">f_xy</span><span class="p">,</span> <span class="n">x_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">y_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Esta función dibuja el campo de dirección de una EDO&quot;&quot;&quot;</span>
     
-    <span class="n">f_np</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y_x</span><span class="p">),</span> <span class="n">f_xy</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="s">&#39;numpy&#39;</span><span class="p">)</span>
+    <span class="n">f_np</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y_x</span><span class="p">),</span> <span class="n">f_xy</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
     <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">20</span><span class="p">)</span>
     <span class="n">y_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">20</span><span class="p">)</span>
     
@@ -661,10 +661,10 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$<p>entonces, con la ayuda de <a href="https://ww
             <span class="n">Dx</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">Dy</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">Dy</span><span class="o">*</span><span class="n">dy</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xx</span> <span class="o">-</span> <span class="n">Dx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">Dx</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span>
-                    <span class="p">[</span><span class="n">yy</span> <span class="o">-</span> <span class="n">Dy</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">yy</span> <span class="o">+</span> <span class="n">Dy</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+                    <span class="p">[</span><span class="n">yy</span> <span class="o">-</span> <span class="n">Dy</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">yy</span> <span class="o">+</span> <span class="n">Dy</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;tight&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">r&quot;$</span><span class="si">%s</span><span class="s">$&quot;</span> <span class="o">%</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">r&quot;$</span><span class="si">%s</span><span class="s2">$&quot;</span> <span class="o">%</span>
                  <span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f_xy</span><span class="p">))),</span>
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
     
@@ -683,14 +683,14 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$<p>entonces, con la ayuda de <a href="https://ww
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino incognitas</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Defino incognitas</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 
-<span class="c"># Defino la función</span>
+<span class="c1"># Defino la función</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span>
 
-<span class="c"># grafico de campo de dirección</span>
+<span class="c1"># grafico de campo de dirección</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">campo_dir</span> <span class="o">=</span> <span class="n">plot_direction_field</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
 </pre></div>
@@ -1194,10 +1194,10 @@ ERFRSIpuREREISm6ERERhaToRkREFPIfDaBqILCmLGYAAAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Condición inicial</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Condición inicial</span>
 <span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mi">0</span><span class="p">}</span>
 
-<span class="c"># Resolviendo la ecuación diferencial</span>
+<span class="c1"># Resolviendo la ecuación diferencial</span>
 <span class="n">edo_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">)</span>
 <span class="n">edo_sol</span>
 </pre></div>
@@ -1232,37 +1232,37 @@ $$y{\left (x \right )} = - x + \frac{2 x^{3}}{3} - \frac{4 x^{5}}{15} + \mathcal
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="c"># panel izquierdo - solución aproximada por Serie de potencias</span>
+<span class="c1"># panel izquierdo - solución aproximada por Serie de potencias</span>
 <span class="n">plot_direction_field</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vec</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edo_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">())(</span><span class="n">x_vec</span><span class="p">),</span>
-             <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+             <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c"># panel derecho - Solución por método iterativo</span>
+<span class="c1"># panel derecho - Solución por método iterativo</span>
 <span class="n">plot_direction_field</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vec</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edo_sol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">())(</span><span class="n">x_vec</span><span class="p">),</span>
-             <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+             <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c"># Resolviendo la EDO en forma iterativa </span>
+<span class="c1"># Resolviendo la EDO en forma iterativa </span>
 <span class="n">edo_sol_m</span> <span class="o">=</span> <span class="n">edo_sol_p</span> <span class="o">=</span> <span class="n">edo_sol</span>
 <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.125</span>
 
-<span class="c"># x positivos</span>
+<span class="c1"># x positivos</span>
 <span class="k">for</span> <span class="n">x0</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
     <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="n">x0</span><span class="p">):</span> <span class="n">edo_sol_p</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">)}</span>
     <span class="n">edo_sol_p</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vec</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edo_sol_p</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">())(</span><span class="n">x_vec</span><span class="p">),</span>
-                 <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                 <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c"># x negativos</span>
+<span class="c1"># x negativos</span>
 <span class="k">for</span> <span class="n">x0</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
     <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">x0</span><span class="o">-</span><span class="n">dx</span><span class="p">,</span> <span class="o">-</span><span class="n">x0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="n">x0</span><span class="p">):</span> <span class="n">edo_sol_m</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">x0</span><span class="p">)}</span>
     <span class="n">edo_sol_m</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="n">ics</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vec</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edo_sol_m</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">removeO</span><span class="p">())(</span><span class="n">x_vec</span><span class="p">),</span>
-                 <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                 <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2069,10 +2069,7 @@ $$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$<p>Tengan en cuenta, 
 <td style="text-align:center">$c>0$</td>
 </tr>
 </tbody>
-</table>
-
-
-<h4 id="Propiedades-de-las-transformadas-de-Laplace">Propiedades de las transformadas de Laplace<a class="anchor-link" href="#Propiedades-de-las-transformadas-de-Laplace">&#182;</a></h4><p>Las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> poseen algunas propiedades que también nos van a facilitar el trabajo de resolverlas, algunas de ellas son:</p>
+</table><h4 id="Propiedades-de-las-transformadas-de-Laplace">Propiedades de las transformadas de Laplace<a class="anchor-link" href="#Propiedades-de-las-transformadas-de-Laplace">&#182;</a></h4><p>Las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> poseen algunas propiedades que también nos van a facilitar el trabajo de resolverlas, algunas de ellas son:</p>
 <ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> es un operador lineal</em></strong>: Esta propiedad nos dice la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de una suma, es igual a la suma de las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> de cada uno de los términos. Es decir:</li>
 </ul>
@@ -2095,12 +2092,12 @@ $$y'' + 3y' + 2y = 0$$<p>con las siguientes condiciones iniciales: $y(0) = 2$ y 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de transformada de Laplace</span>
-<span class="c"># Defino las incognitas</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de transformada de Laplace</span>
+<span class="c1"># Defino las incognitas</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 
-<span class="c"># Defino la ecuación</span>
+<span class="c1"># Defino la ecuación</span>
 <span class="n">edo</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">edo</span><span class="p">)</span>
 </pre></div>
@@ -2133,8 +2130,8 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># simbolos adicionales.</span>
-<span class="n">s</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s">&quot;s, Y&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># simbolos adicionales.</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;s, Y&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2149,8 +2146,8 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculo la transformada de Laplace </span>
-<span class="n">L_edo</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">laplace_transform</span><span class="p">(</span><span class="n">edo</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">noconds</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculo la transformada de Laplace </span>
+<span class="n">L_edo</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">laplace_transform</span><span class="p">(</span><span class="n">edo</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">noconds</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">L_edo</span><span class="p">)</span>
 </pre></div>
 
@@ -2223,8 +2220,8 @@ $$2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 \mathcal{
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aplicamos la nueva funcion para evaluar las transformadas de Laplace</span>
-<span class="c"># de derivadas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Aplicamos la nueva funcion para evaluar las transformadas de Laplace</span>
+<span class="c1"># de derivadas</span>
 <span class="n">L_edo_2</span> <span class="o">=</span> <span class="n">laplace_transform_derivatives</span><span class="p">(</span><span class="n">L_edo</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">L_edo_2</span><span class="p">)</span>
 </pre></div>
@@ -2257,8 +2254,8 @@ $$s^{2} \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 s \ma
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># reemplazamos la transfomada de Laplace de y(t) por la incognita Y</span>
-<span class="c"># para facilitar la lectura de la ecuación.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># reemplazamos la transfomada de Laplace de y(t) por la incognita Y</span>
+<span class="c1"># para facilitar la lectura de la ecuación.</span>
 <span class="n">L_edo_3</span> <span class="o">=</span> <span class="n">L_edo_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">laplace_transform</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">),</span> <span class="n">Y</span><span class="p">)</span>
 <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">L_edo_3</span><span class="p">)</span>
 </pre></div>
@@ -2291,7 +2288,7 @@ $$Y s^{2} + 3 Y s + 2 Y - s y{\left (0 \right )} - 3 y{\left (0 \right )} - \lef
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definimos las condiciones iniciales</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Definimos las condiciones iniciales</span>
 <span class="n">ics</span> <span class="o">=</span> <span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="o">-</span><span class="mi">3</span><span class="p">}</span>
 <span class="n">ics</span>
 </pre></div>
@@ -2324,7 +2321,7 @@ $$\left \{ y{\left (0 \right )} : 2, \quad \left. \frac{d}{d t} y{\left (t \righ
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aplicamos las condiciones iniciales</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Aplicamos las condiciones iniciales</span>
 <span class="n">L_edo_4</span> <span class="o">=</span> <span class="n">L_edo_3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ics</span><span class="p">)</span>
 <span class="n">L_edo_4</span>
 </pre></div>
@@ -2357,8 +2354,8 @@ $$Y s^{2} + 3 Y s + 2 Y - 2 s - 3$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Resolvemos la ecuación y arribamos a la Transformada de Laplace</span>
-<span class="c"># que es equivalente a nuestra ecuación diferencial</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolvemos la ecuación y arribamos a la Transformada de Laplace</span>
+<span class="c1"># que es equivalente a nuestra ecuación diferencial</span>
 <span class="n">Y_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L_edo_4</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
 <span class="n">Y_sol</span>
 </pre></div>
@@ -2391,8 +2388,8 @@ $$\left [ \frac{2 s + 3}{s^{2} + 3 s + 2}\right ]$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Por último, calculamos al inversa de la Transformada de Laplace que </span>
-<span class="c"># obtuvimos arriba, para obtener la solución de nuestra ecuación diferencial.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Por último, calculamos al inversa de la Transformada de Laplace que </span>
+<span class="c1"># obtuvimos arriba, para obtener la solución de nuestra ecuación diferencial.</span>
 <span class="n">y_sol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">inverse_laplace_transform</span><span class="p">(</span><span class="n">Y_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 <span class="n">y_sol</span>
 </pre></div>
@@ -2425,7 +2422,7 @@ $$\frac{e^{t} + 1}{e^{2 t}}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comprobamos la solución.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comprobamos la solución.</span>
 <span class="n">y_sol</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y_sol</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
@@ -2485,7 +2482,7 @@ $$f(x, y(x)) = x + y(x)^2$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Defino la función</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Defino la función</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span>
 <span class="n">f</span>
 </pre></div>
@@ -2518,18 +2515,18 @@ $$x + y^{2}{\left (x \right )}$$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># la convierto en una función ejecutable</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># la convierto en una función ejecutable</span>
 <span class="n">f_np</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
 
-<span class="c"># Definimos los valores de la condición inicial y el rango de x sobre los </span>
-<span class="c"># que vamos a iterar para calcular y(x)</span>
+<span class="c1"># Definimos los valores de la condición inicial y el rango de x sobre los </span>
+<span class="c1"># que vamos a iterar para calcular y(x)</span>
 <span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
-<span class="c"># Calculando la solución numerica para los valores de y0 y xp</span>
+<span class="c1"># Calculando la solución numerica para los valores de y0 y xp</span>
 <span class="n">yp</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f_np</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
 
-<span class="c"># Aplicamos el mismo procedimiento para valores de x negativos</span>
+<span class="c1"># Aplicamos el mismo procedimiento para valores de x negativos</span>
 <span class="n">xn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">yn</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f_np</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xn</span><span class="p">)</span>
 </pre></div>
@@ -2558,8 +2555,8 @@ $$x + y^{2}{\left (x \right )}$$
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plot_direction_field</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -3207,21 +3204,21 @@ $$<p>Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen s
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Definimos el sistema de ecuaciones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Definimos el sistema de ecuaciones</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> 
            <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">rho</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span>
            <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">z</span><span class="p">]</span>
 
-<span class="c"># Asignamos valores a los parámetros</span>
+<span class="c1"># Asignamos valores a los parámetros</span>
 <span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">8</span><span class="o">/</span><span class="mf">3.0</span>
 
-<span class="c"># Condición inicial y valores de t sobre los que calcular</span>
+<span class="c1"># Condición inicial y valores de t sobre los que calcular</span>
 <span class="n">xyz0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
 
-<span class="c"># Resolvemos las ecuaciones</span>
+<span class="c1"># Resolvemos las ecuaciones</span>
 <span class="n">xyz1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xyz0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">))</span>
 <span class="n">xyz2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xyz0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span>
 <span class="n">xyz3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xyz0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span>
@@ -3239,16 +3236,16 @@ $$<p>Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen s
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficamos las soluciones</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.axes3d</span> <span class="k">import</span> <span class="n">Axes3D</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficamos las soluciones</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.axes3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-                                  <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;projection&#39;</span><span class="p">:</span><span class="s">&#39;3d&#39;</span><span class="p">})</span>
+                                  <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="s1">&#39;3d&#39;</span><span class="p">})</span>
 
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">xyz1</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">xyz2</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">xyz3</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">)]:</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">xyz1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">xyz2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">xyz3</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xyz</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">c</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s">&#39;$z$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;$z$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
@@ -4444,6 +4441,9 @@ In+7baI/q2QAAAAASUVORK5CYII=
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -4454,9 +4454,6 @@ In+7baI/q2QAAAAASUVORK5CYII=
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -4472,7 +4469,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

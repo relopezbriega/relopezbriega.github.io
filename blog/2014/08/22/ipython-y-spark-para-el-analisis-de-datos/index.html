@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -335,8 +334,9 @@ $ sudo apt-get install oracle-jdk7-installer
 <pre>
 $ sudo apt-get install sbt
 </pre></li>
-<li><p>Después nos descargamos la última versión de <a href="http://spark.apache.org/">Apache Spark</a> desde <a href="http://d3kbcqa49mib13.cloudfront.net/spark-1.0.2.tgz">aquí</a></p>
-<pre></pre></li>
+<li><p>Después nos descargamos la última versión de <a href="http://spark.apache.org/">Apache Spark</a> desde <a href="http://d3kbcqa49mib13.cloudfront.net/spark-1.0.2.tgz">aquí</a>
+<pre></pre></p>
+</li>
 <li><p>Ahora descomprimimos el archivo:</p>
 <pre>
 $ tar -xvf spark-1.0.2.tgz 
@@ -384,8 +384,8 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Comenzamos con algunos imports.</span>
-<span class="c"># No necesitamos importar pyspark porque ya se autoimporta como sc.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Comenzamos con algunos imports.</span>
+<span class="c1"># No necesitamos importar pyspark porque ya se autoimporta como sc.</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
@@ -402,7 +402,7 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">lineas</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s">&quot;/home/raul/spark-1.0.2/examples/data/Bible.txt&quot;</span><span class="p">)</span> <span class="c"># usamos la función textFile para subir el texto a Spark</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">lineas</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">&quot;/home/raul/spark-1.0.2/examples/data/Bible.txt&quot;</span><span class="p">)</span> <span class="c1"># usamos la función textFile para subir el texto a Spark</span>
 </pre></div>
 
     </div>
@@ -417,9 +417,9 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Mapeamos las funciones para realizar la cuenta de las palabras y generamos el RDD.</span>
-<span class="n">cuenta</span> <span class="o">=</span> <span class="n">lineas</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">))</span> \
-                  <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;,&#39;</span> <span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="mi">1</span><span class="p">))</span> \
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Mapeamos las funciones para realizar la cuenta de las palabras y generamos el RDD.</span>
+<span class="n">cuenta</span> <span class="o">=</span> <span class="n">lineas</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span> \
+                  <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="mi">1</span><span class="p">))</span> \
                   <span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
 </pre></div>
 
@@ -435,7 +435,7 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creamos la lista con las palabras y su respectiva frecuencia.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creamos la lista con las palabras y su respectiva frecuencia.</span>
 <span class="n">lista</span> <span class="o">=</span> <span class="n">cuenta</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 </pre></div>
 
@@ -451,8 +451,8 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creamos un DataFrame de Pandas para facilitar el manejo de los datos.</span>
-<span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;palabras&#39;</span><span class="p">,</span> <span class="s">&#39;cuenta&#39;</span><span class="p">])</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creamos un DataFrame de Pandas para facilitar el manejo de los datos.</span>
+<span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;palabras&#39;</span><span class="p">,</span> <span class="s1">&#39;cuenta&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -467,8 +467,8 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Nos quedamos solo con las palabras que hacen referencia a Dios</span>
-<span class="n">god</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">dataframe</span><span class="p">[</span><span class="s">&#39;palabras&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;GOD&#39;</span><span class="p">,</span> <span class="s">&#39;LORD&#39;</span><span class="p">,</span> <span class="s">&#39;JESUS&#39;</span><span class="p">,</span> <span class="s">&#39;FATHER&#39;</span><span class="p">])]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Nos quedamos solo con las palabras que hacen referencia a Dios</span>
+<span class="n">god</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">dataframe</span><span class="p">[</span><span class="s1">&#39;palabras&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;GOD&#39;</span><span class="p">,</span> <span class="s1">&#39;LORD&#39;</span><span class="p">,</span> <span class="s1">&#39;JESUS&#39;</span><span class="p">,</span> <span class="s1">&#39;FATHER&#39;</span><span class="p">])]</span>
 <span class="n">god</span>
 </pre></div>
 
@@ -531,8 +531,8 @@ $ echo "alias spark='~/spark-1.0.2/bin/spark-shell'" >> ~/.bashrc
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Realizamos un gráfico de barras sobre los datos</span>
-<span class="n">god</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">&#39;palabras&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Realizamos un gráfico de barras sobre los datos</span>
+<span class="n">god</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;palabras&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -715,7 +715,7 @@ SUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Realizamos la sumatoria de las 4 palabras combinadas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Realizamos la sumatoria de las 4 palabras combinadas</span>
 <span class="n">god</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
@@ -832,6 +832,9 @@ dtype: object</pre>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -842,9 +845,6 @@ dtype: object</pre>
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -860,7 +860,7 @@ dtype: object</pre>
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

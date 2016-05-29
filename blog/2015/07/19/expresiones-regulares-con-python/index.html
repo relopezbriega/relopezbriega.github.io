@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -504,7 +503,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el modulo de regex de python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando el modulo de regex de python</span>
 <span class="kn">import</span> <span class="nn">re</span>  
 </pre></div>
 
@@ -530,8 +529,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># compilando la regex</span>
-<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\bfoo\b&#39;</span><span class="p">)</span>  <span class="c"># busca la palabra foo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># compilando la regex</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;\bfoo\b&#39;</span><span class="p">)</span>  <span class="c1"># busca la palabra foo</span>
 </pre></div>
 
     </div>
@@ -563,11 +562,11 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># texto de entrada</span>
-<span class="n">texto</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot; bar foo bar</span>
-<span class="s">foo barbarfoo</span>
-<span class="s">foofoo foo bar</span>
-<span class="s">&quot;&quot;&quot;</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># texto de entrada</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; bar foo bar</span>
+<span class="s2">foo barbarfoo</span>
+<span class="s2">foofoo foo bar</span>
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 
     </div>
@@ -582,7 +581,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># match nos devuelve None porque no hubo coincidencia al comienzo del texto</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># match nos devuelve None porque no hubo coincidencia al comienzo del texto</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">patron</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">texto</span><span class="p">))</span>
 </pre></div>
 
@@ -612,8 +611,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># match encuentra una coindencia en el comienzo del texto</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;foo bar&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># match encuentra una coindencia en el comienzo del texto</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;foo bar&#39;</span><span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
 
@@ -630,7 +629,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 3), match=&apos;foo&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 3), match=&#39;foo&#39;&gt;</pre>
 </div>
 
 </div>
@@ -645,7 +644,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># search nos devuelve la coincidencia en cualquier ubicacion.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># search nos devuelve la coincidencia en cualquier ubicacion.</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
 <span class="n">s</span>
 </pre></div>
@@ -663,7 +662,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(5, 8), match=&apos;foo&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(5, 8), match=&#39;foo&#39;&gt;</pre>
 </div>
 
 </div>
@@ -678,7 +677,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># findall nos devuelve una lista con todas las coincidencias</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># findall nos devuelve una lista con todas las coincidencias</span>
 <span class="n">fa</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
 <span class="n">fa</span>
 </pre></div>
@@ -696,7 +695,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;foo&apos;, &apos;foo&apos;, &apos;foo&apos;]</pre>
+<pre class="ipynb">[&#39;foo&#39;, &#39;foo&#39;, &#39;foo&#39;]</pre>
 </div>
 
 </div>
@@ -711,7 +710,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># finditer nos devuelve un iterador</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># finditer nos devuelve un iterador</span>
 <span class="n">fi</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
 <span class="n">fi</span>
 </pre></div>
@@ -744,7 +743,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># iterando por las distintas coincidencias</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># iterando por las distintas coincidencias</span>
 <span class="nb">next</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
 </pre></div>
 
@@ -761,7 +760,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(5, 8), match=&apos;foo&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(5, 8), match=&#39;foo&#39;&gt;</pre>
 </div>
 
 </div>
@@ -792,7 +791,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(13, 16), match=&apos;foo&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(13, 16), match=&#39;foo&#39;&gt;</pre>
 </div>
 
 </div>
@@ -823,7 +822,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Métodos del objeto de coincidencia</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Métodos del objeto de coincidencia</span>
 <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
 </pre></div>
 
@@ -840,7 +839,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">(&apos;foo&apos;, 0, 3, (0, 3))</pre>
+<pre class="ipynb">(&#39;foo&#39;, 0, 3, (0, 3))</pre>
 </div>
 
 </div>
@@ -871,7 +870,7 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">(&apos;foo&apos;, 5, 8, (5, 8))</pre>
+<pre class="ipynb">(&#39;foo&#39;, 5, 8, (5, 8))</pre>
 </div>
 
 </div>
@@ -902,15 +901,15 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># texto de entrada</span>
-<span class="n">becquer</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;Podrá nublarse el sol eternamente; </span>
-<span class="s">Podrá secarse en un instante el mar; </span>
-<span class="s">Podrá romperse el eje de la tierra </span>
-<span class="s">como un débil cristal. </span>
-<span class="s">¡todo sucederá! Podrá la muerte </span>
-<span class="s">cubrirme con su fúnebre crespón; </span>
-<span class="s">Pero jamás en mí podrá apagarse </span>
-<span class="s">la llama de tu amor.&quot;&quot;&quot;</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># texto de entrada</span>
+<span class="n">becquer</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Podrá nublarse el sol eternamente; </span>
+<span class="s2">Podrá secarse en un instante el mar; </span>
+<span class="s2">Podrá romperse el eje de la tierra </span>
+<span class="s2">como un débil cristal. </span>
+<span class="s2">¡todo sucederá! Podrá la muerte </span>
+<span class="s2">cubrirme con su fúnebre crespón; </span>
+<span class="s2">Pero jamás en mí podrá apagarse </span>
+<span class="s2">la llama de tu amor.&quot;&quot;&quot;</span>
 </pre></div>
 
     </div>
@@ -925,8 +924,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># patron para dividir donde no encuentre un caracter alfanumerico</span>
-<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\W+&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># patron para dividir donde no encuentre un caracter alfanumerico</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;\W+&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -942,7 +941,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="n">palabras</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">becquer</span><span class="p">)</span>
-<span class="n">palabras</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c"># 10 primeras palabras</span>
+<span class="n">palabras</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># 10 primeras palabras</span>
 </pre></div>
 
     </div>
@@ -958,16 +957,16 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;Podrá&apos;,
- &apos;nublarse&apos;,
- &apos;el&apos;,
- &apos;sol&apos;,
- &apos;eternamente&apos;,
- &apos;Podrá&apos;,
- &apos;secarse&apos;,
- &apos;en&apos;,
- &apos;un&apos;,
- &apos;instante&apos;]</pre>
+<pre class="ipynb">[&#39;Podrá&#39;,
+ &#39;nublarse&#39;,
+ &#39;el&#39;,
+ &#39;sol&#39;,
+ &#39;eternamente&#39;,
+ &#39;Podrá&#39;,
+ &#39;secarse&#39;,
+ &#39;en&#39;,
+ &#39;un&#39;,
+ &#39;instante&#39;]</pre>
 </div>
 
 </div>
@@ -982,8 +981,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando la version no compilada de split.</span>
-<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r&#39;\n&#39;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c"># Dividiendo por linea.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Utilizando la version no compilada de split.</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">r&#39;\n&#39;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c1"># Dividiendo por linea.</span>
 </pre></div>
 
     </div>
@@ -999,14 +998,14 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;Podrá nublarse el sol eternamente; &apos;,
- &apos;Podrá secarse en un instante el mar; &apos;,
- &apos;Podrá romperse el eje de la tierra &apos;,
- &apos;como un débil cristal. &apos;,
- &apos;¡todo sucederá! Podrá la muerte &apos;,
- &apos;cubrirme con su fúnebre crespón; &apos;,
- &apos;Pero jamás en mí podrá apagarse &apos;,
- &apos;la llama de tu amor.&apos;]</pre>
+<pre class="ipynb">[&#39;Podrá nublarse el sol eternamente; &#39;,
+ &#39;Podrá secarse en un instante el mar; &#39;,
+ &#39;Podrá romperse el eje de la tierra &#39;,
+ &#39;como un débil cristal. &#39;,
+ &#39;¡todo sucederá! Podrá la muerte &#39;,
+ &#39;cubrirme con su fúnebre crespón; &#39;,
+ &#39;Pero jamás en mí podrá apagarse &#39;,
+ &#39;la llama de tu amor.&#39;]</pre>
 </div>
 
 </div>
@@ -1021,7 +1020,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando el tope de divisiones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Utilizando el tope de divisiones</span>
 <span class="n">patron</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">becquer</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -1038,12 +1037,12 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;Podrá&apos;,
- &apos;nublarse&apos;,
- &apos;el&apos;,
- &apos;sol&apos;,
- &apos;eternamente&apos;,
- &apos;Podrá secarse en un instante el mar; \nPodrá romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Podrá la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí podrá apagarse \nla llama de tu amor.&apos;]</pre>
+<pre class="ipynb">[&#39;Podrá&#39;,
+ &#39;nublarse&#39;,
+ &#39;el&#39;,
+ &#39;sol&#39;,
+ &#39;eternamente&#39;,
+ &#39;Podrá secarse en un instante el mar; \nPodrá romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Podrá la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí podrá apagarse \nla llama de tu amor.&#39;]</pre>
 </div>
 
 </div>
@@ -1058,9 +1057,9 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
-<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">)</span>
-<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
+<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">)</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
 </pre></div>
 
@@ -1097,8 +1096,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Limitando el número de reemplazos</span>
-<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Limitando el número de reemplazos</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
 </pre></div>
 
@@ -1135,8 +1134,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Utilizando la version no compilada de subn</span>
-<span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="s">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">,</span> <span class="s">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c"># se realizaron 5 reemplazos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Utilizando la version no compilada de subn</span>
+<span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="s1">r&#39;\b(P|p)odrá\b&#39;</span><span class="p">,</span> <span class="s2">&quot;Puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>  <span class="c1"># se realizaron 5 reemplazos</span>
 </pre></div>
 
     </div>
@@ -1152,7 +1151,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">(&apos;Puede nublarse el sol eternamente; \nPuede secarse en un instante el mar; \nPuede romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Puede la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí Puede apagarse \nla llama de tu amor.&apos;,
+<pre class="ipynb">(&#39;Puede nublarse el sol eternamente; \nPuede secarse en un instante el mar; \nPuede romperse el eje de la tierra \ncomo un débil cristal. \n¡todo sucederá! Puede la muerte \ncubrirme con su fúnebre crespón; \nPero jamás en mí Puede apagarse \nla llama de tu amor.&#39;,
  5)</pre>
 </div>
 
@@ -1178,9 +1177,9 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de findall con la funcion a nivel del modulo</span>
-<span class="c"># findall nos devuelve una lista con todas las coincidencias</span>
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&#39;\bfoo\b&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de findall con la funcion a nivel del modulo</span>
+<span class="c1"># findall nos devuelve una lista con todas las coincidencias</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">r&#39;\bfoo\b&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1196,7 +1195,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;foo&apos;, &apos;foo&apos;, &apos;foo&apos;]</pre>
+<pre class="ipynb">[&#39;foo&#39;, &#39;foo&#39;, &#39;foo&#39;]</pre>
 </div>
 
 </div>
@@ -1230,10 +1229,10 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de IGNORECASE</span>
-<span class="c"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
-<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;podrá\b&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>  <span class="c"># el patrón se vuelve más sencillo</span>
-<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de IGNORECASE</span>
+<span class="c1"># Cambiando &quot;Podrá&quot; o &quot;podra&quot; por &quot;Puede&quot;</span>
+<span class="n">podra</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;podrá\b&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>  <span class="c1"># el patrón se vuelve más sencillo</span>
+<span class="n">puede</span> <span class="o">=</span> <span class="n">podra</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;puede&quot;</span><span class="p">,</span> <span class="n">becquer</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">puede</span><span class="p">)</span>
 </pre></div>
 
@@ -1270,16 +1269,16 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Ejemplo de VERBOSE</span>
-<span class="n">mail</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;&quot;&quot;</span>
-<span class="s">\b             # comienzo de delimitador de palabra</span>
-<span class="s">[\w.%+-]       # usuario: Cualquier caracter alfanumerico mas los signos (.%+-)</span>
-<span class="s">+@             # seguido de @</span>
-<span class="s">[\w.-]         # dominio: Cualquier caracter alfanumerico mas los signos (.-)</span>
-<span class="s">+\.            # seguido de .</span>
-<span class="s">[a-zA-Z]{2,6}  # dominio de alto nivel: 2 a 6 letras en minúsculas o mayúsculas.</span>
-<span class="s">\b             # fin de delimitador de palabra</span>
-<span class="s">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de VERBOSE</span>
+<span class="n">mail</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">r&quot;&quot;&quot;</span>
+<span class="s2">\b             # comienzo de delimitador de palabra</span>
+<span class="s2">[\w.%+-]       # usuario: Cualquier caracter alfanumerico mas los signos (.%+-)</span>
+<span class="s2">+@             # seguido de @</span>
+<span class="s2">[\w.-]         # dominio: Cualquier caracter alfanumerico mas los signos (.-)</span>
+<span class="s2">+\.            # seguido de .</span>
+<span class="s2">[a-zA-Z]{2,6}  # dominio de alto nivel: 2 a 6 letras en minúsculas o mayúsculas.</span>
+<span class="s2">\b             # fin de delimitador de palabra</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1294,11 +1293,11 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">mails</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;raul.lopez@relopezbriega.com, Raul Lopez Briega,</span>
-<span class="s">foo bar, relopezbriega@relopezbriega.com.ar, raul@github.io, </span>
-<span class="s">http://relopezbriega.com.ar, http://relopezbriega.github.io, </span>
-<span class="s">python@python, river@riverplate.com.ar, pythonAR@python.pythonAR</span>
-<span class="s">&quot;&quot;&quot;</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">mails</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;raul.lopez@relopezbriega.com, Raul Lopez Briega,</span>
+<span class="s2">foo bar, relopezbriega@relopezbriega.com.ar, raul@github.io, </span>
+<span class="s2">http://relopezbriega.com.ar, http://relopezbriega.github.io, </span>
+<span class="s2">python@python, river@riverplate.com.ar, pythonAR@python.pythonAR</span>
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 
     </div>
@@ -1313,7 +1312,7 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># filtrando los mails con estructura válida</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># filtrando los mails con estructura válida</span>
 <span class="n">mail</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">mails</span><span class="p">)</span>
 </pre></div>
 
@@ -1330,10 +1329,10 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;raul.lopez@relopezbriega.com&apos;,
- &apos;relopezbriega@relopezbriega.com.ar&apos;,
- &apos;raul@github.io&apos;,
- &apos;river@riverplate.com.ar&apos;]</pre>
+<pre class="ipynb">[&#39;raul.lopez@relopezbriega.com&#39;,
+ &#39;relopezbriega@relopezbriega.com.ar&#39;,
+ &#39;raul@github.io&#39;,
+ &#39;river@riverplate.com.ar&#39;]</pre>
 </div>
 
 </div>
@@ -1368,9 +1367,9 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los grupos por sus indices</span>
-<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;(\w+) (\w+)&quot;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;Raul Lopez&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Accediendo a los grupos por sus indices</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">r&quot;(\w+) (\w+)&quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Raul Lopez&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1385,7 +1384,7 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo 1</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># grupo 1</span>
 <span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -1402,7 +1401,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&apos;Raul&apos;</pre>
+<pre class="ipynb">&#39;Raul&#39;</pre>
 </div>
 
 </div>
@@ -1417,7 +1416,7 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo 2</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># grupo 2</span>
 <span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1434,7 +1433,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&apos;Lopez&apos;</pre>
+<pre class="ipynb">&#39;Lopez&#39;</pre>
 </div>
 
 </div>
@@ -1459,9 +1458,9 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Accediendo a los grupos por nombres</span>
-<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;(?P&lt;nombre&gt;\w+) (?P&lt;apellido&gt;\w+)&quot;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;Raul Lopez&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Accediendo a los grupos por nombres</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">r&quot;(?P&lt;nombre&gt;\w+) (?P&lt;apellido&gt;\w+)&quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">patron</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Raul Lopez&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1476,8 +1475,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo nombre</span>
-<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&quot;nombre&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># grupo nombre</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;nombre&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1493,7 +1492,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&apos;Raul&apos;</pre>
+<pre class="ipynb">&#39;Raul&#39;</pre>
 </div>
 
 </div>
@@ -1508,8 +1507,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># grupo apellido</span>
-<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&quot;apellido&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># grupo apellido</span>
+<span class="n">s</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;apellido&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1525,7 +1524,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&apos;Lopez&apos;</pre>
+<pre class="ipynb">&#39;Lopez&#39;</pre>
 </div>
 
 </div>
@@ -1555,11 +1554,11 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$&quot;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Validando una URL</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">r&quot;^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$&quot;</span><span class="p">)</span>
 
-<span class="c"># vemos que http://relopezbriega.com.ar lo acepta como una url válida.</span>
-<span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;http://relopezbriega.com.ar&quot;</span><span class="p">)</span>
+<span class="c1"># vemos que http://relopezbriega.com.ar lo acepta como una url válida.</span>
+<span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;http://relopezbriega.com.ar&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1575,7 +1574,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 27), match=&apos;http://relopezbriega.com.ar&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 27), match=&#39;http://relopezbriega.com.ar&#39;&gt;</pre>
 </div>
 
 </div>
@@ -1590,8 +1589,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># pero http://google.com/un/archivo!.html no la acepta por el carcter !</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;http://google.com/un/archivo!.html&quot;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># pero http://google.com/un/archivo!.html no la acepta por el carcter !</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;http://google.com/un/archivo!.html&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1631,15 +1630,15 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una dirección IP</span>
-<span class="n">patron</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;^(?:(?:25[0-5]|2[0-4][0-9]|&#39;</span>
-          <span class="s">&#39;[01]?[0-9][0-9]?)\.){3}&#39;</span>
-          <span class="s">&#39;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Validando una dirección IP</span>
+<span class="n">patron</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;^(?:(?:25[0-5]|2[0-4][0-9]|&#39;</span>
+          <span class="s1">&#39;[01]?[0-9][0-9]?)\.){3}&#39;</span>
+          <span class="s1">&#39;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&#39;</span><span class="p">)</span>
 
 <span class="n">ip</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">patron</span><span class="p">)</span>
 
-<span class="c"># la ip 73.60.124.136 es valida</span>
-<span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;73.60.124.136&quot;</span><span class="p">)</span>
+<span class="c1"># la ip 73.60.124.136 es valida</span>
+<span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;73.60.124.136&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1655,7 +1654,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 13), match=&apos;73.60.124.136&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 13), match=&#39;73.60.124.136&#39;&gt;</pre>
 </div>
 
 </div>
@@ -1670,8 +1669,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># pero la ip 256.60.124.136 no es valida</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;256.60.124.136&quot;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># pero la ip 256.60.124.136 no es valida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;256.60.124.136&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1711,11 +1710,11 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Validando una fecha</span>
-<span class="n">fecha</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Validando una fecha</span>
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$&#39;</span><span class="p">)</span>
 
-<span class="c"># validando 13/02/1982</span>
-<span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;13/02/1982&quot;</span><span class="p">)</span>
+<span class="c1"># validando 13/02/1982</span>
+<span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;13/02/1982&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1731,7 +1730,7 @@ la llama de tu amor.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 10), match=&apos;13/02/1982&apos;&gt;</pre>
+<pre class="ipynb">&lt;_sre.SRE_Match object; span=(0, 10), match=&#39;13/02/1982&#39;&gt;</pre>
 </div>
 
 </div>
@@ -1746,8 +1745,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 13-02-1982</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;13-02-1982&quot;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># no valida 13-02-1982</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;13-02-1982&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1776,8 +1775,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 32/12/2015</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;32/12/2015&quot;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># no valida 32/12/2015</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;32/12/2015&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1806,8 +1805,8 @@ la llama de tu amor.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># no valida 30/14/2015</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;30/14/2015&quot;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># no valida 30/14/2015</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fecha</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;30/14/2015&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1890,6 +1889,9 @@ la llama de tu amor.
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -1900,9 +1902,6 @@ la llama de tu amor.
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -1918,7 +1917,7 @@ la llama de tu amor.
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

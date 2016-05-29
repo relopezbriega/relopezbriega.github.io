@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -282,7 +281,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
-    <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -307,7 +306,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s1">&#39;Raul&#39;</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
@@ -351,10 +350,10 @@ Hola 1
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">saludo</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&quot;Error: el argumento debe ser del tipo String(str)&quot;</span>
-    <span class="k">return</span> <span class="s">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Error: el argumento debe ser del tipo String(str)&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;Hola {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s">&#39;Raul&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="s1">&#39;Raul&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
@@ -532,7 +531,7 @@ print(saludo(1))
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre class="ipynb">typeTest.py, line 7: Argument 1 to &quot;saludo&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;
+<pre class="ipynb">typeTest.py, line 7: Argument 1 to &#34;saludo&#34; has incompatible type &#34;int&#34;; expected &#34;str&#34;
 </pre>
 </div>
 </div>
@@ -669,11 +668,11 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
-typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
-typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
-typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
-typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&quot;
+<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &#34;int&#34;, variable has type &#34;str&#34;)
+typeTest.py, line 17: Incompatible types in assignment (expression has type &#34;str&#34;, variable has type &#34;int&#34;)
+typeTest.py, line 18: List item 1 has incompatible type &#34;str&#34;
+typeTest.py, line 18: List item 3 has incompatible type &#34;str&#34;
+typeTest.py, line 19: List item 1 has incompatible type &#34;Tuple[int, str]&#34;
 </pre>
 </div>
 </div>
@@ -760,11 +759,11 @@ dic_str_int = {1: &#39;raul&#39;}
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)
-typeTest.py, line 17: Incompatible types in assignment (expression has type &quot;str&quot;, variable has type &quot;int&quot;)
-typeTest.py, line 18: List item 1 has incompatible type &quot;str&quot;
-typeTest.py, line 18: List item 3 has incompatible type &quot;str&quot;
-typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&quot;
+<pre class="ipynb">typeTest.py, line 16: Incompatible types in assignment (expression has type &#34;int&#34;, variable has type &#34;str&#34;)
+typeTest.py, line 17: Incompatible types in assignment (expression has type &#34;str&#34;, variable has type &#34;int&#34;)
+typeTest.py, line 18: List item 1 has incompatible type &#34;str&#34;
+typeTest.py, line 18: List item 3 has incompatible type &#34;str&#34;
+typeTest.py, line 19: List item 1 has incompatible type &#34;Tuple[int, str]&#34;
 </pre>
 </div>
 </div>
@@ -876,6 +875,9 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -886,9 +888,6 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -904,7 +903,7 @@ typeTest.py, line 19: List item 1 has incompatible type &quot;Tuple[int, str]&qu
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

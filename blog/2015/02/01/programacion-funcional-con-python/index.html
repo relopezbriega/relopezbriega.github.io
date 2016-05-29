@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -364,7 +363,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#creamos una lista de números del 1 al 10</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#creamos una lista de números del 1 al 10</span>
 <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">items</span>
 </pre></div>
@@ -397,8 +396,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#creamos una lista de los cuadrados de la lista items.</span>
-<span class="c">#forma imperativa.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#creamos una lista de los cuadrados de la lista items.</span>
+<span class="c1">#forma imperativa.</span>
 <span class="n">cuadrados</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
     <span class="n">cuadrados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -434,8 +433,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Cuadrados utilizando Map.</span>
-<span class="c">#forma funcional</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Cuadrados utilizando Map.</span>
+<span class="c1">#forma funcional</span>
 <span class="n">cuadrados</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 <span class="n">cuadrados</span>
 </pre></div>
@@ -479,7 +478,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#importamos pow.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#importamos pow.</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="nb">pow</span>
 </pre></div>
 
@@ -495,7 +494,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#como vemos la función pow toma dos argumentos, un número y su potencia.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#como vemos la función pow toma dos argumentos, un número y su potencia.</span>
 <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -527,7 +526,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#si tenemos las siguientes listas </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#si tenemos las siguientes listas </span>
 <span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">potencias</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
@@ -544,8 +543,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#podemos aplicar map con pow y las dos listas.</span>
-<span class="c">#nos devolvera una sola lista con las potencias aplicadas sobre los números.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#podemos aplicar map con pow y las dos listas.</span>
+<span class="c1">#nos devolvera una sola lista con las potencias aplicadas sobre los números.</span>
 <span class="n">potenciados</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="n">numeros</span><span class="p">,</span> <span class="n">potencias</span><span class="p">)</span>
 <span class="n">potenciados</span>
 </pre></div>
@@ -588,8 +587,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Sumando los valores de la lista items.</span>
-<span class="c">#forma imperativa</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Sumando los valores de la lista items.</span>
+<span class="c1">#forma imperativa</span>
 <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
     <span class="n">suma</span> <span class="o">+=</span> <span class="n">i</span>
@@ -625,9 +624,9 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Suma utilizando Reduce.</span>
-<span class="c">#Forma funcional</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span> <span class="c">#en python3 reduce se encuentra en modulo functools</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Suma utilizando Reduce.</span>
+<span class="c1">#Forma funcional</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span> <span class="c1">#en python3 reduce se encuentra en modulo functools</span>
 
 <span class="n">suma</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 <span class="n">suma</span>
@@ -671,7 +670,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#10 + suma items</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#10 + suma items</span>
 <span class="n">suma10</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">suma10</span>
 </pre></div>
@@ -714,8 +713,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Numeros pares de la lista items.</span>
-<span class="c">#Forma imperativa.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Numeros pares de la lista items.</span>
+<span class="c1">#Forma imperativa.</span>
 <span class="n">pares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
@@ -752,8 +751,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Pares utilizando Filter</span>
-<span class="c">#Forma funcional.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Pares utilizando Filter</span>
+<span class="c1">#Forma funcional.</span>
 <span class="n">pares</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 <span class="n">pares</span>
 </pre></div>
@@ -796,9 +795,9 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Ejemplo de zip</span>
-<span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Raul&quot;</span><span class="p">,</span> <span class="s">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s">&quot;Sofia&quot;</span><span class="p">]</span>
-<span class="n">apellidos</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Lopez Briega&quot;</span><span class="p">,</span> <span class="s">&quot;Perez&quot;</span><span class="p">,</span> <span class="s">&quot;Gonzalez&quot;</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Ejemplo de zip</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Raul&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;Sofia&quot;</span><span class="p">]</span>
+<span class="n">apellidos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lopez Briega&quot;</span><span class="p">,</span> <span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="s2">&quot;Gonzalez&quot;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -813,7 +812,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#zip une cada nombre con su apellido en una lista de tuplas.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#zip une cada nombre con su apellido en una lista de tuplas.</span>
 <span class="n">nombreApellido</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nombres</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">)</span>
 <span class="n">nombreApellido</span>
 </pre></div>
@@ -831,7 +830,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;Raul&apos;, &apos;Lopez Briega&apos;), (&apos;Pedro&apos;, &apos;Perez&apos;), (&apos;Sofia&apos;, &apos;Gonzalez&apos;)]</pre>
+<pre class="ipynb">[(&#39;Raul&#39;, &#39;Lopez Briega&#39;), (&#39;Pedro&#39;, &#39;Perez&#39;), (&#39;Sofia&#39;, &#39;Gonzalez&#39;)]</pre>
 </div>
 
 </div>
@@ -856,8 +855,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Funcion que no sigue las buenas practias de la programacion funcional.</span>
-<span class="c">#Esta funcion tiene efectos secundarios, ya que modifica la lista que se le pasa como argumento.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Funcion que no sigue las buenas practias de la programacion funcional.</span>
+<span class="c1">#Esta funcion tiene efectos secundarios, ya que modifica la lista que se le pasa como argumento.</span>
 <span class="k">def</span> <span class="nf">cuadrados</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
         <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span>
@@ -886,7 +885,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Version funcional de la funcion anterior.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Version funcional de la funcion anterior.</span>
 <span class="k">def</span> <span class="nf">fcuadrados</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">lista</span><span class="p">)</span>
 </pre></div>
@@ -903,7 +902,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Aplicando fcuadrados sobre items.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Aplicando fcuadrados sobre items.</span>
 <span class="n">fcuadrados</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
 </pre></div>
 
@@ -935,7 +934,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#items no se modifico</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#items no se modifico</span>
 <span class="n">items</span>
 </pre></div>
 
@@ -967,7 +966,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#aplicando cuadrados sobre items</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#aplicando cuadrados sobre items</span>
 <span class="n">cuadrados</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
 </pre></div>
 
@@ -999,8 +998,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Esta función tiene efecto secundario.</span>
-<span class="c">#items fue modificado por cuadrados.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Esta función tiene efecto secundario.</span>
+<span class="c1">#items fue modificado por cuadrados.</span>
 <span class="n">items</span>
 </pre></div>
 
@@ -1052,7 +1051,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Lambdas al estilo scala</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Lambdas al estilo scala</span>
 <span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">_</span>
 
 <span class="p">(</span><span class="n">_</span> <span class="o">+</span> <span class="n">_</span><span class="p">)(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1133,7 +1132,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Streams</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Streams</span>
 <span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">Stream</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -1292,14 +1291,14 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Stream fibonacci</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Stream fibonacci</span>
 <span class="kn">from</span> <span class="nn">fn.iters</span> <span class="k">import</span> <span class="n">take</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">imap</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
 <span class="n">fib</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">imap</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
 
-<span class="c">#primeros 10 elementos de fibonacci</span>
+<span class="c1">#primeros 10 elementos de fibonacci</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">fib</span><span class="p">))</span> 
 </pre></div>
 
@@ -1331,7 +1330,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#elemento 20 de la secuencia fibonacci</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#elemento 20 de la secuencia fibonacci</span>
 <span class="n">fib</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> 
 </pre></div>
 
@@ -1363,7 +1362,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#elementos 40 al 45 de la secuencia fibonacci</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#elementos 40 al 45 de la secuencia fibonacci</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="mi">45</span><span class="p">])</span> 
 </pre></div>
 
@@ -1395,11 +1394,11 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Funciones de orden superior</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Funciones de orden superior</span>
 <span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">F</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c">#operadores de suma y multiplicacion</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c1">#operadores de suma y multiplicacion</span>
 
-<span class="c">#composición de funciones</span>
+<span class="c1">#composición de funciones</span>
 <span class="n">F</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">1</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
@@ -1431,8 +1430,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#f es una funcion que llama a otra funcion.</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">F</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c">#&lt;&lt; operador de composicion de funciones.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#f es una funcion que llama a otra funcion.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">F</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1">#&lt;&lt; operador de composicion de funciones.</span>
 </pre></div>
 
     </div>
@@ -1447,8 +1446,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#cada valor de la lista primero se multiplica por 100 y luego</span>
-<span class="c">#se le suma 5, segun composicion de f de arriba.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#cada valor de la lista primero se multiplica por 100 y luego</span>
+<span class="c1">#se le suma 5, segun composicion de f de arriba.</span>
 <span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 
@@ -1495,8 +1494,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#func primero filtra los valores menores a 6</span>
-<span class="c">#y luego los suma.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#func primero filtra los valores menores a 6</span>
+<span class="c1">#y luego los suma.</span>
 <span class="n">func</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
@@ -1538,12 +1537,12 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Datos a utilizar en los ejemplos</span>
-<span class="n">cuentas</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">),</span>  <span class="c"># id, nombre, balance, sexo</span>
-           <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">),</span>
-           <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;Charlie&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">),</span>
-           <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s">&#39;Dennis&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">),</span>
-           <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">&#39;Edith&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">)]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Datos a utilizar en los ejemplos</span>
+<span class="n">cuentas</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span>  <span class="c1"># id, nombre, balance, sexo</span>
+           <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">),</span>
+           <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">),</span>
+           <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Dennis&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">),</span>
+           <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Edith&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -1559,7 +1558,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz.curried</span> <span class="k">import</span> <span class="n">pipe</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">filter</span> <span class="k">as</span> <span class="n">cfilter</span><span class="p">,</span> <span class="n">get</span>
-<span class="c">#seleccionando el id y el nombre de los que tienen un balance mayor a 150</span>
+<span class="c1">#seleccionando el id y el nombre de los que tienen un balance mayor a 150</span>
 <span class="n">pipe</span><span class="p">(</span><span class="n">cuentas</span><span class="p">,</span> <span class="n">cfilter</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">sexo</span><span class="p">):</span> <span class="n">balance</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">),</span>
      <span class="n">cmap</span><span class="p">(</span><span class="n">get</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])),</span>
      <span class="nb">list</span><span class="p">)</span>
@@ -1578,7 +1577,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]</pre>
+<pre class="ipynb">[(&#39;Bob&#39;, 200), (&#39;Edith&#39;, 300)]</pre>
 </div>
 
 </div>
@@ -1593,8 +1592,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#este mismo resultado tambien lo podemos lograr con las listas por comprensión.</span>
-<span class="c">#mas pythonico.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#este mismo resultado tambien lo podemos lograr con las listas por comprensión.</span>
+<span class="c1">#mas pythonico.</span>
 <span class="p">[(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">balance</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">sexo</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cuentas</span> 
  <span class="k">if</span> <span class="n">balance</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">]</span>
 </pre></div>
@@ -1612,7 +1611,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;Bob&apos;, 200), (&apos;Edith&apos;, 300)]</pre>
+<pre class="ipynb">[(&#39;Bob&#39;, 200), (&#39;Edith&#39;, 300)]</pre>
 </div>
 
 </div>
@@ -1629,7 +1628,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">groupby</span>
 
-<span class="c">#agrupando por sexo </span>
+<span class="c1">#agrupando por sexo </span>
 <span class="n">groupby</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">cuentas</span><span class="p">)</span>
 </pre></div>
 
@@ -1646,8 +1645,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">{&apos;F&apos;: [(1, &apos;Alice&apos;, 100, &apos;F&apos;), (5, &apos;Edith&apos;, 300, &apos;F&apos;)],
- &apos;M&apos;: [(2, &apos;Bob&apos;, 200, &apos;M&apos;), (3, &apos;Charlie&apos;, 150, &apos;M&apos;), (4, &apos;Dennis&apos;, 50, &apos;M&apos;)]}</pre>
+<pre class="ipynb">{&#39;F&#39;: [(1, &#39;Alice&#39;, 100, &#39;F&#39;), (5, &#39;Edith&#39;, 300, &#39;F&#39;)],
+ &#39;M&#39;: [(2, &#39;Bob&#39;, 200, &#39;M&#39;), (3, &#39;Charlie&#39;, 150, &#39;M&#39;), (4, &#39;Dennis&#39;, 50, &#39;M&#39;)]}</pre>
 </div>
 
 </div>
@@ -1662,7 +1661,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#utilizando reduceby</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#utilizando reduceby</span>
 <span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">reduceby</span>
 
 <span class="k">def</span> <span class="nf">iseven</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1712,11 +1711,11 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#Datos para los ejemplos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Datos para los ejemplos</span>
 <span class="n">estudiantes_tupla</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s">&#39;john&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">&#39;jane&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">&#39;dave&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;jane&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;dave&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
 <span class="p">]</span>
 
 <span class="k">class</span> <span class="nc">Estudiante</span><span class="p">:</span>
@@ -1727,12 +1726,12 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nota</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">nota_ponderada</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;CBA&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nota</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;CBA&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nota</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
     
 <span class="n">estudiantes_objeto</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Estudiante</span><span class="p">(</span><span class="s">&#39;john&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
-    <span class="n">Estudiante</span><span class="p">(</span><span class="s">&#39;jane&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
-    <span class="n">Estudiante</span><span class="p">(</span><span class="s">&#39;dave&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">Estudiante</span><span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="n">Estudiante</span><span class="p">(</span><span class="s1">&#39;jane&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="n">Estudiante</span><span class="p">(</span><span class="s1">&#39;dave&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
 <span class="p">]</span>
 </pre></div>
 
@@ -1750,7 +1749,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
 
-<span class="c">#ordenar por edad tupla</span>
+<span class="c1">#ordenar por edad tupla</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_tupla</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
@@ -1767,7 +1766,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
+<pre class="ipynb">[(&#39;dave&#39;, &#39;B&#39;, 10), (&#39;jane&#39;, &#39;B&#39;, 12), (&#39;john&#39;, &#39;A&#39;, 15)]</pre>
 </div>
 
 </div>
@@ -1782,8 +1781,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por edad objetos</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s">&#39;edad&#39;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#ordenar por edad objetos</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;edad&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1799,7 +1798,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
+<pre class="ipynb">[(&#39;dave&#39;, &#39;B&#39;, 10), (&#39;jane&#39;, &#39;B&#39;, 12), (&#39;john&#39;, &#39;A&#39;, 15)]</pre>
 </div>
 
 </div>
@@ -1814,7 +1813,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por nota y edad tupla</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#ordenar por nota y edad tupla</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_tupla</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
@@ -1831,7 +1830,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]</pre>
+<pre class="ipynb">[(&#39;john&#39;, &#39;A&#39;, 15), (&#39;dave&#39;, &#39;B&#39;, 10), (&#39;jane&#39;, &#39;B&#39;, 12)]</pre>
 </div>
 
 </div>
@@ -1846,8 +1845,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenar por nota y edad objetos</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s">&#39;nota&#39;</span><span class="p">,</span> <span class="s">&#39;edad&#39;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#ordenar por nota y edad objetos</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;nota&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1863,7 +1862,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;john&apos;, &apos;A&apos;, 15), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;jane&apos;, &apos;B&apos;, 12)]</pre>
+<pre class="ipynb">[(&#39;john&#39;, &#39;A&#39;, 15), (&#39;dave&#39;, &#39;B&#39;, 10), (&#39;jane&#39;, &#39;B&#39;, 12)]</pre>
 </div>
 
 </div>
@@ -1878,8 +1877,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c">#ordenando por el resultado del metodo nota_ponderada</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">methodcaller</span><span class="p">(</span><span class="s">&#39;nota_ponderada&#39;</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#ordenando por el resultado del metodo nota_ponderada</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_objeto</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">methodcaller</span><span class="p">(</span><span class="s1">&#39;nota_ponderada&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1895,7 +1894,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;jane&apos;, &apos;B&apos;, 12), (&apos;dave&apos;, &apos;B&apos;, 10), (&apos;john&apos;, &apos;A&apos;, 15)]</pre>
+<pre class="ipynb">[(&#39;jane&#39;, &#39;B&#39;, 12), (&#39;dave&#39;, &#39;B&#39;, 10), (&#39;john&#39;, &#39;A&#39;, 15)]</pre>
 </div>
 
 </div>
@@ -1973,6 +1972,9 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -1983,9 +1985,6 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -2001,7 +2000,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -406,7 +405,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficos embebidos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficos embebidos</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
@@ -422,18 +421,18 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando pandas, numpy y matplotlib</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando pandas, numpy y matplotlib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c"># importando los datasets de sklearn</span>
+<span class="c1"># importando los datasets de sklearn</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
 
 <span class="n">boston</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span><span class="p">()</span>
 <span class="n">boston_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-<span class="n">boston_df</span><span class="p">[</span><span class="s">&#39;TARGET&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
-<span class="n">boston_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c"># estructura de nuestro dataset.</span>
+<span class="n">boston_df</span><span class="p">[</span><span class="s1">&#39;TARGET&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
+<span class="n">boston_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># estructura de nuestro dataset.</span>
 </pre></div>
 
     </div>
@@ -448,7 +447,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -473,15 +472,15 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
     <tr>
       <th>0</th>
       <td>0.00632</td>
-      <td>18</td>
+      <td>18.0</td>
       <td>2.31</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.538</td>
       <td>6.575</td>
       <td>65.2</td>
       <td>4.0900</td>
-      <td>1</td>
-      <td>296</td>
+      <td>1.0</td>
+      <td>296.0</td>
       <td>15.3</td>
       <td>396.90</td>
       <td>4.98</td>
@@ -490,15 +489,15 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
     <tr>
       <th>1</th>
       <td>0.02731</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>7.07</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.469</td>
       <td>6.421</td>
       <td>78.9</td>
       <td>4.9671</td>
-      <td>2</td>
-      <td>242</td>
+      <td>2.0</td>
+      <td>242.0</td>
       <td>17.8</td>
       <td>396.90</td>
       <td>9.14</td>
@@ -507,15 +506,15 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
     <tr>
       <th>2</th>
       <td>0.02729</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>7.07</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.469</td>
       <td>7.185</td>
       <td>61.1</td>
       <td>4.9671</td>
-      <td>2</td>
-      <td>242</td>
+      <td>2.0</td>
+      <td>242.0</td>
       <td>17.8</td>
       <td>392.83</td>
       <td>4.03</td>
@@ -524,15 +523,15 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
     <tr>
       <th>3</th>
       <td>0.03237</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>2.18</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.458</td>
       <td>6.998</td>
       <td>45.8</td>
       <td>6.0622</td>
-      <td>3</td>
-      <td>222</td>
+      <td>3.0</td>
+      <td>222.0</td>
       <td>18.7</td>
       <td>394.63</td>
       <td>2.94</td>
@@ -541,15 +540,15 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
     <tr>
       <th>4</th>
       <td>0.06905</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>2.18</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.458</td>
       <td>7.147</td>
       <td>54.2</td>
       <td>6.0622</td>
-      <td>3</td>
-      <td>222</td>
+      <td>3.0</td>
+      <td>222.0</td>
       <td>18.7</td>
       <td>396.90</td>
       <td>5.33</td>
@@ -572,11 +571,11 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el modelo de regresión lineal</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando el modelo de regresión lineal</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
 
-<span class="n">rl</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c"># Creando el modelo.</span>
-<span class="n">rl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> <span class="c"># ajustando el modelo</span>
+<span class="n">rl</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c1"># Creando el modelo.</span>
+<span class="n">rl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> <span class="c1"># ajustando el modelo</span>
 </pre></div>
 
     </div>
@@ -607,7 +606,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Lista de coeficientes B para cada X</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Lista de coeficientes B para cada X</span>
 <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">rl</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
 </pre></div>
 
@@ -624,19 +623,19 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[(&apos;CRIM&apos;, -0.10717055656035465),
- (&apos;ZN&apos;, 0.046395219529796909),
- (&apos;INDUS&apos;, 0.020860239532179539),
- (&apos;CHAS&apos;, 2.6885613993179454),
- (&apos;NOX&apos;, -17.795758660309225),
- (&apos;RM&apos;, 3.804752460258007),
- (&apos;AGE&apos;, 0.0007510617033251836),
- (&apos;DIS&apos;, -1.4757587965198111),
- (&apos;RAD&apos;, 0.30565503833909574),
- (&apos;TAX&apos;, -0.012329346305270286),
- (&apos;PTRATIO&apos;, -0.95346355469055721),
- (&apos;B&apos;, 0.0093925127221896297),
- (&apos;LSTAT&apos;, -0.52546663290078854)]</pre>
+<pre class="ipynb">[(&#39;CRIM&#39;, -0.10717055656035465),
+ (&#39;ZN&#39;, 0.046395219529796909),
+ (&#39;INDUS&#39;, 0.020860239532179539),
+ (&#39;CHAS&#39;, 2.6885613993179454),
+ (&#39;NOX&#39;, -17.795758660309225),
+ (&#39;RM&#39;, 3.804752460258007),
+ (&#39;AGE&#39;, 0.0007510617033251836),
+ (&#39;DIS&#39;, -1.4757587965198111),
+ (&#39;RAD&#39;, 0.30565503833909574),
+ (&#39;TAX&#39;, -0.012329346305270286),
+ (&#39;PTRATIO&#39;, -0.95346355469055721),
+ (&#39;B&#39;, 0.0093925127221896297),
+ (&#39;LSTAT&#39;, -0.52546663290078854)]</pre>
 </div>
 
 </div>
@@ -651,10 +650,10 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># haciendo las predicciones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># haciendo las predicciones</span>
 <span class="n">predicciones</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="n">predicciones_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predicciones</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Pred&#39;</span><span class="p">])</span>
-<span class="n">predicciones_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c"># predicciones de las primeras 5 lineas</span>
+<span class="n">predicciones_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predicciones</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pred&#39;</span><span class="p">])</span>
+<span class="n">predicciones_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># predicciones de las primeras 5 lineas</span>
 </pre></div>
 
     </div>
@@ -715,7 +714,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Calculando el desvio</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando el desvio</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">target</span> <span class="o">-</span> <span class="n">predicciones</span><span class="p">)</span>
 </pre></div>
 
@@ -768,7 +767,7 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando un dataset de ejemplo </span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_classification</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
@@ -785,20 +784,20 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando el modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando el modelo</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
 
-<span class="n">rlog</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span> <span class="c"># Creando el modelo</span>
+<span class="n">rlog</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span> <span class="c1"># Creando el modelo</span>
 
-<span class="c"># Dividiendo el dataset en entrenamiento y evaluacion</span>
+<span class="c1"># Dividiendo el dataset en entrenamiento y evaluacion</span>
 <span class="n">X_entrenamiento</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="mi">200</span><span class="p">]</span>
 <span class="n">X_evaluacion</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">:]</span>
 <span class="n">y_entrenamiento</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">200</span><span class="p">]</span>
 <span class="n">y_evaluacion</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">:]</span>
 
-<span class="n">rlog</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_entrenamiento</span><span class="p">,</span> <span class="n">y_entrenamiento</span><span class="p">)</span> <span class="c">#ajustando el modelo</span>
+<span class="n">rlog</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_entrenamiento</span><span class="p">,</span> <span class="n">y_entrenamiento</span><span class="p">)</span> <span class="c1">#ajustando el modelo</span>
 
-<span class="c"># Realizando las predicciones</span>
+<span class="c1"># Realizando las predicciones</span>
 <span class="n">y_predic_entrenamiento</span> <span class="o">=</span> <span class="n">rlog</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_entrenamiento</span><span class="p">)</span> 
 <span class="n">y_predic_evaluacion</span> <span class="o">=</span> <span class="n">rlog</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_evaluacion</span><span class="p">)</span>
 </pre></div>
@@ -815,11 +814,11 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Verificando la exactitud del modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Verificando la exactitud del modelo</span>
 <span class="n">entrenamiento</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_predic_entrenamiento</span> <span class="o">==</span> <span class="n">y_entrenamiento</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">y_entrenamiento</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;sobre datos de entrenamiento: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sobre datos de entrenamiento: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">))</span>
 <span class="n">evaluacion</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_predic_evaluacion</span> <span class="o">==</span> <span class="n">y_evaluacion</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">y_evaluacion</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;sobre datos de evaluación: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sobre datos de evaluación: {0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -866,22 +865,22 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando un dataset de ejemplo</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="c"># Importando el arbol de decisión</span>
+<span class="c1"># Importando el arbol de decisión</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">tree</span>
 
-<span class="n">ad</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c"># Creando el modelo</span>
-<span class="n">ad</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c"># Ajustando el modelo</span>
+<span class="n">ad</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Creando el modelo</span>
+<span class="n">ad</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
 
-<span class="c">#generando archivo para graficar el arbol</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;mi_arbol.dot&quot;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_dot</span><span class="p">:</span>
+<span class="c1">#generando archivo para graficar el arbol</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mi_arbol.dot&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_dot</span><span class="p">:</span>
     <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">ad</span><span class="p">,</span> <span class="n">out_file</span> <span class="o">=</span> <span class="n">archivo_dot</span><span class="p">)</span>
 </pre></div>
 
@@ -897,7 +896,7 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># utilizando el lenguaje dot para graficar el arbol.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># utilizando el lenguaje dot para graficar el arbol.</span>
 <span class="o">!</span>dot -Tjpeg mi_arbol.dot -o arbol_decision.jpeg
 </pre></div>
 
@@ -920,12 +919,12 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando la precisión</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">ad</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># verificando la precisión</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">ad</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -939,7 +938,7 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre class="ipynb">precisión del modelo:  0.92
+<pre class="ipynb">precisión del modelo:  0.94
 </pre>
 </div>
 </div>
@@ -976,17 +975,17 @@ Con <a href="http://python.org/">Python</a> los podemos utilizar de la siguiente
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando un dataset de ejemplo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando un dataset de ejemplo</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="c"># Importando el random forest</span>
+<span class="c1"># Importando el random forest</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
 
-<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span> <span class="c"># Creando el modelo</span>
-<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c"># Ajustando el modelo</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span> <span class="c1"># Creando el modelo</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
 
-<span class="c"># verificando la precisión</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="c1"># verificando la precisión</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión del modelo: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -1026,38 +1025,38 @@ del plano maximiza el margen entre los puntos más cercanos en el plano; éstos 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importanto SVM</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importanto SVM</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
 
-<span class="c"># importando el dataset iris</span>
+<span class="c1"># importando el dataset iris</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># solo tomamos las primeras 2 características</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># solo tomamos las primeras 2 características</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mi">02</span>  <span class="c"># tamaño de la malla del grafico</span>
+<span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mi">02</span>  <span class="c1"># tamaño de la malla del grafico</span>
 
-<span class="c"># Creando el SVM con sus diferentes métodos</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c"># parametro de regulacion SVM </span>
-<span class="n">svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">rbf_svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">poly_svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#39;poly&#39;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># Creando el SVM con sus diferentes métodos</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># parametro de regulacion SVM </span>
+<span class="n">svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">rbf_svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">poly_svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">lin_svc</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-<span class="c"># crear el area para graficar</span>
+<span class="c1"># crear el area para graficar</span>
 <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span>
                      <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
 
-<span class="c"># titulos de los graficos</span>
-<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;SVC con el motor lineal&#39;</span><span class="p">,</span>
-          <span class="s">&#39;LinearSVC&#39;</span><span class="p">,</span>
-          <span class="s">&#39;SVC con el motor RBF&#39;</span><span class="p">,</span>
-          <span class="s">&#39;SVC con el motor polinomial&#39;</span><span class="p">]</span>
+<span class="c1"># titulos de los graficos</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SVC con el motor lineal&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;LinearSVC&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;SVC con el motor RBF&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;SVC con el motor polinomial&#39;</span><span class="p">]</span>
 
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">clf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="n">svc</span><span class="p">,</span> <span class="n">lin_svc</span><span class="p">,</span> <span class="n">rbf_svc</span><span class="p">,</span> <span class="n">poly_svc</span><span class="p">)):</span>
-    <span class="c"># Realizando el gráfico, se le asigna un color a cada punto</span>
+    <span class="c1"># Realizando el gráfico, se le asigna un color a cada punto</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 
@@ -1066,10 +1065,10 @@ del plano maximiza el margen entre los puntos más cercanos en el plano; éstos 
     <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 
-    <span class="c"># Graficando tambien los puntos de datos</span>
+    <span class="c1"># Graficando tambien los puntos de datos</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;largo del petalo&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;ancho del petalo&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;largo del petalo&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ancho del petalo&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">xx</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">yy</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
@@ -1936,7 +1935,7 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset iris</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando el dataset iris</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
@@ -1956,10 +1955,10 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;sepal length (cm)&apos;,
- &apos;sepal width (cm)&apos;,
- &apos;petal length (cm)&apos;,
- &apos;petal width (cm)&apos;]</pre>
+<pre class="ipynb">[&#39;sepal length (cm)&#39;,
+ &#39;sepal width (cm)&#39;,
+ &#39;petal length (cm)&#39;,
+ &#39;petal width (cm)&#39;]</pre>
 </div>
 
 </div>
@@ -1974,14 +1973,14 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KNN </span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando KNN </span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsRegressor</span>
 
-<span class="n">knnr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c"># Creando el modelo con 10 vecinos</span>
-<span class="n">knnr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c"># Ajustando el modelo</span>
+<span class="n">knnr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Creando el modelo con 10 vecinos</span>
+<span class="n">knnr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
 
-<span class="c"># Verificando el error medio del modelo</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;El error medio del modelo es: {:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">knnr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">),</span>
+<span class="c1"># Verificando el error medio del modelo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El error medio del modelo es: {:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">knnr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">),</span>
 <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 
@@ -2022,20 +2021,20 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Creando el dataset</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando el dataset</span>
 <span class="n">grupos</span><span class="p">,</span> <span class="n">pos_correcta</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_blobs</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
 <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.75</span><span class="p">)</span>
 
-<span class="c"># Graficando los grupos de datos</span>
+<span class="c1"># Graficando los grupos de datos</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">grupos</span><span class="p">[</span><span class="n">pos_correcta</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-               <span class="n">label</span><span class="o">=</span><span class="s">&quot;Grupo {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+               <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Grupo {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&quot;Agrupamiento perfecto&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Agrupamiento perfecto&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2548,12 +2547,12 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando KMeans</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando KMeans</span>
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">KMeans</span>
 
-<span class="c"># Creando el modelo</span>
+<span class="c1"># Creando el modelo</span>
 <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">grupos</span><span class="p">)</span> <span class="c"># Ajustando el modelo</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">grupos</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
 </pre></div>
 
     </div>
@@ -2569,8 +2568,8 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">KMeans(copy_x=True, init=&apos;k-means++&apos;, max_iter=300, n_clusters=3, n_init=10,
-    n_jobs=1, precompute_distances=&apos;auto&apos;, random_state=None, tol=0.0001,
+<pre class="ipynb">KMeans(copy_x=True, init=&#39;k-means++&#39;, max_iter=300, n_clusters=3, n_init=10,
+    n_jobs=1, precompute_distances=&#39;auto&#39;, random_state=None, tol=0.0001,
     verbose=0)</pre>
 </div>
 
@@ -2586,7 +2585,7 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># verificando los centros de los grupos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># verificando los centros de los grupos</span>
 <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
 </pre></div>
 
@@ -2620,19 +2619,19 @@ WCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiipR42VoiiKknrUWCmKoiip5/8Dm3dM
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Graficando segun modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando segun modelo</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">grupos</span><span class="p">[</span><span class="n">pos_correcta</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-               <span class="n">label</span><span class="o">=</span><span class="s">&quot;Grupo {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+               <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Grupo {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
-           <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Centros&#39;</span><span class="p">)</span>
+           <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Centros&#39;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&quot;Agrupamiento s/modelo&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Agrupamiento s/modelo&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    
@@ -3218,6 +3217,9 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -3228,9 +3230,6 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -3246,7 +3245,7 @@ FEVREo8GK0VRFCXx/H9z9yAbRnT/GAAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>

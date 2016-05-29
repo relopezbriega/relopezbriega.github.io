@@ -181,9 +181,8 @@ init_mathjax = function() {
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
             displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
+            "HTML-CSS": { linebreaks: { automatic: true } },
+             SVG: { linebreaks: { automatic: true } }
         });
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
@@ -306,7 +305,7 @@ jQuery(document).ready(function($) {
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importando las librerías que vamos a utilizar</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando las librerías que vamos a utilizar</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
@@ -317,12 +316,12 @@ jQuery(document).ready(function($) {
 <span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">RFE</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">ExtraTreesClassifier</span>
 
-<span class="c"># graficos incrustados</span>
+<span class="c1"># graficos incrustados</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="c"># parametros esteticos de seaborn</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s">&quot;deep&quot;</span><span class="p">,</span> <span class="n">desat</span><span class="o">=.</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)})</span>
+<span class="c1"># parametros esteticos de seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;deep&quot;</span><span class="p">,</span> <span class="n">desat</span><span class="o">=.</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)})</span>
 </pre></div>
 
 </div>
@@ -337,12 +336,12 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importando el dataset preprocesado.</span>
-<span class="n">ONG_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;LEARNING_procesado.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando el dataset preprocesado.</span>
+<span class="n">ONG_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;LEARNING_procesado.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c"># Agregando la columna AGE2</span>
-<span class="n">AGE2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE&#39;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AGE2</span>
+<span class="c1"># Agregando la columna AGE2</span>
+<span class="n">AGE2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;AGE&#39;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;AGE2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AGE2</span>
 </pre></div>
 
     </div>
@@ -357,7 +356,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Eliminar columnas con donaciones superiores a 60 (atípicos)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Eliminar columnas con donaciones superiores a 60 (atípicos)</span>
 <span class="n">ONG_data</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">]</span>
 </pre></div>
 
@@ -373,14 +372,14 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Convertir datos categoricos a numericos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Convertir datos categoricos a numericos</span>
 <span class="n">tipos</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
-<span class="n">ctext</span> <span class="o">=</span> <span class="n">tipos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&#39;object&#39;</span><span class="p">)]</span>
+<span class="n">ctext</span> <span class="o">=</span> <span class="n">tipos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">)]</span>
 
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ctext</span><span class="p">:</span>
     <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
 
-<span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;AGE2&#39;</span><span class="p">])</span>
+<span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;AGE2&#39;</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;AGE2&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -406,10 +405,10 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Separamos las columnas objetivo</span>
-<span class="n">donor_flag</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_FLAG&#39;</span><span class="p">]</span>
-<span class="n">donor_amount</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span>
-<span class="n">indice</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;IDX&#39;</span><span class="p">]</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Separamos las columnas objetivo</span>
+<span class="n">donor_flag</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;DONOR_FLAG&#39;</span><span class="p">]</span>
+<span class="n">donor_amount</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;IDX&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -424,9 +423,9 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Aplicando el algoritmo univariante de prueba F.</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c"># número de atributos a seleccionar</span>
-<span class="n">entrenar</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;DONOR_FLAG&#39;</span><span class="p">,</span> <span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">,</span> <span class="s">&#39;IDX&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Aplicando el algoritmo univariante de prueba F.</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># número de atributos a seleccionar</span>
+<span class="n">entrenar</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;DONOR_FLAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">,</span> <span class="s1">&#39;IDX&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">columnas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">entrenar</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">seleccionadas</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
 <span class="n">atrib</span> <span class="o">=</span> <span class="n">seleccionadas</span><span class="o">.</span><span class="n">get_support</span><span class="p">()</span>
@@ -447,21 +446,21 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;ODATEDW&apos;,
- &apos;PEPSTRFL&apos;,
- &apos;HVP3&apos;,
- &apos;CARDPROM&apos;,
- &apos;NUMPROM&apos;,
- &apos;RAMNT_8&apos;,
- &apos;RAMNT_16&apos;,
- &apos;NGIFTALL&apos;,
- &apos;CARDGIFT&apos;,
- &apos;LASTGIFT&apos;,
- &apos;LASTDATE&apos;,
- &apos;FISTDATE&apos;,
- &apos;AVGGIFT&apos;,
- &apos;RFA_2F&apos;,
- &apos;RFA_2A&apos;]</pre>
+<pre class="ipynb">[&#39;ODATEDW&#39;,
+ &#39;PEPSTRFL&#39;,
+ &#39;HVP3&#39;,
+ &#39;CARDPROM&#39;,
+ &#39;NUMPROM&#39;,
+ &#39;RAMNT_8&#39;,
+ &#39;RAMNT_16&#39;,
+ &#39;NGIFTALL&#39;,
+ &#39;CARDGIFT&#39;,
+ &#39;LASTGIFT&#39;,
+ &#39;LASTDATE&#39;,
+ &#39;FISTDATE&#39;,
+ &#39;AVGGIFT&#39;,
+ &#39;RFA_2F&#39;,
+ &#39;RFA_2A&#39;]</pre>
 </div>
 
 </div>
@@ -488,9 +487,9 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Algoritmo de Eliminación Recursiva de atributos con ExtraTrees</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Algoritmo de Eliminación Recursiva de atributos con ExtraTrees</span>
 <span class="n">modelo</span> <span class="o">=</span> <span class="n">ExtraTreesClassifier</span><span class="p">()</span>
-<span class="n">era</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="c"># número de atributos a seleccionar</span>
+<span class="n">era</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="c1"># número de atributos a seleccionar</span>
 <span class="n">era</span> <span class="o">=</span> <span class="n">era</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
 </pre></div>
 
@@ -506,7 +505,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># imprimir resultados</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># imprimir resultados</span>
 <span class="n">atrib</span> <span class="o">=</span> <span class="n">era</span><span class="o">.</span><span class="n">support_</span>
 <span class="n">atributos</span> <span class="o">=</span> <span class="p">[</span><span class="n">columnas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">atrib</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">])]</span>
 <span class="n">atributos</span>
@@ -525,21 +524,21 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre class="ipynb">[&apos;OSOURCE&apos;,
- &apos;ZIP&apos;,
- &apos;VIETVETS&apos;,
- &apos;WWIIVETS&apos;,
- &apos;POP901&apos;,
- &apos;HV1&apos;,
- &apos;PEC2&apos;,
- &apos;TPE13&apos;,
- &apos;EIC4&apos;,
- &apos;EIC14&apos;,
- &apos;VC2&apos;,
- &apos;CARDPROM&apos;,
- &apos;MINRDATE&apos;,
- &apos;MAXRDATE&apos;,
- &apos;TIMELAG&apos;]</pre>
+<pre class="ipynb">[&#39;OSOURCE&#39;,
+ &#39;ZIP&#39;,
+ &#39;VIETVETS&#39;,
+ &#39;WWIIVETS&#39;,
+ &#39;POP901&#39;,
+ &#39;HV1&#39;,
+ &#39;PEC2&#39;,
+ &#39;TPE13&#39;,
+ &#39;EIC4&#39;,
+ &#39;EIC14&#39;,
+ &#39;VC2&#39;,
+ &#39;CARDPROM&#39;,
+ &#39;MINRDATE&#39;,
+ &#39;MAXRDATE&#39;,
+ &#39;TIMELAG&#39;]</pre>
 </div>
 
 </div>
@@ -566,7 +565,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Importancia de atributos.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importancia de atributos.</span>
 <span class="n">modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">entrenar</span><span class="p">,</span> <span class="n">donor_flag</span><span class="p">)</span>
 <span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span>
 </pre></div>
@@ -603,7 +602,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># 15 coeficientes más altos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># 15 coeficientes más altos</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">15</span><span class="p">]</span>
 </pre></div>
 
@@ -647,9 +646,9 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Probabilidad de ser donante de todo el dataset.</span>
-<span class="n">prob_gral</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
-                   <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Probabilidad de ser donante de todo el dataset.</span>
+<span class="n">prob_gral</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
+                   <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
 <span class="n">prob_gral</span> 
 </pre></div>
 
@@ -681,10 +680,10 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Probabilidad de realizar donanción con LASTGIFT &lt;= 10</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Probabilidad de realizar donanción con LASTGIFT &lt;= 10</span>
 <span class="n">lastgift10</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
-                            <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
-      <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
+                            <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  \
+      <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
 <span class="n">lastgift10</span>
 </pre></div>
 
@@ -716,10 +715,10 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando los resultados</span>
-<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s">&#39;promedio gral&#39;</span><span class="p">:</span> <span class="n">prob_gral</span><span class="p">,</span> <span class="s">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10</span><span class="p">})</span>
-<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;barh&#39;</span><span class="p">,</span> 
-                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Pobabilidad de donar&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando los resultados</span>
+<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;promedio gral&#39;</span><span class="p">:</span> <span class="n">prob_gral</span><span class="p">,</span> <span class="s1">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10</span><span class="p">})</span>
+<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Pobabilidad de donar&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -851,8 +850,8 @@ AxjxG4r+65+SJKmYtzYkSVIxg4QkSSpmkJAkScUMEpIkqZhBQpIkFTNISJKkYgYJSZJUzCAhSZKK
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importe promedio de donación general</span>
-<span class="n">donacion_prom</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importe promedio de donación general</span>
+<span class="n">donacion_prom</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">donacion_prom</span>
 </pre></div>
 
@@ -884,9 +883,9 @@ AxjxG4r+65+SJKmYtzYkSVIxg4QkSSpmkJAkScUMEpIkqZhBQpIkFTNISJKkYgYJSZJUzCAhSZKK
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># importe promedio de donación lastgift &lt;= 10</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importe promedio de donación lastgift &lt;= 10</span>
 <span class="n">lastgift10_imp</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> 
-                         <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                         <span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">LASTGIFT</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">lastgift10_imp</span>
 </pre></div>
 
@@ -918,12 +917,12 @@ AxjxG4r+65+SJKmYtzYkSVIxg4QkSSpmkJAkScUMEpIkqZhBQpIkFTNISJKkYgYJSZJUzCAhSZKK
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># graficando los resultados</span>
-<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s">&#39;imp promedio gral&#39;</span><span class="p">:</span> <span class="n">donacion_prom</span><span class="p">,</span> 
-                      <span class="s">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10_imp</span><span class="p">})</span>
-<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;barh&#39;</span><span class="p">,</span> 
-                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">]</span>
-                  <span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;importe promedio de donación&#39;</span><span class="p">)</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando los resultados</span>
+<span class="n">lastgift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;imp promedio gral&#39;</span><span class="p">:</span> <span class="n">donacion_prom</span><span class="p">,</span> 
+                      <span class="s1">&#39;lastgift&lt;=10&#39;</span><span class="p">:</span> <span class="n">lastgift10_imp</span><span class="p">})</span>
+<span class="n">plot</span><span class="o">=</span><span class="n">lastgift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+                  <span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;importe promedio de donación&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1117,6 +1116,9 @@ YII=
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
       <li class="post">
@@ -1127,9 +1129,6 @@ YII=
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Más Álgebra lineal con Python</a>
       </li>
     </ul>
   </section>
@@ -1145,7 +1144,7 @@ YII=
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>  </section>
 
 
     <section>
