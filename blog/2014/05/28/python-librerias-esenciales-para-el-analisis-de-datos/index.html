@@ -310,7 +310,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
     </div>
@@ -453,9 +453,9 @@ propósitos principales con respecto al análisis de datos es la utilización de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Los objetos ndarray de Numpy cuentan con las propiedades shape y size que nos muestran sus dimensiones.</span>
-<span class="k">print</span> <span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vector</span><span class="o">.</span><span class="n">size</span>
+<span class="nb">print</span> <span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vector</span><span class="o">.</span><span class="n">size</span>
 
-<span class="k">print</span> <span class="n">matriz</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">matriz</span><span class="o">.</span><span class="n">size</span>
+<span class="nb">print</span> <span class="n">matriz</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">matriz</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 
     </div>
@@ -815,7 +815,7 @@ propósitos principales con respecto al análisis de datos es la utilización de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">#Generalmente se suele importar matplotlib de la siguiente forma.</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
     </div>
@@ -878,7 +878,7 @@ $$f(x) = e^{-x^2}$$
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Funcion $f(x)$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Función f(x)&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -1087,7 +1087,7 @@ gg==
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#variable para modificar el color(color)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
@@ -2189,7 +2189,7 @@ RERERERERBL2/+8+peDjQeJcAAAAAElFTkSuQmCC
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando pandas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
     </div>
@@ -2252,8 +2252,8 @@ dtype: int64</pre>
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># podemos ver tantos los índices como los valores de las Series.</span>
-<span class="k">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">values</span>
-<span class="k">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">index</span>
+<span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">print</span> <span class="n">serie</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 
     </div>
@@ -2321,9 +2321,9 @@ dtype: int64</pre>
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Accediendo a los datos a través de los índices</span>
-<span class="k">print</span> <span class="n">serie2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">serie2</span><span class="p">[[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]]</span>
-<span class="k">print</span> <span class="n">serie2</span><span class="p">[</span><span class="n">serie2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">serie2</span><span class="p">[[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]]</span>
+<span class="nb">print</span> <span class="n">serie2</span><span class="p">[</span><span class="n">serie2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -2452,7 +2452,7 @@ dtype: int64
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando un DataFrame desde un archivo.</span>
-<span class="err">!</span><span class="n">cat</span> <span class="s1">&#39;dataset.csv&#39;</span> <span class="c1"># ejemplo archivo csv.</span>
+<span class="o">!</span>cat <span class="s1">&#39;dataset.csv&#39;</span> # ejemplo archivo csv.
 </pre></div>
 
     </div>
@@ -2813,6 +2813,9 @@ Name: 1, dtype: object</pre>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2016/09/13/factorizacion-de-matrices-con-python/">Factorización de Matrices con Python</a>
+      </li>
+      <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/">Redes neuronales convolucionales con TensorFlow</a>
       </li>
       <li class="post">
@@ -2823,9 +2826,6 @@ Name: 1, dtype: object</pre>
       </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Machine Learning con Python - Sobreajuste</a>
-      </li>
-      <li class="post">
-          <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Ejemplo de Machine Learning con Python - Selección de atributos</a>
       </li>
     </ul>
   </section>
@@ -2841,7 +2841,7 @@ Name: 1, dtype: object</pre>
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>  </section>
 
 
     <section>
