@@ -172,7 +172,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -299,7 +299,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando modulos necesarios</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando modulos necesarios</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="kn">as</span> <span class="nn">sp</span>
@@ -332,7 +332,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo factorización LU</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo factorización LU</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
              <span class="p">,[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
              <span class="p">,[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -352,7 +352,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz A</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz A</span>
 <span class="n">A</span>
 </pre></div>
 
@@ -365,7 +365,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -387,7 +389,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz de permutación</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz de permutación</span>
 <span class="n">P</span>
 </pre></div>
 
@@ -400,7 +402,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -422,7 +426,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz triangular inferior</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz triangular inferior</span>
 <span class="n">L</span>
 </pre></div>
 
@@ -435,7 +439,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -457,7 +463,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz triangular superior</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz triangular superior</span>
 <span class="n">U</span>
 </pre></div>
 
@@ -470,7 +476,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -492,7 +500,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># A = LU</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># A = LU</span>
 <span class="n">L</span> <span class="o">@</span> <span class="n">U</span> 
 </pre></div>
 
@@ -505,7 +513,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -538,7 +548,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo factorización QR</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo factorización QR</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],</span>
               <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>  
@@ -557,7 +567,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz A</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz A</span>
 <span class="n">A</span>
 </pre></div>
 
@@ -570,7 +580,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -591,7 +603,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz ortogonal Q</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz ortogonal Q</span>
 <span class="n">Q</span>
 </pre></div>
 
@@ -604,7 +616,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -625,7 +639,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz triangular superior R</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz triangular superior R</span>
 <span class="n">R</span>
 </pre></div>
 
@@ -638,7 +652,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -659,7 +675,7 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># A = QR</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># A = QR</span>
 <span class="n">Q</span> <span class="o">@</span> <span class="n">R</span>
 </pre></div>
 
@@ -672,7 +688,9 @@ $$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -706,7 +724,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo matriz dispersa con scipy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo matriz dispersa con scipy</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diags</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;csc&#39;</span><span class="p">)</span>
 <span class="n">A</span>
 </pre></div>
@@ -720,7 +738,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -740,7 +760,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="o">.</span><span class="n">data</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="n">A</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 
     </div>
@@ -752,7 +772,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -773,7 +795,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="o">.</span><span class="n">indices</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="n">A</span><span class="o">.</span><span class="n">indices</span>
 </pre></div>
 
     </div>
@@ -785,7 +807,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -805,7 +829,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="o">.</span><span class="n">indptr</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="n">A</span><span class="o">.</span><span class="n">indptr</span>
 </pre></div>
 
     </div>
@@ -817,7 +841,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -836,7 +862,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -848,7 +874,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -895,7 +923,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo SVD con scipy.linalg.svd</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo SVD con scipy.linalg.svd</span>
 <span class="c1"># Matriz A a factorizar</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
              <span class="p">,[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -913,7 +941,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -935,7 +965,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Factorización con svd</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Factorización con svd</span>
 <span class="c1"># svd factoriza la matriz A  en dos matrices unitarias U y Vh, y una </span>
 <span class="c1"># matriz s de valores singulares (reales, no negativo) de tal manera que</span>
 <span class="c1"># A == U * S * Vh, donde S es una matriz con s como principal diagonal y ceros</span>
@@ -952,7 +982,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -971,7 +1003,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz unitaria</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz unitaria</span>
 <span class="n">U</span>
 </pre></div>
 
@@ -984,7 +1016,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1006,7 +1040,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Valores singulares</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Valores singulares</span>
 <span class="n">s</span>
 </pre></div>
 
@@ -1019,7 +1053,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1038,7 +1074,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Matriz unitaria</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Matriz unitaria</span>
 <span class="n">Vh</span>
 </pre></div>
 
@@ -1051,7 +1087,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1071,7 +1109,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Generando S</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Generando S</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">diagsvd</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">S</span>
 </pre></div>
@@ -1085,7 +1123,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[23]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1107,7 +1147,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Reconstruyendo la Matriz A.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Reconstruyendo la Matriz A.</span>
 <span class="n">U</span> <span class="o">@</span> <span class="n">S</span> <span class="o">@</span> <span class="n">Vh</span>
 </pre></div>
 
@@ -1120,7 +1160,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1166,7 +1208,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo svd con iris dataset</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo svd con iris dataset</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1181,14 +1223,18 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">(150, 5)
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[25]:</div>
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1261,7 +1307,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Aplicando svd</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Aplicando svd</span>
 <span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svds</span><span class="p">((</span><span class="n">iris</span> <span class="o">-</span> <span class="n">iris</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1277,7 +1323,7 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando los componentes principales</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Creando los componentes principales</span>
 <span class="n">pc</span> <span class="o">=</span> <span class="n">U</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">pc</span> <span class="o">=</span> <span class="n">pc</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
@@ -1298,7 +1344,9 @@ es un problema importante en la investigación. En <a href="http://relopezbriega
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1716,7 +1764,7 @@ AQAAYIQlbwAAABghUAIAAMAIgRIAAABGCJQAAAAwQqAEAACAEQIlAAAAjBAoAQAAYOS/jxlSadF7
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de PCA con Scikit-Learn e Iris dataset</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo de PCA con Scikit-Learn e Iris dataset</span>
 
 <span class="c1"># Divido el dataset en datos y clases</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -1753,7 +1801,9 @@ AQAAYIQlbwAAABghUAIAAMAIgRIAAABGCJQAAAAwQqAEAACAEQIlAAAAjBAoAQAAYOS/jxlSadF7
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2112,7 +2162,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo en python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo en python</span>
 <span class="c1"># Matriz de ratings de los usuarios</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
              <span class="p">,[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -2133,7 +2183,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Armado del modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Armado del modelo</span>
 <span class="n">modelo</span> <span class="o">=</span> <span class="n">NMF</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1982</span><span class="p">,</span> 
             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.0002</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
 <span class="n">U</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> 
@@ -2152,7 +2202,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Reconstrucción de la matriz</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Reconstrucción de la matriz</span>
 <span class="n">U</span> <span class="o">@</span> <span class="n">V</span>
 </pre></div>
 
@@ -2165,7 +2215,9 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[31]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2188,7 +2240,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Error del modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Error del modelo</span>
 <span class="n">modelo</span><span class="o">.</span><span class="n">reconstruction_err_</span>
 </pre></div>
 
@@ -2201,7 +2253,9 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[32]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2220,9 +2274,9 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo utilizando nimfa</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo utilizando nimfa</span>
 <span class="n">snmf</span> <span class="o">=</span> <span class="n">nimfa</span><span class="o">.</span><span class="n">Snmf</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="s2">&quot;random_vcol&quot;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
-                      <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">i_conv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">w_min_change</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                      <span class="n">beta</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">i_conv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">w_min_change</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2237,7 +2291,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Armando el modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Armando el modelo</span>
 <span class="n">fit</span> <span class="o">=</span> <span class="n">snmf</span><span class="p">()</span>
 <span class="n">U</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">basis</span><span class="p">()</span>
 <span class="n">V</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">coef</span><span class="p">()</span>
@@ -2255,7 +2309,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Reconstruyendo la matriz</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Reconstruyendo la matriz</span>
 <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">U</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -2268,7 +2322,9 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2304,7 +2360,10 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div></p></div>
+</div>
+ 
+
+</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2362,7 +2421,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=738f6d2d17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=3ac2a9a7c0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h1>Subscribe to my mailing list</h1>
   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -2414,7 +2473,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>  </section>
 
 
     <section>
@@ -2442,7 +2501,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Raul E. Lopez Briega -
+  Copyright &copy; 2017 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

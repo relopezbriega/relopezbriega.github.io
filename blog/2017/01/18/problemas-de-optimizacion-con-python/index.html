@@ -172,7 +172,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -366,7 +366,7 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando modulos necesarios</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando modulos necesarios</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
@@ -393,7 +393,7 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo mínimos cuadrados no lineales utilizando scipy.optimize</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo mínimos cuadrados no lineales utilizando scipy.optimize</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1"># funcion modelo</span>
@@ -424,7 +424,9 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -443,14 +445,14 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficamos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># graficamos</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="o">*</span><span class="n">beta_opt</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">r&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">r&quot;$f(x, \beta)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x, \beta)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mínimos cuadrados no lineales&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -464,7 +466,9 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -860,7 +864,7 @@ $$<p>Este tipo de problema se puede resolver utilizando el método <a href="http
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de optimización con restricciones scipy</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo de optimización con restricciones scipy</span>
 
 <span class="c1"># defino una funcion de ayuda para subregion en el gráfico</span>
 <span class="k">def</span> <span class="nf">func_X_Y_to_XY</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
@@ -894,8 +898,8 @@ $$<p>Este tipo de problema se puede resolver utilizando el método <a href="http
 <span class="n">bnd_x1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bnd_x1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bnd_x2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bnd_x2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
 <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">bound_rect</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">r&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">r&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Optimización con restricciones&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -910,7 +914,9 @@ $$<p>Este tipo de problema se puede resolver utilizando el método <a href="http
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -6391,7 +6397,7 @@ Para resolver este problema <a href="https://docs.scipy.org/doc/scipy-0.18.1/ref
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo scipy SLSQP</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo scipy SLSQP</span>
 <span class="c1"># funcion de restriccion</span>
 <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.75</span> <span class="o">-</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.75</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span>
@@ -6414,8 +6420,8 @@ Para resolver este problema <a href="https://docs.scipy.org/doc/scipy-0.18.1/ref
 <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="mf">1.75</span> <span class="o">+</span> <span class="p">(</span><span class="n">x_</span><span class="o">-</span><span class="mf">0.75</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_cons_opt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_cons_opt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">r&quot;$x_0$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">r&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_0$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -6429,7 +6435,9 @@ Para resolver este problema <a href="https://docs.scipy.org/doc/scipy-0.18.1/ref
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -11922,7 +11930,7 @@ $$
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo programación lineal con CVXopt</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo programación lineal con CVXopt</span>
 
 <span class="c1"># Resolviendo el problema con cvxopt</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">cvxopt</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="c1"># columna de x1</span>
@@ -11943,7 +11951,9 @@ $$
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">     pcost       dcost       gap    pres   dres   k/t
  0: -2.5472e+04 -3.6797e+04  5e+03  0e+00  3e-01  1e+00
@@ -11966,8 +11976,8 @@ Optimal solution found.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># imprimiendo la solucion.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;{0:.2f}, {1:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span><span class="p">,</span> <span class="n">sol</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span><span class="p">))</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># imprimiendo la solucion.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">, </span><span class="si">{1:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span><span class="p">,</span> <span class="n">sol</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -11979,7 +11989,9 @@ Optimal solution found.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">375.00, 250.00
 </pre>
@@ -11996,13 +12008,13 @@ Optimal solution found.
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Resolviendo la optimizacion graficamente.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Resolviendo la optimizacion graficamente.</span>
 <span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 10 valores entre 0 y 800</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="p">((</span><span class="mi">750</span> <span class="o">-</span> <span class="n">x_vals</span><span class="p">)</span><span class="o">/</span><span class="mf">1.5</span><span class="p">)</span> <span class="c1"># x1 + 1.5x2 = 750</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x_vals</span><span class="p">)</span> <span class="c1"># 2x1 + x2 = 1000</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">r&#39;$x_1 + 1.5x_2 \leq 750$&#39;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">r&#39;$2x_1 + x_2 \leq 1000$&#39;</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$x_1 + 1.5x_2 \leq 750$&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$2x_1 + x_2 \leq 1000$&#39;</span><span class="p">)</span> <span class="c1">#</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">375</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="s1">&#39;b*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
 <span class="c1"># Región factible</span>
@@ -12023,7 +12035,9 @@ Optimal solution found.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -12509,7 +12523,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando PuLP</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando PuLP</span>
 <span class="c1"># Creamos la variable prob que contiene los datos del problema</span>
 <span class="n">prob</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Problema de distribución de cerveza&quot;</span><span class="p">,</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpMinimize</span><span class="p">)</span>
 </pre></div>
@@ -12526,7 +12540,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creamos lista de cervecerías o nodos de oferta</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Creamos lista de cervecerías o nodos de oferta</span>
 <span class="n">cervecerias</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cervecería A&quot;</span><span class="p">,</span> <span class="s2">&quot;Cervercería B&quot;</span><span class="p">]</span>
 
 <span class="c1"># diccionario con la capacidad de oferta de cada cerveceria</span>
@@ -12569,7 +12583,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># creamos diccionario x que contendrá la candidad enviada en las rutas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># creamos diccionario x que contendrá la candidad enviada en las rutas</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s2">&quot;ruta&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">cervecerias</span><span class="p">,</span> <span class="n">bares</span><span class="p">),</span> 
                         <span class="n">lowBound</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                         <span class="n">cat</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpInteger</span><span class="p">)</span>
@@ -12595,14 +12609,14 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 
 <span class="c1"># Imprimimos el estado del problema.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pulp</span><span class="o">.</span><span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pulp</span><span class="o">.</span><span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">]))</span>
 
 <span class="c1"># Imprimimos cada variable con su solución óptima.</span>
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">prob</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;{0:} = {1:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:}</span><span class="s2"> = </span><span class="si">{1:}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
 
 <span class="c1"># Imprimimos el valor óptimo de la función objetivo   </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Costo total de transporte = {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="o">.</span><span class="n">value</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Costo total de transporte = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="o">.</span><span class="n">value</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -12614,7 +12628,9 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">Status: Optimal
 ruta_Cervecería_A_Bar_1 = 300.0
@@ -12653,7 +12669,7 @@ Costo total de transporte = 8600.0
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando Pyomo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando Pyomo</span>
 <span class="c1"># Creamos el modelo</span>
 <span class="n">modelo</span> <span class="o">=</span> <span class="n">ConcreteModel</span><span class="p">()</span>
 
@@ -12708,7 +12724,7 @@ Costo total de transporte = 8600.0
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">## Definimos las restricciones ##</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">## Definimos las restricciones ##</span>
 <span class="c1"># Límite de oferta</span>
 <span class="k">def</span> <span class="nf">f_oferta</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -12734,7 +12750,7 @@ Costo total de transporte = 8600.0
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1">## Definimos la función objetivo y resolvemos el problema ##</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">## Definimos la función objetivo y resolvemos el problema ##</span>
 <span class="c1"># Función objetivo</span>
 <span class="k">def</span> <span class="nf">f_objetivo</span><span class="p">(</span><span class="n">modelo</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">i</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
@@ -12763,7 +12779,9 @@ Costo total de transporte = 8600.0
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">
 Solución óptima encontrada
@@ -12810,7 +12828,10 @@ x : Cantidad de cajas
 
 </div>
 </div>
-</div></p></div>
+</div>
+ 
+
+</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -12868,7 +12889,7 @@ x : Cantidad de cajas
      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=738f6d2d17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=3ac2a9a7c0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h1>Subscribe to my mailing list</h1>
   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -12920,7 +12941,7 @@ x : Cantidad de cajas
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>  </section>
 
 
     <section>
@@ -12948,7 +12969,7 @@ x : Cantidad de cajas
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Raul E. Lopez Briega -
+  Copyright &copy; 2017 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

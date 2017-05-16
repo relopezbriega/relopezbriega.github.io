@@ -172,7 +172,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -322,7 +322,7 @@ jQuery(document).ready(function($) {
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando las librerías que vamos a utilizar</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Importando las librerías que vamos a utilizar</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
@@ -353,7 +353,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo en python - árboles de decisión</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo en python - árboles de decisión</span>
 <span class="c1"># dummy data con 100 atributos y 2 clases</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                           <span class="n">random_state</span><span class="o">=</span><span class="mi">1982</span><span class="p">)</span>
@@ -380,7 +380,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -402,8 +404,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># precisión del modelo en datos de entrenamiento.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión entranamiento: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># precisión del modelo en datos de entrenamiento.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión entranamiento: </span><span class="si">{0: .2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">arbol</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
 </pre></div>
 
@@ -416,7 +418,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">precisión entranamiento:  1.00
 </pre>
@@ -443,8 +447,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># precisión del modelo en datos de evaluación.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión evaluación: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># precisión del modelo en datos de evaluación.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión evaluación: </span><span class="si">{0: .2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">arbol</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_eval</span><span class="p">,</span> <span class="n">y_eval</span><span class="p">)))</span>
 </pre></div>
 
@@ -457,7 +461,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">precisión evaluación:  0.87
 </pre>
@@ -484,7 +490,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># profundidad del arbol de decisión.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># profundidad del arbol de decisión.</span>
 <span class="n">arbol</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">max_depth</span>
 </pre></div>
 
@@ -497,7 +503,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -526,7 +534,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># modelo dos, con control de profundiad de 5 nodos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># modelo dos, con control de profundiad de 5 nodos</span>
 <span class="n">arbol2</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Ajustando el modelo</span>
@@ -542,7 +550,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -564,8 +574,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># precisión del modelo en datos de entrenamiento.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión entranamiento: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># precisión del modelo en datos de entrenamiento.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión entranamiento: </span><span class="si">{0: .2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">arbol2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
 </pre></div>
 
@@ -578,7 +588,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">precisión entranamiento:  0.92
 </pre>
@@ -605,8 +617,8 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># precisión del modelo en datos de evaluación.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión evaluación: {0: .2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># precisión del modelo en datos de evaluación.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;precisión evaluación: </span><span class="si">{0: .2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">arbol2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_eval</span><span class="p">,</span> <span class="n">y_eval</span><span class="p">)))</span>
 </pre></div>
 
@@ -619,7 +631,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">precisión evaluación:  0.90
 </pre>
@@ -646,7 +660,7 @@ jQuery(document).ready(function($) {
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Grafico de ajuste del árbol de decisión</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Grafico de ajuste del árbol de decisión</span>
 <span class="n">train_prec</span> <span class="o">=</span>  <span class="p">[]</span>
 <span class="n">eval_prec</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">max_deep_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
@@ -676,7 +690,9 @@ jQuery(document).ready(function($) {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1025,7 +1041,7 @@ RU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># utilizando validation curve de sklearn</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># utilizando validation curve de sklearn</span>
 <span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="k">import</span> <span class="n">validation_curve</span>
 
 <span class="n">train_prec</span><span class="p">,</span> <span class="n">eval_prec</span> <span class="o">=</span> <span class="n">validation_curve</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">arbol</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">x_train</span><span class="p">,</span>
@@ -1050,7 +1066,7 @@ RU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando las curvas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># graficando las curvas</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">max_deep_list</span><span class="p">,</span> <span class="n">train_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s1">&#39;entrenamiento&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">max_deep_list</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">+</span> <span class="n">train_std</span><span class="p">,</span> 
@@ -1075,7 +1091,9 @@ RU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1482,7 +1500,7 @@ Cada iteración produce un modelo, y por lo tanto una estimación del rendimient
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo cross-validation</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo cross-validation</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">cross_validation</span>
 
 <span class="c1"># creando pliegues</span>
@@ -1494,11 +1512,11 @@ Cada iteración produce un modelo, y por lo tanto una estimación del rendimient
     <span class="n">arbol2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">train</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="n">train</span><span class="p">])</span> 
     <span class="n">score</span> <span class="o">=</span> <span class="n">arbol2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">test</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="n">test</span><span class="p">])</span>
     <span class="n">precision</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pliegue: {0:}, Dist Clase: {1:}, Prec: {2:.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pliegue: </span><span class="si">{0:}</span><span class="s1">, Dist Clase: </span><span class="si">{1:}</span><span class="s1">, Prec: </span><span class="si">{2:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
                         <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="n">train</span><span class="p">]),</span> <span class="n">score</span><span class="p">))</span>
 
 <span class="c1"># imprimir promedio y desvio estandar</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision promedio: {0: .3f} +/- {1: .3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision</span><span class="p">),</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision promedio: </span><span class="si">{0: .3f}</span><span class="s1"> +/- </span><span class="si">{1: .3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision</span><span class="p">),</span>
                                           <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">precision</span><span class="p">)))</span>
 </pre></div>
 
@@ -1511,7 +1529,9 @@ Cada iteración produce un modelo, y por lo tanto una estimación del rendimient
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">Pliegue: 1, Dist Clase: [2918 2931], Prec: 0.909
 Pliegue: 2, Dist Clase: [2918 2931], Prec: 0.896
@@ -1548,13 +1568,13 @@ Precision promedio:  0.898 +/-  0.014
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo con cross_val_score</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo con cross_val_score</span>
 <span class="n">precision</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">arbol2</span><span class="p">,</span>
                                             <span class="n">X</span><span class="o">=</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
                                             <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precisiones: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision promedio: {0: .3f} +/- {1: .3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision</span><span class="p">),</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precisiones: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision promedio: </span><span class="si">{0: .3f}</span><span class="s1"> +/- </span><span class="si">{1: .3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision</span><span class="p">),</span>
                                           <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">precision</span><span class="p">)))</span>
 </pre></div>
 
@@ -1567,7 +1587,9 @@ Precision promedio:  0.898 +/-  0.014
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">precisiones: [ 0.906298    0.89708141  0.89708141  0.91846154  0.89538462  0.91230769
   0.87076923  0.90755008  0.8844376   0.89060092]
@@ -1597,7 +1619,7 @@ Precision promedio:  0.898 +/-  0.013
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo Curvas de aprendizaje</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo Curvas de aprendizaje</span>
 <span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="k">import</span> <span class="n">learning_curve</span>
 
 <span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">arbol2</span><span class="p">,</span>
@@ -1623,7 +1645,7 @@ Precision promedio:  0.898 +/-  0.013
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># graficando las curvas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># graficando las curvas</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s1">&#39;entrenamiento&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">+</span> <span class="n">train_std</span><span class="p">,</span> 
@@ -1649,7 +1671,9 @@ Precision promedio:  0.898 +/-  0.013
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2033,7 +2057,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Ejemplo de grid search con SVM.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Ejemplo de grid search con SVM.</span>
 <span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="k">import</span> <span class="n">GridSearchCV</span>
 
 <span class="c1"># creación del modelo</span>
@@ -2064,7 +2088,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># imprimir resultados</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># imprimir resultados</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
 </pre></div>
@@ -2078,7 +2102,9 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">0.870461538462
 {&#39;C&#39;: 4.6415888336127775, &#39;gamma&#39;: 0.0046415888336127729}
@@ -2096,10 +2122,10 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># utilizando el mejor modelo</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># utilizando el mejor modelo</span>
 <span class="n">mejor_modelo</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">best_estimator_</span>
 <span class="n">mejor_modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precisión: {0:.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mejor_modelo</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_eval</span><span class="p">,</span> <span class="n">y_eval</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precisión: </span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mejor_modelo</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_eval</span><span class="p">,</span> <span class="n">y_eval</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -2111,7 +2137,9 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">Precisión: 0.864
 </pre>
@@ -2134,7 +2162,10 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div></p></div>
+</div>
+ 
+
+</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2190,7 +2221,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=738f6d2d17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=3ac2a9a7c0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h1>Subscribe to my mailing list</h1>
   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -2242,7 +2273,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>  </section>
 
 
     <section>
@@ -2270,7 +2301,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Raul E. Lopez Briega -
+  Copyright &copy; 2017 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

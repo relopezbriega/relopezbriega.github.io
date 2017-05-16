@@ -172,7 +172,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -297,7 +297,7 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando modulos necesarios</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando modulos necesarios</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -324,7 +324,7 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando histograma</span>
 <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span> <span class="c1"># media y desvio estandar</span>
 <span class="n">datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">#creando muestra de datos</span>
 
@@ -345,7 +345,9 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -543,7 +545,7 @@ Veamos un ejemplo con <a href="http://python.org/">Python</a>.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando FMP</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando FMP</span>
 <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.4</span> <span class="c1"># parametros de forma de la distribución binomial</span>
 <span class="n">n_1</span><span class="p">,</span> <span class="n">p_1</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.3</span> <span class="c1"># parametros de forma de la distribución binomial</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span>
@@ -571,7 +573,9 @@ Veamos un ejemplo con <a href="http://python.org/">Python</a>.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -955,7 +959,7 @@ nMpeRETE5P4frQslO5RKGJAAAAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Función de Distribución Acumulada con Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Función de Distribución Acumulada con Python</span>
 <span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
                   <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">fda_binom</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="c1"># Función de Distribución Acumulada</span>
@@ -978,7 +982,9 @@ nMpeRETE5P4frQslO5RKGJAAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1342,7 +1348,7 @@ Por ejemplo, para la <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_no
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Función de Densidad de Probibilidad con Python</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Función de Densidad de Probibilidad con Python</span>
 <span class="n">FDP_normal</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span> <span class="c1"># FDP</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">FDP_normal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FDP nomal&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Función de Densidad de Probabilidad&#39;</span><span class="p">)</span>
@@ -1360,7 +1366,9 @@ Por ejemplo, para la <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_no
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1745,7 +1753,7 @@ $$p(r; \mu) = \frac{\mu^r e^{-\mu}}{r!}$$<p>En dónde $r$ es un <a href="https:/
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Poisson</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Poisson</span>
 <span class="n">mu</span> <span class="o">=</span>  <span class="mf">3.6</span> <span class="c1"># parametro de forma </span>
 <span class="n">poisson</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span> <span class="c1"># Distribución</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">poisson</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -1768,7 +1776,9 @@ $$p(r; \mu) = \frac{\mu^r e^{-\mu}}{r!}$$<p>En dónde $r$ es un <a href="https:/
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2052,7 +2062,7 @@ iAVPREQkQ/8fcmcp3/M3NSQAAAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -2070,7 +2080,9 @@ iAVPREQkQ/8fcmcp3/M3NSQAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2256,7 +2268,7 @@ $$<p>En dónde $r$ con la condición $0 \le r \le N$ y el parámetro $N$ ($N > 0
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Binomial</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Binomial</span>
 <span class="n">N</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.4</span> <span class="c1"># parametros de forma </span>
 <span class="n">binomial</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="c1"># Distribución</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">binomial</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -2279,7 +2291,9 @@ $$<p>En dónde $r$ con la condición $0 \le r \le N$ y el parámetro $N$ ($N > 0
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2582,7 +2596,7 @@ iMwcd+MTERGZOZY9ERGRmWPZExERmTmWPRERkZlj2RMREZk5lj0REZGZY9kTERGZOZY9ERGRmfv/
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">binomial</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -2600,7 +2614,9 @@ iMwcd+MTERGZOZY9ERGRmWPZExERmTmWPRERkZlj2RMREZk5lj0REZGZY9kTERGZOZY9ERGRmfv/
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2815,7 +2831,7 @@ $$<p>En dónde $r \ge 1$  y el parámetro $p$ ($0 \le p \le 1$) es un <a href="h
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Geométrica</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Geométrica</span>
 <span class="n">p</span> <span class="o">=</span>  <span class="mf">0.3</span> <span class="c1"># parametro de forma </span>
 <span class="n">geometrica</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">geom</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="c1"># Distribución</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">geometrica</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -2838,7 +2854,9 @@ $$<p>En dónde $r \ge 1$  y el parámetro $p$ ($0 \le p \le 1$) es un <a href="h
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -3116,7 +3134,7 @@ f6zgd1widcQLAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">geometrica</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -3134,7 +3152,9 @@ f6zgd1widcQLAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -3338,7 +3358,7 @@ $$<p>En dónde el valor de $r$ esta limitado por $\max(0, n - N + M)$ y $\min(n,
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Hipergeométrica</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Hipergeométrica</span>
 <span class="n">M</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span> <span class="c1"># parametros de forma </span>
 <span class="n">hipergeometrica</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">hypergeom</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="c1"># Distribución</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -3360,7 +3380,9 @@ $$<p>En dónde el valor de $r$ esta limitado por $\max(0, n - N + M)$ y $\min(n,
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -3666,7 +3688,7 @@ Hz/eNf+5iLiXprgVERHxcLqMLyIi4uFU7EVERDycir2IiIiHU7EXERHxcCr2IiIiHk7FXkRExMOp
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">hipergeometrica</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -3684,7 +3706,9 @@ Hz/eNf+5iLiXprgVERHxcLqMLyIi4uFU7EVERDycir2IiIiHU7EXERHxcCr2IiIiHk7FXkRExMOp
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -3907,7 +3931,7 @@ $$p(r;p) = \left\{
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Bernoulli</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Bernoulli</span>
 <span class="n">p</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="c1"># parametro de forma </span>
 <span class="n">bernoulli</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -3931,7 +3955,9 @@ $$p(r;p) = \left\{
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -4090,7 +4116,7 @@ IdwBALAYwh0AAIsh3AEAsJj/AzUCncWdjaIKAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">bernoulli</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -4108,7 +4134,9 @@ IdwBALAYwh0AAIsh3AEAsJj/AzUCncWdjaIKAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -4310,7 +4338,7 @@ $$<p>En dónde $\mu$ es el parámetro de ubicación, y va a ser igual a la <a hr
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Normal</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Normal</span>
 <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span> <span class="c1"># media y desvio estandar</span>
 <span class="n">normal</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">normal</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -4332,7 +4360,9 @@ $$<p>En dónde $\mu$ es el parámetro de ubicación, y va a ser igual a la <a hr
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -4639,7 +4669,7 @@ nUH2VQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">normal</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -4657,7 +4687,9 @@ nUH2VQAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -4885,7 +4917,7 @@ $$<p>Todos los valore tienen prácticamente la misma probabilidad.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Uniforme</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Uniforme</span>
 <span class="n">uniforme</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">uniforme</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
                 <span class="n">uniforme</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
@@ -4909,7 +4941,9 @@ $$<p>Todos los valore tienen prácticamente la misma probabilidad.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -5091,7 +5125,7 @@ DgCAxRDuAABYDOEOAIDFEO4AAFgM4Q4AgMUQ7gAAWMz/A5FBhJBQt0yvAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">uniforme</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -5109,7 +5143,9 @@ DgCAxRDuAABYDOEOAIDFEO4AAFgM4Q4AgMUQ7gAAWMz/A5FBhJBQt0yvAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -5305,7 +5341,7 @@ $$<p>En dónde la variable $x > 0$ y los parámetros $\mu$ y $\sigma > 0$ son to
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Log-Normal</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Log-Normal</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># parametro</span>
 <span class="n">lognormal</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">lognorm</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lognormal</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -5327,7 +5363,9 @@ $$<p>En dónde la variable $x > 0$ y los parámetros $\mu$ y $\sigma > 0$ son to
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -5656,7 +5694,7 @@ Q7gDAGAZwh0AAMsQ7gAAWIZwBwDAMoQ7AACW+QF3a35SEFXudgAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">lognormal</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -5674,7 +5712,9 @@ Q7gDAGAZwh0AAMsQ7gAAWIZwBwDAMoQ7AACW+QF3a35SEFXudgAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -5879,7 +5919,7 @@ $$<p>En dónde tanto la variable $x$ como el parámetro $\alpha$ son <a href="ht
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Exponencial</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Exponencial</span>
 <span class="n">exponencial</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">exponencial</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
                 <span class="n">exponencial</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
@@ -5900,7 +5940,9 @@ $$<p>En dónde tanto la variable $x$ como el parámetro $\alpha$ son <a href="ht
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -6177,7 +6219,7 @@ ERERD6fD7CIiIh5OYS4iIuLhFOYiIiIeTmEuIiLi4RTmIiIiHk5hLiIi4uEU5iIiIh5OYS4iIuLh
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">exponencial</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -6195,7 +6237,9 @@ ERERD6fD7CIiIh5OYS4iIuLhFOYiIiIeTmEuIiLi4RTmIiIiHk5hLiIi4uEU5iIiIh5OYS4iIuLh
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -6401,7 +6445,7 @@ $$<p>En dónde los parámetros $a$ y $b$ y la variable $x$ son <a href="https://
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Gamma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Gamma</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">2.6</span> <span class="c1"># parametro de forma.</span>
 <span class="n">gamma</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">gamma</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -6423,7 +6467,9 @@ $$<p>En dónde los parámetros $a$ y $b$ y la variable $x$ son <a href="https://
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -6758,7 +6804,7 @@ AAAASUVORK5CYII=
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -6776,7 +6822,9 @@ AAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -6974,7 +7022,7 @@ ejemplo de ello es la distribución de los tiempos de actividad en las redes de 
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Beta</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Beta</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">0.6</span> <span class="c1"># parametros de forma.</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">beta</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -6996,7 +7044,9 @@ ejemplo de ello es la distribución de los tiempos de actividad en las redes de 
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -7225,7 +7275,7 @@ ftbfuMorAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -7243,7 +7293,9 @@ ftbfuMorAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -7438,7 +7490,7 @@ $$<p>En dónde la variable $x \ge 0$ y el parámetro $n$, el número de grados d
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Chi cuadrado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Chi cuadrado</span>
 <span class="n">df</span> <span class="o">=</span> <span class="mi">34</span> <span class="c1"># parametro de forma.</span>
 <span class="n">chi2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -7460,7 +7512,9 @@ $$<p>En dónde la variable $x \ge 0$ y el parámetro $n$, el número de grados d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -7808,7 +7862,7 @@ hBDCzsmwF0IIIeycDHshhBDCzsmwF0IIIezcP4VGwa/JOnNOAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -7826,7 +7880,9 @@ hBDCzsmwF0IIIeycDHshhBDCzsmwF0IIIezcP4VGwa/JOnNOAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -8047,7 +8103,7 @@ $$<p>En dónde la variable $t$ es un <a href="https://es.wikipedia.org/wiki/N%C3
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando t de Student</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando t de Student</span>
 <span class="n">df</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># parametro de forma.</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -8069,7 +8125,9 @@ $$<p>En dónde la variable $t$ es un <a href="https://es.wikipedia.org/wiki/N%C3
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -8419,7 +8477,7 @@ ZgAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -8437,7 +8495,9 @@ ZgAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -8648,7 +8708,7 @@ $$<p>En dónde la variable $x \ge k$ y el parámetro $\alpha > 0$ son <a href="h
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Graficando Pareto</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Graficando Pareto</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mf">2.3</span> <span class="c1"># parametro de forma.</span>
 <span class="n">pareto</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pareto</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">pareto</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -8670,7 +8730,9 @@ $$<p>En dónde la variable $x \ge k$ y el parámetro $\alpha > 0$ son <a href="h
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -8913,7 +8975,7 @@ rkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># histograma</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># histograma</span>
 <span class="n">aleatorios</span> <span class="o">=</span> <span class="n">pareto</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># genera aleatorios</span>
 <span class="n">cuenta</span><span class="p">,</span> <span class="n">cajas</span><span class="p">,</span> <span class="n">ignorar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aleatorios</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequencia&#39;</span><span class="p">)</span>
@@ -8931,7 +8993,9 @@ rkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -9153,7 +9217,10 @@ Este proceso, lo podemos resumir en el siguiente gráfico:</p>
 
 </div>
 </div>
-</div></p></div>
+</div>
+ 
+
+</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -9209,7 +9276,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:</p>
      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=738f6d2d17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=3ac2a9a7c0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h1>Subscribe to my mailing list</h1>
   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -9261,7 +9328,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:</p>
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>  </section>
 
 
     <section>
@@ -9289,7 +9356,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:</p>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Raul E. Lopez Briega -
+  Copyright &copy; 2017 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

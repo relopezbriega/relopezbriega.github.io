@@ -172,7 +172,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -321,7 +321,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importando las librerías que vamos a utilizar</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Importando las librerías que vamos a utilizar</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> 
@@ -348,7 +348,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importando el dataset a un Dataframe de Pandas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando el dataset a un Dataframe de Pandas</span>
 <span class="n">ONG_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;LEARNING.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
@@ -364,7 +364,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Examinando las primeras 10 filas y 10 columnas del dataset</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Examinando las primeras 10 filas y 10 columnas del dataset</span>
 <span class="n">ONG_data</span><span class="o">.</span><span class="n">ix</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
@@ -377,7 +377,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -558,7 +560,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Controlando la cantidad de registros</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Controlando la cantidad de registros</span>
 <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
@@ -571,7 +573,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -601,7 +605,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Controlando valores nulos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Controlando valores nulos</span>
 <span class="n">ONG_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 </pre></div>
 
@@ -614,7 +618,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -650,7 +656,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Agrupando columnas por tipo de datos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Agrupando columnas por tipo de datos</span>
 <span class="n">tipos</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
 
 <span class="c1"># Armando lista de columnas categóricas</span>
@@ -667,7 +673,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -686,7 +694,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Armando lista de columnas numéricas</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Armando lista de columnas numéricas</span>
 <span class="n">columnas</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">columns</span>  <span class="c1"># lista de todas las columnas</span>
 <span class="n">cnum</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">columnas</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">ctext</span><span class="p">))</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">cnum</span><span class="p">)</span>
@@ -701,7 +709,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -730,7 +740,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Completando valores faltantas datos cuantititavos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Completando valores faltantas datos cuantititavos</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnum</span><span class="p">:</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
@@ -748,7 +758,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Completando valores faltantas datos categóricos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Completando valores faltantas datos categóricos</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ctext</span><span class="p">:</span>
     <span class="n">mode</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
@@ -766,7 +776,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Controlando que no hayan valores faltantes</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Controlando que no hayan valores faltantes</span>
 <span class="n">ONG_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 </pre></div>
 
@@ -779,7 +789,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -798,7 +810,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Guardando el dataset preprocesado</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Guardando el dataset preprocesado</span>
 <span class="c1"># Save transform datasets</span>
 <span class="n">ONG_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;LEARNING_procesado.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -825,11 +837,11 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Calculando el porcentaje de donantes sobre toda la base de datos</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Calculando el porcentaje de donantes sobre toda la base de datos</span>
 <span class="n">porcent_donantes</span> <span class="o">=</span> <span class="p">(</span><span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> 
                              <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.0</span>
        <span class="o">/</span> <span class="n">ONG_data</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span> <span class="o">*</span> <span class="mf">100.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El procentaje de donantes de la base de datos es {0:.2f}%&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El procentaje de donantes de la base de datos es </span><span class="si">{0:.2f}</span><span class="s2">%&quot;</span>
       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">porcent_donantes</span><span class="p">))</span>
 </pre></div>
 
@@ -842,7 +854,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">El procentaje de donantes de la base de datos es 5.08%
 </pre>
@@ -859,7 +873,7 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Grafico de totas del porcentaje de donantes</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Grafico de totas del porcentaje de donantes</span>
 <span class="c1"># Agrupando por DONOR_FLAG</span>
 <span class="n">donantes</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DONOR_FLAG&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">IDX</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> 
 <span class="c1"># Creando las leyendas del grafico.</span>
@@ -881,7 +895,9 @@ Algunos otros datos a tener en cuenta, son los siguientes:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1094,7 +1110,7 @@ ABW2iIhIAlBhi4iIJAAVtoiISAJQYYuIiCSA/we6P0z+2Px+XQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Creando subset con solo los donates</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Creando subset con solo los donates</span>
 <span class="n">ONG_donantes</span> <span class="o">=</span> <span class="n">ONG_data</span><span class="p">[</span><span class="n">ONG_data</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># cantidad de donantes</span>
@@ -1110,7 +1126,9 @@ ABW2iIhIAlBhi4iIJAAVtoiISAJQYYuIiCSA/we6P0z+2Px+XQAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1140,7 +1158,7 @@ Exploremos también un poco más en detalle a este grupo pequeño de personas qu
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Analizando el importe de donanciones</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Analizando el importe de donanciones</span>
 <span class="c1"># Creando un segmentos de importes</span>
 <span class="n">imp_segm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">],</span> 
                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
@@ -1161,7 +1179,9 @@ Exploremos también un poco más en detalle a este grupo pequeño de personas qu
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1368,7 +1388,7 @@ fiLrxbaTev9mVnDuuZuZmRWMe+5mZmYF4+RuZmZWME7uZmZmBePkbmZmVjBO7mZmZgXj5G5mZlYw
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Agrupación por segmento segun importe donado.</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Agrupación por segmento segun importe donado.</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">imp_segm</span><span class="p">)</span>
 </pre></div>
 
@@ -1381,7 +1401,9 @@ fiLrxbaTev9mVnDuuZuZmRWMe+5mZmYF4+RuZmZWME7uZmZmBePkbmZmVjBO7mZmZgXj5G5mZlYw
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1408,7 +1430,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># importe de donación promedio</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importe de donación promedio</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
@@ -1421,7 +1443,9 @@ dtype: int64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1440,7 +1464,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Gráfico de cajas del importe de donación</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Gráfico de cajas del importe de donación</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;importe de donación&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1455,7 +1479,9 @@ dtype: int64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1573,7 +1599,7 @@ AAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Grafico del género de los donantes</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Grafico del género de los donantes</span>
 <span class="n">ONG_donantes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;GENDER&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución por género&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1588,7 +1614,9 @@ AAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1728,7 +1756,7 @@ QAa0JEkFMqAlSSqQAS1JUoEMaEmSCvT/ASMgG2Ifq8DwAAAAAElFTkSuQmCC
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Donaciones segun el género</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Donaciones segun el género</span>
 <span class="n">ONG_donantes</span><span class="p">[(</span><span class="n">ONG_donantes</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span>
              <span class="o">&amp;</span> <span class="p">(</span><span class="n">ONG_donantes</span><span class="o">.</span><span class="n">GENDER</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">])</span>
                <span class="p">)][[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">,</span> <span class="s1">&#39;GENDER&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;GENDER&#39;</span><span class="p">)</span>
@@ -1745,7 +1773,9 @@ QAa0JEkFMqAlSSqQAS1JUoEMaEmSCvT/ASMgG2Ifq8DwAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -1885,7 +1915,7 @@ wPYRcfFsd2SyIuIwyvS6IwJpmjjCliSpAY6wJUlqgIEtSVIDDGxJkhpgYEuS1AADW5KkBhjYkiQ1
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Media de impote donado por mujeres</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Media de impote donado por mujeres</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="n">ONG_donantes</span><span class="o">.</span><span class="n">GENDER</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">][[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
@@ -1898,7 +1928,9 @@ wPYRcfFsd2SyIuIwyvS6IwJpmjjCliSpAY6wJUlqgIEtSVIDDGxJkhpgYEuS1AADW5KkBhjYkiQ1
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1918,7 +1950,7 @@ dtype: float64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Media de impote donado por hombres</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Media de impote donado por hombres</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="n">ONG_donantes</span><span class="o">.</span><span class="n">GENDER</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">][[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
@@ -1931,7 +1963,9 @@ dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1961,7 +1995,7 @@ dtype: float64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Distribución de la edad de los donantes</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Distribución de la edad de los donantes</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;AGE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribución de donantes segun edad&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1975,7 +2009,9 @@ dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2130,7 +2166,7 @@ S5JUcYa1JEkVZ1hLklRxhrUkSRX3/wHkVH9s1gebNgAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Agrupando la edad por rango de a 10</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Agrupando la edad por rango de a 10</span>
 <span class="n">AGE2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;AGE&#39;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="s1">&#39;AGE2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AGE2</span>
 
@@ -2148,7 +2184,9 @@ S5JUcYa1JEkVZ1hLklRxhrUkSRX3/wHkVH9s1gebNgAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2306,7 +2344,7 @@ KQAAAABJRU5ErkJggg==
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span class="c1"># Importes de donación por grango de edad</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Importes de donación por grango de edad</span>
 <span class="n">ONG_donantes</span><span class="p">[</span><span class="n">ONG_donantes</span><span class="o">.</span><span class="n">DONOR_AMOUNT</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">][[</span><span class="s1">&#39;DONOR_AMOUNT&#39;</span><span class="p">,</span> 
                                                <span class="s1">&#39;AGE2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;AGE2&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Importe de donación por edad&#39;</span><span class="p">)</span>
@@ -2322,7 +2360,9 @@ KQAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -2530,7 +2570,10 @@ hC1JUgv8f4Mi4gB3CSKFAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div></p></div>
+</div>
+ 
+
+</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2586,7 +2629,7 @@ hC1JUgv8f4Mi4gB3CSKFAAAAAElFTkSuQmCC
      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=738f6d2d17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//github.us14.list-manage.com/subscribe/post?u=1ba87817b2a4306bf505d973b&amp;id=3ac2a9a7c0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h1>Subscribe to my mailing list</h1>
   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -2638,7 +2681,7 @@ hC1JUgv8f4Mi4gB3CSKFAAAAAElFTkSuQmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>  </section>
+    <a href="http://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="http://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="http://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="http://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="http://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="http://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="http://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="http://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="http://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="http://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="http://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="http://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="http://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="http://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="http://relopezbriega.github.io/tag/python.html">python</a>,    <a href="http://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="http://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="http://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="http://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="http://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="http://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="http://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="http://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="http://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="http://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="http://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="http://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="http://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="http://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="http://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="http://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="http://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="http://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="http://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="http://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="http://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="http://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="http://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="http://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="http://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="http://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="http://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="http://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="http://relopezbriega.github.io/tag/regex.html">regex</a>  </section>
 
 
     <section>
@@ -2666,7 +2709,7 @@ hC1JUgv8f4Mi4gB3CSKFAAAAAElFTkSuQmCC
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Raul E. Lopez Briega -
+  Copyright &copy; 2017 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">
