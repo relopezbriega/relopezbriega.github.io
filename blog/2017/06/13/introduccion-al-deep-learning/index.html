@@ -4,9 +4,10 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Raul E. Lopez Briega - scipy</title>
+  <title>Introducción al Deep Learning</title>
   <meta name="author" content="Raul E. Lopez Briega">
-  <meta name="description" content="Todo sobre python aplicado a las ciencias. Análisis de datos, matemáticas, machine learning, inteligencia artificial, probabilidad y estadística">
+  <meta name="description" content="Introducción al Deep Learning. Introducción. Inteligencia artificial, Machine learning y Deep learning. ¿Qué es el Deep Learning?. ¿Cómo funciona?. Arquitecturas de Deep Learning. Redes neuronales prealimentadas. Redes neuronales convolucionales. Redes neuronales recurrentes. Logros del Deep Learning. ¿Por qué estos sorprendentes resultados surgen ahora? . ¿Cómo mantenerse actualizado en el campo de Deep Learning?
+">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
         title="Raul E. Lopez Briega Atom Feed" />
@@ -255,21 +256,86 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/">Problemas de Optimización con Python</a>
-      </h1>
-      <p class="meta"><time datetime="2017-01-18T00:00:00-03:00" pubdate>Wed 18 January 2017</time></p>
+      <h1 class="entry-title">Introducción al Deep Learning</h1>
+      <p class="meta"><time datetime="2017-06-13T00:00:00-03:00" pubdate>Tue 13 June 2017</time></p>
 </header>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="relopezbriega" data-size="large" data-hashtags="python">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" data-counter="right"></script>
+<div class="fb-like" data-href="http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="Optimización" title="Optimización" src="http://relopezbriega.github.io/images/optimization.png" ></p>
+<p><img src="https://iaarhub.github.io/images/Inteligencia-Artificial-Deep-Learning.jpg" title="Deep Learning" alt="Deep Learning"></p>
+<p><em>Este artículo fue publicado originalmente en el <a href="https://iaarhub.github.io/">sitio de capacitaciones de IAAR</a></em>.</p>
+<h2 id="Introducci&#243;n-">Introducci&#243;n <a name="intro-DL" /><a class="anchor-link" href="#Introducci&#243;n-">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> es sin duda el área de investigación más popular dentro del campo de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a>. La mayoría de las nuevas investigaciones que se realizan, trabajan con modelos basados en las técnicas de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>; ya que las mismas han logrado resultados sorprendes en campos como <a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales">Procesamiento del lenguaje natural</a> y <a href="https://es.wikipedia.org/wiki/Visi%C3%B3n_artificial">Visión por computadora</a>. Pero... ¿qué es este misterioso concepto que ha ganado tanta popularidad? y... ¿cómo se relaciona con el campo de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a> y el <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a>?.</p>
+<h3 id="Inteligencia-artificial,-Machine-learning-y-Deep-learning-">Inteligencia artificial, Machine learning y Deep learning <a name="IA-ML-DL" /><a class="anchor-link" href="#Inteligencia-artificial,-Machine-learning-y-Deep-learning-">&#182;</a></h3><p>En general se suelen utilizar los términos de <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a>, <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a> y <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> en forma intercambiada. Sin embargo, éstos términos no son los mismo y abarcan distintas cosas.</p>
+<h4 id="Inteligencia-Artificial">Inteligencia Artificial<a class="anchor-link" href="#Inteligencia-Artificial">&#182;</a></h4><p>El término <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a> es el más general y engloba a los campos de <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a> y <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> junto con otras técnicas como los <a href="https://es.wikipedia.org/wiki/Algoritmo_de_b%C3%BAsqueda">algoritmos de búsqueda</a>, el <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial_simb%C3%B3lica">razonamiento simbólico</a>, el <a href="https://en.wikipedia.org/wiki/Logical_reasoning">razonamiento lógico</a> y la <a href="http://relopezbriega.github.io/category/pobabilidad-y-estadistica.html">estadística</a>. Nació en los años 1950s, cuando un grupo de pioneros de la computación comenzaron a preguntarse si se podía hacer que las computadoras <em>pensaran</em>. Una definición concisa de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a> sería: <em>el esfuerzo para automatizar las tareas intelectuales que normalmente realizan los seres humanos</em>.</p>
+<h4 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h4><p>El <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a> o <a href="http://relopezbriega.github.io/category/machine-learning.html">Aprendizaje automático</a> se refiere a un amplio conjunto de técnicas informáticas que nos permiten dar a las computadoras <em>la capacidad de aprender sin ser explícitamente programadas</em>. Hay muchos tipos diferentes de algoritmos de <a href="http://relopezbriega.github.io/category/machine-learning.html">Aprendizaje automático</a>, entre los que se encuentran el <a href="https://es.wikipedia.org/wiki/Aprendizaje_por_refuerzo">aprendizaje por refuerzo</a>, los <a href="https://es.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico">algoritmos genéticos</a>, el aprendizaje basado en <a href="https://es.wikipedia.org/wiki/Reglas_de_asociaci%C3%B3n">reglas de asociación</a>, los <a href="https://es.wikipedia.org/wiki/Algoritmo_de_agrupamiento">algoritmos de agrupamiento</a>, los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">árboles de decisión</a>, las <a href="https://es.wikipedia.org/wiki/M%C3%A1quinas_de_vectores_de_soporte">máquinas de vectores de soporte</a> y las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a>. Actualmente, los algoritmos más populares dentro de este campo son los de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>.</p>
+<h4 id="Deep-Learning">Deep Learning<a class="anchor-link" href="#Deep-Learning">&#182;</a></h4><p>El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> o <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">aprendizaje profundo</a> es un subcampo dentro del <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a>, el cuál utiliza distintas estructuras de <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> para lograr el aprendizaje de sucesivas <em>capas de representaciones</em> cada vez más significativas de los datos. El <em>profundo</em> o <em>deep</em> en <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> hace referencia a la cantidad de <em>capas de representaciones</em> que se utilizan en el modelo; en general se suelen utilizar decenas o incluso cientos de <em>capas de representación</em>. las cuales <em>aprenden</em> automaticamente a medida que el modelo es entrenado con los datos.</p>
+<p><img src="https://iaarhub.github.io/images/DL.png" title="Deep Learning" alt="Deep Learning"></p>
+<h2 id="&#191;Qu&#233;-es-el-Deep-Learning?-">&#191;Qu&#233; es el Deep Learning? <a name="Que-es-DL" /><a class="anchor-link" href="#&#191;Qu&#233;-es-el-Deep-Learning?-">&#182;</a></h2><p>Antes de poder entender que es el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>, debemos en primer lugar conocer dos conceptos fundamentales: las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales artificiales</a> y la <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">Propagación hacia atrás</a>.</p>
+<h3 id="Redes-Neuronales">Redes Neuronales<a class="anchor-link" href="#Redes-Neuronales">&#182;</a></h3><p>Las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> son un modelo computacional basado en un gran conjunto de unidades neuronales simples (<a href="https://es.wikipedia.org/wiki/Neurona_de_McCulloch-Pitts">neuronas artificiales</a>), de forma aproximadamente análoga al comportamiento observado en los axones de las neuronas en los cerebros biológicos.</p>
+<p>Cada una de estas neuronas simples, va a tener una forma similar al siguiente diagrama:</p>
+<p><img src="https://relopezbriega.github.io/images/neurona.png"></p>
+<p>En donde sus componentes son:</p>
+<ul>
+<li><p>$x_1, x_2, \dots, x_n$: Los datos de entrada en la neurona, los cuales también puede ser que sean producto de la salida de otra neurona de la red.</p>
+</li>
+<li><p>$x_0$: La unidad de sesgo; un valor constante que se le suma a la entrada de la función de activación de la neurona. Generalmente tiene el valor 1. Este valor va a permitir cambiar la función de activación hacia la derecha o izquierda, otorgándole más flexibilidad para aprender a la neurona.</p>
+</li>
+<li><p>$w_0, w_1, w_2, \dots, w_n$: Los pesos relativos de cada entrada. Tener en cuenta que incluso la unidad de sesgo tiene un peso.</p>
+</li>
+<li><p>a: La salida de la neurona. Que va a ser calculada de la siguiente forma:</p>
+</li>
+</ul>
+$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$<p>Aquí $f$ es la <strong><em>función de activación</em></strong> de la neurona. Esta función es la que le otorga tanta flexibilidad a las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal">función lineal</a>, una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica">función logística</a>, <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica">hiperbólica</a>, etc.</p>
+<p>Cada unidad neuronal está conectada con muchas otras y los enlaces entre ellas pueden incrementar o inhibir el estado de activación de las neuronas adyacentes. Estos sistemas aprenden y se forman a sí mismos, en lugar de ser programados de forma explícita, y sobresalen en áreas donde la detección de soluciones o características es difícil de expresar con la programación convencional.</p>
+<p><img src="https://iaarhub.github.io/images/neural_network.svg"></p>
+<h3 id="Propagaci&#243;n-hacia-atr&#225;s">Propagaci&#243;n hacia atr&#225;s<a class="anchor-link" href="#Propagaci&#243;n-hacia-atr&#225;s">&#182;</a></h3><p>La <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">propagación hacia atrás</a> o <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">backpropagation</a> es un algoritmo que funciona mediante la determinación de la pérdida (o error) en la salida y luego propagándolo de nuevo hacia atrás en la red. De esta forma los pesos se van actualizando para minimizar el error resultante de cada neurona. Este algoritmo es lo que les permite a las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> aprender.</p>
+<p><img src="https://iaarhub.github.io/images/backprop.png" title="Backprop" alt="Backprop" width="50%" height="50%"></p>
+<h3 id="&#191;C&#243;mo-funciona-el-Deep-Learning?--">&#191;C&#243;mo funciona el Deep Learning?  <a name="como-funciona-DL" /><a class="anchor-link" href="#&#191;C&#243;mo-funciona-el-Deep-Learning?--">&#182;</a></h3><p>En general, cualquier técnica de <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a> trata de realizar la asignación de entradas (por ejemplo, imágenes) a salidas objetivo (Por ejemplo, la etiqueta "gato"), mediante la observación de un gran número de ejemplos de entradas y salidas. El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> realiza este mapeo de entrada-a-objetivo por medio de una <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red neuronal artificial</a> que está compuesta de un número grande de <em>capas</em> dispuestas en forma de jerarquía. La <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> aprende algo simple en la capa inicial de la jerarquía y luego envía esta información a la siguiente capa. La siguiente capa toma esta información simple, lo combina en algo que es un poco más complejo, y lo pasa a la tercer capa. Este proceso continúa de forma tal que cada capa de la jerarquía construye algo más complejo de la entrada que recibió de la capa anterior. De esta forma, la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> irá <em>aprendiendo</em> por medio de la exposición a los datos de ejemplo.</p>
+<p>La especificación de lo que cada <em>capa</em> hace a la entrada que recibe es almacenada en los <em>pesos</em> de la capa, que en esencia, no son más que números. Utilizando terminología más técnica podemos decir que la transformación de datos que se produce en la <em>capa</em> es <em>parametrizada</em> por sus <em>pesos</em>. Para que la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> aprenda debemos encontrar los <em>pesos</em> de todas las <em>capas</em> de forma tal que la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> realice un mapeo perfecto entre los ejemplos de entrada con sus respectivas salidas objetivo. Pero el problema reside en que una <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> puede tener millones de <em>parámetros</em>, por lo que encontrar el valor correcto de todos ellos puede ser una tarea realmente muy difícil, especialmente si la modificación del valor de uno de ellos afecta a todos los demás.</p>
+<p><img src="https://iaarhub.github.io/images/DL1.png" title="Deep Learning" alt="Deep Learning"></p>
+<p>Para poder controlar algo, en primer lugar debemos poder observarlo. En este sentido, para controlar la salida de la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red neuronal</a>, deberíamos poder medir cuan lejos esta la salida que obtuvimos de la que se esperaba obtener. Este es el trabajo de la <em><a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">función de pérdida</a></em> de la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a>. Esta función toma las predicciones que realiza el modelo y los valores objetivos (lo que realmente esperamos que la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> produzca), y calcula cuán lejos estamos de ese valor, de esta manera, podemos capturar que tan bien esta funcionando el modelo para el ejemplo especificado. El truco fundamental del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> es utilizar el valor que nos devuelve esta  <em><a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">función de pérdida</a></em> para retroalimentar la  <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> y ajustar los <em>pesos</em> en la dirección que vayan reduciendo la <em>pérdida</em> del modelo para cada ejemplo. Este ajuste, es el trabajo del <em>optimizador</em>, el cuál implementa la <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">propagación hacia atrás</a>.</p>
+<p><img src="https://iaarhub.github.io/images/DL3.png" title="Deep Learning" alt="Deep Learning"></p>
+<p>Resumiendo, el funcionamiento sería el siguiente: inicialmente, los <em>pesos</em> de cada <em>capa</em> son asignados en forma aleatoria, por lo que la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> simplemente implementa una serie de transformaciones aleatorias. En este primer paso, obviamente la salida del modelo dista bastante del ideal que deseamos obtener, por lo que el valor de la <em><a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">función de pérdida</a></em> va a ser bastante alto. Pero a medida que la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> va procesando nuevos casos, los <em>pesos</em> se van ajustando de forma tal de ir reduciendo cada vez más el valor de la <em><a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">función de pérdida</a></em>. Este proceso es el que se conoce como <em>entrenamiento</em> de la <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a>, el cual repetido una suficiente cantidad de veces, generalmente 10 iteraciones de miles de ejemplos, logra que los <em>pesos</em> se ajusten a los que minimizan la <em><a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">función de pérdida</a></em>. Una <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red</a> que ha minimizado la <em>pérdida</em> es la que logra los resultados que mejor se ajustan a las salidas objetivo, es decir, que el modelo se encuentra <em>entrenado</em>.</p>
+<h2 id="Arquitecturas-de-Deep-Learning-">Arquitecturas de Deep Learning <a name="arquitectura-DL" /><a class="anchor-link" href="#Arquitecturas-de-Deep-Learning-">&#182;</a></h2><p>La estructura de datos fundamental de una <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">red neuronal</a> está vagamente inspirada en el cerebro humano. Cada una de nuestras células cerebrales (neuronas) está conectada a muchas otras neuronas por sinapsis. A medida que experimentamos e interactuamos con el mundo, nuestro cerebro crea nuevas conexiones, refuerza algunas conexiones y debilita a los demás. De esta forma, en nuestro cerebro se desarrollan ciertas regiones que se especializan en el procesamiento de determinadas <em>entradas</em>. Así vamos a tener un área especializada en la visión, otra que se especializa en la audición, otra para el lenguaje, etc. De forma similar, dependiendo del tipo de <em>entradas</em> con las que trabajemos, van a existir distintas <em>arquitecturas</em> de <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> que mejor se adaptan para procesar esa información. Algunas de las arquitecturas más populares son:</p>
+<h3 id="Redes-neuronales-prealimentadas">Redes neuronales prealimentadas<a class="anchor-link" href="#Redes-neuronales-prealimentadas">&#182;</a></h3><p>Las <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Redes neuronales prealimentadas</a> fueron las primeras que se desarrollaron y son el modelo más sencillo. En estas redes la información se mueve en una sola dirección: hacia adelante. Los principales exponentes de este tipo de arquitectura son el <a href="https://es.wikipedia.org/wiki/Perceptr%C3%B3n">perceptrón</a> y el <a href="https://es.wikipedia.org/wiki/Perceptr%C3%B3n_multicapa">perceptrón multicapa</a>. Se suelen utilizar en problemas de clasificación simples.</p>
+<p><img src="https://iaarhub.github.io/images/perceptron.png" title="Perceptrón multicapa" alt="Perceptrón multicapa"></p>
+<h3 id="Redes-neuronales-convolucionales">Redes neuronales convolucionales<a class="anchor-link" href="#Redes-neuronales-convolucionales">&#182;</a></h3><p>Las <a href="http://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/">redes neuronales convolucionales</a> son muy similares a las <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> ordinarias como el <a href="https://es.wikipedia.org/wiki/Perceptr%C3%B3n_multicapa">perceptron multicapa</a>; se componen de <a href="https://es.wikipedia.org/wiki/Neurona">neuronas</a> que tienen <em>pesos</em> y <em>sesgos</em> que pueden aprender. Cada <a href="https://es.wikipedia.org/wiki/Neurona">neurona</a> recibe algunas entradas, realiza un <a href="https://es.wikipedia.org/wiki/Producto_escalar">producto escalar</a> y luego aplica una función de activación. Al igual que en el <a href="https://es.wikipedia.org/wiki/Perceptr%C3%B3n_multicapa">perceptron multicapa</a> también vamos a tener una <em>función de pérdida o costo</em> sobre la última capa, la cual estará totalmente conectada. Lo que diferencia a las <a href="http://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/">redes neuronales convolucionales</a> es que suponen explícitamente que las entradas son imágenes, lo que nos permite codificar ciertas propiedades en la arquitectura; permitiendo ganar en eficiencia y reducir la cantidad de parámetros en la red.</p>
+<p>En general, las <a href="http://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/">redes neuronales convolucionales</a> van a estar construidas con una estructura que contendrá 3 tipos distintos de capas:</p>
+<ol>
+<li>Una capa <a href="https://es.wikipedia.org/wiki/Convoluci%C3%B3n">convolucional</a>, que es la que le da le nombre a la red.</li>
+<li>Una capa de reducción o de <em>pooling</em>, la cual va a reducir la cantidad de parámetros al quedarse con las características más comunes.</li>
+<li>Una capa clasificadora totalmente conectada, la cual nos va dar el resultado final de la red.</li>
+</ol>
+<p>Algunas implementaciones específicas que podemos encontrar sobre este tipo de redes son: <a href="https://keras.io/applications/#inceptionv3">inception v3</a>, <a href="https://keras.io/applications/#resnet50">ResNet</a>, <a href="https://keras.io/applications/#vgg16">VGG16</a> y <a href="https://keras.io/applications/#xception">xception</a>, entre otras. Todas ellas han logrado excelentes resultados.</p>
+<p><img src="https://iaarhub.github.io/images/cnn.png" title="Redes neuronales convolucionales" alt="Redes neuronales convolucionales" width="70%" height="70%"></p>
+<h3 id="Redes-neuronales-recurrentes">Redes neuronales recurrentes<a class="anchor-link" href="#Redes-neuronales-recurrentes">&#182;</a></h3><p>Los seres humanos no comenzamos nuestro pensamiento desde cero cada segundo, sino que los mismos tienen una persistencia. Las <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Redes neuronales prealimentadas</a> tradicionales no cuentan con esta persistencia, y esto parece una deficiencia importante. Las <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Redes neuronales recurrentes</a> abordan este problema. Son redes con bucles de retroalimentación, que permiten que la información persista.</p>
+<p>Una <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Red neural recurrente</a> puede ser pensada como una red con múltiples copias de ella misma, en las que cada una de ellas pasa un mensaje a su sucesor. Esta naturaleza en forma de cadena revela que las <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Redes neurales recurrentes</a> están íntimamente relacionadas con las secuencias y listas; por lo que son ideales para trabajar con este tipo de datos. En los últimos años, ha habido un éxito increíble aplicando <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Redes neurales recurrentes</a>  a una variedad de problemas como: reconocimiento de voz, modelado de lenguaje, traducción, subtítulos de imágenes y la lista continúa.</p>
+<p>Las <a href="https://en.wikipedia.org/wiki/Long_short-term_memory">redes de memoria de largo plazo a corto plazo</a> - generalmente llamadas <a href="https://en.wikipedia.org/wiki/Long_short-term_memory">LSTMs</a> - son un tipo especial de <a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada">Redes neurales recurrentes</a>, capaces de aprender dependencias a largo plazo. Ellas también tienen una estructura como cadena, pero el módulo de repetición tiene una estructura diferente. En lugar de tener una sola capa de red neuronal, tiene cuatro, que interactúan de una manera especial permitiendo tener una memoria a más largo plazo.</p>
+<p><img src="https://iaarhub.github.io/images/rnn.png" title="Redes neuronales recurrentes" alt="Redes neuronales recurrentes" width="50%" height="50%"></p>
+<p>Para más información sobre diferentes arquitecturas de <a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial">redes neuronales</a> pueden visitar el siguiente artículo de <a href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks">wikipedia</a>.</p>
+<h2 id="Logros-del-Deep-Learning-">Logros del Deep Learning <a name="logros-DL" /><a class="anchor-link" href="#Logros-del-Deep-Learning-">&#182;</a></h2><p>En los últimos años el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> ha producido toda una revolución en el campo del <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a>, con resultados notables en todos los problemas de <em>percepción</em>, como <em>ver</em> y <em>escuchar</em>, problemas que implican habilidades que parecen muy naturales e intuitivas para los seres humanos, pero que desde hace tiempo se han mostrado difíciles para las máquinas. En particular, el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> ha logrado los siguientes avances, todos ellos en áreas históricamente difíciles del <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a>.</p>
+<ul>
+<li>Un nivel casi humano para la clasificación de imágenes.</li>
+<li>Un nivel casi humano para el reconocimiento del lenguaje hablado.</li>
+<li>Un nivel casi humano en el reconocimiento de escritura.</li>
+<li>Grandes mejoras en traducciones de lenguas.</li>
+<li>Grandes mejoras en conversaciones <em>text-to-speech</em>.</li>
+<li>Asistentes digitales como Google Now o Siri.</li>
+<li>Un nivel casi humano en autos autónomos.</li>
+<li>Mejores resultados de búsqueda en la web.</li>
+<li>Grandes mejoras para responder preguntas en lenguaje natural.</li>
+<li>Alcanzado Nivel maestro (superior al humano) en varios juegos.</li>
+</ul>
+<p>En muchos sentidos, el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> todavía sigue siendo un campo misterioso para explorar, por lo que seguramente veremos nuevos avances en nuevas áreas utilizando estas técnicas. Tal vez algún día el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> ayuda a los seres humanos a hacer ciencia, desarrollar software y mucho más.</p>
 
 </div>
 </div>
@@ -279,15 +345,78 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">ingeniería</a> o en <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">ciencias económicas</a>. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="http://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
+<h2 id="&#191;Por-qu&#233;-estos-sorprendentes-resultados-surgen-ahora?--">&#191;Por qu&#233; estos sorprendentes resultados surgen ahora?  <a name="por-que-ahora-DL" /><a class="anchor-link" href="#&#191;Por-qu&#233;-estos-sorprendentes-resultados-surgen-ahora?--">&#182;</a></h2><p>Muchos de los conceptos del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> se desarrollaron en los años 80s y 90s, algunos incluso mucho antes. Sin embargo, los primeros resultados exitosos del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> surgieron en los últimos 5 años. ¿qué fue lo que cambio para lograr la popularidad y éxito de los modelos basados en <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> en estos últimos años?</p>
+<p>Si bien existen múltiples factores para explicar esta <em>revolución</em> del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>, los dos principales componentes parecen ser la <strong>disponibilidad de masivos volúmenes de datos</strong>, lo que actualmente se conoce bajo el nombre de <a href="https://es.wikipedia.org/wiki/Big_data">Big Data</a>; y el <strong>progreso en el poder de computo</strong>, especialmente gracias a los <a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico">GPUs</a>. Entonces, dentro de los factores que explican esta popularidad de los modelos de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> podemos encontrar:</p>
+<ul>
+<li><p><strong>La disponibilidad de conjuntos de datos enormes y de buena calidad</strong>. Gracias a la  revolución digital en que nos encontramos, podemos generar conjuntos de datos enormes con los cuales alimentar a los algoritmos de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>, los cuales necesitan de muchos datos para poder <em>generalizar</em>.</p>
+</li>
+<li><p><strong>Computación paralela masiva con <a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico">GPUs</a></strong>. En líneas generales, los modelos de <a href="http://relopezbriega.github.io/category/redes-neuronales.html">redes neuronales</a> no son más que complicados cálculos numéricos que se realizan en paralelo. Gracias al desarrollo de los <a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico">GPUs</a> estos cálculos ahora se pueden realizar en forma mucho más rápida, permitiendo que podamos entrenar modelos más profundos y grandes.</p>
+</li>
+<li><p><strong>Funciones de activación amigables para <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">Backpropagation</a></strong>. La <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">progación hacia atrás</a> o <a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s">Backpropagation</a> es el algoritmo fundamental que hace funcionar a las <a href="http://relopezbriega.github.io/category/redes-neuronales.html">redes neuronales</a>; pero la forma en que trabaja implica cálculos realmente complicados. La transición desde funciones de activación como <code>tanh</code> o <code>sigmoid</code> a funciones como <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">ReLU</a> o <a href="https://arxiv.org/abs/1706.02515">SELU</a> han simplificado estos problemas.</p>
+</li>
+<li><p><strong>Nuevas arquitecturas</strong>. Arquitecturas como <a href="https://arxiv.org/abs/1512.03385">Resnets</a>, <a href="https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf">inception</a> y <a href="https://en.wikipedia.org/wiki/Generative_adversarial_networks">GAN</a> mantienen el campo actualizado y continúan aumentando las flexibilidad de los modelos.</p>
+</li>
+<li><p><strong>Nuevas técnicas de <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">regularización</a></strong>. Técnicas como <a href="https://en.wikipedia.org/wiki/Dropout_(neural_networks)">dropout</a>, <a href="https://arxiv.org/abs/1502.03167">batch normalization</a> y <a href="https://arxiv.org/pdf/1609.08764.pdf">data-augmentation</a> nos permiten entrenar redes más grandes con menos peligro de <a href="http://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">sobreajuste</a>.</p>
+</li>
+<li><p><strong>Optimizadores más robustos</strong>. La <a href="http://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/">optimización</a> es fundamental para el funcionamiento de las <a href="http://relopezbriega.github.io/category/redes-neuronales.html">redes neuronales</a>. Mejoras sobre el tradicional procedimiento de <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">SGD</a>, como <a href="https://arxiv.org/pdf/1412.6980.pdf">ADAM</a> han ayudado a mejorar el rendimiento de los modelos.</p>
+</li>
+<li><p><strong>Plataformas de software</strong>. Herramientas como <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="http://deeplearning.net/software/theano/">Theano</a>, <a href="https://keras.io/">Keras</a>, <a href="https://www.microsoft.com/en-us/research/product/cognitive-toolkit/">CNTK</a>, <a href="http://pytorch.org/">PyTorch</a>, <a href="https://chainer.org/">Chainer</a>, y <a href="http://mxnet.io/">mxnet</a> nos permiten crear prototipos en forma más rápida y trabajar con <a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico">GPUs</a> sin tantas complicaciones. Nos permiten enfocarnos en la estructura del modelo sin tener que preocuparnos por los detalles de más bajo nivel.</p>
+</li>
+</ul>
+<p>Otra razón por la que el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> ha tenido tanta repercusión últimamente además de ofrecer un mejor rendimiento en muchos problemas; es que el <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> esta haciendo la resolución de problemas mucho más fácil, ya que automatiza completamente lo que solía ser uno de los pasos más difíciles y cruciales en el flujo de trabajo de <a href="http://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a>: la <em><a href="https://en.wikipedia.org/wiki/Feature_engineering">ingeniería de atributos</a></em>. Antes del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>, para poder entrenar un modelo, primero debíamos refinar las <em>entradas</em> para adaptarlas al tipo de transformación del modelo; teníamos que cuidadosamente <a href="http://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">seleccionar los atributos</a> más representativos y desechar los poco informativos. El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>, en cambio, automatiza este proceso; aprendemos todos los atributos de una sola pasada y el mismo modelo se encarga de adaptarse y quedarse con lo más representativo.</p>
+<h2 id="&#191;C&#243;mo-mantenerse-actualizado-en-el-campo-de-Deep-Learning?-">&#191;C&#243;mo mantenerse actualizado en el campo de Deep Learning? <a name="actualizado-DL" /><a class="anchor-link" href="#&#191;C&#243;mo-mantenerse-actualizado-en-el-campo-de-Deep-Learning?-">&#182;</a></h2><p>El campo del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> se mueve muy rapidamente, con varios <em>papers</em> que se publican por mes; por tal motivo, mantenerse actualizado con las últimas tendencias del campo puede ser bastante complicado. Algunos consejos pueden ser:</p>
+<ul>
+<li><p><strong>Estarse atento a las publicaciones en <a href="https://arxiv.org/">arxiv</a></strong>, especialmente a la sección de <a href="https://arxiv.org/list/stat.ML/recent">machine learning</a>. La mayoría de los <em>papers</em> más relevantes, los vamos a poder encontrar en esa plataforma.</p>
+</li>
+<li><p><strong>Seguir el blog de <a href="https://blog.keras.io/">keras</a></strong> en el cual podemos encontrar como implementar varios modelos utilizando esta genial librería.</p>
+</li>
+<li><p><strong>Seguir el blog de <a href="https://blog.openai.com/">openai</a></strong> en dónde detallan las investigaciones que van realizando, especialmente trabajando con <a href="https://en.wikipedia.org/wiki/Generative_adversarial_networks">GANs</a>.</p>
+</li>
+<li><p><strong>Seguir el blog de <a href="https://research.googleblog.com/">Google research</a></strong>; en dónde se viene haciendo bastante foco en los modelos de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>.</p>
+</li>
+<li><p><strong>Utilizar la sección de Machine Learning de <a href="https://www.reddit.com/r/MachineLearning/">reddit</a></strong>.</p>
+</li>
+<li><p><strong>Suscribirse al podcast <a href="http://www.thetalkingmachines.com/">Talking machines</a></strong>; en dónde se entrevista a los principales exponentes del campo de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a>.</p>
+</li>
+<li><p>Por último, obviamente estar atentos a las <strong>publicaciones que se realizan en <a href="https://www.facebook.com/groups/InteligenciaArtificialArgentina/">IAAR</a></strong>.</p>
+</li>
+</ul>
+<p>Aquí concluye el artículo; espero que les sirva como una introducción para que puedan ingresar en el fascinante y prometedor mundo del <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a>.</p>
+<p>Saludos!</p>
 
-  <br />
-</div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Este post fue escrito por <a href="http://relopezbriega.github.io/">Raúl e. López Briega</a> utilizando <a href="http://jupyter.org/">Jupyter notebook</a>. Pueden descargar este <a href="https://github.com/IAARhub/iaar_template/tree/master/content/notebooks/DeepLearning.ipynb">notebook</a> o ver su version estática en <a href="http://nbviewer.ipython.org/github/IAARhub/iaar_template/tree/master/content/notebooks/DeepLearning.ipynb">nbviewer</a>.</em></p>
+
+</div>
+</div>
+</div>
+ 
+
+</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Raul E. Lopez Briega</span>
+  </span>
+<time datetime="2017-06-13T00:00:00-03:00" pubdate>Tue 13 June 2017</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" data-via="relopezbriega" data-counturl="http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Most Popular</h1>
@@ -334,6 +463,18 @@ jQuery(document).ready(function($) {
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/">Introducción al Deep Learning</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
+      </li>
+      <li class="post">
+          <a href="http://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/">Introducción a la inferencia Bayesiana con Python</a>
+      </li>
       <li class="post">
           <a href="http://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/">Problemas de Optimización con Python</a>
       </li>
@@ -410,6 +551,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'relopezbriegagithub';
+          var disqus_identifier = '/blog/2017/06/13/introduccion-al-deep-learning/';
+          var disqus_url = 'http://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/';
+          var disqus_title = 'Introducción al Deep Learning';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
