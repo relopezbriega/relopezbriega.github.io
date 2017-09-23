@@ -1,5 +1,1464 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/ia.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-06-05T00:00:00-03:00</updated><entry><title>Introducción a la Inteligencia Artificial</title><link href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/" rel="alternate"></link><published>2017-06-05T00:00:00-03:00</published><updated>2017-06-05T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-06-05:blog/2017/06/05/introduccion-a-la-inteligencia-artificial/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/ia.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-09-23T00:00:00-03:00</updated><entry><title>Procesamiento del Lenguaje Natural con Python</title><link href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/" rel="alternate"></link><published>2017-09-23T00:00:00-03:00</published><updated>2017-09-23T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-09-23:blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="NLP" title="NLP" src="https://relopezbriega.github.io/images/NLP.png" width="60%" height="60%"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;blockquote&gt;&lt;p&gt;"El lenguaje sirve no sólo para expresar el pensamiento, sino para hacer posibles pensamientos que no podrían existir sin él."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Bertrand_Russell"&gt;Bertrand Russell&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt; es una de las herramientas centrales en nuestra vida social y profesional. Entre otras cosas, actúa como un medio para transmitir ideas, información, opiniones y sentimientos; así como para persuadir, pedir información, o dar ordenes. Asimismo, el &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt; humano es algo que esta en constante cambio y evolución; y que puede llegar a ser muy &lt;em&gt;ambiguo&lt;/em&gt; y &lt;em&gt;variable&lt;/em&gt;. Tomemos por ejemplo la frase &lt;em&gt;"comí una pizza con amigos"&lt;/em&gt; comparada con &lt;em&gt;"comí una pizza con aceitunas"&lt;/em&gt;; su estructura es la misma, pero su significado es totalmente distinto. De la misma manera, un mismo mensaje puede ser expresado de formas diferentes; &lt;em&gt;"comí una pizza con amigos"&lt;/em&gt; puede también ser expresado como &lt;em&gt;"compartí una pizza con amigos"&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Los seres humanos somos muy buenos a la hora de producir e interpretar el &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt;, podemos expresar, percibir e interpretar significados muy elaborados en fracción de segundos casi sin dificultades; pero al mismo tiempo, somos también muy malos a la hora de entender y describir formalmente las reglas que lo gobiernan. Por este motivo, entender y producir el &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt; por medio de una &lt;em&gt;computadora&lt;/em&gt; es un problema muy difícil de resolver. Éste problema, es el campo de estudio de lo que en &lt;a href="https://iaarbook.github.io/inteligencia-artificial/"&gt;inteligencia artificial&lt;/a&gt; se conoce como &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; por sus siglas en inglés.&lt;/p&gt;
+&lt;h2 id="&amp;#191;Qu&amp;#233;-es-el-Procesamiento-del-Lenguaje-Natural?"&gt;&amp;#191;Qu&amp;#233; es el Procesamiento del Lenguaje Natural?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-el-Procesamiento-del-Lenguaje-Natural?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt;  es una disciplina que se encuentra en la intersección de varias ciencias, tales como las &lt;a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n"&gt;Ciencias de la Computación&lt;/a&gt;, la &lt;a href="https://iaarbook.github.io/"&gt;Inteligencia Artificial&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Psicolog%C3%ADa_cognitiva"&gt;Psicología Cognitiva&lt;/a&gt;. Su idea central es la de darle a las máquinas la capacidad de leer y comprender los idiomas que hablamos los humanos. La investigación del &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; tiene como objetivo responder a la pregunta de cómo las personas son capaces de comprender el significado de una oración oral / escrita y cómo las personas entienden lo que sucedió, cuándo y dónde sucedió; y las diferencias entre una suposición, una creencia o un hecho.&lt;/p&gt;
+&lt;p&gt;En general, en &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; se utilizan seis niveles de comprensión con el objetivo de descubrir el significado del discurso. Estos niveles son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel fonético:&lt;/strong&gt; Aquí se presta atención a la &lt;a href="https://es.wikipedia.org/wiki/Fon%C3%A9tica"&gt;fonética&lt;/a&gt;, la forma en que las palabras son pronunciadas. Este nivel es importante cuando procesamos la palabra hablada, no así cuando trabajamos con texto escrito.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel morfológico:&lt;/strong&gt; Aquí nos interesa realizar un análisis &lt;a href="https://es.wikipedia.org/wiki/Morfolog%C3%ADa_ling%C3%BC%C3%ADstica"&gt;morfológico&lt;/a&gt; del discurso; estudiar la estructura de las palabras para delimitarlas y clasificarlas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel sintáctico:&lt;/strong&gt; Aquí se realiza un análisis de &lt;a href="https://es.wikipedia.org/wiki/Sintaxis"&gt;sintaxis&lt;/a&gt;, el cual  incluye la acción de dividir una oración en cada uno de sus componentes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel semántico:&lt;/strong&gt; Este nivel es un complemente del anterior, en el análisis &lt;a href="https://es.wikipedia.org/wiki/Sem%C3%A1ntica"&gt;semántico&lt;/a&gt; se busca entender el significado de la oración. Las palabras pueden tener múltiples significados, la idea es identificar el significado apropiado por medio del contexto de la oración.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel discursivo:&lt;/strong&gt; El nivel discursivo examina el significado de la oración en relación a otra oración en el texto o párrafo del mismo documento.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Nivel pragmático:&lt;/strong&gt; Este nivel se ocupa del análisis de oraciones y cómo se usan en diferentes situaciones. Además, también cómo su significado cambia dependiendo de la situación.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todos los niveles descritos aquí son inseparables y se complementan entre sí. El objetivo de los sistemas de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; es incluir estas definiciones en una &lt;em&gt;computadora&lt;/em&gt; y luego usarlas para crear una oración estructurada y sin ambigüedades con un significado bien definido.&lt;/p&gt;
+&lt;h2 id="Aplicaciones-del-Procesamiento-del-Lenguaje-Natural"&gt;Aplicaciones del Procesamiento del Lenguaje Natural&lt;a class="anchor-link" href="#Aplicaciones-del-Procesamiento-del-Lenguaje-Natural"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los algoritmos de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; suelen basarse en algoritmos de &lt;a href="https://iaarbook.github.io/machine-learning/"&gt;aprendizaje automático&lt;/a&gt;. En lugar de codificar manualmente grandes conjuntos de reglas, el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; puede confiar en el &lt;a href="https://iaarbook.github.io/machine-learning/"&gt;aprendizaje automático&lt;/a&gt; para aprender estas reglas automáticamente analizando un conjunto de ejemplos y haciendo una &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_inferencial"&gt;inferencia estadística&lt;/a&gt;. En general, cuanto más datos analizados, más preciso será el modelo. Estos algoritmos pueden ser utilizados en algunas de las siguientes aplicaciones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Resumir texto:&lt;/strong&gt; Podemos utilizar los modelos de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; para extraer las ideas más importantes y centrales mientras ignoramos la información irrelevante.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Crear chatbots:&lt;/strong&gt; Podemos utilizar las técnicas de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; para crear &lt;a href="https://iaarhub.github.io/capacitacion/2017/04/09/31-herramientas-que-te-ayudaran-a-crear-tu-propio-chatbot/"&gt;chatbots&lt;/a&gt; que puedan interactuar con las personas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Generar automáticamente &lt;a href="https://es.wikipedia.org/wiki/Etiquetado_gramatical"&gt;etiquetas de palabras clave&lt;/a&gt;&lt;/strong&gt;: Con &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; también podemos realizar un análisis de contenido aprovechando el algoritmo de &lt;a href="https://es.wikipedia.org/wiki/Latent_Dirichlet_Allocation"&gt;LDA&lt;/a&gt; para asignar palabras claves a párrafos del texto.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Reconocimiento_de_entidades_nombradas"&gt;Reconocer entidades&lt;/a&gt;&lt;/strong&gt;: Con &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; podemos identificar a las distintas entidades del texto como ser una persona, lugar u organización.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_sentimiento"&gt;Análisis de sentimiento&lt;/a&gt;&lt;/strong&gt;: También podemos utilizar &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; para identificar el &lt;em&gt;sentimiento&lt;/em&gt; de una cadena de texto, desde muy negativo a neutral y a muy positivo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="Librer&amp;#237;as-de-Python-para-Procesamiento-del-Lenguaje-Natural"&gt;Librer&amp;#237;as de Python para Procesamiento del Lenguaje Natural&lt;a class="anchor-link" href="#Librer&amp;#237;as-de-Python-para-Procesamiento-del-Lenguaje-Natural"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Actualmente, &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; es uno de los lenguajes más populares para trabajar en el campo la &lt;a href="https://iaarbook.github.io/"&gt;Inteligencia Artificial&lt;/a&gt;. Para abordar los problemas relacionados con el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; nos proporciona las siguientes librerías:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://www.nltk.org/"&gt;NLTK&lt;/a&gt;:&lt;/strong&gt; Es la librería líder para el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt;. Proporciona interfaces fáciles de usar a más de &lt;em&gt;&lt;a href="https://nltk.org/nltk_data/"&gt;50 corpus&lt;/a&gt;&lt;/em&gt; y recursos léxicos, junto con un conjunto de bibliotecas de procesamiento de texto para la clasificación, tokenización, el etiquetado, el análisis y el razonamiento semántico.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="http://textblob.readthedocs.io/en/dev/"&gt;TextBlob&lt;/a&gt;:&lt;/strong&gt; &lt;a href="http://textblob.readthedocs.io/en/dev/"&gt;TextBlob&lt;/a&gt; simplifica el procesamiento de texto proporcionando una interfaz intuitiva a &lt;a href="https://www.nltk.org/"&gt;NLTK&lt;/a&gt;. Posee una suave curva de aprendizaje al mismo tiempo que cuenta con una sorprendente cantidad de funcionalidades.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://stanfordnlp.github.io/CoreNLP/"&gt;Stanford CoreNLP&lt;/a&gt;:&lt;/strong&gt; Paquete desarrollado por la universidad de &lt;a href="http://web.stanford.edu/class/cs224n/"&gt;Stanford&lt;/a&gt;, para muchos constituye el estado del arte sobre las técnicas tradicionales de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt;. Si bien esta escrita en Java, posee una &lt;a href="https://github.com/stanfordnlp/python-stanford-corenlp"&gt;interface con Python&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://spacy.io/"&gt;Spacy&lt;/a&gt;:&lt;/strong&gt; Es una librería relativamente nueva que sobresale por su facilidad de uso y su velocidad a la hora de realizar el procesamiento de texto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="http://textacy.readthedocs.io/en/latest/"&gt;Textacy&lt;/a&gt;:&lt;/strong&gt; Esta es una librería de alto nivel diseñada sobre &lt;a href="https://spacy.io/"&gt;Spacy&lt;/a&gt; con la idea de facilitar aun más las tareas relacionadas con el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://radimrehurek.com/gensim/intro.html"&gt;Gensim&lt;/a&gt;:&lt;/strong&gt; Es una librería diseñada para extraer automáticamente los temas semánticos de los documentos de la forma más eficiente y con menos complicaciones posible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://pyldavis.readthedocs.io/en/latest/readme.html"&gt;pyLDAvis&lt;/a&gt;:&lt;/strong&gt; Esta librería está diseñado para ayudar a los usuarios a interpretar los temas que surgen de un análisis de tópicos. Nos permite visualizar en forma muy sencilla cada uno de los temas incluidos en el texto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como veremos, el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; también se está sumando a la popularidad del &lt;a href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/"&gt;Deep Learning&lt;/a&gt;, por lo que muchos de los &lt;a href="https://iaarbook.github.io/python/#frameworks-para-deep-learning"&gt;frameworks&lt;/a&gt; que se utilizan en &lt;a href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/"&gt;Deep Learning&lt;/a&gt; pueden ser aplicados para realizar modelos de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Corpus-ling&amp;#252;&amp;#237;stico"&gt;Corpus ling&amp;#252;&amp;#237;stico&lt;a class="anchor-link" href="#Corpus-ling&amp;#252;&amp;#237;stico"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hoy en día, es indispensable el uso de buenos recursos lingüísticos para el desarrollo de los sistemas de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt;. Estos recursos son esenciales para la creación de gramáticas, en el marco de aproximaciones simbólicas; o para llevar a cabo la formación de módulos basados en el &lt;a href="https://iaarbook.github.io/machine-learning/"&gt;aprendizaje automático&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Un &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus lingüístico&lt;/a&gt; es un conjunto amplio y estructurado de ejemplos reales de uso de la lengua. Estos ejemplos pueden ser textos (los más comunes), o muestras orales (generalmente transcritas). Un &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus lingüístico&lt;/a&gt; es un conjunto de textos relativamente grande, creado independientemente de sus posibles formas o usos. Es decir, en cuanto a su estructura, variedad y complejidad, un &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus&lt;/a&gt; debe reflejar una lengua, o su modalidad, de la forma más exacta posible; en cuanto a su uso, preocuparse de que su representación sea real. La idea es que representen al lenguaje de la mejor forma posible para que los modelos de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;NLP&lt;/a&gt; puedan aprender los patrones necesarios para entender el &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt;. Encontrar un buen &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus&lt;/a&gt; sobre el cual trabajar no suele ser una tarea sencilla; un &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus&lt;/a&gt; que se suele utilizar para entrenar modelos es el que incluye la información extraída de &lt;a href="https://dumps.wikimedia.org/eswiki/latest/"&gt;wikipedia&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Procesamiento-del-Lenguaje-Natural-con-Python"&gt;Procesamiento del Lenguaje Natural con Python&lt;a class="anchor-link" href="#Procesamiento-del-Lenguaje-Natural-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hasta aquí la introducción, ahora llegó el momento de ensuciarse un poco las manos y comenzar a explorar algunos ejemplos de las herramientas que nos ofrece &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; para trabajar con problemas de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt;. Comencemos por ejemplo, descargando el &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus&lt;/a&gt; de &lt;a href="https://dumps.wikimedia.org/eswiki/latest/"&gt;wikipedia&lt;/a&gt; en español. Esto lo podemos hacer fácilmente utilizando &lt;a href="http://textacy.readthedocs.io/en/latest/"&gt;Textacy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Importando las librerías que vamos a utilizar&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;textacy&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;textacy.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Wikipedia&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;warnings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;simplefilter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ignore&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# graficos incrustados&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+
+&lt;span class="c1"&gt;# función auxiliar&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;leer_texto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Funcion auxiliar para leer un archivo de texto&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Descargando copus de wikipedia&lt;/span&gt;
+&lt;span class="n"&gt;wp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Wikipedia&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/home/raul/Documents/data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;es&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;latest&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;wp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Chequeando la información descargada&lt;/span&gt;
+&lt;span class="n"&gt;wp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;{&amp;#39;data_dir&amp;#39;: &amp;#39;/home/raul/Documents/data&amp;#39;,
+ &amp;#39;description&amp;#39;: &amp;#39;All articles for a given language- and version-specific Wikipedia site snapshot.&amp;#39;,
+ &amp;#39;name&amp;#39;: &amp;#39;wikipedia&amp;#39;,
+ &amp;#39;site_url&amp;#39;: &amp;#39;https://meta.wikimedia.org/wiki/Data_dumps&amp;#39;}&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;wp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;texts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min_len&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;375&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;Andorra
+
+Andorra, oficialmente Principado de Andorra , es un pequeño país soberano del suroeste de Europa. Constituido en Estado independiente, de derecho, democrático y social, cuya forma de gobierno es el coprincipado parlamentario. Su territorio está organizado en siete parroquias, con una población total en 2016 de 78.264 habitantes. Su capital es Andorra la Vieja.
+
+Ti 
+
+Argentina
+
+La República Argentina, conocida simplemente como Argentina, es un país soberano de América del Sur, ubicado en el extremo sur y sudeste de dicho subcontinente. Adopta la forma de gobierno republicana, representativa y federal.
+
+El Estado argentino es un Estado federal descentralizado, integrado por un Estado nacional y veintitrés estados provinciales autónomos  
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como podemos ver, con la ayuda de &lt;a href="http://textacy.readthedocs.io/en/latest/"&gt;Textacy&lt;/a&gt; es muy fácil descargar la información de &lt;a href="https://dumps.wikimedia.org/eswiki/latest/"&gt;wikipedia&lt;/a&gt; para luego poder utilizarla de base para nuestro &lt;a href="https://es.wikipedia.org/wiki/Corpus_ling%C3%BC%C3%ADstico"&gt;corpus&lt;/a&gt;. Veamos otros problemas que también podemos resolver con la ayuda de &lt;a href="http://textacy.readthedocs.io/en/latest/"&gt;Textacy&lt;/a&gt;; como ser los casos de detectar el idioma o de procesar todo un texto y analizarlo.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Detectando el idioma con taxtacy&lt;/span&gt;
+&lt;span class="n"&gt;saludos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hola&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Guten Tag&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Buon giorno&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bom dia&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;saludo&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;saludos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;textacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text_utils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;detect_language&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;saludo&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;es
+en
+fr
+de
+it
+pt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Cargando el modelo en español de spacy&lt;/span&gt;
+&lt;span class="n"&gt;nlp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;textacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;spacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;es_core_web_md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# detalle de stop words&lt;/span&gt;
+&lt;span class="c1"&gt;# las stop words son las palabras más comunes de un corpus que en general&lt;/span&gt;
+&lt;span class="c1"&gt;# queremos eliminar porque no son significativas para un análisis.&lt;/span&gt;
+&lt;span class="c1"&gt;# Ocurren muchas veces, pero aportan muy poca información&lt;/span&gt;
+&lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;textacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;spacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;es&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;STOP_WORDS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[&amp;#39;cuanto&amp;#39;,
+ &amp;#39;sera&amp;#39;,
+ &amp;#39;trabajo&amp;#39;,
+ &amp;#39;tan&amp;#39;,
+ &amp;#39;ya&amp;#39;,
+ &amp;#39;claro&amp;#39;,
+ &amp;#39;encuentra&amp;#39;,
+ &amp;#39;arriba&amp;#39;,
+ &amp;#39;despacio&amp;#39;,
+ &amp;#39;primero&amp;#39;,
+ &amp;#39;pocas&amp;#39;,
+ &amp;#39;tiempo&amp;#39;,
+ &amp;#39;aquéllos&amp;#39;,
+ &amp;#39;días&amp;#39;,
+ &amp;#39;enseguida&amp;#39;]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Procesando un texto &lt;/span&gt;
+&lt;span class="c1"&gt;# Procesando 1984 de George Orwell - mi novela favorita&lt;/span&gt;
+&lt;span class="n"&gt;texto&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;leer_texto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ORWELL_1984.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;texto_procesado&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nlp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Cuántas sentencias hay en el texto?&lt;/span&gt;
+&lt;span class="n"&gt;sentencias&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sentencias&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;8114
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# imprimir las primeras 10 sentencias para verificar el texto&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sentencias&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;[Winston Smith, con la barbilla clavada en el pecho en su esfuerzo por burlar el molestísimo viento, se deslizó rápidamente por entre las puertas de cristal de las Casas de la Victoria, aunque, no con la suficiente rapidez para evitar que una ráfaga polvorienta se colara con él.
+, El vestíbulo olía a legumbres cocidas y a esteras viejas., Al fondo, un cartel de colores, demasiado grande para hallarse en un interior, estaba pegado a la pared., Representaba sólo un enorme rostro de más de un metro de anchura: la cara de un hombre de unos cuarenta y cinco años con un gran bigote negro y facciones hermosas y endurecidas., Winston se dirigió hacia las escaleras., Era inútil intentar subir en el ascensor., No funcionaba con frecuencia y en esta época la corriente se cortaba durante las horas de día., Esto era parte de las restricciones con que se preparaba la Semana del Odio., Winston tenía que subir a un séptimo piso.]
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[11]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# sentencias con las que aparece el Gran Hermano&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sent&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sents&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Gran Hermano&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[—¿Morirá el Gran Hermano?,
+ ael Gran Hermano.,
+ Pensó en el Gran Hermano.,
+ ¿Cuáles eran sus verdaderos sentimientos hacia el Gran Hermano?,
+ Dime: ¿cuáles son los verdaderos sentimientos que te inspira el Gran Hermano?,
+ Tienes que amar ael Gran Hermano.,
+ l Gran Hermano.,
+ l Gran Hermano.,
+ Amaba ael Gran Hermano.
+ 
+ 
+ 
+ 
+ ,
+ Hubiera sido posible, por ejemplo, decir el «Gran Hermano inbueno».]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;encontrar_personajes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Devuelve una lista de los personajes de un `doc` con su cantidad de&lt;/span&gt;
+&lt;span class="sd"&gt;    ocurrencias&lt;/span&gt;
+&lt;span class="sd"&gt;    &lt;/span&gt;
+&lt;span class="sd"&gt;    :param doc: NLP documento parseado por Spacy&lt;/span&gt;
+&lt;span class="sd"&gt;    :return: Lista de Tuplas con la forma&lt;/span&gt;
+&lt;span class="sd"&gt;        [(&amp;#39;winston&amp;#39;, 686), (&amp;quot;o&amp;#39;brien&amp;quot;, 135), (&amp;#39;julia&amp;#39;, 85),]&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    
+    &lt;span class="n"&gt;personajes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;label_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;PERSON&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;personajes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+            
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;personajes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;most_common&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[13]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Extrayendo los personajes principales del texto y contando cuantas veces&lt;/span&gt;
+&lt;span class="c1"&gt;# son nombrados.&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;encontrar_personajes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="p"&gt;)[:&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;[(&amp;#39;winston&amp;#39;, 686), (&amp;#34;o&amp;#39;brien&amp;#34;, 135), (&amp;#39;julia&amp;#39;, 85), (&amp;#39;partido&amp;#39;, 85), (&amp;#39;parsons&amp;#39;, 36), (&amp;#39;syme&amp;#39;, 29), (&amp;#39;goldstein&amp;#39;, 29), (&amp;#39;pensamiento&amp;#39;, 22), (&amp;#39;odio&amp;#39;, 13), (&amp;#39;ministerio&amp;#39;, 13), (&amp;#39;&amp;#39;, 11), (&amp;#39;katharine&amp;#39;, 11), (&amp;#39;winston ?&amp;#39;, 10), (&amp;#39;rutherford&amp;#39;, 9), (&amp;#39;ogilvy&amp;#39;, 8), (&amp;#39;aaronson&amp;#39;, 8), (&amp;#39;charrington&amp;#39;, 8), (&amp;#39;—la&amp;#39;, 7), (&amp;#39;withers&amp;#39;, 6), (&amp;#39;ingsoc&amp;#39;, 6)]
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[14]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;obtener_adj_pers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;personaje&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Encontrar todos los adjetivos relacionados a un personaje en un `doc`&lt;/span&gt;
+&lt;span class="sd"&gt;    &lt;/span&gt;
+&lt;span class="sd"&gt;    :param doc: NLP documento parseado por Spacy&lt;/span&gt;
+&lt;span class="sd"&gt;    :param personaje: un objeto String &lt;/span&gt;
+&lt;span class="sd"&gt;    :return: lista de adjetivos relacionados a un `personaje`&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    
+    &lt;span class="n"&gt;adjetivos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;personaje&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subtree&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pos_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ADJ&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="n"&gt;adjetivos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;personaje&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dep_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;nsubj&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;child&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;child&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dep_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;acomp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                        &lt;span class="n"&gt;adjetivos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;child&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;adjetivos&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[15]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Encontrar adjetivos que describen a algún personaje.&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;obtener_adj_pers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;winston&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre class="ipynb"&gt;[&amp;#39;superior&amp;#39;, &amp;#39;separado&amp;#39;, &amp;#39;fuertes&amp;#39;, &amp;#39;abierto&amp;#39;, &amp;#39;oscura&amp;#39;, &amp;#39;dirigiéndose&amp;#39;, &amp;#39;negro&amp;#39;, &amp;#39;saltones&amp;#39;, &amp;#39;tristes&amp;#39;, &amp;#39;burlones&amp;#39;, &amp;#39;solo&amp;#39;, &amp;#39;humano&amp;#39;, &amp;#39;sostenemos&amp;#39;, &amp;#39;dubitativo&amp;#39;, &amp;#39;completa&amp;#39;, &amp;#39;definitiva&amp;#39;, &amp;#39;sobresaltado&amp;#39;, &amp;#39;fascinado&amp;#39;, &amp;#39;extraña&amp;#39;, &amp;#39;sobrado&amp;#39;, &amp;#39;propio&amp;#39;, &amp;#39;solos&amp;#39;, &amp;#39;joven&amp;#39;, &amp;#39;sorprendido&amp;#39;, &amp;#39;sorprendido&amp;#39;, &amp;#39;hermosa&amp;#39;, &amp;#39;breve&amp;#39;, &amp;#39;cortante&amp;#39;, &amp;#39;primera&amp;#39;, &amp;#39;junto&amp;#39;, &amp;#39;obediente&amp;#39;, &amp;#39;metafísico&amp;#39;, &amp;#39;blanca&amp;#39;, &amp;#39;sonriente&amp;#39;, &amp;#39;sentado&amp;#39;, &amp;#39;irresoluto&amp;#39;, &amp;#39;sumergido&amp;#39;, &amp;#39;feliz&amp;#39;]
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[16]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;personaje_verbo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;verbo&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Encontrar los personajes que utilizan determinado `verbo` en `doc`&lt;/span&gt;
+&lt;span class="sd"&gt;    &lt;/span&gt;
+&lt;span class="sd"&gt;    :param doc: NLP documento parseado por Spacy&lt;/span&gt;
+&lt;span class="sd"&gt;    :param verbo: un objeto String &lt;/span&gt;
+&lt;span class="sd"&gt;    :return: lista de personajes que utilizan `verbo`&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;contar_verbo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;label_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;PERSON&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemma_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;verbo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;contar_verbo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;contar_verbo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;most_common&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[17]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Encontrar personajes que utilizan determinado verbo&lt;/span&gt;
+&lt;span class="n"&gt;personaje_verbo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;dijo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[(&amp;#39;Winston&amp;#39;, 7),
+ (&amp;#39;Julia&amp;#39;, 4),
+ (&amp;#39;Syme&amp;#39;, 2),
+ (&amp;#39;Julia—. Espera&amp;#39;, 1),
+ (&amp;#39;Parsons&amp;#39;, 1),
+ (&amp;#39;—le&amp;#39;, 1)]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[18]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Trabajando con las entidades del texto&lt;/span&gt;
+&lt;span class="c1"&gt;# Una entidad nombrada es cualquier objeto del mundo real como una persona,&lt;/span&gt;
+&lt;span class="c1"&gt;# ubicación, organización o producto con un nombre propio.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# tipos de entidades del texto&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;label_&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;{&amp;#39;CARDINAL&amp;#39;, &amp;#39;LOC&amp;#39;, &amp;#39;MISC&amp;#39;, &amp;#39;ORDINAL&amp;#39;, &amp;#39;ORG&amp;#39;, &amp;#39;PERSON&amp;#39;}&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[19]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Entidades nombradas de tipo ORG&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ents&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;label_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ORG&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[INGSOC,
+ Partido:,
+ ES LA,
+ Departamento de Registro,
+ Dos Minutos de Odio,
+ Departamento de Novela,
+ Partido Interior,
+ Partido Interior,
+ Departamento de Registro,
+ Dos Minutos]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[20]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Partes de la oración (POS)&lt;/span&gt;
+&lt;span class="c1"&gt;# En las partes de la oración se etiquetan las palabras de acuerdo a lo &lt;/span&gt;
+&lt;span class="c1"&gt;# que significan segun su contexto. Algunas de estas etiquetas pueden&lt;/span&gt;
+&lt;span class="c1"&gt;# ser: Adjetivos, verbos, adverbios, conjunciones, pronombres, sustantivos.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Etiquetas del texto&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pos_&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;{&amp;#39;ADJ&amp;#39;,
+ &amp;#39;ADP&amp;#39;,
+ &amp;#39;ADV&amp;#39;,
+ &amp;#39;AUX&amp;#39;,
+ &amp;#39;CONJ&amp;#39;,
+ &amp;#39;DET&amp;#39;,
+ &amp;#39;INTJ&amp;#39;,
+ &amp;#39;NOUN&amp;#39;,
+ &amp;#39;NUM&amp;#39;,
+ &amp;#39;PART&amp;#39;,
+ &amp;#39;PRON&amp;#39;,
+ &amp;#39;PROPN&amp;#39;,
+ &amp;#39;PUNCT&amp;#39;,
+ &amp;#39;SCONJ&amp;#39;,
+ &amp;#39;SPACE&amp;#39;,
+ &amp;#39;SYM&amp;#39;,
+ &amp;#39;VERB&amp;#39;}&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[21]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Etiquetas de tipo ADJ&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orth_&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pos_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ADJ&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[&amp;#39;frío&amp;#39;,
+ &amp;#39;clavada&amp;#39;,
+ &amp;#39;molestísimo&amp;#39;,
+ &amp;#39;suficiente&amp;#39;,
+ &amp;#39;polvorienta&amp;#39;,
+ &amp;#39;cocidas&amp;#39;,
+ &amp;#39;viejas&amp;#39;,
+ &amp;#39;grande&amp;#39;,
+ &amp;#39;pegado&amp;#39;,
+ &amp;#39;enorme&amp;#39;]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[22]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Etiquetas de tipo PROPN&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orth_&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;texto_procesado&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pos_&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;PROPN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[&amp;#39;GEORGE&amp;#39;,
+ &amp;#39;ORWELL&amp;#39;,
+ &amp;#39;PARTE&amp;#39;,
+ &amp;#39;CAPITULO&amp;#39;,
+ &amp;#39;Winston&amp;#39;,
+ &amp;#39;Smith&amp;#39;,
+ &amp;#39;Casas&amp;#39;,
+ &amp;#39;Victoria&amp;#39;,
+ &amp;#39;Winston&amp;#39;,
+ &amp;#39;Semana&amp;#39;]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como demuestran estos ejemplos &lt;a href="http://textacy.readthedocs.io/en/latest/"&gt;Textacy&lt;/a&gt; / &lt;a href="https://spacy.io/"&gt;Spacy&lt;/a&gt; son herramientas muy poderosas que nos pueden ayudar a analizar y obtener información valiosa de un texto en forma rápida y sencilla.&lt;/p&gt;
+&lt;h2 id="Deep-Learning-y-Procesamiento-del-Lenguaje-Natural"&gt;Deep Learning y Procesamiento del Lenguaje Natural&lt;a class="anchor-link" href="#Deep-Learning-y-Procesamiento-del-Lenguaje-Natural"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Durante mucho tiempo, las técnicas principales de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; fueron dominadas por métodos de &lt;a href="https://iaarbook.github.io/machine-learning/"&gt;aprendizaje automático&lt;/a&gt; que utilizaron &lt;a href="https://es.wikipedia.org/wiki/Modelo_lineal"&gt;modelos lineales&lt;/a&gt; como las &lt;a href="https://es.wikipedia.org/wiki/M%C3%A1quinas_de_vectores_de_soporte"&gt;máquinas de vectores de soporte&lt;/a&gt; o la &lt;a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_log%C3%ADstica"&gt;regresión logística&lt;/a&gt;, entrenados sobre &lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vectores&lt;/a&gt; de características de muy alta dimensional pero muy escasos.
+Recientemente, el campo ha tenido cierto éxito en el cambio hacia modelos de &lt;a href="https://iaarbook.github.io/deeplearning/"&gt;deep learning&lt;/a&gt; sobre entradas más densas.&lt;/p&gt;
+&lt;p&gt;Las &lt;a href="https://relopezbriega.github.io/category/redes-neuronales.html"&gt;redes neuronales&lt;/a&gt; proporcionan una poderosa maquina de aprendizaje que es muy atractiva para su uso en problemas de &lt;em&gt;lenguaje natural&lt;/em&gt;. Un componente importante en las &lt;a href="https://relopezbriega.github.io/category/redes-neuronales.html"&gt;redes neuronales&lt;/a&gt; para el &lt;a href="https://es.wikipedia.org/wiki/Lenguaje"&gt;lenguaje&lt;/a&gt; es el uso de una capa de &lt;a href="https://en.wikipedia.org/wiki/Word_embedding"&gt;word embedding&lt;/a&gt;, una asignación de símbolos discretos a vectores continuos en un espacio dimensional relativamente bajo. Cuando se utiliza &lt;a href="https://en.wikipedia.org/wiki/Word_embedding"&gt;word embedding&lt;/a&gt;, se transforman los distintos símbolos en objetos matemáticos sobre los que se pueden realizar operaciones. En particular, la distancia entre vectores puede equipararse a la distancia entre palabras, facilitando la generalización del comportamiento de una palabra sobre otra.
+Esta representación de palabras como vectores es aprendida por la red como parte del proceso de entrenamiento.
+Subiendo en la jerarquía, la red también aprende a combinar los vectores de palabras de una manera que es útil para la predicción. Esta capacidad alivia en cierta medida los problemas de dispersión de los datos.
+Hay dos tipos principales de arquitecturas de &lt;a href="https://relopezbriega.github.io/category/redes-neuronales.html"&gt;redes neuronales&lt;/a&gt; que resultan muy útiles en los problemas de &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt;: las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_prealimentada"&gt;Redes neuronales prealimentadas&lt;/a&gt; y las &lt;a href="https://en.wikipedia.org/wiki/Recurrent_neural_network"&gt;Redes neuronales recurrentes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para ejemplificar, veamos como podemos utilizar &lt;a href="https://en.wikipedia.org/wiki/Word_embedding"&gt;word embedding&lt;/a&gt; utilizando el modelo &lt;code&gt;word2vec&lt;/code&gt; de &lt;a href="https://radimrehurek.com/gensim/intro.html"&gt;Gensim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[23]:&lt;/div&gt;
+
+&lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
+&lt;div class="input_area" style="display:none"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando gensim y TSNE para graficar&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;gensim&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.manifold&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;TSNE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stderr output_text"&gt;
+&lt;pre class="ipynb"&gt;Using TensorFlow backend.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[24]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# transformando el texto para pasarlo al modelo de gensim&lt;/span&gt;
+&lt;span class="n"&gt;texto&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;palabra&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;palabra&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;palabra&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sentencias&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# generando el diccionario&lt;/span&gt;
+&lt;span class="n"&gt;diccionario&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gensim&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpora&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Dictionary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[25]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creando el modelo&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gensim&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Word2Vec&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texto&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;workers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                                &lt;span class="n"&gt;min_count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1e-3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[26]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# representación de la palabra hermano como vector.&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hermano&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[26]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;array([-0.22692642, -0.08890257, -0.12868501, -0.17392403,  0.22627664,
+        0.10127033, -0.09027202,  0.10692301, -0.30289358,  0.06429829,
+        0.17862263,  0.20448232, -0.54694331, -0.40681064,  0.61438572,
+        0.0217872 ,  0.080202  ,  0.46306548,  0.09076022, -0.02869571,
+       -0.46194851,  0.28670114,  0.38570273,  0.32555154,  0.13098474,
+       -0.03134775, -0.09577781,  0.06859019, -0.15935177,  0.61558241,
+        0.07509102, -0.24245416, -0.44668666, -0.77279037,  0.84581488,
+       -0.54047441, -0.18756895, -0.12506978, -0.52870399,  0.1898849 ,
+       -0.00930689,  0.36932173,  0.22370262, -0.67407966, -0.45509291,
+       -0.00848365,  0.62967575,  0.16172817,  0.09978516,  0.15064637,
+       -0.34957823,  0.20686783,  0.1038606 , -0.09155462,  0.08276461,
+        0.31154567, -0.3129864 , -0.45181432, -0.12060832,  0.30541465,
+       -0.37994722,  0.13566031,  0.16380484,  0.32732216,  0.15746659,
+        0.69340295, -0.25527388,  0.37333885,  0.23317885, -0.4710786 ,
+       -0.22506852,  0.14103019, -0.30253953,  0.00573605, -0.14745024,
+       -0.50815731, -0.37789851, -0.3400358 ,  0.62753612,  0.04747195,
+       -0.07443633,  0.4276363 , -0.28931141,  0.29784235, -0.07251735,
+       -0.07709371, -0.1003265 , -0.29098341,  0.47159177,  0.41372281,
+       -0.10831725, -0.04670507,  0.07489309,  0.00146162, -0.02867368,
+       -0.2771121 ,  0.37281424, -0.53325164,  0.19094327,  0.51455575], dtype=float32)&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[27]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# como convertimos las palabras en vectores y los vectores capturan muchas &lt;/span&gt;
+&lt;span class="c1"&gt;# regularidades lingüísticas, podemos aplicar operaciones vectoriales para&lt;/span&gt;
+&lt;span class="c1"&gt;# extraer muchas propiedades interesantes. &lt;/span&gt;
+
+&lt;span class="c1"&gt;# palabras similares a persona&lt;/span&gt;
+&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;most_similar_cosmul&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;persona&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;[(&amp;#39;mano&amp;#39;, 0.9999627470970154),
+ (&amp;#39;se&amp;#39;, 0.9999592304229736),
+ (&amp;#39;mesa&amp;#39;, 0.9999556541442871),
+ (&amp;#39;lo&amp;#39;, 0.999954879283905),
+ (&amp;#39;podía&amp;#39;, 0.9999546408653259),
+ (&amp;#39;personas&amp;#39;, 0.9999545812606812),
+ (&amp;#39;habría&amp;#39;, 0.9999533891677856),
+ (&amp;#39;sitio&amp;#39;, 0.9999532103538513),
+ (&amp;#39;no&amp;#39;, 0.999953031539917),
+ (&amp;#39;pero&amp;#39;, 0.999951958656311)]&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[28]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# por último podemos graficar el modelo&lt;/span&gt;
+&lt;span class="n"&gt;vocab&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;modelo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# aplicamos TSNE&lt;/span&gt;
+&lt;span class="n"&gt;tsne&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TSNE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_components&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;X_tsne&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tsne&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# transformamos en DataFrame&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_tsne&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;)],&lt;/span&gt;
+               &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;palabra&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[29]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creamos el gráfico&lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# reducimos el dataset a 15 palabras para el ejemplo&lt;/span&gt;
+&lt;span class="n"&gt;df_e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df_e&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;df_e&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df_e&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;palabra&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+    &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df_e&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iloc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;df_e&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iloc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+    
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+elQffvih6tWrpx07dmjo0KE6Mdq7ceNGbdu2TS1atFCfPn20ZMkSDRo0yHs+n332mVJSUrRu3Tr5
++flp7Nixmj9/vh544IHqvKwAUGPiw4MkyXs3YrMAfyXHBXv31xTCFq54J98GXFxarrScAgVIio6O
+1o033ihJCgsLk8fj0W233aZ69erpN7/5jfr27etdJ7VhwwYtWbJEkjR8+HA9/vjj3vrvu+8++fj4
+qE2bNmrdurW2b9+ujIwMjR8/XtLxJxi3aNHCG7Z69eqlRo0anbavpaWlGjdunHJzc+Xr6+s9Rj/1
+t3Xr1pKkoUOHKiMjo1LY+uijj5Sdna2oqChJUnFxsa6//vqquIQAcNmIDw+q8XD1c4QtXNF+fhuw
+MdKkJZs1rPkR1a1b11vO19dXZWVlqlOnjjZu3KiPPvpIqamp+q//+i+tWrXqjG04jnPG7Z+75ppr
+fvG76dOnq0mTJsrLy1NFRYXq1at3zu0YYzRixAj98Y9/PGP7AIDqxZotXNFOdxtwcWm5FmV+c9ry
+RUVFOnz4sO666y5Nnz5deXl5ko7fxXjiIXfz589Xly5dvMf885//VEVFhXbu3Kkvv/xSwcHB6tKl
+i+bPny9J+vzzz7Vr1y4FB5+6ZuDaa6/VkSNHvNuHDx9W06ZN5ePjo3nz5lVac7Vx40Z99dVXqqio
+UEpKijp37lyprp49eyo1NVX79u2TJB08eFBff/31OV8rAIAdjGzhivZLtwEfKPpRLU+z/8iRI+rf
+v79KSkpkjNGf//xnSdKMGTM0cuRITZ06VYGBgZo9e7b3mObNmys6Olrff/+9XnvtNdWrV09jx47V
+mDFj5HK5VKdOHc2ZM6fSSNoJbrdbvr6+Cg0NVUJCgsaOHat7771Xc+fOVZ8+fSqNgkVFRWncuHH6
+4osv1KNHDw0YMKBSXe3bt9fzzz+v3r17q6KiQn5+fpo5c6ZatGhx/hcOAFBlePQDrmi2bwNOSEhQ
+3759K62dAgDUDjz6AdClexswAKD2YBoRVzTbtwHPmTOnSuoBAPyywsJCLViwQGPHjq3prlwQphEB
+AMAlzePxqG/fvtqyZUtNd6USphEBAEC18Xg83jdytGvXToMGDdLRo0crvb81KytL3bt3lyT98MMP
+SkxMVHR0tMLDw7Vs2TJJ0tatW71vwnC73dqxY4cmTpyonTt3KiwsTMnJyTLGKDk5WSEhIXK5XEpJ
+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
+V56yf82aNerbt28N9AhAVeKhpgBQw5599tma7gIAixjZAoCfmTt3rtxut0JDQzV8+HB5PB7FxsbK
+7XarZ8+e2rVrlyQpISFBSUlJ6tSpk1q3bq3U1FRJkjFGycnJCgkJkcvlUkpKirfuP/3pT3K5XAoN
+DdXEiRO99Zw49v3331fbtm0VERGhJUuWeI87ePCg4uPj5Xa7ddttt2nTpk3VdTkAXCRGtgDgJFu3
+btXzzz+v9evXq3Hjxjp48KBGjBjh/XnzzTeVlJSktLQ0SdKePXuUkZGh7du365577tGgQYO0ZMkS
+5ebmKi8vTwcOHFBUVJS6du2q3NxcLVu2TJ988omuvvpqHTx4sFLbJSUlGjVqlFatWqV///d/15Ah
+Q7zfPf300woPD1daWppWrVqlBx54QLm5udV6bQBcGEa2ANR6aTkFipmySq0mvqt+k16Tu0sfNW7c
+WJLUqFEjbdiwQb/+9a8lScOHD1dGRob32Pj4ePn4+Kh9+/bau3evJCkjI0NDhw6Vr6+vmjRpom7d
+uikzM1MrV67UyJEjdfXVV3vrPtn27dvVqlUrtWnTRo7j6P777/d+l5GRoeHDh0uSYmNj9d133+n7
+77+3d1EAVBnCFoBaLS2nQJOWbFZBYbGMpMLiUq3J36e0nIJzOr5u3brez8YYS70EcDkjbAGo1aau
+yFdxabl3u15ztw5vW6sXl2yUdHytVKdOnbRo0SJJ0vz589WlS5cz1tmlSxelpKSovLxc+/fvV3p6
+uqKjo9WrVy/Nnj1bR48e9dZ9srZt28rj8Wjnzp2SpIULF1aqc/78+ZKO36XYuHFjXXfddRd59gCq
+A2u2ANRquwuLK21fFdhCDW4fotzXHlXo25MVHh6uGTNmaOTIkZo6daoCAwM1e/bsM9Y5YMAAbdiw
+QaGhoXIcRy+99JJuuOEG9enTR7m5uYqMjNRVV12lu+66Sy+++KL3uHr16mnWrFm6++67dfXVV6tL
+ly46cuSIJGny5MlKTEyU2+3W1VdfrbfeeqvqLwYAK5xLadg7MjLSZGVl1XQ3ANQiMVNWqeBngUuS
+ggL8tW5ibA30CMDlwnGcbGNM5NnKMY0IoFZLjguWv59vpX3+fr5KjguuoR4BuNIwjQigVosPD5J0
+fO3W7sJiNQvwV3JcsHc/AFwswhaAWi8+PIhwBcAaphEBAAAsImwBAABYRNgCAACwiLAFAABgEWEL
+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
+YII=
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Aquí termina este artículo, obviamente el &lt;a href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"&gt;Procesamiento del Lenguaje Natural&lt;/a&gt; es un campo muy amplio y quedaron muchas cosas sin desarrollar. Espero que esta introducción les haya sido de utilidad.&lt;/p&gt;
+&lt;p&gt;Saludos!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Este post fue escrito por &lt;a href="https://relopezbriega.github.io/"&gt;Raúl e. López Briega&lt;/a&gt; utilizando &lt;a href="https://jupyter.org/"&gt;Jupyter notebook&lt;/a&gt;. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/NLP.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/NLP.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+&lt;/p&gt;</summary></entry><entry><title>Introducción a la Inteligencia Artificial</title><link href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/" rel="alternate"></link><published>2017-06-05T00:00:00-03:00</published><updated>2017-06-05T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-06-05:blog/2017/06/05/introduccion-a-la-inteligencia-artificial/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
