@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/redes-neuronales.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-06-13T00:00:00-03:00</updated><entry><title>Introducción al Deep Learning</title><link href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" rel="alternate"></link><published>2017-06-13T00:00:00-03:00</published><updated>2017-06-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-06-13:blog/2017/06/13/introduccion-al-deep-learning/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -28,7 +27,8 @@
 &lt;li&gt;&lt;p&gt;a: La salida de la neurona. Que va a ser calculada de la siguiente forma:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
+&lt;p&gt;$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;/p&gt;
+&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
 &lt;p&gt;Cada unidad neuronal está conectada con muchas otras y los enlaces entre ellas pueden incrementar o inhibir el estado de activación de las neuronas adyacentes. Estos sistemas aprenden y se forman a sí mismos, en lugar de ser programados de forma explícita, y sobresalen en áreas donde la detección de soluciones o características es difícil de expresar con la programación convencional.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://iaarhub.github.io/images/neural_network.svg"&gt;&lt;/p&gt;
 &lt;h3 id="Propagaci&amp;#243;n-hacia-atr&amp;#225;s"&gt;Propagaci&amp;#243;n hacia atr&amp;#225;s&lt;a class="anchor-link" href="#Propagaci&amp;#243;n-hacia-atr&amp;#225;s"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;propagación hacia atrás&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;backpropagation&lt;/a&gt; es un algoritmo que funciona mediante la determinación de la pérdida (o error) en la salida y luego propagándolo de nuevo hacia atrás en la red. De esta forma los pesos se van actualizando para minimizar el error resultante de cada neurona. Este algoritmo es lo que les permite a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; aprender.&lt;/p&gt;
@@ -74,8 +74,7 @@ $$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;st
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -140,8 +139,7 @@ $$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;st
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -153,8 +151,7 @@ $$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;st
  
 
 &lt;/p&gt;</summary></entry><entry><title>Redes neuronales convolucionales con TensorFlow</title><link href="https://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/" rel="alternate"></link><published>2016-08-02T00:00:00-03:00</published><updated>2016-08-02T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-08-02:blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -163,8 +160,7 @@ $$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;st
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -284,7 +280,9 @@ La operación realizada por esta capa también se llama &lt;em&gt;reducción de 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;forma dataset prueba: (10000, 32, 32, 3)
@@ -321,7 +319,9 @@ La operación realizada por esta capa también se llama &lt;em&gt;reducción de 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -3997,7 +3997,9 @@ lIbPtgAAAABJRU5ErkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -10595,8 +10597,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10767,8 +10768,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10892,7 +10892,9 @@ Por último, la función &lt;code&gt;inference&lt;/code&gt; es la que va a tener
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;Filling queue with 20000 CIFAR images before starting to train. This will take a few minutes.
@@ -10905,8 +10907,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10938,8 +10939,7 @@ Validation Error:&lt;/pre&gt;
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="Machine Learning"></category><category term="Redes Neuronales"></category><category term="TensorFlow"></category></entry><entry><title>TensorFlow y Redes Neuronales</title><link href="https://relopezbriega.github.io/blog/2016/06/05/tensorflow-y-redes-neuronales/" rel="alternate"></link><published>2016-06-05T00:00:00-03:00</published><updated>2016-06-05T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-06-05:blog/2016/06/05/tensorflow-y-redes-neuronales/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10948,8 +10948,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10960,8 +10959,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11004,8 +11002,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11069,8 +11066,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11107,7 +11103,9 @@ Validation Error:&lt;/pre&gt;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;Suma de las constantes: 5
@@ -11129,8 +11127,7 @@ Producto de matrices:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11140,8 +11137,7 @@ Producto de matrices:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11191,7 +11187,9 @@ Producto de matrices:
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;0
@@ -11206,8 +11204,7 @@ Producto de matrices:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11246,7 +11243,9 @@ Producto de matrices:
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;[[ 2.27301431  2.39163661  1.22738445  1.87839973]
@@ -11261,8 +11260,7 @@ Producto de matrices:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11280,18 +11278,21 @@ Producto de matrices:
 &lt;li&gt;&lt;p&gt;a: La salida de la neurona. Que va a ser calculada de la siguiente forma:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
+&lt;p&gt;$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;/p&gt;
+&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
 &lt;p&gt;Ahora que ya conocemos como se construye una neurona tratemos de implementar con este modelo las funciones lógicas &lt;strong&gt;AND, OR y XNOR&lt;/strong&gt;. Podemos pensar a estas funciones como un problema de clasificación en el que la salida va a ser 0 o 1, de acuerdo a la combinación de las diferentes entradas.&lt;/p&gt;
 &lt;p&gt;Las podemos modelar linealmente con la siguiente función de activación:&lt;/p&gt;
-$$f(x) = \left\{
+&lt;p&gt;$$f(x) = \left\{
     \begin{array}{ll}
-        0  &amp; \mbox{si } x &lt; 0 \\
-        1 &amp; \mbox{si } x \ge 0
+        0  &amp;amp; \mbox{si } x &amp;lt; 0 \\
+        1 &amp;amp; \mbox{si } x \ge 0
     \end{array}
-\right.$$&lt;h3 id="Neurona-AND"&gt;Neurona AND&lt;a class="anchor-link" href="#Neurona-AND"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona AND puede ser modelada con el siguiente esquema:&lt;/p&gt;
+\right.$$&lt;/p&gt;
+&lt;h3 id="Neurona-AND"&gt;Neurona AND&lt;a class="anchor-link" href="#Neurona-AND"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona AND puede ser modelada con el siguiente esquema:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/NN_AND.png"&gt;&lt;/p&gt;
 &lt;p&gt;La salida de esta neurona entonces va a ser:&lt;/p&gt;
-$$a = f(-1.5 + x_1 + x_2)$$&lt;p&gt;Veamos como la podemos implementar en &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$a = f(-1.5 + x_1 + x_2)$$&lt;/p&gt;
+&lt;p&gt;Veamos como la podemos implementar en &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11383,7 +11384,9 @@ $$a = f(-1.5 + x_1 + x_2)$$&lt;p&gt;Veamos como la podemos implementar en &lt;a 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -11438,8 +11441,7 @@ $$a = f(-1.5 + x_1 + x_2)$$&lt;p&gt;Veamos como la podemos implementar en &lt;a 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11447,7 +11449,8 @@ $$a = f(-1.5 + x_1 + x_2)$$&lt;p&gt;Veamos como la podemos implementar en &lt;a 
 &lt;h3 id="Neurona-OR"&gt;Neurona OR&lt;a class="anchor-link" href="#Neurona-OR"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona OR puede ser modelada con el siguiente esquema:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/NN_OR.png"&gt;&lt;/p&gt;
 &lt;p&gt;La salida de esta neurona entonces va a ser:&lt;/p&gt;
-$$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo de esta neurona es similar a la de la neurona AND, con el único cambio en el valor del &lt;em&gt;sesgo&lt;/em&gt;, por lo tanto solo tendríamos que cambiar ese valor en nuestro modelo anterior para crear esta nueva neurona.&lt;/p&gt;
+&lt;p&gt;$$a = f(-0.5 + x_1 + x_2)$$&lt;/p&gt;
+&lt;p&gt;Como se puede ver a simple vista, el modelo de esta neurona es similar a la de la neurona AND, con el único cambio en el valor del &lt;em&gt;sesgo&lt;/em&gt;, por lo tanto solo tendríamos que cambiar ese valor en nuestro modelo anterior para crear esta nueva neurona.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11494,7 +11497,9 @@ $$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -11549,8 +11554,7 @@ $$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11663,7 +11667,9 @@ $$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -11713,8 +11719,7 @@ $$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11751,7 +11756,9 @@ $$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;Successfully downloaded train-images-idx3-ubyte.gz 9912422 bytes.
@@ -11770,8 +11777,7 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11799,7 +11805,9 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
 
 
 
@@ -11851,7 +11859,9 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -12097,7 +12107,9 @@ h6OEcOI7HCWEE9/hKCGc+A5HCfH/AcnmBEPrP4W7AAAAAElFTkSuQmCC
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
 
 
 
@@ -12160,7 +12172,9 @@ h6OEcOI7HCWEE9/hKCGc+A5HCfH/AcnmBEPrP4W7AAAAAElFTkSuQmCC
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -13516,8 +13530,7 @@ VwaFZBQoUKBAwZVBIRkFChQoUHBl+P8BTrIEcMA4kLEAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13690,7 +13703,9 @@ VwaFZBQoUKBAwZVBIRkFChQoUHBl+P8BTrIEcMA4kLEAAAAASUVORK5CYII=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;Iteración:  001 costo = 190.739139247
@@ -13722,8 +13737,7 @@ Luego abir https://0.0.0.0:6006/ en el navegador
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13739,8 +13753,7 @@ Luego abir https://0.0.0.0:6006/ en el navegador
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;

@@ -223,6 +223,13 @@ jQuery(document).ready(function($) {
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7550748012598565",
+    enable_page_level_ads: true
+  });
+</script>
 
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -262,7 +269,7 @@ jQuery(document).ready(function($) {
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">Introducción a los métodos de Monte-Carlo con Python</h1>
-      <p class="meta"><time datetime="2017-01-10T00:00:00-03:00" pubdate>Tue 10 January 2017</time></p>
+      <p class="meta"><time datetime="2017-01-10T00:00:00-03:00" pubdate>mar 10 enero 2017</time></p>
 </header>
 <!-- Left & centered positioning -->
 <div class="ssk-sticky ssk-left ssk-center ssk-lg ssk-sticky-hide-xs">
@@ -273,8 +280,7 @@ jQuery(document).ready(function($) {
     <a href="" class="ssk ssk-email"></a>
 </div>
   <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -283,8 +289,7 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -321,7 +326,9 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[1]:</div>
+
 
 
 
@@ -354,7 +361,9 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[2]:</div>
+
 
 
 
@@ -388,7 +397,9 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">0.33961008717180197
@@ -426,7 +437,9 @@ jQuery(document).ready(function($) {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">0.36352835585530807
@@ -444,8 +457,7 @@ jQuery(document).ready(function($) {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -517,7 +529,9 @@ Veamos como funciona con un ejemplo, calculemos el área de un círculo de radio
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -2354,7 +2368,9 @@ nA2IC3DHcRzH2YC4AHccx3GcDcj/AZxQLkucC6V6AAAAAElFTkSuQmCC
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -3545,8 +3561,7 @@ xIgRI0aMIkQswGPEiBEjRowixP8H6p8O+BLp6XYAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3566,55 +3581,61 @@ Las técnicas <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">M
 <p><img alt="Cadena de Markov" title="Cadena de Markov" src="https://relopezbriega.github.io/images/MC.png" ></p>
 <p>Los estados de la cadena se representan como los nodos del <a href="https://es.wikipedia.org/wiki/Grafo">grafo</a>, una <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)" >arista</a> de dirección se extiende de un nodo $x$ hacia otro nodo $y$ si la transición de $x$ hacia $y$ es posible en una iteración. Cada una de estas <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)" >aristas</a> de dirección tienen una <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> asociada $P_{xy}$; esta es la <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> de que el nodo sea elegido en la siguiente iteración cuando la cadena se encuentra en el estado $x$. La cadena comienza en algún estado, digamos $X_0$, que puede ser elegido en forma <a href="https://es.wikipedia.org/wiki/Aleatoriedad">aleatoria</a> de acuerdo con una <a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">distribución</a> inicial o simplemente asignado en forma arbitraria. Desde allí, la cadena se mueve de un estado a otro en cada iteración según las <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidades</a> de transición del nodo vecino.</p>
 <h4 id="Representaci&#243;n-matricial">Representaci&#243;n matricial<a class="anchor-link" href="#Representaci&#243;n-matricial">&#182;</a></h4><p>Como alternativa a la representación en forma de <a href="https://es.wikipedia.org/wiki/Grafo">grafo</a>, la cadena antes descripta también puede ser representada por una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" >matriz</a> $P = (p_{xy})$ de las <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidades</a> $p_{xy}$ de transición de un estado $x$ a un estado $y$ en una iteración de la cadena. Esta <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" >matriz</a> es llamada <a href="https://es.wikipedia.org/wiki/Matriz_estoc%C3%A1stica">matriz de transición</a> y tiene la característica que todas sus filas deben sumar 1. Por ejemplo, la <a href="https://es.wikipedia.org/wiki/Matriz_estoc%C3%A1stica">matriz de transición</a> de nuestro ejemplo sería la siguiente:</p>
-$$ P = \begin{bmatrix}
-p_{11} & p_{12} & 0 & p_{14} \\ 
-p_{21} & 0  & p_{23} & 0 \\
-p_{31} & 0  & 0 & p_{34} \\
-0 & 0  & p_{43} & p_{44} 
+<p>$$ P = \begin{bmatrix}
+p_{11} &amp; p_{12} &amp; 0 &amp; p_{14} \\ 
+p_{21} &amp; 0  &amp; p_{23} &amp; 0 \\
+p_{31} &amp; 0  &amp; 0 &amp; p_{34} \\
+0 &amp; 0  &amp; p_{43} &amp; p_{44} 
 \end{bmatrix}
-$$<p>Esta formulación de <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" >matriz</a> es mucho más que una descripción tabular de la cadena; también es una herramienta de cálculo. Ya que si por ejemplo definimos a $p_t$ como el <em>vector de probabilidad</em> de una <a href="https://es.wikipedia.org/wiki/Variable_aleatoria">variable aleatoria</a> $X_t$; entonces podemos calcular $p_{t + 1}$ como una <a href="https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices">multiplicación de matrices</a></p>
-$$ p_{t + 1} = p_t \cdot P, \hspace{1cm}   t= 1, 2, \dots 
-$$<h4 id="La-distribuci&#243;n-invariante">La distribuci&#243;n invariante<a class="anchor-link" href="#La-distribuci&#243;n-invariante">&#182;</a></h4><p>Una de las características generales de las <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadenas de Markov</a> es que pueden poseer una <a href="https://en.wikipedia.org/wiki/Stationary_distribution">distribución invariante</a>, tomemos por ejemplo la siguiente representación matricial de una <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadena de Markov</a>:</p>
-$$ P = \begin{bmatrix}
-0.3 & 0.2 & 0.5 \\ 
-0.4 & 0.3 & 0.3 \\ 
-0.3 & 0.4 & 0.3  
+$$</p>
+<p>Esta formulación de <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" >matriz</a> es mucho más que una descripción tabular de la cadena; también es una herramienta de cálculo. Ya que si por ejemplo definimos a $p_t$ como el <em>vector de probabilidad</em> de una <a href="https://es.wikipedia.org/wiki/Variable_aleatoria">variable aleatoria</a> $X_t$; entonces podemos calcular $p_{t + 1}$ como una <a href="https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices">multiplicación de matrices</a></p>
+<p>$$ p_{t + 1} = p_t \cdot P, \hspace{1cm}   t= 1, 2, \dots 
+$$</p>
+<h4 id="La-distribuci&#243;n-invariante">La distribuci&#243;n invariante<a class="anchor-link" href="#La-distribuci&#243;n-invariante">&#182;</a></h4><p>Una de las características generales de las <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadenas de Markov</a> es que pueden poseer una <a href="https://en.wikipedia.org/wiki/Stationary_distribution">distribución invariante</a>, tomemos por ejemplo la siguiente representación matricial de una <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadena de Markov</a>:</p>
+<p>$$ P = \begin{bmatrix}
+0.3 &amp; 0.2 &amp; 0.5 \\ 
+0.4 &amp; 0.3 &amp; 0.3 \\ 
+0.3 &amp; 0.4 &amp; 0.3  
 \end{bmatrix}
-$$<p>Si comenzamos en el primer estado de la cadena, podemos obtener $p_1$ del siguiente modo:</p>
-$$ p_1 = \begin{bmatrix}
-1 & 0 & 0  
+$$</p>
+<p>Si comenzamos en el primer estado de la cadena, podemos obtener $p_1$ del siguiente modo:</p>
+<p>$$ p_1 = \begin{bmatrix}
+1 &amp; 0 &amp; 0  
 \end{bmatrix} \cdot \begin{bmatrix}
-0.3 & 0.2 & 0.5 \\ 
-0.4 & 0.3 & 0.3 \\ 
-0.3 & 0.4 & 0.3  
+0.3 &amp; 0.2 &amp; 0.5 \\ 
+0.4 &amp; 0.3 &amp; 0.3 \\ 
+0.3 &amp; 0.4 &amp; 0.3  
 \end{bmatrix} = \begin{bmatrix}
-0.3 & 0.2 & 0.5 
+0.3 &amp; 0.2 &amp; 0.5 
 \end{bmatrix}
-$$<p>Ahora que ya obtuvimos $p_1$, podemos continuar y obtener $p_2$:</p>
-$$ p_2 = p_1 P = \begin{bmatrix}
-0.3 & 0.2 & 0.5 
+$$</p>
+<p>Ahora que ya obtuvimos $p_1$, podemos continuar y obtener $p_2$:</p>
+<p>$$ p_2 = p_1 P = \begin{bmatrix}
+0.3 &amp; 0.2 &amp; 0.5 
 \end{bmatrix} \cdot \begin{bmatrix}
-0.3 & 0.2 & 0.5 \\ 
-0.4 & 0.3 & 0.3 \\ 
-0.3 & 0.4 & 0.3  
+0.3 &amp; 0.2 &amp; 0.5 \\ 
+0.4 &amp; 0.3 &amp; 0.3 \\ 
+0.3 &amp; 0.4 &amp; 0.3  
 \end{bmatrix} = \begin{bmatrix}
-0.32 & 0.22 & 0.36
+0.32 &amp; 0.22 &amp; 0.36
 \end{bmatrix}
-$$<p>Si continuamos con este proceso en forma recursiva, veremos que la distribución tiende hacía un <em>límite</em>, este límite es su <a href="https://en.wikipedia.org/wiki/Stationary_distribution">distribución invariante</a>.</p>
-$$ p_3 = p_2 P = \begin{bmatrix}
-0.332 & 0.304 & 0.364 
+$$</p>
+<p>Si continuamos con este proceso en forma recursiva, veremos que la distribución tiende hacía un <em>límite</em>, este límite es su <a href="https://en.wikipedia.org/wiki/Stationary_distribution">distribución invariante</a>.</p>
+<p>$$ p_3 = p_2 P = \begin{bmatrix}
+0.332 &amp; 0.304 &amp; 0.364 
 \end{bmatrix}, \\  
 p_4 = p_3 P = \begin{bmatrix}
-0.3304 & 0.3032 & 0.3664 
+0.3304 &amp; 0.3032 &amp; 0.3664 
 \end{bmatrix}, \\ 
 p_5 = p_4 P = \begin{bmatrix}
-0.33032 & 0.3036 &  0.36608 
+0.33032 &amp; 0.3036 &amp;  0.36608 
 \end{bmatrix}, \\ 
 \dots \hspace{1cm} \dots \\
 p_{10} = p_9 P = \begin{bmatrix}
-0.330357 & 0.303571 & 0.366072 
+0.330357 &amp; 0.303571 &amp; 0.366072 
 \end{bmatrix}
-$$<p>Veamos el ejemplo con la ayuda de <a href="https://www.python.org/">Python</a> para que quede más claro.</p>
+$$</p>
+<p>Veamos el ejemplo con la ayuda de <a href="https://www.python.org/">Python</a> para que quede más claro.</p>
 
 </div>
 </div>
@@ -3642,7 +3663,9 @@ $$<p>Veamos el ejemplo con la ayuda de <a href="https://www.python.org/">Python<
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
@@ -3681,7 +3704,9 @@ $$<p>Veamos el ejemplo con la ayuda de <a href="https://www.python.org/">Python<
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre class="ipynb">p_1 = [ 0.3  0.2  0.5]
@@ -3703,8 +3728,7 @@ p_11 = [ 0.33035714  0.30357143  0.36607143]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3712,16 +3736,19 @@ p_11 = [ 0.33035714  0.30357143  0.36607143]
 <h3 id="El-algoritmo-Metropolis-Hastings">El algoritmo Metropolis-Hastings<a class="anchor-link" href="#El-algoritmo-Metropolis-Hastings">&#182;</a></h3><p>Uno de los métodos <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">MCMC</a> más populares es el <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a>; de hecho la mayoría de los algoritmos de <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">MCMC</a> pueden ser interpretados como casos especiales de este algoritmo. El <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a> esta catalogado como <strong>uno de los 10 algoritmos más importantes y más utilizados en ciencia e ingeniería</strong> en los últimos veinte años.Se encuentra en el corazón de la mayoría de los métodos de muestreo <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">MCMC</a>.
 El problema básico que intenta resolver el <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a> es proporcionar un método para generar muestras de alguna distribución genérica, $P(x)$. La idea es que en muchos casos, podemos saber cómo escribir la ecuación para la <a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">distribución de probabilidad</a> $P(x)$, pero no sabemos cómo generar muestras aleatorias de la misma. Entonces la idea básica detrás de este algoritmo es la de construir una <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadena de Markov</a> cuya <a href="https://en.wikipedia.org/wiki/Stationary_distribution">distribución invariante</a> sea la distribución de muestreo que deseamos, es decir $P(x)$. En principio, esto puede parecer bastante complicado, pero la flexibilidad inherente en la elección de las <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidades</a> de transición lo hacen más simple de lo que parece.</p>
 <h4 id="&#191;C&#243;mo-funciona-el-algoritmo?">&#191;C&#243;mo funciona el algoritmo?<a class="anchor-link" href="#&#191;C&#243;mo-funciona-el-algoritmo?">&#182;</a></h4><p>El algoritmo funciona del siguiente modo. Supongamos que el estado actual de la <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadena de Markov</a>  es $x_n$, y queremos generar $x_{n + 1}$. De acuerdo con el  <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a>, la generación de $x_{n + 1}$ <strong>es un proceso en dos etapas</strong>. La <strong>primera etapa</strong> consiste en generar un <em>candidato</em>, que denominaremos $x^*$. El valor de $x^*$ se genera a partir de la <em><a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">distribución</a> propuesta</em>, denotada $Q (x^* | x_n)$, la cual depende del estado actual de la <a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov">cadena de Markov</a> , $x_n$. Existen algunas limitaciones técnicas menores sobre la <em><a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">distribución</a> propuesta</em> que podemos utilizar, pero en su mayor parte puede ser cualquier cosa que deseemos. Una forma típica de hacerlo es utilizar una <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal">distribución normal</a> centrada en el estado actual $x_n$. Es decir,</p>
-$$ x^*|x_n \sim Normal(x_n, \sigma^2)$$<p>La <strong>segunda etapa</strong> es la de <em>aceptación-rechazo</em>. Lo primero que debemos hacer en este paso es calcular la <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> de aceptación $A(x_n \rightarrow x^*)$, la cual estará dada por:</p>
-$$A(x_n \rightarrow x^*) = \min \left(1, \frac{P(x^*)}{P(x_n)} \cdot \frac{Q(x_n | x^*)}{Q(x^* | x_n)} \right)
-$$<p>Muy bien. Ahora que tenemos el <em>candidato</em> $x^*$ y hemos calculado la <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> de aceptación $A(x_n \rightarrow x^*)$, es tiempo de decidir <em>aceptar</em> al candidato (en cuyo caso se establecemos $x_{n + 1} = x^*$); o <em>rechazar</em> al candidato (en cuyo caso estableceremos $x_{n + 1} = x_n$). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos $u$. Entonces:</p>
-$$x_{n + 1} = \left\{
+<p>$$ x^*|x_n \sim Normal(x_n, \sigma^2)$$</p>
+<p>La <strong>segunda etapa</strong> es la de <em>aceptación-rechazo</em>. Lo primero que debemos hacer en este paso es calcular la <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> de aceptación $A(x_n \rightarrow x^*)$, la cual estará dada por:</p>
+<p>$$A(x_n \rightarrow x^*) = \min \left(1, \frac{P(x^*)}{P(x_n)} \cdot \frac{Q(x_n | x^*)}{Q(x^* | x_n)} \right)
+$$</p>
+<p>Muy bien. Ahora que tenemos el <em>candidato</em> $x^*$ y hemos calculado la <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a> de aceptación $A(x_n \rightarrow x^*)$, es tiempo de decidir <em>aceptar</em> al candidato (en cuyo caso se establecemos $x_{n + 1} = x^*$); o <em>rechazar</em> al candidato (en cuyo caso estableceremos $x_{n + 1} = x_n$). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos $u$. Entonces:</p>
+<p>$$x_{n + 1} = \left\{
     \begin{array}{ll}
-            x^*  & \mbox{si } u \leq A(x_n \rightarrow x^*)\\
-            x_n  & \mbox{si } u > A(x_n \rightarrow x^*)
+            x^*  &amp; \mbox{si } u \leq A(x_n \rightarrow x^*)\\
+            x_n  &amp; \mbox{si } u &gt; A(x_n \rightarrow x^*)
     \end{array}
 \right.
-$$<p>Y esto es en esencia como funciona el <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a>!</p>
+$$</p>
+<p>Y esto es en esencia como funciona el <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">algoritmo Metropolis-Hastings</a>!</p>
 <p>Veamos un pequeño ejemplo en <a href="https://www.python.org/">Python</a>:</p>
 
 </div>
@@ -3791,7 +3818,9 @@ $$<p>Y esto es en esencia como funciona el <a href="https://en.wikipedia.org/wik
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -4170,7 +4199,9 @@ J3wzM7MO4IRvZmbWAZzwzczMOoATvpmZWQdwwjczM+sA/wc2j28V3TUJrwAAAABJRU5ErkJggg==
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -4619,8 +4650,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4651,7 +4681,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
   <span class="byline author vcard">
     Posted by <span class="fn">Raul E. Lopez Briega</span>
   </span>
-<time datetime="2017-01-10T00:00:00-03:00" pubdate>Tue 10 January 2017</time>  <span class="categories">
+<time datetime="2017-01-10T00:00:00-03:00" pubdate>mar 10 enero 2017</time>  <span class="categories">
     <a class="category" href="https://relopezbriega.github.io/tag/python.html">python</a>
     <a class="category" href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>
     <a class="category" href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>
@@ -4757,7 +4787,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

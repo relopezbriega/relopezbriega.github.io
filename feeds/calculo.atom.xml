@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/calculo.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2016-01-27T00:00:00-03:00</updated><entry><title>Ecuaciones en derivadas parciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" rel="alternate"></link><published>2016-01-27T00:00:00-03:00</published><updated>2016-01-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-27:blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -11,20 +10,22 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt;. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las interacciones entre fotones y electrones, y la radiación de ondas electromagnéticas. Las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt; también juegan un papel central en las matemáticas modernas, especialmente en la &lt;a href="https://es.wikipedia.org/wiki/Geometr%C3%ADa"&gt;geometría&lt;/a&gt; y el &lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_matem%C3%A1tico"&gt;análisis&lt;/a&gt;; lo que las convierte en una herramienta de suma utilidad que debemos conocer.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Nota&lt;/em&gt;&lt;/strong&gt;: Este artículo corresponde a la tercer entrega de mi serie de artículos sobre &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;Cálculo&lt;/a&gt; con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;; los anteriores fueron: &lt;a href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/"&gt;Introducción al Cálculo&lt;/a&gt; y &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;Ecuaciones Diferenciales con Python&lt;/a&gt;, los cuales es recomendable haber leído previamente.&lt;/p&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-una-ecuaci&amp;#243;n-en-derivadas-parciales?"&gt;&amp;#191;Qu&amp;#233; es una ecuaci&amp;#243;n en derivadas parciales?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-una-ecuaci&amp;#243;n-en-derivadas-parciales?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuación en derivadas parciales&lt;/a&gt; es una ecuación que, como su nombre lo indica, contiene &lt;a href="https://es.wikipedia.org/wiki/Derivada_parcial"&gt;derivadas parciales&lt;/a&gt;. A diferencia de lo que habíamos visto con las &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, en donde la función incógnita depende &lt;strong&gt;solo&lt;/strong&gt; de &lt;em&gt;una variable&lt;/em&gt;; en las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt;, o &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; para abreviar, la función incógnita va a depender de &lt;strong&gt;dos o más&lt;/strong&gt; &lt;em&gt;variables independientes&lt;/em&gt; $x, y, \dots$. Generalmente a la función incógnita la vamos a expresar como $u(x, y, \dots)$ y a sus derivadas parciales como $\partial u / \partial x = u_x$ o  $\partial u / \partial y = u_y$ dependiendo de sobre que variable estemos derivando. Entonces una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuación en derivadas parciales&lt;/a&gt; va a ser la identidad que relaciona a las &lt;em&gt;variables independientes&lt;/em&gt; ($x, y, \dots$), con la &lt;em&gt;variable dependiente&lt;/em&gt; $u$ (nuestra función incógnita), y las &lt;a href="https://es.wikipedia.org/wiki/Derivada_parcial"&gt;derivadas parciales&lt;/a&gt; de $u$. Lo podríamos expresar de la siguiente forma:&lt;/p&gt;
-$$F(x, y, u(x, y), u_x(x, y), u_y(x, y)) = F(x, y, u, u_x, u_y) = 0$$&lt;p&gt;Al igual de como pasaba con las &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, el &lt;strong&gt;&lt;em&gt;orden&lt;/em&gt;&lt;/strong&gt; de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuación en derivadas parciales&lt;/a&gt; va a estar dado por la mayor &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; presente. Por lo tanto, el caso que expresamos más arriba corresponde a una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;, con dos &lt;em&gt;variables independientes&lt;/em&gt;, de &lt;em&gt;primer orden&lt;/em&gt;. Si quisiéramos expresar una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; de &lt;em&gt;segundo orden&lt;/em&gt;, podríamos hacerlo de la siguiente manera:&lt;/p&gt;
-$$F(x, y, u, u_x, u_y, u_{xx}, u_{xy}, u_{yy})=0.$$&lt;h3 id="Clasificaci&amp;#243;n-de-ecuaciones-en-derivadas-parciales"&gt;Clasificaci&amp;#243;n de ecuaciones en derivadas parciales&lt;a class="anchor-link" href="#Clasificaci&amp;#243;n-de-ecuaciones-en-derivadas-parciales"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La clasificación de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt; va a ser algo fundamental, ya que la teoría y los métodos para poder solucionarlas van a depender de la &lt;em&gt;clase&lt;/em&gt; de ecuación con la que estemos tratando. Las clasificaciones más importantes que debemos tener en cuenta, son:&lt;/p&gt;
+&lt;p&gt;$$F(x, y, u(x, y), u_x(x, y), u_y(x, y)) = F(x, y, u, u_x, u_y) = 0$$&lt;/p&gt;
+&lt;p&gt;Al igual de como pasaba con las &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, el &lt;strong&gt;&lt;em&gt;orden&lt;/em&gt;&lt;/strong&gt; de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuación en derivadas parciales&lt;/a&gt; va a estar dado por la mayor &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; presente. Por lo tanto, el caso que expresamos más arriba corresponde a una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;, con dos &lt;em&gt;variables independientes&lt;/em&gt;, de &lt;em&gt;primer orden&lt;/em&gt;. Si quisiéramos expresar una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; de &lt;em&gt;segundo orden&lt;/em&gt;, podríamos hacerlo de la siguiente manera:&lt;/p&gt;
+&lt;p&gt;$$F(x, y, u, u_x, u_y, u_{xx}, u_{xy}, u_{yy})=0.$$&lt;/p&gt;
+&lt;h3 id="Clasificaci&amp;#243;n-de-ecuaciones-en-derivadas-parciales"&gt;Clasificaci&amp;#243;n de ecuaciones en derivadas parciales&lt;a class="anchor-link" href="#Clasificaci&amp;#243;n-de-ecuaciones-en-derivadas-parciales"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La clasificación de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt; va a ser algo fundamental, ya que la teoría y los métodos para poder solucionarlas van a depender de la &lt;em&gt;clase&lt;/em&gt; de ecuación con la que estemos tratando. Las clasificaciones más importantes que debemos tener en cuenta, son:&lt;/p&gt;
 &lt;p&gt;1- &lt;strong&gt;El &lt;em&gt;orden&lt;/em&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;:&lt;/strong&gt; Como ya mencionamos, el mismo va a estar dado por el &lt;em&gt;orden&lt;/em&gt; de la mayor &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; presente.&lt;/p&gt;
 &lt;p&gt;2- &lt;strong&gt;Número de variables:&lt;/strong&gt; Esta clasificación va a estar dada por la cantidad de &lt;em&gt;variables independientes&lt;/em&gt; que contenga la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;3- &lt;strong&gt;Linealidad:&lt;/strong&gt; Esta es una de las clasificaciones más importantes, vamos a poder clasificar a las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt; en &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/No_linealidad"&gt;no lineales&lt;/a&gt;. En las &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;, la &lt;em&gt;variable dependiente&lt;/em&gt; $u$ y todas sus derivadas, van a aparecer en una forma &lt;em&gt;lineal&lt;/em&gt;, es decir, que van a tener &lt;em&gt;grado&lt;/em&gt; uno (no van a estar elevadas al cuadrado, o multiplicadas entre sí). Más precisamente, una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuación en derivadas parciales&lt;/a&gt; de segundo orden con dos variables, va a tomar la siguiente forma:&lt;/p&gt;
-$$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$&lt;p&gt;en donde $A, B, C, D, E, F,$ y $G$ pueden ser &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)"&gt;constantes&lt;/a&gt;&lt;/em&gt; o una &lt;em&gt;función&lt;/em&gt; dada de $x$ e $y$. Por ejemplo:&lt;/p&gt;
+&lt;p&gt;$$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$&lt;/p&gt;
+&lt;p&gt;en donde $A, B, C, D, E, F,$ y $G$ pueden ser &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)"&gt;constantes&lt;/a&gt;&lt;/em&gt; o una &lt;em&gt;función&lt;/em&gt; dada de $x$ e $y$. Por ejemplo:&lt;/p&gt;
 &lt;p&gt;$u_{tt} = e^tu_{xx} + \sin t$,    sería una ecuación &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineal&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;$uu_{xx} + u_y = 0$,  sería una ecuación &lt;a href="https://es.wikipedia.org/wiki/No_linealidad"&gt;no lineal&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;$u_{xx} + yu_{yy} + u_x = 0$, sería una ecuación &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineal&lt;/a&gt;.&lt;/p&gt;
@@ -33,9 +34,9 @@ $$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$&lt;p&gt;en donde $A, B, C
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_parab%C3%B3lica_en_derivadas_parciales"&gt;Ecuaciones parabólicas&lt;/a&gt;&lt;/strong&gt;: Las cuales van a describir el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor"&gt;flujo del calor&lt;/a&gt;&lt;/em&gt; y el proceso de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n"&gt;difusión&lt;/a&gt;&lt;/em&gt;. Éstas ecuaciones van a satisfacer la condición $B^2 -4AC = 0$.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_hiperb%C3%B3lica_en_derivadas_parciales"&gt;Ecuaciones hiperbólicas&lt;/a&gt;&lt;/strong&gt;: Las cuales describen los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Vibraci%C3%B3n"&gt;sistemas de vibración&lt;/a&gt;&lt;/em&gt; y los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Onda"&gt;movimientos de ondas&lt;/a&gt;&lt;/em&gt;. Satisfacen la condición $B^2 -4AC &gt; 0$.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_hiperb%C3%B3lica_en_derivadas_parciales"&gt;Ecuaciones hiperbólicas&lt;/a&gt;&lt;/strong&gt;: Las cuales describen los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Vibraci%C3%B3n"&gt;sistemas de vibración&lt;/a&gt;&lt;/em&gt; y los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Onda"&gt;movimientos de ondas&lt;/a&gt;&lt;/em&gt;. Satisfacen la condición $B^2 -4AC &amp;gt; 0$.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_el%C3%ADptica_en_derivadas_parciales"&gt;Ecuaciones Elípticas&lt;/a&gt;&lt;/strong&gt;: Las cuales describen los fenómenos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estado_estacionario"&gt;estados estacionarios&lt;/a&gt;&lt;/em&gt; y satisfacen la condición $B^2 -4AC &lt; 0$.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_el%C3%ADptica_en_derivadas_parciales"&gt;Ecuaciones Elípticas&lt;/a&gt;&lt;/strong&gt;: Las cuales describen los fenómenos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estado_estacionario"&gt;estados estacionarios&lt;/a&gt;&lt;/em&gt; y satisfacen la condición $B^2 -4AC &amp;lt; 0$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;4- &lt;strong&gt;Homogeneidad:&lt;/strong&gt; Otra clasificación que podemos utilizar, es la de homogeneidad. Una ecuación va a ser &lt;em&gt;homogénea&lt;/em&gt;, si el lado derecho de la ecuación, $G(x, y)$, es idénticamente cero para todo $x$ e $y$. En caso contrario, se la llama &lt;em&gt;no homogénea&lt;/em&gt;.&lt;/p&gt;
@@ -63,7 +64,8 @@ de discretizar el problema en cada variable independiente que se produce en la &
 &lt;p&gt;Como podemos ver de estos ejemplos, las soluciones analíticas de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; dependen de &lt;strong&gt;funciones arbitrarias&lt;/strong&gt; (en lugar de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)"&gt;constantes&lt;/a&gt;&lt;/em&gt; arbitrarias como era el caso de las &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;EDO&lt;/a&gt;). Por lo tanto vamos a necesitar condiciones auxiliares para poder determinar una única solución.&lt;/p&gt;
 &lt;h3 id="La-condici&amp;#243;n-inicial-y-la-condici&amp;#243;n-de-frontera"&gt;La condici&amp;#243;n inicial y la condici&amp;#243;n de frontera&lt;a class="anchor-link" href="#La-condici&amp;#243;n-inicial-y-la-condici&amp;#243;n-de-frontera"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Al igual que nos pasaba cuando vimos las &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;; las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; pueden tener muchas soluciones, pero a nosotros nos va a interesar encontrar la solución para un caso particular; para lograr esto, debemos imponer unas condiciones auxiliares al problema original. Estas condiciones van a estar motivadas por la &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt; del problema que estemos analizando y pueden llevar a ser de dos tipos diferentes: &lt;a href="https://en.wikipedia.org/wiki/Initial_condition"&gt;condiciones iniciales&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera"&gt;condiciones de frontera&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;La &lt;a href="https://en.wikipedia.org/wiki/Initial_condition"&gt;condición inicial&lt;/a&gt; va a establecer el estado del problema al momento de tiempo cero, $t_0$. Por ejemplo para el problema de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n"&gt;difusión&lt;/a&gt;&lt;/em&gt;, la &lt;a href="https://en.wikipedia.org/wiki/Initial_condition"&gt;condición inicial&lt;/a&gt; va a ser:&lt;/p&gt;
-$$u(x, t_0) = \phi(x)$$&lt;p&gt;donde $\phi(x)= \phi(x, y, z)$ es una función que puede representar el estado de concentración inicial. Para el problema del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor"&gt;flujo del calor&lt;/a&gt;&lt;/em&gt;, $\phi(x)$ va a representar la temperatura inicial.&lt;/p&gt;
+&lt;p&gt;$$u(x, t_0) = \phi(x)$$&lt;/p&gt;
+&lt;p&gt;donde $\phi(x)= \phi(x, y, z)$ es una función que puede representar el estado de concentración inicial. Para el problema del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor"&gt;flujo del calor&lt;/a&gt;&lt;/em&gt;, $\phi(x)$ va a representar la temperatura inicial.&lt;/p&gt;
 &lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera"&gt;condición de frontera&lt;/a&gt; nos va a delimitar el &lt;em&gt;dominio&lt;/em&gt; en el que nuestra &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; es válida. Así por ejemplo, volviendo al problema de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n"&gt;difusión&lt;/a&gt;&lt;/em&gt;, el &lt;em&gt;dominio&lt;/em&gt; en el que nuestra &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; es válida, puede estar delimitado por la superficie del objeto que contiene al líquido. Existen varios tipos de &lt;a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera"&gt;condiciones de frontera&lt;/a&gt;, de las cuales las más importantes son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;La &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Condici%C3%B3n_de_frontera_de_Dirichlet"&gt;condición de frontera de Dirichlet&lt;/a&gt;&lt;/strong&gt;, en dónde los valores válidos de la función incógnita $u$ son especificados.&lt;/p&gt;
@@ -95,8 +97,7 @@ $$u(x, t_0) = \phi(x)$$&lt;p&gt;donde $\phi(x)= \phi(x, y, z)$ es una función q
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -170,7 +171,9 @@ $$u(x, t_0) = \phi(x)$$&lt;p&gt;donde $\phi(x)= \phi(x, y, z)$ es una función q
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 
@@ -204,7 +207,9 @@ $$4 \frac{\partial}{\partial x} f{\left (x,y \right )} - 3 \frac{\partial}{\part
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
 
 
 
@@ -242,7 +247,9 @@ $$f{\left (x,y \right )} = F{\left (- 3 x - 4 y \right )}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
 
 
 
@@ -276,7 +283,9 @@ $$y \frac{\partial}{\partial y} f{\left (x,y \right )} + \frac{\partial}{\partia
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
 
 
 
@@ -310,7 +319,9 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
 
 
 
@@ -324,8 +335,7 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -334,8 +344,7 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -343,11 +352,14 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 un producto $u (x, y) = X (x) Y (y) \ne 0$, o como una suma $u (x, y) = X (x) + Y (y)$, donde $X (x)$ e $Y (y)$ son funciones de $x$ e $y$, respectivamente. Muchos de los problemas significativos en &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;ecuaciones en derivadas parciales&lt;/a&gt; pueden ser resueltos por este método. Para ilustrar como funciona esta técnica, veamos un ejemplo. Vamos a resolver la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;$y^2u_x^2 + x^2u_y^2 = (xyu)^2$, que cumple con la condición $u(x, 0) = 3e^{x^2/4}$.&lt;/p&gt;
 &lt;p&gt;Podemos entonces asumir que $u(x, y) = f(x) g(y) \ne 0$ es una &lt;em&gt;solución separable&lt;/em&gt; de ella; por tanto lo reemplazamos en la ecuación para obtener:&lt;/p&gt;
-$$y^2(f'(x) g(y))^2 + x^2(f(x) g'(y))^2 = x^2 y^2 (f(x) g(y))^2$$&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;$$y^2(f'(x) g(y))^2 + x^2(f(x) g'(y))^2 = x^2 y^2 (f(x) g(y))^2$$&lt;/p&gt;
 &lt;p&gt;lo que es equivalente a decir;&lt;/p&gt;
-$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 + \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = 1$$&lt;p&gt;Luego, ayudándonos de la &lt;em&gt;constante de separación&lt;/em&gt; $\lambda^2$, podemos separar a esta ecuación en dos &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;EDOs&lt;/a&gt;, del siguiente modo; primero igualamos la ecuación anterior a $\lambda^2$:&lt;/p&gt;
-$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 = 1 - \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = \lambda^2$$&lt;p&gt;y luego separamos ambas ecuaciones para obtener:&lt;/p&gt;
-$$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lambda^2}$$&lt;p&gt;Ahora podemos utilizar &lt;code&gt;sympy.dsolve&lt;/code&gt; para resolver ambas &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;EDOs&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 + \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = 1$$&lt;/p&gt;
+&lt;p&gt;Luego, ayudándonos de la &lt;em&gt;constante de separación&lt;/em&gt; $\lambda^2$, podemos separar a esta ecuación en dos &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;EDOs&lt;/a&gt;, del siguiente modo; primero igualamos la ecuación anterior a $\lambda^2$:&lt;/p&gt;
+&lt;p&gt;$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 = 1 - \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = \lambda^2$$&lt;/p&gt;
+&lt;p&gt;y luego separamos ambas ecuaciones para obtener:&lt;/p&gt;
+&lt;p&gt;$$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lambda^2}$$&lt;/p&gt;
+&lt;p&gt;Ahora podemos utilizar &lt;code&gt;sympy.dsolve&lt;/code&gt; para resolver ambas &lt;a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/"&gt;EDOs&lt;/a&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -373,7 +385,9 @@ $$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lam
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
 
 
 
@@ -407,7 +421,9 @@ $$- z + \frac{\frac{d}{d x} f{\left (x \right )}}{x f{\left (x \right )}} = 0$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 
@@ -442,7 +458,9 @@ $$f{\left (x \right )} = C_{1} e^{\frac{x^{2} z}{2}}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
 
 
 
@@ -476,7 +494,9 @@ $$- \sqrt{- z^{2} + 1} + \frac{\frac{d}{d y} f{\left (y \right )}}{y f{\left (y 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
 
 
 
@@ -490,15 +510,16 @@ $$\left [ f{\left (y \right )} = C_{1} e^{- \frac{1}{2} \sqrt{y^{4} \left(- z^{2
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Entonces ahora podemos utilizar estos resultados para armar la solución final a nuestra &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; original, el cual va a ser:&lt;/p&gt;
-$$u(x, y) = C e^{\frac{\lambda}{2}x^2 + \frac{1}{2}y^2\sqrt{1 - \lambda^2}}$$&lt;p&gt;En donde $C = C_1 C_2$ es una &lt;em&gt;constante arbitraria&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;$$u(x, y) = C e^{\frac{\lambda}{2}x^2 + \frac{1}{2}y^2\sqrt{1 - \lambda^2}}$$&lt;/p&gt;
+&lt;p&gt;En donde $C = C_1 C_2$ es una &lt;em&gt;constante arbitraria&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Por último, utilizando la condición $u(x, 0) = 3e^{x^2/4}$, podemos despejar tanto a $C$ ($C=3$) como a $\lambda$ ($\lambda = 1/2$) y arribar a la solución final:&lt;/p&gt;
-$$u(x, y) = 3 e^{\frac{1}{4}\left(x^2 + y^2\sqrt{3}\right)}$$&lt;p&gt;Si bien debemos realizar un trabajo manual previo, aun así &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; sigue siendo de gran ayuda para facilitarnos llegar a la solución final.&lt;/p&gt;
+&lt;p&gt;$$u(x, y) = 3 e^{\frac{1}{4}\left(x^2 + y^2\sqrt{3}\right)}$$&lt;/p&gt;
+&lt;p&gt;Si bien debemos realizar un trabajo manual previo, aun así &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; sigue siendo de gran ayuda para facilitarnos llegar a la solución final.&lt;/p&gt;
 &lt;h3 id="M&amp;#233;todos-num&amp;#233;ricos---M&amp;#233;todo-de-Elementos-Finitos"&gt;M&amp;#233;todos num&amp;#233;ricos - M&amp;#233;todo de Elementos Finitos&lt;a class="anchor-link" href="#M&amp;#233;todos-num&amp;#233;ricos---M&amp;#233;todo-de-Elementos-Finitos"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Por último, para cerrar este artículo, veamos como podemos aplicar el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos"&gt;métodos de los elementos finitos&lt;/a&gt; (MEF) con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;. Para esto nos vamos ayudar de la librería &lt;a href="https://fenicsproject.org/"&gt;FEniCS&lt;/a&gt;, la cual es un &lt;em&gt;framework&lt;/em&gt; para resolver numéricamente problemas generales de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; utilizando el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos"&gt;métodos de los elementos finitos&lt;/a&gt;. Para instalar esta librería en &lt;a href="https://www.ubuntulinux.org/"&gt;Ubuntu&lt;/a&gt;, pueden utilizar los siguientes comandos:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fenics-packages/fenics
@@ -529,14 +550,14 @@ sudo apt-get install fenics&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El problema que vamos a resolver con la ayuda de &lt;a href="https://fenicsproject.org/"&gt;FEniCS&lt;/a&gt;, va a ser la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt;:&lt;/p&gt;
-$$u_{xx} + u_{yy} = 0$$&lt;p&gt;Con las siguientes &lt;a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera"&gt;condiciones de frontera&lt;/a&gt;:&lt;/p&gt;
-$$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;$$u_{xx} + u_{yy} = 0$$&lt;/p&gt;
+&lt;p&gt;Con las siguientes &lt;a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera"&gt;condiciones de frontera&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;$$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;/p&gt;
 &lt;p&gt;El primer paso en la solución de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;EDP&lt;/a&gt; utilizando el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos"&gt;métodos de los elementos finitos&lt;/a&gt;,  es definir una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Malla_poligonal"&gt;malla&lt;/a&gt;&lt;/em&gt; que describa la discretización del &lt;em&gt;dominio&lt;/em&gt; del problema. Para este caso, vamos a utilizar la función &lt;code&gt;RectangleMesh&lt;/code&gt; que nos ofrece &lt;a href="https://fenicsproject.org/"&gt;FEniCS&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -559,8 +580,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -591,7 +611,9 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stderr output_text"&gt;
 &lt;pre class="ipynb"&gt;DEBUG:FFC:Reusing form from cache.
@@ -603,8 +625,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -631,8 +652,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -689,8 +709,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -720,7 +739,9 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$&lt;p&gt;&lt;/p&gt;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stderr output_text"&gt;
 &lt;pre class="ipynb"&gt;DEBUG:FFC:Reusing form from cache.
@@ -766,7 +787,9 @@ DEBUG:FFC:Reusing form from cache.
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -1116,8 +1139,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1132,8 +1154,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category><category term="derivadas parciales"></category></entry><entry><title>Ecuaciones Diferenciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/" rel="alternate"></link><published>2016-01-10T00:00:00-03:00</published><updated>2016-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-10:blog/2016/01/10/ecuaciones-diferenciales-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1143,8 +1164,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1154,61 +1174,79 @@ Al intentar modelar matemáticamente cualquiera de estos fenómenos, veremos que
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-una-ecuaci&amp;#243;n-diferencial?"&gt;&amp;#191;Qu&amp;#233; es una ecuaci&amp;#243;n diferencial?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-una-ecuaci&amp;#243;n-diferencial?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; es una ecuación que involucra una variable dependiente y sus &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt; con respecto a una o más variables independientes. Muchas de las leyes de la naturaleza, en &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica"&gt;Química&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Biolog%C3%ADa"&gt;Biología&lt;/a&gt;, y &lt;a href="https://es.wikipedia.org/wiki/Astronom%C3%ADa"&gt;Astronomía&lt;/a&gt;; encuentran la forma más natural de ser expresadas en el lenguaje de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;. Estas ecuaciones no sólo tienen aplicaciones en la ciencias físicas, sino que también abundan sus aplicaciones en las ciencias aplicadas como ser &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;Ingeniería&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Finanzas"&gt;Finanzas&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Econom%C3%ADa"&gt;Economía&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Es fácil entender la razón detrás de esta amplia utilidad de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;. Si recordamos que $y = f(x)$ es una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;función&lt;/a&gt;, entonces su &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; $dy / dx$ puede ser interpretada como el &lt;em&gt;ritmo de cambio&lt;/em&gt; de $y$ con respecto a $x$. En muchos procesos naturales, las variables involucradas y su &lt;em&gt;ritmo de cambio&lt;/em&gt; están conectados entre sí por medio de los principios científicos básicos que rigen el proceso. Cuando esta conexión es expresada matemáticamente, el resultado generalmente es una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para ilustrar el caso, veamos un ejemplo. Según la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; $a$ de un cuerpo de &lt;a href="https://es.wikipedia.org/wiki/Masa"&gt;masa&lt;/a&gt; $m$ es proporcional a la &lt;a href="https://es.wikipedia.org/wiki/Fuerza"&gt;fuerza&lt;/a&gt; total $F$ que actúa sobre él. Si expresamos esto matemáticamente en la forma de una ecuación, entonces tememos que:&lt;/p&gt;
-$$F = ma$$&lt;p&gt;A primera vista, esta ecuación no parece ser una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;, pero supongamos que un objeto de &lt;a href="https://es.wikipedia.org/wiki/Masa"&gt;masa&lt;/a&gt; $m$ esta en caída libre bajo la influencia de la &lt;a href="https://es.wikipedia.org/wiki/Fuerza"&gt;fuerza&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Gravedad"&gt;gravedad&lt;/a&gt;. En este caso, la única &lt;a href="https://es.wikipedia.org/wiki/Fuerza"&gt;fuerza&lt;/a&gt; actuando sobre el objeto es $mg$, donde $g$ es la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; debido a la &lt;a href="https://es.wikipedia.org/wiki/Gravedad"&gt;gravedad&lt;/a&gt;. Si consideramos a $u$, como la posición del objeto desde una altura determinada; entonces la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt; de caída del objeto va a ser igual al &lt;em&gt;ritmo de cambio&lt;/em&gt; de la posición $u$ con respecto al tiempo $t$; es decir que la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt; es igual a $v = du / dt$, o sea, la &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; de la posición del objeto con respecto al tiempo; y como la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; no es otra cosa que el &lt;em&gt;ritmo de cambio&lt;/em&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt;, entonces podemos definir a la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; como una segunda &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; de la posición del objeto con respecto al tiempo, lo que es igual a decir que $g = d^2u / dt^2$. De esta forma, podemos reescribir la ecuación inicial de la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt; como la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;.&lt;/p&gt;
-$$F = m\frac{d^2u}{dt^2}$$&lt;p&gt;De esta manera, estamos expresando a la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt; en función de la posición del objeto.&lt;/p&gt;
+&lt;p&gt;$$F = ma$$&lt;/p&gt;
+&lt;p&gt;A primera vista, esta ecuación no parece ser una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;, pero supongamos que un objeto de &lt;a href="https://es.wikipedia.org/wiki/Masa"&gt;masa&lt;/a&gt; $m$ esta en caída libre bajo la influencia de la &lt;a href="https://es.wikipedia.org/wiki/Fuerza"&gt;fuerza&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Gravedad"&gt;gravedad&lt;/a&gt;. En este caso, la única &lt;a href="https://es.wikipedia.org/wiki/Fuerza"&gt;fuerza&lt;/a&gt; actuando sobre el objeto es $mg$, donde $g$ es la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; debido a la &lt;a href="https://es.wikipedia.org/wiki/Gravedad"&gt;gravedad&lt;/a&gt;. Si consideramos a $u$, como la posición del objeto desde una altura determinada; entonces la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt; de caída del objeto va a ser igual al &lt;em&gt;ritmo de cambio&lt;/em&gt; de la posición $u$ con respecto al tiempo $t$; es decir que la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt; es igual a $v = du / dt$, o sea, la &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; de la posición del objeto con respecto al tiempo; y como la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; no es otra cosa que el &lt;em&gt;ritmo de cambio&lt;/em&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Velocidad"&gt;velocidad&lt;/a&gt;, entonces podemos definir a la &lt;a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n"&gt;aceleración&lt;/a&gt; como una segunda &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; de la posición del objeto con respecto al tiempo, lo que es igual a decir que $g = d^2u / dt^2$. De esta forma, podemos reescribir la ecuación inicial de la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt; como la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$F = m\frac{d^2u}{dt^2}$$&lt;/p&gt;
+&lt;p&gt;De esta manera, estamos expresando a la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt; en función de la posición del objeto.&lt;/p&gt;
 &lt;h3 id="Ecuaciones-diferenciales-ordinarias-y-parciales"&gt;Ecuaciones diferenciales ordinarias y parciales&lt;a class="anchor-link" href="#Ecuaciones-diferenciales-ordinarias-y-parciales"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El caso precedente, es el caso típico de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;, ya que todas las &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt; involucradas son tomadas con respecto a una única y misma variable independiente. Por otro lado, si en la ecuación tenemos &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt; de más de una variable independiente, debemos hablar de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones difenciales parciales&lt;/a&gt;. Por ejemplo, si $w = f(x, y, z, t)$ es una función de tiempo y 3 coordenadas de un punto en el espacio, entonces las siguientes son sus &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones diferenciales parciales&lt;/a&gt;:&lt;/p&gt;
-$$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
+&lt;p&gt;$$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial w}{\partial t};
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial^2 w}{\partial t^2}.
-$$&lt;p&gt;&lt;/p&gt;
+$$&lt;/p&gt;
 &lt;p&gt;En esta caso, el símbolo $\partial$, es la notación matemática para expresar que estamos derivando parcialmente, así por ejemplo, si queremos expresar que vamos a derivar z con respecto a x, escribimos $\partial z / \partial x$.&lt;/p&gt;
 &lt;p&gt;Estos ejemplos, tienen una gran aplicación en &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt; y se conocen como la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Laplace"&gt;ecuación de Laplace&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor"&gt;ecuación del calor&lt;/a&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_onda"&gt;ecuación de onda&lt;/a&gt; respectivamente. En general, las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones diferenciales parciales&lt;/a&gt; surgen en problemas de &lt;a href="https://es.wikipedia.org/wiki/Campo_el%C3%A9ctrico"&gt;campos eléctricos&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Mec%C3%A1nica_de_fluidos"&gt;mecánica de fluidos&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Difusi%C3%B3n_(f%C3%ADsica)"&gt;difusión&lt;/a&gt; y movimientos de &lt;a href="https://es.wikipedia.org/wiki/Onda"&gt;ondas&lt;/a&gt;. La teoría de estas ecuaciones es bastante diferente con respecto a las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; y suelen ser también más complicadas de resolver. En este artículo me voy a enfocar principalmente en las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, o &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;EDOs&lt;/a&gt; para abreviar.&lt;/p&gt;
 &lt;h3 id="Orden-de-las-Ecuaciones-diferenciales"&gt;Orden de las Ecuaciones diferenciales&lt;a class="anchor-link" href="#Orden-de-las-Ecuaciones-diferenciales"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;em&gt;orden&lt;/em&gt; de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; va a ser igual al &lt;em&gt;orden&lt;/em&gt; de la mayor &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; presente. Así, en nuestro primer ejemplo, la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica"&gt;segunda ley de la dinámica de Newton&lt;/a&gt; es de segundo orden, ya que nos encontramos ante la segunda derivada de la posición del objeto con respecto al tiempo. 
 La ecuación general de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; de grado $n$ es la siguiente:&lt;/p&gt;
-$$F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots , \frac{d^ny}{dx^n}\right) = 0 $$&lt;p&gt;o utilizando la notación prima para las &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt;,&lt;/p&gt;
-$$F(x, y, y', y'', \dots, y^{(n)}) = 0$$&lt;p&gt;La más simple de todas las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; es la siguiente ecuación de primer orden:&lt;/p&gt;
-$$ \frac{dy}{dx} = f(x)$$&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;$$F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots , \frac{d^ny}{dx^n}\right) = 0 $$&lt;/p&gt;
+&lt;p&gt;o utilizando la notación prima para las &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt;,&lt;/p&gt;
+&lt;p&gt;$$F(x, y, y', y'', \dots, y^{(n)}) = 0$$&lt;/p&gt;
+&lt;p&gt;La más simple de todas las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; es la siguiente ecuación de primer orden:&lt;/p&gt;
+&lt;p&gt;$$ \frac{dy}{dx} = f(x)$$&lt;/p&gt;
 &lt;p&gt;y para resolverla simplemente debemos calcular su &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt;:&lt;/p&gt;
-$$y = \int f(x) dx + c$$&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;$$y = \int f(x) dx + c$$.&lt;/p&gt;
 &lt;h3 id="Ecuaciones-diferenciales-separables"&gt;Ecuaciones diferenciales separables&lt;a class="anchor-link" href="#Ecuaciones-diferenciales-separables"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Una &lt;em&gt;ecuación separable&lt;/em&gt; es una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden"&gt;ecuación diferencial de primer orden&lt;/a&gt; en la que la expresión para
 $dx / dy$ se puede factorizar como una función de x multiplicada por una función de y. En otras palabras, puede ser
 escrita en la forma:&lt;/p&gt;
-$$\frac{dy}{dx} = f(x)g(y)$$&lt;p&gt;El nombre &lt;em&gt;separable&lt;/em&gt; viene del hecho de que la expresión en el lado derecho se puede "separar" en una función de $x$ y una función de $y$.&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = f(x)g(y)$$&lt;/p&gt;
+&lt;p&gt;El nombre &lt;em&gt;separable&lt;/em&gt; viene del hecho de que la expresión en el lado derecho se puede "separar" en una función de $x$ y una función de $y$.&lt;/p&gt;
 &lt;p&gt;Para resolver este tipo de ecuaciones, podemos reescribirlas en la forma diferencial:&lt;/p&gt;
-$$\frac{dy}{g(y)} = f(x)dx$$&lt;p&gt;y luego podemos resolver la ecuación original integrando:&lt;/p&gt;
-$$\int \frac{dy}{g(y)} = \int f(x) dx + c$$&lt;p&gt;Éstas suelen ser las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; más fáciles de resolver, ya que el problema de resolverlas puede ser reducido a un problema de &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integración&lt;/a&gt;; a pesar de que igualmente muchas veces estas integrales pueden ser difíciles de calcular.&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{g(y)} = f(x)dx$$&lt;/p&gt;
+&lt;p&gt;y luego podemos resolver la ecuación original integrando:&lt;/p&gt;
+&lt;p&gt;$$\int \frac{dy}{g(y)} = \int f(x) dx + c$$&lt;/p&gt;
+&lt;p&gt;Éstas suelen ser las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; más fáciles de resolver, ya que el problema de resolverlas puede ser reducido a un problema de &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integración&lt;/a&gt;; a pesar de que igualmente muchas veces estas integrales pueden ser difíciles de calcular.&lt;/p&gt;
 &lt;h3 id="Ecuaciones-diferenciales-lineales"&gt;Ecuaciones diferenciales lineales&lt;a class="anchor-link" href="#Ecuaciones-diferenciales-lineales"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Uno de los tipos más importantes de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; son las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_lineal"&gt;Ecuaciones diferenciales lineales&lt;/a&gt;. Este tipo de ecuaciones son muy comunes en varias ciencias y tienen la ventaja de que pueden llegar a ser resueltas en forma analítica ya que su &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden"&gt;ecuación diferencial de primer orden&lt;/a&gt; adopta la forma:&lt;/p&gt;
-$$\frac{dy}{dx} + P(x)y = Q(x) $$&lt;p&gt;donde, $P$ y $Q$ son funciones continuas de $x$ en un determinado intervalo. Para resolver este tipo de ecuaciones de la forma $ y' + P(x)y = Q(x)$, debemos multiplicar los dos lados de la ecuación por el &lt;em&gt;factor de integración&lt;/em&gt; $e^{\int P(x) dx}$ y luego &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrar&lt;/a&gt; ambos lados. Así, si por ejemplo quisiéramos resolver la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
-$$\frac{dy}{dx} + 3x^2y = 6x^2$$&lt;p&gt;Primero calculamos el &lt;em&gt;factor de integración&lt;/em&gt;, $I(x) = e^{\int 3x^2 \ dx}$, lo que es igual a $e^{x^3}$.&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} + P(x)y = Q(x) $$&lt;/p&gt;
+&lt;p&gt;donde, $P$ y $Q$ son funciones continuas de $x$ en un determinado intervalo. Para resolver este tipo de ecuaciones de la forma $ y' + P(x)y = Q(x)$, debemos multiplicar los dos lados de la ecuación por el &lt;em&gt;factor de integración&lt;/em&gt; $e^{\int P(x) dx}$ y luego &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrar&lt;/a&gt; ambos lados. Así, si por ejemplo quisiéramos resolver la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} + 3x^2y = 6x^2$$&lt;/p&gt;
+&lt;p&gt;Primero calculamos el &lt;em&gt;factor de integración&lt;/em&gt;, $I(x) = e^{\int 3x^2 \ dx}$, lo que es igual a $e^{x^3}$.&lt;/p&gt;
 &lt;p&gt;Luego multiplicamos ambos lados de la ecuación por el recién calculado &lt;em&gt;factor de integración&lt;/em&gt;.&lt;/p&gt;
-$$e^{x^3}\frac{dy}{dx} + 3x^2e^{x^3}y = 6x^2e^{x^3}$$&lt;p&gt;simplificando, obtenemos:&lt;/p&gt;
-$$\frac{d}{dx}(e^{x^3}y) = 6x^2e^{x^3}$$&lt;p&gt;Por último, integramos ambos lados de la ecuación:&lt;/p&gt;
-$$e^{x^3}y = \int 6x^2e^{x^3} \ dx = 2e^{x^3} + C$$&lt;p&gt;y podemos obtener la solución final:&lt;/p&gt;
-$$y = Ce^{-x^3} +2 $$&lt;h3 id="Condici&amp;#243;n-inicial"&gt;Condici&amp;#243;n inicial&lt;a class="anchor-link" href="#Condici&amp;#243;n-inicial"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Cuando utilizamos &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;, generalmente no estamos interesados en encontrar una familia de soluciones (la solución general), como la que hayamos en el caso precedente, sino que vamos a estar más interesados en una solución que satisface un requerimiento particular.En muchos problemas físicos debemos de encontrar una solución particular que satisface una condición de la forma $y(t_o) = y_0$. Esto se conoce como la &lt;strong&gt;condición inicial&lt;/strong&gt;, y el problema de encontrar una solución de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; que satisface la &lt;em&gt;condición inicial&lt;/em&gt; se conoce como el &lt;strong&gt;problema de valor inicial&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;$$e^{x^3}\frac{dy}{dx} + 3x^2e^{x^3}y = 6x^2e^{x^3}$$&lt;/p&gt;
+&lt;p&gt;simplificando, obtenemos:&lt;/p&gt;
+&lt;p&gt;$$\frac{d}{dx}(e^{x^3}y) = 6x^2e^{x^3}$$&lt;/p&gt;
+&lt;p&gt;Por último, integramos ambos lados de la ecuación:&lt;/p&gt;
+&lt;p&gt;$$e^{x^3}y = \int 6x^2e^{x^3} \ dx = 2e^{x^3} + C$$&lt;/p&gt;
+&lt;p&gt;y podemos obtener la solución final:&lt;/p&gt;
+&lt;p&gt;$$y = Ce^{-x^3} +2 $$&lt;/p&gt;
+&lt;h3 id="Condici&amp;#243;n-inicial"&gt;Condici&amp;#243;n inicial&lt;a class="anchor-link" href="#Condici&amp;#243;n-inicial"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Cuando utilizamos &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;, generalmente no estamos interesados en encontrar una familia de soluciones (la solución general), como la que hayamos en el caso precedente, sino que vamos a estar más interesados en una solución que satisface un requerimiento particular.En muchos problemas físicos debemos de encontrar una solución particular que satisface una condición de la forma $y(t_o) = y_0$. Esto se conoce como la &lt;strong&gt;condición inicial&lt;/strong&gt;, y el problema de encontrar una solución de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; que satisface la &lt;em&gt;condición inicial&lt;/em&gt; se conoce como el &lt;strong&gt;problema de valor inicial&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="Series-de-potencias"&gt;Series de potencias&lt;a class="anchor-link" href="#Series-de-potencias"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cuando comenzamos a lidiar con las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;, veremos que existen un gran número de ellas que no pueden ser resueltas en forma analítica utilizando los principios del &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Cálculo integral&lt;/a&gt; y el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"&gt;Cálculo diferencial&lt;/a&gt;; pero sin embargo, tal vez podamos encontrar soluciones aproximadas para este tipo de ecuaciones en términos de &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Series de potencias&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="&amp;#191;Qu&amp;#233;-es-una-serie-de-potencias?"&gt;&amp;#191;Qu&amp;#233; es una serie de potencias?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-una-serie-de-potencias?"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Una &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt; es una &lt;a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica"&gt;serie&lt;/a&gt;, generalmente infinita, que posee la siguiente forma:&lt;/p&gt;
-$$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$&lt;p&gt;En dónde $X$ es una variable y las $C_n$ son &lt;em&gt;constantes&lt;/em&gt; o los &lt;em&gt;coeficientes&lt;/em&gt; de la serie. Una &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt; puede &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converger&lt;/a&gt; para algunos valores de $X$ y &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergir&lt;/a&gt; para otros valores de $X$. La suma de la &lt;a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica"&gt;serie&lt;/a&gt; es una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;función&lt;/a&gt;.&lt;/p&gt;
-$$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$&lt;p&gt;El &lt;em&gt;dominio&lt;/em&gt; de esta &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;función&lt;/a&gt; va a estar dado por el conjunto de todos los $X$ para los que la &lt;a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica"&gt;serie&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converge&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$&lt;/p&gt;
+&lt;p&gt;En dónde $X$ es una variable y las $C_n$ son &lt;em&gt;constantes&lt;/em&gt; o los &lt;em&gt;coeficientes&lt;/em&gt; de la serie. Una &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt; puede &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converger&lt;/a&gt; para algunos valores de $X$ y &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergir&lt;/a&gt; para otros valores de $X$. La suma de la &lt;a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica"&gt;serie&lt;/a&gt; es una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;función&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$&lt;/p&gt;
+&lt;p&gt;El &lt;em&gt;dominio&lt;/em&gt; de esta &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;función&lt;/a&gt; va a estar dado por el conjunto de todos los $X$ para los que la &lt;a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica"&gt;serie&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converge&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="Series-de-Taylor"&gt;Series de Taylor&lt;a class="anchor-link" href="#Series-de-Taylor"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; son un caso especial de &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt; cuyos términos adoptan la forma $(x - a)^n$. Las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; nos van a permitir aproximar &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_continua"&gt;funciones continuas&lt;/a&gt; que no pueden resolverse en forma analítica y se van a  calcular a partir de las &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivadas&lt;/a&gt; de estas &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;funciones&lt;/a&gt;. Su definición matemática es la siguiente:&lt;/p&gt;
-$$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$&lt;p&gt;Lo que es equivalente a decir:&lt;/p&gt;
-$$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$&lt;p&gt;Una de las razones de que las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; sean importantes es que nos permiten &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrar&lt;/a&gt; funciones que de otra forma no podíamos manejar. De hecho, a menudo &lt;a href="https://es.wikipedia.org/wiki/Isaac_Newton"&gt;Newton&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integraba&lt;/a&gt; funciones por medio de, en primer lugar, expresarlas como &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Series de potencias&lt;/a&gt;  y luego &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrando&lt;/a&gt; la serie término a término. Por ejemplo, la función $f(x) = e^{-x^2}$, no puede ser integrada por los métodos normales del &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Cálculo integral&lt;/a&gt;, por lo que debemos recurrir a las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; para aproximar la solución de su &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral&lt;/a&gt;. Podríamos construir la &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Serie de Taylor&lt;/a&gt; de esta función, del siguiente modo:&lt;/p&gt;
-$$e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} =
-1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots$$
+&lt;p&gt;$$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$&lt;/p&gt;
+&lt;p&gt;Lo que es equivalente a decir:&lt;/p&gt;
+&lt;p&gt;$$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$&lt;/p&gt;
+&lt;p&gt;Una de las razones de que las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; sean importantes es que nos permiten &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrar&lt;/a&gt; funciones que de otra forma no podíamos manejar. De hecho, a menudo &lt;a href="https://es.wikipedia.org/wiki/Isaac_Newton"&gt;Newton&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integraba&lt;/a&gt; funciones por medio de, en primer lugar, expresarlas como &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Series de potencias&lt;/a&gt;  y luego &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrando&lt;/a&gt; la serie término a término. Por ejemplo, la función $f(x) = e^{-x^2}$, no puede ser integrada por los métodos normales del &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Cálculo integral&lt;/a&gt;, por lo que debemos recurrir a las &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Series de Taylor&lt;/a&gt; para aproximar la solución de su &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral&lt;/a&gt;. Podríamos construir la &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Taylor"&gt;Serie de Taylor&lt;/a&gt; de esta función, del siguiente modo:&lt;/p&gt;
+&lt;p&gt;$$e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} =
+1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Resolviendo-Ecuaciones-diferenciales-con-Python"&gt;Resolviendo Ecuaciones diferenciales con Python&lt;a class="anchor-link" href="#Resolviendo-Ecuaciones-diferenciales-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Mientras que algunos problemas de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuaciones diferenciales ordinarias&lt;/a&gt; se pueden resolver con métodos analíticos, como hemos mencionado anteriormente, son mucho más comunes los problemas  que no se pueden resolver analíticamente. Por lo tanto, en estos casos debemos recurrir a los métodos numéricos. Es aquí, dónde el poder de las computadoras y en especial, de los paquetes científicos de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; como &lt;a href="https://www.numpy.org/"&gt;NumPy&lt;/a&gt;, &lt;a href="https://matplotlib.org/"&gt;Matplotlib&lt;/a&gt;, &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; y &lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;, se vuelven sumamente útiles. Veamos como podemos utilizar la fuerza computacional para resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="Soluciones-anal&amp;#237;ticas-con-Python"&gt;Soluciones anal&amp;#237;ticas con Python&lt;a class="anchor-link" href="#Soluciones-anal&amp;#237;ticas-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; nos proporciona un solucionador genérico de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuaciones diferenciales ordinarias&lt;/a&gt;, &lt;code&gt;sympy.dsolve&lt;/code&gt;, el cual es capaz de encontrar soluciones analíticas a muchas &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;EDOs&lt;/a&gt; elementales. Mientras &lt;code&gt;sympy.dsolve&lt;/code&gt; se puede utilizar para resolver muchas &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;EDOs&lt;/a&gt; sencillas simbólicamente, como veremos a continuación, debemos tener en cuenta que la mayoría de las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;EDOs&lt;/a&gt; no se pueden resolver analíticamente. Por ejemplo, retomando el ejemplo que resolvimos analíticamente más arriba, veamos si llegamos al mismo resultado utilizando &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; para solucionar la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;:&lt;/p&gt;
-$$\frac{dy}{dx} = -3x^2y + 6x^2$$
+&lt;p&gt;$$\frac{dy}{dx} = -3x^2y + 6x^2$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1262,7 +1300,9 @@ $$\frac{dy}{dx} = -3x^2y + 6x^2$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -1276,8 +1316,7 @@ $$\frac{d}{d x} y{\left (x \right )} = - 3 x^{2} y{\left (x \right )} + 6 x^{2}$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1306,7 +1345,9 @@ $$\frac{d}{d x} y{\left (x \right )} = - 3 x^{2} y{\left (x \right )} + 6 x^{2}$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 
@@ -1320,13 +1361,13 @@ $$y{\left (x \right )} = C_{1} e^{- x^{3}} + 2$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, arribamos exactamente al mismo resultado. Siguiendo el mismo procedimiento, podemos resolver otras &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;EDOs&lt;/a&gt;, por ejemplo si quisiéramos resolver la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
-$$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$&lt;p&gt;que cumpla con la condición inicial $y(0) = 2$, debemos realizar el siguiente procedimiento:&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$&lt;/p&gt;
+&lt;p&gt;que cumpla con la condición inicial $y(0) = 2$, debemos realizar el siguiente procedimiento:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1358,7 +1399,9 @@ $$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$&lt;p&gt;que cumpla con la condición in
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
 
 
 
@@ -1372,8 +1415,7 @@ $$y{\left (x \right )} = \frac{C_{1} + e^{x}}{C_{1} - e^{x}}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1402,7 +1444,9 @@ $$y{\left (x \right )} = \frac{C_{1} + e^{x}}{C_{1} - e^{x}}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
 
 
 
@@ -1416,8 +1460,7 @@ $$2 = \frac{C_{1} + 1}{C_{1} - 1}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1445,7 +1488,9 @@ $$2 = \frac{C_{1} + 1}{C_{1} - 1}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
 
 
 
@@ -1459,14 +1504,15 @@ $$\left [ 3\right ]$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, el valor de la &lt;a href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n"&gt;constante de integración&lt;/a&gt; es 3, por lo tanto nuestra solución para el &lt;strong&gt;problema del valore inicial&lt;/strong&gt; es:&lt;/p&gt;
-$$y{\left (x \right )} = \frac{3 + e^{x}}{3 - e^{x}}$$&lt;p&gt;Para los casos en que no exista una solución analítica, pero sí una solución aproximada por una &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt;, &lt;code&gt;sympy.dsolve&lt;/code&gt; nos va a devolver la serie como solución. Veamos el caso de la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
-$$\frac{dy}{dx} = x^2 + y^2 -1$$
+&lt;p&gt;$$y{\left (x \right )} = \frac{3 + e^{x}}{3 - e^{x}}$$&lt;/p&gt;
+&lt;p&gt;Para los casos en que no exista una solución analítica, pero sí una solución aproximada por una &lt;a href="https://es.wikipedia.org/wiki/Serie_de_potencias"&gt;Serie de potencias&lt;/a&gt;, &lt;code&gt;sympy.dsolve&lt;/code&gt; nos va a devolver la serie como solución. Veamos el caso de la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = x^2 + y^2 -1$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1491,7 +1537,9 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
 
 
 
@@ -1505,15 +1553,16 @@ $$y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Campos-de-direcciones"&gt;Campos de direcciones&lt;a class="anchor-link" href="#Campos-de-direcciones"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Los &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campos de direcciones&lt;/a&gt; es una técnica sencilla pero útil para visualizar posibles soluciones a las &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden"&gt;ecuaciones diferenciales de primer orden&lt;/a&gt;. Se compone de líneas cortas que muestran la pendiente de la función incógnita en el plano x-y. Este gráfico se puede producir fácilmente debido a que la pendiente de $y(x)$ en los puntos arbitrarios del plano x-y está dada por la definición misma de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;:&lt;/p&gt;
-$$\frac{dy}{dx} = f(x, y(x))$$&lt;p&gt;Es decir, que sólo tenemos que iterar sobre los valores $x$ e $y$ en la grilla de coordenadas de interés y evaluar $f(x, y(x))$ para saber la pendiente de $y(x)$ en ese punto. Cuantos más segmentos de líneas trazamos en un &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campo de dirección&lt;/a&gt;, más clara será la imagen. La razón por la cual el gráfico de &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campos de direcciones&lt;/a&gt; es útil, es que las curvas suaves y continuos que son &lt;a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)"&gt;tangentes&lt;/a&gt; a las líneas de pendiente en cada punto del gráfico, son las posibles soluciones a la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = f(x, y(x))$$&lt;/p&gt;
+&lt;p&gt;Es decir, que sólo tenemos que iterar sobre los valores $x$ e $y$ en la grilla de coordenadas de interés y evaluar $f(x, y(x))$ para saber la pendiente de $y(x)$ en ese punto. Cuantos más segmentos de líneas trazamos en un &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campo de dirección&lt;/a&gt;, más clara será la imagen. La razón por la cual el gráfico de &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campos de direcciones&lt;/a&gt; es útil, es que las curvas suaves y continuos que son &lt;a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)"&gt;tangentes&lt;/a&gt; a las líneas de pendiente en cada punto del gráfico, son las posibles soluciones a la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Por supuesto que calcular las pendientes y dibujar los segmentos de línea para un gran número de puntos a mano sería algo realmente tedioso, pero para eso existen las computadoras y &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;!. Veamos un ejemplo, supongamos que tenemos la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuación diferencial ordinaria&lt;/a&gt;, la cual según lo que vimos más arriba, sabemos que no tiene una solución analítica:&lt;/p&gt;
-$$\frac{dy}{dx} = x^2 + y^2 -1$$&lt;p&gt;entonces, con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos graficar su &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campo de dirección&lt;/a&gt; del siguiente modo:&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = x^2 + y^2 -1$$&lt;/p&gt;
+&lt;p&gt;entonces, con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos graficar su &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campo de dirección&lt;/a&gt; del siguiente modo:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1587,7 +1636,9 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$&lt;p&gt;entonces, con la ayuda de &lt;a href="h
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -2062,8 +2113,7 @@ ERFRSIpuREREISm6ERERhaToRkREFPIfDaBqILCmLGYAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2096,7 +2146,9 @@ ERFRSIpuREREISm6ERERhaToRkREFPIfDaBqILCmLGYAAAAASUVORK5CYII=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
 
 
 
@@ -2161,7 +2213,9 @@ $$y{\left (x \right )} = - x + \frac{2 x^{3}}{3} - \frac{4 x^{5}}{15} + \mathcal
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -2872,8 +2926,7 @@ RU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2882,16 +2935,17 @@ RU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Transformada-de-Laplace"&gt;Transformada de Laplace&lt;a class="anchor-link" href="#Transformada-de-Laplace"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Un método alternativo que podemos utilizar para resolver en forma analítica &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;Ecuaciones diferenciales ordinarias&lt;/a&gt; complejas, es utilizar la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt;, que es un tipo particular de &lt;a href="https://es.wikipedia.org/wiki/Transformada_integral"&gt;transformada integral&lt;/a&gt;. La idea es que podemos utilizar esta técnica para transformar nuestra &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; en algo más simple, resolver esta ecuación más simple y, a continuación, invertir la transformación para recuperar la solución a la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; original.&lt;/p&gt;
 &lt;h4 id="&amp;#191;Qu&amp;#233;-es-una-Transformada-de-Laplace?"&gt;&amp;#191;Qu&amp;#233; es una Transformada de Laplace?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-una-Transformada-de-Laplace?"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Para poder comprender la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt;, primero debemos revisar la definición general de la &lt;a href="https://es.wikipedia.org/wiki/Transformada_integral"&gt;transformada integral&lt;/a&gt;, la cuál adapta la siguiente forma:&lt;/p&gt;
-$$T(f(t)) = \int_{\alpha}^{\beta} K (s, t) \ f(t) \ dt = F(s) $$&lt;p&gt;En este caso, $f(t)$ es la función que queremos transformar, y $F(s)$ es la función transformada. Los límites de la integración, $\alpha$ y $\beta$, pueden ser cualquier valor entre $-\infty$ y $+\infty$ y $K(s, t)$ es lo que se conoce como el &lt;em&gt;núcleo&lt;/em&gt; o &lt;em&gt;kernel&lt;/em&gt; de la transformada, y podemos elegir el &lt;em&gt;kernel&lt;/em&gt; que nos plazca.  La idea es poder elegir un &lt;em&gt;kernel&lt;/em&gt; que nos dé la oportunidad de simplificar la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; con mayor facilidad.&lt;/p&gt;
+&lt;p&gt;$$T(f(t)) = \int_{\alpha}^{\beta} K (s, t) \ f(t) \ dt = F(s) $$&lt;/p&gt;
+&lt;p&gt;En este caso, $f(t)$ es la función que queremos transformar, y $F(s)$ es la función transformada. Los límites de la integración, $\alpha$ y $\beta$, pueden ser cualquier valor entre $-\infty$ y $+\infty$ y $K(s, t)$ es lo que se conoce como el &lt;em&gt;núcleo&lt;/em&gt; o &lt;em&gt;kernel&lt;/em&gt; de la transformada, y podemos elegir el &lt;em&gt;kernel&lt;/em&gt; que nos plazca.  La idea es poder elegir un &lt;em&gt;kernel&lt;/em&gt; que nos dé la oportunidad de simplificar la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; con mayor facilidad.&lt;/p&gt;
 &lt;p&gt;Si nos restringimos a &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; con &lt;em&gt;coeficientes&lt;/em&gt; constantes, entonces un &lt;em&gt;kernel&lt;/em&gt; que resulta realmente útil es $e^{-st}$, ya que al &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"&gt;diferenciar&lt;/a&gt; este &lt;em&gt;kernel&lt;/em&gt; con respecto de $t$, terminamos obteniendo potencias de $s$, que podemos equiparar a los &lt;em&gt;coeficientes&lt;/em&gt; constantes. De esta forma, podemos arribar a la definición de la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt;:&lt;/p&gt;
-$$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$&lt;p&gt;Tengan en cuenta, que además de usar el &lt;em&gt;kernel&lt;/em&gt; $e^{-st}$, los límites de la integración van desde $0$ a $\infty$, ya que valores negativos de $t$ harían &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergir&lt;/a&gt; la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$&lt;/p&gt;
+&lt;p&gt;Tengan en cuenta, que además de usar el &lt;em&gt;kernel&lt;/em&gt; $e^{-st}$, los límites de la integración van desde $0$ a $\infty$, ya que valores negativos de $t$ harían &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergir&lt;/a&gt; la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id="Tabla-de-transformadas-de-Laplace"&gt;Tabla de transformadas de Laplace&lt;a class="anchor-link" href="#Tabla-de-transformadas-de-Laplace"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Calcular la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; a veces puede resultar en una tarea complicada. Por suerte, podemos recurrir a la siguiente tabla para resolver la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; para las funciones más comunes:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
@@ -2961,15 +3015,19 @@ $$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$&lt;p&gt;Tengan en cu
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;La &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; es un operador lineal&lt;/em&gt;&lt;/strong&gt;: Esta propiedad nos dice la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; de una suma, es igual a la suma de las &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt; de cada uno de los términos. Es decir:&lt;/li&gt;
 &lt;/ul&gt;
-$$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}\{f_2(t)\}$$&lt;ul&gt;
+&lt;p&gt;$$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}\{f_2(t)\}$$&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;La &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; de la primer derivada&lt;/em&gt;&lt;/strong&gt;: Esta propiedad nos dice que si $f(t)$ es continua y $f'(t)$ es continua en el intervalo $0 \le t \le \alpha$. Entonces la &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; de la primer derivada es:&lt;/li&gt;
 &lt;/ul&gt;
-$$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$&lt;ul&gt;
+&lt;p&gt;$$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;La &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformada de Laplace&lt;/a&gt; de derivadas de orden superior&lt;/em&gt;&lt;/strong&gt;: Esta propiedad es la generalización de la propiedad anterior para derivadas de orden n. Su formula es:&lt;/li&gt;
 &lt;/ul&gt;
-$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
-= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$&lt;h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace"&gt;Resolviendo ecuaciones diferenciales con la transformada de Laplace&lt;a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;La principal ventaja de utilizar &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt; es que cambia la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; en una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica"&gt;ecuación algebraica&lt;/a&gt;, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; que queramos resolver. Veamos entonces como &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; y &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; nos ayudan a resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; utilizando las &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt;. Vamos a intentar resolver la siguiente ecuación:&lt;/p&gt;
-$$y'' + 3y' + 2y = 0$$&lt;p&gt;con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$&lt;/p&gt;
+&lt;p&gt;$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
+= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$&lt;/p&gt;
+&lt;h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace"&gt;Resolviendo ecuaciones diferenciales con la transformada de Laplace&lt;a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;La principal ventaja de utilizar &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt; es que cambia la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; en una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica"&gt;ecuación algebraica&lt;/a&gt;, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; que queramos resolver. Veamos entonces como &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; y &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt; nos ayudan a resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; utilizando las &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt;. Vamos a intentar resolver la siguiente ecuación:&lt;/p&gt;
+&lt;p&gt;$$y'' + 3y' + 2y = 0$$&lt;/p&gt;
+&lt;p&gt;con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3000,7 +3058,9 @@ $$y'' + 3y' + 2y = 0$$&lt;p&gt;con las siguientes condiciones iniciales: $y(0) =
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
 
 
 
@@ -3051,7 +3111,9 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
 
 
 
@@ -3065,8 +3127,7 @@ $$2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 \mathcal{
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -3128,7 +3189,9 @@ $$2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 \mathcal{
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
 
 
 
@@ -3164,7 +3227,9 @@ $$s^{2} \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 s \ma
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
 
 
 
@@ -3199,7 +3264,9 @@ $$Y s^{2} + 3 Y s + 2 Y - s y{\left (0 \right )} - 3 y{\left (0 \right )} - \lef
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+
 
 
 
@@ -3234,7 +3301,9 @@ $$\left \{ y{\left (0 \right )} : 2, \quad \left. \frac{d}{d t} y{\left (t \righ
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+
 
 
 
@@ -3270,7 +3339,9 @@ $$Y s^{2} + 3 Y s + 2 Y - 2 s - 3$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+
 
 
 
@@ -3306,7 +3377,9 @@ $$\left [ \frac{2 s + 3}{s^{2} + 3 s + 2}\right ]$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+
 
 
 
@@ -3340,7 +3413,9 @@ $$\frac{e^{t} + 1}{e^{2 t}}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+
 
 
 
@@ -3354,31 +3429,36 @@ $$\left ( 2, \quad -3\right )$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver &lt;a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"&gt;Transformadas de Laplace&lt;/a&gt;, pueden ser una buena alternativa para resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; en forma analítica. Pero aún así, siguen existiendo ecuaciones que se resisten a ser resueltas por medios analíticos, para estos casos, debemos recurrir a los métodos numéricos.&lt;/p&gt;
 &lt;h3 id="M&amp;#233;todos-num&amp;#233;ricos"&gt;M&amp;#233;todos num&amp;#233;ricos&lt;a class="anchor-link" href="#M&amp;#233;todos-num&amp;#233;ricos"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Cuando todo lo demás falla, llegan los métodos numéricos al rescate; siempre vamos a poder calcular una aproximación numérica a una solución de una &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;. De éstos métodos ya no vamos a obtener las formulas elegantes y acabadas que veníamos viendo, sino que vamos a obtener números.
 Existen muchos enfoques para resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; en forma numérica, y generalmente están diseñados para resolver problemas que están formulados como un sistema de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden"&gt;ecuaciones diferenciales de primer orden&lt;/a&gt; de la forma estándar:&lt;/p&gt;
-$$ \frac{dy}{dx} = f(x, y(x))$$&lt;p&gt;donde $y(x)$ es un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt;&lt;/em&gt; de la funciones incógnitas de $x$.&lt;/p&gt;
+&lt;p&gt;$$ \frac{dy}{dx} = f(x, y(x))$$&lt;/p&gt;
+&lt;p&gt;donde $y(x)$ es un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt;&lt;/em&gt; de la funciones incógnitas de $x$.&lt;/p&gt;
 &lt;p&gt;La idea básica de muchos de los métodos numéricos para resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt; es capturada por el &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt;&lt;/strong&gt;, veamos de que se trata este método.&lt;/p&gt;
 &lt;h4 id="El-M&amp;#233;todo-de-Euler"&gt;El M&amp;#233;todo de Euler&lt;a class="anchor-link" href="#El-M&amp;#233;todo-de-Euler"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Para entender este método, revisemos nuevamente la siguiente &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt;:&lt;/p&gt;
-$$ \frac{dy}{dx} = f(x, y(x))$$&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt; señala que puede que no tengamos la función real que representa la solución a la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; precedente. Sin embargo, si poseemos la pendiente de la curva en cualquier punto. Es decir, el &lt;em&gt;ritmo de cambio&lt;/em&gt; de la curva, que no es otra cosa que su &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt;, la cual podemos utilizar para iterar sobre soluciones en distintos puntos.&lt;/p&gt;
+&lt;p&gt;$$ \frac{dy}{dx} = f(x, y(x))$$&lt;/p&gt;
+&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt; señala que puede que no tengamos la función real que representa la solución a la &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuación diferencial&lt;/a&gt; precedente. Sin embargo, si poseemos la pendiente de la curva en cualquier punto. Es decir, el &lt;em&gt;ritmo de cambio&lt;/em&gt; de la curva, que no es otra cosa que su &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt;, la cual podemos utilizar para iterar sobre soluciones en distintos puntos.&lt;/p&gt;
 &lt;p&gt;Supongamos entonces que tenemos el punto $(x_0, y_0)$, que se encuentra en la &lt;em&gt;curva solución&lt;/em&gt;. Dada la definición de la ecuación que estamos analizando, sabemos que la pendiente de la &lt;em&gt;curva solución&lt;/em&gt;  en ese punto es $f(x_0, y_0)$. ¿Qué pasaría entonces si quisiéramos encontrar la solución numérica en el punto $(x, y)$ que se encuentra a una corta distancia $h$?. En este caso, podríamos definir a $y$ como $y = y_0 + \Delta y$, es decir, $y$ va ser igual al valor de $y$ en el punto inicial, más el cambio que ocurrió en $y$ al movernos a la distancia $h$. Y como el cambio en $y$ va a estar dado por la pendiente de la curva, que en este caso sabemos que es igual a  $f(x_0, y_0)$, podemos definir la siguiente &lt;a href="https://es.wikipedia.org/wiki/Relaci%C3%B3n_de_recurrencia"&gt;relación de recurrencia&lt;/a&gt; que es la base para encontrar las soluciones numéricas con el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt;:&lt;/p&gt;
-$$y = y_0 + f(x_0, y_0)h$$&lt;p&gt;La cual podemos generalizar para todo $n$ del siguiente forma:&lt;/p&gt;
-$$y_n = y_{n -1} + f(x_{n - 1}, y_{n - 1})h$$&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;$$y = y_0 + f(x_0, y_0)h$$&lt;/p&gt;
+&lt;p&gt;La cual podemos generalizar para todo $n$ del siguiente forma:&lt;/p&gt;
+&lt;p&gt;$$y_n = y_{n -1} + f(x_{n - 1}, y_{n - 1})h$$.&lt;/p&gt;
 &lt;p&gt;Este método esta íntimamente relacionado con los &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campos de direcciones&lt;/a&gt; que analizamos más arriba. En general, el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt; dice que empecemos por el punto dado por el &lt;em&gt;condición incial&lt;/em&gt; y continuemos en la dirección indicada por el &lt;a href="https://es.wikipedia.org/wiki/Campo_de_direcciones"&gt;Campo de direcciones&lt;/a&gt;. Luego nos detengamos, miramos a la pendiente en la nueva ubicación, y procedemos en esa dirección.&lt;/p&gt;
 &lt;h4 id="El-M&amp;#233;todo-de-Runge-Kutta"&gt;El M&amp;#233;todo de Runge-Kutta&lt;a class="anchor-link" href="#El-M&amp;#233;todo-de-Runge-Kutta"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Otro método que podemos utilizar para encontrar soluciones numéricas a &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt;, y que incluso es más preciso que el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler"&gt;Método de Euler&lt;/a&gt;, es el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Runge-Kutta"&gt;Método de Runge-Kutta&lt;/a&gt;. En el cual la &lt;a href="https://es.wikipedia.org/wiki/Relaci%C3%B3n_de_recurrencia"&gt;relación de recurrencia&lt;/a&gt; va a estar dada por un promedio ponderado de términos de la siguiente manera:&lt;/p&gt;
-$$y_{k + 1} = y_k + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$&lt;p&gt;en dónde:&lt;/p&gt;
-$$k_1 = f(x_k, y_k)h_k, \\
+&lt;p&gt;$$y_{k + 1} = y_k + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$&lt;/p&gt;
+&lt;p&gt;en dónde:&lt;/p&gt;
+&lt;p&gt;$$k_1 = f(x_k, y_k)h_k, \\
 k_2 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_1}{2}\right)h_k, \\
 k_3 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_2}{2}\right)h_k, \\
 k_4 = f\left(x_k + h_k, y_k + k_3\right)h_k. \\
-$$&lt;h4 id="Soluciones-num&amp;#233;ricas-con-Python"&gt;Soluciones num&amp;#233;ricas con Python&lt;a class="anchor-link" href="#Soluciones-num&amp;#233;ricas-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Para poder resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; en forma numérica con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos utilizar las herramienta de integración que nos ofrece &lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;, particularmente los dos solucionadores de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, &lt;code&gt;integrate.odeint&lt;/code&gt; y &lt;code&gt;integrate.ode&lt;/code&gt;. La principal diferencia entre ambos, es que &lt;code&gt;integrate.ode&lt;/code&gt; es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos &lt;em&gt;solucionadores&lt;/em&gt;. Veamos algunos ejemplos:&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;h4 id="Soluciones-num&amp;#233;ricas-con-Python"&gt;Soluciones num&amp;#233;ricas con Python&lt;a class="anchor-link" href="#Soluciones-num&amp;#233;ricas-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Para poder resolver &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"&gt;Ecuaciones diferenciales&lt;/a&gt; en forma numérica con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos utilizar las herramienta de integración que nos ofrece &lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;, particularmente los dos solucionadores de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, &lt;code&gt;integrate.odeint&lt;/code&gt; y &lt;code&gt;integrate.ode&lt;/code&gt;. La principal diferencia entre ambos, es que &lt;code&gt;integrate.ode&lt;/code&gt; es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos &lt;em&gt;solucionadores&lt;/em&gt;. Veamos algunos ejemplos:&lt;/p&gt;
 &lt;p&gt;Comencemos por la siguiente función:&lt;/p&gt;
-$$f(x, y(x)) = x + y(x)^2$$
+&lt;p&gt;$$f(x, y(x)) = x + y(x)^2$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3403,7 +3483,9 @@ $$f(x, y(x)) = x + y(x)^2$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+
 
 
 
@@ -3445,8 +3527,7 @@ $$x + y^{2}{\left (x \right )}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -3478,7 +3559,9 @@ $$x + y^{2}{\left (x \right )}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -4094,16 +4177,16 @@ QmCC
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este ejemplo, solucionamos solo una ecuación. Generalmente, la mayoría de los problemas se presentan en la forma de sistemas de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, es decir, que incluyen varias ecuaciones a resolver. Para ver como podemos utilizar a &lt;code&gt;integrate.odeint&lt;/code&gt; para resolver este tipo de problemas, consideremos el siguiente sistema de &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria"&gt;ecuaciones diferenciales ordinarias&lt;/a&gt;, conocido el &lt;a href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz"&gt;atractor de Lorenz&lt;/a&gt;:&lt;/p&gt;
-$$x'(t) = \sigma(y -x), \\
+&lt;p&gt;$$x'(t) = \sigma(y -x), \\
 y'(t) = x(\rho -z)-y, \\
 z'(t) = xy - \beta z
-$$&lt;p&gt;Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen sensiblemente de los valores de los parámetros $\sigma$, $\rho$ y $\beta$. Veamos como podemos resolverlas con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen sensiblemente de los valores de los parámetros $\sigma$, $\rho$ y $\beta$. Veamos como podemos resolverlas con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4171,7 +4254,9 @@ $$&lt;p&gt;Estas ecuaciones son conocidas por sus soluciones caóticas, que depe
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -5289,8 +5374,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5306,8 +5390,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category></entry><entry><title>Introducción al Cálculo con Python</title><link href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/" rel="alternate"></link><published>2015-12-02T00:00:00-03:00</published><updated>2015-12-02T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-12-02:blog/2015/12/02/introduccion-al-calculo-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5317,8 +5400,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5334,8 +5416,7 @@ Este método fue usado satisfactoriamente por &lt;a href="https://es.wikipedia.o
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5345,7 +5426,8 @@ utiliza para designar el objeto que en el recorrido corresponde a $x$, en la &lt
 &lt;p&gt;Muchas veces resulta útil pensar en una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt; como si fuera una máquina. Si $x$ está en el dominio de la función $f$, entonces cuando $x$ entra en la máquina, se acepta como una entrada y la máquina produce una salida $f(x)$ de acuerdo a la regla de la función. Así, podemos pensar al &lt;em&gt;dominio&lt;/em&gt; como el conjunto de todas las entradas posibles y al &lt;em&gt;recorrido&lt;/em&gt; como el conjunto de todas las salidas posibles.&lt;/p&gt;
 &lt;p&gt;El método más común para la visualización de una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt; es su &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&gt;gráfica&lt;/a&gt;. Si $f$ es una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt; con
 dominio $D$, a continuación, su &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&gt;gráfica&lt;/a&gt; es el conjunto de &lt;a href="https://es.wikipedia.org/wiki/Pares_ordenados"&gt;pares ordenados&lt;/a&gt;.&lt;/p&gt;
-$$\{(x, f(x)) \mid x \in D \} $$&lt;p&gt;Aquí debemos tener en cuenta que el par $(x, f(x))$, es un par &lt;em&gt;entrada-salida&lt;/em&gt;, el valor de $x$ representa el valor de entrada, mientras que el valor de $f(x)$ representa la salida de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt;.  En otras palabras, la &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&gt;gráfica&lt;/a&gt; de $f$ se compone de todos puntos $(x, y)$ en el plano de coordenadas tal que $y=f(x)$ y $x$ está en el &lt;em&gt;dominio&lt;/em&gt; de $f$.
+&lt;p&gt;$$\{(x, f(x)) \mid x \in D \} $$&lt;/p&gt;
+&lt;p&gt;Aquí debemos tener en cuenta que el par $(x, f(x))$, es un par &lt;em&gt;entrada-salida&lt;/em&gt;, el valor de $x$ representa el valor de entrada, mientras que el valor de $f(x)$ representa la salida de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt;.  En otras palabras, la &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&gt;gráfica&lt;/a&gt; de $f$ se compone de todos puntos $(x, y)$ en el plano de coordenadas tal que $y=f(x)$ y $x$ está en el &lt;em&gt;dominio&lt;/em&gt; de $f$.
 La &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&gt;gráfica&lt;/a&gt; de una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"&gt;Función&lt;/a&gt;&lt;/em&gt; $f$ nos da una imagen útil del comportamiento o la "historia de vida" de la misma.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Gráfica de funciones" title="Gráfica de funciones" src="https://relopezbriega.github.io/images/funciones_graf.png
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -5372,8 +5454,7 @@ La &lt;a href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"&g
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5404,7 +5485,9 @@ Luego utilizamos la instrucción &lt;code&gt;def&lt;/code&gt; para definir la fu
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -5419,8 +5502,7 @@ Luego utilizamos la instrucción &lt;code&gt;def&lt;/code&gt; para definir la fu
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5451,7 +5533,9 @@ Luego utilizamos la instrucción &lt;code&gt;def&lt;/code&gt; para definir la fu
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -5506,8 +5590,7 @@ Luego utilizamos la instrucción &lt;code&gt;def&lt;/code&gt; para definir la fu
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5560,7 +5643,9 @@ Luego utilizamos la instrucción &lt;code&gt;def&lt;/code&gt; para definir la fu
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -5781,8 +5866,7 @@ Mv8fMGCXE6lnZw4AAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5816,7 +5900,9 @@ Mv8fMGCXE6lnZw4AAAAASUVORK5CYII=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -5901,13 +5987,13 @@ Mv8fMGCXE6lnZw4AAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;de acuerdo con esta tabla, podemos ver que a medida que hacemos al valor de $x$ cercano a 2, vemos que $f(x)$ se hace muy cercana a 4. Incluso podríamos hacer a $f(x)$ tan cercana como queramos a 4, haciendo que $x$ este lo suficientemente cerca de 2. Por lo tanto, podemos expresar esta propiedad diciendo que el &lt;em&gt;"&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; de la función $f(x) = x^2 - x + 2$ cuando $x$ se acerca a 2 es igual a 4."&lt;/em&gt; y lo podemos representar con la siguiente notación:&lt;/p&gt;
-$$\lim_{x\to 2} \left(x^2 -x + 2\right) = 4$$&lt;p&gt;Gráficamente lo podemos ver del siguiente modo.&lt;/p&gt;
+&lt;p&gt;$$\lim_{x\to 2} \left(x^2 -x + 2\right) = 4$$&lt;/p&gt;
+&lt;p&gt;Gráficamente lo podemos ver del siguiente modo.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -5941,7 +6027,9 @@ $$\lim_{x\to 2} \left(x^2 -x + 2\right) = 4$$&lt;p&gt;Gráficamente lo podemos v
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -6200,8 +6288,7 @@ KeUi/w9xB0XdBcbfYwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6252,7 +6339,9 @@ KeUi/w9xB0XdBcbfYwAAAABJRU5ErkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
 
 
 
@@ -6286,7 +6375,9 @@ $$\lim_{x \to 2^+}\left(x^{2} - x + 2\right)$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
 
 
 
@@ -6320,7 +6411,9 @@ $$4$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 
@@ -6354,7 +6447,9 @@ $$4$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
 
 
 
@@ -6387,7 +6482,9 @@ $$\lim_{x \to \infty} \frac{1}{x}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
 
 
 
@@ -6401,8 +6498,7 @@ $$0$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6417,14 +6513,20 @@ Aunque la derivada se introdujo inicialmente para el estudio del problema de la 
 &lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de una función es una medida de la rapidez con la que cambia el valor de dicha función, según cambie el valor de su &lt;a href="https://es.wikipedia.org/wiki/Variable_independiente"&gt;variable independiente&lt;/a&gt;. La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de una función es un concepto local, es decir, se calcula como el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt;&lt;/em&gt; de la rapidez de cambio medio de la función en un cierto intervalo, cuando el intervalo considerado para la variable independiente se torna cada vez más pequeño. Por ello se habla del valor de la derivada de una cierta función en un punto dado.
 Entonces el valor de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de una función en un punto puede interpretarse geométricamente, ya que se corresponde con la &lt;strong&gt;pendiente de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Recta_tangente"&gt;recta tangente&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; a la gráfica de la función en dicho punto. La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Recta_tangente"&gt;recta tangente&lt;/a&gt;&lt;/em&gt; es a su vez la gráfica de la mejor aproximación lineal de la función alrededor de dicho punto. La noción de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; puede generalizarse para el caso de funciones de más de una variable con la &lt;a href="https://es.wikipedia.org/wiki/Derivada_parcial"&gt;derivada parcial&lt;/a&gt; y el &lt;a href="https://es.wikipedia.org/wiki/Diferencial_de_una_funci%C3%B3n"&gt;diferencial&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Matemáticamente, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; es una caso especial de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt;, el cual surge cada vez que queremos calcular la pendiente de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Recta_tangente"&gt;recta tangente&lt;/a&gt;&lt;/em&gt; o la &lt;em&gt;velocidad de cambio&lt;/em&gt; de un objeto. Éste &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; ocurre tan frecuentemente que se le ha da un notación y un nombre determinados. Así &lt;strong&gt;la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de una función $f$ en el punto a&lt;/strong&gt;, representada por $f'(a)$, es:&lt;/p&gt;
-$$f'(a) = \lim_{h \to 0}\frac{f(a + h) - f(a)}{h}$$&lt;p&gt;donde $h$ representa la variación de $a$.
+&lt;p&gt;$$f'(a) = \lim_{h \to 0}\frac{f(a + h) - f(a)}{h}$$&lt;/p&gt;
+&lt;p&gt;donde $h$ representa la variación de $a$.
 Esta misma definición, puede ser representada también del siguiente modo, utilizando la notación de &lt;a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"&gt;Leibniz&lt;/a&gt;.&lt;/p&gt;
-$$\frac{dy}{dx} = \lim_{dx \to 0}\frac{f(x + dx) - f(x)}{dx}$$&lt;p&gt;Así, por ejemplo si quisiéramos saber cuál es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de la función $f(x) = x^3$, podemos aplicar la definición anterior del siguiente modo.&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = \lim_{dx \to 0}\frac{f(x + dx) - f(x)}{dx}$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo si quisiéramos saber cuál es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; de la función $f(x) = x^3$, podemos aplicar la definición anterior del siguiente modo.&lt;/p&gt;
 &lt;p&gt;Comenzamos, definiendo a $f(x + dx) = (x + dx)^3$, luego expandimos a:&lt;/p&gt;
-$$(x + dx)^3 = f(x + dx) = x^3 + 3x^2dx + 3xdx^2 + dx^3$$&lt;p&gt;Luego reemplazamos esta función en nuestra definición de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
-$$\frac{dx}{dy} = \frac{x^3 + 3x^2dx + 3xdx^2 + dx^3 - x^3}{dx}$$&lt;p&gt;Simplificamos los términos:&lt;/p&gt;
-$$\frac{dx}{dy} = \frac{3x^2dx + 3xdx^2 + dx^3}{dx} \Rightarrow 3x^2 + 3xdx + dx^2$$&lt;p&gt;y cuando $dx$ tiende a cero, obtenemos finalmente la función &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
-$$\frac{d}{dx}x^3 = 3x^2$$&lt;h3 id="Reglas-de-Derivaci&amp;#243;n"&gt;Reglas de Derivaci&amp;#243;n&lt;a class="anchor-link" href="#Reglas-de-Derivaci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si fuera siempre necesario calcular las &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; directamente de la definición, como hicimos anteriormente, éstos cálculos podrían ser tediosos y complicados. Afortunadamente, varias reglas se han desarrollado para encontrar &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; sin tener que usar la definición directamente. Estas fórmulas simplifican enormemente la tarea de la diferenciación y se conocen como &lt;a href="https://es.wikipedia.org/wiki/Reglas_de_derivaci%C3%B3n"&gt;reglas de derivación&lt;/a&gt;. Algunas de ellas son las siguientes:&lt;/p&gt;
+&lt;p&gt;$$(x + dx)^3 = f(x + dx) = x^3 + 3x^2dx + 3xdx^2 + dx^3$$&lt;/p&gt;
+&lt;p&gt;Luego reemplazamos esta función en nuestra definición de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;$$\frac{dx}{dy} = \frac{x^3 + 3x^2dx + 3xdx^2 + dx^3 - x^3}{dx}$$&lt;/p&gt;
+&lt;p&gt;Simplificamos los términos:&lt;/p&gt;
+&lt;p&gt;$$\frac{dx}{dy} = \frac{3x^2dx + 3xdx^2 + dx^3}{dx} \Rightarrow 3x^2 + 3xdx + dx^2$$&lt;/p&gt;
+&lt;p&gt;y cuando $dx$ tiende a cero, obtenemos finalmente la función &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;$$\frac{d}{dx}x^3 = 3x^2$$&lt;/p&gt;
+&lt;h3 id="Reglas-de-Derivaci&amp;#243;n"&gt;Reglas de Derivaci&amp;#243;n&lt;a class="anchor-link" href="#Reglas-de-Derivaci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si fuera siempre necesario calcular las &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; directamente de la definición, como hicimos anteriormente, éstos cálculos podrían ser tediosos y complicados. Afortunadamente, varias reglas se han desarrollado para encontrar &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; sin tener que usar la definición directamente. Estas fórmulas simplifican enormemente la tarea de la diferenciación y se conocen como &lt;a href="https://es.wikipedia.org/wiki/Reglas_de_derivaci%C3%B3n"&gt;reglas de derivación&lt;/a&gt;. Algunas de ellas son las siguientes:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th style="text-align:left"&gt;Funciones comunes&lt;/th&gt;
@@ -6513,7 +6615,8 @@ $$\frac{d}{dx}x^3 = 3x^2$$&lt;h3 id="Reglas-de-Derivaci&amp;#243;n"&gt;Reglas de
 &lt;p&gt;6- &lt;strong&gt;Regla del cociente:&lt;/strong&gt; Esta regla establece que la derivada de un cociente de dos funciones es la función ubicada en el denominador por la derivada del numerador menos la derivada de la función en el denominador por la función del numerador sin derivar, todo sobre la función del denominador al cuadrado. Es decir, $\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^{2}}$. Por ejemplo, para obtener la derivada de la función $h(x) = \frac{3x + 1}{2x}$, aplicando la formula obtenemos que $h'(x) = \frac{3 \cdot (2x) - (3x + 1) \cdot 2}{2x^2}$, y simplificando llegamos al resultado final de $h'(x) = -\frac{1}{2x^2}$.&lt;/p&gt;
 &lt;p&gt;7- &lt;strong&gt;Regla de la cadena:&lt;/strong&gt; La regla de la cadena es una fórmula para calcular la derivada de la composición de dos o más funciones. Esto es, si $f$ y $g$ son dos funciones, entonces la regla de la cadena expresa la derivada de la función compuesta $f(g(x))$ en términos de las derivadas de $f$ y $g$. Esta derivada va a ser calculada de acuerdo a la siguiente formula: $f'(g(x)) = f'(g(x)) \cdot g'(x)$. Por ejemplo, si quisiéramos saber la derivada de la función $h(x) = \sin(x^2)$, aplicando la formula obtenemos que $h'(x) = \cos(g(x)) \cdot 2x$, lo que es igual a $h'(x) = 2x \cos(x^2)$.&lt;/p&gt;
 &lt;h3 id="Derivadas-de-mayor-orden"&gt;Derivadas de mayor orden&lt;a class="anchor-link" href="#Derivadas-de-mayor-orden"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si tenemos una función $f$, de la cual podemos obtener su derivada $f'$, la cual también es otra función que podemos derivar, entonces podemos obtener la &lt;em&gt;derivada de segundo orden&lt;/em&gt; de $f$, la cual representaremos como $f''$. Es decir, que la derivada de segundo orden de $f$, va a ser igual a la derivada de su derivada. Siguiendo el mismo proceso, podemos seguir subiendo en la jerarquía y obtener por ejemplo, la tercer derivada de $f$. Utilizando la notación de &lt;a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"&gt;Leibniz&lt;/a&gt;, expresaríamos a la segunda derivada del siguiente modo:&lt;/p&gt;
-$$\frac{d}{dy}\left(\frac{dy}{dx}\right)= \frac{d^2y}{dx^2}$$&lt;h3 id="Calculando-Derivadas-con-Python"&gt;Calculando Derivadas con Python&lt;a class="anchor-link" href="#Calculando-Derivadas-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos resolver &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; utilizando nuevamente la librería &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt;. En este caso, ahora vamos a utilizar el objeto &lt;code&gt;Derivative&lt;/code&gt;. Su sintaxis es la siguiente: &lt;code&gt;Derivative(funcion, variable, orden de derivación)&lt;/code&gt;. Lo utilizamos de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;$$\frac{d}{dy}\left(\frac{dy}{dx}\right)= \frac{d^2y}{dx^2}$$&lt;/p&gt;
+&lt;h3 id="Calculando-Derivadas-con-Python"&gt;Calculando Derivadas con Python&lt;a class="anchor-link" href="#Calculando-Derivadas-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos resolver &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt; utilizando nuevamente la librería &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt;. En este caso, ahora vamos a utilizar el objeto &lt;code&gt;Derivative&lt;/code&gt;. Su sintaxis es la siguiente: &lt;code&gt;Derivative(funcion, variable, orden de derivación)&lt;/code&gt;. Lo utilizamos de la siguiente forma:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6541,7 +6644,9 @@ $$\frac{d}{dy}\left(\frac{dy}{dx}\right)= \frac{d^2y}{dx^2}$$&lt;h3 id="Calculan
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
 
 
 
@@ -6575,7 +6680,9 @@ $$2 x^{3} + 3 x^{2} \left(2 x + 1\right) + 4$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
 
 
 
@@ -6609,7 +6716,9 @@ $$8 x^{3} + 3 x^{2} + 4$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
 
 
 
@@ -6645,7 +6754,9 @@ $$6 x \left(4 x + 1\right)$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
 
 
 
@@ -6679,7 +6790,9 @@ $$- \frac{1}{2 x^{2}}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
 
 
 
@@ -6714,7 +6827,9 @@ $$- \frac{1}{2 x^{2}}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
 
 
 
@@ -6728,8 +6843,7 @@ $$- \frac{1}{2}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6739,8 +6853,7 @@ $$- \frac{1}{2}$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6748,8 +6861,10 @@ $$- \frac{1}{2}$$
 &lt;p&gt;&lt;img alt="Proceso de integración" title="Proceso de integración" src="https://relopezbriega.github.io/images/proceso_integración.png" width="500px" height="400px"&gt;&lt;/p&gt;
 &lt;p&gt;Como vemos, al igual que pasaba con el caso de las &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt;, al querer calcular el &lt;a href="https://es.wikipedia.org/wiki/%C3%81rea"&gt;área&lt;/a&gt; de una superficie curva, nos encontramos ante un caso especial de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; (aquí vemos también por qué el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; es tan importante para el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;Cálculo&lt;/a&gt;!). Este tipo de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; surge en una amplia variedad de situaciones, no solo al calcular &lt;a href="https://es.wikipedia.org/wiki/%C3%81rea"&gt;áreas&lt;/a&gt;, sino que también lo podemos encontrar al calcular la distancia recorrida por un objeto o el volumen de un sólido. Por lo tanto, se le ha dado una notación y un nombre determinado. De esta forma la definición matemática de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt; definida, sería la siguiente:&lt;/p&gt;
 &lt;p&gt;Si $f$ es una función definida por $a \leqslant x \leqslant b$, podemos dividir el intervalo $[a, b]$ en $n$ subintervalos de $\Delta x(b - a) / n$ de ancho. Dónde $x_0(=a), x_1, x_2, \dots, x_n(=b)$ serán los puntos finales de estos subintervalos y $x_1^*, x_2^*, \dots, x_n^*$, serán puntos intermedios en estos subintervalos, de tal forma que $x_i^*$ se encuentre en el k-simo subintervalo $[x_{i-1}, x_i]$. Entonces la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt; definida de $f$ entre $a$ y $b$, es:&lt;/p&gt;
-$$\int_a^b f(x) dx = \lim_{n \to \infty}\sum_{i=1}^n f(x_i^*) \Delta x $$&lt;p&gt;El símbolo de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt;, $\int$, fue introducido por &lt;a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"&gt;Leibniz&lt;/a&gt;, viene a ser una "S" alargada y fue elegido ya que la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt; es en definitiva un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; de sumas &lt;a href="https://es.wikipedia.org/wiki/Infinitesimal"&gt;infinitesimales&lt;/a&gt;. En esta notación, $a$ y $b$ son los límites de la integración y $dx$ indica que $x$ es la variable independiente. La suma:&lt;/p&gt;
-$$\sum_{i=1}^n f(x_i^*) \Delta x $$&lt;p&gt;que vemos en la definición, es conocida como la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_de_Riemann#Suma_de_Riemann"&gt;suma de Reimann&lt;/a&gt;&lt;/em&gt;, en honor al matemático alemán &lt;a href="https://es.wikipedia.org/wiki/Bernhard_Riemann"&gt;Bernhard Reimann&lt;/a&gt; que la desarrolló.&lt;/p&gt;
+&lt;p&gt;$$\int_a^b f(x) dx = \lim_{n \to \infty}\sum_{i=1}^n f(x_i^*) \Delta x $$&lt;/p&gt;
+&lt;p&gt;El símbolo de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt;, $\int$, fue introducido por &lt;a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"&gt;Leibniz&lt;/a&gt;, viene a ser una "S" alargada y fue elegido ya que la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt; es en definitiva un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt;&lt;/em&gt; de sumas &lt;a href="https://es.wikipedia.org/wiki/Infinitesimal"&gt;infinitesimales&lt;/a&gt;. En esta notación, $a$ y $b$ son los límites de la integración y $dx$ indica que $x$ es la variable independiente. La suma:&lt;/p&gt;
+&lt;p&gt;$$\sum_{i=1}^n f(x_i^*) \Delta x $$&lt;/p&gt;
+&lt;p&gt;que vemos en la definición, es conocida como la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_de_Riemann#Suma_de_Riemann"&gt;suma de Reimann&lt;/a&gt;&lt;/em&gt;, en honor al matemático alemán &lt;a href="https://es.wikipedia.org/wiki/Bernhard_Riemann"&gt;Bernhard Reimann&lt;/a&gt; que la desarrolló.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Integral definida" title="Integral definida" src="https://relopezbriega.github.io/images/integracion.png" width="500px" height="400px"&gt;&lt;/p&gt;
 &lt;h3 id="Integrales-definidas-e-indefinidas"&gt;Integrales definidas e indefinidas&lt;a class="anchor-link" href="#Integrales-definidas-e-indefinidas"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Una distinción importante que debemos hacer al hablar de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt;, es la diferencia entre una &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral definida&lt;/a&gt; y una &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;antiderivada&lt;/a&gt;. Mientras que la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral definida&lt;/a&gt;, que representamos con el símbolo, $\int_a^b f(x) dx$,  es un &lt;em&gt;número&lt;/em&gt;, un resultado preciso de la medida de un &lt;a href="https://es.wikipedia.org/wiki/%C3%81rea"&gt;área&lt;/a&gt;, distancia o volumen; la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt;, que representamos como, $\int f(x) dx$,  es una &lt;em&gt;función&lt;/em&gt; o familia de funciones. Más adelante, cuando hablemos del &lt;a href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"&gt;teorema fundamental del cálculo&lt;/a&gt;, veremos por qué esta distinción es tan importante. Pero antes, veamos como podemos hacer para calcular &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id="Reglas-de-integraci&amp;#243;n"&gt;Reglas de integraci&amp;#243;n&lt;a class="anchor-link" href="#Reglas-de-integraci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Cómo podemos ver de la definición que dimos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt;, estas parecen sumamente complicadas de calcular. Por suerte, al igual que para el caso de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivadas&lt;/a&gt;&lt;/em&gt;, existen varias reglas que podemos utilizar para poder calcular las &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integrales indefinidas&lt;/a&gt;, en forma más sencilla. Algunas de ellas son:&lt;/p&gt;
@@ -6821,14 +6936,19 @@ $$\sum_{i=1}^n f(x_i^*) \Delta x $$&lt;p&gt;que vemos en la definición, es cono
 De hecho, se dio cuenta de que la &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivación&lt;/a&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integración&lt;/a&gt; son procesos inversos. El &lt;a href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"&gt;teorema fundamental del cálculo&lt;/a&gt; nos da la relación inversa precisa entre la   &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; y la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt;. Fueron &lt;a href="https://es.wikipedia.org/wiki/Isaac_Newton"&gt;Newton&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"&gt;Leibniz&lt;/a&gt; quienes aprovecharon esta relación y la utilizaron para
 desarrollar el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;Cálculo&lt;/a&gt;. En particular, vieron que esta relación les permitía calcular &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/%C3%81rea"&gt;áreas&lt;/a&gt;&lt;/em&gt; e  &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt; con mucha facilidad y sin tener que calcularlas como límites de sumas. Es decir, que si tomamos una función $f$, y obtenemos primero su &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt;, y luego calculamos la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt; sobre esta función &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;Derivada&lt;/a&gt;&lt;/em&gt; $f'(x)$. Obtenemos nuevamente función original $f$. Lo que una hace, la otra lo deshace. El &lt;a href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"&gt;teorema fundamental del cálculo&lt;/a&gt; es sin duda el teorema más importante en el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;Cálculo&lt;/a&gt; y, de hecho, se ubica como uno de los grandes logros de la mente humana. Matemáticamente, este teorema se suele dividir en dos partes y nos dice lo siguiente:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Teorema fundamental del Calculo, parte 1.&lt;/strong&gt; si $f$ es una función continua en el intervalo $[a, b]$, entonces la función $g$ definida como:&lt;/p&gt;
-$$g(x) = \int_a^x f(t) dt \qquad a \leqslant x \leqslant b $$&lt;p&gt;es continua en el intervalo $[a, b]$ y &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;diferenciable&lt;/a&gt; en $(a, b)$, y $g'(x) = f(x)$.&lt;/p&gt;
+&lt;p&gt;$$g(x) = \int_a^x f(t) dt \qquad a \leqslant x \leqslant b $$&lt;/p&gt;
+&lt;p&gt;es continua en el intervalo $[a, b]$ y &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;diferenciable&lt;/a&gt; en $(a, b)$, y $g'(x) = f(x)$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Teorema fundamental del Calculo, parte 2.&lt;/strong&gt; si $f$ es una función continua en el intervalo $[a, b]$, entonces:&lt;/p&gt;
-$$\int_a^b f(x) dx = F(b) - F(a) $$&lt;p&gt;en donde $F$ es la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;antiderivada&lt;/a&gt; de $f$, o sea, una función tal que F' = f.&lt;/p&gt;
+&lt;p&gt;$$\int_a^b f(x) dx = F(b) - F(a) $$&lt;/p&gt;
+&lt;p&gt;en donde $F$ es la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;antiderivada&lt;/a&gt; de $f$, o sea, una función tal que F' = f.&lt;/p&gt;
 &lt;p&gt;En definitiva, lo que nos dice la primera parte es que las operaciones de &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivación&lt;/a&gt; y de &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integración&lt;/a&gt; son operaciones inversas. La segunda parte nos proporciona un método para calcular &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integrales definidas&lt;/a&gt;, en base a la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;antiderivada&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Así, por ejemplo, si quisiéramos calcular la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integral&lt;/a&gt;&lt;/em&gt;:&lt;/p&gt;
-$$\int_0^3 (x^3 - 6x) dx$$&lt;p&gt;primero obtenemos su &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt;.&lt;/p&gt;
-$$\int (x^3 - 6x) dx = \frac{x^4}{4} - 6\frac{x^2}{2}$$&lt;p&gt;y por último aplicamos la segunda parte del &lt;a href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"&gt;teorema fundamental del cálculo&lt;/a&gt; para obtener la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral definida&lt;/a&gt; en $[0, 3]$, reemplazando estos valores en la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt; que acabamos de obtener.&lt;/p&gt;
-$$\int_0^3 (x^3 - 6x) dx = \left(\frac{1}{4} \cdot 3^4 - 3 \cdot 3^2 \right) - \left(\frac{1}{4} \cdot 0^4 - 3 \cdot 0^2 \right) = -\frac{27}{4}$$&lt;h3 id="Calculando-Integrales-con-Python"&gt;Calculando Integrales con Python&lt;a class="anchor-link" href="#Calculando-Integrales-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos resolver &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt; con la ayuda de la, en este punto ya invaluable, librería &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt;. En este caso, vamos a utilizar el objeto &lt;code&gt;Integral&lt;/code&gt;. Su sintaxis es la siguiente: &lt;code&gt;Integral(funcion, variable)&lt;/code&gt;. Lo utilizamos de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;$$\int_0^3 (x^3 - 6x) dx$$&lt;/p&gt;
+&lt;p&gt;primero obtenemos su &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$\int (x^3 - 6x) dx = \frac{x^4}{4} - 6\frac{x^2}{2}$$&lt;/p&gt;
+&lt;p&gt;y por último aplicamos la segunda parte del &lt;a href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"&gt;teorema fundamental del cálculo&lt;/a&gt; para obtener la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integral definida&lt;/a&gt; en $[0, 3]$, reemplazando estos valores en la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"&gt;integral indefinida&lt;/a&gt; que acabamos de obtener.&lt;/p&gt;
+&lt;p&gt;$$\int_0^3 (x^3 - 6x) dx = \left(\frac{1}{4} \cdot 3^4 - 3 \cdot 3^2 \right) - \left(\frac{1}{4} \cdot 0^4 - 3 \cdot 0^2 \right) = -\frac{27}{4}$$&lt;/p&gt;
+&lt;h3 id="Calculando-Integrales-con-Python"&gt;Calculando Integrales con Python&lt;a class="anchor-link" href="#Calculando-Integrales-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Con &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, podemos resolver &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Integrales&lt;/a&gt;&lt;/em&gt; con la ayuda de la, en este punto ya invaluable, librería &lt;a href="https://www.sympy.org/es/"&gt;SymPy&lt;/a&gt;. En este caso, vamos a utilizar el objeto &lt;code&gt;Integral&lt;/code&gt;. Su sintaxis es la siguiente: &lt;code&gt;Integral(funcion, variable)&lt;/code&gt;. Lo utilizamos de la siguiente forma:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -6856,7 +6976,9 @@ $$\int_0^3 (x^3 - 6x) dx = \left(\frac{1}{4} \cdot 3^4 - 3 \cdot 3^2 \right) - \
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+
 
 
 
@@ -6890,7 +7012,9 @@ $$\frac{x^{4}}{4} - 3 x^{2}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+
 
 
 
@@ -6904,8 +7028,7 @@ $$\frac{x^{4}}{4} - 3 x^{2}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6934,7 +7057,9 @@ $$\frac{x^{4}}{4} - 3 x^{2}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+
 
 
 
@@ -6969,7 +7094,9 @@ $$- \frac{27}{4}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+
 
 
 
@@ -7002,7 +7129,9 @@ $$x^{3} - 6 x$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+
 
 
 
@@ -7016,8 +7145,7 @@ $$x^{3} - 6 x$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -7026,8 +7154,7 @@ $$x^{3} - 6 x$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;

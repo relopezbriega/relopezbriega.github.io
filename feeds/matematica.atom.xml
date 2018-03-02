@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/matematica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-01-18T00:00:00-03:00</updated><entry><title>Problemas de Optimización con Python</title><link href="https://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/" rel="alternate"></link><published>2017-01-18T00:00:00-03:00</published><updated>2017-01-18T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-01-18:blog/2017/01/18/problemas-de-optimizacion-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -10,8 +9,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -34,11 +32,12 @@ El poder de los métodos de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci
 &lt;li&gt;&lt;strong&gt;Optimización determinista versus optimización estocástica&lt;/strong&gt;: En la &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Sistema_determinista"&gt;determinista&lt;/a&gt;&lt;/strong&gt;, se supone que los datos para el problema dado se conocen con exactitud. Sin embargo, para muchos problemas reales, los datos no pueden ser conocidos con precisión por una variedad de razones. La primera razón se debe a un simple error de medición. La segunda razón más fundamental es que algunos datos representan información sobre el futuro (por ejemplo, la demanda o el precio del producto para un período de tiempo futuro) y simplemente no se puede saber con certeza. En la &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; bajo incertidumbre, o &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico"&gt;estocástica&lt;/a&gt;&lt;/strong&gt;, la incertidumbre se incorpora en el modelo. El objetivo es encontrar una solución que sea factible para todos los datos y óptima en algún sentido. Los modelos de &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Stochastic_programming"&gt;programación estocástica&lt;/a&gt;&lt;/em&gt; aprovechan el hecho de que las &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribuciones de probabilidad&lt;/a&gt; que gobiernan los datos son conocidas o pueden ser estimadas; el objetivo es encontrar alguna solución que sea factible para todas (o casi todas) las posibles instancias de los datos y optimice el rendimiento esperado del modelo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="Programaci&amp;#243;n-lineal"&gt;Programaci&amp;#243;n lineal&lt;a class="anchor-link" href="#Programaci&amp;#243;n-lineal"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Matemáticamente, un problema de &lt;a href="https://en.wikipedia.org/wiki/Constrained_optimization"&gt;optimización con restricciones&lt;/a&gt; asume la siguiente forma:&lt;/p&gt;
-$$ \begin{array}{ll}
+&lt;p&gt;$$ \begin{array}{ll}
             \min \hspace{1cm} f_0(x)\\
             \mbox{sujeto a } \ f_i (x) \leq b_i, \hspace{1cm} i=1, \dots, m.
     \end{array}
-$$&lt;p&gt;En donde el &lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt; $x = (x_1, \dots, x_n)$ es la &lt;em&gt;variable de optimización&lt;/em&gt; del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt;, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las &lt;em&gt;funciones de &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Desigualdad"&gt;desigualdad&lt;/a&gt;&lt;/em&gt;; y las constantes $b_1, \dots, m$ son los &lt;em&gt;límites&lt;/em&gt; de las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;. Dentro de este marco, un caso importante es el de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, en el cual la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; y las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; son &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;.
+$$&lt;/p&gt;
+&lt;p&gt;En donde el &lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt; $x = (x_1, \dots, x_n)$ es la &lt;em&gt;variable de optimización&lt;/em&gt; del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt;, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las &lt;em&gt;funciones de &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Desigualdad"&gt;desigualdad&lt;/a&gt;&lt;/em&gt;; y las constantes $b_1, \dots, m$ son los &lt;em&gt;límites&lt;/em&gt; de las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;. Dentro de este marco, un caso importante es el de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, en el cual la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; y las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; son &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;.
 El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; es determinar los valores de las variables de decisión que &lt;a href="https://es.wikipedia.org/wiki/Extremos_de_una_funci%C3%B3n"&gt;maximizan o minimizan&lt;/a&gt; una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineal&lt;/a&gt;, y en donde las variables de decisión están sujetas a &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;. En general, el objetivo es encontrar un punto que minimice la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; al mismo tiempo que satisface las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para resolver un problema de &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, debemos seguir los siguientes pasos:&lt;/p&gt;
 &lt;ol&gt;
@@ -159,7 +158,9 @@ El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_li
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -201,7 +202,9 @@ El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_li
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -580,14 +583,14 @@ YII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Optimizaci&amp;#243;n-con-restricciones"&gt;Optimizaci&amp;#243;n con restricciones&lt;a class="anchor-link" href="#Optimizaci&amp;#243;n-con-restricciones"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; añaden otro nivel de complejidad a los problemas de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt;. En su forma más simple, simplemente consiste en poner algunos límites sobre los valores que las variables pueden alcanzar. Por ejemplo, podrías intentar resolver el siguiente problema:&lt;/p&gt;
-$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
-$$&lt;p&gt;Este tipo de problema se puede resolver utilizando el método &lt;a href="https://es.wikipedia.org/wiki/L-BFGS"&gt;L-BFGS-B&lt;/a&gt; que nos ofrece &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html"&gt;scipy.optimize&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
+$$&lt;/p&gt;
+&lt;p&gt;Este tipo de problema se puede resolver utilizando el método &lt;a href="https://es.wikipedia.org/wiki/L-BFGS"&gt;L-BFGS-B&lt;/a&gt; que nos ofrece &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html"&gt;scipy.optimize&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -649,7 +652,9 @@ $$&lt;p&gt;Este tipo de problema se puede resolver utilizando el método &lt;a h
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -6113,8 +6118,7 @@ FAqFQjEASlBSKBQKhUKhGAAlKCkUCoVCoVAMgBKUFAqFQqFQKAZACUoKhUKhUCgUA/D/AVBayncf
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6170,7 +6174,9 @@ Para resolver este problema &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -11642,19 +11648,19 @@ rkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Programaci&amp;#243;n-lineal-con-CVXopt"&gt;Programaci&amp;#243;n lineal con CVXopt&lt;a class="anchor-link" href="#Programaci&amp;#243;n-lineal-con-CVXopt"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ahora veamos un ejemplo de &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; utilizando los métodos de &lt;a href="https://en.wikipedia.org/wiki/Convex_optimization"&gt;optimización convexa&lt;/a&gt; que nos ofrece la librería &lt;a href="https://cvxopt.org/"&gt;CVXopt&lt;/a&gt;. Recordemos que la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; es un caso especial de la &lt;a href="https://en.wikipedia.org/wiki/Convex_optimization"&gt;optimización convexa&lt;/a&gt; y el principal algoritmo que se utiliza es el &lt;a href="https://es.wikipedia.org/wiki/Algoritmo_s%C3%ADmplex"&gt;método simplex&lt;/a&gt;. Para este pequeño ejemplo vamos a maximizar la siguiente función objetivo:
 $$f(x_1,x_2) = 50x_1 + 40x_2$$&lt;/p&gt;
 &lt;p&gt;con las siguientes restricciones:&lt;/p&gt;
-$$x_{1} + 1.5x_{2} \leq 750 \\
+&lt;p&gt;$$x_{1} + 1.5x_{2} \leq 750 \\
 2x_1 + x_2 \leq 1000 \\
 x_1 \geq 0 \\
 x_2 \geq 0
-$$
+$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11686,7 +11692,9 @@ $$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;     pcost       dcost       gap    pres   dres   k/t
@@ -11724,7 +11732,9 @@ Optimal solution found.
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;375.00, 250.00
@@ -11770,7 +11780,9 @@ Optimal solution found.
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -12207,8 +12219,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12363,7 +12374,9 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;Status: Optimal
@@ -12386,8 +12399,7 @@ Costo total de transporte = 8600.0
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12514,7 +12526,9 @@ Costo total de transporte = 8600.0
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;
@@ -12541,8 +12555,7 @@ x : Cantidad de cajas
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12551,8 +12564,7 @@ x : Cantidad de cajas
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12566,8 +12578,7 @@ x : Cantidad de cajas
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="matematica"></category><category term="optimizacion"></category><category term="scipy"></category><category term="cvxopt"></category><category term="pulp"></category></entry><entry><title>Hasta el infinito y más alla</title><link href="https://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/" rel="alternate"></link><published>2015-11-22T00:00:00-03:00</published><updated>2015-11-22T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-11-22:blog/2015/11/22/hasta-el-infinito-y-mas-alla/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12577,8 +12588,7 @@ x : Cantidad de cajas
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12591,8 +12601,7 @@ infinito de volúmenes... No, decididamente no es éste... el mejor modo de inic
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12606,19 +12615,24 @@ A pesar de todas las dificultades que puede traer el lidiar con el &lt;em&gt;&lt
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;En 1600, &lt;a href="https://es.wikipedia.org/wiki/Galileo_Galilei"&gt;Galileo&lt;/a&gt; entendió que el problema era el estar utilizando un razonamiento finito sobre cosas infinitas. Postuló que "Es un error hablar de cantidades infinitas como siendo la mayor o menor o igual que a la otra" y afirmó que el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; no es un noción inconsistente, sino que obedece a reglas diferentes.&lt;/p&gt;
 &lt;p&gt;Otro de los temas que confundían a los matemáticos, era el comportamiento de las series infinitas, sobre todo aquellas que no eran &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergentes&lt;/a&gt;. Recordemos que una serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergente&lt;/a&gt; cuando la suma de sus términos da como resultado un número finito; en caso contrario, se dice que la serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergente&lt;/a&gt;. Así por ejemplo la &lt;a href="https://es.wikipedia.org/wiki/Serie_geom%C3%A9trica"&gt;serie geométrica&lt;/a&gt;, sabemos que converge en 1, y se puede demostrar geométricamente:&lt;/p&gt;
-$$\sum\limits_{i=1}^\infty\frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1$$&lt;p&gt;&lt;img alt="demostracion serie geometrica" title="demostracion serie geometrica" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GeometricSquares.svg/359px-GeometricSquares.svg.png
+&lt;p&gt;$$\sum\limits_{i=1}^\infty\frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1$$&lt;/p&gt;
+&lt;p&gt;&lt;img alt="demostracion serie geometrica" title="demostracion serie geometrica" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GeometricSquares.svg/359px-GeometricSquares.svg.png
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;Pero en cambio el resultado de la siguiente serie no se puede determinar:&lt;/p&gt;
-$$ S = 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 \dots $$&lt;p&gt;Si por ejemplo agrupamos los términos de la siguiente forma, el resultado parece ser &lt;em&gt;obviamente&lt;/em&gt; cero.&lt;/p&gt;
-$$ S = (1 - 1) + (1 - 1) + (1 - 1) + (1 - 1) \dots $$&lt;p&gt;Pero si los agrupamos de esta otra forma, el resultado parece ser ahora &lt;em&gt;claramente&lt;/em&gt; uno.&lt;/p&gt;
-$$ S =  1 + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) \dots $$&lt;p&gt;y no termina acá, ya que incluso podríamos agrupar la serie del siguiente modo y el resultado sería $\frac{1}{2}$.&lt;/p&gt;
-$$ S = 1 - ( 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots) \Rightarrow S = 1 - S \Rightarrow 2S = 1 \Rightarrow S = \frac{1}{2} $$&lt;p&gt;es decir que el valor de la serie S, podría ser tanto 1, como 0, como $\frac{1}{2}$.No es sorprendente que argumentos como éste, hacían que los matemáticos se pusieran muy nerviosos al tratar con los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; y quisieran evitarlos o incluso eliminarlos a toda costa.&lt;/p&gt;
+&lt;p&gt;$$ S = 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 \dots $$&lt;/p&gt;
+&lt;p&gt;Si por ejemplo agrupamos los términos de la siguiente forma, el resultado parece ser &lt;em&gt;obviamente&lt;/em&gt; cero.&lt;/p&gt;
+&lt;p&gt;$$ S = (1 - 1) + (1 - 1) + (1 - 1) + (1 - 1) \dots $$&lt;/p&gt;
+&lt;p&gt;Pero si los agrupamos de esta otra forma, el resultado parece ser ahora &lt;em&gt;claramente&lt;/em&gt; uno.&lt;/p&gt;
+&lt;p&gt;$$ S =  1 + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) \dots $$&lt;/p&gt;
+&lt;p&gt;y no termina acá, ya que incluso podríamos agrupar la serie del siguiente modo y el resultado sería $\frac{1}{2}$.&lt;/p&gt;
+&lt;p&gt;$$ S = 1 - ( 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots) \Rightarrow S = 1 - S \Rightarrow 2S = 1 \Rightarrow S = \frac{1}{2} $$&lt;/p&gt;
+&lt;p&gt;es decir que el valor de la serie S, podría ser tanto 1, como 0, como $\frac{1}{2}$.No es sorprendente que argumentos como éste, hacían que los matemáticos se pusieran muy nerviosos al tratar con los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; y quisieran evitarlos o incluso eliminarlos a toda costa.&lt;/p&gt;
 &lt;p&gt;Fuera de toda esta ambigüedad y confusión, la claridad surgió repentinamente en el siglo XIX, debido a los esfuerzos en solitario de un hombre brillante. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt; produjo una teoría que respondió a todas las objeciones de sus predecesores y reveló la riqueza inesperada escondida en el ámbito de lo &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;. De repente, los &lt;a href="https://es.wikipedia.org/wiki/Infinito_potencial_e_infinito_actual"&gt;infinitos actuales&lt;/a&gt; se convirtieron en parte de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;Cantor y la teor&amp;#237;a de conjuntos para explicar el infinito&lt;a class="anchor-link" href="#Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt;, aplicando ideas sumamente originales, postuló la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; y utilizando el concepto de la &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; de los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;, se propuso explicar el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Segun la teoría de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, dos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; se dicen que tienen el mismo número de elementos, es decir, que tienen la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt;, si existe una función definida entre ellos de forma tal que a cada elemento le corresponde sólo otro elemento del otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt;, y viceversa; o sea, que exista una correspondencia de uno a uno entre los elementos de ambos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;. A partir de esta definición se puede establecer la idea de &lt;a href="https://es.wikipedia.org/wiki/Conjunto_infinito"&gt;conjunto infinito&lt;/a&gt;. Se dice que un conjunto es &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; si existe un subconjunto con la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; que él. Esta definición plantea una contradicción con la intuición, pues todo subconjunto como parte del conjunto total parece que deba tener menos elementos. Eso es así, efectivamente, en los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjuntos finitos&lt;/a&gt;, pero no en los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id="&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#191;Distintos tipos de infinitos? Infinitos numerables y no numerables&lt;a class="anchor-link" href="#&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Otro de los grandes aportes de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, fue la distinción entre los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;no numerables&lt;/a&gt;.
 &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; definió a los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; como aquellos en los que se puede encontrar una correspondencia uno-a-uno con la lista de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt; 1, 2, 3, 4, 5, 6,. . . Así, por ejemplo, los números pares son un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerable&lt;/a&gt;, también lo son todos los números impares y ambos tienen el mismo tamaño. Por ejemplo, la correspondencia entre los primeros números impares sería la siguiente:&lt;/p&gt;
-$$ 
+&lt;p&gt;$$ 
 1 \longrightarrow 3 \\
 2 \longrightarrow 5 \\
 3 \longrightarrow 7 \\
@@ -12629,13 +12643,14 @@ $$
 8 \longrightarrow 17 \\
 9 \longrightarrow 19 \\
 10 \longrightarrow \dots \\
-$$&lt;p&gt;Por lo tanto, todos los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjuntos infinitos numerables&lt;/a&gt; tienen el mismo "tamaño" o &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; en el sentido de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;. El también pensaba que éstos eran los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;  más pequeños que pudieran existir y por lo tanto los representó utilizando la primera letra del alfabeto hebreo, el símbolo &lt;a href="https://es.wikipedia.org/wiki/Alef_cero"&gt;Aleph-cero&lt;/a&gt;, $\aleph_{0}$. Un punto importante a tener en cuenta, es que esta definición excluye cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; de objetos, ya que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; sólo puede ponerse en correspondencia uno-a-uno con otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; que contenga el mismo número de miembros.
+$$&lt;/p&gt;
+&lt;p&gt;Por lo tanto, todos los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjuntos infinitos numerables&lt;/a&gt; tienen el mismo "tamaño" o &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; en el sentido de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;. El también pensaba que éstos eran los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;  más pequeños que pudieran existir y por lo tanto los representó utilizando la primera letra del alfabeto hebreo, el símbolo &lt;a href="https://es.wikipedia.org/wiki/Alef_cero"&gt;Aleph-cero&lt;/a&gt;, $\aleph_{0}$. Un punto importante a tener en cuenta, es que esta definición excluye cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; de objetos, ya que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; sólo puede ponerse en correspondencia uno-a-uno con otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; que contenga el mismo número de miembros.
 Este análisis llevó a algunas conclusiones sorprendentes. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; mostró que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_racional"&gt;números racionales&lt;/a&gt;, los cuales se forman al dividir un &lt;a href="https://es.wikipedia.org/wiki/Numeros_enteros"&gt;número entero&lt;/a&gt; por otro (por ejemplo $\frac{1}{2}$, o $\frac{13}{2}$) son también un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjunto infinito numerable&lt;/a&gt;. El truco fue encontrar un sistema para poder contarlos sin perderse ninguno. Él utilizó el famoso proceso ahora conocido como la &lt;a href="https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor"&gt;diagonal de Cantor&lt;/a&gt; para hacer esto. Fue contando cada uno de ellos de acuerdo al siguiente ordenamiento:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Diagonal de Cantor" title="Diagonal de Cantor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Diagonal_argument.svg/429px-Diagonal_argument.svg.png
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; también pudo demostrar con un nuevo tipo de argumento matemático que existen &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; más grandes y que no se pueden contar. Esto son los que hoy en día se conocen como &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinitos no numerables&lt;/a&gt;. Dentro de esta categoría podemos encontrar al conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt;, los cuales incluyen a los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_irracional"&gt;números irracionales&lt;/a&gt;, quienes no se pueden escribir como &lt;a href="https://es.wikipedia.org/wiki/Fracci%C3%B3n"&gt;fracciones&lt;/a&gt; y tienen una expansión infinita de sus parte decimal.&lt;/p&gt;
 &lt;p&gt;Para demostrar que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt; son un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinito no numerable&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; comenzó por suponer que se podían contar, lo que significaba que debería ser capaz de elaborar una receta sistemática para contar todos los decimales interminables que no terminaran en una cadena infinita de ceros. Los primeros de estos números podrían parecerse a éstos:&lt;/p&gt;
-$$
+&lt;p&gt;$$
 1 \longrightarrow 0.\underline{2}34567891\dots \\
 2 \longrightarrow 0.5\underline{7}5603737\dots \\
 3 \longrightarrow 0.46\underline{3}214516\dots \\
@@ -12643,7 +12658,8 @@ $$
 5 \longrightarrow 0.5621\underline{9}4632\dots \\
 6 \longrightarrow 0.46673\underline{2}271\dots \\
  \dots
-$$&lt;p&gt;Luego creó un nuevo decimal tomando el primer dígito después del punto decimal del primer número, el segundo dígito del segundo número, y así sucesivamente para siempre(como por ejemplo los dígitos subrayados en la serie de arriba). Siguiendo el ejemplo, el nuevo decimal comenzaría como sigue:&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;Luego creó un nuevo decimal tomando el primer dígito después del punto decimal del primer número, el segundo dígito del segundo número, y así sucesivamente para siempre(como por ejemplo los dígitos subrayados en la serie de arriba). Siguiendo el ejemplo, el nuevo decimal comenzaría como sigue:&lt;/p&gt;
 &lt;p&gt;$0.273292\dots$&lt;/p&gt;
 &lt;p&gt;Por último a este decimal recién creado, le sumó 1 a cada uno de sus infinitos dígitos. Obteniendo el número&lt;/p&gt;
 &lt;p&gt;$0.384303\dots$&lt;/p&gt;
@@ -12715,7 +12731,9 @@ Ayudándonos de nuestro buen amigo &lt;a href="https://python.org/"&gt;Python&lt
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
 
 
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
@@ -12813,7 +12831,9 @@ Ayudándonos de nuestro buen amigo &lt;a href="https://python.org/"&gt;Python&lt
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -13016,20 +13036,19 @@ V3dckqR5WlW3bJbUjSQvBe6qqnOS7AF8NcmGqjqv49IkzYM9B5IkqY/HHEiSpD6GA0mS1MdwIEmS
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como nos muestran tanto los cálculos como el gráfico, a medida que vamos aumentando el valor de $x$, la función $\frac{1}{x}$ se va aproximando cada vez más a cero. Por tanto podemos conjeturar que la función $\frac{1}{x}$ tiende a cero.
 Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, si podemos decir que pasa a medida que nos vamos acercando cada vez más a él. Por tanto podríamos decir que a medida que el valor $x$ tiende a $\infty$, el valor de la función $\frac{1}{x}$, se aproxima a su &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt; cero. En el lenguaje de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;, lo expresaríamos de la siguiente forma:&lt;/p&gt;
-$$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;p&gt;El concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; es una de las herramientas principales sobre las que se sustenta el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo&lt;/a&gt;. Muchas veces, una función puede ser indefinida en un punto, pero podemos pensar en lo que pasa a medida que la función "se acerca" cada vez más a ese punto. Otras veces, la función puede ser definida en un punto, pero puede aproximarse a un límite diferente.&lt;/p&gt;
+&lt;p&gt;$$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;/p&gt;
+&lt;p&gt;El concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; es una de las herramientas principales sobre las que se sustenta el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo&lt;/a&gt;. Muchas veces, una función puede ser indefinida en un punto, pero podemos pensar en lo que pasa a medida que la función "se acerca" cada vez más a ese punto. Otras veces, la función puede ser definida en un punto, pero puede aproximarse a un límite diferente.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13047,8 +13066,7 @@ $$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;p&gt;El concepto de &lt;a
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="infinito"></category></entry><entry><title>Números complejos con Python</title><link href="https://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/" rel="alternate"></link><published>2015-10-12T00:00:00-03:00</published><updated>2015-10-12T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-10-12:blog/2015/10/12/numeros-complejos-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13058,40 +13076,55 @@ $$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;p&gt;El concepto de &lt;a
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Si bien el conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el hecho de que sólo se pueden tomar raíces cuadradas de los números positivos (o cero) y no de los negativos. Desde el punto de vista matemático resultaría conveniente poder extraer raíces cuadradas de números negativos tanto como de números positivos. Por tal motivo, que tal si "inventamos" una raíz cuadrada para el número -1 y la expresamos con el símbolo "$i$", de modo que tenemos&lt;/p&gt;
-$$i^2 = -1$$&lt;p&gt;La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; no son menos reales que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; a los que estamos acostumbrados.&lt;/p&gt;
+&lt;p&gt;$$i^2 = -1$$&lt;/p&gt;
+&lt;p&gt;La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; no son menos reales que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; a los que estamos acostumbrados.&lt;/p&gt;
 &lt;p&gt;Cuando estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; se combinan con los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; obtenemos lo que se conoce como &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;; de esta forma, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; vienen a completar a los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; y nos permiten realizar todo tipo de operaciones algebraicas.&lt;/p&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-un-n&amp;#250;mero-complejo?"&gt;&amp;#191;Qu&amp;#233; es un n&amp;#250;mero complejo?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-un-n&amp;#250;mero-complejo?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; incluyen todas las raíces de los &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt;, a diferencia de lo que pasaba cuando solo teníamos a los   &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. Todo &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; puede representarse como la suma de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; y un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;número imaginario&lt;/a&gt;, el cual es un múltiplo real de la unidad imaginaria, que se indica con la letra $i$. O sea, que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; tienen la forma&lt;/p&gt;
-$$a + bi$$&lt;p&gt;donde a y b son números reales llamados &lt;em&gt;parte real&lt;/em&gt; y &lt;em&gt;parte imaginaria&lt;/em&gt; , respectivamente, del &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.&lt;/p&gt;
+&lt;p&gt;$$a + bi$$&lt;/p&gt;
+&lt;p&gt;donde a y b son números reales llamados &lt;em&gt;parte real&lt;/em&gt; y &lt;em&gt;parte imaginaria&lt;/em&gt; , respectivamente, del &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.&lt;/p&gt;
 &lt;h2 id="Operaciones-con-n&amp;#250;meros-complejos"&gt;Operaciones con n&amp;#250;meros complejos&lt;a class="anchor-link" href="#Operaciones-con-n&amp;#250;meros-complejos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las operaciones que podemos realizar con los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; son las siguientes:&lt;/p&gt;
 &lt;h3 id="Suma"&gt;Suma&lt;a class="anchor-link" href="#Suma"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para sumar dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; simplemente sumamos cada elemento en forma separada. Es decir que:&lt;/p&gt;
-$$(a+bi) + (c+di) = (a+c) + (b+d)i$$&lt;p&gt;Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.&lt;/p&gt;
+&lt;p&gt;$$(a+bi) + (c+di) = (a+c) + (b+d)i$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.&lt;/p&gt;
 &lt;h3 id="Producto-por-escalar"&gt;Producto por escalar&lt;a class="anchor-link" href="#Producto-por-escalar"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para calcular el producto escalar de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;, multiplicamos al &lt;a href="https://es.wikipedia.org/wiki/Escalar_(matem%C3%A1tica)"&gt;escalar&lt;/a&gt; por cada una de sus partes, la real y la imaginaria. Es decir que:&lt;/p&gt;
-$$r(a+bi) = (ra) + (rb)i$$&lt;p&gt;Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.&lt;/p&gt;
+&lt;p&gt;$$r(a+bi) = (ra) + (rb)i$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.&lt;/p&gt;
 &lt;h3 id="Multiplicaci&amp;#243;n"&gt;Multiplicaci&amp;#243;n&lt;a class="anchor-link" href="#Multiplicaci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para multiplicar dos  &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos realizar su multiplicación &lt;a href="https://es.wikipedia.org/wiki/Binomio"&gt;binomial&lt;/a&gt;. Es decir que:&lt;/p&gt;
-$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$&lt;p&gt;En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, que es:&lt;/p&gt;
-$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$&lt;p&gt;Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.&lt;/p&gt;
+&lt;p&gt;$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$&lt;/p&gt;
+&lt;p&gt;En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, que es:&lt;/p&gt;
+&lt;p&gt;$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.&lt;/p&gt;
 &lt;h3 id="Igualdad"&gt;Igualdad&lt;a class="anchor-link" href="#Igualdad"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; van a ser iguales si y solo si sus partes &lt;em&gt;reales&lt;/em&gt; e &lt;em&gt;imaginarias&lt;/em&gt; son iguales. Es decir que:&lt;/p&gt;
-$$(a + bi) = (c + di) \iff a = c \wedge b = d$$&lt;p&gt;Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.&lt;/p&gt;
+&lt;p&gt;$$(a + bi) = (c + di) \iff a = c \wedge b = d$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.&lt;/p&gt;
 &lt;h3 id="Resta"&gt;Resta&lt;a class="anchor-link" href="#Resta"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La resta de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, funciona de forma similar a la suma.&lt;/p&gt;
-$$(a+bi) - (c+di) = (a-c) + (b-d)i$$&lt;p&gt;Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.&lt;/p&gt;
+&lt;p&gt;$$(a+bi) - (c+di) = (a-c) + (b-d)i$$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.&lt;/p&gt;
 &lt;h3 id="Conjugado"&gt;Conjugado&lt;a class="anchor-link" href="#Conjugado"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; se obtiene cambiando el signo de su componente imaginario. Por lo tanto, el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;$z = a + bi$, es $\overline{z} = a - bi$.&lt;/p&gt;
 &lt;p&gt;Para expresar que estamos buscando el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, escribimos una línea sobre el &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Así, por ejemplo&lt;/p&gt;
-$$ \overline{ 2 + 3i} = 2 - 3i$$&lt;h3 id="Divisi&amp;#243;n"&gt;Divisi&amp;#243;n&lt;a class="anchor-link" href="#Divisi&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para dividir dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos utilizar el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;; ya que para realizar la división debemos multiplicar tanto el &lt;em&gt;divisor&lt;/em&gt; como el &lt;em&gt;dividendo&lt;/em&gt; por el conjugado del &lt;em&gt;divisor&lt;/em&gt;.
+&lt;p&gt;$$ \overline{ 2 + 3i} = 2 - 3i$$&lt;/p&gt;
+&lt;h3 id="Divisi&amp;#243;n"&gt;Divisi&amp;#243;n&lt;a class="anchor-link" href="#Divisi&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para dividir dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos utilizar el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;; ya que para realizar la división debemos multiplicar tanto el &lt;em&gt;divisor&lt;/em&gt; como el &lt;em&gt;dividendo&lt;/em&gt; por el conjugado del &lt;em&gt;divisor&lt;/em&gt;.
 Así, por ejemplo si quisiéramos dividir:&lt;/p&gt;
-$$\frac{2 + 3i}{4 - 5i}$$&lt;p&gt;Debemos realizar el siguiente cálculo:&lt;/p&gt;
-$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$&lt;p&gt;y teniendo en cuenta que la multiplicación de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; por su &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, responde a la formula:&lt;/p&gt;
-$$(a + bi)(a - bi) = a^2 + b^2$$&lt;p&gt;Podemos resolver la división de la siguiente forma:&lt;/p&gt;
-$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$&lt;p&gt;Lo que nos lleva al resultado final:&lt;/p&gt;
-$$ = \frac{-7}{41} + \frac{22}{41}i$$&lt;p&gt;Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:&lt;/p&gt;
-$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$&lt;h3 id="Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;Valor absoluto o m&amp;#243;dulo de un n&amp;#250;mero complejo&lt;a class="anchor-link" href="#Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Valor_absoluto"&gt;valor absoluto&lt;/a&gt;, módulo o &lt;em&gt;magnitud&lt;/em&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; viene dado por la siguiente expresión:&lt;/p&gt;
-$$ |a + bi| = \sqrt{a^2 + b^2} $$&lt;p&gt;Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.&lt;/p&gt;
+&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}$$&lt;/p&gt;
+&lt;p&gt;Debemos realizar el siguiente cálculo:&lt;/p&gt;
+&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$&lt;/p&gt;
+&lt;p&gt;y teniendo en cuenta que la multiplicación de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; por su &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, responde a la formula:&lt;/p&gt;
+&lt;p&gt;$$(a + bi)(a - bi) = a^2 + b^2$$&lt;/p&gt;
+&lt;p&gt;Podemos resolver la división de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$&lt;/p&gt;
+&lt;p&gt;Lo que nos lleva al resultado final:&lt;/p&gt;
+&lt;p&gt;$$ = \frac{-7}{41} + \frac{22}{41}i$$&lt;/p&gt;
+&lt;p&gt;Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:&lt;/p&gt;
+&lt;p&gt;$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$&lt;/p&gt;
+&lt;h3 id="Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;Valor absoluto o m&amp;#243;dulo de un n&amp;#250;mero complejo&lt;a class="anchor-link" href="#Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Valor_absoluto"&gt;valor absoluto&lt;/a&gt;, módulo o &lt;em&gt;magnitud&lt;/em&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; viene dado por la siguiente expresión:&lt;/p&gt;
+&lt;p&gt;$$ |a + bi| = \sqrt{a^2 + b^2} $$&lt;/p&gt;
+&lt;p&gt;Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.&lt;/p&gt;
 &lt;h2 id="Plano-de-los-n&amp;#250;meros-complejos-o-Diagrama-de-Argand"&gt;Plano de los n&amp;#250;meros complejos o Diagrama de Argand&lt;a class="anchor-link" href="#Plano-de-los-n&amp;#250;meros-complejos-o-Diagrama-de-Argand"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Plano_complejo"&gt;plano de Argand&lt;/a&gt; es un plano euclídeo ordinario con coordenadas cartesianas estándar $x$ e $y$ , donde $x$ indica la distancia horizontal (positiva hacia la derecha y negativa hacia la izquierda) y donde $y$ indica la distancia vertical (positiva hacia arriba y negativa hacia abajo). El número complejo $z = x + yi$ viene representado entonces por el punto del plano de Argand cuyas coordenadas son $( x , y )$.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Plano de Argand" title="Plano de Argand" src="https://relopezbriega.github.io/images/Argand1.png
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13125,7 +13158,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
 
 
 
@@ -13159,7 +13194,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -13194,7 +13231,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 
@@ -13230,7 +13269,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
 
 
 
@@ -13264,7 +13305,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
 
 
 
@@ -13299,7 +13342,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
 
 
 
@@ -13335,7 +13380,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
 
 
 
@@ -13370,7 +13417,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
 
 
 
@@ -13405,7 +13454,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 
@@ -13441,7 +13492,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
 
 
 
@@ -13476,7 +13529,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
 
 
 
@@ -13510,7 +13565,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
 
 
 
@@ -13544,7 +13601,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
 
 
 
@@ -13614,7 +13673,9 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -13714,14 +13775,14 @@ SUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Aplicaciones-de-los-n&amp;#250;meros-complejos"&gt;Aplicaciones de los n&amp;#250;meros complejos&lt;a class="anchor-link" href="#Aplicaciones-de-los-n&amp;#250;meros-complejos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Dado que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; proporcionan un sistema para encontrar las raíces de &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt; y los &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt; se utilizan como modelos teóricos en diversos campos, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; gozan de un gran importancia en varias áreas especializadas. Entre estas áreas especializadas se encuentran la ingeniería, la ingeniería eléctrica y la &lt;a href="https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica"&gt;mecánica cuántica&lt;/a&gt;. Algunos temas en los que se utilizan &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; incluyen la investigación de la corriente eléctrica, longitud de onda, el flujo de líquido en relación a los obstáculos, el análisis de la tensión en las vigas, el movimiento de los amortiguadores en automóviles, el estudio de resonancia de las estructuras, el diseño de dinamos y motores eléctricos, y la manipulación de grandes matrices utilizadas en el modelado. Por ejemplo, en ingeniería electrica para el análisis de circuitos de corriente alterna, es necesario representar cantidades multidimensionales. Con el fin de realizar esta tarea, los números escalares fueron abandonados y los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; se utilizan para expresar las dos dimensiones de frecuencia y desplazamiento de fase.&lt;/p&gt;
 &lt;p&gt;Así, por ejemplo si sabemos que el voltaje en un circuito es 45 + 10j voltios y la impedancia es de 3 + 4j ohms. Si queremos saber cual es la corriente, simplemente deberíamos resolver la ecuación $E = I \dot Z$ donde E es la tensión, I es la corriente, y Z es la impedancia. Reemplazando los términos en la formula, obtenemos que:&lt;/p&gt;
-$$ I = \frac{45 + 10j}{3 + 4j}$$
+&lt;p&gt;$$ I = \frac{45 + 10j}{3 + 4j}$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -13746,7 +13807,9 @@ $$ I = \frac{45 + 10j}{3 + 4j}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
 
 
 
@@ -13760,8 +13823,7 @@ $$ I = \frac{45 + 10j}{3 + 4j}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13844,7 +13906,9 @@ $$ I = \frac{45 + 10j}{3 + 4j}$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16465,8 +16529,7 @@ GAAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -16513,7 +16576,9 @@ GAAAAABJRU5ErkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -17522,8 +17587,7 @@ RU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -17537,8 +17601,7 @@ RU5ErkJggg==
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="programacion"></category><category term="complejos"></category></entry><entry><title>Conjuntos con Python</title><link href="https://relopezbriega.github.io/blog/2015/10/11/conjuntos-con-python/" rel="alternate"></link><published>2015-10-11T00:00:00-03:00</published><updated>2015-10-11T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-10-11:blog/2015/10/11/conjuntos-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -17547,8 +17610,7 @@ RU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -17564,7 +17626,7 @@ es el &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; 
 &lt;p&gt;Dado que muchos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; no se pueden describir listando todos sus miembros, ya que en muchos casos esto es imposible, también se utiliza la mucho más potente notación de constructor de conjuntos o predicado. En esta notación escribimos el conjunto de acuerdo a qué tipos de objetos pertenecen al &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt;, que se colocan a la izquierda del símbolo "|", que significa "de tal manera que," dentro de las llaves; así como las condiciones que estos objetos deben cumplir para pertenecer al &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt;, las cuales se colocan a la derecha de  "|" dentro de las llaves. Por ejemplo, el &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_racional"&gt;números racionales&lt;/a&gt;, o fracciones, que se denota por Q no puede ser descrito por el método de listar todos sus miembros. En su lugar, se define a Q utilizando la notación de predicado de la siguiente manera:
 $Q=\{\frac{p}{q} \mid p, q \in Z$  y  $q \ne 0 \}$
 Esto se lee "Q es el conjunto de todas las fracciones de la forma p sobre q, tal que p y q son números enteros y q no es cero." También podríamos escribir al conjunto A de nuestro ejemplo anterior como $A = \{x \mid x \in N$ y
-$x &lt; 11\}$.&lt;/p&gt;
+$x &amp;lt; 11\}$.&lt;/p&gt;
 &lt;h2 id="Conjuntos-num&amp;#233;ricos"&gt;Conjuntos num&amp;#233;ricos&lt;a class="anchor-link" href="#Conjuntos-num&amp;#233;ricos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Dentro de las matemáticas, los principales &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; numéricos que podemos encontrar y que tienen un carácter universal son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;$\mathbb{N} = \{1,2,3, ...\}$ es el conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt;.&lt;/li&gt;
@@ -17587,23 +17649,23 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 &lt;li&gt;Menos obvio es el hecho de que el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt; es un subconjunto de cualquier conjunto A. Por lo tanto $\emptyset \subseteq A$. Esta propiedad se prueba a través de la contradicción, ya que si asumimos que existe un &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; A del que el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt; no es un &lt;a href="https://es.wikipedia.org/wiki/Subconjunto"&gt;subconjunto&lt;/a&gt;, entonces esto quiere decir que el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt; debe contener un elemento que no se encuentra en A y esto es absurdo ya que el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt; no contiene ningún elemento.&lt;/li&gt;
 &lt;li&gt;El &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt; es un &lt;a href="https://es.wikipedia.org/wiki/Subconjunto#Subconjunto_propio"&gt;subconjunto propio&lt;/a&gt; de cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; A, siempre y cuando A no se también un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_vac%C3%ADo"&gt;conjunto vacío&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; finitos A y B, si $A \subseteq B$, entonces $n(A) \leq n(B)$.&lt;/li&gt;
-&lt;li&gt;De forma similar, para los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; finitos A y B, si $A \subset B$, entonces $n(A) &lt; n(B)$.&lt;/li&gt;
+&lt;li&gt;De forma similar, para los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; finitos A y B, si $A \subset B$, entonces $n(A) &amp;lt; n(B)$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="Conjunto-potencia"&gt;Conjunto potencia&lt;a class="anchor-link" href="#Conjunto-potencia"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; A, expresado por $P_{A}$, es el &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; formado por todos los distintos &lt;a href="https://es.wikipedia.org/wiki/Subconjunto"&gt;subconjuntos&lt;/a&gt; de A. Así por ejemplo el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; $A=\{1,2,3\}$; va a ser igual a $P_{A}=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{2,3\}, \{1,3\},\{1,2,3\}\}$.&lt;/p&gt;
 &lt;p&gt;Un teorema importante de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; establece que si A es un &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; con k elementos, es decir que n(A) = k; entonces el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de A tiene exactamente $2^k$ elementos. Escribimos esto como $n(P_{A}) = 2^k$. En nuestro ejemplo anterior podemos ver que n(A)=3, por lo tanto $n(P_{A}) = 2^3$, lo que es igual a los 8 elementos que vimos que tiene el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_potencia"&gt;conjunto potencia&lt;/a&gt; de A.&lt;/p&gt;
 &lt;h2 id="Algebra-de-conjuntos"&gt;Algebra de conjuntos&lt;a class="anchor-link" href="#Algebra-de-conjuntos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/%C3%81lgebra_de_conjuntos"&gt;álgebra de conjuntos&lt;/a&gt; es el estudio de las operaciones básicas que podemos realizar con los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;. Las operaciones básicas del álgebra de conjuntos son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Unión&lt;/strong&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Uni%C3%B3n_de_conjuntos"&gt;unión&lt;/a&gt; de dos conjuntos A y B es el conjunto $A \cup B$ que contiene todos los elementos de A y de B. 
-&amp;lt;img src="&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/SetUnion.svg/442px-SetUnion.svg.png"&gt;https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/SetUnion.svg/442px-SetUnion.svg.png&lt;/a&gt;" width=300, height=300&amp;gt;&lt;/p&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/SetUnion.svg/442px-SetUnion.svg.png" width=300, height=300&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Intersección&lt;/strong&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Intersecci%C3%B3n_de_conjuntos"&gt;intersección&lt;/a&gt; de dos conjuntos A y B es el conjunto $A \cap B$ que contiene todos los elementos comunes de A y B.
-&amp;lt;img src="&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/SetIntersection.svg/442px-SetIntersection.svg.png"&gt;https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/SetIntersection.svg/442px-SetIntersection.svg.png&lt;/a&gt;" width=300, height=300&amp;gt;&lt;/p&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/SetIntersection.svg/442px-SetIntersection.svg.png" width=300, height=300&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Diferencia&lt;/strong&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Diferencia_de_conjuntos"&gt;diferencia&lt;/a&gt; entre dos conjuntos A y B es el conjunto $A \setminus B$ que contiene todos los elementos de A que no pertenecen a B.
-&amp;lt;img src="&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/SetDifferenceA.svg/442px-SetDifferenceA.svg.png"&gt;https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/SetDifferenceA.svg/442px-SetDifferenceA.svg.png&lt;/a&gt;" width=300, height=300&amp;gt;&lt;/p&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/SetDifferenceA.svg/442px-SetDifferenceA.svg.png" width=300, height=300&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Complemento&lt;/strong&gt;. El &lt;a href="https://es.wikipedia.org/wiki/Complemento_de_un_conjunto"&gt;complemento&lt;/a&gt; de un conjunto A es el conjunto $A^∁$ que contiene todos los elementos que no pertenecen a A.
-&amp;lt;img src="&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/SetComplement.svg/451px-SetComplement.svg.png"&gt;https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/SetComplement.svg/451px-SetComplement.svg.png&lt;/a&gt;" width=300, height=300&amp;gt;&lt;/p&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/SetComplement.svg/451px-SetComplement.svg.png" width=300, height=300&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Producto cartesiano&lt;/strong&gt;. El &lt;a href="https://es.wikipedia.org/wiki/Producto_cartesiano"&gt;producto cartesiano&lt;/a&gt; de dos conjuntos A y B es el conjunto $A \times B$ que contiene todos los pares ordenados (a, b) cuyo primer elemento pertenece a A y su segundo elemento pertenece a B.&lt;/p&gt;
 &lt;/li&gt;
@@ -17634,7 +17696,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
 
 
 
@@ -17670,7 +17734,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -17707,7 +17773,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 
@@ -17742,7 +17810,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
 
 
 
@@ -17776,7 +17846,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;La cardinalidad del conjunto A = {1, 2, 3} es 3
@@ -17808,7 +17880,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
 
 
 
@@ -17844,7 +17918,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
 
 
 
@@ -17881,7 +17957,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
 
 
 
@@ -17915,7 +17993,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 
@@ -17951,7 +18031,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
 
 
 
@@ -17985,7 +18067,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
 
 
 
@@ -18019,7 +18103,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
 
 
 
@@ -18052,7 +18138,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
 
 
 
@@ -18088,7 +18176,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
 
 
 
@@ -18123,7 +18213,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
 
 
 
@@ -18158,7 +18250,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;La cardinalidad del conjunto potencia del conjunto C = {1, 2, 3} es 8
@@ -18192,7 +18286,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
 
 
 
@@ -18227,7 +18323,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+
 
 
 
@@ -18263,7 +18361,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+
 
 
 
@@ -18296,7 +18396,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+
 
 
 
@@ -18331,7 +18433,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+
 
 
 
@@ -18367,7 +18471,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+
 
 
 
@@ -18403,7 +18509,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+
 
 
 
@@ -18437,7 +18545,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
+
 
 
 
@@ -18475,7 +18585,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+
 
 
 
@@ -18509,7 +18621,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;(1, 3)
@@ -18547,7 +18661,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
+
 
 
 
@@ -18581,7 +18697,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+
 
 
 
@@ -18615,7 +18733,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;(1, 1, 1)
@@ -18739,7 +18859,9 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -19074,8 +19196,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19085,8 +19206,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19099,8 +19219,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="programacion"></category><category term="conjuntos"></category></entry><entry><title>De tíos, primos, teoremas y conjeturas</title><link href="https://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/" rel="alternate"></link><published>2015-09-13T00:00:00-03:00</published><updated>2015-09-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-09-13:blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19109,8 +19228,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19120,8 +19238,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19198,7 +19315,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
 
 
 
@@ -19232,7 +19351,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
 
 
 
@@ -19266,7 +19387,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
 
 
 
@@ -19280,8 +19403,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19376,7 +19498,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;2000 = 3 + 1997
@@ -19416,7 +19540,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;9999980 = 7 + 9999973
@@ -19458,7 +19584,9 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;99999980 = 193 + 99999787
@@ -19480,8 +19608,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19495,8 +19622,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
  
 
 &lt;/p&gt;</summary><category term="python"></category><category term="matematica"></category><category term="programacion"></category></entry><entry><title>El dia Pi</title><link href="https://relopezbriega.github.io/blog/2015/03/14/el-dia-pi/" rel="alternate"></link><published>2015-03-14T00:00:00-03:00</published><updated>2015-03-14T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-03-14:blog/2015/03/14/el-dia-pi/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19505,8 +19631,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19515,8 +19640,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19524,8 +19648,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19534,8 +19657,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19544,8 +19666,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19553,8 +19674,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19565,8 +19685,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19574,8 +19693,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19584,8 +19702,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19593,8 +19710,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19603,8 +19719,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19612,8 +19727,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19622,8 +19736,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19632,8 +19745,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19641,8 +19753,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19652,17 +19763,16 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-$$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
+&lt;p&gt;$$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19670,8 +19780,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19702,7 +19811,9 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
 
 
 
@@ -19738,7 +19849,9 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;3.1415926535897932384626433832795
@@ -19750,8 +19863,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19823,7 +19935,9 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;3.14159265358979323846264338327950
@@ -19835,8 +19949,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19888,7 +20001,9 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre class="ipynb"&gt;3.1415924535897797
@@ -19900,8 +20015,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -19911,8 +20025,7 @@ $$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;

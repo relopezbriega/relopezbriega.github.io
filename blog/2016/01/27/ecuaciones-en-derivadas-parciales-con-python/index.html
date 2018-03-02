@@ -223,6 +223,13 @@ jQuery(document).ready(function($) {
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7550748012598565",
+    enable_page_level_ads: true
+  });
+</script>
 
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -262,7 +269,7 @@ jQuery(document).ready(function($) {
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">Ecuaciones en derivadas parciales con Python</h1>
-      <p class="meta"><time datetime="2016-01-27T00:00:00-03:00" pubdate>Wed 27 January 2016</time></p>
+      <p class="meta"><time datetime="2016-01-27T00:00:00-03:00" pubdate>mié 27 enero 2016</time></p>
 </header>
 <!-- Left & centered positioning -->
 <div class="ssk-sticky ssk-left ssk-center ssk-lg ssk-sticky-hide-xs">
@@ -273,8 +280,7 @@ jQuery(document).ready(function($) {
     <a href="" class="ssk ssk-email"></a>
 </div>
   <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -284,20 +290,22 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las interacciones entre fotones y electrones, y la radiación de ondas electromagnéticas. Las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> también juegan un papel central en las matemáticas modernas, especialmente en la <a href="https://es.wikipedia.org/wiki/Geometr%C3%ADa">geometría</a> y el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_matem%C3%A1tico">análisis</a>; lo que las convierte en una herramienta de suma utilidad que debemos conocer.</p>
 <p><strong><em>Nota</em></strong>: Este artículo corresponde a la tercer entrega de mi serie de artículos sobre <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal">Cálculo</a> con <a href="https://www.python.org/">Python</a>; los anteriores fueron: <a href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al Cálculo</a> y <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones Diferenciales con Python</a>, los cuales es recomendable haber leído previamente.</p>
 <h2 id="&#191;Qu&#233;-es-una-ecuaci&#243;n-en-derivadas-parciales?">&#191;Qu&#233; es una ecuaci&#243;n en derivadas parciales?<a class="anchor-link" href="#&#191;Qu&#233;-es-una-ecuaci&#243;n-en-derivadas-parciales?">&#182;</a></h2><p>Una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> es una ecuación que, como su nombre lo indica, contiene <a href="https://es.wikipedia.org/wiki/Derivada_parcial">derivadas parciales</a>. A diferencia de lo que habíamos visto con las <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, en donde la función incógnita depende <strong>solo</strong> de <em>una variable</em>; en las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>, o <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> para abreviar, la función incógnita va a depender de <strong>dos o más</strong> <em>variables independientes</em> $x, y, \dots$. Generalmente a la función incógnita la vamos a expresar como $u(x, y, \dots)$ y a sus derivadas parciales como $\partial u / \partial x = u_x$ o  $\partial u / \partial y = u_y$ dependiendo de sobre que variable estemos derivando. Entonces una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> va a ser la identidad que relaciona a las <em>variables independientes</em> ($x, y, \dots$), con la <em>variable dependiente</em> $u$ (nuestra función incógnita), y las <a href="https://es.wikipedia.org/wiki/Derivada_parcial">derivadas parciales</a> de $u$. Lo podríamos expresar de la siguiente forma:</p>
-$$F(x, y, u(x, y), u_x(x, y), u_y(x, y)) = F(x, y, u, u_x, u_y) = 0$$<p>Al igual de como pasaba con las <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, el <strong><em>orden</em></strong> de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> va a estar dado por la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente. Por lo tanto, el caso que expresamos más arriba corresponde a una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, con dos <em>variables independientes</em>, de <em>primer orden</em>. Si quisiéramos expresar una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de <em>segundo orden</em>, podríamos hacerlo de la siguiente manera:</p>
-$$F(x, y, u, u_x, u_y, u_{xx}, u_{xy}, u_{yy})=0.$$<h3 id="Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">Clasificaci&#243;n de ecuaciones en derivadas parciales<a class="anchor-link" href="#Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">&#182;</a></h3><p>La clasificación de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> va a ser algo fundamental, ya que la teoría y los métodos para poder solucionarlas van a depender de la <em>clase</em> de ecuación con la que estemos tratando. Las clasificaciones más importantes que debemos tener en cuenta, son:</p>
+<p>$$F(x, y, u(x, y), u_x(x, y), u_y(x, y)) = F(x, y, u, u_x, u_y) = 0$$</p>
+<p>Al igual de como pasaba con las <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>, el <strong><em>orden</em></strong> de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> va a estar dado por la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente. Por lo tanto, el caso que expresamos más arriba corresponde a una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>, con dos <em>variables independientes</em>, de <em>primer orden</em>. Si quisiéramos expresar una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> de <em>segundo orden</em>, podríamos hacerlo de la siguiente manera:</p>
+<p>$$F(x, y, u, u_x, u_y, u_{xx}, u_{xy}, u_{yy})=0.$$</p>
+<h3 id="Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">Clasificaci&#243;n de ecuaciones en derivadas parciales<a class="anchor-link" href="#Clasificaci&#243;n-de-ecuaciones-en-derivadas-parciales">&#182;</a></h3><p>La clasificación de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> va a ser algo fundamental, ya que la teoría y los métodos para poder solucionarlas van a depender de la <em>clase</em> de ecuación con la que estemos tratando. Las clasificaciones más importantes que debemos tener en cuenta, son:</p>
 <p>1- <strong>El <em>orden</em> de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</strong> Como ya mencionamos, el mismo va a estar dado por el <em>orden</em> de la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente.</p>
 <p>2- <strong>Número de variables:</strong> Esta clasificación va a estar dada por la cantidad de <em>variables independientes</em> que contenga la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>.</p>
 <p>3- <strong>Linealidad:</strong> Esta es una de las clasificaciones más importantes, vamos a poder clasificar a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a> en <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a> o <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineales</a>. En las <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a>, la <em>variable dependiente</em> $u$ y todas sus derivadas, van a aparecer en una forma <em>lineal</em>, es decir, que van a tener <em>grado</em> uno (no van a estar elevadas al cuadrado, o multiplicadas entre sí). Más precisamente, una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuación en derivadas parciales</a> de segundo orden con dos variables, va a tomar la siguiente forma:</p>
-$$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$<p>en donde $A, B, C, D, E, F,$ y $G$ pueden ser <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> o una <em>función</em> dada de $x$ e $y$. Por ejemplo:</p>
+<p>$$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$</p>
+<p>en donde $A, B, C, D, E, F,$ y $G$ pueden ser <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> o una <em>función</em> dada de $x$ e $y$. Por ejemplo:</p>
 <p>$u_{tt} = e^tu_{xx} + \sin t$,    sería una ecuación <a href="https://es.wikipedia.org/wiki/Lineal">lineal</a>.</p>
 <p>$uu_{xx} + u_y = 0$,  sería una ecuación <a href="https://es.wikipedia.org/wiki/No_linealidad">no lineal</a>.</p>
 <p>$u_{xx} + yu_{yy} + u_x = 0$, sería una ecuación <a href="https://es.wikipedia.org/wiki/Lineal">lineal</a>.</p>
@@ -306,9 +314,9 @@ $$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$<p>en donde $A, B, C, D, E
 <ul>
 <li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_parab%C3%B3lica_en_derivadas_parciales">Ecuaciones parabólicas</a></strong>: Las cuales van a describir el <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">flujo del calor</a></em> y el proceso de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>. Éstas ecuaciones van a satisfacer la condición $B^2 -4AC = 0$.</p>
 </li>
-<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_hiperb%C3%B3lica_en_derivadas_parciales">Ecuaciones hiperbólicas</a></strong>: Las cuales describen los <em><a href="https://es.wikipedia.org/wiki/Vibraci%C3%B3n">sistemas de vibración</a></em> y los <em><a href="https://es.wikipedia.org/wiki/Onda">movimientos de ondas</a></em>. Satisfacen la condición $B^2 -4AC > 0$.</p>
+<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_hiperb%C3%B3lica_en_derivadas_parciales">Ecuaciones hiperbólicas</a></strong>: Las cuales describen los <em><a href="https://es.wikipedia.org/wiki/Vibraci%C3%B3n">sistemas de vibración</a></em> y los <em><a href="https://es.wikipedia.org/wiki/Onda">movimientos de ondas</a></em>. Satisfacen la condición $B^2 -4AC &gt; 0$.</p>
 </li>
-<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_el%C3%ADptica_en_derivadas_parciales">Ecuaciones Elípticas</a></strong>: Las cuales describen los fenómenos de <em><a href="https://es.wikipedia.org/wiki/Estado_estacionario">estados estacionarios</a></em> y satisfacen la condición $B^2 -4AC < 0$.</p>
+<li><p><strong><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_el%C3%ADptica_en_derivadas_parciales">Ecuaciones Elípticas</a></strong>: Las cuales describen los fenómenos de <em><a href="https://es.wikipedia.org/wiki/Estado_estacionario">estados estacionarios</a></em> y satisfacen la condición $B^2 -4AC &lt; 0$.</p>
 </li>
 </ul>
 <p>4- <strong>Homogeneidad:</strong> Otra clasificación que podemos utilizar, es la de homogeneidad. Una ecuación va a ser <em>homogénea</em>, si el lado derecho de la ecuación, $G(x, y)$, es idénticamente cero para todo $x$ e $y$. En caso contrario, se la llama <em>no homogénea</em>.</p>
@@ -336,7 +344,8 @@ de discretizar el problema en cada variable independiente que se produce en la <
 <p>Como podemos ver de estos ejemplos, las soluciones analíticas de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> dependen de <strong>funciones arbitrarias</strong> (en lugar de <em><a href="https://es.wikipedia.org/wiki/Constante_(matem%C3%A1ticas)">constantes</a></em> arbitrarias como era el caso de las <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDO</a>). Por lo tanto vamos a necesitar condiciones auxiliares para poder determinar una única solución.</p>
 <h3 id="La-condici&#243;n-inicial-y-la-condici&#243;n-de-frontera">La condici&#243;n inicial y la condici&#243;n de frontera<a class="anchor-link" href="#La-condici&#243;n-inicial-y-la-condici&#243;n-de-frontera">&#182;</a></h3><p>Al igual que nos pasaba cuando vimos las <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ecuaciones diferenciales ordinarias</a>; las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> pueden tener muchas soluciones, pero a nosotros nos va a interesar encontrar la solución para un caso particular; para lograr esto, debemos imponer unas condiciones auxiliares al problema original. Estas condiciones van a estar motivadas por la <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a> del problema que estemos analizando y pueden llevar a ser de dos tipos diferentes: <a href="https://en.wikipedia.org/wiki/Initial_condition">condiciones iniciales</a> y <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>.</p>
 <p>La <a href="https://en.wikipedia.org/wiki/Initial_condition">condición inicial</a> va a establecer el estado del problema al momento de tiempo cero, $t_0$. Por ejemplo para el problema de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>, la <a href="https://en.wikipedia.org/wiki/Initial_condition">condición inicial</a> va a ser:</p>
-$$u(x, t_0) = \phi(x)$$<p>donde $\phi(x)= \phi(x, y, z)$ es una función que puede representar el estado de concentración inicial. Para el problema del <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">flujo del calor</a></em>, $\phi(x)$ va a representar la temperatura inicial.</p>
+<p>$$u(x, t_0) = \phi(x)$$</p>
+<p>donde $\phi(x)= \phi(x, y, z)$ es una función que puede representar el estado de concentración inicial. Para el problema del <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">flujo del calor</a></em>, $\phi(x)$ va a representar la temperatura inicial.</p>
 <p>La <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condición de frontera</a> nos va a delimitar el <em>dominio</em> en el que nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> es válida. Así por ejemplo, volviendo al problema de <em><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_difusi%C3%B3n">difusión</a></em>, el <em>dominio</em> en el que nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> es válida, puede estar delimitado por la superficie del objeto que contiene al líquido. Existen varios tipos de <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>, de las cuales las más importantes son:</p>
 <ul>
 <li><p>La <strong><a href="https://es.wikipedia.org/wiki/Condici%C3%B3n_de_frontera_de_Dirichlet">condición de frontera de Dirichlet</a></strong>, en dónde los valores válidos de la función incógnita $u$ son especificados.</p>
@@ -368,8 +377,7 @@ $$u(x, t_0) = \phi(x)$$<p>donde $\phi(x)= \phi(x, y, z)$ es una función que pue
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -443,7 +451,9 @@ $$u(x, t_0) = \phi(x)$$<p>donde $\phi(x)= \phi(x, y, z)$ es una función que pue
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
@@ -477,7 +487,9 @@ $$4 \frac{\partial}{\partial x} f{\left (x,y \right )} - 3 \frac{\partial}{\part
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[4]:</div>
+
 
 
 
@@ -515,7 +527,9 @@ $$f{\left (x,y \right )} = F{\left (- 3 x - 4 y \right )}$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[5]:</div>
+
 
 
 
@@ -549,7 +563,9 @@ $$y \frac{\partial}{\partial y} f{\left (x,y \right )} + \frac{\partial}{\partia
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -583,7 +599,9 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -597,8 +615,7 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -607,8 +624,7 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -616,11 +632,14 @@ $$f{\left (x,y \right )} = F{\left (y e^{- x} \right )}$$
 un producto $u (x, y) = X (x) Y (y) \ne 0$, o como una suma $u (x, y) = X (x) + Y (y)$, donde $X (x)$ e $Y (y)$ son funciones de $x$ e $y$, respectivamente. Muchos de los problemas significativos en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">ecuaciones en derivadas parciales</a> pueden ser resueltos por este método. Para ilustrar como funciona esta técnica, veamos un ejemplo. Vamos a resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>.</p>
 <p>$y^2u_x^2 + x^2u_y^2 = (xyu)^2$, que cumple con la condición $u(x, 0) = 3e^{x^2/4}$.</p>
 <p>Podemos entonces asumir que $u(x, y) = f(x) g(y) \ne 0$ es una <em>solución separable</em> de ella; por tanto lo reemplazamos en la ecuación para obtener:</p>
-$$y^2(f'(x) g(y))^2 + x^2(f(x) g'(y))^2 = x^2 y^2 (f(x) g(y))^2$$<p></p>
+<p>$$y^2(f'(x) g(y))^2 + x^2(f(x) g'(y))^2 = x^2 y^2 (f(x) g(y))^2$$</p>
 <p>lo que es equivalente a decir;</p>
-$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 + \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = 1$$<p>Luego, ayudándonos de la <em>constante de separación</em> $\lambda^2$, podemos separar a esta ecuación en dos <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>, del siguiente modo; primero igualamos la ecuación anterior a $\lambda^2$:</p>
-$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 = 1 - \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = \lambda^2$$<p>y luego separamos ambas ecuaciones para obtener:</p>
-$$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lambda^2}$$<p>Ahora podemos utilizar <code>sympy.dsolve</code> para resolver ambas <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>:</p>
+<p>$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 + \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = 1$$</p>
+<p>Luego, ayudándonos de la <em>constante de separación</em> $\lambda^2$, podemos separar a esta ecuación en dos <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>, del siguiente modo; primero igualamos la ecuación anterior a $\lambda^2$:</p>
+<p>$$\frac{1}{x^2}\left(\frac{f'(x)}{f(x)}\right)^2 = 1 - \frac{1}{y^2}\left(\frac{g'(y)}{g(y)}\right)^2 = \lambda^2$$</p>
+<p>y luego separamos ambas ecuaciones para obtener:</p>
+<p>$$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lambda^2}$$</p>
+<p>Ahora podemos utilizar <code>sympy.dsolve</code> para resolver ambas <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">EDOs</a>:</p>
 
 </div>
 </div>
@@ -646,7 +665,9 @@ $$\frac{1}{x}\frac{f'(x)}{f(x)} = \lambda \\ \frac{g'(x)}{yg(y)}= \sqrt{1 - \lam
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
@@ -680,7 +701,9 @@ $$- z + \frac{\frac{d}{d x} f{\left (x \right )}}{x f{\left (x \right )}} = 0$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -715,7 +738,9 @@ $$f{\left (x \right )} = C_{1} e^{\frac{x^{2} z}{2}}$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[10]:</div>
+
 
 
 
@@ -749,7 +774,9 @@ $$- \sqrt{- z^{2} + 1} + \frac{\frac{d}{d y} f{\left (y \right )}}{y f{\left (y 
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 
@@ -763,15 +790,16 @@ $$\left [ f{\left (y \right )} = C_{1} e^{- \frac{1}{2} \sqrt{y^{4} \left(- z^{2
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Entonces ahora podemos utilizar estos resultados para armar la solución final a nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> original, el cual va a ser:</p>
-$$u(x, y) = C e^{\frac{\lambda}{2}x^2 + \frac{1}{2}y^2\sqrt{1 - \lambda^2}}$$<p>En donde $C = C_1 C_2$ es una <em>constante arbitraria</em>.</p>
+<p>$$u(x, y) = C e^{\frac{\lambda}{2}x^2 + \frac{1}{2}y^2\sqrt{1 - \lambda^2}}$$</p>
+<p>En donde $C = C_1 C_2$ es una <em>constante arbitraria</em>.</p>
 <p>Por último, utilizando la condición $u(x, 0) = 3e^{x^2/4}$, podemos despejar tanto a $C$ ($C=3$) como a $\lambda$ ($\lambda = 1/2$) y arribar a la solución final:</p>
-$$u(x, y) = 3 e^{\frac{1}{4}\left(x^2 + y^2\sqrt{3}\right)}$$<p>Si bien debemos realizar un trabajo manual previo, aun así <a href="https://www.sympy.org/es/">SymPy</a> sigue siendo de gran ayuda para facilitarnos llegar a la solución final.</p>
+<p>$$u(x, y) = 3 e^{\frac{1}{4}\left(x^2 + y^2\sqrt{3}\right)}$$</p>
+<p>Si bien debemos realizar un trabajo manual previo, aun así <a href="https://www.sympy.org/es/">SymPy</a> sigue siendo de gran ayuda para facilitarnos llegar a la solución final.</p>
 <h3 id="M&#233;todos-num&#233;ricos---M&#233;todo-de-Elementos-Finitos">M&#233;todos num&#233;ricos - M&#233;todo de Elementos Finitos<a class="anchor-link" href="#M&#233;todos-num&#233;ricos---M&#233;todo-de-Elementos-Finitos">&#182;</a></h3><p>Por último, para cerrar este artículo, veamos como podemos aplicar el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a> (MEF) con <a href="https://www.python.org/">Python</a>. Para esto nos vamos ayudar de la librería <a href="https://fenicsproject.org/">FEniCS</a>, la cual es un <em>framework</em> para resolver numéricamente problemas generales de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>. Para instalar esta librería en <a href="https://www.ubuntulinux.org/">Ubuntu</a>, pueden utilizar los siguientes comandos:</p>
 
 <pre><code>sudo add-apt-repository ppa:fenics-packages/fenics
@@ -802,14 +830,14 @@ sudo apt-get install fenics</code></pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El problema que vamos a resolver con la ayuda de <a href="https://fenicsproject.org/">FEniCS</a>, va a ser la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a>:</p>
-$$u_{xx} + u_{yy} = 0$$<p>Con las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
-$$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
+<p>$$u_{xx} + u_{yy} = 0$$</p>
+<p>Con las siguientes <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">condiciones de frontera</a>:</p>
+<p>$$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$</p>
 <p>El primer paso en la solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">EDP</a> utilizando el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">métodos de los elementos finitos</a>,  es definir una <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">malla</a></em> que describa la discretización del <em>dominio</em> del problema. Para este caso, vamos a utilizar la función <code>RectangleMesh</code> que nos ofrece <a href="https://fenicsproject.org/">FEniCS</a>.</p>
 
 </div>
@@ -832,8 +860,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -864,7 +891,9 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre class="ipynb">DEBUG:FFC:Reusing form from cache.
@@ -876,8 +905,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -904,8 +932,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -962,8 +989,7 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -993,7 +1019,9 @@ $$u(x=0) = 3 ; \ u(x=1)=-1 ; \ u(y=0) = -5 ; \ u(y=1) = 5$$<p></p>
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre class="ipynb">DEBUG:FFC:Reusing form from cache.
@@ -1039,7 +1067,9 @@ DEBUG:FFC:Reusing form from cache.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -1389,8 +1419,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1410,7 +1439,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
   <span class="byline author vcard">
     Posted by <span class="fn">Raul E. Lopez Briega</span>
   </span>
-<time datetime="2016-01-27T00:00:00-03:00" pubdate>Wed 27 January 2016</time>  <span class="categories">
+<time datetime="2016-01-27T00:00:00-03:00" pubdate>mié 27 enero 2016</time>  <span class="categories">
     <a class="category" href="https://relopezbriega.github.io/tag/python.html">python</a>
     <a class="category" href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>
     <a class="category" href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>
@@ -1514,7 +1543,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>
