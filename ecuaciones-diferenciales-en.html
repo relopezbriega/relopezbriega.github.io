@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="http://relopezbriega.github.io/reveal.js/css/reveal.css">
-<link rel="stylesheet" href="http://relopezbriega.github.io/reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="https://relopezbriega.github.io/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="https://relopezbriega.github.io/reveal.js/css/theme/sky.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,7 +24,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'http://relopezbriega.github.io/reveal.js/css/print/pdf.css';
+        link.href = 'https://relopezbriega.github.io/reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
@@ -8510,15 +8510,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11268,7 +11268,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11703,7 +11703,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11842,7 +11842,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <center><h1>Differential equations with Python</h1>
 
-<img alt="Ecuaciones Diferenciales con python" title="Series de Taylor" src="http://relopezbriega.github.io/images/diffeq.gif" width="200px" height="300px">
+<img alt="Ecuaciones Diferenciales con python" title="Series de Taylor" src="https://relopezbriega.github.io/images/diffeq.gif" width="200px" height="300px">
 
 <a href="http://conf.scipyla.org/scipyla2016/">SciPyLA 2016</a> - Florianópolis, Santa Catarina, Brasil - 20 de Mayo de 2016
 
@@ -11855,7 +11855,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-a-differential-equation?">What is a differential equation?<a class="anchor-link" href="#What-is-a-differential-equation?">&#182;</a></h1><p>A <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> is an equation involving a depending variable and its <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> with respect to one or more independing variables. Many laws of nature, in <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Physics</a>, <a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica">Chemistry</a>, <a href="https://es.wikipedia.org/wiki/Biolog%C3%ADa">Biology</a>, and <a href="https://es.wikipedia.org/wiki/Astronom%C3%ADa">Astronomy</a>; are expressed in the language of <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Differential equations</a>.
+<h1 id="What-is-a-differential-equation?">What is a differential equation?<a class="anchor-link" href="#What-is-a-differential-equation?">&#182;</a></h1><p>A <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> is an equation involving a depending variable and its <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> with respect to one or more independing variables. Many laws of nature, in <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Physics</a>, <a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica">Chemistry</a>, <a href="https://es.wikipedia.org/wiki/Biolog%C3%ADa">Biology</a>, and <a href="https://es.wikipedia.org/wiki/Astronom%C3%ADa">Astronomy</a>; are expressed in the language of <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Differential equations</a>.
 These equations have applications not only in the physical sciences but also in applied sciences such as <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">Engineering</a>, <a href="https://es.wikipedia.org/wiki/Finanzas">Finance</a> and  <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">Economy</a>.</p>
 
 </div>
@@ -11866,8 +11866,8 @@ These equations have applications not only in the physical sciences but also in 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-they-are-important?">Why they are important?<a class="anchor-link" href="#Why-they-are-important?">&#182;</a></h2><p>It is easy to understand the reason behind this broad utility of <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>. if $y = f(x)$ is a given <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">function</a>, then its <a href="https://es.wikipedia.org/wiki/Derivada">derivative</a> $dy / dx$ can be interpreted as the <em>rate of change</em> of $y$ with respect to $x$. In any natural process, the variables involved and their <em>rates of change</em> are connected with one another by means of the basic scientific principles that govern the process. When this connection is expressed in mathematical symbols, the result is often a <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a>.</p>
-<center><img alt="Ritmo de cambio" title="Diferenciación" src="http://relopezbriega.github.io/images/Graph_of_sliding_derivative_line.gif"></center>
+<h2 id="Why-they-are-important?">Why they are important?<a class="anchor-link" href="#Why-they-are-important?">&#182;</a></h2><p>It is easy to understand the reason behind this broad utility of <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>. if $y = f(x)$ is a given <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">function</a>, then its <a href="https://es.wikipedia.org/wiki/Derivada">derivative</a> $dy / dx$ can be interpreted as the <em>rate of change</em> of $y$ with respect to $x$. In any natural process, the variables involved and their <em>rates of change</em> are connected with one another by means of the basic scientific principles that govern the process. When this connection is expressed in mathematical symbols, the result is often a <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a>.</p>
+<center><img alt="Ritmo de cambio" title="Diferenciación" src="https://relopezbriega.github.io/images/Graph_of_sliding_derivative_line.gif"></center>
 </div>
 </div>
 </div></section><section>
@@ -11877,7 +11877,7 @@ These equations have applications not only in the physical sciences but also in 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Newton's-law-of-cooling">Newton's law of cooling<a class="anchor-link" href="#Newton's-law-of-cooling">&#182;</a></h2><p>The <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">Newton's law of cooling</a> states that the rate of heat loss of a body is proportional to the difference in temperatures between the body and its surroundings.</p>
-<p>The law says that the <em>rate of change</em> in the temperature $\frac{dT}{dt}$ is <em>proportional</em> to the difference between the temperature of the object $T(t)$ and the temperature of the environment $T_{e}$.  This can be expressed with a <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a>, in the following way:</p>
+<p>The law says that the <em>rate of change</em> in the temperature $\frac{dT}{dt}$ is <em>proportional</em> to the difference between the temperature of the object $T(t)$ and the temperature of the environment $T_{e}$.  This can be expressed with a <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a>, in the following way:</p>
 $$\frac{dT}{dt} = -k(T - T_{e})$$<p>Where $k$ is a proportional constant, $t$ is the variable time, $T_{e}$ is the environment and $T$ is our unknown function of temperature.</p>
 
 </div>
@@ -11888,7 +11888,7 @@ $$\frac{dT}{dt} = -k(T - T_{e})$$<p>Where $k$ is a proportional constant, $t$ is
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Differential-equations-classification">Differential equations classification<a class="anchor-link" href="#Differential-equations-classification">&#182;</a></h1><p>The <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a> can be classified into two main groups:</p>
+<h1 id="Differential-equations-classification">Differential equations classification<a class="anchor-link" href="#Differential-equations-classification">&#182;</a></h1><p>The <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a> can be classified into two main groups:</p>
 
 </div>
 </div>
@@ -11922,8 +11922,8 @@ $$\frac{dT}{dt} = -k(T - T_{e})$$<p>Where $k$ is a proportional constant, $t$ is
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ordinary-Differential-Equations">Ordinary Differential Equations<a class="anchor-link" href="#Ordinary-Differential-Equations">&#182;</a></h2><p>The <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> of the <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">Newton's law of cooling</a>, is an example of an  <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordinary Differential Equation</a>, because of its <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> depends of a single independent variable (time).</p>
-<p>When a <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> contains <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> with respect to a single independent variable, we call them  <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordinary Differential Equations</a> or <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> for short.</p>
+<h2 id="Ordinary-Differential-Equations">Ordinary Differential Equations<a class="anchor-link" href="#Ordinary-Differential-Equations">&#182;</a></h2><p>The <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> of the <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">Newton's law of cooling</a>, is an example of an  <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordinary Differential Equation</a>, because of its <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> depends of a single independent variable (time).</p>
+<p>When a <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equation</a> contains <a href="https://es.wikipedia.org/wiki/Derivada">derivatives</a> with respect to a single independent variable, we call them  <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordinary Differential Equations</a> or <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> for short.</p>
 <p>Some examples are:</p>
 $$\frac{d^2y}{dx^2} + \frac{dy}{dx} + y = 0; \hspace{2cm}     \frac{dy}{dx} = 2xy; $$
 </div>
@@ -11934,8 +11934,8 @@ $$\frac{d^2y}{dx^2} + \frac{dy}{dx} + y = 0; \hspace{2cm}     \frac{dy}{dx} = 2x
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Partial-Differential-Equations">Partial Differential Equations<a class="anchor-link" href="#Partial-Differential-Equations">&#182;</a></h2><p>A <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equation</a> is an equation that contains <a href="https://es.wikipedia.org/wiki/Derivada_parcial">partial derivatives</a>.</p>
-<p>In the <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equations</a>, or <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">PDE</a> for short, the unknown function depends of  <strong>two or more</strong> <em>independent variables</em> $x, y, \dots$. In general the unknown function is expressed as $u(x, y, \dots)$ and its <a href="https://es.wikipedia.org/wiki/Derivada_parcial">partial derivatives</a> as $\partial u / \partial x = u_x$ or  $\partial u / \partial y = u_y$.</p>
+<h2 id="Partial-Differential-Equations">Partial Differential Equations<a class="anchor-link" href="#Partial-Differential-Equations">&#182;</a></h2><p>A <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equation</a> is an equation that contains <a href="https://es.wikipedia.org/wiki/Derivada_parcial">partial derivatives</a>.</p>
+<p>In the <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equations</a>, or <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">PDE</a> for short, the unknown function depends of  <strong>two or more</strong> <em>independent variables</em> $x, y, \dots$. In general the unknown function is expressed as $u(x, y, \dots)$ and its <a href="https://es.wikipedia.org/wiki/Derivada_parcial">partial derivatives</a> as $\partial u / \partial x = u_x$ or  $\partial u / \partial y = u_y$.</p>
 <p>Some examples of these equations are:</p>
 $$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0 \hspace{2cm} a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial w}{\partial t}$$
 </div>
@@ -11946,7 +11946,7 @@ $$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Initial-and-Boundary-conditions">Initial and Boundary conditions<a class="anchor-link" href="#Initial-and-Boundary-conditions">&#182;</a></h1><p>The <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>  might have a family of solutions, but in general, we will be interested in finding a particular solution; in order to do that, we need to impose auxiliary conditions. These conditions are motivated by the physics of the problem and they come in two varieties: <a href="https://en.wikipedia.org/wiki/Initial_condition">initials conditions</a> and <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">boundary conditions</a>.</p>
+<h1 id="Initial-and-Boundary-conditions">Initial and Boundary conditions<a class="anchor-link" href="#Initial-and-Boundary-conditions">&#182;</a></h1><p>The <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>  might have a family of solutions, but in general, we will be interested in finding a particular solution; in order to do that, we need to impose auxiliary conditions. These conditions are motivated by the physics of the problem and they come in two varieties: <a href="https://en.wikipedia.org/wiki/Initial_condition">initials conditions</a> and <a href="https://es.wikipedia.org/wiki/Problema_de_condici%C3%B3n_de_frontera">boundary conditions</a>.</p>
 
 </div>
 </div>
@@ -12056,7 +12056,7 @@ $$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(
 <h1 id="Problem-to-solve">Problem to solve<a class="anchor-link" href="#Problem-to-solve">&#182;</a></h1><p>Suppose there was a murder and police arrives to the crime scene at 2:41 am. The forense takes the temperature of the victim and found to be 34.5 ° C; then take the temperature again an hour later and the reading mark 33.9 ° C.</p>
 <p>Assuming that day the weather was warm and the evironment had a constant temperature of 15 ° C.</p>
 <p>What was the time of the murder?</p>
-<center><img title="hora de asesinato" src="http://relopezbriega.github.io/images/murder.png" width="300px" height="200px"></center>
+<center><img title="hora de asesinato" src="https://relopezbriega.github.io/images/murder.png" width="300px" height="200px"></center>
 </div>
 </div>
 </div></section><section>
@@ -12065,7 +12065,7 @@ $$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solving-the-problem-by-the-analytic-method-with-SymPy">Solving the problem by the analytic method with SymPy<a class="anchor-link" href="#Solving-the-problem-by-the-analytic-method-with-SymPy">&#182;</a></h2><p>In order to solve this problem we can use the <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">Newton's law of cooling</a> <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>.</p>
+<h2 id="Solving-the-problem-by-the-analytic-method-with-SymPy">Solving the problem by the analytic method with SymPy<a class="anchor-link" href="#Solving-the-problem-by-the-analytic-method-with-SymPy">&#182;</a></h2><p>In order to solve this problem we can use the <a href="https://es.wikipedia.org/wiki/Ley_del_enfriamiento_de_Newton">Newton's law of cooling</a> <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>.</p>
 <p>Our data are:</p>
 <ul>
 <li>Initial temperature = 34.5</li>
@@ -12148,7 +12148,7 @@ $$y{\left (t \right )} = C_{1} e^{k t} + 15$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, we have the solution of the <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>, in order to find out the <a href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n">integration constant</a> we need to use the <a href="https://en.wikipedia.org/wiki/Initial_condition">initial condition</a>.</p>
+<p>Now, we have the solution of the <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>, in order to find out the <a href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n">integration constant</a> we need to use the <a href="https://en.wikipedia.org/wiki/Initial_condition">initial condition</a>.</p>
 
 </div>
 </div>
@@ -12401,7 +12401,7 @@ $$-3.85$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Power-series-and-direction-fields">Power series and direction fields<a class="anchor-link" href="#Power-series-and-direction-fields">&#182;</a></h2><p>Now, suppose that we want to solve with <a href="http://www.sympy.org/es/">SymPy</a> the following <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>:</p>
+<h2 id="Power-series-and-direction-fields">Power series and direction fields<a class="anchor-link" href="#Power-series-and-direction-fields">&#182;</a></h2><p>Now, suppose that we want to solve with <a href="http://www.sympy.org/es/">SymPy</a> the following <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">differential equation</a>:</p>
 $$\frac{dy}{dx} = x^2 + y^2 -1$$<p>with the <a href="https://en.wikipedia.org/wiki/Initial_condition">initial condition</a> of $y(0) = 0$.</p>
 <p>Using the same method as before, we get the following result:</p>
 
@@ -12464,11 +12464,11 @@ $$y{\left (x \right )} = - x + \frac{2 x^{3}}{3} - \frac{4 x^{5}}{15} + \mathcal
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Direction-fields">Direction fields<a class="anchor-link" href="#Direction-fields">&#182;</a></h2><p>The <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Direction fields</a> is a simple but useful technique to visualize possible solutions to arbitrary first-order <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODEs</a>. It is made up of short lines that show the slope of the unknown function on a grid in the $x–y$ plane.
+<h2 id="Direction-fields">Direction fields<a class="anchor-link" href="#Direction-fields">&#182;</a></h2><p>The <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Direction fields</a> is a simple but useful technique to visualize possible solutions to arbitrary first-order <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODEs</a>. It is made up of short lines that show the slope of the unknown function on a grid in the $x–y$ plane.
 This graph can be easily produced because the slope of $y(x)$ at arbitrary points of the $x–y$ plane is given by
-the definition of the <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a>:</p>
+the definition of the <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a>:</p>
 $$\frac{dy}{dx} = f(x, y(x))$$<p>That is, we only need to iterate over the $x$ and $y$ values on the coordinate grid of interest and evaluate $f(x, y(x))$ to known the slope of $y(x)$ at that point.  The direction lines in the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Direction fields</a> suggest how the curves that are solutions to the
-corresponding <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> behave, and direction field graphs are therefore a useful and tool for visualizing solutions to <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODEs</a> that cannot be solved analytically.</p>
+corresponding <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> behave, and direction field graphs are therefore a useful and tool for visualizing solutions to <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODEs</a> that cannot be solved analytically.</p>
 
 </div>
 </div>
@@ -12930,7 +12930,7 @@ wPH/OKVWNRB20lYAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Range-of-validity-of-the-solution-with-power-series">Range of validity of the solution with power series<a class="anchor-link" href="#Range-of-validity-of-the-solution-with-power-series">&#182;</a></h2><p>Now that you know the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Direction fields</a> graph, we can go back to the approximate solution with <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Power series</a> that we had obtained previously. We can plot the solution in the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Direction fields</a> , and compared it with a numerical solution method.</p>
-<p><img title="Campo de direcciones" src="http://relopezbriega.github.io/images/campo_direcciones.png" width="600" height="250"></p>
+<p><img title="Campo de direcciones" src="https://relopezbriega.github.io/images/campo_direcciones.png" width="600" height="250"></p>
 <p>In the left panel, we see that the approximate solution curve aligns well with the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">direction field</a> lines between -1.5 and 1.5 values of $x$, but then it starts to deviate, suggesting that the approximate solution is no longer valid. The solution curve shown in the right panel aligns better with the direction field throughout the plotted range.</p>
 
 </div>
@@ -12965,7 +12965,7 @@ Some of the modules included in the package, are:</p>
 <li><strong><code>scipy.sparse</code></strong>: for sparse matrices and solving sparse linear systems.</li>
 <li><strong><code>scipy.stats</code></strong>: for statistics and probability analysis.</li>
 </ul>
-<p>To solve <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>, we will us the module <code>scipy.integrate</code>.</p>
+<p>To solve <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Differential equations</a>, we will us the module <code>scipy.integrate</code>.</p>
 
 </div>
 </div>
@@ -12975,7 +12975,7 @@ Some of the modules included in the package, are:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solving-Differential-equations-with-SciPy">Solving Differential equations with SciPy<a class="anchor-link" href="#Solving-Differential-equations-with-SciPy">&#182;</a></h2><p><a href="http://www.scipy.org/">SciPy</a> offers two <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a> solvers, <code>integrate.odeint</code> and <code>integrate.ode</code>. The main difference between them is that <code>integrate.ode</code> is more flexible, offering us the choice between different solvers; but <code>integrate.odeint</code> is easier to use.</p>
+<h2 id="Solving-Differential-equations-with-SciPy">Solving Differential equations with SciPy<a class="anchor-link" href="#Solving-Differential-equations-with-SciPy">&#182;</a></h2><p><a href="http://www.scipy.org/">SciPy</a> offers two <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a> solvers, <code>integrate.odeint</code> and <code>integrate.ode</code>. The main difference between them is that <code>integrate.ode</code> is more flexible, offering us the choice between different solvers; but <code>integrate.odeint</code> is easier to use.</p>
 <p>We will try to solve the following equation:</p>
 $$\frac{dy}{dx} = x + y^2$$
 </div>
@@ -13042,7 +13042,7 @@ $$x + y^{2}{\left (x \right )}$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The results are two one-dimensional <a href="http://www.numpy.org/">NumPy</a> arrays $yp$ and $yn$, of the same length as the corresponding coordinate arrays $xp$ and $xn$, which contain the numerical solution to the <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> problem at the specified points. To visualize the solution, we next plot the $yp$ and $yn$ arrays together with the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">direction</a> field for the <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a>.</p>
+<p>The results are two one-dimensional <a href="http://www.numpy.org/">NumPy</a> arrays $yp$ and $yn$, of the same length as the corresponding coordinate arrays $xp$ and $xn$, which contain the numerical solution to the <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a> problem at the specified points. To visualize the solution, we next plot the $yp$ and $yn$ arrays together with the <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">direction</a> field for the <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ODE</a>.</p>
 
 </div>
 </div>
@@ -13697,7 +13697,7 @@ UdKMBl9FURRFSTMafBVFURQlzfw/7GYrRjwE8ZMAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="System-of-Differential-equations">System of Differential equations<a class="anchor-link" href="#System-of-Differential-equations">&#182;</a></h2><p>In previous example, we solved only one equation. Generally, most problems arise in the form systems of <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a>, that is, it include several equations to be solved. To see how we can use <code>integrate.odeint</code> to solve such problems, consider the following system of <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a>, known <a href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz">Lorenz equations</a>:</p>
+<h2 id="System-of-Differential-equations">System of Differential equations<a class="anchor-link" href="#System-of-Differential-equations">&#182;</a></h2><p>In previous example, we solved only one equation. Generally, most problems arise in the form systems of <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a>, that is, it include several equations to be solved. To see how we can use <code>integrate.odeint</code> to solve such problems, consider the following system of <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">ordinary differential equations</a>, known <a href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz">Lorenz equations</a>:</p>
 $$x'(t) = \sigma(y -x), \\
 y'(t) = x(\rho -z)-y, \\
 z'(t) = xy - \beta z
@@ -13714,7 +13714,7 @@ $$<p>These equations are known for their chaotic solutions, which sensitively de
 <div class=" highlight hl-python"><pre><span class="c1"># System of equation definition</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> 
+    <span class="k">return</span> <span class="p">[</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span>
            <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">rho</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span>
            <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">z</span><span class="p">]</span>
 
@@ -14872,7 +14872,7 @@ HD4N9Gvw2vPasU7l/wBCm4aRfirNewAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Partial-Differential-Equations">Partial Differential Equations<a class="anchor-link" href="#Partial-Differential-Equations">&#182;</a></h1><p>Until now, we only see <a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordenary Differential Equations</a>, but What about <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equations</a>?</p>
+<h1 id="Partial-Differential-Equations">Partial Differential Equations<a class="anchor-link" href="#Partial-Differential-Equations">&#182;</a></h1><p>Until now, we only see <a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ordenary Differential Equations</a>, but What about <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Partial Differential Equations</a>?</p>
 <p>This kind of equations are much more hard to solve; one powerful method we can use is the  <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">Finite Elements Method</a> and try to find out a numerical solution.</p>
 
 </div>
@@ -14883,7 +14883,7 @@ HD4N9Gvw2vPasU7l/wBCm4aRfirNewAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Finite-Elements-Methods">Finite Elements Methods<a class="anchor-link" href="#Finite-Elements-Methods">&#182;</a></h2><p>The basic idea of <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">FEM</a> is to divide the body into <em>finite elements</em>, often just called elements, connected by <em>nodes</em>, and obtain an approximate solution of the <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">partial differential equation</a>. This new object is called the finite element <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">mesh</a></em>.</p>
+<h2 id="Finite-Elements-Methods">Finite Elements Methods<a class="anchor-link" href="#Finite-Elements-Methods">&#182;</a></h2><p>The basic idea of <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">FEM</a> is to divide the body into <em>finite elements</em>, often just called elements, connected by <em>nodes</em>, and obtain an approximate solution of the <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">partial differential equation</a>. This new object is called the finite element <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">mesh</a></em>.</p>
 
 </div>
 </div>
@@ -14894,7 +14894,7 @@ HD4N9Gvw2vPasU7l/wBCm4aRfirNewAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To ilustrate, lets see an example, suppose that we have a plate with a hole and we want to calculate its heat distribution. To accomplish that, we need to solve the <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">heat equation</a> for each point in the plate. The approach that the <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">Finite Elements Methods</a> use, is to divide the object in <em>finite elements</em> interconected by the <em>nodes</em>. This new object is the <em><a href="https://es.wikipedia.org/wiki/Malla_poligonal">mesh</a></em> and it is and approximation of the original object. The more <em>nodes</em> we have, the more accuate the solution will be.</p>
-<p><img alt="Método de los Elementos Finitos con python" title="Método de los Elementos Finitos con python" src="http://relopezbriega.github.io/images/FEM.png
+<p><img alt="Método de los Elementos Finitos con python" title="Método de los Elementos Finitos con python" src="https://relopezbriega.github.io/images/FEM.png
 " ></p>
 
 </div>
@@ -14905,7 +14905,7 @@ HD4N9Gvw2vPasU7l/wBCm4aRfirNewAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-FEniCS-project">The FEniCS project<a class="anchor-link" href="#The-FEniCS-project">&#182;</a></h2><p>the <a href="http://fenicsproject.org/">FEniCS</a> is a highly capable <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">FEM</a> framework that is made up of a collection of libraries and tools for solving <a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">PDE</a> problems. Much of <a href="http://fenicsproject.org/">FEniCS</a> is programmed in C++, but it also provides an official <a href="https://www.python.org/">Python</a> interface.</p>
+<h2 id="The-FEniCS-project">The FEniCS project<a class="anchor-link" href="#The-FEniCS-project">&#182;</a></h2><p>the <a href="http://fenicsproject.org/">FEniCS</a> is a highly capable <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_los_elementos_finitos">FEM</a> framework that is made up of a collection of libraries and tools for solving <a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">PDE</a> problems. Much of <a href="http://fenicsproject.org/">FEniCS</a> is programmed in C++, but it also provides an official <a href="https://www.python.org/">Python</a> interface.</p>
 <p>We can install it in <a href="http://www.ubuntulinux.org/">Ubuntu</a> with the following command:</p>
 
 <pre><code>sudo add-apt-repository ppa:fenics-packages/fenics
@@ -15398,7 +15398,7 @@ the <code>RectangleMesh</code> function from the <code>dolfin</code> module.</p>
 <circle cx="740" cy="20" r="2" stroke="black" stroke-width="0" fill="red" />
 <circle cx="820" cy="20" r="2" stroke="black" stroke-width="0" fill="red" />
     </svg>
-    
+
 </div>
 
 </div>
@@ -15984,9 +15984,9 @@ AACAXmDRAgAAeoFFCwAA6AUWLQAAoBf+f6xleEbY3G2uAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Links">Links<a class="anchor-link" href="#Links">&#182;</a></h1><ul>
-<li><strong><a href="http://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al cálculo con python</a></strong></li>
-<li><strong><a href="http://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales con python</a></strong></li>
-<li><strong><a href="http://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Ecuaciones en derivadas parciales con python</a></strong></li>
+<li><strong><a href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Introducción al cálculo con python</a></strong></li>
+<li><strong><a href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Ecuaciones diferenciales con python</a></strong></li>
+<li><strong><a href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Ecuaciones en derivadas parciales con python</a></strong></li>
 <li><strong><a href="http://www.sympy.org/es/">SymPy</a></strong></li>
 <li><strong><a href="http://www.scipy.org/">SciPy</a></strong></li>
 <li><strong><a href="http://fenicsproject.org/">proyecto FEniCS</a></strong></li>
@@ -16004,9 +16004,9 @@ AACAXmDRAgAAeoFFCwAA6AUWLQAAoBf+f6xleEbY3G2uAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center><h1>Thanks!</h1></center>
-<center><h3>Raul E. Lopez Briega</h3></center><p><a href="http://relopezbriega.github.io/">http://relopezbriega.github.io/</a></p>
+<center><h3>Raul E. Lopez Briega</h3></center><p><a href="https://relopezbriega.github.io/">https://relopezbriega.github.io/</a></p>
 <p>Twitter: <a href="https://twitter.com/relopezbriega">@relopezbriega</a></p>
-<p>Slides: <a href="http://relopezbriega.github.io/ecuaciones-diferenciales-en.html">http://relopezbriega.github.io/ecuaciones-diferenciales-en.html</a></p>
+<p>Slides: <a href="https://relopezbriega.github.io/ecuaciones-diferenciales-en.html">https://relopezbriega.github.io/ecuaciones-diferenciales-en.html</a></p>
 
 </div>
 </div>
@@ -16014,9 +16014,9 @@ AACAXmDRAgAAeoFFCwAA6AUWLQAAoBf+f6xleEbY3G2uAAAAAElFTkSuQmCC
 </div>
 </div>
 
-<script src="http://relopezbriega.github.io/reveal.js/lib/js/head.min.js"></script>
+<script src="https://relopezbriega.github.io/reveal.js/lib/js/head.min.js"></script>
 
-<script src="http://relopezbriega.github.io/reveal.js/js/reveal.js"></script>
+<script src="https://relopezbriega.github.io/reveal.js/js/reveal.js"></script>
 
 <script>
 
@@ -16031,8 +16031,8 @@ transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/c
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
-{ src: "http://relopezbriega.github.io/reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "http://relopezbriega.github.io/reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+{ src: "https://relopezbriega.github.io/reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+{ src: "https://relopezbriega.github.io/reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
 ]
 });
 </script>
