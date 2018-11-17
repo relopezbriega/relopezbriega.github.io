@@ -190,22 +190,6 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $("div.collapseheader").click(function () {
-    $header = $(this).children("span").first();
-    $codearea = $(this).children(".input_area");
-    console.log($(this).children());
-    $codearea.slideToggle(500, function () {
-        $header.text(function () {
-            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
-        });
-    });
-});
-});
-</script>
 
 
 
@@ -218,9 +202,28 @@ jQuery(document).ready(function($) {
   <link href="https://relopezbriega.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://relopezbriega.github.io/css/social-share-kit.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script src="https://relopezbriega.github.io/theme/js/modernizr-2.0.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
+            });
+        });
+    });
+    });
+    </script>
+
+
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -234,6 +237,7 @@ jQuery(document).ready(function($) {
         rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+  
 </head>
 
 <body>
@@ -246,11 +250,17 @@ jQuery(document).ready(function($) {
 </ul>
 
 
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="relopezbriega.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+
+<form class="navbar-form navbar-right" role="search" action="https://relopezbriega.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa
+				fa-search fa-fw"></i></button>
+		</span>
+		</div>
+	</div>
 </form>
 
 <ul class="main-navigation">
@@ -260,11 +270,42 @@ jQuery(document).ready(function($) {
     <li><a href="http://relopezbriega.com.ar/">Mi otro Blog</a></li>
     <li><a href="https://iaarbook.github.io/">IAAR Book</a></li>
     <li><a href="/2048/">2048</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/pages/contacto.html">Contacto</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
 <div class="blog-index">
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
+      </h1>
+      <p class="meta"><time datetime="2018-03-30T00:00:00-03:00" pubdate>vie 30 marzo 2018</time></p>
+</header>
+  <div class="entry-content"><p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img alt="NLP" title="NLP" src="https://relopezbriega.github.io/images/shannon.jpg" width="60%" height="60%"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>"La información es la resolución de la incertidumbre"</p>
+</blockquote>
+<p><strong><a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon">Claude Shannon</a></strong></p>
+<blockquote><p>"Lo que está en el corazón de cada ser vivo no es <em>un fuego</em>, ni un <em>aliento cálido</em>, ni una <em>chispa de vida</em>. Es información, palabras, instrucciones ... Si quieres entender la vida... piensa en la tecnología de la información"</p>
+</blockquote>
+<p><strong><a href="https://es.wikipedia.org/wiki/Richard_Dawkins">Richard …</a></strong></p></div></div></div></p></div>
+  <footer>
+    <a rel="full-article" href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Read On &crarr;</a>
+  </footer>
+  		</article>
   		<article>
 <header>
       <h1 class="entry-title">
@@ -297,7 +338,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Lenguaje">lenguaje</a> es una de las herramientas centrales en nuestra vida social y profesional. Entre otras cosas, actúa como un medio para transmitir ideas, información, opiniones ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Lenguaje">lenguaje</a> es una de las herramientas centrales en nuestra vida social y profesional. Entre otras cosas, actúa como un medio para transmitir ideas, información, opiniones y …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/">Read On &crarr;</a>
   </footer>
@@ -316,7 +357,7 @@ jQuery(document).ready(function($) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="https://iaarhub.github.io/images/Inteligencia-Artificial-Deep-Learning.jpg" title="Deep Learning" alt="Deep Learning"></p>
 <p><em>Este artículo fue publicado originalmente en el <a href="https://iaarhub.github.io/">sitio de capacitaciones de IAAR</a></em>.</p>
-<h2 id="Introducci&#243;n-">Introducci&#243;n <a name="intro-DL" /><a class="anchor-link" href="#Introducci&#243;n-">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> es sin duda el área de investigación más popular dentro del campo de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a>. La mayoría de las nuevas investigaciones que se realizan, trabajan con modelos basados en las técnicas de ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n-">Introducci&#243;n <a name="intro-DL" /><a class="anchor-link" href="#Introducci&#243;n-">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep Learning</a> es sin duda el área de investigación más popular dentro del campo de la <a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/">inteligencia artificial</a>. La mayoría de las nuevas investigaciones que se realizan, trabajan con modelos basados en las técnicas de <a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo">Deep …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/">Read On &crarr;</a>
   </footer>
@@ -346,7 +387,7 @@ jQuery(document).ready(function($) {
 </blockquote>
 <p><strong><a href="https://es.wikipedia.org/wiki/Miguel_de_Unamuno">Miguel de Unamuno</a></strong></p>
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La meta de construir sistemas que puedan adaptarse a sus entornos y aprender de su experiencia ha atraído a investigadores de muchos campos, como la <a href="https://es.wikipedia.org/wiki/Inform%C3%A1tica">Informática</a>,
-<a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, <a href="https://es.wikipedia.org/wiki/Neurociencia">Neurociencia</a> y ...</p></div></div></div></p></div>
+<a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, <a href="https://es.wikipedia.org/wiki/Neurociencia">Neurociencia</a> y la …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Read On &crarr;</a>
   </footer>
@@ -365,7 +406,7 @@ jQuery(document).ready(function($) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="https://iaarhub.github.io/images/nteligencia-artificial.png" title="IA" alt="IA"></p>
 <p><em>Este artículo fue publicado originalmente en el <a href="https://iaarhub.github.io/">sitio de capacitaciones de IAAR</a></em>.</p>
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El cerebro es el órgano más increíble del cuerpo humano. Establece la forma en que percibimos las imágenes, el sonido, los olores, los sabores y el tacto. Nos permite almacenar recuerdos, experimentar emociones e incluso soñar ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El cerebro es el órgano más increíble del cuerpo humano. Establece la forma en que percibimos las imágenes, el sonido, los olores, los sabores y el tacto. Nos permite almacenar recuerdos, experimentar emociones e incluso soñar. Sin …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Read On &crarr;</a>
   </footer>
@@ -394,7 +435,7 @@ jQuery(document).ready(function($) {
 <blockquote><p>"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."</p>
 </blockquote>
 <p><strong><em><a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Lapace</a></em></strong></p>
-<h2 id="Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">Introducci&#243;n: La incertidumbre y el problema de la inducci&#243;n<a class="anchor-link" href="#Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">&#182;</a></h2><p>¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">Introducci&#243;n: La incertidumbre y el problema de la inducci&#243;n<a class="anchor-link" href="#Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">&#182;</a></h2><p>¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/">Read On &crarr;</a>
   </footer>
@@ -420,7 +461,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">ingeniería</a> o en <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">ciencias económicas</a>. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">ingeniería</a> o en <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">ciencias económicas</a>. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan <em>buena …</em></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/">Read On &crarr;</a>
   </footer>
@@ -446,7 +487,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el cierre de mi <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">artículo anterior</a>, comentaba sobre la sorprendente influencia que han tenido los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio">números aleatorios</a>, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, <a href="https://relopezbriega.github.io/category/finanzas.html">finanzas</a> y ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el cierre de mi <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">artículo anterior</a>, comentaba sobre la sorprendente influencia que han tenido los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio">números aleatorios</a>, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, <a href="https://relopezbriega.github.io/category/finanzas.html">finanzas</a> y <a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html">estadísticas …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/">Read On &crarr;</a>
   </footer>
@@ -475,7 +516,7 @@ jQuery(document).ready(function($) {
 <blockquote><p>"En el fondo, la teoría de  probabilidades es sólo sentido común expresado con números"</p>
 </blockquote>
 <p><strong><em><a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre Simon de Laplace</a></em></strong></p>
-<h2 id="Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">Introducci&#243;n: probabilidad y sentido com&#250;n<a class="anchor-link" href="#Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">&#182;</a></h2><p>La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">Introducci&#243;n: probabilidad y sentido com&#250;n<a class="anchor-link" href="#Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">&#182;</a></h2><p>La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si todo fuera …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">Read On &crarr;</a>
   </footer>
@@ -501,35 +542,9 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Los datos obtenidos a partir de observaciones recogidas a lo largo del tiempo son extremadamente comunes. En los negocios, observamos las tasas de interés de la semana, los precios de cierre de las acciones diarios, los índices de precios mensuales, las cifras de ventas anuales, y así sucesivamente ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Los datos obtenidos a partir de observaciones recogidas a lo largo del tiempo son extremadamente comunes. En los negocios, observamos las tasas de interés de la semana, los precios de cierre de las acciones diarios, los índices de precios mensuales, las cifras de ventas anuales, y así sucesivamente. En …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/09/26/series-de-tiempo-con-python/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="https://relopezbriega.github.io/blog/2016/09/18/visualizaciones-de-datos-con-python/">Visualizaciones de datos con Python</a>
-      </h1>
-      <p class="meta"><time datetime="2016-09-18T00:00:00-03:00" pubdate>dom 18 septiembre 2016</time></p>
-</header>
-  <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="Visualizaciones de datos con Python" title="Visualizaciones de datos con Python" src="https://relopezbriega.github.io/images/DataViz.png" high=400px width=600px></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Las visualizaciones son una herramienta fundamental para entender y compartir ideas sobre los datos. La visualización correcta puede ayudar a expresar una idea central, o abrir un espacio para una más profunda investigación; con ella se puede conseguir que todo el mundo hable sobre un <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjunto de datos ...</a></p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/09/18/visualizaciones-de-datos-con-python/">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -584,6 +599,9 @@ jQuery(document).ready(function($) {
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/">Procesamiento del Lenguaje Natural con Python</a>
       </li>
       <li class="post">
@@ -594,9 +612,6 @@ jQuery(document).ready(function($) {
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/">Introducción a la inferencia Bayesiana con Python</a>
       </li>
     </ul>
   </section>
@@ -620,7 +635,7 @@ jQuery(document).ready(function($) {
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>
@@ -649,7 +664,7 @@ jQuery(document).ready(function($) {
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Raul E. Lopez Briega -
+  Copyright &copy; 2018 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="https://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

@@ -190,22 +190,6 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $("div.collapseheader").click(function () {
-    $header = $(this).children("span").first();
-    $codearea = $(this).children(".input_area");
-    console.log($(this).children());
-    $codearea.slideToggle(500, function () {
-        $header.text(function () {
-            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
-        });
-    });
-});
-});
-</script>
 
 
 
@@ -218,9 +202,28 @@ jQuery(document).ready(function($) {
   <link href="https://relopezbriega.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://relopezbriega.github.io/css/social-share-kit.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script src="https://relopezbriega.github.io/theme/js/modernizr-2.0.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
+            });
+        });
+    });
+    });
+    </script>
+
+
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -234,6 +237,7 @@ jQuery(document).ready(function($) {
         rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+  
 </head>
 
 <body>
@@ -246,11 +250,17 @@ jQuery(document).ready(function($) {
 </ul>
 
 
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="relopezbriega.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+
+<form class="navbar-form navbar-right" role="search" action="https://relopezbriega.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa
+				fa-search fa-fw"></i></button>
+		</span>
+		</div>
+	</div>
 </form>
 
 <ul class="main-navigation">
@@ -294,7 +304,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Uno de los conceptos más importantes en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> es el <strong><em><a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> o <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a></em></strong> del modelo. Comprender como un modelo se <em>ajusta</em> a los datos es muy importante para entender las causas de baja precisión en las predicciones. Un modelo va a estar <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a></em> cuando vemos que se ...</p></div></div></div></p></div>
+<p>Uno de los conceptos más importantes en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> es el <strong><em><a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> o <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a></em></strong> del modelo. Comprender como un modelo se <em>ajusta</em> a los datos es muy importante para entender las causas de baja precisión en las predicciones. Un modelo va a estar <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a></em> cuando vemos que se desempeña …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Read On &crarr;</a>
   </footer>
@@ -321,7 +331,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Continuando donde nos quedamos en el artículo anterior <a href="https://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">Ejemplo de Machine Learning - preprocesamiento y exploración</a>; ahora es tiempo de ingresar en el terreno de la <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>.</p>
-<h2 id="&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#191;En qu&#233; consiste la selecci&#243;n de atributos?<a class="anchor-link" href="#&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#182;</a></h2><p>La <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es el proceso por el cual seleccionamos un ...</p></div></div></div></p></div>
+<h2 id="&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#191;En qu&#233; consiste la selecci&#243;n de atributos?<a class="anchor-link" href="#&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#182;</a></h2><p>La <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es el proceso por el cual seleccionamos un subconjunto de …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Read On &crarr;</a>
   </footer>
@@ -348,7 +358,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En mi artículo <a href="https://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Machine Learning con Python</a>, hice una breve introducción a los principales conceptos que debemos conocer de <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>. En este artículo, la idea es profundizar un poco más en ellos y presentar algunos conceptos nuevos con la ayuda de un ejemplo práctico.</p>
-<h3 id="Descripci&#243;n-del-ejemplo">Descripci&#243;n del ...</h3></div></div></div></p></div>
+<h3 id="Descripci&#243;n-del-ejemplo">Descripci&#243;n del ejemplo<a class="anchor-link" href="#Descripci&#243;n-del-ejemplo">&#182;</a></h3><p>En …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">Read On &crarr;</a>
   </footer>
@@ -374,7 +384,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En mi artículo anterior, <a href="https://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>, mencione la importancia de reconocer los distintos tipos de <a href="https://es.wikipedia.org/wiki/Dato">datos</a> con que nos podemos encontrar al realizar análisis <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticos</a> y vimos también como podemos trabajar con los <a href="https://en.wikipedia.org/wiki/Categorical_variable">datos categóricos</a>. En esta oportunidad, vamos a ver como podemos manipular ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En mi artículo anterior, <a href="https://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Análisis de datos categóricos con Python</a>, mencione la importancia de reconocer los distintos tipos de <a href="https://es.wikipedia.org/wiki/Dato">datos</a> con que nos podemos encontrar al realizar análisis <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticos</a> y vimos también como podemos trabajar con los <a href="https://en.wikipedia.org/wiki/Categorical_variable">datos categóricos</a>. En esta oportunidad, vamos a ver como podemos manipular, interpretar …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/03/13/analisis-de-datos-cuantitativos-con-python/">Read On &crarr;</a>
   </footer>
@@ -400,7 +410,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos con <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticas</a>, es importante reconocer los diferentes tipos de <a href="https://es.wikipedia.org/wiki/Dato">datos</a>: numéricos (<a href="https://es.wikipedia.org/wiki/Variable_discreta_y_variable_continua">discretos y continuos</a>), <a href="https://en.wikipedia.org/wiki/Categorical_variable">categóricos</a> y ordinales. Los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> no son más que observaciones del mundo en que vivimos, por tanto, los mismos pueden venir en diferentes formas, no solo numérica. Por ejemplo, si le preguntáramos ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos con <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticas</a>, es importante reconocer los diferentes tipos de <a href="https://es.wikipedia.org/wiki/Dato">datos</a>: numéricos (<a href="https://es.wikipedia.org/wiki/Variable_discreta_y_variable_continua">discretos y continuos</a>), <a href="https://en.wikipedia.org/wiki/Categorical_variable">categóricos</a> y ordinales. Los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> no son más que observaciones del mundo en que vivimos, por tanto, los mismos pueden venir en diferentes formas, no solo numérica. Por ejemplo, si le preguntáramos a …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/02/29/analisis-de-datos-categoricos-con-python/">Read On &crarr;</a>
   </footer>
@@ -427,7 +437,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Si bien el conjunto de los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Si bien el conjunto de los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el hecho de que sólo se pueden tomar raíces cuadradas de los números positivos (o cero) y no de los negativos. Desde el punto de …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/">Read On &crarr;</a>
   </footer>
@@ -454,7 +464,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Una característica notable de los seres humanos es su inherente necesidad y capacidad de agrupar objetos de acuerdo a criterios específicos.
-La idea de la clasificación de ciertos objetos en grupos similares, o <em><a href="https://es.wikipedia.org/wiki/Conjunto">conjuntos</a></em>, es uno de los conceptos más fundamentales de la matemática moderna. La <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos">teoría de ...</a></p></div></div></div></p></div>
+La idea de la clasificación de ciertos objetos en grupos similares, o <em><a href="https://es.wikipedia.org/wiki/Conjunto">conjuntos</a></em>, es uno de los conceptos más fundamentales de la matemática moderna. La <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos">teoría de conjuntos …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/10/11/conjuntos-con-python/">Read On &crarr;</a>
   </footer>
@@ -480,7 +490,7 @@ La idea de la clasificación de ciertos objetos en grupos similares, o <em><a hr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una de las ramas de estudio que cada vez esta ganando más popularidad dentro de las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de la computación</a> es el <strong><em>aprendizaje automático</em></strong> o <strong><em><a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico">Machine Learning</a></em></strong>. Muchos de los servicios que utilizamos en nuestro día a día como google, gmail, netflix, spotify o amazon se valen de las herramientas ...</p></div></div></div></p></div>
+<p>Una de las ramas de estudio que cada vez esta ganando más popularidad dentro de las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de la computación</a> es el <strong><em>aprendizaje automático</em></strong> o <strong><em><a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico">Machine Learning</a></em></strong>. Muchos de los servicios que utilizamos en nuestro día a día como google, gmail, netflix, spotify o amazon se valen de las herramientas …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/">Read On &crarr;</a>
   </footer>
@@ -506,7 +516,7 @@ La idea de la clasificación de ciertos objetos en grupos similares, o <em><a hr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="El-t&#237;o-Petros-y-la-conjetura">El t&#237;o Petros y la conjetura<a class="anchor-link" href="#El-t&#237;o-Petros-y-la-conjetura">&#182;</a></h2><p>Hace un tiempo atrás, quede atrapado en la lectura de la apasionante novela de Apostolos Doxiadis, <a href="https://www.amazon.es/El-tio-petros-conjetura-goldbach/dp/8440694903">El tío Petros y la conjetura de Goldbach</a>. La novela trata basicamente de la relación entre un joven, en busca de su vocación, y su tío, quien ...</p></div></div></div></p></div>
+<h2 id="El-t&#237;o-Petros-y-la-conjetura">El t&#237;o Petros y la conjetura<a class="anchor-link" href="#El-t&#237;o-Petros-y-la-conjetura">&#182;</a></h2><p>Hace un tiempo atrás, quede atrapado en la lectura de la apasionante novela de Apostolos Doxiadis, <a href="https://www.amazon.es/El-tio-petros-conjetura-goldbach/dp/8440694903">El tío Petros y la conjetura de Goldbach</a>. La novela trata basicamente de la relación entre un joven, en busca de su vocación, y su tío, quien en …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/">Read On &crarr;</a>
   </footer>
@@ -532,7 +542,7 @@ La idea de la clasificación de ciertos objetos en grupos similares, o <em><a hr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el vertiginoso mundo actual de las <a href="https://es.wikipedia.org/wiki/Finanzas">finanzas</a>; dónde la velocidad, frecuencia y volumen de los datos aumentan a un ritmo considerable; la aplicación combinada de tecnología y software, junto con algoritmos avanzados y diferentes métodos para recopilar, procesar y analizar datos se ha vuelto fundamental para obtener ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el vertiginoso mundo actual de las <a href="https://es.wikipedia.org/wiki/Finanzas">finanzas</a>; dónde la velocidad, frecuencia y volumen de los datos aumentan a un ritmo considerable; la aplicación combinada de tecnología y software, junto con algoritmos avanzados y diferentes métodos para recopilar, procesar y analizar datos se ha vuelto fundamental para obtener la …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/08/28/introduccion-a-finanzas-con-python/">Read On &crarr;</a>
   </footer>
@@ -655,7 +665,7 @@ La idea de la clasificación de ciertos objetos en grupos similares, o <em><a hr
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Raul E. Lopez Briega -
+  Copyright &copy; 2018 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="https://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

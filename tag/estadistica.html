@@ -190,22 +190,6 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $("div.collapseheader").click(function () {
-    $header = $(this).children("span").first();
-    $codearea = $(this).children(".input_area");
-    console.log($(this).children());
-    $codearea.slideToggle(500, function () {
-        $header.text(function () {
-            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
-        });
-    });
-});
-});
-</script>
 
 
 
@@ -218,9 +202,28 @@ jQuery(document).ready(function($) {
   <link href="https://relopezbriega.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://relopezbriega.github.io/css/social-share-kit.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script src="https://relopezbriega.github.io/theme/js/modernizr-2.0.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
+            });
+        });
+    });
+    });
+    </script>
+
+
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -234,6 +237,7 @@ jQuery(document).ready(function($) {
         rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+  
 </head>
 
 <body>
@@ -246,11 +250,17 @@ jQuery(document).ready(function($) {
 </ul>
 
 
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="relopezbriega.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+
+<form class="navbar-form navbar-right" role="search" action="https://relopezbriega.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa
+				fa-search fa-fw"></i></button>
+		</span>
+		</div>
+	</div>
 </form>
 
 <ul class="main-navigation">
@@ -290,7 +300,7 @@ jQuery(document).ready(function($) {
 </blockquote>
 <p><strong><a href="https://es.wikipedia.org/wiki/Miguel_de_Unamuno">Miguel de Unamuno</a></strong></p>
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La meta de construir sistemas que puedan adaptarse a sus entornos y aprender de su experiencia ha atraído a investigadores de muchos campos, como la <a href="https://es.wikipedia.org/wiki/Inform%C3%A1tica">Informática</a>,
-<a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, <a href="https://es.wikipedia.org/wiki/Neurociencia">Neurociencia</a> y ...</p></div></div></div></p></div>
+<a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, <a href="https://es.wikipedia.org/wiki/Neurociencia">Neurociencia</a> y la …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Read On &crarr;</a>
   </footer>
@@ -309,7 +319,7 @@ jQuery(document).ready(function($) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="https://iaarhub.github.io/images/nteligencia-artificial.png" title="IA" alt="IA"></p>
 <p><em>Este artículo fue publicado originalmente en el <a href="https://iaarhub.github.io/">sitio de capacitaciones de IAAR</a></em>.</p>
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El cerebro es el órgano más increíble del cuerpo humano. Establece la forma en que percibimos las imágenes, el sonido, los olores, los sabores y el tacto. Nos permite almacenar recuerdos, experimentar emociones e incluso soñar ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El cerebro es el órgano más increíble del cuerpo humano. Establece la forma en que percibimos las imágenes, el sonido, los olores, los sabores y el tacto. Nos permite almacenar recuerdos, experimentar emociones e incluso soñar. Sin …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Read On &crarr;</a>
   </footer>
@@ -338,7 +348,7 @@ jQuery(document).ready(function($) {
 <blockquote><p>"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."</p>
 </blockquote>
 <p><strong><em><a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Lapace</a></em></strong></p>
-<h2 id="Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">Introducci&#243;n: La incertidumbre y el problema de la inducci&#243;n<a class="anchor-link" href="#Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">&#182;</a></h2><p>¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">Introducci&#243;n: La incertidumbre y el problema de la inducci&#243;n<a class="anchor-link" href="#Introducci&#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&#243;n">&#182;</a></h2><p>¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/">Read On &crarr;</a>
   </footer>
@@ -364,7 +374,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el cierre de mi <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">artículo anterior</a>, comentaba sobre la sorprendente influencia que han tenido los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio">números aleatorios</a>, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, <a href="https://relopezbriega.github.io/category/finanzas.html">finanzas</a> y ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>En el cierre de mi <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">artículo anterior</a>, comentaba sobre la sorprendente influencia que han tenido los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio">números aleatorios</a>, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, <a href="https://relopezbriega.github.io/category/finanzas.html">finanzas</a> y <a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html">estadísticas …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/">Read On &crarr;</a>
   </footer>
@@ -393,7 +403,7 @@ jQuery(document).ready(function($) {
 <blockquote><p>"En el fondo, la teoría de  probabilidades es sólo sentido común expresado con números"</p>
 </blockquote>
 <p><strong><em><a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre Simon de Laplace</a></em></strong></p>
-<h2 id="Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">Introducci&#243;n: probabilidad y sentido com&#250;n<a class="anchor-link" href="#Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">&#182;</a></h2><p>La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">Introducci&#243;n: probabilidad y sentido com&#250;n<a class="anchor-link" href="#Introducci&#243;n:-probabilidad-y-sentido-com&#250;n">&#182;</a></h2><p>La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si todo fuera …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">Read On &crarr;</a>
   </footer>
@@ -419,7 +429,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Los datos obtenidos a partir de observaciones recogidas a lo largo del tiempo son extremadamente comunes. En los negocios, observamos las tasas de interés de la semana, los precios de cierre de las acciones diarios, los índices de precios mensuales, las cifras de ventas anuales, y así sucesivamente ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Los datos obtenidos a partir de observaciones recogidas a lo largo del tiempo son extremadamente comunes. En los negocios, observamos las tasas de interés de la semana, los precios de cierre de las acciones diarios, los índices de precios mensuales, las cifras de ventas anuales, y así sucesivamente. En …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/09/26/series-de-tiempo-con-python/">Read On &crarr;</a>
   </footer>
@@ -445,7 +455,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Las visualizaciones son una herramienta fundamental para entender y compartir ideas sobre los datos. La visualización correcta puede ayudar a expresar una idea central, o abrir un espacio para una más profunda investigación; con ella se puede conseguir que todo el mundo hable sobre un <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjunto de datos ...</a></p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Las visualizaciones son una herramienta fundamental para entender y compartir ideas sobre los datos. La visualización correcta puede ayudar a expresar una idea central, o abrir un espacio para una más profunda investigación; con ella se puede conseguir que todo el mundo hable sobre un <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjunto de datos</a>, o …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/09/18/visualizaciones-de-datos-con-python/">Read On &crarr;</a>
   </footer>
@@ -472,7 +482,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Las <a href="https://es.wikipedia.org/wiki/Variable_aleatoria">variables aleatorias</a> han llegado a desempeñar un papel importante en casi todos los campos de estudio: en la <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, la <a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica">Química</a> y la <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">Ingeniería</a>; y especialmente en las ciencias biológicas y sociales. Estas <a href="https://es.wikipedia.org/wiki/Variable_aleatoria">variables aleatorias</a> son medidas y analizadas en términos
-de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">estadísticas</a> y <a href="https://es.wikipedia.org/wiki/Probabilidad">probabilísticas ...</a></p></div></div></div></p></div>
+de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">estadísticas</a> y <a href="https://es.wikipedia.org/wiki/Probabilidad">probabilísticas</a>, de …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">Read On &crarr;</a>
   </footer>
@@ -506,7 +516,7 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Uno de los conceptos más importantes en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> es el <strong><em><a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> o <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a></em></strong> del modelo. Comprender como un modelo se <em>ajusta</em> a los datos es muy importante para entender las causas de baja precisión en las predicciones. Un modelo va a estar <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a></em> cuando vemos que se ...</p></div></div></div></p></div>
+<p>Uno de los conceptos más importantes en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> es el <strong><em><a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> o <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a></em></strong> del modelo. Comprender como un modelo se <em>ajusta</em> a los datos es muy importante para entender las causas de baja precisión en las predicciones. Un modelo va a estar <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a></em> cuando vemos que se desempeña …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/05/29/machine-learning-con-python-sobreajuste/">Read On &crarr;</a>
   </footer>
@@ -533,7 +543,7 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Continuando donde nos quedamos en el artículo anterior <a href="https://relopezbriega.github.io/blog/2016/04/08/ejemplo-de-machine-learning-con-python-preprocesamiento-y-exploracion/">Ejemplo de Machine Learning - preprocesamiento y exploración</a>; ahora es tiempo de ingresar en el terreno de la <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a>.</p>
-<h2 id="&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#191;En qu&#233; consiste la selecci&#243;n de atributos?<a class="anchor-link" href="#&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#182;</a></h2><p>La <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es el proceso por el cual seleccionamos un ...</p></div></div></div></p></div>
+<h2 id="&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#191;En qu&#233; consiste la selecci&#243;n de atributos?<a class="anchor-link" href="#&#191;En-qu&#233;-consiste-la-selecci&#243;n-de-atributos?">&#182;</a></h2><p>La <a href="https://en.wikipedia.org/wiki/Feature_selection">selección de atributos</a> es el proceso por el cual seleccionamos un subconjunto de …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">Read On &crarr;</a>
   </footer>
@@ -655,7 +665,7 @@ de sus propiedades <a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica">esta
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Raul E. Lopez Briega -
+  Copyright &copy; 2018 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="https://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

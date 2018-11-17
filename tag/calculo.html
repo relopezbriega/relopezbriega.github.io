@@ -190,22 +190,6 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $("div.collapseheader").click(function () {
-    $header = $(this).children("span").first();
-    $codearea = $(this).children(".input_area");
-    console.log($(this).children());
-    $codearea.slideToggle(500, function () {
-        $header.text(function () {
-            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
-        });
-    });
-});
-});
-</script>
 
 
 
@@ -218,9 +202,28 @@ jQuery(document).ready(function($) {
   <link href="https://relopezbriega.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://relopezbriega.github.io/css/social-share-kit.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script src="https://relopezbriega.github.io/theme/js/modernizr-2.0.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
+            });
+        });
+    });
+    });
+    </script>
+
+
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -234,6 +237,7 @@ jQuery(document).ready(function($) {
         rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+  
 </head>
 
 <body>
@@ -246,11 +250,17 @@ jQuery(document).ready(function($) {
 </ul>
 
 
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="relopezbriega.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+
+<form class="navbar-form navbar-right" role="search" action="https://relopezbriega.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa
+				fa-search fa-fw"></i></button>
+		</span>
+		</div>
+	</div>
 </form>
 
 <ul class="main-navigation">
@@ -286,7 +296,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://relopezbriega.github.io/tag/algebra.html">Álgebra lineal</a> constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional">análisis funcional</a>, las <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>, la <a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones">investigación ...</a></p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://relopezbriega.github.io/tag/algebra.html">Álgebra lineal</a> constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional">análisis funcional</a>, las <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>, la <a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones">investigación operativa …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Read On &crarr;</a>
   </footer>
@@ -313,7 +323,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. Ejemplos de ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones en derivadas parciales</a>. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/">Read On &crarr;</a>
   </footer>
@@ -340,7 +350,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Vivimos en un mundo en constante cambio. La posición de la Tierra cambia con el tiempo; la velocidad de un objeto en caída libre cambia ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Vivimos en un mundo en constante cambio. La posición de la Tierra cambia con el tiempo; la velocidad de un objeto en caída libre cambia con la distancia; el área de un círculo cambia según el tamaño de su <em>radio</em>; la trayectoria de un proyectil cambia según la velocidad …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/">Read On &crarr;</a>
   </footer>
@@ -367,7 +377,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El artículo de hoy se lo voy a dedicar a uno los números más fascinantes de las <a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, el número <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_e">$e$</a>. Este número es de suma importancia ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El artículo de hoy se lo voy a dedicar a uno los números más fascinantes de las <a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">Matemáticas</a>, el número <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_e">$e$</a>. Este número es de suma importancia, ya que lo podemos encontrar en una gran variedad de fenómenos, desde Física y Biología, hasta Finanzas, Arte y Música. Así como …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/12/13/el-numero-e-el-numero-de-las-finanzas/">Read On &crarr;</a>
   </footer>
@@ -394,7 +404,8 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal">Cálculo</a> es una rama muy importante de la <a href="https://es.wikipedia.org/wiki/Matem%C3%A1tica">Matemática</a> moderna; tiene profundas raíces en problemas físicos y  gran parte de su potencia y belleza derivan de ...</p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal">Cálculo</a> es una rama muy importante de la <a href="https://es.wikipedia.org/wiki/Matem%C3%A1tica">Matemática</a> moderna; tiene profundas raíces en problemas físicos y  gran parte de su potencia y belleza derivan de la variedad de sus aplicaciones.
+Las subramas conocidas como <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">Cálculo integral</a> y <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial">Cálculo diferencial</a> son instrumentos naturales y poderosos para atacar múltiples …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/">Read On &crarr;</a>
   </footer>
@@ -515,7 +526,7 @@ jQuery(document).ready(function($) {
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Raul E. Lopez Briega -
+  Copyright &copy; 2018 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="https://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">

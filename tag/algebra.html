@@ -190,22 +190,6 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $("div.collapseheader").click(function () {
-    $header = $(this).children("span").first();
-    $codearea = $(this).children(".input_area");
-    console.log($(this).children());
-    $codearea.slideToggle(500, function () {
-        $header.text(function () {
-            return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
-        });
-    });
-});
-});
-</script>
 
 
 
@@ -218,9 +202,28 @@ jQuery(document).ready(function($) {
   <link href="https://relopezbriega.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://relopezbriega.github.io/css/social-share-kit.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script src="https://relopezbriega.github.io/theme/js/modernizr-2.0.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/ender.js"></script>
   <script src="https://relopezbriega.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Ocultar Código" : "Ver Código";
+            });
+        });
+    });
+    });
+    </script>
+
+
   <script type="text/javascript" src="https://relopezbriega.github.io/js/social-share-kit.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -234,6 +237,7 @@ jQuery(document).ready(function($) {
         rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+  
 </head>
 
 <body>
@@ -246,11 +250,17 @@ jQuery(document).ready(function($) {
 </ul>
 
 
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="relopezbriega.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+
+<form class="navbar-form navbar-right" role="search" action="https://relopezbriega.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa
+				fa-search fa-fw"></i></button>
+		</span>
+		</div>
+	</div>
 </form>
 
 <ul class="main-navigation">
@@ -286,7 +296,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos en problemas de <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>, muchas veces nos vamos a encontrar con enormes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a>, con cientos o miles de características o <em>features</em>. Una forma simple de reducir las dimensiones de estas características es aplicar alguna técnica de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong>. La <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices ...</a></strong></p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos en problemas de <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>, muchas veces nos vamos a encontrar con enormes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a>, con cientos o miles de características o <em>features</em>. Una forma simple de reducir las dimensiones de estas características es aplicar alguna técnica de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong>. La <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> tiene …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/09/13/factorizacion-de-matrices-con-python/">Read On &crarr;</a>
   </footer>
@@ -312,7 +322,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://relopezbriega.github.io/tag/algebra.html">Álgebra lineal</a> constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional">análisis funcional</a>, las <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>, la <a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones">investigación ...</a></p></div></div></div></p></div>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>El <a href="https://relopezbriega.github.io/tag/algebra.html">Álgebra lineal</a> constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional">análisis funcional</a>, las <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>, la <a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones">investigación operativa …</a></p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/">Read On &crarr;</a>
   </footer>
@@ -339,7 +349,7 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Una de las herramientas matemáticas más utilizadas en <a href="https://es.wikipedia.org/wiki/Machine_learning">machine learning</a> y <a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos">data mining</a> es el <a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal">Álgebra lineal</a>; por tanto, si queremos incursionar en el fascinante mundo del aprendizaje automático y el análisis de datos es importante reforzar los conceptos que forman parte de sus cimientos.</p>
-<p>El <a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal">Álgebra lineal ...</a></p></div></div></div></p></div>
+<p>El <a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal">Álgebra lineal</a> es …</p></div></div></div></p></div>
   <footer>
     <a rel="full-article" href="https://relopezbriega.github.io/blog/2015/06/14/algebra-lineal-con-python/">Read On &crarr;</a>
   </footer>
@@ -454,7 +464,7 @@ jQuery(document).ready(function($) {
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Raul E. Lopez Briega -
+  Copyright &copy; 2018 - Raul E. Lopez Briega -
   <span class="credit">Powered by <a href="https://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">
