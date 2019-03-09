@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Ecuaciones Diferenciales con python" title="Ecuaciones Diferenciales con python" src="https://relopezbriega.github.io/images/DiffEq.png
 " width="500px" height="400px"></p>
@@ -301,8 +300,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Vivimos en un mundo en constante cambio. La posición de la Tierra cambia con el tiempo; la velocidad de un objeto en caída libre cambia con la distancia; el área de un círculo cambia según el tamaño de su <em>radio</em>; la trayectoria de un proyectil cambia según la velocidad y el ángulo de disparo.
 Al intentar modelar matemáticamente cualquiera de estos fenómenos, veremos que generalmente adoptan la forma de una o más <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>.</p>
@@ -310,79 +308,59 @@ Al intentar modelar matemáticamente cualquiera de estos fenómenos, veremos que
 <h2 id="&#191;Qu&#233;-es-una-ecuaci&#243;n-diferencial?">&#191;Qu&#233; es una ecuaci&#243;n diferencial?<a class="anchor-link" href="#&#191;Qu&#233;-es-una-ecuaci&#243;n-diferencial?">&#182;</a></h2><p>Una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> es una ecuación que involucra una variable dependiente y sus <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> con respecto a una o más variables independientes. Muchas de las leyes de la naturaleza, en <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a>, <a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica">Química</a>, <a href="https://es.wikipedia.org/wiki/Biolog%C3%ADa">Biología</a>, y <a href="https://es.wikipedia.org/wiki/Astronom%C3%ADa">Astronomía</a>; encuentran la forma más natural de ser expresadas en el lenguaje de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>. Estas ecuaciones no sólo tienen aplicaciones en la ciencias físicas, sino que también abundan sus aplicaciones en las ciencias aplicadas como ser <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">Ingeniería</a>, <a href="https://es.wikipedia.org/wiki/Finanzas">Finanzas</a> y <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">Economía</a>.</p>
 <p>Es fácil entender la razón detrás de esta amplia utilidad de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>. Si recordamos que $y = f(x)$ es una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">función</a>, entonces su <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> $dy / dx$ puede ser interpretada como el <em>ritmo de cambio</em> de $y$ con respecto a $x$. En muchos procesos naturales, las variables involucradas y su <em>ritmo de cambio</em> están conectados entre sí por medio de los principios científicos básicos que rigen el proceso. Cuando esta conexión es expresada matemáticamente, el resultado generalmente es una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>.</p>
 <p>Para ilustrar el caso, veamos un ejemplo. Según la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a>, la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> $a$ de un cuerpo de <a href="https://es.wikipedia.org/wiki/Masa">masa</a> $m$ es proporcional a la <a href="https://es.wikipedia.org/wiki/Fuerza">fuerza</a> total $F$ que actúa sobre él. Si expresamos esto matemáticamente en la forma de una ecuación, entonces tememos que:</p>
-<p>$$F = ma$$</p>
-<p>A primera vista, esta ecuación no parece ser una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>, pero supongamos que un objeto de <a href="https://es.wikipedia.org/wiki/Masa">masa</a> $m$ esta en caída libre bajo la influencia de la <a href="https://es.wikipedia.org/wiki/Fuerza">fuerza</a> de <a href="https://es.wikipedia.org/wiki/Gravedad">gravedad</a>. En este caso, la única <a href="https://es.wikipedia.org/wiki/Fuerza">fuerza</a> actuando sobre el objeto es $mg$, donde $g$ es la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> debido a la <a href="https://es.wikipedia.org/wiki/Gravedad">gravedad</a>. Si consideramos a $u$, como la posición del objeto desde una altura determinada; entonces la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a> de caída del objeto va a ser igual al <em>ritmo de cambio</em> de la posición $u$ con respecto al tiempo $t$; es decir que la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a> es igual a $v = du / dt$, o sea, la <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> de la posición del objeto con respecto al tiempo; y como la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> no es otra cosa que el <em>ritmo de cambio</em> de la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a>, entonces podemos definir a la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> como una segunda <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> de la posición del objeto con respecto al tiempo, lo que es igual a decir que $g = d^2u / dt^2$. De esta forma, podemos reescribir la ecuación inicial de la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a> como la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>.</p>
-<p>$$F = m\frac{d^2u}{dt^2}$$</p>
-<p>De esta manera, estamos expresando a la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a> en función de la posición del objeto.</p>
+$$F = ma$$<p>A primera vista, esta ecuación no parece ser una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>, pero supongamos que un objeto de <a href="https://es.wikipedia.org/wiki/Masa">masa</a> $m$ esta en caída libre bajo la influencia de la <a href="https://es.wikipedia.org/wiki/Fuerza">fuerza</a> de <a href="https://es.wikipedia.org/wiki/Gravedad">gravedad</a>. En este caso, la única <a href="https://es.wikipedia.org/wiki/Fuerza">fuerza</a> actuando sobre el objeto es $mg$, donde $g$ es la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> debido a la <a href="https://es.wikipedia.org/wiki/Gravedad">gravedad</a>. Si consideramos a $u$, como la posición del objeto desde una altura determinada; entonces la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a> de caída del objeto va a ser igual al <em>ritmo de cambio</em> de la posición $u$ con respecto al tiempo $t$; es decir que la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a> es igual a $v = du / dt$, o sea, la <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> de la posición del objeto con respecto al tiempo; y como la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> no es otra cosa que el <em>ritmo de cambio</em> de la <a href="https://es.wikipedia.org/wiki/Velocidad">velocidad</a>, entonces podemos definir a la <a href="https://es.wikipedia.org/wiki/Aceleraci%C3%B3n">aceleración</a> como una segunda <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> de la posición del objeto con respecto al tiempo, lo que es igual a decir que $g = d^2u / dt^2$. De esta forma, podemos reescribir la ecuación inicial de la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a> como la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>.</p>
+$$F = m\frac{d^2u}{dt^2}$$<p>De esta manera, estamos expresando a la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a> en función de la posición del objeto.</p>
 <h3 id="Ecuaciones-diferenciales-ordinarias-y-parciales">Ecuaciones diferenciales ordinarias y parciales<a class="anchor-link" href="#Ecuaciones-diferenciales-ordinarias-y-parciales">&#182;</a></h3><p>El caso precedente, es el caso típico de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>, ya que todas las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> involucradas son tomadas con respecto a una única y misma variable independiente. Por otro lado, si en la ecuación tenemos <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> de más de una variable independiente, debemos hablar de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones difenciales parciales</a>. Por ejemplo, si $w = f(x, y, z, t)$ es una función de tiempo y 3 coordenadas de un punto en el espacio, entonces las siguientes son sus <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones diferenciales parciales</a>:</p>
-<p>$$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
+$$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial w}{\partial t};
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial^2 w}{\partial t^2}.
-$$</p>
+$$<p></p>
 <p>En esta caso, el símbolo $\partial$, es la notación matemática para expresar que estamos derivando parcialmente, así por ejemplo, si queremos expresar que vamos a derivar z con respecto a x, escribimos $\partial z / \partial x$.</p>
 <p>Estos ejemplos, tienen una gran aplicación en <a href="https://es.wikipedia.org/wiki/F%C3%ADsica">Física</a> y se conocen como la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Laplace">ecuación de Laplace</a>, la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_del_calor">ecuación del calor</a> y la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_onda">ecuación de onda</a> respectivamente. En general, las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales">Ecuaciones diferenciales parciales</a> surgen en problemas de <a href="https://es.wikipedia.org/wiki/Campo_el%C3%A9ctrico">campos eléctricos</a>, <a href="https://es.wikipedia.org/wiki/Mec%C3%A1nica_de_fluidos">mecánica de fluidos</a>, <a href="https://es.wikipedia.org/wiki/Difusi%C3%B3n_(f%C3%ADsica)">difusión</a> y movimientos de <a href="https://es.wikipedia.org/wiki/Onda">ondas</a>. La teoría de estas ecuaciones es bastante diferente con respecto a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> y suelen ser también más complicadas de resolver. En este artículo me voy a enfocar principalmente en las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a>, o <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a> para abreviar.</p>
 <h3 id="Orden-de-las-Ecuaciones-diferenciales">Orden de las Ecuaciones diferenciales<a class="anchor-link" href="#Orden-de-las-Ecuaciones-diferenciales">&#182;</a></h3><p>El <em>orden</em> de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> va a ser igual al <em>orden</em> de la mayor <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> presente. Así, en nuestro primer ejemplo, la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> de la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_Ley_de_Newton_o_Ley_Fundamental_de_la_din.C3.A1mica">segunda ley de la dinámica de Newton</a> es de segundo orden, ya que nos encontramos ante la segunda derivada de la posición del objeto con respecto al tiempo. 
 La ecuación general de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> de grado $n$ es la siguiente:</p>
-<p>$$F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots , \frac{d^ny}{dx^n}\right) = 0 $$</p>
-<p>o utilizando la notación prima para las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a>,</p>
-<p>$$F(x, y, y', y'', \dots, y^{(n)}) = 0$$</p>
-<p>La más simple de todas las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> es la siguiente ecuación de primer orden:</p>
-<p>$$ \frac{dy}{dx} = f(x)$$</p>
+$$F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots , \frac{d^ny}{dx^n}\right) = 0 $$<p>o utilizando la notación prima para las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a>,</p>
+$$F(x, y, y', y'', \dots, y^{(n)}) = 0$$<p>La más simple de todas las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> es la siguiente ecuación de primer orden:</p>
+$$ \frac{dy}{dx} = f(x)$$<p></p>
 <p>y para resolverla simplemente debemos calcular su <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida">integral indefinida</a>:</p>
-<p>$$y = \int f(x) dx + c$$.</p>
+$$y = \int f(x) dx + c$$<p>.</p>
 <h3 id="Ecuaciones-diferenciales-separables">Ecuaciones diferenciales separables<a class="anchor-link" href="#Ecuaciones-diferenciales-separables">&#182;</a></h3><p>Una <em>ecuación separable</em> es una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuación diferencial de primer orden</a> en la que la expresión para
 $dx / dy$ se puede factorizar como una función de x multiplicada por una función de y. En otras palabras, puede ser
 escrita en la forma:</p>
-<p>$$\frac{dy}{dx} = f(x)g(y)$$</p>
-<p>El nombre <em>separable</em> viene del hecho de que la expresión en el lado derecho se puede "separar" en una función de $x$ y una función de $y$.</p>
+$$\frac{dy}{dx} = f(x)g(y)$$<p>El nombre <em>separable</em> viene del hecho de que la expresión en el lado derecho se puede "separar" en una función de $x$ y una función de $y$.</p>
 <p>Para resolver este tipo de ecuaciones, podemos reescribirlas en la forma diferencial:</p>
-<p>$$\frac{dy}{g(y)} = f(x)dx$$</p>
-<p>y luego podemos resolver la ecuación original integrando:</p>
-<p>$$\int \frac{dy}{g(y)} = \int f(x) dx + c$$</p>
-<p>Éstas suelen ser las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> más fáciles de resolver, ya que el problema de resolverlas puede ser reducido a un problema de <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integración</a>; a pesar de que igualmente muchas veces estas integrales pueden ser difíciles de calcular.</p>
+$$\frac{dy}{g(y)} = f(x)dx$$<p>y luego podemos resolver la ecuación original integrando:</p>
+$$\int \frac{dy}{g(y)} = \int f(x) dx + c$$<p>Éstas suelen ser las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> más fáciles de resolver, ya que el problema de resolverlas puede ser reducido a un problema de <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integración</a>; a pesar de que igualmente muchas veces estas integrales pueden ser difíciles de calcular.</p>
 <h3 id="Ecuaciones-diferenciales-lineales">Ecuaciones diferenciales lineales<a class="anchor-link" href="#Ecuaciones-diferenciales-lineales">&#182;</a></h3><p>Uno de los tipos más importantes de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> son las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_lineal">Ecuaciones diferenciales lineales</a>. Este tipo de ecuaciones son muy comunes en varias ciencias y tienen la ventaja de que pueden llegar a ser resueltas en forma analítica ya que su <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuación diferencial de primer orden</a> adopta la forma:</p>
-<p>$$\frac{dy}{dx} + P(x)y = Q(x) $$</p>
-<p>donde, $P$ y $Q$ son funciones continuas de $x$ en un determinado intervalo. Para resolver este tipo de ecuaciones de la forma $ y' + P(x)y = Q(x)$, debemos multiplicar los dos lados de la ecuación por el <em>factor de integración</em> $e^{\int P(x) dx}$ y luego <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> ambos lados. Así, si por ejemplo quisiéramos resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
-<p>$$\frac{dy}{dx} + 3x^2y = 6x^2$$</p>
-<p>Primero calculamos el <em>factor de integración</em>, $I(x) = e^{\int 3x^2 \ dx}$, lo que es igual a $e^{x^3}$.</p>
+$$\frac{dy}{dx} + P(x)y = Q(x) $$<p>donde, $P$ y $Q$ son funciones continuas de $x$ en un determinado intervalo. Para resolver este tipo de ecuaciones de la forma $ y' + P(x)y = Q(x)$, debemos multiplicar los dos lados de la ecuación por el <em>factor de integración</em> $e^{\int P(x) dx}$ y luego <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> ambos lados. Así, si por ejemplo quisiéramos resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
+$$\frac{dy}{dx} + 3x^2y = 6x^2$$<p>Primero calculamos el <em>factor de integración</em>, $I(x) = e^{\int 3x^2 \ dx}$, lo que es igual a $e^{x^3}$.</p>
 <p>Luego multiplicamos ambos lados de la ecuación por el recién calculado <em>factor de integración</em>.</p>
-<p>$$e^{x^3}\frac{dy}{dx} + 3x^2e^{x^3}y = 6x^2e^{x^3}$$</p>
-<p>simplificando, obtenemos:</p>
-<p>$$\frac{d}{dx}(e^{x^3}y) = 6x^2e^{x^3}$$</p>
-<p>Por último, integramos ambos lados de la ecuación:</p>
-<p>$$e^{x^3}y = \int 6x^2e^{x^3} \ dx = 2e^{x^3} + C$$</p>
-<p>y podemos obtener la solución final:</p>
-<p>$$y = Ce^{-x^3} +2 $$</p>
-<h3 id="Condici&#243;n-inicial">Condici&#243;n inicial<a class="anchor-link" href="#Condici&#243;n-inicial">&#182;</a></h3><p>Cuando utilizamos <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>, generalmente no estamos interesados en encontrar una familia de soluciones (la solución general), como la que hayamos en el caso precedente, sino que vamos a estar más interesados en una solución que satisface un requerimiento particular.En muchos problemas físicos debemos de encontrar una solución particular que satisface una condición de la forma $y(t_o) = y_0$. Esto se conoce como la <strong>condición inicial</strong>, y el problema de encontrar una solución de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que satisface la <em>condición inicial</em> se conoce como el <strong>problema de valor inicial</strong>.</p>
+$$e^{x^3}\frac{dy}{dx} + 3x^2e^{x^3}y = 6x^2e^{x^3}$$<p>simplificando, obtenemos:</p>
+$$\frac{d}{dx}(e^{x^3}y) = 6x^2e^{x^3}$$<p>Por último, integramos ambos lados de la ecuación:</p>
+$$e^{x^3}y = \int 6x^2e^{x^3} \ dx = 2e^{x^3} + C$$<p>y podemos obtener la solución final:</p>
+$$y = Ce^{-x^3} +2 $$<h3 id="Condici&#243;n-inicial">Condici&#243;n inicial<a class="anchor-link" href="#Condici&#243;n-inicial">&#182;</a></h3><p>Cuando utilizamos <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>, generalmente no estamos interesados en encontrar una familia de soluciones (la solución general), como la que hayamos en el caso precedente, sino que vamos a estar más interesados en una solución que satisface un requerimiento particular.En muchos problemas físicos debemos de encontrar una solución particular que satisface una condición de la forma $y(t_o) = y_0$. Esto se conoce como la <strong>condición inicial</strong>, y el problema de encontrar una solución de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que satisface la <em>condición inicial</em> se conoce como el <strong>problema de valor inicial</strong>.</p>
 <h2 id="Series-de-potencias">Series de potencias<a class="anchor-link" href="#Series-de-potencias">&#182;</a></h2><p>Cuando comenzamos a lidiar con las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>, veremos que existen un gran número de ellas que no pueden ser resueltas en forma analítica utilizando los principios del <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">Cálculo integral</a> y el <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial">Cálculo diferencial</a>; pero sin embargo, tal vez podamos encontrar soluciones aproximadas para este tipo de ecuaciones en términos de <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a>.</p>
 <h3 id="&#191;Qu&#233;-es-una-serie-de-potencias?">&#191;Qu&#233; es una serie de potencias?<a class="anchor-link" href="#&#191;Qu&#233;-es-una-serie-de-potencias?">&#182;</a></h3><p>Una <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a> es una <a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica">serie</a>, generalmente infinita, que posee la siguiente forma:</p>
-<p>$$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$</p>
-<p>En dónde $X$ es una variable y las $C_n$ son <em>constantes</em> o los <em>coeficientes</em> de la serie. Una <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a> puede <a href="https://es.wikipedia.org/wiki/Serie_convergente">converger</a> para algunos valores de $X$ y <a href="https://es.wikipedia.org/wiki/Serie_divergente">divergir</a> para otros valores de $X$. La suma de la <a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica">serie</a> es una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">función</a>.</p>
-<p>$$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$</p>
-<p>El <em>dominio</em> de esta <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">función</a> va a estar dado por el conjunto de todos los $X$ para los que la <a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica">serie</a> <a href="https://es.wikipedia.org/wiki/Serie_convergente">converge</a>.</p>
+$$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$<p>En dónde $X$ es una variable y las $C_n$ son <em>constantes</em> o los <em>coeficientes</em> de la serie. Una <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a> puede <a href="https://es.wikipedia.org/wiki/Serie_convergente">converger</a> para algunos valores de $X$ y <a href="https://es.wikipedia.org/wiki/Serie_divergente">divergir</a> para otros valores de $X$. La suma de la <a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica">serie</a> es una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">función</a>.</p>
+$$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$<p>El <em>dominio</em> de esta <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">función</a> va a estar dado por el conjunto de todos los $X$ para los que la <a href="https://es.wikipedia.org/wiki/Serie_matem%C3%A1tica">serie</a> <a href="https://es.wikipedia.org/wiki/Serie_convergente">converge</a>.</p>
 <h3 id="Series-de-Taylor">Series de Taylor<a class="anchor-link" href="#Series-de-Taylor">&#182;</a></h3><p>Las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> son un caso especial de <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a> cuyos términos adoptan la forma $(x - a)^n$. Las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> nos van a permitir aproximar <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_continua">funciones continuas</a> que no pueden resolverse en forma analítica y se van a  calcular a partir de las <a href="https://es.wikipedia.org/wiki/Derivada">derivadas</a> de estas <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica">funciones</a>. Su definición matemática es la siguiente:</p>
-<p>$$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$</p>
-<p>Lo que es equivalente a decir:</p>
-<p>$$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$</p>
-<p>Una de las razones de que las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> sean importantes es que nos permiten <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> funciones que de otra forma no podíamos manejar. De hecho, a menudo <a href="https://es.wikipedia.org/wiki/Isaac_Newton">Newton</a> <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integraba</a> funciones por medio de, en primer lugar, expresarlas como <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a>  y luego <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrando</a> la serie término a término. Por ejemplo, la función $f(x) = e^{-x^2}$, no puede ser integrada por los métodos normales del <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">Cálculo integral</a>, por lo que debemos recurrir a las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> para aproximar la solución de su <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integral</a>. Podríamos construir la <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Serie de Taylor</a> de esta función, del siguiente modo:</p>
-<p>$$e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} =
-1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots$$</p>
-
+$$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$<p>Lo que es equivalente a decir:</p>
+$$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$<p>Una de las razones de que las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> sean importantes es que nos permiten <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrar</a> funciones que de otra forma no podíamos manejar. De hecho, a menudo <a href="https://es.wikipedia.org/wiki/Isaac_Newton">Newton</a> <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integraba</a> funciones por medio de, en primer lugar, expresarlas como <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Series de potencias</a>  y luego <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integrando</a> la serie término a término. Por ejemplo, la función $f(x) = e^{-x^2}$, no puede ser integrada por los métodos normales del <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">Cálculo integral</a>, por lo que debemos recurrir a las <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Series de Taylor</a> para aproximar la solución de su <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integral</a>. Podríamos construir la <a href="https://es.wikipedia.org/wiki/Serie_de_Taylor">Serie de Taylor</a> de esta función, del siguiente modo:</p>
+$$e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} =
+1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots$$
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Resolviendo-Ecuaciones-diferenciales-con-Python">Resolviendo Ecuaciones diferenciales con Python<a class="anchor-link" href="#Resolviendo-Ecuaciones-diferenciales-con-Python">&#182;</a></h2><p>Mientras que algunos problemas de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuaciones diferenciales ordinarias</a> se pueden resolver con métodos analíticos, como hemos mencionado anteriormente, son mucho más comunes los problemas  que no se pueden resolver analíticamente. Por lo tanto, en estos casos debemos recurrir a los métodos numéricos. Es aquí, dónde el poder de las computadoras y en especial, de los paquetes científicos de <a href="https://www.python.org/">Python</a> como <a href="https://www.numpy.org/">NumPy</a>, <a href="https://matplotlib.org/">Matplotlib</a>, <a href="https://www.sympy.org/es/">SymPy</a> y <a href="https://www.scipy.org/">SciPy</a>, se vuelven sumamente útiles. Veamos como podemos utilizar la fuerza computacional para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>.</p>
 <h3 id="Soluciones-anal&#237;ticas-con-Python">Soluciones anal&#237;ticas con Python<a class="anchor-link" href="#Soluciones-anal&#237;ticas-con-Python">&#182;</a></h3><p><a href="https://www.sympy.org/es/">SymPy</a> nos proporciona un solucionador genérico de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuaciones diferenciales ordinarias</a>, <code>sympy.dsolve</code>, el cual es capaz de encontrar soluciones analíticas a muchas <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a> elementales. Mientras <code>sympy.dsolve</code> se puede utilizar para resolver muchas <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a> sencillas simbólicamente, como veremos a continuación, debemos tener en cuenta que la mayoría de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a> no se pueden resolver analíticamente. Por ejemplo, retomando el ejemplo que resolvimos analíticamente más arriba, veamos si llegamos al mismo resultado utilizando <a href="https://www.sympy.org/es/">SymPy</a> para solucionar la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>:</p>
-<p>$$\frac{dy}{dx} = -3x^2y + 6x^2$$</p>
-
+$$\frac{dy}{dx} = -3x^2y + 6x^2$$
 </div>
 </div>
 </div>
@@ -437,7 +415,7 @@ escrita en la forma:</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -453,8 +431,7 @@ $$\frac{d}{d x} y{\left (x \right )} = - 3 x^{2} y{\left (x \right )} + 6 x^{2}$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aquí primero definimos la incógnitas $x$ utilizando el objeto <code>Symbol</code> e $y$, que al ser una función, la definimos con el objeto <code>Function</code>, luego expresamos en <a href="https://www.python.org/">Python</a> la ecuación que define a la función. Ahora solo nos restaría aplicar la función <code>dsolve</code> para resolver nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a>.</p>
 
@@ -482,7 +459,7 @@ $$\frac{d}{d x} y{\left (x \right )} = - 3 x^{2} y{\left (x \right )} + 6 x^{2}$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -498,12 +475,10 @@ $$y{\left (x \right )} = C_{1} e^{- x^{3}} + 2$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver, arribamos exactamente al mismo resultado. Siguiendo el mismo procedimiento, podemos resolver otras <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDOs</a>, por ejemplo si quisiéramos resolver la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
-<p>$$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$</p>
-<p>que cumpla con la condición inicial $y(0) = 2$, debemos realizar el siguiente procedimiento:</p>
+$$\frac{dy}{dx} = \frac{1}{2}(y^2 -1) $$<p>que cumpla con la condición inicial $y(0) = 2$, debemos realizar el siguiente procedimiento:</p>
 
 </div>
 </div>
@@ -536,7 +511,7 @@ $$y{\left (x \right )} = C_{1} e^{- x^{3}} + 2$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -552,8 +527,7 @@ $$y{\left (x \right )} = \frac{C_{1} + e^{x}}{C_{1} - e^{x}}$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aquí encontramos la solución general de nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>, ahora reemplazamos los valores de la condición inicial en nuestra ecuación.</p>
 
@@ -581,7 +555,7 @@ $$y{\left (x \right )} = \frac{C_{1} + e^{x}}{C_{1} - e^{x}}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -597,8 +571,7 @@ $$2 = \frac{C_{1} + 1}{C_{1} - 1}$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>y por último despejamos el valor de la <a href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n">constante de integración</a> resolviendo la ecuación.</p>
 
@@ -625,7 +598,7 @@ $$2 = \frac{C_{1} + 1}{C_{1} - 1}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -641,14 +614,11 @@ $$\left [ 3\right ]$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como vemos, el valor de la <a href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n">constante de integración</a> es 3, por lo tanto nuestra solución para el <strong>problema del valore inicial</strong> es:</p>
-<p>$$y{\left (x \right )} = \frac{3 + e^{x}}{3 - e^{x}}$$</p>
-<p>Para los casos en que no exista una solución analítica, pero sí una solución aproximada por una <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a>, <code>sympy.dsolve</code> nos va a devolver la serie como solución. Veamos el caso de la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
-<p>$$\frac{dy}{dx} = x^2 + y^2 -1$$</p>
-
+$$y{\left (x \right )} = \frac{3 + e^{x}}{3 - e^{x}}$$<p>Para los casos en que no exista una solución analítica, pero sí una solución aproximada por una <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a>, <code>sympy.dsolve</code> nos va a devolver la serie como solución. Veamos el caso de la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
+$$\frac{dy}{dx} = x^2 + y^2 -1$$
 </div>
 </div>
 </div>
@@ -674,7 +644,7 @@ $$\left [ 3\right ]$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -690,15 +660,12 @@ $$y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Campos-de-direcciones">Campos de direcciones<a class="anchor-link" href="#Campos-de-direcciones">&#182;</a></h3><p>Los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a> es una técnica sencilla pero útil para visualizar posibles soluciones a las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuaciones diferenciales de primer orden</a>. Se compone de líneas cortas que muestran la pendiente de la función incógnita en el plano x-y. Este gráfico se puede producir fácilmente debido a que la pendiente de $y(x)$ en los puntos arbitrarios del plano x-y está dada por la definición misma de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>:</p>
-<p>$$\frac{dy}{dx} = f(x, y(x))$$</p>
-<p>Es decir, que sólo tenemos que iterar sobre los valores $x$ e $y$ en la grilla de coordenadas de interés y evaluar $f(x, y(x))$ para saber la pendiente de $y(x)$ en ese punto. Cuantos más segmentos de líneas trazamos en un <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de dirección</a>, más clara será la imagen. La razón por la cual el gráfico de <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a> es útil, es que las curvas suaves y continuos que son <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangentes</a> a las líneas de pendiente en cada punto del gráfico, son las posibles soluciones a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>.</p>
+$$\frac{dy}{dx} = f(x, y(x))$$<p>Es decir, que sólo tenemos que iterar sobre los valores $x$ e $y$ en la grilla de coordenadas de interés y evaluar $f(x, y(x))$ para saber la pendiente de $y(x)$ en ese punto. Cuantos más segmentos de líneas trazamos en un <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de dirección</a>, más clara será la imagen. La razón por la cual el gráfico de <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a> es útil, es que las curvas suaves y continuos que son <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangentes</a> a las líneas de pendiente en cada punto del gráfico, son las posibles soluciones a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>.</p>
 <p>Por supuesto que calcular las pendientes y dibujar los segmentos de línea para un gran número de puntos a mano sería algo realmente tedioso, pero para eso existen las computadoras y <a href="https://www.python.org/">Python</a>!. Veamos un ejemplo, supongamos que tenemos la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a>, la cual según lo que vimos más arriba, sabemos que no tiene una solución analítica:</p>
-<p>$$\frac{dy}{dx} = x^2 + y^2 -1$$</p>
-<p>entonces, con la ayuda de <a href="https://www.python.org/">Python</a>, podemos graficar su <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de dirección</a> del siguiente modo:</p>
+$$\frac{dy}{dx} = x^2 + y^2 -1$$<p>entonces, con la ayuda de <a href="https://www.python.org/">Python</a>, podemos graficar su <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de dirección</a> del siguiente modo:</p>
 
 </div>
 </div>
@@ -773,7 +740,7 @@ $$y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1250,8 +1217,7 @@ ERFRSIpuREREISm6ERERhaToRkREFPIfDaBqILCmLGYAAAAASUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Las líneas de dirección en el gráfico de arriba sugieren cómo las curvas que son soluciones a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuación diferencial ordinaria</a> se van a comportar. Por lo tanto, los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a> son una herramienta muy útil para visualizar posibles soluciones para <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuaciones diferenciales ordinarias</a>  que no se pueden resolver analíticamente. Este gráfico, también nos puede ayudar a determinar el rango de validez de la solución aproximada por la <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a>. Por ejemplo si resolvemos nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a> para la condición inicial $y(0) = 0$, veamos a que conclusiones arribamos.</p>
 
@@ -1283,7 +1249,7 @@ ERFRSIpuREREISm6ERERhaToRkREFPIfDaBqILCmLGYAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -1350,7 +1316,7 @@ $$y{\left (x \right )} = - x + \frac{2 x^{3}}{3} - \frac{4 x^{5}}{15} + \mathcal
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2063,8 +2029,7 @@ RU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En el panel de la izquierda podemos ver el gráfico de la solución aproximada por la <a href="https://es.wikipedia.org/wiki/Serie_de_potencias">Serie de potencias</a>; en el panel de la derecha vemos el gráfico al que podemos arribar resolviendo la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">EDO</a> para valores incrementales de $x$ para la condición inicial en forma iterativa. Como podemos ver, las solución aproximada se alinea bien con el <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">campo de direcciones</a> para los valores de $x$ entre $-1.5$ y $1.5$, luego comienza a desviarse, lo que nos indica que la solución aproximada ya no sería válida. En el panel de la derecha podemos ver una solución que se adapta mucho mejor con el <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">campo de direcciones</a>.</p>
 
@@ -2072,16 +2037,13 @@ RU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Transformada-de-Laplace">Transformada de Laplace<a class="anchor-link" href="#Transformada-de-Laplace">&#182;</a></h3><p>Un método alternativo que podemos utilizar para resolver en forma analítica <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">Ecuaciones diferenciales ordinarias</a> complejas, es utilizar la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>, que es un tipo particular de <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a>. La idea es que podemos utilizar esta técnica para transformar nuestra <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en algo más simple, resolver esta ecuación más simple y, a continuación, invertir la transformación para recuperar la solución a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> original.</p>
 <h4 id="&#191;Qu&#233;-es-una-Transformada-de-Laplace?">&#191;Qu&#233; es una Transformada de Laplace?<a class="anchor-link" href="#&#191;Qu&#233;-es-una-Transformada-de-Laplace?">&#182;</a></h4><p>Para poder comprender la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>, primero debemos revisar la definición general de la <a href="https://es.wikipedia.org/wiki/Transformada_integral">transformada integral</a>, la cuál adapta la siguiente forma:</p>
-<p>$$T(f(t)) = \int_{\alpha}^{\beta} K (s, t) \ f(t) \ dt = F(s) $$</p>
-<p>En este caso, $f(t)$ es la función que queremos transformar, y $F(s)$ es la función transformada. Los límites de la integración, $\alpha$ y $\beta$, pueden ser cualquier valor entre $-\infty$ y $+\infty$ y $K(s, t)$ es lo que se conoce como el <em>núcleo</em> o <em>kernel</em> de la transformada, y podemos elegir el <em>kernel</em> que nos plazca.  La idea es poder elegir un <em>kernel</em> que nos dé la oportunidad de simplificar la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> con mayor facilidad.</p>
+$$T(f(t)) = \int_{\alpha}^{\beta} K (s, t) \ f(t) \ dt = F(s) $$<p>En este caso, $f(t)$ es la función que queremos transformar, y $F(s)$ es la función transformada. Los límites de la integración, $\alpha$ y $\beta$, pueden ser cualquier valor entre $-\infty$ y $+\infty$ y $K(s, t)$ es lo que se conoce como el <em>núcleo</em> o <em>kernel</em> de la transformada, y podemos elegir el <em>kernel</em> que nos plazca.  La idea es poder elegir un <em>kernel</em> que nos dé la oportunidad de simplificar la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> con mayor facilidad.</p>
 <p>Si nos restringimos a <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> con <em>coeficientes</em> constantes, entonces un <em>kernel</em> que resulta realmente útil es $e^{-st}$, ya que al <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial">diferenciar</a> este <em>kernel</em> con respecto de $t$, terminamos obteniendo potencias de $s$, que podemos equiparar a los <em>coeficientes</em> constantes. De esta forma, podemos arribar a la definición de la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a>:</p>
-<p>$$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$</p>
-<p>Tengan en cuenta, que además de usar el <em>kernel</em> $e^{-st}$, los límites de la integración van desde $0$ a $\infty$, ya que valores negativos de $t$ harían <a href="https://es.wikipedia.org/wiki/Serie_divergente">divergir</a> la <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integral</a>.</p>
+$$\mathcal{L}\{f(t)\}=\int_0^{\infty} e^{-st} \ f(t) \ dt$$<p>Tengan en cuenta, que además de usar el <em>kernel</em> $e^{-st}$, los límites de la integración van desde $0$ a $\infty$, ya que valores negativos de $t$ harían <a href="https://es.wikipedia.org/wiki/Serie_divergente">divergir</a> la <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n">integral</a>.</p>
 <h4 id="Tabla-de-transformadas-de-Laplace">Tabla de transformadas de Laplace<a class="anchor-link" href="#Tabla-de-transformadas-de-Laplace">&#182;</a></h4><p>Calcular la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> a veces puede resultar en una tarea complicada. Por suerte, podemos recurrir a la siguiente tabla para resolver la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> para las funciones más comunes:</p>
 <table>
 <thead><tr>
@@ -2151,19 +2113,15 @@ RU5ErkJggg==
 <ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> es un operador lineal</em></strong>: Esta propiedad nos dice la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de una suma, es igual a la suma de las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> de cada uno de los términos. Es decir:</li>
 </ul>
-<p>$$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}\{f_2(t)\}$$</p>
-<ul>
+$$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}\{f_2(t)\}$$<ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de la primer derivada</em></strong>: Esta propiedad nos dice que si $f(t)$ es continua y $f'(t)$ es continua en el intervalo $0 \le t \le \alpha$. Entonces la <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de la primer derivada es:</li>
 </ul>
-<p>$$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$</p>
-<ul>
+$$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$<ul>
 <li><strong><em>La <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformada de Laplace</a> de derivadas de orden superior</em></strong>: Esta propiedad es la generalización de la propiedad anterior para derivadas de orden n. Su formula es:</li>
 </ul>
-<p>$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
-= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$</p>
-<h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">&#182;</a></h4><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que queramos resolver. Veamos entonces como <a href="https://www.python.org/">Python</a> y <a href="https://www.sympy.org/es/">SymPy</a> nos ayudan a resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> utilizando las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>. Vamos a intentar resolver la siguiente ecuación:</p>
-<p>$$y'' + 3y' + 2y = 0$$</p>
-<p>con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$</p>
+$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
+= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$<h4 id="Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a class="anchor-link" href="#Resolviendo-ecuaciones-diferenciales-con-la-transformada-de-Laplace">&#182;</a></h4><p>La principal ventaja de utilizar <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a> es que cambia la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> en una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>, lo que simplifica el proceso para calcular su solución. La única parte complicada es encontrar las transformaciones y las inversas de las transformaciones de los varios términos de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> que queramos resolver. Veamos entonces como <a href="https://www.python.org/">Python</a> y <a href="https://www.sympy.org/es/">SymPy</a> nos ayudan a resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> utilizando las <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>. Vamos a intentar resolver la siguiente ecuación:</p>
+$$y'' + 3y' + 2y = 0$$<p>con las siguientes condiciones iniciales: $y(0) = 2$ y $y'(0) = -3$</p>
 
 </div>
 </div>
@@ -2195,7 +2153,7 @@ RU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -2248,7 +2206,7 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -2264,8 +2222,7 @@ $$2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 \mathcal{
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver en este resultado, al aplicar la función <code>sympy.laplace_transform</code> sobre la <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a> de $y(t)$, <a href="https://www.sympy.org/es/">SymPy</a> nos devuelve un termino con la forma $\mathcal{L}_{t}\left[\frac{d}{d t} y{\left (t \right )}\right]\left(s\right)$. Esto es una complicación si queremos arribar a una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_algebraica">ecuación algebraica</a>. Por tanto antes de proceder, deberíamos utilizar la siguiente función para resolver este inconveniente.</p>
 
@@ -2326,7 +2283,7 @@ $$2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 \mathcal{
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -2364,7 +2321,7 @@ $$s^{2} \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 s \ma
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -2401,7 +2358,7 @@ $$Y s^{2} + 3 Y s + 2 Y - s y{\left (0 \right )} - 3 y{\left (0 \right )} - \lef
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -2438,7 +2395,7 @@ $$\left \{ y{\left (0 \right )} : 2, \quad \left. \frac{d}{d t} y{\left (t \righ
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -2476,7 +2433,7 @@ $$Y s^{2} + 3 Y s + 2 Y - 2 s - 3$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -2514,7 +2471,7 @@ $$\left [ \frac{2 s + 3}{s^{2} + 3 s + 2}\right ]$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -2550,7 +2507,7 @@ $$\frac{e^{t} + 1}{e^{2 t}}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -2566,35 +2523,28 @@ $$\left ( 2, \quad -3\right )$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver <a href="https://es.wikipedia.org/wiki/Transformada_de_Laplace">Transformadas de Laplace</a>, pueden ser una buena alternativa para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> en forma analítica. Pero aún así, siguen existiendo ecuaciones que se resisten a ser resueltas por medios analíticos, para estos casos, debemos recurrir a los métodos numéricos.</p>
 <h3 id="M&#233;todos-num&#233;ricos">M&#233;todos num&#233;ricos<a class="anchor-link" href="#M&#233;todos-num&#233;ricos">&#182;</a></h3><p>Cuando todo lo demás falla, llegan los métodos numéricos al rescate; siempre vamos a poder calcular una aproximación numérica a una solución de una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>. De éstos métodos ya no vamos a obtener las formulas elegantes y acabadas que veníamos viendo, sino que vamos a obtener números.
 Existen muchos enfoques para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> en forma numérica, y generalmente están diseñados para resolver problemas que están formulados como un sistema de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria_de_primer_orden">ecuaciones diferenciales de primer orden</a> de la forma estándar:</p>
-<p>$$ \frac{dy}{dx} = f(x, y(x))$$</p>
-<p>donde $y(x)$ es un <em><a href="https://es.wikipedia.org/wiki/Vector">vector</a></em> de la funciones incógnitas de $x$.</p>
+$$ \frac{dy}{dx} = f(x, y(x))$$<p>donde $y(x)$ es un <em><a href="https://es.wikipedia.org/wiki/Vector">vector</a></em> de la funciones incógnitas de $x$.</p>
 <p>La idea básica de muchos de los métodos numéricos para resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> es capturada por el <strong><a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a></strong>, veamos de que se trata este método.</p>
 <h4 id="El-M&#233;todo-de-Euler">El M&#233;todo de Euler<a class="anchor-link" href="#El-M&#233;todo-de-Euler">&#182;</a></h4><p>Para entender este método, revisemos nuevamente la siguiente <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a>:</p>
-<p>$$ \frac{dy}{dx} = f(x, y(x))$$</p>
-<p>El <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a> señala que puede que no tengamos la función real que representa la solución a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> precedente. Sin embargo, si poseemos la pendiente de la curva en cualquier punto. Es decir, el <em>ritmo de cambio</em> de la curva, que no es otra cosa que su <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a>, la cual podemos utilizar para iterar sobre soluciones en distintos puntos.</p>
+$$ \frac{dy}{dx} = f(x, y(x))$$<p>El <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a> señala que puede que no tengamos la función real que representa la solución a la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuación diferencial</a> precedente. Sin embargo, si poseemos la pendiente de la curva en cualquier punto. Es decir, el <em>ritmo de cambio</em> de la curva, que no es otra cosa que su <a href="https://es.wikipedia.org/wiki/Derivada">derivada</a>, la cual podemos utilizar para iterar sobre soluciones en distintos puntos.</p>
 <p>Supongamos entonces que tenemos el punto $(x_0, y_0)$, que se encuentra en la <em>curva solución</em>. Dada la definición de la ecuación que estamos analizando, sabemos que la pendiente de la <em>curva solución</em>  en ese punto es $f(x_0, y_0)$. ¿Qué pasaría entonces si quisiéramos encontrar la solución numérica en el punto $(x, y)$ que se encuentra a una corta distancia $h$?. En este caso, podríamos definir a $y$ como $y = y_0 + \Delta y$, es decir, $y$ va ser igual al valor de $y$ en el punto inicial, más el cambio que ocurrió en $y$ al movernos a la distancia $h$. Y como el cambio en $y$ va a estar dado por la pendiente de la curva, que en este caso sabemos que es igual a  $f(x_0, y_0)$, podemos definir la siguiente <a href="https://es.wikipedia.org/wiki/Relaci%C3%B3n_de_recurrencia">relación de recurrencia</a> que es la base para encontrar las soluciones numéricas con el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a>:</p>
-<p>$$y = y_0 + f(x_0, y_0)h$$</p>
-<p>La cual podemos generalizar para todo $n$ del siguiente forma:</p>
-<p>$$y_n = y_{n -1} + f(x_{n - 1}, y_{n - 1})h$$.</p>
+$$y = y_0 + f(x_0, y_0)h$$<p>La cual podemos generalizar para todo $n$ del siguiente forma:</p>
+$$y_n = y_{n -1} + f(x_{n - 1}, y_{n - 1})h$$<p>.</p>
 <p>Este método esta íntimamente relacionado con los <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campos de direcciones</a> que analizamos más arriba. En general, el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a> dice que empecemos por el punto dado por el <em>condición incial</em> y continuemos en la dirección indicada por el <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de direcciones</a>. Luego nos detengamos, miramos a la pendiente en la nueva ubicación, y procedemos en esa dirección.</p>
 <h4 id="El-M&#233;todo-de-Runge-Kutta">El M&#233;todo de Runge-Kutta<a class="anchor-link" href="#El-M&#233;todo-de-Runge-Kutta">&#182;</a></h4><p>Otro método que podemos utilizar para encontrar soluciones numéricas a <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>, y que incluso es más preciso que el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler">Método de Euler</a>, es el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Runge-Kutta">Método de Runge-Kutta</a>. En el cual la <a href="https://es.wikipedia.org/wiki/Relaci%C3%B3n_de_recurrencia">relación de recurrencia</a> va a estar dada por un promedio ponderado de términos de la siguiente manera:</p>
-<p>$$y_{k + 1} = y_k + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$</p>
-<p>en dónde:</p>
-<p>$$k_1 = f(x_k, y_k)h_k, \\
+$$y_{k + 1} = y_k + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$<p>en dónde:</p>
+$$k_1 = f(x_k, y_k)h_k, \\
 k_2 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_1}{2}\right)h_k, \\
 k_3 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_2}{2}\right)h_k, \\
 k_4 = f\left(x_k + h_k, y_k + k_3\right)h_k. \\
-$$</p>
-<h4 id="Soluciones-num&#233;ricas-con-Python">Soluciones num&#233;ricas con Python<a class="anchor-link" href="#Soluciones-num&#233;ricas-con-Python">&#182;</a></h4><p>Para poder resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> en forma numérica con <a href="https://www.python.org/">Python</a>, podemos utilizar las herramienta de integración que nos ofrece <a href="https://www.scipy.org/">SciPy</a>, particularmente los dos solucionadores de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a>, <code>integrate.odeint</code> y <code>integrate.ode</code>. La principal diferencia entre ambos, es que <code>integrate.ode</code> es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos <em>solucionadores</em>. Veamos algunos ejemplos:</p>
+$$<h4 id="Soluciones-num&#233;ricas-con-Python">Soluciones num&#233;ricas con Python<a class="anchor-link" href="#Soluciones-num&#233;ricas-con-Python">&#182;</a></h4><p>Para poder resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a> en forma numérica con <a href="https://www.python.org/">Python</a>, podemos utilizar las herramienta de integración que nos ofrece <a href="https://www.scipy.org/">SciPy</a>, particularmente los dos solucionadores de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a>, <code>integrate.odeint</code> y <code>integrate.ode</code>. La principal diferencia entre ambos, es que <code>integrate.ode</code> es más flexible, ya que nos ofrece la posibilidad de elegir entre distintos <em>solucionadores</em>. Veamos algunos ejemplos:</p>
 <p>Comencemos por la siguiente función:</p>
-<p>$$f(x, y(x)) = x + y(x)^2$$</p>
-
+$$f(x, y(x)) = x + y(x)^2$$
 </div>
 </div>
 </div>
@@ -2620,7 +2570,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -2664,8 +2614,7 @@ $$x + y^{2}{\left (x \right )}$$
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Los resultados son dos matrices unidimensionales de <a href="https://www.numpy.org/">NumPy</a> $yp$ y $yn$, de la misma longitud que las correspondientes matrices de coordenadas $xp$ y $xn$, que contienen las soluciones numéricas de la <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuación diferencial ordinaria</a> para esos puntos específicos. Para visualizar la solución, podemos graficar las matrices $yp$ y $yn$, junto con su <a href="https://es.wikipedia.org/wiki/Campo_de_direcciones">Campo de direcciones</a>.</p>
 
@@ -2696,7 +2645,7 @@ $$x + y^{2}{\left (x \right )}$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -3314,15 +3263,13 @@ QmCC
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este ejemplo, solucionamos solo una ecuación. Generalmente, la mayoría de los problemas se presentan en la forma de sistemas de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a>, es decir, que incluyen varias ecuaciones a resolver. Para ver como podemos utilizar a <code>integrate.odeint</code> para resolver este tipo de problemas, consideremos el siguiente sistema de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a>, conocido el <a href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz">atractor de Lorenz</a>:</p>
-<p>$$x'(t) = \sigma(y -x), \\
+$$x'(t) = \sigma(y -x), \\
 y'(t) = x(\rho -z)-y, \\
 z'(t) = xy - \beta z
-$$</p>
-<p>Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen sensiblemente de los valores de los parámetros $\sigma$, $\rho$ y $\beta$. Veamos como podemos resolverlas con la ayuda de <a href="https://www.python.org/">Python</a>.</p>
+$$<p>Estas ecuaciones son conocidas por sus soluciones caóticas, que dependen sensiblemente de los valores de los parámetros $\sigma$, $\rho$ y $\beta$. Veamos como podemos resolverlas con la ayuda de <a href="https://www.python.org/">Python</a>.</p>
 
 </div>
 </div>
@@ -3391,7 +3338,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -4511,8 +4458,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver, los solucionadores numéricos que nos ofrece <a href="https://www.scipy.org/">SciPy</a> son simples de utilizar y pueden simplificar bastante el trabajo de resolver <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial">Ecuaciones diferenciales</a>.</p>
 <h3 id="M&#233;todo-anal&#237;tico-vs-M&#233;todo-num&#233;rico">M&#233;todo anal&#237;tico vs M&#233;todo num&#233;rico<a class="anchor-link" href="#M&#233;todo-anal&#237;tico-vs-M&#233;todo-num&#233;rico">&#182;</a></h3><p>Al resolver una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuación diferencial ordinaria</a> en forma analítica, el resultado es una función, $f$, que nos permite calcular la población, $f(t)$, para cualquier valor de $t$. Al resolver una <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuación diferencial ordinaria</a> en forma numéricamente, se obtienen dos matrices de una dimensión. Podemos pensar a estas matrices como una aproximación discreta de la función continua $f$: <em>"discreta"</em>, ya que sólo se define para ciertos valores de $t$, y <em>"aproximada"</em>, porque cada valor $F_i$ es sólo una estimación del verdadero valor de $f(t)$. Por tanto, estas son limitaciones de las soluciones numéricas. La principal ventaja es que se puede calcular soluciones numéricas de <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> que no tienen soluciones analíticas, que son la gran mayoría de las <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial_ordinaria">ecuaciones diferenciales ordinarias</a> no lineales.</p>
@@ -4526,6 +4472,10 @@ In+7baI/q2QAAAAASUVORK5CYII=
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/Diff_Eq_python.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/Diff_Eq_python.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -4598,6 +4548,9 @@ In+7baI/q2QAAAAASUVORK5CYII=
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -4608,9 +4561,6 @@ In+7baI/q2QAAAAASUVORK5CYII=
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -4634,7 +4584,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

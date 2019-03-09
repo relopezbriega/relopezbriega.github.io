@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img title="Factorización de Matrices con Python" alt="Factorización de Matrices con Python" src="https://relopezbriega.github.io/images/matrix_factorization.png" high="400px" width="600px"></p>
 
@@ -300,18 +299,15 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos en problemas de <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>, muchas veces nos vamos a encontrar con enormes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a>, con cientos o miles de características o <em>features</em>. Una forma simple de reducir las dimensiones de estas características es aplicar alguna técnica de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong>. La <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> tiene enormes aplicaciones en todo tipo de problemas relacionados a la <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial">inteligencia artificial</a>, ya que la <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">reducción de dimensionalidad</a> es la esencia de la <em><a href="https://es.wikipedia.org/wiki/Cognici%C3%B3n">cognición</a></em>.</p>
 <p>Asimismo, la <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> es también un tema unificador dentro del <a href="https://relopezbriega.github.io/tag/algebra.html">álgebra lineal numérica</a>. Una amplia variedad de <a href="https://es.wikipedia.org/wiki/Algoritmo">algoritmos</a> se han desarrollado a lo largo de muchas décadas, proporcionando una plataforma numérica para operaciones de <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> tales como, la resolución de <a href="https://es.wikipedia.org/wiki/Sistema_de_ecuaciones_lineales">sistemas de ecuaciones lineales</a>, la <a href="https://es.wikipedia.org/wiki/Teorema_de_descomposici%C3%B3n_espectral">descomposición espectral</a>, y la identificación de <a href="https://es.wikipedia.org/wiki/Subespacio_vectorial">subespacios vectoriales</a>. Algunos de estos algoritmos también han demostrado ser de utilidad en problemas de <a href="https://relopezbriega.github.io/tag/estadistica.html">análisis estadístico de datos</a>, como es el caso de la <a href="https://es.wikipedia.org/wiki/Descomposici%C3%B3n_en_valores_singulares">descomposición en valores singulares</a> o <a href="https://es.wikipedia.org/wiki/Descomposici%C3%B3n_en_valores_singulares">SVD</a>, por sus siglas en inglés, que es la base del <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">análisis de componentes principales</a> o <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">PCA</a>, que es una técnica muy utilizada para reducir el tamaño de los datos. Muchas investigaciones actuales en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> han centrados sus esfuerzos en el uso de la <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> para mejorar el rendimiento de los sistemas de aprendizaje. Principalmente en el estudio de la <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">factorización de matrices no negativas (NMF)</a>, la cual se centra en el análisis de <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices de datos</a> cuyos elementos son positivos (no negativos), una ocurrencia muy común en los <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a> derivados de textos e imágenes.</p>
 <h2 id="&#191;Qu&#233;-es-la-factorizaci&#243;n-de-matrices?">&#191;Qu&#233; es la factorizaci&#243;n de matrices?<a class="anchor-link" href="#&#191;Qu&#233;-es-la-factorizaci&#243;n-de-matrices?">&#182;</a></h2><p>En <a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas">matemáticas</a>, la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n">factorización</a> es una técnica que consiste en la descomposición de una expresión matemática (que puede ser un número, una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a>, un <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial">tensor</a>, etc.) en forma de producto. Existen distintos métodos de factorización, dependiendo de los objetos matemáticos estudiados; el objetivo es simplificar una expresión o reescribirla en términos de «bloques fundamentales», que reciben el nombre de <em>factores</em>. Así por ejemplo, el número 6 se puede descomponer en el producto de 3 y 2. Si extendemos este concepto al mundo de las <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a>, entonces podemos decir que la <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> consiste en encontrar dos o más <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> de manera tal que cuando se multipliquen nos devuelvan la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> original. Por ejemplo:</p>
-<p>$$\left(\begin{matrix}3 &amp; 4 &amp; 5\\6 &amp; 8 &amp; 10 \end{matrix}\right) = \left(\begin{matrix}1\\2 \end{matrix}\right) \cdot \left(\begin{matrix}3 &amp; 4 &amp; 5 \end{matrix}\right)
-$$</p>
-<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> han ganado popularidad últimamente al haber sido aplicados con éxito en <a href="https://es.wikipedia.org/wiki/Sistema_de_recomendaci%C3%B3n">sistemas de recomendación</a> para descubrir las características latentes que subyacen a las interacciones entre dos tipos de entidades, como por ejemplo usuarios y películas. El algoritmo que ganó el <a href="https://netflixprize.com/">desafío de Netflix</a> fue un sistema basado en métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong>.</p>
+$$\left(\begin{matrix}3 &amp; 4 &amp; 5\\6 &amp; 8 &amp; 10 \end{matrix}\right) = \left(\begin{matrix}1\\2 \end{matrix}\right) \cdot \left(\begin{matrix}3 &amp; 4 &amp; 5 \end{matrix}\right)
+$$<p>Los métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> han ganado popularidad últimamente al haber sido aplicados con éxito en <a href="https://es.wikipedia.org/wiki/Sistema_de_recomendaci%C3%B3n">sistemas de recomendación</a> para descubrir las características latentes que subyacen a las interacciones entre dos tipos de entidades, como por ejemplo usuarios y películas. El algoritmo que ganó el <a href="https://netflixprize.com/">desafío de Netflix</a> fue un sistema basado en métodos de <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong>.</p>
 <h2 id="Factorizaci&#243;n-de-matrices-en-sistemas-de-ecuaciones-lineales">Factorizaci&#243;n de matrices en sistemas de ecuaciones lineales<a class="anchor-link" href="#Factorizaci&#243;n-de-matrices-en-sistemas-de-ecuaciones-lineales">&#182;</a></h2><p>Dos de las <strong><a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a></strong> más utilizadas y que tal vez mucha gente las haya escuchado nombrar alguna vez son la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">factorización LU</a> y la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_QR">factorización QR</a>; las cuales se utilizan a menudo para resolver <a href="https://es.wikipedia.org/wiki/Sistema_de_ecuaciones_lineales">sistemas de ecuaciones lineales</a>.</p>
-<h3 id="Factorizaci&#243;n-LU">Factorizaci&#243;n LU<a class="anchor-link" href="#Factorizaci&#243;n-LU">&#182;</a></h3><p>$$A = LU$$</p>
-<p>En <a href="https://relopezbriega.github.io/tag/algebra.html">álgebra lineal</a>, la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">factorización o descomposición LU</a> (del inglés Lower-Upper) es una forma de <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n">factorización</a> de una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> como el producto de una <a href="https://es.wikipedia.org/wiki/Matriz_triangular">matriz triangular</a> inferior y una superior. La <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">factorización LU</a> expresa el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Gauss">método de Gauss</a> en forma matricial. Así por ejemplo, tenemos que $PA = LU$ donde $P$ es una <a href="https://es.wikipedia.org/wiki/Matriz_de_permutaci%C3%B3n">matriz de permutación</a>. Una condición suficiente para que exista la factorización es que la matriz $A$ sea una <a href="https://es.wikipedia.org/wiki/Matriz_no_singular">matriz no singular</a>.</p>
+<h3 id="Factorizaci&#243;n-LU">Factorizaci&#243;n LU<a class="anchor-link" href="#Factorizaci&#243;n-LU">&#182;</a></h3>$$A = LU$$<p>En <a href="https://relopezbriega.github.io/tag/algebra.html">álgebra lineal</a>, la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">factorización o descomposición LU</a> (del inglés Lower-Upper) es una forma de <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n">factorización</a> de una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> como el producto de una <a href="https://es.wikipedia.org/wiki/Matriz_triangular">matriz triangular</a> inferior y una superior. La <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">factorización LU</a> expresa el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Gauss">método de Gauss</a> en forma matricial. Así por ejemplo, tenemos que $PA = LU$ donde $P$ es una <a href="https://es.wikipedia.org/wiki/Matriz_de_permutaci%C3%B3n">matriz de permutación</a>. Una condición suficiente para que exista la factorización es que la matriz $A$ sea una <a href="https://es.wikipedia.org/wiki/Matriz_no_singular">matriz no singular</a>.</p>
 <p>En <a href="https://www.python.org/">Python</a> podemos encontrar la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">descomposición LU</a> con la ayuda de <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html">SciPy</a> de la siguiente forma:</p>
 
 </div>
@@ -391,7 +387,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -430,7 +426,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -469,7 +465,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -508,7 +504,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -547,7 +543,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -566,11 +562,9 @@ $$</p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Factorizaci&#243;n-QR">Factorizaci&#243;n QR<a class="anchor-link" href="#Factorizaci&#243;n-QR">&#182;</a></h3><p>$$A = QR$$</p>
-<p>La <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_QR">descomposición o factorización QR</a> consiste en la descomposición de una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> como producto de una <a href="https://es.wikipedia.org/wiki/Matriz_ortogonal">matriz ortogonal</a> ($Q^T \cdot Q = I$) por una <a href="https://es.wikipedia.org/wiki/Matriz_triangular">matriz triangular superior</a>. la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_QR">factorización QR</a> es ampliamente utilizada en las finanzas cuantitativas como base para la solución del problema de los <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados_ordinarios">mínimos cuadrados lineales</a>, que a su vez se utiliza para el análisis de <a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal">regresión estadística</a>.</p>
+<h3 id="Factorizaci&#243;n-QR">Factorizaci&#243;n QR<a class="anchor-link" href="#Factorizaci&#243;n-QR">&#182;</a></h3>$$A = QR$$<p>La <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_QR">descomposición o factorización QR</a> consiste en la descomposición de una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> como producto de una <a href="https://es.wikipedia.org/wiki/Matriz_ortogonal">matriz ortogonal</a> ($Q^T \cdot Q = I$) por una <a href="https://es.wikipedia.org/wiki/Matriz_triangular">matriz triangular superior</a>. la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_QR">factorización QR</a> es ampliamente utilizada en las finanzas cuantitativas como base para la solución del problema de los <a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados_ordinarios">mínimos cuadrados lineales</a>, que a su vez se utiliza para el análisis de <a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal">regresión estadística</a>.</p>
 <p>En <a href="https://www.python.org/">Python</a> podemos encontrar la <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_LU">descomposición QR</a> con la ayuda de <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html">SciPy</a> de la siguiente forma:</p>
 
 </div>
@@ -616,7 +610,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -654,7 +648,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -692,7 +686,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -730,7 +724,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -748,8 +742,7 @@ $$</p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Matrices-dispersas-y-no-negativas">Matrices dispersas y no negativas<a class="anchor-link" href="#Matrices-dispersas-y-no-negativas">&#182;</a></h2><p>En muchas ocasiones cuando trabajamos con <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> para representar el mundo físico, nos vamos a encontrar con que muchas de estas <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> están dominadas por mayoría de elementos que son cero. Este tipo de <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> son llamadas <a href="https://es.wikipedia.org/wiki/Matriz_dispersa">matrices dispersas</a>, es decir, <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> de gran tamaño en que la mayor parte de sus elementos son cero. Como sería ineficiente almacenar en la memoria de la computadora todos los elementos en cero, en las <a href="https://es.wikipedia.org/wiki/Matriz_dispersa">matrices dispersas</a> solo vamos a almacenar los valores que no son cero y alguna información adicional acerca de su ubicación.</p>
 <p>Asimismo muchos datos del mundo real son no negativos y los componentes ocultos correspondientes tienen un sentido físico solamente cuando son no negativos. En la práctica, ambas características, ser dispersas y no negativas son a menudo deseable o necesario cuando los componentes subyacentes tienen una interpretación física. Por ejemplo, en el <a href="https://en.wikipedia.org/wiki/Image_processing">procesamiento de imágenes</a> y <a href="https://es.wikipedia.org/wiki/Visi%C3%B3n_artificial">visión artificial</a>, las variables involucradas y los parámetros pueden corresponder a píxeles, y la <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">factorización de matrices dispersas y no negativas</a> está relacionada con la extracción de las partes más relevantes de las imágenes. La representación <em>dispersa</em> de los datos por un número limitado de componentes
@@ -781,7 +774,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -817,7 +810,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -854,7 +847,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -890,7 +883,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -925,7 +918,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -950,8 +943,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="La-descomposici&#243;n-en-valores-singulares-(SVD)-y-el-an&#225;lisis-de-componentes-principales-(PCA)">La descomposici&#243;n en valores singulares (SVD) y el an&#225;lisis de componentes principales (PCA)<a class="anchor-link" href="#La-descomposici&#243;n-en-valores-singulares-(SVD)-y-el-an&#225;lisis-de-componentes-principales-(PCA)">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Descomposici%C3%B3n_en_valores_singulares">SVD</a> y el <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">PCA</a> son herramientas ampliamente utilizadas, por ejemplo, en el análisis de imágenes médicas para la <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">reducción de dimensionalidad</a>, la construcción de modelos, y la comprensión y exploración de datos. Tienen aplicaciones en prácticamente todas las áreas de la ciencia, <a href="https://relopezbriega.github.io/tag/machine-learning.html">machine learning</a>, <a href="https://en.wikipedia.org/wiki/Image_processing">procesamiento de imágenes</a>, <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">ingeniería</a>, <a href="https://es.wikipedia.org/wiki/Gen%C3%A9tica">genética</a>, <a href="https://en.wikipedia.org/wiki/Cognitive_computing">computación cognitiva</a>, <a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica">química</a>, <a href="https://es.wikipedia.org/wiki/Meteorolog%C3%ADa">meteorología</a>, y <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">redes neuronales</a>, sólo por nombrar algunas; en dónde nos encontramos con grandes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a>. El propósito del <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">análisis de componentes principales PCA</a> es derivar un número relativamente pequeño de combinaciones lineales no correlacionadas (componentes principales) de una conjunto de variables aleatorias de <a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica">media</a> cero mientras que conserva la mayor cantidad de información de las variables originales como sea posible. Entre los objetivos del <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">PCA</a> podemos encontrar los siguientes:</p>
 <ol>
@@ -993,7 +985,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -1036,7 +1028,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -1072,7 +1064,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -1111,7 +1103,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -1147,7 +1139,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -1185,7 +1177,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -1224,7 +1216,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -1243,8 +1235,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Ejemplo-de-SVD-y-PCA-con-el-dataset-Iris">Ejemplo de SVD y PCA con el dataset Iris<a class="anchor-link" href="#Ejemplo-de-SVD-y-PCA-con-el-dataset-Iris">&#182;</a></h3><p><img title="Iris dataset" alt="Iris dataset" src="https://relopezbriega.github.io/images/iris.png" high="400px" width="600px"></p>
 <p>El <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> iris contiene mediciones de 150 flores de iris de tres especies diferentes.</p>
@@ -1288,7 +1279,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1299,7 +1290,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -1413,7 +1404,7 @@ es un problema importante en la investigación. En <a href="https://relopezbrieg
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1872,7 +1863,7 @@ AQAAYIQlbwAAABghUAIAAMAIgRIAAABGCJQAAAAwQqAEAACAEQIlAAAAjBAoAQAAYOS/jxlSadF7
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2169,8 +2160,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Factorizaci&#243;n-de-matrices-en-sistemas-de-recomendaci&#243;n">Factorizaci&#243;n de matrices en sistemas de recomendaci&#243;n<a class="anchor-link" href="#Factorizaci&#243;n-de-matrices-en-sistemas-de-recomendaci&#243;n">&#182;</a></h2><p>En un <a href="https://es.wikipedia.org/wiki/Sistema_de_recomendaci%C3%B3n">sistemas de recomendación</a> como <a href="https://www.netflix.com/">Netflix</a> o <a href="https://movielens.org/">MovieLens</a>, hay un grupo de usuarios y un conjunto de elementos (películas en los dos sistemas anteriores). Teniendo en cuenta que cada usuario ha valorado algunos elementos en el sistema, nos gustaría predecir cómo los usuarios calificarían los artículos que aún no se han valorado, de tal manera que podemos hacer recomendaciones a los usuarios. En este caso, toda la información que tenemos sobre las calificaciones existentes pueden ser representados en una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a>. Supongamos ahora que tenemos 5 usuarios y 4 películas y las calificaciones son números enteros de 1 a 5, la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> resultante puede ser algo como la siguiente (el guión significa que el usuario aún no ha calificado la película):</p>
 <table>
@@ -2287,7 +2277,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -2327,7 +2317,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -2398,7 +2388,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -2418,8 +2408,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Librer&#237;as-de-Python-para-factorizaci&#243;n-de-matrices">Librer&#237;as de Python para factorizaci&#243;n de matrices<a class="anchor-link" href="#Librer&#237;as-de-Python-para-factorizaci&#243;n-de-matrices">&#182;</a></h2><p>Para concluir, podemos enumerar algunas de las librerías de <a href="https://www.python.org/">Python</a> que nos pueden ser de mucha utilidad a la hora de trabajar con <a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices">Factorización de matrices</a>, como ser:</p>
 <ul>
@@ -2439,6 +2428,10 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/MatrixFact.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/MatrixFact.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2513,6 +2506,9 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -2523,9 +2519,6 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -2549,7 +2542,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

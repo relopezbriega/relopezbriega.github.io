@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Pobabilidad y Estadistica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/pobabilidad-y-estadistica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-05-21T00:00:00-03:00</updated><entry><title>Introducción a la inferencia Bayesiana con Python</title><link href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/" rel="alternate"></link><published>2017-05-21T00:00:00-03:00</published><updated>2017-05-21T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-05-21:/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Pobabilidad y Estadistica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/pobabilidad-y-estadistica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-05-21T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Introducción a la inferencia Bayesiana con Python</title><link href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/" rel="alternate"></link><published>2017-05-21T00:00:00-03:00</published><updated>2017-05-21T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-05-21:/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" &gt;&lt;/p&gt;
 
@@ -10,16 +9,14 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace"&gt;Pierre-Simon Lapace&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;Introducci&amp;#243;n: La incertidumbre y el problema de la inducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" &gt;&lt;/p&gt;
 
@@ -27,8 +24,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -38,9 +34,8 @@ Las hipótesis científicas tienen un carácter general en relación con las obs
 &lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/David_Hume"&gt;David Hume&lt;/a&gt;, demostró correctamente, que partiendo solamente de las evidencias del pasado y del presente, no podemos inferir con seguridad nada sobre el futuro. Que hayamos visto solamente miles de cisnes blancos, no quiere decir que todos los cisnes sean blancos; siempre existirá la &lt;em&gt;posibilidad&lt;/em&gt; de que podamos encontrar un cisne negro que &lt;em&gt;falsifique&lt;/em&gt; toda nuestra teoría. Este problema, hace que en esencia todas las teorías tengan un carácter &lt;a href="relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;probabilístico&lt;/a&gt;. 
 Desde hace ya tiempo se considera que las teorías científicas se extienden más allá de cualquier dato experimental y por lo tanto no pueden ser verificadas (es decir, logicamente implicadas) por ellos. Si bien existe un consenso en que la certeza absoluta no puede ser nunca alcanzable; la mayoría de los científicos coinciden en que las teorías pueden alcanzar un estado intermedio entre la certeza absoluta y la falsificación; el cual dependerá de la calidad de las observaciones y de cómo la teoría se ve afectada por nuevas evidencias. Desde esta perspectiva, entonces la pregunta crucial pasa a ser ¿cómo adaptamos nuestras creencias a medida que vamos incorporando nuevas evidencias sobre nuestras teorías? la respuesta a esta pregunta, la podemos encontrar en el &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema de Bayes&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="El-Teorema-de-Bayes"&gt;El Teorema de Bayes&lt;a class="anchor-link" href="#El-Teorema-de-Bayes"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Thomas_Bayes"&gt;Thomas Bayes&lt;/a&gt; fue un ministro presbiteriano y matemático inglés que estudió la relación íntima que existe entre la &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;probabilidad&lt;/a&gt;, la predicción y el progreso científico. Su trabajo se centró principalmente en cómo formulamos nuestras creencias probabilísticas sobre el mundo que nos rodea cuando nos encontramos con nuevos datos o evidencias. El argumento de &lt;a href="https://es.wikipedia.org/wiki/Thomas_Bayes"&gt;Bayes&lt;/a&gt; no es que el mundo es intrínsecamente probabilístico o incierto, ya que él era un creyente en la divina perfección; sino que aprendemos sobre el mundo a través de la aproximación, acercándonos cada vez más a la verdad a medida que recogemos más evidencias. Este argumento lo expresó matemáticamente a través de su famoso &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}
-$$&lt;/p&gt;
-&lt;p&gt;En donde:&lt;/p&gt;
+$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}
+$$&lt;p&gt;En donde:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;$P(H)$ es el &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;a priori&lt;/a&gt;&lt;/strong&gt;, la forma de introducir conocimiento previo sobre los valores que puede tomar la hipótesis. A veces cuando no sabemos demasiado se suelen usar &lt;em&gt;a prioris&lt;/em&gt; que asignan igual probabilidad a todos los valores de la hipótesis; otras veces se puede elegir &lt;em&gt;a prioris&lt;/em&gt; que restrinjan los valores a rangos razonables, por ejemplo solo valores positivos; y otras veces contamos con información mucho más precisa, como experimentos previos o límites impuesto por alguna teoría.&lt;/li&gt;
 &lt;/ul&gt;
@@ -64,8 +59,7 @@ $$&lt;/p&gt;
 &lt;p&gt;En esencia, la &lt;a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"&gt;inferencia bayesiana&lt;/a&gt; combina nuestra experiencia previa, en la forma de la &lt;em&gt;probabilidad &lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;a priori&lt;/a&gt;&lt;/em&gt;; con los datos observados, en la forma del &lt;em&gt;likelihood&lt;/em&gt;; para interpretarlos y arribar a una &lt;em&gt;probabilidad &lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori"&gt;a posteriori&lt;/a&gt;&lt;/em&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"&gt;inferencia bayesiana&lt;/a&gt; no nos va a garantizar que podamos alcanzar la respuesta correcta. En su lugar, nos va a proporcionar la &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;probabilidad&lt;/a&gt; de que cada una de un número de respuestas alternativas, sea verdadera. Y luego podemos utilizar esta información para encontrar la respuesta que más probablemente sea la correcta. En otras palabras, nos proporciona un mecanismo para hacer una especie de &lt;em&gt;adivinación basada en información&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id="Bayes-en-el-diagnostico-m&amp;#233;dico"&gt;Bayes en el diagnostico m&amp;#233;dico&lt;a class="anchor-link" href="#Bayes-en-el-diagnostico-m&amp;#233;dico"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para que quede más claro, ilustremos la aplicación de la &lt;a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"&gt;inferencia bayesiana&lt;/a&gt; con un simple ejemplo del diagnostico médico, uno de los campos dónde más éxito ha tenido. Supongamos que nos hicimos un estudio y nos ha dado positivo para una rara enfermedad que solo el 0.3 % de la población tiene. La tasa de efectividad de este estudio es del 99 %, es decir, que solo da &lt;a href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II"&gt;falsos positivos&lt;/a&gt; en el 1 % de los casos. ¿Cuán probable es que realmente tengamos la enfermedad?.&lt;/p&gt;
 &lt;p&gt;En un principio, nos veríamos tentados a responder que hay un 99 % de probabilidad de que tengamos la enfermedad; pero en este caso nos estaríamos olvidando del concepto importante del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;a priori&lt;/a&gt;&lt;/em&gt;. Sabemos con anterioridad que la enfermedad es extremadamente rara (solo el 0.3 % la tiene); si incluimos esta información previa en nuestro cálculo de probabilidad y aplicamos el &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema de Bayes&lt;/a&gt; podemos llegar a una conclusión totalmente distinta.&lt;/p&gt;
-&lt;p&gt;$$ P(\text{ enfermedad | pos}) = \frac{P(\text{ pos | enfermedad})P( \text{enfermedad})}{P(\text{pos})}$$&lt;/p&gt;
-
+$$ P(\text{ enfermedad | pos}) = \frac{P(\text{ pos | enfermedad})P( \text{enfermedad})}{P(\text{pos})}$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -95,7 +89,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -111,8 +105,7 @@ $$&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, luego de aplicar el &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema de Bayes&lt;/a&gt; llegamos a la conclusión de que en realidad nuestra probabilidad de estar realmente enfermo es de sólo 30 % y no de 99 %, ya que podemos ser uno de los &lt;a href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II"&gt;falsos positivos&lt;/a&gt; del estudio y la enfermedad es realmente muy rara. Como este ejemplo demuestra, la inclusión del &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;a priori&lt;/a&gt;&lt;/em&gt; es sumamente importante para la  &lt;a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"&gt;inferencia bayesiana&lt;/a&gt;, por lo cual también debemos ser sumamente cuidadosos a la hora de elegirla. &lt;strong&gt;Cuando nuestra &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;a priori&lt;/a&gt;&lt;/em&gt; es fuerte, puede ser sorprendentemente resistente frente a nuevas evidencias.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="Redes-Bayesianas"&gt;Redes Bayesianas&lt;a class="anchor-link" href="#Redes-Bayesianas"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema de Bayes&lt;/a&gt; nos permite actualizar las probabilidades de variables cuyo estado no hemos observado dada una serie de nuevas observaciones. Las &lt;a href="https://es.wikipedia.org/wiki/Red_bayesiana"&gt;redes bayesianas&lt;/a&gt; automatizan este proceso, permitiendo que el razonamiento avance en cualquier dirección a través de la red de variables. Las &lt;a href="https://es.wikipedia.org/wiki/Red_bayesiana"&gt;redes bayesianas&lt;/a&gt; están constituidas por una estructura en forma de &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt;, en la que cada &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodo&lt;/a&gt; representa &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; (discretas o continuas) y cada &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arista&lt;/a&gt; representa las conexiones directas entre ellas. Estas conexiones suelen representar relaciones de causalidad. Adicionalmente, las &lt;a href="https://es.wikipedia.org/wiki/Red_bayesiana"&gt;redes bayesianas&lt;/a&gt; también modelan el peso cuantitativo de las conexiones entre las  variables, permitiendo que las &lt;em&gt;creencias probabilísticas&lt;/em&gt; sobre ellas se actualicen automáticamente a medida que se disponga de nueva información.
@@ -239,7 +232,7 @@ En este caso, la idea es utilizar un modelo &lt;a href="https://es.wikipedia.org
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stderr output_text"&gt;
@@ -279,7 +272,7 @@ WARNING (theano.tensor.blas): We did not found a dynamic library into the librar
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1093,7 +1086,7 @@ UCgUCoVCoSiT/w8uUpRsRBiVAQAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1120,8 +1113,7 @@ p:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos el modelo nos indica que la moneda parece tener un claro sesgo hacia cara.&lt;/p&gt;
 &lt;h4 id="El-problema-de-la-hierba-mojada"&gt;El problema de la hierba mojada&lt;a class="anchor-link" href="#El-problema-de-la-hierba-mojada"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Supongamos que hay dos eventos los cuales pueden causar que la hierba esté húmeda: que el rociador esté activado o que esté lloviendo. También supongamos que la lluvia tiene un efecto directo sobre el uso del rociador (usualmente cuando llueve el rociador se encuentra apagado). Entonces la situación puede ser modelada con la siguiente &lt;a href="https://es.wikipedia.org/wiki/Red_bayesiana"&gt;red bayesiana&lt;/a&gt;.&lt;/p&gt;
@@ -1189,7 +1181,7 @@ p:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1205,8 +1197,7 @@ Probabilidad de que la hierba este mojada por el rociador: 0.62105
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;De acuerdo a los resultados de la &lt;a href="https://es.wikipedia.org/wiki/Red_bayesiana"&gt;red bayesiana&lt;/a&gt;, si vemos que la hierba esta mojada, la probabilidad de que este lloviendo es alrededor del 38%.&lt;/p&gt;
 &lt;h2 id="Clasificador-Bayes-ingenuo"&gt;Clasificador Bayes ingenuo&lt;a class="anchor-link" href="#Clasificador-Bayes-ingenuo"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Uno de los clasificadores más utilizados en &lt;a href="https://relopezbriega.github.io/category/machine-learning.html"&gt;Machine Learning&lt;/a&gt; por su simplicidad y rapidez, es el &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"&gt;Clasificador Bayes ingenuo&lt;/a&gt;. El cual es una técnica de clasificación supervisada basada en el &lt;a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"&gt;teorema de Bayes&lt;/a&gt; que asume que existe una &lt;a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)"&gt;independencia&lt;/a&gt; entre los &lt;em&gt;atributos&lt;/em&gt;. En términos simples, un &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"&gt;Clasificador Bayes ingenuo&lt;/a&gt; asume que la presencia de una característica particular en una clase no está relacionada con la presencia de cualquier otra característica. Por ejemplo, una fruta puede considerarse como una manzana si es roja, redonda y de aproximadamente 9 cm de diámetro. Incluso si estas características dependen unas de otras o de la existencia de otras características, todas estas propiedades contribuyen independientemente a la probabilidad de que esta fruta sea una manzana. Se lo llama &lt;em&gt;ingenuo&lt;/em&gt; ya que asumir &lt;a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)"&gt;independencia&lt;/a&gt; absoluta entre todos los atributos, no es algo que se suela dar en la realidad. 
@@ -1271,7 +1262,7 @@ El modelo &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingen
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1283,7 +1274,7 @@ Efectividad del algoritmo:  0.93
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1412,8 +1403,7 @@ NFIQkYBKQUQCKgURCagURCSgUhCRgEpBRAIqBREJ/D+i+LYvQNBebAAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este sencillo ejemplo, podemos ver como el &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"&gt;Clasificador Bayes ingenuo&lt;/a&gt; ha clasificado correctamente la mayoría de los casos del dataset &lt;a href="https://es.wikipedia.org/wiki/Iris_flor_conjunto_de_datos"&gt;iris&lt;/a&gt;, obteniendo un efectividad del 93 %.&lt;/p&gt;
 &lt;p&gt;Debido a que los &lt;a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"&gt;clasificadores bayesianos ingenuos&lt;/a&gt; hacen suposiciones tan estrictas acerca de los datos, generalmente no funcionarán tan bien con modelos más complicados. Dicho esto, tienen varias ventajas:&lt;/p&gt;
@@ -1436,8 +1426,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category><category term="Bayes"></category><category term="inferencia"></category></entry><entry><title>Introducción a los métodos de Monte-Carlo con Python</title><link href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/" rel="alternate"></link><published>2017-01-10T00:00:00-03:00</published><updated>2017-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-01-10:/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Métodos de Monte Carlo" title="Métodos de Monte Carlo" src="https://relopezbriega.github.io/images/monte-carlo-methods.jpg" &gt;&lt;/p&gt;
 
@@ -1445,13 +1434,11 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En el cierre de mi &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;artículo anterior&lt;/a&gt;, comentaba sobre la sorprendente influencia que han tenido los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio"&gt;números aleatorios&lt;/a&gt;, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, &lt;a href="https://relopezbriega.github.io/category/finanzas.html"&gt;finanzas&lt;/a&gt; y &lt;a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html"&gt;estadísticas …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Métodos de Monte Carlo" title="Métodos de Monte Carlo" src="https://relopezbriega.github.io/images/monte-carlo-methods.jpg" &gt;&lt;/p&gt;
 
@@ -1459,8 +1446,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En el cierre de mi &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;artículo anterior&lt;/a&gt;, comentaba sobre la sorprendente influencia que han tenido los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio"&gt;números aleatorios&lt;/a&gt;, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, &lt;a href="https://relopezbriega.github.io/category/finanzas.html"&gt;finanzas&lt;/a&gt; y &lt;a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html"&gt;estadísticas&lt;/a&gt;. En esencia, detrás de cada una de esas soluciones encontramos una familia de métodos que se conocen bajo el nombre de &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;Métodos de Monte-Carlo&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-son-los-m&amp;#233;todos-de-Monte-Carlo?"&gt;&amp;#191;Qu&amp;#233; son los m&amp;#233;todos de Monte-Carlo?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-son-los-m&amp;#233;todos-de-Monte-Carlo?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;Métodos de Monte-Carlo&lt;/a&gt; son técnicas para analizar fenómenos por medio de &lt;a href="https://es.wikipedia.org/wiki/Algoritmo"&gt;algoritmos computacionales&lt;/a&gt;, que utilizan y dependen fundamentalmente de la generación de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio"&gt;números aleatorios&lt;/a&gt;. El término Monte-Carlo, hace referencia al &lt;a href="https://es.wikipedia.org/wiki/Casino_de_Montecarlo"&gt;casino de Montecarlo&lt;/a&gt;, una de las capitales de los juegos de azar; y se utilizó como denominación para estás técnicas por la &lt;a href="https://es.wikipedia.org/wiki/Aleatoriedad"&gt;aleatoriedad&lt;/a&gt; inherente que poseen. El estudio de los &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;Métodos de Monte-Carlo&lt;/a&gt; requiere un conocimiento detallado en una amplia gama de campos; por ejemplo, la &lt;em&gt;&lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; para describir los experimentos y procesos aleatorios, la &lt;em&gt;&lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt;&lt;/em&gt; para analizar los datos, las &lt;a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n"&gt;ciencias de la computación&lt;/a&gt; para implementar eficientemente los &lt;a href="https://es.wikipedia.org/wiki/Algoritmo"&gt;algoritmos&lt;/a&gt; y la &lt;em&gt;programación matemática&lt;/em&gt; para formular y resolver problemas de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt;.&lt;/p&gt;
@@ -1496,7 +1482,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -1531,7 +1517,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -1567,7 +1553,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1607,7 +1593,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1627,8 +1613,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este ejemplo podemos ver como la función &lt;code&gt;random&lt;/code&gt; genera números aleatorios entre 0 y 1, también podemos ver como con el uso de &lt;code&gt;seed&lt;/code&gt; podemos replicar el comportamiento aleatorio.&lt;/p&gt;
 &lt;h3 id="Elegir-un-buen-generador-de-n&amp;#250;meros-aleatorios"&gt;Elegir un buen generador de n&amp;#250;meros aleatorios&lt;a class="anchor-link" href="#Elegir-un-buen-generador-de-n&amp;#250;meros-aleatorios"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Existe una gran variedad de &lt;a href="https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios"&gt;generadores de números aleatorios&lt;/a&gt; que podemos elegir; pero elegir un buen &lt;a href="https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios"&gt;generador de números aleatorios&lt;/a&gt; es como elegir un coche nuevo: para algunas personas o aplicaciones la velocidad es primordial, mientras que para otros la robustez y la fiabilidad son más importantes. Para la &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;simulación de Monte-Carlo&lt;/a&gt; las propiedades distributivas de los &lt;a href="https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios"&gt;generadores aleatorios&lt;/a&gt; es primordial, mientras que en la criptografía la imprevisibilidad es crucial. Por tal motivo, el generador que vayamos a elegir dependerá de la aplicación que le vayamos a dar.&lt;/p&gt;
@@ -1699,7 +1684,7 @@ Veamos como funciona con un ejemplo, calculemos el área de un círculo de radio
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -3538,7 +3523,7 @@ nA2IC3DHcRzH2YC4AHccx3GcDcj/AZxQLkucC6V6AAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -4731,8 +4716,7 @@ xIgRI0aMIkQswGPEiBEjRowixP8H6p8O+BLp6XYAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos en este ejemplo, para calcular el área del círculo realizamos un gran número de experimentos aleatorios, en el primer ejemplo utilizamos 10,000 experimentos; y luego calculamos el área obteniendo una &lt;a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica"&gt;media aritmética&lt;/a&gt; de los valores que caen dentro de la superficie del círculo. Debemos hacer notar que incluso utilizando un gran número de experimentos aún así en el primer ejemplo no logramos obtener los primeros dos decimales correctos; recién en el segundo ejemplo, cuando utilizamos 100,000 experimentos logramos obtener los primeros dos dígitos correctos; esto demuestra que el &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;Método de Monte-Carlo&lt;/a&gt; en su versión más cruda tarda bastante en &lt;a href="https://es.wikipedia.org/wiki/Convergencia_en_probabilidad"&gt;converger&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="T&amp;#233;cnicas-de-reducci&amp;#243;n-de-varianza"&gt;T&amp;#233;cnicas de reducci&amp;#243;n de varianza&lt;a class="anchor-link" href="#T&amp;#233;cnicas-de-reducci&amp;#243;n-de-varianza"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Existen varias técnicas generales para la &lt;a href="https://en.wikipedia.org/wiki/Variance_reduction"&gt;reducción de la varianza&lt;/a&gt;, estos métodos mejoran la precisión y la tasa de &lt;a href="https://es.wikipedia.org/wiki/Convergencia_en_probabilidad"&gt;convergencia&lt;/a&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;integración&lt;/a&gt; por medio del &lt;a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"&gt;Método de Monte-Carlo&lt;/a&gt; sin aumentar el número de experimentos. Algunas de estas técnicas son:&lt;/p&gt;
@@ -4750,25 +4734,22 @@ Las técnicas &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
 &lt;p&gt;&lt;img alt="Cadena de Markov" title="Cadena de Markov" src="https://relopezbriega.github.io/images/MC.png" &gt;&lt;/p&gt;
 &lt;p&gt;Los estados de la cadena se representan como los nodos del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)" &gt;arista&lt;/a&gt; de dirección se extiende de un nodo $x$ hacia otro nodo $y$ si la transición de $x$ hacia $y$ es posible en una iteración. Cada una de estas &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)" &gt;aristas&lt;/a&gt; de dirección tienen una &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; asociada $P_{xy}$; esta es la &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; de que el nodo sea elegido en la siguiente iteración cuando la cadena se encuentra en el estado $x$. La cadena comienza en algún estado, digamos $X_0$, que puede ser elegido en forma &lt;a href="https://es.wikipedia.org/wiki/Aleatoriedad"&gt;aleatoria&lt;/a&gt; de acuerdo con una &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución&lt;/a&gt; inicial o simplemente asignado en forma arbitraria. Desde allí, la cadena se mueve de un estado a otro en cada iteración según las &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidades&lt;/a&gt; de transición del nodo vecino.&lt;/p&gt;
 &lt;h4 id="Representaci&amp;#243;n-matricial"&gt;Representaci&amp;#243;n matricial&lt;a class="anchor-link" href="#Representaci&amp;#243;n-matricial"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Como alternativa a la representación en forma de &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt;, la cadena antes descripta también puede ser representada por una &lt;a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" &gt;matriz&lt;/a&gt; $P = (p_{xy})$ de las &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidades&lt;/a&gt; $p_{xy}$ de transición de un estado $x$ a un estado $y$ en una iteración de la cadena. Esta &lt;a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" &gt;matriz&lt;/a&gt; es llamada &lt;a href="https://es.wikipedia.org/wiki/Matriz_estoc%C3%A1stica"&gt;matriz de transición&lt;/a&gt; y tiene la característica que todas sus filas deben sumar 1. Por ejemplo, la &lt;a href="https://es.wikipedia.org/wiki/Matriz_estoc%C3%A1stica"&gt;matriz de transición&lt;/a&gt; de nuestro ejemplo sería la siguiente:&lt;/p&gt;
-&lt;p&gt;$$ P = \begin{bmatrix}
+$$ P = \begin{bmatrix}
 p_{11} &amp;amp; p_{12} &amp;amp; 0 &amp;amp; p_{14} \\ 
 p_{21} &amp;amp; 0  &amp;amp; p_{23} &amp;amp; 0 \\
 p_{31} &amp;amp; 0  &amp;amp; 0 &amp;amp; p_{34} \\
 0 &amp;amp; 0  &amp;amp; p_{43} &amp;amp; p_{44} 
 \end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;Esta formulación de &lt;a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" &gt;matriz&lt;/a&gt; es mucho más que una descripción tabular de la cadena; también es una herramienta de cálculo. Ya que si por ejemplo definimos a $p_t$ como el &lt;em&gt;vector de probabilidad&lt;/em&gt; de una &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variable aleatoria&lt;/a&gt; $X_t$; entonces podemos calcular $p_{t + 1}$ como una &lt;a href="https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices"&gt;multiplicación de matrices&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;$$ p_{t + 1} = p_t \cdot P, \hspace{1cm}   t= 1, 2, \dots 
-$$&lt;/p&gt;
-&lt;h4 id="La-distribuci&amp;#243;n-invariante"&gt;La distribuci&amp;#243;n invariante&lt;a class="anchor-link" href="#La-distribuci&amp;#243;n-invariante"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Una de las características generales de las &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadenas de Markov&lt;/a&gt; es que pueden poseer una &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt;, tomemos por ejemplo la siguiente representación matricial de una &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadena de Markov&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;$$ P = \begin{bmatrix}
+$$&lt;p&gt;Esta formulación de &lt;a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)" &gt;matriz&lt;/a&gt; es mucho más que una descripción tabular de la cadena; también es una herramienta de cálculo. Ya que si por ejemplo definimos a $p_t$ como el &lt;em&gt;vector de probabilidad&lt;/em&gt; de una &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variable aleatoria&lt;/a&gt; $X_t$; entonces podemos calcular $p_{t + 1}$ como una &lt;a href="https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices"&gt;multiplicación de matrices&lt;/a&gt;&lt;/p&gt;
+$$ p_{t + 1} = p_t \cdot P, \hspace{1cm}   t= 1, 2, \dots 
+$$&lt;h4 id="La-distribuci&amp;#243;n-invariante"&gt;La distribuci&amp;#243;n invariante&lt;a class="anchor-link" href="#La-distribuci&amp;#243;n-invariante"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Una de las características generales de las &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadenas de Markov&lt;/a&gt; es que pueden poseer una &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt;, tomemos por ejemplo la siguiente representación matricial de una &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadena de Markov&lt;/a&gt;:&lt;/p&gt;
+$$ P = \begin{bmatrix}
 0.3 &amp;amp; 0.2 &amp;amp; 0.5 \\ 
 0.4 &amp;amp; 0.3 &amp;amp; 0.3 \\ 
 0.3 &amp;amp; 0.4 &amp;amp; 0.3  
 \end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;Si comenzamos en el primer estado de la cadena, podemos obtener $p_1$ del siguiente modo:&lt;/p&gt;
-&lt;p&gt;$$ p_1 = \begin{bmatrix}
+$$&lt;p&gt;Si comenzamos en el primer estado de la cadena, podemos obtener $p_1$ del siguiente modo:&lt;/p&gt;
+$$ p_1 = \begin{bmatrix}
 1 &amp;amp; 0 &amp;amp; 0  
 \end{bmatrix} \cdot \begin{bmatrix}
 0.3 &amp;amp; 0.2 &amp;amp; 0.5 \\ 
@@ -4777,9 +4758,8 @@ $$&lt;/p&gt;
 \end{bmatrix} = \begin{bmatrix}
 0.3 &amp;amp; 0.2 &amp;amp; 0.5 
 \end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;Ahora que ya obtuvimos $p_1$, podemos continuar y obtener $p_2$:&lt;/p&gt;
-&lt;p&gt;$$ p_2 = p_1 P = \begin{bmatrix}
+$$&lt;p&gt;Ahora que ya obtuvimos $p_1$, podemos continuar y obtener $p_2$:&lt;/p&gt;
+$$ p_2 = p_1 P = \begin{bmatrix}
 0.3 &amp;amp; 0.2 &amp;amp; 0.5 
 \end{bmatrix} \cdot \begin{bmatrix}
 0.3 &amp;amp; 0.2 &amp;amp; 0.5 \\ 
@@ -4788,9 +4768,8 @@ $$&lt;/p&gt;
 \end{bmatrix} = \begin{bmatrix}
 0.32 &amp;amp; 0.22 &amp;amp; 0.36
 \end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;Si continuamos con este proceso en forma recursiva, veremos que la distribución tiende hacía un &lt;em&gt;límite&lt;/em&gt;, este límite es su &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;$$ p_3 = p_2 P = \begin{bmatrix}
+$$&lt;p&gt;Si continuamos con este proceso en forma recursiva, veremos que la distribución tiende hacía un &lt;em&gt;límite&lt;/em&gt;, este límite es su &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt;.&lt;/p&gt;
+$$ p_3 = p_2 P = \begin{bmatrix}
 0.332 &amp;amp; 0.304 &amp;amp; 0.364 
 \end{bmatrix}, \\  
 p_4 = p_3 P = \begin{bmatrix}
@@ -4803,8 +4782,7 @@ p_5 = p_4 P = \begin{bmatrix}
 p_{10} = p_9 P = \begin{bmatrix}
 0.330357 &amp;amp; 0.303571 &amp;amp; 0.366072 
 \end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;Veamos el ejemplo con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; para que quede más claro.&lt;/p&gt;
+$$&lt;p&gt;Veamos el ejemplo con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; para que quede más claro.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4833,7 +4811,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
 
 
 
@@ -4874,7 +4852,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -4898,26 +4876,22 @@ p_11 = [ 0.33035714  0.30357143  0.36607143]
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, luego de 12 iteraciones la distribución alcanza su &lt;em&gt;límite&lt;/em&gt; y ya no cambian los resultados. Hemos alcanzado la &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt;!&lt;/p&gt;
 &lt;h3 id="El-algoritmo-Metropolis-Hastings"&gt;El algoritmo Metropolis-Hastings&lt;a class="anchor-link" href="#El-algoritmo-Metropolis-Hastings"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Uno de los métodos &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"&gt;MCMC&lt;/a&gt; más populares es el &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt;; de hecho la mayoría de los algoritmos de &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"&gt;MCMC&lt;/a&gt; pueden ser interpretados como casos especiales de este algoritmo. El &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt; esta catalogado como &lt;strong&gt;uno de los 10 algoritmos más importantes y más utilizados en ciencia e ingeniería&lt;/strong&gt; en los últimos veinte años.Se encuentra en el corazón de la mayoría de los métodos de muestreo &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"&gt;MCMC&lt;/a&gt;.
 El problema básico que intenta resolver el &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt; es proporcionar un método para generar muestras de alguna distribución genérica, $P(x)$. La idea es que en muchos casos, podemos saber cómo escribir la ecuación para la &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución de probabilidad&lt;/a&gt; $P(x)$, pero no sabemos cómo generar muestras aleatorias de la misma. Entonces la idea básica detrás de este algoritmo es la de construir una &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadena de Markov&lt;/a&gt; cuya &lt;a href="https://en.wikipedia.org/wiki/Stationary_distribution"&gt;distribución invariante&lt;/a&gt; sea la distribución de muestreo que deseamos, es decir $P(x)$. En principio, esto puede parecer bastante complicado, pero la flexibilidad inherente en la elección de las &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidades&lt;/a&gt; de transición lo hacen más simple de lo que parece.&lt;/p&gt;
 &lt;h4 id="&amp;#191;C&amp;#243;mo-funciona-el-algoritmo?"&gt;&amp;#191;C&amp;#243;mo funciona el algoritmo?&lt;a class="anchor-link" href="#&amp;#191;C&amp;#243;mo-funciona-el-algoritmo?"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;El algoritmo funciona del siguiente modo. Supongamos que el estado actual de la &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadena de Markov&lt;/a&gt;  es $x_n$, y queremos generar $x_{n + 1}$. De acuerdo con el  &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt;, la generación de $x_{n + 1}$ &lt;strong&gt;es un proceso en dos etapas&lt;/strong&gt;. La &lt;strong&gt;primera etapa&lt;/strong&gt; consiste en generar un &lt;em&gt;candidato&lt;/em&gt;, que denominaremos $x^*$. El valor de $x^*$ se genera a partir de la &lt;em&gt;&lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución&lt;/a&gt; propuesta&lt;/em&gt;, denotada $Q (x^* | x_n)$, la cual depende del estado actual de la &lt;a href="https://es.wikipedia.org/wiki/Cadena_de_M%C3%A1rkov"&gt;cadena de Markov&lt;/a&gt; , $x_n$. Existen algunas limitaciones técnicas menores sobre la &lt;em&gt;&lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución&lt;/a&gt; propuesta&lt;/em&gt; que podemos utilizar, pero en su mayor parte puede ser cualquier cosa que deseemos. Una forma típica de hacerlo es utilizar una &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;distribución normal&lt;/a&gt; centrada en el estado actual $x_n$. Es decir,&lt;/p&gt;
-&lt;p&gt;$$ x^*|x_n \sim Normal(x_n, \sigma^2)$$&lt;/p&gt;
-&lt;p&gt;La &lt;strong&gt;segunda etapa&lt;/strong&gt; es la de &lt;em&gt;aceptación-rechazo&lt;/em&gt;. Lo primero que debemos hacer en este paso es calcular la &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; de aceptación $A(x_n \rightarrow x^*)$, la cual estará dada por:&lt;/p&gt;
-&lt;p&gt;$$A(x_n \rightarrow x^*) = \min \left(1, \frac{P(x^*)}{P(x_n)} \cdot \frac{Q(x_n | x^*)}{Q(x^* | x_n)} \right)
-$$&lt;/p&gt;
-&lt;p&gt;Muy bien. Ahora que tenemos el &lt;em&gt;candidato&lt;/em&gt; $x^*$ y hemos calculado la &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; de aceptación $A(x_n \rightarrow x^*)$, es tiempo de decidir &lt;em&gt;aceptar&lt;/em&gt; al candidato (en cuyo caso se establecemos $x_{n + 1} = x^*$); o &lt;em&gt;rechazar&lt;/em&gt; al candidato (en cuyo caso estableceremos $x_{n + 1} = x_n$). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos $u$. Entonces:&lt;/p&gt;
-&lt;p&gt;$$x_{n + 1} = \left\{
+$$ x^*|x_n \sim Normal(x_n, \sigma^2)$$&lt;p&gt;La &lt;strong&gt;segunda etapa&lt;/strong&gt; es la de &lt;em&gt;aceptación-rechazo&lt;/em&gt;. Lo primero que debemos hacer en este paso es calcular la &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; de aceptación $A(x_n \rightarrow x^*)$, la cual estará dada por:&lt;/p&gt;
+$$A(x_n \rightarrow x^*) = \min \left(1, \frac{P(x^*)}{P(x_n)} \cdot \frac{Q(x_n | x^*)}{Q(x^* | x_n)} \right)
+$$&lt;p&gt;Muy bien. Ahora que tenemos el &lt;em&gt;candidato&lt;/em&gt; $x^*$ y hemos calculado la &lt;a href="https://relopezbriega.github.io/tag/probabilidad.html"&gt;probabilidad&lt;/a&gt; de aceptación $A(x_n \rightarrow x^*)$, es tiempo de decidir &lt;em&gt;aceptar&lt;/em&gt; al candidato (en cuyo caso se establecemos $x_{n + 1} = x^*$); o &lt;em&gt;rechazar&lt;/em&gt; al candidato (en cuyo caso estableceremos $x_{n + 1} = x_n$). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos $u$. Entonces:&lt;/p&gt;
+$$x_{n + 1} = \left\{
     \begin{array}{ll}
             x^*  &amp;amp; \mbox{si } u \leq A(x_n \rightarrow x^*)\\
             x_n  &amp;amp; \mbox{si } u &amp;gt; A(x_n \rightarrow x^*)
     \end{array}
 \right.
-$$&lt;/p&gt;
-&lt;p&gt;Y esto es en esencia como funciona el &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt;!&lt;/p&gt;
+$$&lt;p&gt;Y esto es en esencia como funciona el &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;Veamos un pequeño ejemplo en &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -4988,7 +4962,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -5369,7 +5343,7 @@ J3wzM7MO4IRvZmbWAZzwzczMOoATvpmZWQdwwjczM+sA/wc2j28V3TUJrwAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -5820,8 +5794,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;como vemos, las &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribuciones&lt;/a&gt; estimadas utilizando &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"&gt;MCMC&lt;/a&gt; se acercan bastante a las &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribuciones&lt;/a&gt; reales.&lt;/p&gt;
 &lt;h3 id="Otros-m&amp;#233;todos-MCMC"&gt;Otros m&amp;#233;todos MCMC&lt;a class="anchor-link" href="#Otros-m&amp;#233;todos-MCMC"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Además del &lt;a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm"&gt;algoritmo Metropolis-Hastings&lt;/a&gt; existen otros algoritmos de muestreo que utilizan los métodos &lt;a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"&gt;MCMC&lt;/a&gt;. Algunos de ellos son:&lt;/p&gt;
@@ -5846,8 +5819,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 
 &lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category></entry><entry><title>Introducción a la teoría de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/" rel="alternate"></link><published>2016-11-26T00:00:00-03:00</published><updated>2016-11-26T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-11-26:/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teoría de Probabilidad" title="Teoría de Probabilidad" src="https://relopezbriega.github.io/images/probabilidad.png" &gt;&lt;/p&gt;
 
@@ -5855,16 +5827,14 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"En el fondo, la teoría de  probabilidades es sólo sentido común expresado con números"&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace"&gt;Pierre Simon de Laplace&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;Introducci&amp;#243;n: probabilidad y sentido com&amp;#250;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si todo fuera …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teoría de Probabilidad" title="Teoría de Probabilidad" src="https://relopezbriega.github.io/images/probabilidad.png" &gt;&lt;/p&gt;
 
@@ -5872,8 +5842,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"En el fondo, la teoría de  probabilidades es sólo sentido común expresado con números"&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5958,7 +5927,7 @@ Si tomamos el caso clásico del lanzamiento de una moneda, no podemos predecir c
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -6305,7 +6274,7 @@ RU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -6604,8 +6573,7 @@ d38d+B/glej7uxTQVb80W3qlr4iISMboyl9ERCRjFPxFREQyRsFfREQkYxT8RUREMkbBX0REJGMU
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como estos ejemplos nos muestran, al comienzo, la frecuencia en que vamos obteniendo caras va variando considerablemente, pero a medida que aumentamos el número de repeticiones, la frecuencia de caras se va estabilizando en la &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt; subyacente el evento, 1 en 2 para el primer caso y 1 en 6 para el segundo ejemplo. En los gráficos podemos ver claramente el comportamiento de la ley.&lt;/p&gt;
 &lt;h3 id="El-Teorema-del-l&amp;#237;mite-central"&gt;El Teorema del l&amp;#237;mite central&lt;a class="anchor-link" href="#El-Teorema-del-l&amp;#237;mite-central"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El otro gran teorema de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_probabilidad"&gt;teoría de probabilidad&lt;/a&gt; es el &lt;a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central"&gt;Teorema del límite central&lt;/a&gt;. Este teorema establece que la suma o el promedio de casi cualquier conjunto de variables &lt;a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)"&gt;independientes&lt;/a&gt; generadas al azar se aproximan a la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt;. El &lt;a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central"&gt;Teorema del límite central&lt;/a&gt; explica por qué la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt; surge tan comúnmente y por qué es generalmente una aproximación excelente para la &lt;a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica"&gt;media&lt;/a&gt;  de casi cualquier colección de datos. Este notable hallazgo se mantiene verdadero sin importar la forma que adopte la &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución de datos&lt;/a&gt; que tomemos. Para ilustrar también este teorema, recurramos a un poco más de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
@@ -6667,7 +6635,7 @@ d38d+B/glej7uxTQVb80W3qlr4iISMboyl9ERCRjFPxFREQyRsFfREQkYxT8RUREMkbBX0REJGMU
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -7186,8 +7154,7 @@ REpSmVO4RUREROpOAy8RERGRkmjgJSIiIlISDbxERERESqKBl4iIiEhJNPASERERKYkGXiIiIiIl
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como nos muestra este ejemplo, al graficar la &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribución&lt;/a&gt; de las &lt;a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica"&gt;medias&lt;/a&gt; de las distribuciones &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"&gt;Binomial&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Poisson&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_geom%C3%A9trica"&gt;Geométrica&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_exponencial"&gt;Exponencial&lt;/a&gt;; vemos que todas ellas responden a la famosa forma de campana de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt;!. Algo realmente sorprendente!&lt;/p&gt;
 &lt;h2 id="Calculando-probabilidades"&gt;Calculando probabilidades&lt;a class="anchor-link" href="#Calculando-probabilidades"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Saber calcular la &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt; de que un evento o varios eventos ocurran puede ser una habilidad valiosa al tomar decisiones, ya sea en la vida real o jugando juegos de azar. Cómo calcular la &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;, sin embargo, cambia dependiendo del tipo de evento que se está observando. Por ejemplo, no calcularíamos nuestras posibilidades de ganar la lotería de la misma manera que calcularíamos nuestras posibilidades de obtener una &lt;a href="https://es.wikipedia.org/wiki/Generala"&gt;generala&lt;/a&gt; servida en un juego de dados. Sin embargo, una vez que determinamos si los eventos son &lt;a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)"&gt;independientes&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Probabilidad_condicionada"&gt;condicionales&lt;/a&gt; o mutuamente excluyentes, calcular su probabilidad es relativamente simple.&lt;/p&gt;
@@ -7266,7 +7233,7 @@ Plantea las siguientes interesantes preguntas: ¿Cuál es la &lt;a href="https:/
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -7280,8 +7247,7 @@ Plantea las siguientes interesantes preguntas: ¿Cuál es la &lt;a href="https:/
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, la apuesta de nuestro amigo es casi una apuesta segura para él. Se ve que conoce bastante bien la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_probabilidad"&gt;teoría de probabilidad&lt;/a&gt; y quiere disfrutar de la fiesta a consta nuestra!&lt;/p&gt;
 &lt;h3 id="Resolviendo-la-situaci&amp;#243;n-2---&amp;#191;Que-puerta-elegir?"&gt;Resolviendo la situaci&amp;#243;n 2 - &amp;#191;Que puerta elegir?&lt;a class="anchor-link" href="#Resolviendo-la-situaci&amp;#243;n-2---&amp;#191;Que-puerta-elegir?"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Este problema, más conocido con el nombre de &lt;a href="https://es.wikipedia.org/wiki/Problema_de_Monty_Hall"&gt;Monty Hall&lt;/a&gt;, también es un problema muy popular dentro de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_probabilidad"&gt;teoría de probabilidad&lt;/a&gt;; y se destaca por su solución que a simple vista parece totalmente anti-intuitiva.
@@ -7415,7 +7381,7 @@ Intuitivamente, es bastante sencillo que nuestra elección original (cuando hay 
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -7472,7 +7438,7 @@ Intuitivamente, es bastante sencillo que nuestra elección original (cuando hay 
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -7490,8 +7456,7 @@ Intuitivamente, es bastante sencillo que nuestra elección original (cuando hay 
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como esta simulación lo demuestra, si utilizamos la estrategia de siempre cambiar de puerta, podemos ganar el concurso un 66% de las veces; mientras que si nos quedamos con nuestra elección inicial, solo ganaríamos el 33% de las veces.&lt;/p&gt;
 &lt;h2 id="Distintas-interpretaciones-de-la-probabilidad"&gt;Distintas interpretaciones de la probabilidad&lt;a class="anchor-link" href="#Distintas-interpretaciones-de-la-probabilidad"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidades&lt;/a&gt; pueden ser interpretadas generalmente de dos maneras distintas.
@@ -7509,8 +7474,7 @@ En la actualidad, la mayoría de los problemas son abordados siguiendo un enfoqu
 
 &lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Distribuciones de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/" rel="alternate"></link><published>2016-06-29T00:00:00-03:00</published><updated>2016-06-29T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-06-29:/blog/2016/06/29/distribuciones-de-probabilidad-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Distribuciones estadísticas" title="Distribuciones estadísticas" src="https://relopezbriega.github.io/images/distribution.png" high=650px width=600px&gt;&lt;/p&gt;
 
@@ -7518,14 +7482,12 @@ En la actualidad, la mayoría de los problemas son abordados siguiendo un enfoqu
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; han llegado a desempeñar un papel importante en casi todos los campos de estudio: en la &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica"&gt;Química&lt;/a&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;Ingeniería&lt;/a&gt;; y especialmente en las ciencias biológicas y sociales. Estas &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; son medidas y analizadas en términos
 de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadísticas&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilísticas&lt;/a&gt;, de …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Distribuciones estadísticas" title="Distribuciones estadísticas" src="https://relopezbriega.github.io/images/distribution.png" high=650px width=600px&gt;&lt;/p&gt;
 
@@ -7533,8 +7495,7 @@ de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&g
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; han llegado a desempeñar un papel importante en casi todos los campos de estudio: en la &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica"&gt;Química&lt;/a&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;Ingeniería&lt;/a&gt;; y especialmente en las ciencias biológicas y sociales. Estas &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; son medidas y analizadas en términos
 de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadísticas&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilísticas&lt;/a&gt;, de las cuales una característica subyacente es su &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;función de distribución&lt;/a&gt;. A pesar de que el número potencial de &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; puede ser muy grande, en la práctica, un número relativamente pequeño se utilizan; ya sea porque tienen características matemáticas que las hace fáciles de usar o porque se asemejan bastante bien a una porción de la realidad, o por ambas razones combinadas.&lt;/p&gt;
@@ -7602,7 +7563,7 @@ de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&g
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -7786,8 +7747,7 @@ RtADAGBhBD0AABZG0AMAYGEEPQAAFkbQAwBgYQQ9AAAW9v8BKRECIMLb6nEAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Funci&amp;#243;n-de-Masa-de-Probabilidad"&gt;Funci&amp;#243;n de Masa de Probabilidad&lt;a class="anchor-link" href="#Funci&amp;#243;n-de-Masa-de-Probabilidad"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Otra forma de representar a las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;distribuciones discretas&lt;/a&gt; es utilizando su &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;Función de Masa de Probabilidad&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;FMP&lt;/a&gt;, la cual relaciona cada valor con su &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; en lugar de su &lt;em&gt;frecuencia&lt;/em&gt; como vimos anteriormente. Esta función es &lt;em&gt;normalizada&lt;/em&gt; de forma tal que el valor total de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; sea 1. La ventaja que nos ofrece utilizar la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;FMP&lt;/a&gt; es que podemos comparar dos &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; sin necesidad de ser confundidos por las diferencias en el tamaño de las &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Muestra_estad%C3%ADstica"&gt;muestras&lt;/a&gt;&lt;/em&gt;. También debemos tener en cuenta que &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;FMP&lt;/a&gt; funciona bien si el número de valores es pequeño; pero a medida que el número de valores aumenta, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; asociada a cada valor se hace cada vez más pequeña y el efecto del &lt;em&gt;ruido aleatorio&lt;/em&gt; aumenta. 
 Veamos un ejemplo con &lt;a href="https://python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
@@ -7831,7 +7791,7 @@ Veamos un ejemplo con &lt;a href="https://python.org/"&gt;Python&lt;/a&gt;.&lt;/
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -8202,8 +8162,7 @@ nMpeRETE5P4frQslO5RKGJAAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Funci&amp;#243;n-de-Distribuci&amp;#243;n-Acumulada"&gt;Funci&amp;#243;n de Distribuci&amp;#243;n Acumulada&lt;a class="anchor-link" href="#Funci&amp;#243;n-de-Distribuci&amp;#243;n-Acumulada"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si queremos evitar los problemas que se generan con &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;FMP&lt;/a&gt; cuando el número de valores es muy grande, podemos recurrir a utilizar la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;Función de Distribución Acumulada&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;FDA&lt;/a&gt;, para representar a nuestras &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt;, tanto &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;discretas&lt;/a&gt; como &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad_continua"&gt;continuas&lt;/a&gt;. Esta función relaciona los valores con su correspondiente &lt;a href="https://es.wikipedia.org/wiki/Percentil"&gt;percentil&lt;/a&gt;; es decir que va a describir la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de que una &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variable aleatoria&lt;/a&gt; X sujeta a cierta ley de &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución de probabilidad&lt;/a&gt; se sitúe en la zona de valores menores o iguales a x.&lt;/p&gt;
 
@@ -8241,7 +8200,7 @@ nMpeRETE5P4frQslO5RKGJAAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -8591,8 +8550,7 @@ lM13P1ntP54AAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Funci&amp;#243;n-de-Densidad-de-Probabilidad"&gt;Funci&amp;#243;n de Densidad de Probabilidad&lt;a class="anchor-link" href="#Funci&amp;#243;n-de-Densidad-de-Probabilidad"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Por último, el equivalente a la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_probabilidad"&gt;FMP&lt;/a&gt; para &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad_continua"&gt;distribuciones continuas&lt;/a&gt; es la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad"&gt;Función de Densidad de Probabilidad&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad"&gt;FDP&lt;/a&gt;. Esta función es la &lt;a href="https://es.wikipedia.org/wiki/Derivada"&gt;derivada&lt;/a&gt; de la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;Función de Distribución Acumulada&lt;/a&gt;.
 Por ejemplo, para la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;distribución normal&lt;/a&gt; que graficamos anteriormente, su &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad"&gt;FDP&lt;/a&gt; es la siguiente. La típica forma de campana que caracteriza a esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt;.&lt;/p&gt;
@@ -8626,7 +8584,7 @@ Por ejemplo, para la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -8994,14 +8952,12 @@ YII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Distribuciones"&gt;Distribuciones&lt;a class="anchor-link" href="#Distribuciones"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ahora que ya conocemos como podemos hacer para representar a las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt;; pasemos a analizar cada una de ellas en más detalle para conocer su forma, sus principales aplicaciones y sus propiedades. Comencemos por las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;distribuciones discretas&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="Distribuciones-Discretas"&gt;Distribuciones Discretas&lt;a class="anchor-link" href="#Distribuciones-Discretas"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;distribuciones discretas&lt;/a&gt; son aquellas en las que la variable puede tomar solo algunos valores determinados. Los principales exponentes de este grupo son las siguientes:&lt;/p&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Poisson"&gt;Distribuci&amp;#243;n Poisson&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Poisson"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Distribución Poisson&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(r; \mu) = \frac{\mu^r e^{-\mu}}{r!}$$&lt;/p&gt;
-&lt;p&gt;En dónde $r$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;entero&lt;/a&gt; ($r \ge 0$) y $\mu$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; positivo. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Distribución Poisson&lt;/a&gt; describe la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de encontrar exactamente $r$ eventos en un lapso de tiempo si los acontecimientos se producen de forma independiente a una velocidad constante $\mu$. Es una de las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; más utilizadas en &lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt; con varias aplicaciones; como por ejemplo describir el número de fallos en un lote de materiales o la cantidad de llegadas por hora a un centro de servicios.&lt;/p&gt;
+$$p(r; \mu) = \frac{\mu^r e^{-\mu}}{r!}$$&lt;p&gt;En dónde $r$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;entero&lt;/a&gt; ($r \ge 0$) y $\mu$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; positivo. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Distribución Poisson&lt;/a&gt; describe la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de encontrar exactamente $r$ eventos en un lapso de tiempo si los acontecimientos se producen de forma independiente a una velocidad constante $\mu$. Es una de las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; más utilizadas en &lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt; con varias aplicaciones; como por ejemplo describir el número de fallos en un lote de materiales o la cantidad de llegadas por hora a un centro de servicios.&lt;/p&gt;
 &lt;p&gt;En &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; la podemos generar fácilmente con la ayuda de &lt;a href="https://docs.scipy.org/doc/scipy/reference/stats.html"&gt;scipy.stats&lt;/a&gt;, paquete que utilizaremos para representar a todas las restantes &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; a lo largo de todo el artículo.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -9038,7 +8994,7 @@ YII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -9344,7 +9300,7 @@ iAVPREQkQ/8fcmcp3/M3NSQAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -9515,13 +9471,11 @@ WVcAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Binomial"&gt;Distribuci&amp;#243;n Binomial&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Binomial"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"&gt;Distribución Binomial&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(r; N, p) = \left(\begin{array}{c} N \\ r \end{array}\right) p^r(1 - p)^{N - r}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde $r$ con la condición $0 \le r \le N$ y el parámetro $N$ ($N &amp;gt; 0$) son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;enteros&lt;/a&gt;; y el parámetro $p$ ($0 \le p \le 1$) es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"&gt;Distribución Binomial&lt;/a&gt; describe la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de exactamente $r$ éxitos en $N$ pruebas si la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en una sola prueba es $p$.&lt;/p&gt;
+$$p(r; N, p) = \left(\begin{array}{c} N \\ r \end{array}\right) p^r(1 - p)^{N - r}
+$$&lt;p&gt;En dónde $r$ con la condición $0 \le r \le N$ y el parámetro $N$ ($N &amp;gt; 0$) son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;enteros&lt;/a&gt;; y el parámetro $p$ ($0 \le p \le 1$) es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"&gt;Distribución Binomial&lt;/a&gt; describe la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de exactamente $r$ éxitos en $N$ pruebas si la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en una sola prueba es $p$.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -9557,7 +9511,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -9882,7 +9836,7 @@ iMwcd+MTERGZOZY9ERGRmWPZExERmTmWPRERkZlj2RMREZk5lj0REZGZY9kTERGZOZY9ERGRmfv/
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -10082,13 +10036,11 @@ ex96RgAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Geom&amp;#233;trica"&gt;Distribuci&amp;#243;n Geom&amp;#233;trica&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Geom&amp;#233;trica"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_geom%C3%A9trica"&gt;Distribución Geométrica&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(r; p) = p(1- p)^{r-1}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde $r \ge 1$  y el parámetro $p$ ($0 \le p \le 1$) es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_geom%C3%A9trica"&gt;Distribución Geométrica&lt;/a&gt; expresa la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de tener que esperar exactamente $r$ pruebas hasta encontrar el primer éxito si la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en una sola prueba es $p$. Por ejemplo, en un proceso de selección, podría definir el número de entrevistas que deberíamos realizar antes de encontrar al primer candidato aceptable.&lt;/p&gt;
+$$p(r; p) = p(1- p)^{r-1}
+$$&lt;p&gt;En dónde $r \ge 1$  y el parámetro $p$ ($0 \le p \le 1$) es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_geom%C3%A9trica"&gt;Distribución Geométrica&lt;/a&gt; expresa la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de tener que esperar exactamente $r$ pruebas hasta encontrar el primer éxito si la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en una sola prueba es $p$. Por ejemplo, en un proceso de selección, podría definir el número de entrevistas que deberíamos realizar antes de encontrar al primer candidato aceptable.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10124,7 +10076,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -10424,7 +10376,7 @@ f6zgd1widcQLAAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -10613,13 +10565,11 @@ P/U7ku1HOazVAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Hipergeom&amp;#233;trica"&gt;Distribuci&amp;#243;n Hipergeom&amp;#233;trica&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Hipergeom&amp;#233;trica"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_hipergeom%C3%A9trica"&gt;Distribución Hipergeométrica&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(r; n, N, M) = \frac{\left(\begin{array}{c} M \\ r \end{array}\right)\left(\begin{array}{c} N - M\\ n -r \end{array}\right)}{\left(\begin{array}{c} N \\ n \end{array}\right)}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde el valor de $r$ esta limitado por $\max(0, n - N + M)$ y $\min(n, M)$ inclusive; y los parámetros $n$ ($1 \le n \le N$), $N$ ($N \ge 1$) y $M$ ($M \ge 1$) son todos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;números enteros&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_hipergeom%C3%A9trica"&gt;Distribución Hipergeométrica&lt;/a&gt; describe experimentos en donde se seleccionan los elementos al azar &lt;em&gt;sin reemplazo&lt;/em&gt; (se evita seleccionar el mismo elemento más de una vez). Más precisamente, supongamos que tenemos $N$ elementos de los cuales $M$ tienen un cierto atributo (y $N - M$ no tiene). Si escogemos $n$ elementos al azar &lt;em&gt;sin reemplazo&lt;/em&gt;, $p(r)$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de que exactamente $r$ de los elementos seleccionados provienen del grupo con el atributo.&lt;/p&gt;
+$$p(r; n, N, M) = \frac{\left(\begin{array}{c} M \\ r \end{array}\right)\left(\begin{array}{c} N - M\\ n -r \end{array}\right)}{\left(\begin{array}{c} N \\ n \end{array}\right)}
+$$&lt;p&gt;En dónde el valor de $r$ esta limitado por $\max(0, n - N + M)$ y $\min(n, M)$ inclusive; y los parámetros $n$ ($1 \le n \le N$), $N$ ($N \ge 1$) y $M$ ($M \ge 1$) son todos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;números enteros&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_hipergeom%C3%A9trica"&gt;Distribución Hipergeométrica&lt;/a&gt; describe experimentos en donde se seleccionan los elementos al azar &lt;em&gt;sin reemplazo&lt;/em&gt; (se evita seleccionar el mismo elemento más de una vez). Más precisamente, supongamos que tenemos $N$ elementos de los cuales $M$ tienen un cierto atributo (y $N - M$ no tiene). Si escogemos $n$ elementos al azar &lt;em&gt;sin reemplazo&lt;/em&gt;, $p(r)$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de que exactamente $r$ de los elementos seleccionados provienen del grupo con el atributo.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -10654,7 +10604,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -10982,7 +10932,7 @@ Hz/eNf+5iLiXprgVERHxcLqMLyIi4uFU7EVERDycir2IiIiHU7EXERHxcCr2IiIiHk7FXkRExMOp
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -11186,17 +11136,15 @@ iIiFKNhFREQs5P8B5xKh92jvFwsAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-de-Bernoulli"&gt;Distribuci&amp;#243;n de Bernoulli&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-de-Bernoulli"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Bernoulli"&gt;Distribución de Bernoulli&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(r;p) = \left\{
+$$p(r;p) = \left\{
     \begin{array}{ll}
             1 - p = q  &amp;amp; \mbox{si } r = 0  \ \mbox{(fracaso)}\\
             p &amp;amp; \mbox{si } r = 1 \ \mbox{(éxito)}
     \end{array}
-\right.$$&lt;/p&gt;
-&lt;p&gt;En dónde el parámetro $p$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en un solo ensayo, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de fracaso por lo tanto va a ser $1 - p$ (muchas veces expresada como $q$). Tanto $p$ como $q$ van a estar limitados al intervalo de cero a uno. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Bernoulli"&gt;Distribución de Bernoulli&lt;/a&gt; describe un experimento probabilístico en donde el ensayo tiene dos posibles resultados, éxito o fracaso. Desde esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; se pueden deducir varias &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad"&gt;Funciones de Densidad de Probabilidad&lt;/a&gt; de otras &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; que se basen en una serie de ensayos independientes.&lt;/p&gt;
+\right.$$&lt;p&gt;En dónde el parámetro $p$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de éxito en un solo ensayo, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; de fracaso por lo tanto va a ser $1 - p$ (muchas veces expresada como $q$). Tanto $p$ como $q$ van a estar limitados al intervalo de cero a uno. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Bernoulli"&gt;Distribución de Bernoulli&lt;/a&gt; describe un experimento probabilístico en donde el ensayo tiene dos posibles resultados, éxito o fracaso. Desde esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; se pueden deducir varias &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad"&gt;Funciones de Densidad de Probabilidad&lt;/a&gt; de otras &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; que se basen en una serie de ensayos independientes.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11233,7 +11181,7 @@ iIiFKNhFREQs5P8B5xKh92jvFwsAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -11414,7 +11362,7 @@ IdwBALAYwh0AAIsh3AEAsJj/AzUCncWdjaIKAAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -11592,14 +11540,12 @@ gg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Distribuciones-continuas"&gt;Distribuciones continuas&lt;a class="anchor-link" href="#Distribuciones-continuas"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ahora que ya conocemos las principales &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;distribuciones discretas&lt;/a&gt;, podemos pasar a describir a las &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad_continua"&gt;distribuciones continuas&lt;/a&gt;; en ellas a diferencia de lo que veíamos antes, la variable puede tomar cualquier valor dentro de un intervalo específico. Dentro de este grupo vamos a encontrar a las siguientes:&lt;/p&gt;
 &lt;h3 id="Distribuci&amp;#243;n-de-Normal"&gt;Distribuci&amp;#243;n de Normal&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-de-Normal"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt;, o también llamada &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución de Gauss&lt;/a&gt;, es aplicable a un amplio rango de problemas, lo que la convierte en la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; más utilizada en &lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt;; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(x;\mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-1}{2}\left(\frac{x - \mu}{\sigma} \right)^2}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde $\mu$ es el parámetro de ubicación, y va a ser igual a la &lt;a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica"&gt;media aritmética&lt;/a&gt; y $\sigma^2$ es el &lt;a href="https://es.wikipedia.org/wiki/Desviaci%C3%B3n_t%C3%ADpica"&gt;desvío estándar&lt;/a&gt;. Algunos ejemplos de variables asociadas a fenómenos naturales que siguen el modelo de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt; son:&lt;/p&gt;
+$$p(x;\mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-1}{2}\left(\frac{x - \mu}{\sigma} \right)^2}
+$$&lt;p&gt;En dónde $\mu$ es el parámetro de ubicación, y va a ser igual a la &lt;a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica"&gt;media aritmética&lt;/a&gt; y $\sigma^2$ es el &lt;a href="https://es.wikipedia.org/wiki/Desviaci%C3%B3n_t%C3%ADpica"&gt;desvío estándar&lt;/a&gt;. Algunos ejemplos de variables asociadas a fenómenos naturales que siguen el modelo de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;Distribución Normal&lt;/a&gt; son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;características morfológicas de individuos, como la estatura;&lt;/li&gt;
 &lt;li&gt;características sociológicas, como el consumo de cierto producto por un mismo grupo de individuos;&lt;/li&gt;
@@ -11642,7 +11588,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -11971,7 +11917,7 @@ nUH2VQAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12175,14 +12121,12 @@ iEjCGPREREQSxqAnIiKSMAY9ERGRhP0/h1yUC892m1IAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Uniforme"&gt;Distribuci&amp;#243;n Uniforme&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Uniforme"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_uniforme_discreta"&gt;Distribución Uniforme&lt;/a&gt; es un caso muy simple expresada por la función:&lt;/p&gt;
-&lt;p&gt;$$f(x; a, b) = \frac{1}{b -a} \ \mbox{para} \ a \le x \le b
-$$&lt;/p&gt;
-&lt;p&gt;Su &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;función de distribución&lt;/a&gt; esta entonces dada por:&lt;/p&gt;
-&lt;p&gt;$$
+$$f(x; a, b) = \frac{1}{b -a} \ \mbox{para} \ a \le x \le b
+$$&lt;p&gt;Su &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_distribuci%C3%B3n"&gt;función de distribución&lt;/a&gt; esta entonces dada por:&lt;/p&gt;
+$$
 p(x;a, b) = \left\{
     \begin{array}{ll}
             0  &amp;amp; \mbox{si } x \le a \\
@@ -12190,8 +12134,7 @@ p(x;a, b) = \left\{
             1 &amp;amp; \mbox{si } b \le x
     \end{array}
 \right.
-$$&lt;/p&gt;
-&lt;p&gt;Todos los valore tienen prácticamente la misma probabilidad.&lt;/p&gt;
+$$&lt;p&gt;Todos los valore tienen prácticamente la misma probabilidad.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -12228,7 +12171,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12432,7 +12375,7 @@ DgCAxRDuAABYDOEOAIDFEO4AAFgM4Q4AgMUQ7gAAWMz/A5FBhJBQt0yvAAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12606,13 +12549,11 @@ AAALINABALAAAh0AAAv4/2XfRkhWapIOAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-de-Log-normal"&gt;Distribuci&amp;#243;n de Log-normal&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-de-Log-normal"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_log-normal"&gt;Distribución Log-normal&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(x;\mu, \sigma) = \frac{1}{ x \sigma \sqrt{2 \pi}} e^{\frac{-1}{2}\left(\frac{\ln x - \mu}{\sigma} \right)^2}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde la variable $x &amp;gt; 0$ y los parámetros $\mu$ y $\sigma &amp;gt; 0$ son todos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_log-normal"&gt;Distribución Log-normal&lt;/a&gt; es aplicable a &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; que están limitadas por cero, pero tienen pocos valores grandes. Es una &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; con &lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;asimetría positiva&lt;/a&gt;. Algunos de los ejemplos en que la solemos encontrar son:&lt;/p&gt;
+$$p(x;\mu, \sigma) = \frac{1}{ x \sigma \sqrt{2 \pi}} e^{\frac{-1}{2}\left(\frac{\ln x - \mu}{\sigma} \right)^2}
+$$&lt;p&gt;En dónde la variable $x &amp;gt; 0$ y los parámetros $\mu$ y $\sigma &amp;gt; 0$ son todos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_log-normal"&gt;Distribución Log-normal&lt;/a&gt; es aplicable a &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; que están limitadas por cero, pero tienen pocos valores grandes. Es una &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; con &lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;asimetría positiva&lt;/a&gt;. Algunos de los ejemplos en que la solemos encontrar son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;El peso de los adultos.&lt;/li&gt;
 &lt;li&gt;La concentración de los minerales en depósitos.&lt;/li&gt;
@@ -12654,7 +12595,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13005,7 +12946,7 @@ Q7gDAGAZwh0AAMsQ7gAAWIZwBwDAMoQ7AACW+QF3a35SEFXudgAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13195,13 +13136,11 @@ BvL/ACcTYYP1ReS7AAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-de-Exponencial"&gt;Distribuci&amp;#243;n de Exponencial&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-de-Exponencial"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_exponencial"&gt;Distribución Exponencial&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(x;\alpha) = \frac{1}{ \alpha} e^{\frac{-x}{\alpha}}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde tanto la variable $x$ como el parámetro $\alpha$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_exponencial"&gt;Distribución Exponencial&lt;/a&gt; tiene bastantes aplicaciones, tales como la desintegración de un átomo radioactivo o el tiempo entre eventos en un proceso de &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Poisson&lt;/a&gt; donde los acontecimientos suceden a una velocidad constante.&lt;/p&gt;
+$$p(x;\alpha) = \frac{1}{ \alpha} e^{\frac{-x}{\alpha}}
+$$&lt;p&gt;En dónde tanto la variable $x$ como el parámetro $\alpha$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_exponencial"&gt;Distribución Exponencial&lt;/a&gt; tiene bastantes aplicaciones, tales como la desintegración de un átomo radioactivo o el tiempo entre eventos en un proceso de &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson"&gt;Poisson&lt;/a&gt; donde los acontecimientos suceden a una velocidad constante.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -13235,7 +13174,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13534,7 +13473,7 @@ ERERD6fD7CIiIh5OYS4iIuLhFOYiIiIeTmEuIiLi4RTmIiIiHk5hLiIi4uEU5iIiIh5OYS4iIuLh
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13725,13 +13664,11 @@ AMBCCHYAACzk/wGE6GDrdOgUMQAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Gamma"&gt;Distribuci&amp;#243;n Gamma&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Gamma"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_gamma"&gt;Distribución Gamma&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(x;a, b) = \frac{a(a x)^{b -1} e^{-ax}}{\Gamma(b)}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde los parámetros $a$ y $b$ y la variable $x$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos y $\Gamma(b)$ es la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_gamma"&gt;función gamma&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_gamma"&gt;Distribución Gamma&lt;/a&gt; comienza en el &lt;em&gt;origen&lt;/em&gt; de coordenadas y tiene una forma bastante flexible. Otras &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; son casos especiales de ella.&lt;/p&gt;
+$$p(x;a, b) = \frac{a(a x)^{b -1} e^{-ax}}{\Gamma(b)}
+$$&lt;p&gt;En dónde los parámetros $a$ y $b$ y la variable $x$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos y $\Gamma(b)$ es la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_gamma"&gt;función gamma&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_gamma"&gt;Distribución Gamma&lt;/a&gt; comienza en el &lt;em&gt;origen&lt;/em&gt; de coordenadas y tiene una forma bastante flexible. Otras &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; son casos especiales de ella.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -13766,7 +13703,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -14123,7 +14060,7 @@ AAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -14305,13 +14242,11 @@ HgAAiyLkAQCwKEIeAACLIuQBALAoQh4AAIsi5AEAsKj/B1ljQBuQcTlAAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Beta"&gt;Distribuci&amp;#243;n Beta&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Beta"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_beta"&gt;Distribución Beta&lt;/a&gt; esta dada por la formula:&lt;/p&gt;
-&lt;p&gt;$$p(x;p, q) = \frac{1}{B(p, q)} x^{p-1}(1 - x)^{q-1}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde los parámetros $p$ y $q$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos, la variable $x$ satisface la condición $0 \le x \le 1$ y $B(p, q)$ es la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_beta"&gt;función beta&lt;/a&gt;. Las aplicaciones de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_beta"&gt;Distribución Beta&lt;/a&gt; incluyen el modelado de &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; que tienen un rango finito de $a$ hasta $b$. Un
+$$p(x;p, q) = \frac{1}{B(p, q)} x^{p-1}(1 - x)^{q-1}
+$$&lt;p&gt;En dónde los parámetros $p$ y $q$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; positivos, la variable $x$ satisface la condición $0 \le x \le 1$ y $B(p, q)$ es la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_beta"&gt;función beta&lt;/a&gt;. Las aplicaciones de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_beta"&gt;Distribución Beta&lt;/a&gt; incluyen el modelado de &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; que tienen un rango finito de $a$ hasta $b$. Un
 ejemplo de ello es la distribución de los tiempos de actividad en las redes de proyectos. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_beta"&gt;Distribución Beta&lt;/a&gt; se utiliza también con frecuencia como una &lt;a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"&gt;probabilidad a priori&lt;/a&gt; para proporciones &lt;a href="(https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"&gt;binomiales&lt;/a&gt; en el &lt;a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"&gt;análisis bayesiano&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -14347,7 +14282,7 @@ ejemplo de ello es la distribución de los tiempos de actividad en las redes de 
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -14598,7 +14533,7 @@ ftbfuMorAAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -14778,13 +14713,11 @@ EfQAAFgYQQ8AgIUR9AAAWNj/A/Aj8Z1eA5pCAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-Chi-cuadrado"&gt;Distribuci&amp;#243;n Chi cuadrado&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-Chi-cuadrado"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_%CF%87%C2%B2"&gt;Distribución Chi cuadrado&lt;/a&gt; esta dada por la función:&lt;/p&gt;
-&lt;p&gt;$$p(x; n) = \frac{\left(\frac{x}{2}\right)^{\frac{n}{2}-1} e^{\frac{-x}{2}}}{2\Gamma \left(\frac{n}{2}\right)}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde la variable $x \ge 0$ y el parámetro $n$, el número de grados de libertad, es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;número entero&lt;/a&gt; positivo. Una importante aplicación de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_%CF%87%C2%B2"&gt;Distribución Chi cuadrado&lt;/a&gt; es que cuando un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt; es representado por un modelo teórico, esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; puede ser utilizada para controlar cuan bien se ajustan los valores predichos por el modelo, y los datos realmente observados.&lt;/p&gt;
+$$p(x; n) = \frac{\left(\frac{x}{2}\right)^{\frac{n}{2}-1} e^{\frac{-x}{2}}}{2\Gamma \left(\frac{n}{2}\right)}
+$$&lt;p&gt;En dónde la variable $x \ge 0$ y el parámetro $n$, el número de grados de libertad, es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;número entero&lt;/a&gt; positivo. Una importante aplicación de la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_%CF%87%C2%B2"&gt;Distribución Chi cuadrado&lt;/a&gt; es que cuando un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt; es representado por un modelo teórico, esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; puede ser utilizada para controlar cuan bien se ajustan los valores predichos por el modelo, y los datos realmente observados.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -14819,7 +14752,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -15189,7 +15122,7 @@ hBDCzsmwF0IIIeycDHshhBDCzsmwF0IIIezcP4VGwa/JOnNOAAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -15395,13 +15328,11 @@ YlL/Dzj0dOeMNNyAAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-T-de-Student"&gt;Distribuci&amp;#243;n T de Student&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-T-de-Student"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_t_de_Student"&gt;Distribución t de Student&lt;/a&gt; esta dada por la función:&lt;/p&gt;
-&lt;p&gt;$$p(t; n) = \frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})} \left( 1 + \frac{t^2}{2} \right)^{-\frac{n+1}{2}}
-$$&lt;/p&gt;
-&lt;p&gt;En dónde la variable $t$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; y el parámetro $n$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;número entero&lt;/a&gt; positivo. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_t_de_Student"&gt;Distribución t de Student&lt;/a&gt; es utilizada para probar si la diferencia entre las &lt;em&gt;medias&lt;/em&gt; de dos muestras de observaciones es estadísticamente significativa. Por ejemplo, las alturas de una muestra aleatoria de los jugadores de baloncesto podría compararse con las alturas de una muestra aleatoria de jugadores de fútbol; esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; nos podría ayudar a determinar si un grupo es significativamente más alto que el otro.&lt;/p&gt;
+$$p(t; n) = \frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})} \left( 1 + \frac{t^2}{2} \right)^{-\frac{n+1}{2}}
+$$&lt;p&gt;En dónde la variable $t$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; y el parámetro $n$ es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_entero"&gt;número entero&lt;/a&gt; positivo. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_t_de_Student"&gt;Distribución t de Student&lt;/a&gt; es utilizada para probar si la diferencia entre las &lt;em&gt;medias&lt;/em&gt; de dos muestras de observaciones es estadísticamente significativa. Por ejemplo, las alturas de una muestra aleatoria de los jugadores de baloncesto podría compararse con las alturas de una muestra aleatoria de jugadores de fútbol; esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; nos podría ayudar a determinar si un grupo es significativamente más alto que el otro.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -15436,7 +15367,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -15808,7 +15739,7 @@ ZgAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -16004,13 +15935,11 @@ CHYAACzk/wEzdZIqoSkT2QAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-de-Pareto"&gt;Distribuci&amp;#243;n de Pareto&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-de-Pareto"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Pareto"&gt;Distribución de Pareto&lt;/a&gt; esta dada por la función:&lt;/p&gt;
-&lt;p&gt;$$p(x; \alpha, k) = \frac{\alpha k^{\alpha}}{x^{\alpha + 1}} 
-$$&lt;/p&gt;
-&lt;p&gt;En dónde la variable $x \ge k$ y el parámetro $\alpha &amp;gt; 0$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. Esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; fue introducida por su inventor, &lt;a href="https://es.wikipedia.org/wiki/Vilfredo_Pareto"&gt;Vilfredo Pareto&lt;/a&gt;, con el fin de explicar la distribución de los salarios en la sociedad. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Pareto"&gt;Distribución de Pareto&lt;/a&gt; se describe a menudo como la base de la &lt;a href="https://es.wikipedia.org/wiki/Principio_de_Pareto"&gt;regla 80/20&lt;/a&gt;. Por ejemplo, el 80% de las quejas de los clientes con respecto al funcionamiento de su vehículo por lo general surgen del 20% de los componentes.&lt;/p&gt;
+$$p(x; \alpha, k) = \frac{\alpha k^{\alpha}}{x^{\alpha + 1}} 
+$$&lt;p&gt;En dónde la variable $x \ge k$ y el parámetro $\alpha &amp;gt; 0$ son &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. Esta &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; fue introducida por su inventor, &lt;a href="https://es.wikipedia.org/wiki/Vilfredo_Pareto"&gt;Vilfredo Pareto&lt;/a&gt;, con el fin de explicar la distribución de los salarios en la sociedad. La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Pareto"&gt;Distribución de Pareto&lt;/a&gt; se describe a menudo como la base de la &lt;a href="https://es.wikipedia.org/wiki/Principio_de_Pareto"&gt;regla 80/20&lt;/a&gt;. Por ejemplo, el 80% de las quejas de los clientes con respecto al funcionamiento de su vehículo por lo general surgen del 20% de los componentes.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -16045,7 +15974,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -16310,7 +16239,7 @@ rkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -16510,8 +16439,7 @@ dF+haana5QAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;C&amp;#243;mo-elegir-la-distribuci&amp;#243;n-que-mejor-se-ajusta-a-mis-datos?"&gt;&amp;#191;C&amp;#243;mo elegir la distribuci&amp;#243;n que mejor se ajusta a mis datos?&lt;a class="anchor-link" href="#&amp;#191;C&amp;#243;mo-elegir-la-distribuci&amp;#243;n-que-mejor-se-ajusta-a-mis-datos?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ahora ya tenemos un conocimiento general de las principales &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; con que nos podemos encontrar; pero ¿cómo determinamos que &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt; debemos utilizar?&lt;/p&gt;
 &lt;p&gt;Un modelo que podemos seguir cuando nos encontramos con datos que necesitamos ajustar a una &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt;, es comenzar con los datos sin procesar y responder a cuatro preguntas básicas acerca de los mismos, que nos pueden ayudar a caracterizarlos. La &lt;strong&gt;primer pregunta&lt;/strong&gt; se refiere a si los datos &lt;strong&gt;pueden tomar valores &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad#Distribuciones_de_variable_discreta"&gt;discretos&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad_continua"&gt;continuos&lt;/a&gt;&lt;/strong&gt;. &lt;strong&gt;La segunda pregunta&lt;/strong&gt; que nos debemos hacer, hace referencia a la &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;simetría&lt;/a&gt; de los datos&lt;/strong&gt; y si hay asimetría, en qué dirección se encuentra; en otras palabras, son los &lt;a href="https://es.wikipedia.org/wiki/Valor_at%C3%ADpico"&gt;valores atípicos&lt;/a&gt; positivos y negativos igualmente probables o es uno más probable que el otro. &lt;strong&gt;La tercer pregunta&lt;/strong&gt; abarca los &lt;strong&gt;límites superiores e inferiores en los datos&lt;/strong&gt;; hay algunos datos, como los ingresos, que no pueden ser inferiores a cero, mientras que hay otros, como los márgenes de operación que no puede exceder de un valor (100%). &lt;strong&gt;La última pregunta&lt;/strong&gt; se refiere a la &lt;strong&gt;posibilidad de observar valores extremos&lt;/strong&gt; en la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribución&lt;/a&gt;; en algunos casos, los valores extremos ocurren con muy poca frecuencia, mientras que en otros, se producen con mayor frecuencia.
@@ -16523,8 +16451,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con esto concluyo este &lt;em&gt;tour&lt;/em&gt; por las principales &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_probabilidad"&gt;distribuciones&lt;/a&gt; utilizadas en &lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt;. Para más información también pueden visitar mi artículo &lt;a href="https://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/"&gt;Probabilidad y Estadística con Python&lt;/a&gt; o la categoría &lt;a href="https://relopezbriega.github.io/tag/estadistica.html"&gt;estadística&lt;/a&gt; del blog. Espero les resulte útil.&lt;/p&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
@@ -16537,8 +16464,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 
 &lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="estadistica"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Probabilidad y Estadística con Python</title><link href="https://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/" rel="alternate"></link><published>2015-06-27T00:00:00-03:00</published><updated>2015-06-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-06-27:/blog/2015/06/27/probabilidad-y-estadistica-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Estadistica" title="Estadistica" src="https://relopezbriega.github.io/images/stats.png" width="700"&gt;&lt;/p&gt;
 
@@ -16546,13 +16472,11 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Actualmente con el boom de la &lt;a href="https://es.wikipedia.org/wiki/Big_data"&gt;Big Data&lt;/a&gt;, tener nociones de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt;  se ha hecho fundamental. En los últimos años ha habido un resurgimiento de todo lo relacionado con &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; , &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico"&gt;machine learning&lt;/a&gt;&lt;/em&gt; empujados principalmente por la explosión de datos con que contamos, estos conceptos combinados …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Estadistica" title="Estadistica" src="https://relopezbriega.github.io/images/stats.png" width="700"&gt;&lt;/p&gt;
 
@@ -16560,8 +16484,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Actualmente con el boom de la &lt;a href="https://es.wikipedia.org/wiki/Big_data"&gt;Big Data&lt;/a&gt;, tener nociones de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt;  se ha hecho fundamental. En los últimos años ha habido un resurgimiento de todo lo relacionado con &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; , &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico"&gt;machine learning&lt;/a&gt;&lt;/em&gt; empujados principalmente por la explosión de datos con que contamos, estos conceptos combinados forman la base de lo que actualmente se conoce como la &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Data_science"&gt;Ciencia de Datos&lt;/a&gt;&lt;/em&gt;. Dentro de este contexto, &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; es uno de los lenguajes que más nos facilita trabajar con datos. Realizar complejos análisis estadísticos nunca fue tan fácil como con &lt;a href="https://python.org/"&gt;Python&lt;/a&gt;!&lt;/p&gt;
 
@@ -16569,8 +16492,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-la-Estad&amp;#237;stica?"&gt;&amp;#191;Qu&amp;#233; es la Estad&amp;#237;stica?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-la-Estad&amp;#237;stica?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; suele ser definida como la ciencia de aprender de los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; o como la ciencia de obtener conclusiones en la presencia de incertidumbre. Se relaciona principalmente con la recolección, análisis e interpretación de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;, así como también con la efectiva comunicación y presentación de los resultados basados en esos &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;. Como por &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; entendemos a cualquier clase de información grabada, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; juego un rol importante en muchas disciplinas científicas.&lt;/p&gt;
 &lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; puede ser muy importante para una efectiva toma de decisiones. Existe una gran cantidad de valiosa información escondida entre los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;, pero esta información no suele ser fácilmente accesible, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; nos brinda los principios fundamentales que nos permiten extraer y entender esa información; tambien nos proporciona las herramientas necesarias para verificar la calidad de nuestros &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; y nuestra información.&lt;/p&gt;
@@ -16586,8 +16508,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-la-Probabilidad?"&gt;&amp;#191;Qu&amp;#233; es la Probabilidad?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-la-Probabilidad?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; mide la mayor o menor posibilidad de que se dé un determinado resultado (suceso o evento) cuando se realiza un experimento aleatorio.
 Para calcular la probabilidad de un evento se toma en cuenta todos los casos posibles de ocurrencia del mismo; es decir, de cuántas formas puede ocurrir determinada situación.Los casos favorables de ocurrencia de un evento serán los que cumplan con la condición que estamos buscando. La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; toma valores entre 0 y 1 (o expresados en tanto por ciento, entre 0% y 100%).&lt;/p&gt;
@@ -16598,8 +16519,7 @@ Para calcular la probabilidad de un evento se toma en cuenta todos los casos pos
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Actividades-b&amp;#225;sicas-del-analisis-estad&amp;#237;stico"&gt;Actividades b&amp;#225;sicas del analisis estad&amp;#237;stico&lt;a class="anchor-link" href="#Actividades-b&amp;#225;sicas-del-analisis-estad&amp;#237;stico"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las técnicas &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadísticas&lt;/a&gt;&lt;/em&gt; deberían ser vistas como una parte importante de cualquier proceso de toma de dicisiones, permitiendo tomar decisiones estratégicamente informadas que combinen intuición con experiencia y un entendimiento &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadístico&lt;/a&gt;&lt;/em&gt; de los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; que tenemos disponibles.&lt;/p&gt;
 &lt;p&gt;Un análisis estadístico suele contener 5 actividades básicas:&lt;/p&gt;
@@ -16620,8 +16540,7 @@ Para calcular la probabilidad de un evento se toma en cuenta todos los casos pos
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Conceptos-b&amp;#225;sicos-de-la-estad&amp;#237;stica-descriptiva"&gt;Conceptos b&amp;#225;sicos de la estad&amp;#237;stica descriptiva&lt;a class="anchor-link" href="#Conceptos-b&amp;#225;sicos-de-la-estad&amp;#237;stica-descriptiva"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_descriptiva"&gt;estadística descriptiva&lt;/a&gt;&lt;/em&gt; se utilizan distintas medidas para intentar describir las propiedades de nuestros datos, algunos de los conceptos básicos, son:&lt;/p&gt;
 &lt;ul&gt;
@@ -16652,8 +16571,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Covarianza&lt;/strong&gt;: La &lt;a href="https://es.wikipedia.org/wiki/Covarianza"&gt;covarianza&lt;/a&gt; es el equivalente de la varianza aplicado a una variable bidimensional. Es la media aritmética de los productos de las desviaciones de cada una de las variables respecto a sus medias respectivas.La covarianza indica el sentido de la correlación entre las variables; Si $\sigma_{xy} &amp;gt; 0$ la correlación es directa; Si $\sigma_{xy} &amp;lt; 0$ la correlación es inversa.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;$$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$&lt;/p&gt;
-&lt;ul&gt;
+$$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Valor atípico&lt;/strong&gt;: Un &lt;a href="https://es.wikipedia.org/wiki/Valor_at%C3%ADpico"&gt;valor atípico&lt;/a&gt; es una observación que se aleja demasiado de la moda; esta muy lejos de la tendencia principal del resto de los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;. Pueden ser causados por errores en la recolección de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; o medidas inusuales. Generalmente se recomienda eliminarlos del &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -16661,8 +16579,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Librer&amp;#237;as-de-Python-para-probabilidad-y-estad&amp;#237;stica"&gt;Librer&amp;#237;as de Python para probabilidad y estad&amp;#237;stica&lt;a class="anchor-link" href="#Librer&amp;#237;as-de-Python-para-probabilidad-y-estad&amp;#237;stica"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Como ya les vengo mostrando en mis anteriores artículos, &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; se lleva muy bien con las matemáticas. Además, la &lt;a href="https://www.python.org/community/"&gt;comunidad python&lt;/a&gt; es tan amplia que solemos encontrar una librería para cualquier problema al que nos enfrentemos. En este caso, los principales módulos que &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; nos ofrece para trabajar con &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt;, son:&lt;/p&gt;
 &lt;ul&gt;
@@ -16686,8 +16603,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Ejemplos-en-Python"&gt;Ejemplos en Python&lt;a class="anchor-link" href="#Ejemplos-en-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Calcular los principales indicadores de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_descriptiva"&gt;estadística descriptiva&lt;/a&gt;&lt;/em&gt; con &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; es muy fácil!.&lt;/p&gt;
 
@@ -16736,7 +16652,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -16776,7 +16692,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
 
@@ -16811,7 +16727,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 
 
 
@@ -16846,7 +16762,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
 
 
 
@@ -16881,7 +16797,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
 
 
 
@@ -16917,7 +16833,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
 
 
 
@@ -16952,7 +16868,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
 
 
 
@@ -16988,7 +16904,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -17023,7 +16939,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
 
 
 
@@ -17059,7 +16975,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
 
 
 
@@ -17094,7 +17010,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
 
 
 
@@ -17131,7 +17047,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
 
 
 
@@ -17168,7 +17084,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
 
 
 
@@ -17204,7 +17120,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
 
 
 
@@ -17244,7 +17160,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
 
 
 
@@ -17281,7 +17197,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
 
 
 
@@ -17321,7 +17237,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
 
 
 
@@ -17360,7 +17276,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
 
 
 
@@ -17444,7 +17360,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
 
 
 
@@ -17549,7 +17465,7 @@ $$\sigma = \sqrt{\frac{\sum\limits_{i=1}^n(x_i - \mu)^2}{n}} $$&lt;/li&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
 
 
 
@@ -17589,7 +17505,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
 
 
 
@@ -17629,7 +17545,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
 
 
 
@@ -17713,7 +17629,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
 
 
 
@@ -17753,7 +17669,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
 
 
 
@@ -17774,8 +17690,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Histogramas-y-Distribuciones"&gt;Histogramas y Distribuciones&lt;a class="anchor-link" href="#Histogramas-y-Distribuciones"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Muchas veces los indicadores de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_descriptiva"&gt;estadística descriptiva&lt;/a&gt;&lt;/em&gt; no nos proporcionan una imagen clara de nuestros &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;.  Por esta razón, siempre es útil complementarlos con gráficos de las distribuciones de los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt;, que describan con qué frecuencia aparece cada valor. La representación más común de una distribución es un &lt;a href="https://es.wikipedia.org/wiki/Histograma"&gt;histograma&lt;/a&gt;, que es un gráfico que muestra la frecuencia o probabilidad de cada valor. El &lt;a href="https://es.wikipedia.org/wiki/Histograma"&gt;histograma&lt;/a&gt; muestra las frecuencias como un gráfico de barras que indica cuan frecuente un determinado valor ocurre en el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt;. El eje horizontal representa los valores del &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt; y el eje vertical representa la frecuencia con que esos valores ocurren.&lt;/p&gt;
 &lt;p&gt;Las distribuciones se pueden clasificar en dos grandes grupos:&lt;/p&gt;
@@ -17806,8 +17721,7 @@ dtype: float64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuci&amp;#243;n-normal"&gt;Distribuci&amp;#243;n normal&lt;a class="anchor-link" href="#Distribuci&amp;#243;n-normal"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"&gt;distribución normal&lt;/a&gt; es una de las principales distribuciones, ya que es la que con más frecuencia aparece aproximada en los fenómenos reales. Tiene una forma acampanada y es simétrica respecto de un determinado parámetro estadístico. Con la ayuda de &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; la podemos graficar de la siguiente manera:&lt;/p&gt;
 
@@ -17890,7 +17804,7 @@ dtype: float64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -18130,8 +18044,7 @@ kTBT+YqIiISZyldERCTMVL4iIiJhpvIVEREJM5WviIhImP0/GpEA7DqTnyYAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Distribuciones-simetricas-y-asimetricas"&gt;Distribuciones simetricas y asimetricas&lt;a class="anchor-link" href="#Distribuciones-simetricas-y-asimetricas"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Una distribución es simétrica cuando moda, mediana y media coinciden aproximadamente en sus valores. Si una distribución es simétrica, existe el mismo número de valores a la derecha que a la izquierda de la media, por tanto, el mismo número de desviaciones con signo positivo que con signo negativo.&lt;/p&gt;
 &lt;p&gt;Una distribución tiene &lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;asimetria&lt;/a&gt; positiva (o a la derecha) si la "cola" a la derecha de la media es más larga que la de la izquierda, es decir, si hay valores más separados de la media a la derecha. De la misma forma una distribución tiene &lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;asimetria&lt;/a&gt; negativa (o a la izquierda) si la "cola" a la izquierda de la media es más larga que la de la derecha, es decir, si hay valores más separados de la media a la izquierda.&lt;/p&gt;
@@ -18162,7 +18075,7 @@ kTBT+YqIiISZyldERCTMVL4iIiJhpvIVEREJM5WviIhImP0/GpEA7DqTnyYAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -18304,8 +18217,7 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este ejemplo podemos ver que la &lt;a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_gamma"&gt;distribución gamma&lt;/a&gt; que dibujamos tiene una &lt;a href="https://es.wikipedia.org/wiki/Asimetr%C3%ADa_estad%C3%ADstica"&gt;asimetria&lt;/a&gt; positiva.&lt;/p&gt;
 
@@ -18333,7 +18245,7 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[31]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[31]:&lt;/div&gt;
 
 
 
@@ -18349,8 +18261,7 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Cuartiles-y-diagramas-de-cajas"&gt;Cuartiles y diagramas de cajas&lt;a class="anchor-link" href="#Cuartiles-y-diagramas-de-cajas"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Cuartil"&gt;cuartiles&lt;/a&gt;&lt;/strong&gt; son los tres valores de la variable estadística que dividen a un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt; ordenados en cuatro partes iguales. Q1, Q2 y Q3 determinan los valores correspondientes al 25%, al 50% y al 75% de los datos. Q2 coincide con la &lt;a href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)"&gt;mediana&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Los &lt;a href="https://es.wikipedia.org/wiki/Diagrama_de_caja"&gt;diagramas de cajas&lt;/a&gt; son una presentación visual que describe varias características importantes al mismo tiempo, tales como la dispersión y simetría. Para su realización se representan los tres cuartiles y los valores mínimo y máximo de los datos, sobre un rectángulo, alineado horizontal o verticalmente. Estos gráficos nos proporcionan abundante información y son sumamente útiles para encontrar &lt;a href="https://es.wikipedia.org/wiki/Valor_at%C3%ADpico"&gt;valores atípicos&lt;/a&gt; y comparar dos &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjunto de datos&lt;/a&gt;.&lt;/p&gt;
@@ -18400,7 +18311,7 @@ KYUMaEmSUsiAliQphQxoSZJS6P8D3TPT4coRtecAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -18573,7 +18484,7 @@ hiRJSsagIUmSkjFoSJKkZP4//tEKDi6gfawAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -18699,13 +18610,11 @@ l/tphAAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Regresiones"&gt;Regresiones&lt;a class="anchor-link" href="#Regresiones"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;strong&gt;regresiones&lt;/strong&gt; es una de las herramientas principales de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_inferencial"&gt;estadistica inferencial&lt;/a&gt;&lt;/em&gt;. El objetivo del &lt;a href="https://es.wikipedia.org/w/index.php?title=An%C3%A1lisis_de_la_regresi%C3%B3n&amp;amp;redirect=no"&gt;análisis de regresión&lt;/a&gt; es describir la relación entre un conjunto de variables, llamadas variables dependientes, y otro conjunto de variables, llamadas variables independientes o explicativas.  Más específicamente, el &lt;a href="https://es.wikipedia.org/w/index.php?title=An%C3%A1lisis_de_la_regresi%C3%B3n&amp;amp;redirect=no"&gt;análisis de regresión&lt;/a&gt; ayuda a entender cómo el valor típico de la variable dependiente cambia cuando cualquiera de las variables independientes es cambiada, mientras que se mantienen las otras variables independientes fijas. El producto final del &lt;a href="https://es.wikipedia.org/w/index.php?title=An%C3%A1lisis_de_la_regresi%C3%B3n&amp;amp;redirect=no"&gt;análisis de regresión&lt;/a&gt; es la estimación de una función de las variables independientes llamada la &lt;strong&gt;función de regresión&lt;/strong&gt;. La idea es que en base a esta función de regresión podamos hacer estimaciones sobre eventos futuros.&lt;/p&gt;
 &lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal"&gt;regresión lineal&lt;/a&gt; es una de las técnicas más simples y mayormente utilizadas en los &lt;a href="https://es.wikipedia.org/w/index.php?title=An%C3%A1lisis_de_la_regresi%C3%B3n&amp;amp;redirect=no"&gt;análisis de regresiones&lt;/a&gt;. Hace suposiciones muy rígidas sobre la relación entre la &lt;a href="https://es.wikipedia.org/wiki/Variable_estad%C3%ADstica#Seg.C3.BAn_la_influencia"&gt;variable dependiente&lt;/a&gt; $y$ y &lt;a href="https://es.wikipedia.org/wiki/Variable_estad%C3%ADstica#Seg.C3.BAn_la_influencia"&gt;variable independiente&lt;/a&gt; $x$. Asume que la relación va a tomar la forma:&lt;/p&gt;
-&lt;p&gt;$$ y = \beta_0 + \beta_1 * x$$&lt;/p&gt;
-&lt;p&gt;Uno de los métodos más populares para realizar &lt;a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal"&gt;regresiones lineales&lt;/a&gt; es el de &lt;a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados_ordinarios"&gt;mínimos cuadrados ordinarios&lt;/a&gt; (OLS, por sus siglas en inglés), este método es el estimador más simple y común en la que los dos $\beta$s se eligen para minimizar el cuadrado de la distancia entre los valores estimados y los valores reales.&lt;/p&gt;
+$$ y = \beta_0 + \beta_1 * x$$&lt;p&gt;Uno de los métodos más populares para realizar &lt;a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal"&gt;regresiones lineales&lt;/a&gt; es el de &lt;a href="https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados_ordinarios"&gt;mínimos cuadrados ordinarios&lt;/a&gt; (OLS, por sus siglas en inglés), este método es el estimador más simple y común en la que los dos $\beta$s se eligen para minimizar el cuadrado de la distancia entre los valores estimados y los valores reales.&lt;/p&gt;
 &lt;p&gt;Realizar &lt;a href="https://es.wikipedia.org/w/index.php?title=An%C3%A1lisis_de_la_regresi%C3%B3n&amp;amp;redirect=no"&gt;análisis de regresiones&lt;/a&gt; en &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; es sumamente fácil gracias a &lt;a href="https://statsmodels.sourceforge.net/"&gt;statsmodels&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Veamos un pequeño ejemplo utilizando el dataset &lt;a href="https://stat.ethz.ch/R-manual/R-patched/library/datasets/html/longley.html"&gt;longley&lt;/a&gt;, el cual es ideal para realizar regresiones:&lt;/p&gt;
 
@@ -18738,7 +18647,7 @@ l/tphAAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[34]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[34]:&lt;/div&gt;
 
 
 
@@ -18841,7 +18750,7 @@ l/tphAAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[35]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[35]:&lt;/div&gt;
 
 
 
@@ -18910,8 +18819,7 @@ l/tphAAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, el resumen que nos brinda &lt;a href="https://statsmodels.sourceforge.net/"&gt;statsmodels&lt;/a&gt; sobre nuestro modelo de &lt;a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal"&gt;regresión&lt;/a&gt; contiene bastante información sobre como se ajuste el modelo a los datos. Pasemos a explicar algunos de estos valores:&lt;/p&gt;
 &lt;ul&gt;
@@ -18964,7 +18872,7 @@ l/tphAAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -19169,7 +19077,7 @@ gVLIi4iIBEohLyIiEiiFvIiISKAU8iIiIoFSyIuIiATq/wMth6pQIxiv9QAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -19590,8 +19498,7 @@ pZRSyuM02CullFIep8FeKaWU8jgN9koppZTHabBXSimlPO7/AUwoxkpSJU6uAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Este último gráfico nos muestra el apalancamiento y la influencia de cada caso.&lt;/p&gt;
 
@@ -19599,8 +19506,7 @@ pZRSyuM02CullFIep8FeKaWU8jgN9koppZTHabBXSimlPO7/AUwoxkpSJU6uAAAAAElFTkSuQmCC
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="La-estad&amp;#237;stica-bayesiana"&gt;La estad&amp;#237;stica bayesiana&lt;a class="anchor-link" href="#La-estad&amp;#237;stica-bayesiana"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_bayesiana"&gt;estadística bayesiana&lt;/a&gt;&lt;/em&gt; es un subconjunto del campo de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; en la que la evidencia sobre el verdadero estado de las cosas se expresa en términos de grados de creencia. Esta filosofía de tratar a las creencias como probabilidad es algo natural para los seres humanos. Nosotros la utilizamos constantemente a medida que interactuamos con el mundo y sólo vemos verdades parciales; necesitando reunir pruebas para formar nuestras creencias.&lt;/p&gt;
 &lt;p&gt;La diferencia fundamental entre la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística clásica&lt;/a&gt;&lt;/em&gt; (frecuentista) y la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica_bayesiana"&gt;bayesiana&lt;/a&gt;&lt;/em&gt; es el concepto de
@@ -19659,7 +19565,7 @@ obtenidas. En el caso &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -20799,8 +20705,7 @@ QmCC
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como el gráfico de arriba muestra, cuando empezamos a observar nuevos &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Dato"&gt;datos&lt;/a&gt;&lt;/em&gt; nuestras probabilidades posteriores comienzan a cambiar y moverse. Eventualmente, a medida que observamos más y más datos (lanzamientos de monedas), nuestras probabilidades se acercan más y más hacia el verdadero valor de p = 0.5 (marcado por una línea discontinua).&lt;/p&gt;
 
@@ -20808,8 +20713,7 @@ QmCC
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Aquí termina este tutorial, espero que les haya sido util.&lt;/p&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;

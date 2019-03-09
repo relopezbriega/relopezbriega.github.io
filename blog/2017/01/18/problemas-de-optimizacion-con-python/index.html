@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Optimización" title="Optimización" src="https://relopezbriega.github.io/images/optimization.png" ></p>
 
@@ -300,8 +299,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>La <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa">ingeniería</a> o en <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa">ciencias económicas</a>. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan <em>buena</em> va a ser cada una de las alternativas va a estar descripta por una <em><a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a></em> o índice de rendimiento. La teoría y los métodos de <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> nos van a ayudar a seleccionar la mejor alternativa de acuerdo a esta <em><a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a></em> dada.
 El área de <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> ha recibido gran atención en los últimos años, principalmente por el rápido desarrollo de las <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n">ciencias de computación</a>, incluido el desarrollo y la disponibilidad de herramientas de software sumamente amigables, procesadores paralelos de alta velocidad, y <a href="https://relopezbriega.github.io/category/redes-neuronales.html">redes neuronales artificiales</a>.
@@ -322,12 +320,11 @@ El poder de los métodos de <a href="https://es.wikipedia.org/wiki/Optimizaci%C3
 <li><strong>Optimización determinista versus optimización estocástica</strong>: En la <strong><a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> <a href="https://es.wikipedia.org/wiki/Sistema_determinista">determinista</a></strong>, se supone que los datos para el problema dado se conocen con exactitud. Sin embargo, para muchos problemas reales, los datos no pueden ser conocidos con precisión por una variedad de razones. La primera razón se debe a un simple error de medición. La segunda razón más fundamental es que algunos datos representan información sobre el futuro (por ejemplo, la demanda o el precio del producto para un período de tiempo futuro) y simplemente no se puede saber con certeza. En la <strong><a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> bajo incertidumbre, o <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> <a href="https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico">estocástica</a></strong>, la incertidumbre se incorpora en el modelo. El objetivo es encontrar una solución que sea factible para todos los datos y óptima en algún sentido. Los modelos de <em><a href="https://en.wikipedia.org/wiki/Stochastic_programming">programación estocástica</a></em> aprovechan el hecho de que las <a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/">distribuciones de probabilidad</a> que gobiernan los datos son conocidas o pueden ser estimadas; el objetivo es encontrar alguna solución que sea factible para todas (o casi todas) las posibles instancias de los datos y optimice el rendimiento esperado del modelo.</li>
 </ul>
 <h2 id="Programaci&#243;n-lineal">Programaci&#243;n lineal<a class="anchor-link" href="#Programaci&#243;n-lineal">&#182;</a></h2><p>Matemáticamente, un problema de <a href="https://en.wikipedia.org/wiki/Constrained_optimization">optimización con restricciones</a> asume la siguiente forma:</p>
-<p>$$ \begin{array}{ll}
+$$ \begin{array}{ll}
             \min \hspace{1cm} f_0(x)\\
             \mbox{sujeto a } \ f_i (x) \leq b_i, \hspace{1cm} i=1, \dots, m.
     \end{array}
-$$</p>
-<p>En donde el <a href="https://es.wikipedia.org/wiki/Vector">vector</a> $x = (x_1, \dots, x_n)$ es la <em>variable de optimización</em> del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la <em><a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a></em>, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las <em>funciones de <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> de <a href="https://es.wikipedia.org/wiki/Desigualdad">desigualdad</a></em>; y las constantes $b_1, \dots, m$ son los <em>límites</em> de las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a>. Dentro de este marco, un caso importante es el de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a>, en el cual la <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a> y las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> son <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a>.
+$$<p>En donde el <a href="https://es.wikipedia.org/wiki/Vector">vector</a> $x = (x_1, \dots, x_n)$ es la <em>variable de optimización</em> del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la <em><a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a></em>, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las <em>funciones de <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> de <a href="https://es.wikipedia.org/wiki/Desigualdad">desigualdad</a></em>; y las constantes $b_1, \dots, m$ son los <em>límites</em> de las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a>. Dentro de este marco, un caso importante es el de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a>, en el cual la <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a> y las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> son <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a>.
 El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a> es determinar los valores de las variables de decisión que <a href="https://es.wikipedia.org/wiki/Extremos_de_una_funci%C3%B3n">maximizan o minimizan</a> una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a> <a href="https://es.wikipedia.org/wiki/Lineal">lineal</a>, y en donde las variables de decisión están sujetas a <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> <a href="https://es.wikipedia.org/wiki/Lineal">lineales</a>. En general, el objetivo es encontrar un punto que minimice la <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real">función objetivo</a> al mismo tiempo que satisface las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a>.</p>
 <p>Para resolver un problema de <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a>, debemos seguir los siguientes pasos:</p>
 <ol>
@@ -449,7 +446,7 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -493,7 +490,7 @@ El objetivo de la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_linea
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -874,13 +871,11 @@ YII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Optimizaci&#243;n-con-restricciones">Optimizaci&#243;n con restricciones<a class="anchor-link" href="#Optimizaci&#243;n-con-restricciones">&#182;</a></h3><p>Las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> añaden otro nivel de complejidad a los problemas de <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a>. En su forma más simple, simplemente consiste en poner algunos límites sobre los valores que las variables pueden alcanzar. Por ejemplo, podrías intentar resolver el siguiente problema:</p>
-<p>$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
-$$</p>
-<p>Este tipo de problema se puede resolver utilizando el método <a href="https://es.wikipedia.org/wiki/L-BFGS">L-BFGS-B</a> que nos ofrece <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html">scipy.optimize</a>.</p>
+$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
+$$<p>Este tipo de problema se puede resolver utilizando el método <a href="https://es.wikipedia.org/wiki/L-BFGS">L-BFGS-B</a> que nos ofrece <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html">scipy.optimize</a>.</p>
 
 </div>
 </div>
@@ -943,7 +938,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -6409,8 +6404,7 @@ FAqFQjEASlBSKBQKhUKhGAAlKCkUCoVCoVAMgBKUFAqFQqFQKAZACUoKhUKhUCgUA/D/AVBayncf
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Las <a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)">restricciones</a> que se definen por <a href="https://es.wikipedia.org/wiki/Igualdad_matem%C3%A1tica">igualdades</a> o <a href="https://es.wikipedia.org/wiki/Desigualdad_matem%C3%A1tica">desigualdades</a> que incluyen más de una variable son más
 complicadas de tratar. Sin embargo, existen técnicas generales que también podemos utilizar para este tipo de problemas. Volviendo al ejemplo anterior, cambiemos la restricción por una más compleja, como ser: $g(x) = x_1 - 1.75 - ( x_0 - 0.75 )^4 \geq 0$.
@@ -6465,7 +6459,7 @@ Para resolver este problema <a href="https://docs.scipy.org/doc/scipy-0.18.1/ref
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -11939,18 +11933,16 @@ rkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Programaci&#243;n-lineal-con-CVXopt">Programaci&#243;n lineal con CVXopt<a class="anchor-link" href="#Programaci&#243;n-lineal-con-CVXopt">&#182;</a></h3><p>Ahora veamos un ejemplo de <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a> utilizando los métodos de <a href="https://en.wikipedia.org/wiki/Convex_optimization">optimización convexa</a> que nos ofrece la librería <a href="https://cvxopt.org/">CVXopt</a>. Recordemos que la <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a> es un caso especial de la <a href="https://en.wikipedia.org/wiki/Convex_optimization">optimización convexa</a> y el principal algoritmo que se utiliza es el <a href="https://es.wikipedia.org/wiki/Algoritmo_s%C3%ADmplex">método simplex</a>. Para este pequeño ejemplo vamos a maximizar la siguiente función objetivo:
 $$f(x_1,x_2) = 50x_1 + 40x_2$$</p>
 <p>con las siguientes restricciones:</p>
-<p>$$x_{1} + 1.5x_{2} \leq 750 \\
+$$x_{1} + 1.5x_{2} \leq 750 \\
 2x_1 + x_2 \leq 1000 \\
 x_1 \geq 0 \\
 x_2 \geq 0
-$$</p>
-
+$$
 </div>
 </div>
 </div>
@@ -11983,7 +11975,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12023,7 +12015,7 @@ Optimal solution found.
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12071,7 +12063,7 @@ Optimal solution found.
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12510,8 +12502,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver, tanto la solución utilizando <a href="https://cvxopt.org/">CVXopt</a>, como la solución gráfica; nos devuelven el mismo resultado $x_1=375$ y $x_2=250$.</p>
 <h3 id="El-problema-de-transporte">El problema de transporte<a class="anchor-link" href="#El-problema-de-transporte">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Problema_de_transporte">problema de transporte</a> es un problema clásico de <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">programación lineal</a> en el cual se debe <a href="https://es.wikipedia.org/wiki/Extremos_de_una_funci%C3%B3n">minimizar</a> el costo del abastecimiento a una serie de puntos de demanda a partir de un grupo de puntos de oferta, teniendo en cuenta los distintos precios de envío de cada punto de oferta a cada punto de demanda. Por ejemplo, supongamos que tenemos que enviar cajas de cervezas de 2 cervecerías a 5 bares de acuerdo al siguiente gráfico:</p>
@@ -12665,7 +12656,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12690,8 +12681,7 @@ Costo total de transporte = 8600.0
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como vemos, la solución óptima que encontramos con la ayuda de <a href="https://pythonhosted.org/PuLP/">PuLP</a>, nos dice que deberíamos enviar desde la Cervecería A, 300 cajas al Bar 1 y 700 cajas al Bar 5; y que desde la Cervecería B deberíamos enviar 200 cajas al Bar 1, 900 cajas al Bar 2, 1800 cajas al Bar 3 y 200 cajas al Bar 4. De esta forma podemos minimizar el costo de transporte a un total de 8600.</p>
 <p>Veamos ahora si podemos formular este mismo problema con <a href="https://www.pyomo.org/">Pyomo</a>, así podemos darnos una idea de las diferencias entre las herramientas.</p>
@@ -12817,7 +12807,7 @@ Costo total de transporte = 8600.0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12846,8 +12836,7 @@ x : Cantidad de cajas
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como podemos ver, arribamos a la mismo solución que utilizando <a href="https://pythonhosted.org/PuLP/">PuLP</a>. Ambas herramientas siguen un lenguaje de modelado totalmente distinto, particularmente me gusta más la sintaxis que ofrece <a href="https://pythonhosted.org/PuLP/">PuLP</a> sobre la de <a href="https://www.pyomo.org/">Pyomo</a>.</p>
 
@@ -12855,8 +12844,7 @@ x : Cantidad de cajas
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aquí concluye este artículo, como vemos la <a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)">optimización</a> se puede aplicar a un amplio rango de problemas, por lo que es sumamente importe conocer sus principales métodos y como podemos aplicarlos con éxito.</p>
 <p>Saludos!</p>
@@ -12868,6 +12856,10 @@ x : Cantidad de cajas
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/pyOptimization.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/pyOptimization.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -12942,6 +12934,9 @@ x : Cantidad de cajas
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -12952,9 +12947,6 @@ x : Cantidad de cajas
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -12978,7 +12970,7 @@ x : Cantidad de cajas
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

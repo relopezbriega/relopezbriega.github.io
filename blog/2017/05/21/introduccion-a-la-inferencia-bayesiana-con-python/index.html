@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" ></p>
 
@@ -300,8 +299,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p>"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."</p>
 </blockquote>
@@ -311,9 +309,8 @@ Las hipótesis científicas tienen un carácter general en relación con las obs
 <p><a href="https://es.wikipedia.org/wiki/David_Hume">David Hume</a>, demostró correctamente, que partiendo solamente de las evidencias del pasado y del presente, no podemos inferir con seguridad nada sobre el futuro. Que hayamos visto solamente miles de cisnes blancos, no quiere decir que todos los cisnes sean blancos; siempre existirá la <em>posibilidad</em> de que podamos encontrar un cisne negro que <em>falsifique</em> toda nuestra teoría. Este problema, hace que en esencia todas las teorías tengan un carácter <a href="relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">probabilístico</a>. 
 Desde hace ya tiempo se considera que las teorías científicas se extienden más allá de cualquier dato experimental y por lo tanto no pueden ser verificadas (es decir, logicamente implicadas) por ellos. Si bien existe un consenso en que la certeza absoluta no puede ser nunca alcanzable; la mayoría de los científicos coinciden en que las teorías pueden alcanzar un estado intermedio entre la certeza absoluta y la falsificación; el cual dependerá de la calidad de las observaciones y de cómo la teoría se ve afectada por nuevas evidencias. Desde esta perspectiva, entonces la pregunta crucial pasa a ser ¿cómo adaptamos nuestras creencias a medida que vamos incorporando nuevas evidencias sobre nuestras teorías? la respuesta a esta pregunta, la podemos encontrar en el <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema de Bayes</a>.</p>
 <h2 id="El-Teorema-de-Bayes">El Teorema de Bayes<a class="anchor-link" href="#El-Teorema-de-Bayes">&#182;</a></h2><p><a href="https://es.wikipedia.org/wiki/Thomas_Bayes">Thomas Bayes</a> fue un ministro presbiteriano y matemático inglés que estudió la relación íntima que existe entre la <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">probabilidad</a>, la predicción y el progreso científico. Su trabajo se centró principalmente en cómo formulamos nuestras creencias probabilísticas sobre el mundo que nos rodea cuando nos encontramos con nuevos datos o evidencias. El argumento de <a href="https://es.wikipedia.org/wiki/Thomas_Bayes">Bayes</a> no es que el mundo es intrínsecamente probabilístico o incierto, ya que él era un creyente en la divina perfección; sino que aprendemos sobre el mundo a través de la aproximación, acercándonos cada vez más a la verdad a medida que recogemos más evidencias. Este argumento lo expresó matemáticamente a través de su famoso <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema</a>:</p>
-<p>$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}
-$$</p>
-<p>En donde:</p>
+$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}
+$$<p>En donde:</p>
 <ul>
 <li>$P(H)$ es el <strong><a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori">a priori</a></strong>, la forma de introducir conocimiento previo sobre los valores que puede tomar la hipótesis. A veces cuando no sabemos demasiado se suelen usar <em>a prioris</em> que asignan igual probabilidad a todos los valores de la hipótesis; otras veces se puede elegir <em>a prioris</em> que restrinjan los valores a rangos razonables, por ejemplo solo valores positivos; y otras veces contamos con información mucho más precisa, como experimentos previos o límites impuesto por alguna teoría.</li>
 </ul>
@@ -337,8 +334,7 @@ $$</p>
 <p>En esencia, la <a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana">inferencia bayesiana</a> combina nuestra experiencia previa, en la forma de la <em>probabilidad <a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori">a priori</a></em>; con los datos observados, en la forma del <em>likelihood</em>; para interpretarlos y arribar a una <em>probabilidad <a href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori">a posteriori</a></em>. La <a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana">inferencia bayesiana</a> no nos va a garantizar que podamos alcanzar la respuesta correcta. En su lugar, nos va a proporcionar la <a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/">probabilidad</a> de que cada una de un número de respuestas alternativas, sea verdadera. Y luego podemos utilizar esta información para encontrar la respuesta que más probablemente sea la correcta. En otras palabras, nos proporciona un mecanismo para hacer una especie de <em>adivinación basada en información</em>.</p>
 <h3 id="Bayes-en-el-diagnostico-m&#233;dico">Bayes en el diagnostico m&#233;dico<a class="anchor-link" href="#Bayes-en-el-diagnostico-m&#233;dico">&#182;</a></h3><p>Para que quede más claro, ilustremos la aplicación de la <a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana">inferencia bayesiana</a> con un simple ejemplo del diagnostico médico, uno de los campos dónde más éxito ha tenido. Supongamos que nos hicimos un estudio y nos ha dado positivo para una rara enfermedad que solo el 0.3 % de la población tiene. La tasa de efectividad de este estudio es del 99 %, es decir, que solo da <a href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II">falsos positivos</a> en el 1 % de los casos. ¿Cuán probable es que realmente tengamos la enfermedad?.</p>
 <p>En un principio, nos veríamos tentados a responder que hay un 99 % de probabilidad de que tengamos la enfermedad; pero en este caso nos estaríamos olvidando del concepto importante del <em><a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori">a priori</a></em>. Sabemos con anterioridad que la enfermedad es extremadamente rara (solo el 0.3 % la tiene); si incluimos esta información previa en nuestro cálculo de probabilidad y aplicamos el <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema de Bayes</a> podemos llegar a una conclusión totalmente distinta.</p>
-<p>$$ P(\text{ enfermedad | pos}) = \frac{P(\text{ pos | enfermedad})P( \text{enfermedad})}{P(\text{pos})}$$</p>
-
+$$ P(\text{ enfermedad | pos}) = \frac{P(\text{ pos | enfermedad})P( \text{enfermedad})}{P(\text{pos})}$$
 </div>
 </div>
 </div>
@@ -368,7 +364,7 @@ $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -384,8 +380,7 @@ $$</p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como vemos, luego de aplicar el <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema de Bayes</a> llegamos a la conclusión de que en realidad nuestra probabilidad de estar realmente enfermo es de sólo 30 % y no de 99 %, ya que podemos ser uno de los <a href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II">falsos positivos</a> del estudio y la enfermedad es realmente muy rara. Como este ejemplo demuestra, la inclusión del <em><a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori">a priori</a></em> es sumamente importante para la  <a href="https://es.wikipedia.org/wiki/Inferencia_bayesiana">inferencia bayesiana</a>, por lo cual también debemos ser sumamente cuidadosos a la hora de elegirla. <strong>Cuando nuestra <em><a href="https://es.wikipedia.org/wiki/Probabilidad_a_priori">a priori</a></em> es fuerte, puede ser sorprendentemente resistente frente a nuevas evidencias.</strong></p>
 <h2 id="Redes-Bayesianas">Redes Bayesianas<a class="anchor-link" href="#Redes-Bayesianas">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema de Bayes</a> nos permite actualizar las probabilidades de variables cuyo estado no hemos observado dada una serie de nuevas observaciones. Las <a href="https://es.wikipedia.org/wiki/Red_bayesiana">redes bayesianas</a> automatizan este proceso, permitiendo que el razonamiento avance en cualquier dirección a través de la red de variables. Las <a href="https://es.wikipedia.org/wiki/Red_bayesiana">redes bayesianas</a> están constituidas por una estructura en forma de <a href="https://es.wikipedia.org/wiki/Grafo">grafo</a>, en la que cada <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> representa <a href="https://es.wikipedia.org/wiki/Variable_aleatoria">variables aleatorias</a> (discretas o continuas) y cada <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)">arista</a> representa las conexiones directas entre ellas. Estas conexiones suelen representar relaciones de causalidad. Adicionalmente, las <a href="https://es.wikipedia.org/wiki/Red_bayesiana">redes bayesianas</a> también modelan el peso cuantitativo de las conexiones entre las  variables, permitiendo que las <em>creencias probabilísticas</em> sobre ellas se actualicen automáticamente a medida que se disponga de nueva información.
@@ -512,7 +507,7 @@ En este caso, la idea es utilizar un modelo <a href="https://es.wikipedia.org/wi
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -552,7 +547,7 @@ WARNING (theano.tensor.blas): We did not found a dynamic library into the librar
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1366,7 +1361,7 @@ UCgUCoVCoSiT/w8uUpRsRBiVAQAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1393,8 +1388,7 @@ p:
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como vemos el modelo nos indica que la moneda parece tener un claro sesgo hacia cara.</p>
 <h4 id="El-problema-de-la-hierba-mojada">El problema de la hierba mojada<a class="anchor-link" href="#El-problema-de-la-hierba-mojada">&#182;</a></h4><p>Supongamos que hay dos eventos los cuales pueden causar que la hierba esté húmeda: que el rociador esté activado o que esté lloviendo. También supongamos que la lluvia tiene un efecto directo sobre el uso del rociador (usualmente cuando llueve el rociador se encuentra apagado). Entonces la situación puede ser modelada con la siguiente <a href="https://es.wikipedia.org/wiki/Red_bayesiana">red bayesiana</a>.</p>
@@ -1462,7 +1456,7 @@ p:
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1478,8 +1472,7 @@ Probabilidad de que la hierba este mojada por el rociador: 0.62105
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>De acuerdo a los resultados de la <a href="https://es.wikipedia.org/wiki/Red_bayesiana">red bayesiana</a>, si vemos que la hierba esta mojada, la probabilidad de que este lloviendo es alrededor del 38%.</p>
 <h2 id="Clasificador-Bayes-ingenuo">Clasificador Bayes ingenuo<a class="anchor-link" href="#Clasificador-Bayes-ingenuo">&#182;</a></h2><p>Uno de los clasificadores más utilizados en <a href="https://relopezbriega.github.io/category/machine-learning.html">Machine Learning</a> por su simplicidad y rapidez, es el <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo">Clasificador Bayes ingenuo</a>. El cual es una técnica de clasificación supervisada basada en el <a href="https://es.wikipedia.org/wiki/Teorema_de_Bayes">teorema de Bayes</a> que asume que existe una <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a> entre los <em>atributos</em>. En términos simples, un <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo">Clasificador Bayes ingenuo</a> asume que la presencia de una característica particular en una clase no está relacionada con la presencia de cualquier otra característica. Por ejemplo, una fruta puede considerarse como una manzana si es roja, redonda y de aproximadamente 9 cm de diámetro. Incluso si estas características dependen unas de otras o de la existencia de otras características, todas estas propiedades contribuyen independientemente a la probabilidad de que esta fruta sea una manzana. Se lo llama <em>ingenuo</em> ya que asumir <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a> absoluta entre todos los atributos, no es algo que se suela dar en la realidad. 
@@ -1544,7 +1537,7 @@ El modelo <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1556,7 +1549,7 @@ Efectividad del algoritmo:  0.93
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1685,8 +1678,7 @@ NFIQkYBKQUQCKgURCagURCSgUhCRgEpBRAIqBREJ/D+i+LYvQNBebAAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este sencillo ejemplo, podemos ver como el <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo">Clasificador Bayes ingenuo</a> ha clasificado correctamente la mayoría de los casos del dataset <a href="https://es.wikipedia.org/wiki/Iris_flor_conjunto_de_datos">iris</a>, obteniendo un efectividad del 93 %.</p>
 <p>Debido a que los <a href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo">clasificadores bayesianos ingenuos</a> hacen suposiciones tan estrictas acerca de los datos, generalmente no funcionarán tan bien con modelos más complicados. Dicho esto, tienen varias ventajas:</p>
@@ -1708,6 +1700,10 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/BayesInf.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/BayesInf.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -1785,6 +1781,9 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -1795,9 +1794,6 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -1821,7 +1817,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

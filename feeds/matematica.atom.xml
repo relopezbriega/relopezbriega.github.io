@@ -1,8 +1,363 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Matematica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/matematica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2018-03-30T00:00:00-03:00</updated><entry><title>Introducción a la Teoría de la información con python</title><link href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/" rel="alternate"></link><published>2018-03-30T00:00:00-03:00</published><updated>2018-03-30T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2018-03-30:/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Matematica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/matematica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2019-03-09T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>El sistema de numeración Binario</title><link href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/" rel="alternate"></link><published>2019-03-09T00:00:00-03:00</published><updated>2019-03-09T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2019-03-09:/blog/2019/03/09/el-sistema-de-numeracion-binario/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="Números Binarios" title="Números Binarios" src="https://relopezbriega.github.io/images/binario.jpg" width="60%" height="60%"&gt;&lt;/p&gt;
+
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;blockquote&gt;&lt;p&gt;"Sólo hay 10 tipos de personas en el mundo: Los que entienden binario y los que no lo hacen."&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema de números binarios&lt;/a&gt; es el más fundamental sistema numérico que se utiliza en todas las computadoras. Cualquier dispositivo digital que vemos hoy en día, desde celulares hasta Smart …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="Números Binarios" title="Números Binarios" src="https://relopezbriega.github.io/images/binario.jpg" width="60%" height="60%"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;blockquote&gt;&lt;p&gt;"Sólo hay 10 tipos de personas en el mundo: Los que entienden binario y los que no lo hacen."&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema de números binarios&lt;/a&gt; es el más fundamental sistema numérico que se utiliza en todas las computadoras. Cualquier dispositivo digital que vemos hoy en día, desde celulares hasta Smart TVs utilizan el &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema binario&lt;/a&gt;! 
+Este sistema sigue reglas muy similares al &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt; (el que usamos diariamente) pero en lugar de utilizar una base decimal de 10 números, se utiliza una base de 2 números, &lt;a href="https://es.wikipedia.org/wiki/Cero"&gt;cero&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Uno"&gt;uno&lt;/a&gt;. Es decir que los números van a ser expresados como una cadena de 1s y 0s.&lt;/p&gt;
+&lt;p&gt;Una de las formas más sencillas de entender este &lt;a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_posicional"&gt;sistema de numeración&lt;/a&gt;, es comparándolo con algo que ya conocemos y que manejamos cotidianamente como es el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;. Comencemos viendo como convertir los números entre estos dos sistemas.&lt;/p&gt;
+&lt;h2 id="Convertir-un-n&amp;#250;mero-Binario-a-Decimal"&gt;Convertir un n&amp;#250;mero Binario a Decimal&lt;a class="anchor-link" href="#Convertir-un-n&amp;#250;mero-Binario-a-Decimal"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Como en cualquier &lt;a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_posicional"&gt;sistema de numeración&lt;/a&gt;, en los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;números binarios&lt;/a&gt;&lt;/em&gt; cada dígito tiene distinto valor dependiendo de la posición en que se encuentre dentro de la cadena. Para convertir un número binario en su equivalente en decimal, solamente debemos conocer las potencias de 2 y luego es cuestión de contar las posiciones. Algo a tener en cuenta es que al trabajar con binarios los algoritmos en general se aplican de derecha a izquierda. Entonces,  vamos a empezar a contar desde la derecha y a cada posición le vamos a asignar una potencia de 2 empezando por el 0. Por ejemplo, si queremos convertir el &lt;strong&gt;10011000&lt;/strong&gt; al &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;, deberíamos hacer lo siguiente:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Binario a Decimal" title="Binario a Decimal" src="https://relopezbriega.github.io/images/binario1.png" width="60%" height="60%"&gt;&lt;/p&gt;
+&lt;p&gt;Le asignamos las potencias a cada posición y luego multiplicamos los resultados de las potencias por los 1 y 0; por último sumamos los resultados y obtenemos la conversión en el sistema decimal 128 + 16 + 8 = 152.&lt;/p&gt;
+&lt;h2 id="Convertir-un-n&amp;#250;mero-Decimal-a-Binario"&gt;Convertir un n&amp;#250;mero Decimal a Binario&lt;a class="anchor-link" href="#Convertir-un-n&amp;#250;mero-Decimal-a-Binario"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Realizar el proceso inverso y convertir un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;número decimal&lt;/a&gt;&lt;/em&gt; a un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;número binario&lt;/a&gt;&lt;/em&gt; también es bastante sencillo. Como el &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema binario&lt;/a&gt; solo tiene 2 alternativas 0 y 1; el número 2 se vuelve fundamental. Para convertir un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;número decimal&lt;/a&gt;&lt;/em&gt; a su equivalente en &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;binario&lt;/a&gt;&lt;/em&gt; entonces tenemos que comenzar a dividir por 2 hasta obtener restos de 1 y 0. Por ejemplo si queremos convertir el número 152, debemos ir dividiendo el mismo por 2 como podemos ver en el siguiente cuadro:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Decimal a Binario" title="Decimal a Binario" src="https://relopezbriega.github.io/images/binario2.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Una vez que completamos este proceso, simplemente tomamos los restos desde abajo hacia arriba y obtenemos el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;número binario&lt;/a&gt;&lt;/em&gt; equivalente, que en este caso es 10011000.&lt;/p&gt;
+&lt;h2 id="Suma-de-n&amp;#250;meros-Binarios"&gt;Suma de n&amp;#250;meros Binarios&lt;a class="anchor-link" href="#Suma-de-n&amp;#250;meros-Binarios"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La suma de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;números binarios&lt;/a&gt;&lt;/em&gt; es bastante fácil, solo hay que tener en cuenta la siguiente tabla y luego es un proceso simple y mecánico:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Suma de Binarios" title="Suma de Binarios" src="https://relopezbriega.github.io/images/binario3.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Es decir &lt;strong&gt;0 + 0 = 0&lt;/strong&gt;; &lt;strong&gt;0 + 1 = 1&lt;/strong&gt;; &lt;strong&gt;1 + 0 = 1&lt;/strong&gt; y &lt;strong&gt;1 + 1 = 10&lt;/strong&gt;. En este último caso en realidad el resultado de 1 + 1 es 0 y se arrastra un 1 a la izquierda.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, para sumar los siguientes números: 10011000 (que representa al número 152 en el sistema decimal) y 10101 (que representa al número 21), deberíamos aplicar las reglas del cuadro de la siguiente forma:
+ 
+&lt;img alt="Suma de Binarios" title="Suma de Binarios" src="https://relopezbriega.github.io/images/binario4.png" width="80%" height="80%"&gt;&lt;/p&gt;
+&lt;p&gt;El proceso siempre se empieza de la derecha hacia la izquierda. Tener en cuenta que en la tercera posición, el resultado de 0 + 0 es 1 porque se arrastró el valor de la suma anterior de 1 + 1 = 0. El resultado final que obtuvimos fue 10101101 el cual representa al 173 en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;!.&lt;/p&gt;
+&lt;h2 id="Resta-de-n&amp;#250;meros-Binarios"&gt;Resta de n&amp;#250;meros Binarios&lt;a class="anchor-link" href="#Resta-de-n&amp;#250;meros-Binarios"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para la resta de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;números binarios&lt;/a&gt;&lt;/em&gt; el algoritmo es también muy fácil y similar al que se utiliza en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;. El cuadro a tener en cuenta en este caso es:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Resta de Binarios" title="Resta de Binarios" src="https://relopezbriega.github.io/images/binario5.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Es decir &lt;strong&gt;0 - 0 = 0&lt;/strong&gt;; &lt;strong&gt;1 - 0 = 1&lt;/strong&gt;; &lt;strong&gt;1 - 1 = 0&lt;/strong&gt; y &lt;strong&gt;0 - 1 = 1&lt;/strong&gt;. En este último caso en realidad como no se puede restar 1 a 0, se pide prestado una unidad de la posición siguiente como hacemos en la resta en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, para restar los siguientes números: 11001001 (que representa al 201 en decimales) y 1000011 (que representa al 67), deberíamos aplicar las reglas del cuadro de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Resta de Binarios" title="Resta de Binarios" src="https://relopezbriega.github.io/images/binario6.png" width="80%" height="80%"&gt;&lt;/p&gt;
+&lt;p&gt;Nuevamente el algoritmo se aplica de derecha a izquierda, comenzamos con 1 – 1 que da 0, luego 0 – 1 que da 1 y arrastramos a 1 a la izquierda, por lo que la siguiente columna vuelve a ser 0 – 1 que da 1, como volvimos a arrastrar la siguiente es 1 – 1 igual a 0 y después ya es más simple porque ya no tenemos arrastres. El resultado final es 10000110 que representa al número 134 en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;!&lt;/p&gt;
+&lt;h2 id="Multiplicaci&amp;#243;n-de-n&amp;#250;meros-Binarios"&gt;Multiplicaci&amp;#243;n de n&amp;#250;meros Binarios&lt;a class="anchor-link" href="#Multiplicaci&amp;#243;n-de-n&amp;#250;meros-Binarios"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El algoritmo de multiplicación es similar al que utilizamos en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt; pero es mucho más sencillo ya que solo tenemos que multiplicar por 1 y 0! La tabla que utilizamos para los cálculos es la siguiente:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Multiplicación de Binarios" title="Multiplicación de Binarios" src="https://relopezbriega.github.io/images/binario7.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Para poder realizar la multiplicación al igual que como ocurre con el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;, tenemos que saber sumar. Por ejemplo, si queremos multiplicar 10110 (22 en el sistema decimal)  por 1001 ( que representa al 9) el proceso sería el siguiente:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Multiplicación de Binarios" title="Multiplicación de Binarios" src="https://relopezbriega.github.io/images/binario8.png" width="80%" height="80%"&gt;&lt;/p&gt;
+&lt;p&gt;Vamos multiplicando dígito a dígito y luego sumamos los resultados; el resultado final es 11000110 que equivale a 198 en el sistema decimal.&lt;/p&gt;
+&lt;h2 id="Divisi&amp;#243;n-de-n&amp;#250;meros-Binarios"&gt;Divisi&amp;#243;n de n&amp;#250;meros Binarios&lt;a class="anchor-link" href="#Divisi&amp;#243;n-de-n&amp;#250;meros-Binarios"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El algoritmo de división de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;números binarios&lt;/a&gt;&lt;/em&gt; es el mismo que se utiliza para el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt; con la salvedad que solo podemos trabajar con 1s y 0s y que las restas y multiplicaciones se deben realizar también en binario.&lt;/p&gt;
+&lt;p&gt;Si por ejemplo queremos dividir 101010 (que representa al 42 en el sistema decimal) entre 110 (que representa al 6); el proceso sería el siguiente:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario9.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Tomamos los primeros 3 dígitos 101 como 101 (5 en decimal) es más chico que 110 (6 en decimal) no nos sirve, entonces tomamos un dígito más 1010. Como es más grande entonces entra 1 vez en 110, por lo que ya tenemos el primer dígito del resultado. Multiplicamos 1 por 110 y lo restamos a 1010, el resultado es 100, como 100 es menor que 110 bajamos el siguiente dígito, por lo que nos queda 1001 para dividir entre 110.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario10.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Como 1001 es mayor que 110, volvemos a aplicar el procedimiento y restar 110.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario11.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Como 110 entra una vez en 110, otra vez obtenemos 1 y volvemos a aplicar el procedimiento.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario12.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;De esta forma arribamos al resultado final de 111 ( 7 en el sistema decimal).&lt;/p&gt;
+&lt;p&gt;Como la división es un poco más difícil que las otras operaciones, realicemos un ejemplo más, en este caso vamos a dividir 101000 (40 en decimal) entre 1000 (8 en decimal).&lt;/p&gt;
+&lt;p&gt;Partimos de los primeros 4 dígitos, como 1010 es mayor que 1000, el primer dígito de nuestro resultado es 1.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario13.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Luego de restar 1000 a 1010, el resultado es 10, como es más chico que 1000 bajamos el siguiente dígito; como 100 sigue siendo más chico que 1000; el segundo dígito de nuestro resultado es 0.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario14.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Continuamos aplicando el mismo procedimiento; como luego de la resta, 100 sigue siendo más chico que 1000, bajamos el siguiente dígito. Ahora como 1000 entra una vez en 1000, podemos obtener el siguiente dígito del resultado y arribar al resultado final!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="División de Binarios" title="División de Binarios" src="https://relopezbriega.github.io/images/binario15.png" width="50%" height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;Como vemos, el resultado final es 101 que equivale a 5 en el &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;sistema decimal&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="N&amp;#250;meros-Binarios-con-Python"&gt;N&amp;#250;meros Binarios con Python&lt;a class="anchor-link" href="#N&amp;#250;meros-Binarios-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ahora que ya conocemos como trabajar con el &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema de números binarios&lt;/a&gt; en forma manual; podemos simplificar las cosas ayudándonos de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; y su interprete interactivo. En &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; podemos convertir un &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n_decimal"&gt;número decimal&lt;/a&gt; en su equivalente en  &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;binario&lt;/a&gt; utilizando la función &lt;code&gt;bin()&lt;/code&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+
 &lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# convertir decimal a binario&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;152&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b10011000&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Convertir binario a decimal&lt;/span&gt;
+&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b10011000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;152&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# suma de binarios&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b10011000&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mb"&gt;0b10101&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b10101101&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# resta de binarios&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b11001001&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mb"&gt;0b1000011&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b10000110&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# multiplicacion&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b10110&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mb"&gt;0b1001&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b11000110&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# división&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b101010&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mb"&gt;0b110&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b111&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[13]:&lt;/div&gt;
+
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# división&lt;/span&gt;
+&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mb"&gt;0b101000&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mb"&gt;0b1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre class="ipynb"&gt;&amp;#39;0b101&amp;#39;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Como vemos, las operaciones entre los &lt;a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_posicional"&gt;sistema de numeración&lt;/a&gt; son equivalentes, ya que lo que cambia es la forma en que representamos los números y no la esencia de la operación.&lt;/p&gt;
+&lt;p&gt;Aquí concluye este artículo, como podemos ver el &lt;a href="https://es.wikipedia.org/wiki/Sistema_binario"&gt;sistema de numeración binario&lt;/a&gt; posee una simpleza muy bella que lo hace extremadamente útil; con tan solo dos estados...uno y cero, podemos representar cosas extremadamente complejas como son todos los productos de la &lt;a href="https://es.wikipedia.org/wiki/Revoluci%C3%B3n_Digital"&gt;revolución digital&lt;/a&gt; que utilizamos hoy en día!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Este post fue escrito por &lt;a href="https://relopezbriega.github.io/"&gt;Raúl e. López Briega&lt;/a&gt; utilizando &lt;a href="https://jupyter.org/"&gt;Jupyter notebook&lt;/a&gt;. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/binario.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/binario.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+&lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="matematica"></category><category term="minario"></category><category term="numeros"></category><category term="decimales"></category><category term="multiplicar"></category><category term="sumar"></category><category term="restar"></category><category term="dividir"></category></entry><entry><title>Introducción a la Teoría de la información con python</title><link href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/" rel="alternate"></link><published>2018-03-30T00:00:00-03:00</published><updated>2018-03-30T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2018-03-30:/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="NLP" title="NLP" src="https://relopezbriega.github.io/images/shannon.jpg" width="60%" height="60%"&gt;&lt;/p&gt;
 
@@ -10,8 +365,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"La información es la resolución de la incertidumbre"&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -20,8 +374,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Richard_Dawkins"&gt;Richard …&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="NLP" title="NLP" src="https://relopezbriega.github.io/images/shannon.jpg" width="60%" height="60%"&gt;&lt;/p&gt;
 
@@ -29,8 +382,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;"La información es la resolución de la incertidumbre"&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -43,8 +395,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Muchas veces hemos escuchado decir que vivimos en la &lt;a href="https://es.wikipedia.org/wiki/Era_de_la_informaci%C3%B3n"&gt;era de la información&lt;/a&gt;. La &lt;em&gt;información&lt;/em&gt; parece estar en todo los que nos rodea. Ya sea que consideremos a las computadoras, la evolución, la física, la &lt;a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/"&gt;inteligencia artificial&lt;/a&gt;, o nuestro cerebro; podemos llegar a la conclusión de que su comportamiento esta principalmente determinado por la forma en que procesan la &lt;em&gt;información&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;La idea de la &lt;em&gt;información&lt;/em&gt; nació del antiguo arte de la codificación y decodificación de códigos. Los encargados de esconder los secretos de estado durante la segunda guerra mundial utilizaban, en esencia, métodos para ocultar &lt;em&gt;información&lt;/em&gt; y transmitirla de un lugar a otro. Cuando el arte de quebrar estos códigos se combinó con la ciencia de la &lt;a href="https://es.wikipedia.org/wiki/Termodin%C3%A1mica"&gt;Termodinámica&lt;/a&gt;, la rama de la &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;física&lt;/a&gt; encargada del estudio de la interacción entre el calor y otras manifestaciones de la energía; surgió lo que hoy conocemos como &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt;. Esta teoría fue una idea revolucionaria que inmediatamente transformó el campo de las comunicaciones y preparó el camino para la &lt;em&gt;era de las computadoras&lt;/em&gt;. Pero las ideas de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt; no solo gobiernan las comunicaciones y los &lt;em&gt;bits&lt;/em&gt; y &lt;em&gt;bytes&lt;/em&gt; de las computadoras modernas; sino que también describen el comportamiento del &lt;em&gt;mundo &lt;a href="https://es.wikipedia.org/wiki/Part%C3%ADcula_subat%C3%B3mica"&gt;subatómico&lt;/a&gt;&lt;/em&gt;, e incluso de toda la vida en la Tierra.&lt;/p&gt;
@@ -53,8 +404,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-la-informaci&amp;#243;n?"&gt;&amp;#191;Qu&amp;#233; es la informaci&amp;#243;n?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-la-informaci&amp;#243;n?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hasta no hace no tanto tiempo atrás, nuestro conocimiento de la &lt;em&gt;información&lt;/em&gt; era bastante vago y limitado. En 1948, &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Claude Shannon&lt;/a&gt; publicó un artículo titulado &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Una_teor%C3%ADa_matem%C3%A1tica_de_la_comunicaci%C3%B3n"&gt;"Una teoría matemática de la comunicación"&lt;/a&gt;&lt;/em&gt;, el cual transformó para siempre la forma en que entendemos la &lt;em&gt;información&lt;/em&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; proporciona una definición matemática de &lt;em&gt;información&lt;/em&gt; y describe con precisión cuánta &lt;em&gt;información&lt;/em&gt; se puede comunicar entre los diferentes elementos de un sistema. La teoría de &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; respalda nuestra comprensión de cómo se relacionan las &lt;em&gt;señales y el ruido&lt;/em&gt;, y por qué existen límites definidos para la velocidad a la que se puede comunicar la &lt;em&gt;información&lt;/em&gt; dentro de cualquier sistema, ya sea creado por el hombre o biológico. La habilidad de separar la &lt;em&gt;señal&lt;/em&gt; del &lt;em&gt;ruido&lt;/em&gt;, para extraer la &lt;em&gt;información&lt;/em&gt; en los datos, se ha vuelto crucial en las telecomunicaciones modernas.&lt;/p&gt;
 &lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt; es tan poderosa porque la &lt;em&gt;información&lt;/em&gt; es física. La &lt;em&gt;información&lt;/em&gt; no es solo un concepto abstracto, y no solo son hechos o figuras, fechas o nombres. Es una propiedad concreta de la materia y la energía que es cuantificable y mensurable. Es tan real como el peso de un trozo de plomo o la energía almacenada en una ojiva atómica, y al igual que la masa y la energía, la &lt;em&gt;información&lt;/em&gt; está sujeta a un conjunto de leyes físicas que dictan cómo puede comportarse, cómo la &lt;em&gt;información&lt;/em&gt; puede ser manipulada, transferida, duplicada, borrada o destruida. Y todo en el universo debe obedecer las leyes de la &lt;em&gt;información&lt;/em&gt;, porque todo en el universo está formado por la &lt;em&gt;información&lt;/em&gt; que contiene.&lt;/p&gt;
@@ -84,8 +434,7 @@ function adivinar_numero(){
 }
 &lt;/script&gt;&lt;h2 id="Entrop&amp;#237;a"&gt;Entrop&amp;#237;a&lt;a class="anchor-link" href="#Entrop&amp;#237;a"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La idea central de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; es la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt;. La &lt;em&gt;información&lt;/em&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt; están intimimamente relacionadas, ya que esta última es en sí misma una &lt;em&gt;medida de información&lt;/em&gt;. Cuando &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; comenzó a desarrollar su teoría, encontró una formula que le permitía analizar la &lt;em&gt;información&lt;/em&gt; en un mensaje en términos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bits&lt;/a&gt;&lt;/em&gt;. Esta formula que encontró mide, a grandes rasgos, cuan poco predecible es una cadena de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bits&lt;/a&gt;&lt;/em&gt;. Mientras menos predecible, existen menos probabilidades de poder generar el mensaje completo desde una cadena más pequeña de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bits&lt;/a&gt;&lt;/em&gt;. Es decir, que al intentar medir cuan poco predecible es una cadena de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bits&lt;/a&gt;&lt;/em&gt;,  &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; esperaba poder encontrar &lt;em&gt;cuánta información&lt;/em&gt; contenía el mensaje. Ahora bien, ¿cuál es la cadena de 0s y 1s menos probables? Pues aquella que sea completamente aleatoria, como cuando lanzamos una moneda al aire y tenemos 50% de probabilidades de obtener cara o seca. Mientras más aleatoria es una cadena de símbolos, es menos predecible y menos redundante; y por lo tiende a contener una mayor cantidad de &lt;em&gt;información&lt;/em&gt; por símbolo. Si bien esto parece una paradoja, ¿cómo algo que es completamente aleatorio contiene más &lt;em&gt;información&lt;/em&gt; que algo que no lo es? Acoso, ¿lo aleatorio no es no lo contrario de &lt;em&gt;información&lt;/em&gt;? Parece ser contra intuitivo, pero en realidad no lo es. Se puede observar facílmente con un ejemplo. Supongamos que arrojamos una moneda al aire 16 veces y representamos a la cara con un 1 y a la seca con un 0. Podemos obtener una cadena como la siguiente: 1101001110001011. Esta cadena es aleatoria y por lo tanto no podemos encontrar ningún patrón en ella que nos diga cuál va a ser el próximo valor que podemos obtener más alla de la chance de 50% habitual, por tal motivo, no podemos &lt;em&gt;comprimir&lt;/em&gt; la cadena y cada símbolo contiene un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bit&lt;/a&gt;&lt;/em&gt; de &lt;em&gt;información&lt;/em&gt;. Ahora supongamos que la moneda esta sesgada y que siempre sale cara; en este caso nuestra cadena será la siguiente: 1111111111111111. Esta cadena es sumamente predecible, no nos aporta ninguna sorpresa y tenemos una probabilidad de 100% de adivinar que el siguiente dígito también será un 1. Es totalmente &lt;em&gt;redundante&lt;/em&gt; y por lo tanto no nos aporta ninguna &lt;em&gt;información&lt;/em&gt;. Cada símbolo contiene un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Bit"&gt;Bit&lt;/a&gt;&lt;/em&gt; de &lt;em&gt;información&lt;/em&gt;. Sin sorpresa, no hay &lt;em&gt;información&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;La fórmula matemática que encontró &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; para medir la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt; de un mensaje es muy similar a la que se utiliza en &lt;a href="https://es.wikipedia.org/wiki/Termodin%C3%A1mica"&gt;Termodinámica&lt;/a&gt; para medir el grado de desorden de un sistema. Es la siguiente:&lt;/p&gt;
-&lt;p&gt;$$ H(x) = - \sum_{i} p(i) log_2 p(i) $$&lt;/p&gt;
-&lt;p&gt;Cuando &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; se dio cuenta de que la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt; de una secuencia de símbolos estaba relacionada con la cantidad de &lt;em&gt;información&lt;/em&gt; que la cadena de símbolos tiende a contener, de repente tuvo una herramienta para cuantificar la &lt;em&gt;información&lt;/em&gt; y la redundancia en un mensaje. Fue capaz de demostrar, matemáticamente, cuánta &lt;em&gt;información&lt;/em&gt; puede transmitirse en cualquier medio y que existe un límite fundamental para la cantidad de &lt;em&gt;información&lt;/em&gt; que puede transmitir con un equipo determinado.&lt;/p&gt;
+$$ H(x) = - \sum_{i} p(i) log_2 p(i) $$&lt;p&gt;Cuando &lt;a href="https://es.wikipedia.org/wiki/Claude_Elwood_Shannon"&gt;Shannon&lt;/a&gt; se dio cuenta de que la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt; de una secuencia de símbolos estaba relacionada con la cantidad de &lt;em&gt;información&lt;/em&gt; que la cadena de símbolos tiende a contener, de repente tuvo una herramienta para cuantificar la &lt;em&gt;información&lt;/em&gt; y la redundancia en un mensaje. Fue capaz de demostrar, matemáticamente, cuánta &lt;em&gt;información&lt;/em&gt; puede transmitirse en cualquier medio y que existe un límite fundamental para la cantidad de &lt;em&gt;información&lt;/em&gt; que puede transmitir con un equipo determinado.&lt;/p&gt;
 &lt;p&gt;Veamos algunos ejemplos de como calcular la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)" target="_blank"&gt;Entropía&lt;/a&gt; con la ayuda de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -161,7 +510,7 @@ function adivinar_numero(){
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -211,7 +560,7 @@ function adivinar_numero(){
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -255,7 +604,7 @@ function adivinar_numero(){
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 
 
 
@@ -296,7 +645,7 @@ function adivinar_numero(){
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
 
 
 
@@ -312,8 +661,7 @@ function adivinar_numero(){
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Redundancia"&gt;Redundancia&lt;a class="anchor-link" href="#Redundancia"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Otro de los conceptos fundamentales de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"&gt;Teoría de la información&lt;/a&gt; es el de &lt;a href="https://es.wikipedia.org/wiki/Redundancia"&gt;Redundancia&lt;/a&gt;. La &lt;a href="https://es.wikipedia.org/wiki/Redundancia"&gt;Redundancia&lt;/a&gt; son esas pistas adicionales en una sentencia o mensaje que nos permiten entender su significado incluso si el mensaje esta incompleto o distorsionado; son esos caracteres extra en una cadena de símbolos, la parte predecible que nos permite completar la &lt;em&gt;información&lt;/em&gt; faltante. Cualquier sentencia de cualquier lenguaje es altamente redundante. Todo sentencia nos proporciona &lt;em&gt;información&lt;/em&gt; adicional para que podemos descifrarla. Esta &lt;a href="https://es.wikipedia.org/wiki/Redundancia"&gt;Redundancia&lt;/a&gt; es fácil de ver, simplemente tr-t- d- l--r -st- m-ns-j-. A pesar de que quitemos todas la vocales, igualmente se podemos entender la sentencia.&lt;/p&gt;
 &lt;p&gt;Para nosotros, la redundancia del lenguaje es algo bueno, porque hace que un mensaje sea más fácil de comprender incluso cuando el mensaje está parcialmente modificado por el entorno. Podemos entender a un amigo hablando en un restaurante abarrotado de gente o hablando con un teléfono celular con mucha estática gracias a la &lt;a href="https://es.wikipedia.org/wiki/Redundancia"&gt;Redundancia&lt;/a&gt; . La &lt;a href="https://es.wikipedia.org/wiki/Redundancia"&gt;Redundancia&lt;/a&gt;  es un mecanismo de seguridad; nos asegura que el mensaje se transmita incluso si se daña levemente en el camino. Todos los idiomas tienen estas redes de seguridad integradas compuestas de patrones, estructuras y un conjunto de reglas que los hacen redundantes. Usualmente no estamos al tanto de esas reglas, pero nuestro cerebro las usa inconscientemente mientras leemos, hablamos, escuchamos y escribimos.&lt;/p&gt;
@@ -455,8 +803,7 @@ function adivinar_nombres(){
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;Este post fue escrito utilizando &lt;a href="https://jupyter.org/"&gt;Jupyter notebook&lt;/a&gt;. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyInformationTheory.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyInformationTheory.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
@@ -467,8 +814,7 @@ function adivinar_nombres(){
 
 &lt;/p&gt;</content><category term="informacion"></category><category term="incertidumbre"></category><category term="matematica"></category><category term="entropia"></category><category term="bit"></category><category term="redundancia"></category><category term="python"></category><category term="shannon"></category></entry><entry><title>Problemas de Optimización con Python</title><link href="https://relopezbriega.github.io/blog/2017/01/18/problemas-de-optimizacion-con-python/" rel="alternate"></link><published>2017-01-18T00:00:00-03:00</published><updated>2017-01-18T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-01-18:/blog/2017/01/18/problemas-de-optimizacion-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Optimización" title="Optimización" src="https://relopezbriega.github.io/images/optimization.png" &gt;&lt;/p&gt;
 
@@ -476,13 +822,11 @@ function adivinar_nombres(){
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;ingeniería&lt;/a&gt; o en &lt;a href="https://es.wikipedia.org/wiki/Econom%C3%ADa"&gt;ciencias económicas&lt;/a&gt;. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan &lt;em&gt;buena …&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Optimización" title="Optimización" src="https://relopezbriega.github.io/images/optimization.png" &gt;&lt;/p&gt;
 
@@ -490,8 +834,7 @@ function adivinar_nombres(){
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; es fundamental para cualquier problema relacionado con la toma de decisiones, ya sea en &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;ingeniería&lt;/a&gt; o en &lt;a href="https://es.wikipedia.org/wiki/Econom%C3%ADa"&gt;ciencias económicas&lt;/a&gt;. La tarea de tomar decisiones implica elegir entre varias alternativas. Esta opción va a estar gobernada por nuestro deseo de tomar la "mejor" decisión posible. Que tan &lt;em&gt;buena&lt;/em&gt; va a ser cada una de las alternativas va a estar descripta por una &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt; o índice de rendimiento. La teoría y los métodos de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; nos van a ayudar a seleccionar la mejor alternativa de acuerdo a esta &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt; dada.
 El área de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; ha recibido gran atención en los últimos años, principalmente por el rápido desarrollo de las &lt;a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n"&gt;ciencias de computación&lt;/a&gt;, incluido el desarrollo y la disponibilidad de herramientas de software sumamente amigables, procesadores paralelos de alta velocidad, y &lt;a href="https://relopezbriega.github.io/category/redes-neuronales.html"&gt;redes neuronales artificiales&lt;/a&gt;.
@@ -512,12 +855,11 @@ El poder de los métodos de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci
 &lt;li&gt;&lt;strong&gt;Optimización determinista versus optimización estocástica&lt;/strong&gt;: En la &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Sistema_determinista"&gt;determinista&lt;/a&gt;&lt;/strong&gt;, se supone que los datos para el problema dado se conocen con exactitud. Sin embargo, para muchos problemas reales, los datos no pueden ser conocidos con precisión por una variedad de razones. La primera razón se debe a un simple error de medición. La segunda razón más fundamental es que algunos datos representan información sobre el futuro (por ejemplo, la demanda o el precio del producto para un período de tiempo futuro) y simplemente no se puede saber con certeza. En la &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; bajo incertidumbre, o &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico"&gt;estocástica&lt;/a&gt;&lt;/strong&gt;, la incertidumbre se incorpora en el modelo. El objetivo es encontrar una solución que sea factible para todos los datos y óptima en algún sentido. Los modelos de &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Stochastic_programming"&gt;programación estocástica&lt;/a&gt;&lt;/em&gt; aprovechan el hecho de que las &lt;a href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"&gt;distribuciones de probabilidad&lt;/a&gt; que gobiernan los datos son conocidas o pueden ser estimadas; el objetivo es encontrar alguna solución que sea factible para todas (o casi todas) las posibles instancias de los datos y optimice el rendimiento esperado del modelo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="Programaci&amp;#243;n-lineal"&gt;Programaci&amp;#243;n lineal&lt;a class="anchor-link" href="#Programaci&amp;#243;n-lineal"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Matemáticamente, un problema de &lt;a href="https://en.wikipedia.org/wiki/Constrained_optimization"&gt;optimización con restricciones&lt;/a&gt; asume la siguiente forma:&lt;/p&gt;
-&lt;p&gt;$$ \begin{array}{ll}
+$$ \begin{array}{ll}
             \min \hspace{1cm} f_0(x)\\
             \mbox{sujeto a } \ f_i (x) \leq b_i, \hspace{1cm} i=1, \dots, m.
     \end{array}
-$$&lt;/p&gt;
-&lt;p&gt;En donde el &lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt; $x = (x_1, \dots, x_n)$ es la &lt;em&gt;variable de optimización&lt;/em&gt; del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt;, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las &lt;em&gt;funciones de &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Desigualdad"&gt;desigualdad&lt;/a&gt;&lt;/em&gt;; y las constantes $b_1, \dots, m$ son los &lt;em&gt;límites&lt;/em&gt; de las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;. Dentro de este marco, un caso importante es el de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, en el cual la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; y las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; son &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;.
+$$&lt;p&gt;En donde el &lt;a href="https://es.wikipedia.org/wiki/Vector"&gt;vector&lt;/a&gt; $x = (x_1, \dots, x_n)$ es la &lt;em&gt;variable de optimización&lt;/em&gt; del problema, la función $f_0: \mathbb{R}^n \rightarrow \mathbb{R}$ es la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt;&lt;/em&gt;, las funciones $f_i: \mathbb{R}^n \rightarrow \mathbb{R}, i=1, \dots, m$; son las &lt;em&gt;funciones de &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Desigualdad"&gt;desigualdad&lt;/a&gt;&lt;/em&gt;; y las constantes $b_1, \dots, m$ son los &lt;em&gt;límites&lt;/em&gt; de las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;. Dentro de este marco, un caso importante es el de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, en el cual la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; y las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; son &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;.
 El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; es determinar los valores de las variables de decisión que &lt;a href="https://es.wikipedia.org/wiki/Extremos_de_una_funci%C3%B3n"&gt;maximizan o minimizan&lt;/a&gt; una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineal&lt;/a&gt;, y en donde las variables de decisión están sujetas a &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; &lt;a href="https://es.wikipedia.org/wiki/Lineal"&gt;lineales&lt;/a&gt;. En general, el objetivo es encontrar un punto que minimice la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_real"&gt;función objetivo&lt;/a&gt; al mismo tiempo que satisface las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para resolver un problema de &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt;, debemos seguir los siguientes pasos:&lt;/p&gt;
 &lt;ol&gt;
@@ -639,7 +981,7 @@ El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_li
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -683,7 +1025,7 @@ El objetivo de la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_li
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1064,13 +1406,11 @@ YII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Optimizaci&amp;#243;n-con-restricciones"&gt;Optimizaci&amp;#243;n con restricciones&lt;a class="anchor-link" href="#Optimizaci&amp;#243;n-con-restricciones"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; añaden otro nivel de complejidad a los problemas de &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt;. En su forma más simple, simplemente consiste en poner algunos límites sobre los valores que las variables pueden alcanzar. Por ejemplo, podrías intentar resolver el siguiente problema:&lt;/p&gt;
-&lt;p&gt;$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
-$$&lt;/p&gt;
-&lt;p&gt;Este tipo de problema se puede resolver utilizando el método &lt;a href="https://es.wikipedia.org/wiki/L-BFGS"&gt;L-BFGS-B&lt;/a&gt; que nos ofrece &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html"&gt;scipy.optimize&lt;/a&gt;.&lt;/p&gt;
+$$\min \ f(x)= (x_1 -1)^2 - (x_2 -1)^2 \hspace{1cm} \mbox{sujeto a } \ 2 \leq x_1 \leq 3 \mbox{ y } 0 \leq x_2 \leq 2
+$$&lt;p&gt;Este tipo de problema se puede resolver utilizando el método &lt;a href="https://es.wikipedia.org/wiki/L-BFGS"&gt;L-BFGS-B&lt;/a&gt; que nos ofrece &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html"&gt;scipy.optimize&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1133,7 +1473,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -6599,8 +6939,7 @@ FAqFQjEASlBSKBQKhUKhGAAlKCkUCoVCoVAMgBKUFAqFQqFQKAZACUoKhUKhUCgUA/D/AVBayncf
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Restricci%C3%B3n_(matem%C3%A1ticas)"&gt;restricciones&lt;/a&gt; que se definen por &lt;a href="https://es.wikipedia.org/wiki/Igualdad_matem%C3%A1tica"&gt;igualdades&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Desigualdad_matem%C3%A1tica"&gt;desigualdades&lt;/a&gt; que incluyen más de una variable son más
 complicadas de tratar. Sin embargo, existen técnicas generales que también podemos utilizar para este tipo de problemas. Volviendo al ejemplo anterior, cambiemos la restricción por una más compleja, como ser: $g(x) = x_1 - 1.75 - ( x_0 - 0.75 )^4 \geq 0$.
@@ -6655,7 +6994,7 @@ Para resolver este problema &lt;a href="https://docs.scipy.org/doc/scipy-0.18.1/
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12129,18 +12468,16 @@ rkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Programaci&amp;#243;n-lineal-con-CVXopt"&gt;Programaci&amp;#243;n lineal con CVXopt&lt;a class="anchor-link" href="#Programaci&amp;#243;n-lineal-con-CVXopt"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ahora veamos un ejemplo de &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; utilizando los métodos de &lt;a href="https://en.wikipedia.org/wiki/Convex_optimization"&gt;optimización convexa&lt;/a&gt; que nos ofrece la librería &lt;a href="https://cvxopt.org/"&gt;CVXopt&lt;/a&gt;. Recordemos que la &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; es un caso especial de la &lt;a href="https://en.wikipedia.org/wiki/Convex_optimization"&gt;optimización convexa&lt;/a&gt; y el principal algoritmo que se utiliza es el &lt;a href="https://es.wikipedia.org/wiki/Algoritmo_s%C3%ADmplex"&gt;método simplex&lt;/a&gt;. Para este pequeño ejemplo vamos a maximizar la siguiente función objetivo:
 $$f(x_1,x_2) = 50x_1 + 40x_2$$&lt;/p&gt;
 &lt;p&gt;con las siguientes restricciones:&lt;/p&gt;
-&lt;p&gt;$$x_{1} + 1.5x_{2} \leq 750 \\
+$$x_{1} + 1.5x_{2} \leq 750 \\
 2x_1 + x_2 \leq 1000 \\
 x_1 \geq 0 \\
 x_2 \geq 0
-$$&lt;/p&gt;
-
+$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -12173,7 +12510,7 @@ $$&lt;/p&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -12213,7 +12550,7 @@ Optimal solution found.
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -12261,7 +12598,7 @@ Optimal solution found.
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12700,8 +13037,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, tanto la solución utilizando &lt;a href="https://cvxopt.org/"&gt;CVXopt&lt;/a&gt;, como la solución gráfica; nos devuelven el mismo resultado $x_1=375$ y $x_2=250$.&lt;/p&gt;
 &lt;h3 id="El-problema-de-transporte"&gt;El problema de transporte&lt;a class="anchor-link" href="#El-problema-de-transporte"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Problema_de_transporte"&gt;problema de transporte&lt;/a&gt; es un problema clásico de &lt;a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal"&gt;programación lineal&lt;/a&gt; en el cual se debe &lt;a href="https://es.wikipedia.org/wiki/Extremos_de_una_funci%C3%B3n"&gt;minimizar&lt;/a&gt; el costo del abastecimiento a una serie de puntos de demanda a partir de un grupo de puntos de oferta, teniendo en cuenta los distintos precios de envío de cada punto de oferta a cada punto de demanda. Por ejemplo, supongamos que tenemos que enviar cajas de cervezas de 2 cervecerías a 5 bares de acuerdo al siguiente gráfico:&lt;/p&gt;
@@ -12855,7 +13191,7 @@ GFMBJiIiIhJjKsBEREREYkwFmIiIiEiM/Q8eeMv1j/7mWQAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -12880,8 +13216,7 @@ Costo total de transporte = 8600.0
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, la solución óptima que encontramos con la ayuda de &lt;a href="https://pythonhosted.org/PuLP/"&gt;PuLP&lt;/a&gt;, nos dice que deberíamos enviar desde la Cervecería A, 300 cajas al Bar 1 y 700 cajas al Bar 5; y que desde la Cervecería B deberíamos enviar 200 cajas al Bar 1, 900 cajas al Bar 2, 1800 cajas al Bar 3 y 200 cajas al Bar 4. De esta forma podemos minimizar el costo de transporte a un total de 8600.&lt;/p&gt;
 &lt;p&gt;Veamos ahora si podemos formular este mismo problema con &lt;a href="https://www.pyomo.org/"&gt;Pyomo&lt;/a&gt;, así podemos darnos una idea de las diferencias entre las herramientas.&lt;/p&gt;
@@ -13007,7 +13342,7 @@ Costo total de transporte = 8600.0
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -13036,8 +13371,7 @@ x : Cantidad de cajas
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, arribamos a la mismo solución que utilizando &lt;a href="https://pythonhosted.org/PuLP/"&gt;PuLP&lt;/a&gt;. Ambas herramientas siguen un lenguaje de modelado totalmente distinto, particularmente me gusta más la sintaxis que ofrece &lt;a href="https://pythonhosted.org/PuLP/"&gt;PuLP&lt;/a&gt; sobre la de &lt;a href="https://www.pyomo.org/"&gt;Pyomo&lt;/a&gt;.&lt;/p&gt;
 
@@ -13045,8 +13379,7 @@ x : Cantidad de cajas
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Aquí concluye este artículo, como vemos la &lt;a href="https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_(matem%C3%A1tica)"&gt;optimización&lt;/a&gt; se puede aplicar a un amplio rango de problemas, por lo que es sumamente importe conocer sus principales métodos y como podemos aplicarlos con éxito.&lt;/p&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
@@ -13059,8 +13392,7 @@ x : Cantidad de cajas
 
 &lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="matematica"></category><category term="optimizacion"></category><category term="scipy"></category><category term="cvxopt"></category><category term="pulp"></category></entry><entry><title>Hasta el infinito y más alla</title><link href="https://relopezbriega.github.io/blog/2015/11/22/hasta-el-infinito-y-mas-alla/" rel="alternate"></link><published>2015-11-22T00:00:00-03:00</published><updated>2015-11-22T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-11-22:/blog/2015/11/22/hasta-el-infinito-y-mas-alla/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Hasta el infinito y más alla" title="Hasta el infinito y más alla" src="https://relopezbriega.github.io/images/python_infinity.jpg
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13069,8 +13401,7 @@ x : Cantidad de cajas
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;La línea consta de un número infinito de puntos; el plano, de un número infinito de
 líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número
@@ -13078,8 +13409,7 @@ infinito de volúmenes... No, decididamente no es éste... el mejor modo de inic
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Jorge Luis Borges - El libro …&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Hasta el infinito y más alla" title="Hasta el infinito y más alla" src="https://relopezbriega.github.io/images/python_infinity.jpg
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13088,8 +13418,7 @@ infinito de volúmenes... No, decididamente no es éste... el mejor modo de inic
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;&lt;p&gt;La línea consta de un número infinito de puntos; el plano, de un número infinito de
 líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número
@@ -13101,8 +13430,7 @@ infinito de volúmenes... No, decididamente no es éste... el mejor modo de inic
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; ha obsesionado a la mente humana por miles de años. La idea de que las cosas pueden seguir y seguir para siempre, que pueden no tener ni principio ni final, ni centro, ni límites; desafía a la intuición. Científicos, filósofos y teólogos por igual, han tratado de entenderlo, de cortar su tamaño, de averiguar su forma y dimensión; y en última instancia, de decidir si es un concepto bienvenido en nuestras descripciones del Universo que nos rodea.
 A pesar de todas las dificultades que puede traer el lidiar con el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, éste sigue siendo un tema fascinante. Se encuentra en el corazón de todo tipo de preguntas fundamentales del hombre. ¿Se puede vivir para siempre? ¿El universo tiene un final? ¿Tuvo un comienzo? ¿Tiene el universo un "borde" o simplemente no existen límites a su tamaño? Aunque es fácil pensar en las listas de números o secuencias de 'tics' de un reloj que continúan para siempre, hay otros tipos de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; que parecen ser más difíciles de concebir.&lt;/p&gt;
@@ -13114,24 +13442,19 @@ A pesar de todas las dificultades que puede traer el lidiar con el &lt;em&gt;&lt
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;En 1600, &lt;a href="https://es.wikipedia.org/wiki/Galileo_Galilei"&gt;Galileo&lt;/a&gt; entendió que el problema era el estar utilizando un razonamiento finito sobre cosas infinitas. Postuló que "Es un error hablar de cantidades infinitas como siendo la mayor o menor o igual que a la otra" y afirmó que el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; no es un noción inconsistente, sino que obedece a reglas diferentes.&lt;/p&gt;
 &lt;p&gt;Otro de los temas que confundían a los matemáticos, era el comportamiento de las series infinitas, sobre todo aquellas que no eran &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergentes&lt;/a&gt;. Recordemos que una serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;convergente&lt;/a&gt; cuando la suma de sus términos da como resultado un número finito; en caso contrario, se dice que la serie es &lt;a href="https://es.wikipedia.org/wiki/Serie_divergente"&gt;divergente&lt;/a&gt;. Así por ejemplo la &lt;a href="https://es.wikipedia.org/wiki/Serie_geom%C3%A9trica"&gt;serie geométrica&lt;/a&gt;, sabemos que converge en 1, y se puede demostrar geométricamente:&lt;/p&gt;
-&lt;p&gt;$$\sum\limits_{i=1}^\infty\frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1$$&lt;/p&gt;
-&lt;p&gt;&lt;img alt="demostracion serie geometrica" title="demostracion serie geometrica" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GeometricSquares.svg/359px-GeometricSquares.svg.png
+$$\sum\limits_{i=1}^\infty\frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1$$&lt;p&gt;&lt;img alt="demostracion serie geometrica" title="demostracion serie geometrica" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GeometricSquares.svg/359px-GeometricSquares.svg.png
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;Pero en cambio el resultado de la siguiente serie no se puede determinar:&lt;/p&gt;
-&lt;p&gt;$$ S = 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 \dots $$&lt;/p&gt;
-&lt;p&gt;Si por ejemplo agrupamos los términos de la siguiente forma, el resultado parece ser &lt;em&gt;obviamente&lt;/em&gt; cero.&lt;/p&gt;
-&lt;p&gt;$$ S = (1 - 1) + (1 - 1) + (1 - 1) + (1 - 1) \dots $$&lt;/p&gt;
-&lt;p&gt;Pero si los agrupamos de esta otra forma, el resultado parece ser ahora &lt;em&gt;claramente&lt;/em&gt; uno.&lt;/p&gt;
-&lt;p&gt;$$ S =  1 + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) \dots $$&lt;/p&gt;
-&lt;p&gt;y no termina acá, ya que incluso podríamos agrupar la serie del siguiente modo y el resultado sería $\frac{1}{2}$.&lt;/p&gt;
-&lt;p&gt;$$ S = 1 - ( 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots) \Rightarrow S = 1 - S \Rightarrow 2S = 1 \Rightarrow S = \frac{1}{2} $$&lt;/p&gt;
-&lt;p&gt;es decir que el valor de la serie S, podría ser tanto 1, como 0, como $\frac{1}{2}$.No es sorprendente que argumentos como éste, hacían que los matemáticos se pusieran muy nerviosos al tratar con los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; y quisieran evitarlos o incluso eliminarlos a toda costa.&lt;/p&gt;
+$$ S = 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 \dots $$&lt;p&gt;Si por ejemplo agrupamos los términos de la siguiente forma, el resultado parece ser &lt;em&gt;obviamente&lt;/em&gt; cero.&lt;/p&gt;
+$$ S = (1 - 1) + (1 - 1) + (1 - 1) + (1 - 1) \dots $$&lt;p&gt;Pero si los agrupamos de esta otra forma, el resultado parece ser ahora &lt;em&gt;claramente&lt;/em&gt; uno.&lt;/p&gt;
+$$ S =  1 + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) + (- 1 + 1) \dots $$&lt;p&gt;y no termina acá, ya que incluso podríamos agrupar la serie del siguiente modo y el resultado sería $\frac{1}{2}$.&lt;/p&gt;
+$$ S = 1 - ( 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots) \Rightarrow S = 1 - S \Rightarrow 2S = 1 \Rightarrow S = \frac{1}{2} $$&lt;p&gt;es decir que el valor de la serie S, podría ser tanto 1, como 0, como $\frac{1}{2}$.No es sorprendente que argumentos como éste, hacían que los matemáticos se pusieran muy nerviosos al tratar con los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; y quisieran evitarlos o incluso eliminarlos a toda costa.&lt;/p&gt;
 &lt;p&gt;Fuera de toda esta ambigüedad y confusión, la claridad surgió repentinamente en el siglo XIX, debido a los esfuerzos en solitario de un hombre brillante. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt; produjo una teoría que respondió a todas las objeciones de sus predecesores y reveló la riqueza inesperada escondida en el ámbito de lo &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;. De repente, los &lt;a href="https://es.wikipedia.org/wiki/Infinito_potencial_e_infinito_actual"&gt;infinitos actuales&lt;/a&gt; se convirtieron en parte de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;Cantor y la teor&amp;#237;a de conjuntos para explicar el infinito&lt;a class="anchor-link" href="#Cantor-y-la-teor&amp;#237;a-de-conjuntos-para-explicar-el-infinito"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt;, aplicando ideas sumamente originales, postuló la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; y utilizando el concepto de la &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; de los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;, se propuso explicar el concepto de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Segun la teoría de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, dos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; se dicen que tienen el mismo número de elementos, es decir, que tienen la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt;, si existe una función definida entre ellos de forma tal que a cada elemento le corresponde sólo otro elemento del otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt;, y viceversa; o sea, que exista una correspondencia de uno a uno entre los elementos de ambos &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;. A partir de esta definición se puede establecer la idea de &lt;a href="https://es.wikipedia.org/wiki/Conjunto_infinito"&gt;conjunto infinito&lt;/a&gt;. Se dice que un conjunto es &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; si existe un subconjunto con la misma &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; que él. Esta definición plantea una contradicción con la intuición, pues todo subconjunto como parte del conjunto total parece que deba tener menos elementos. Eso es así, efectivamente, en los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjuntos finitos&lt;/a&gt;, pero no en los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id="&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#191;Distintos tipos de infinitos? Infinitos numerables y no numerables&lt;a class="anchor-link" href="#&amp;#191;Distintos-tipos-de-infinitos?-Infinitos-numerables-y-no-numerables"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Otro de los grandes aportes de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;, fue la distinción entre los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;no numerables&lt;/a&gt;.
 &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; definió a los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerables&lt;/a&gt; como aquellos en los que se puede encontrar una correspondencia uno-a-uno con la lista de &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_natural"&gt;números naturales&lt;/a&gt; 1, 2, 3, 4, 5, 6,. . . Así, por ejemplo, los números pares son un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;numerable&lt;/a&gt;, también lo son todos los números impares y ambos tienen el mismo tamaño. Por ejemplo, la correspondencia entre los primeros números impares sería la siguiente:&lt;/p&gt;
-&lt;p&gt;$$ 
+$$ 
 1 \longrightarrow 3 \\
 2 \longrightarrow 5 \\
 3 \longrightarrow 7 \\
@@ -13142,14 +13465,13 @@ A pesar de todas las dificultades que puede traer el lidiar con el &lt;em&gt;&lt
 8 \longrightarrow 17 \\
 9 \longrightarrow 19 \\
 10 \longrightarrow \dots \\
-$$&lt;/p&gt;
-&lt;p&gt;Por lo tanto, todos los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjuntos infinitos numerables&lt;/a&gt; tienen el mismo "tamaño" o &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; en el sentido de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;. El también pensaba que éstos eran los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;  más pequeños que pudieran existir y por lo tanto los representó utilizando la primera letra del alfabeto hebreo, el símbolo &lt;a href="https://es.wikipedia.org/wiki/Alef_cero"&gt;Aleph-cero&lt;/a&gt;, $\aleph_{0}$. Un punto importante a tener en cuenta, es que esta definición excluye cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; de objetos, ya que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; sólo puede ponerse en correspondencia uno-a-uno con otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; que contenga el mismo número de miembros.
+$$&lt;p&gt;Por lo tanto, todos los &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjuntos infinitos numerables&lt;/a&gt; tienen el mismo "tamaño" o &lt;a href="https://es.wikipedia.org/wiki/Conjunto#Cardinalidad"&gt;cardinalidad&lt;/a&gt; en el sentido de &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt;. El también pensaba que éstos eran los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt;  más pequeños que pudieran existir y por lo tanto los representó utilizando la primera letra del alfabeto hebreo, el símbolo &lt;a href="https://es.wikipedia.org/wiki/Alef_cero"&gt;Aleph-cero&lt;/a&gt;, $\aleph_{0}$. Un punto importante a tener en cuenta, es que esta definición excluye cualquier &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; de objetos, ya que un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_finito"&gt;conjunto finito&lt;/a&gt; sólo puede ponerse en correspondencia uno-a-uno con otro &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; que contenga el mismo número de miembros.
 Este análisis llevó a algunas conclusiones sorprendentes. &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; mostró que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_racional"&gt;números racionales&lt;/a&gt;, los cuales se forman al dividir un &lt;a href="https://es.wikipedia.org/wiki/Numeros_enteros"&gt;número entero&lt;/a&gt; por otro (por ejemplo $\frac{1}{2}$, o $\frac{13}{2}$) son también un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_numerable"&gt;conjunto infinito numerable&lt;/a&gt;. El truco fue encontrar un sistema para poder contarlos sin perderse ninguno. Él utilizó el famoso proceso ahora conocido como la &lt;a href="https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor"&gt;diagonal de Cantor&lt;/a&gt; para hacer esto. Fue contando cada uno de ellos de acuerdo al siguiente ordenamiento:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Diagonal de Cantor" title="Diagonal de Cantor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Diagonal_argument.svg/429px-Diagonal_argument.svg.png
 " width="300px" height="300px"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; también pudo demostrar con un nuevo tipo de argumento matemático que existen &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinitos&lt;/a&gt;&lt;/em&gt; más grandes y que no se pueden contar. Esto son los que hoy en día se conocen como &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinitos no numerables&lt;/a&gt;. Dentro de esta categoría podemos encontrar al conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt;, los cuales incluyen a los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_irracional"&gt;números irracionales&lt;/a&gt;, quienes no se pueden escribir como &lt;a href="https://es.wikipedia.org/wiki/Fracci%C3%B3n"&gt;fracciones&lt;/a&gt; y tienen una expansión infinita de sus parte decimal.&lt;/p&gt;
 &lt;p&gt;Para demostrar que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_reales"&gt;números reales&lt;/a&gt; son un &lt;a href="https://es.wikipedia.org/wiki/Conjunto_no_numerable"&gt;infinito no numerable&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Cantor&lt;/a&gt; comenzó por suponer que se podían contar, lo que significaba que debería ser capaz de elaborar una receta sistemática para contar todos los decimales interminables que no terminaran en una cadena infinita de ceros. Los primeros de estos números podrían parecerse a éstos:&lt;/p&gt;
-&lt;p&gt;$$
+$$
 1 \longrightarrow 0.\underline{2}34567891\dots \\
 2 \longrightarrow 0.5\underline{7}5603737\dots \\
 3 \longrightarrow 0.46\underline{3}214516\dots \\
@@ -13157,8 +13479,7 @@ Este análisis llevó a algunas conclusiones sorprendentes. &lt;a href="https://
 5 \longrightarrow 0.5621\underline{9}4632\dots \\
 6 \longrightarrow 0.46673\underline{2}271\dots \\
  \dots
-$$&lt;/p&gt;
-&lt;p&gt;Luego creó un nuevo decimal tomando el primer dígito después del punto decimal del primer número, el segundo dígito del segundo número, y así sucesivamente para siempre(como por ejemplo los dígitos subrayados en la serie de arriba). Siguiendo el ejemplo, el nuevo decimal comenzaría como sigue:&lt;/p&gt;
+$$&lt;p&gt;Luego creó un nuevo decimal tomando el primer dígito después del punto decimal del primer número, el segundo dígito del segundo número, y así sucesivamente para siempre(como por ejemplo los dígitos subrayados en la serie de arriba). Siguiendo el ejemplo, el nuevo decimal comenzaría como sigue:&lt;/p&gt;
 &lt;p&gt;$0.273292\dots$&lt;/p&gt;
 &lt;p&gt;Por último a este decimal recién creado, le sumó 1 a cada uno de sus infinitos dígitos. Obteniendo el número&lt;/p&gt;
 &lt;p&gt;$0.384303\dots$&lt;/p&gt;
@@ -13231,7 +13552,7 @@ Ayudándonos de nuestro buen amigo &lt;a href="https://python.org/"&gt;Python&lt
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -13331,7 +13652,7 @@ Ayudándonos de nuestro buen amigo &lt;a href="https://python.org/"&gt;Python&lt
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13536,20 +13857,17 @@ V3dckqR5WlW3bJbUjSQvBe6qqnOS7AF8NcmGqjqv49IkzYM9B5IkqY/HHEiSpD6GA0mS1MdwIEmS
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como nos muestran tanto los cálculos como el gráfico, a medida que vamos aumentando el valor de $x$, la función $\frac{1}{x}$ se va aproximando cada vez más a cero. Por tanto podemos conjeturar que la función $\frac{1}{x}$ tiende a cero.
 Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt;, si podemos decir que pasa a medida que nos vamos acercando cada vez más a él. Por tanto podríamos decir que a medida que el valor $x$ tiende a $\infty$, el valor de la función $\frac{1}{x}$, se aproxima a su &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;límite&lt;/a&gt; cero. En el lenguaje de las &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1ticas"&gt;matemáticas&lt;/a&gt;, lo expresaríamos de la siguiente forma:&lt;/p&gt;
-&lt;p&gt;$$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;/p&gt;
-&lt;p&gt;El concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; es una de las herramientas principales sobre las que se sustenta el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo&lt;/a&gt;. Muchas veces, una función puede ser indefinida en un punto, pero podemos pensar en lo que pasa a medida que la función "se acerca" cada vez más a ese punto. Otras veces, la función puede ser definida en un punto, pero puede aproximarse a un límite diferente.&lt;/p&gt;
+$$\lim_{x\to \infty} \left(\frac{1}{x}\right) = 0$$&lt;p&gt;El concepto de &lt;a href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"&gt;Límite&lt;/a&gt; es una de las herramientas principales sobre las que se sustenta el &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;cálculo&lt;/a&gt;. Muchas veces, una función puede ser indefinida en un punto, pero podemos pensar en lo que pasa a medida que la función "se acerca" cada vez más a ese punto. Otras veces, la función puede ser definida en un punto, pero puede aproximarse a un límite diferente.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con esto termina este artículo, para concluir cerremos la curva sin fin que representa al &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Infinito"&gt;infinito&lt;/a&gt;&lt;/em&gt; con otra frase de &lt;a href="https://es.wikipedia.org/wiki/Jorge_Luis_Borges"&gt;Borges&lt;/a&gt;, que fue con quien comenzamos el artículo!&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;Hay un concepto que es el corruptor y el desatinador de los otros. No hablo del Mal cuyo limitado imperio es la ética; hablo del infinito.&lt;/p&gt;
@@ -13566,8 +13884,7 @@ Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipe
 
 &lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="infinito"></category></entry><entry><title>Números complejos con Python</title><link href="https://relopezbriega.github.io/blog/2015/10/12/numeros-complejos-con-python/" rel="alternate"></link><published>2015-10-12T00:00:00-03:00</published><updated>2015-10-12T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-10-12:/blog/2015/10/12/numeros-complejos-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Números complejos con Python" title="Números complejos con Python" src="https://relopezbriega.github.io/images/imaginary.gif
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13576,13 +13893,11 @@ Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipe
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Si bien el conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el hecho de que sólo se pueden tomar raíces cuadradas de los números positivos (o cero) y no de los negativos. Desde el punto de …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Números complejos con Python" title="Números complejos con Python" src="https://relopezbriega.github.io/images/imaginary.gif
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13591,54 +13906,37 @@ Si bien, no podemos decir que pasa en el &lt;em&gt;&lt;a href="https://es.wikipe
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Si bien el conjunto de los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el hecho de que sólo se pueden tomar raíces cuadradas de los números positivos (o cero) y no de los negativos. Desde el punto de vista matemático resultaría conveniente poder extraer raíces cuadradas de números negativos tanto como de números positivos. Por tal motivo, que tal si "inventamos" una raíz cuadrada para el número -1 y la expresamos con el símbolo "$i$", de modo que tenemos&lt;/p&gt;
-&lt;p&gt;$$i^2 = -1$$&lt;/p&gt;
-&lt;p&gt;La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; no son menos reales que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; a los que estamos acostumbrados.&lt;/p&gt;
+$$i^2 = -1$$&lt;p&gt;La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; no son menos reales que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; a los que estamos acostumbrados.&lt;/p&gt;
 &lt;p&gt;Cuando estos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;números imaginarios&lt;/a&gt; se combinan con los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; obtenemos lo que se conoce como &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;; de esta forma, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; vienen a completar a los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt; y nos permiten realizar todo tipo de operaciones algebraicas.&lt;/p&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-un-n&amp;#250;mero-complejo?"&gt;&amp;#191;Qu&amp;#233; es un n&amp;#250;mero complejo?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-un-n&amp;#250;mero-complejo?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; incluyen todas las raíces de los &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt;, a diferencia de lo que pasaba cuando solo teníamos a los   &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;números reales&lt;/a&gt;. Todo &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; puede representarse como la suma de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real"&gt;número real&lt;/a&gt; y un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario"&gt;número imaginario&lt;/a&gt;, el cual es un múltiplo real de la unidad imaginaria, que se indica con la letra $i$. O sea, que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; tienen la forma&lt;/p&gt;
-&lt;p&gt;$$a + bi$$&lt;/p&gt;
-&lt;p&gt;donde a y b son números reales llamados &lt;em&gt;parte real&lt;/em&gt; y &lt;em&gt;parte imaginaria&lt;/em&gt; , respectivamente, del &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.&lt;/p&gt;
+$$a + bi$$&lt;p&gt;donde a y b son números reales llamados &lt;em&gt;parte real&lt;/em&gt; y &lt;em&gt;parte imaginaria&lt;/em&gt; , respectivamente, del &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.&lt;/p&gt;
 &lt;h2 id="Operaciones-con-n&amp;#250;meros-complejos"&gt;Operaciones con n&amp;#250;meros complejos&lt;a class="anchor-link" href="#Operaciones-con-n&amp;#250;meros-complejos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las operaciones que podemos realizar con los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; son las siguientes:&lt;/p&gt;
 &lt;h3 id="Suma"&gt;Suma&lt;a class="anchor-link" href="#Suma"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para sumar dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; simplemente sumamos cada elemento en forma separada. Es decir que:&lt;/p&gt;
-&lt;p&gt;$$(a+bi) + (c+di) = (a+c) + (b+d)i$$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.&lt;/p&gt;
+$$(a+bi) + (c+di) = (a+c) + (b+d)i$$&lt;p&gt;Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.&lt;/p&gt;
 &lt;h3 id="Producto-por-escalar"&gt;Producto por escalar&lt;a class="anchor-link" href="#Producto-por-escalar"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para calcular el producto escalar de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;, multiplicamos al &lt;a href="https://es.wikipedia.org/wiki/Escalar_(matem%C3%A1tica)"&gt;escalar&lt;/a&gt; por cada una de sus partes, la real y la imaginaria. Es decir que:&lt;/p&gt;
-&lt;p&gt;$$r(a+bi) = (ra) + (rb)i$$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.&lt;/p&gt;
+$$r(a+bi) = (ra) + (rb)i$$&lt;p&gt;Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.&lt;/p&gt;
 &lt;h3 id="Multiplicaci&amp;#243;n"&gt;Multiplicaci&amp;#243;n&lt;a class="anchor-link" href="#Multiplicaci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para multiplicar dos  &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos realizar su multiplicación &lt;a href="https://es.wikipedia.org/wiki/Binomio"&gt;binomial&lt;/a&gt;. Es decir que:&lt;/p&gt;
-&lt;p&gt;$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$&lt;/p&gt;
-&lt;p&gt;En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, que es:&lt;/p&gt;
-&lt;p&gt;$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.&lt;/p&gt;
+$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$&lt;p&gt;En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, que es:&lt;/p&gt;
+$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$&lt;p&gt;Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.&lt;/p&gt;
 &lt;h3 id="Igualdad"&gt;Igualdad&lt;a class="anchor-link" href="#Igualdad"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; van a ser iguales si y solo si sus partes &lt;em&gt;reales&lt;/em&gt; e &lt;em&gt;imaginarias&lt;/em&gt; son iguales. Es decir que:&lt;/p&gt;
-&lt;p&gt;$$(a + bi) = (c + di) \iff a = c \wedge b = d$$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.&lt;/p&gt;
+$$(a + bi) = (c + di) \iff a = c \wedge b = d$$&lt;p&gt;Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.&lt;/p&gt;
 &lt;h3 id="Resta"&gt;Resta&lt;a class="anchor-link" href="#Resta"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La resta de dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, funciona de forma similar a la suma.&lt;/p&gt;
-&lt;p&gt;$$(a+bi) - (c+di) = (a-c) + (b-d)i$$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.&lt;/p&gt;
+$$(a+bi) - (c+di) = (a-c) + (b-d)i$$&lt;p&gt;Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.&lt;/p&gt;
 &lt;h3 id="Conjugado"&gt;Conjugado&lt;a class="anchor-link" href="#Conjugado"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; se obtiene cambiando el signo de su componente imaginario. Por lo tanto, el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;$z = a + bi$, es $\overline{z} = a - bi$.&lt;/p&gt;
 &lt;p&gt;Para expresar que estamos buscando el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, escribimos una línea sobre el &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt;. Así, por ejemplo&lt;/p&gt;
-&lt;p&gt;$$ \overline{ 2 + 3i} = 2 - 3i$$&lt;/p&gt;
-&lt;h3 id="Divisi&amp;#243;n"&gt;Divisi&amp;#243;n&lt;a class="anchor-link" href="#Divisi&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para dividir dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos utilizar el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;; ya que para realizar la división debemos multiplicar tanto el &lt;em&gt;divisor&lt;/em&gt; como el &lt;em&gt;dividendo&lt;/em&gt; por el conjugado del &lt;em&gt;divisor&lt;/em&gt;.
+$$ \overline{ 2 + 3i} = 2 - 3i$$&lt;h3 id="Divisi&amp;#243;n"&gt;Divisi&amp;#243;n&lt;a class="anchor-link" href="#Divisi&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Para dividir dos &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt;, debemos utilizar el &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;; ya que para realizar la división debemos multiplicar tanto el &lt;em&gt;divisor&lt;/em&gt; como el &lt;em&gt;dividendo&lt;/em&gt; por el conjugado del &lt;em&gt;divisor&lt;/em&gt;.
 Así, por ejemplo si quisiéramos dividir:&lt;/p&gt;
-&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}$$&lt;/p&gt;
-&lt;p&gt;Debemos realizar el siguiente cálculo:&lt;/p&gt;
-&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$&lt;/p&gt;
-&lt;p&gt;y teniendo en cuenta que la multiplicación de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; por su &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, responde a la formula:&lt;/p&gt;
-&lt;p&gt;$$(a + bi)(a - bi) = a^2 + b^2$$&lt;/p&gt;
-&lt;p&gt;Podemos resolver la división de la siguiente forma:&lt;/p&gt;
-&lt;p&gt;$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$&lt;/p&gt;
-&lt;p&gt;Lo que nos lleva al resultado final:&lt;/p&gt;
-&lt;p&gt;$$ = \frac{-7}{41} + \frac{22}{41}i$$&lt;/p&gt;
-&lt;p&gt;Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:&lt;/p&gt;
-&lt;p&gt;$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$&lt;/p&gt;
-&lt;h3 id="Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;Valor absoluto o m&amp;#243;dulo de un n&amp;#250;mero complejo&lt;a class="anchor-link" href="#Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Valor_absoluto"&gt;valor absoluto&lt;/a&gt;, módulo o &lt;em&gt;magnitud&lt;/em&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; viene dado por la siguiente expresión:&lt;/p&gt;
-&lt;p&gt;$$ |a + bi| = \sqrt{a^2 + b^2} $$&lt;/p&gt;
-&lt;p&gt;Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.&lt;/p&gt;
+$$\frac{2 + 3i}{4 - 5i}$$&lt;p&gt;Debemos realizar el siguiente cálculo:&lt;/p&gt;
+$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$&lt;p&gt;y teniendo en cuenta que la multiplicación de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; por su &lt;a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)"&gt;conjugado&lt;/a&gt;, responde a la formula:&lt;/p&gt;
+$$(a + bi)(a - bi) = a^2 + b^2$$&lt;p&gt;Podemos resolver la división de la siguiente forma:&lt;/p&gt;
+$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$&lt;p&gt;Lo que nos lleva al resultado final:&lt;/p&gt;
+$$ = \frac{-7}{41} + \frac{22}{41}i$$&lt;p&gt;Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:&lt;/p&gt;
+$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$&lt;h3 id="Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;Valor absoluto o m&amp;#243;dulo de un n&amp;#250;mero complejo&lt;a class="anchor-link" href="#Valor-absoluto-o-m&amp;#243;dulo-de-un-n&amp;#250;mero-complejo"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Valor_absoluto"&gt;valor absoluto&lt;/a&gt;, módulo o &lt;em&gt;magnitud&lt;/em&gt; de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;número complejo&lt;/a&gt; viene dado por la siguiente expresión:&lt;/p&gt;
+$$ |a + bi| = \sqrt{a^2 + b^2} $$&lt;p&gt;Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.&lt;/p&gt;
 &lt;h2 id="Plano-de-los-n&amp;#250;meros-complejos-o-Diagrama-de-Argand"&gt;Plano de los n&amp;#250;meros complejos o Diagrama de Argand&lt;a class="anchor-link" href="#Plano-de-los-n&amp;#250;meros-complejos-o-Diagrama-de-Argand"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Plano_complejo"&gt;plano de Argand&lt;/a&gt; es un plano euclídeo ordinario con coordenadas cartesianas estándar $x$ e $y$ , donde $x$ indica la distancia horizontal (positiva hacia la derecha y negativa hacia la izquierda) y donde $y$ indica la distancia vertical (positiva hacia arriba y negativa hacia abajo). El número complejo $z = x + yi$ viene representado entonces por el punto del plano de Argand cuyas coordenadas son $( x , y )$.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Plano de Argand" title="Plano de Argand" src="https://relopezbriega.github.io/images/Argand1.png
 " width="500px" height="400px"&gt;&lt;/p&gt;
@@ -13673,7 +13971,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -13709,7 +14007,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -13746,7 +14044,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
 
@@ -13784,7 +14082,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 
 
 
@@ -13820,7 +14118,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
 
 
 
@@ -13857,7 +14155,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
 
 
 
@@ -13895,7 +14193,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
 
 
 
@@ -13932,7 +14230,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
 
 
 
@@ -13969,7 +14267,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -14007,7 +14305,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
 
 
 
@@ -14044,7 +14342,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
 
 
 
@@ -14080,7 +14378,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
 
 
 
@@ -14116,7 +14414,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
 
 
 
@@ -14188,7 +14486,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de &lt;a href=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -14290,13 +14588,11 @@ SUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Aplicaciones-de-los-n&amp;#250;meros-complejos"&gt;Aplicaciones de los n&amp;#250;meros complejos&lt;a class="anchor-link" href="#Aplicaciones-de-los-n&amp;#250;meros-complejos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Dado que los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; proporcionan un sistema para encontrar las raíces de &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt; y los &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;polinomios&lt;/a&gt; se utilizan como modelos teóricos en diversos campos, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; gozan de un gran importancia en varias áreas especializadas. Entre estas áreas especializadas se encuentran la ingeniería, la ingeniería eléctrica y la &lt;a href="https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica"&gt;mecánica cuántica&lt;/a&gt;. Algunos temas en los que se utilizan &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; incluyen la investigación de la corriente eléctrica, longitud de onda, el flujo de líquido en relación a los obstáculos, el análisis de la tensión en las vigas, el movimiento de los amortiguadores en automóviles, el estudio de resonancia de las estructuras, el diseño de dinamos y motores eléctricos, y la manipulación de grandes matrices utilizadas en el modelado. Por ejemplo, en ingeniería electrica para el análisis de circuitos de corriente alterna, es necesario representar cantidades multidimensionales. Con el fin de realizar esta tarea, los números escalares fueron abandonados y los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; se utilizan para expresar las dos dimensiones de frecuencia y desplazamiento de fase.&lt;/p&gt;
 &lt;p&gt;Así, por ejemplo si sabemos que el voltaje en un circuito es 45 + 10j voltios y la impedancia es de 3 + 4j ohms. Si queremos saber cual es la corriente, simplemente deberíamos resolver la ecuación $E = I \dot Z$ donde E es la tensión, I es la corriente, y Z es la impedancia. Reemplazando los términos en la formula, obtenemos que:&lt;/p&gt;
-&lt;p&gt;$$ I = \frac{45 + 10j}{3 + 4j}$$&lt;/p&gt;
-
+$$ I = \frac{45 + 10j}{3 + 4j}$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -14322,7 +14618,7 @@ SUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
 
 
 
@@ -14338,8 +14634,7 @@ SUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Por tanto, la corriente es de 7 - 6j amps.&lt;/p&gt;
 &lt;p&gt;Además de todas estas aplicaciones, los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo"&gt;números complejos&lt;/a&gt; nos permiten también realizar uno de los gráficos más hermosos de las matemáticas como es el &lt;a href="https://es.wikipedia.org/wiki/Fractal"&gt;fractal&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/Gaston_Julia"&gt;Julia&lt;/a&gt;!!.&lt;/p&gt;
@@ -14421,7 +14716,7 @@ SUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -17044,8 +17339,7 @@ GAAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;O el también famoso &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_Mandelbrot"&gt;conjunto de Mandelbrot&lt;/a&gt;.&lt;/p&gt;
 
@@ -17091,7 +17385,7 @@ GAAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -18102,8 +18396,7 @@ RU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con esto termino este artículo, espero que les haya gustado y les sea de utilidad.&lt;/p&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
@@ -18116,8 +18409,7 @@ RU5ErkJggg==
 
 &lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="programacion"></category><category term="complejos"></category></entry><entry><title>Conjuntos con Python</title><link href="https://relopezbriega.github.io/blog/2015/10/11/conjuntos-con-python/" rel="alternate"></link><published>2015-10-11T00:00:00-03:00</published><updated>2015-10-11T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-10-11:/blog/2015/10/11/conjuntos-con-python/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Conjuntos con Python" title="Conjuntos con Python" src="https://relopezbriega.github.io/images/sets.jpg" width="500px" height="400px"&gt;&lt;/p&gt;
 
@@ -18125,14 +18417,12 @@ RU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una característica notable de los seres humanos es su inherente necesidad y capacidad de agrupar objetos de acuerdo a criterios específicos.
 La idea de la clasificación de ciertos objetos en grupos similares, o &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;&lt;/em&gt;, es uno de los conceptos más fundamentales de la matemática moderna. La &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Conjuntos con Python" title="Conjuntos con Python" src="https://relopezbriega.github.io/images/sets.jpg" width="500px" height="400px"&gt;&lt;/p&gt;
 
@@ -18140,8 +18430,7 @@ La idea de la clasificación de ciertos objetos en grupos similares, o &lt;em&gt
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una característica notable de los seres humanos es su inherente necesidad y capacidad de agrupar objetos de acuerdo a criterios específicos.
 La idea de la clasificación de ciertos objetos en grupos similares, o &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt;&lt;/em&gt;, es uno de los conceptos más fundamentales de la matemática moderna. La &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"&gt;teoría de conjuntos&lt;/a&gt; ha sido el marco unificador para todas las matemáticas desde que el matemático alemán &lt;a href="https://es.wikipedia.org/wiki/Georg_Cantor"&gt;Georg Cantor&lt;/a&gt; la formulara alrededor de 1870. Ningún campo de las matemáticas podría describirse hoy en día sin hacer referencia a algún tipo de &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjunto&lt;/a&gt; abstracto.
@@ -18226,7 +18515,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -18264,7 +18553,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -18303,7 +18592,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
 
@@ -18340,7 +18629,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 
 
 
@@ -18376,7 +18665,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -18410,7 +18699,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
 
 
 
@@ -18448,7 +18737,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
 
 
 
@@ -18487,7 +18776,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
 
 
 
@@ -18523,7 +18812,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -18561,7 +18850,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
 
 
 
@@ -18597,7 +18886,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
 
 
 
@@ -18633,7 +18922,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
 
 
 
@@ -18668,7 +18957,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
 
 
 
@@ -18706,7 +18995,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
 
 
 
@@ -18743,7 +19032,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
 
 
 
@@ -18780,7 +19069,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -18816,7 +19105,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
 
 
 
@@ -18853,7 +19142,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
 
 
 
@@ -18891,7 +19180,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
 
 
 
@@ -18926,7 +19215,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
 
 
 
@@ -18963,7 +19252,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
 
 
 
@@ -19001,7 +19290,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
 
 
 
@@ -19039,7 +19328,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
 
 
 
@@ -19075,7 +19364,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
 
 
 
@@ -19115,7 +19404,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
 
 
 
@@ -19151,7 +19440,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -19191,7 +19480,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
 
 
 
@@ -19227,7 +19516,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
 
 
 
@@ -19263,7 +19552,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -19389,7 +19678,7 @@ Algunas propiedades importantes relacionadas con &lt;a href="https://es.wikipedi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -19726,8 +20015,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Además de las aplicaciones que pueden tener los &lt;a href="https://es.wikipedia.org/wiki/Conjunto"&gt;conjuntos&lt;/a&gt; de &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; en matemáticas, los mismos también pueden ser una &lt;a href="https://es.wikipedia.org/wiki/Estructura_de_datos"&gt;estructura de datos&lt;/a&gt; poderosa y ayudarnos a resolver varios problemas de programación en forma muy sencilla. A tenerlos en cuenta!&lt;/p&gt;
 &lt;p&gt;Con esto termino este artículo; espero que les haya gustado y les sea de utilidad.&lt;/p&gt;
@@ -19736,8 +20024,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pythonSets.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pythonSets.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -19749,8 +20036,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 
 &lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="programacion"></category><category term="conjuntos"></category></entry><entry><title>De tíos, primos, teoremas y conjeturas</title><link href="https://relopezbriega.github.io/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/" rel="alternate"></link><published>2015-09-13T00:00:00-03:00</published><updated>2015-09-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-09-13:/blog/2015/09/13/de-tios-primos-teoremas-y-conjeturas/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;a href="https://xkcd.com/1310/" target="_blank"&gt;&lt;img alt="De tíos, primos y conjecturas" title="De tíos, primos y conjecturas" src="https://relopezbriega.github.io/images/goldbach_conjectures.png" &gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -19758,13 +20044,11 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="El-t&amp;#237;o-Petros-y-la-conjetura"&gt;El t&amp;#237;o Petros y la conjetura&lt;a class="anchor-link" href="#El-t&amp;#237;o-Petros-y-la-conjetura"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hace un tiempo atrás, quede atrapado en la lectura de la apasionante novela de Apostolos Doxiadis, &lt;a href="https://www.amazon.es/El-tio-petros-conjetura-goldbach/dp/8440694903"&gt;El tío Petros y la conjetura de Goldbach&lt;/a&gt;. La novela trata basicamente de la relación entre un joven, en busca de su vocación, y su tío, quien en …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;a href="https://xkcd.com/1310/" target="_blank"&gt;&lt;img alt="De tíos, primos y conjecturas" title="De tíos, primos y conjecturas" src="https://relopezbriega.github.io/images/goldbach_conjectures.png" &gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -19772,8 +20056,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="El-t&amp;#237;o-Petros-y-la-conjetura"&gt;El t&amp;#237;o Petros y la conjetura&lt;a class="anchor-link" href="#El-t&amp;#237;o-Petros-y-la-conjetura"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hace un tiempo atrás, quede atrapado en la lectura de la apasionante novela de Apostolos Doxiadis, &lt;a href="https://www.amazon.es/El-tio-petros-conjetura-goldbach/dp/8440694903"&gt;El tío Petros y la conjetura de Goldbach&lt;/a&gt;. La novela trata basicamente de la relación entre un joven, en busca de su vocación, y su tío, quien en el pasado fue un prodigio de las matemáticas, pero que luego se recluyó de su familia y de la comunidad científica consumido por el intento solitario de demostrar uno de los problemas abiertos más difíciles de la &lt;a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_n%C3%BAmeros"&gt;teoría de números&lt;/a&gt;, la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;Conjetura de Goldbach&lt;/a&gt;&lt;/em&gt;. Lo que más me sorprendió del problema que consumió la vida del querido tío Petros, es lo simple que es su enunciado; la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;Conjetura de Goldbach&lt;/a&gt;&lt;/em&gt; nos dice que &lt;strong&gt;&lt;em&gt;"Todo número par mayor que 2 puede escribirse como suma de dos números primos."&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Este enunciado, junto con la otra conjetura postulada por &lt;a href="https://es.wikipedia.org/wiki/Christian_Goldbach"&gt;Goldbach&lt;/a&gt;, conocida como la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_d%C3%A9bil_de_Goldbach"&gt;Conjetura debil de Goldbach&lt;/a&gt;&lt;/em&gt;, que nos dice que &lt;strong&gt;&lt;em&gt;"Todo número impar mayor que 5 puede expresarse como suma de tres números primos."&lt;/em&gt;&lt;/strong&gt;; trae a colación el concepto de los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;números primos&lt;/a&gt;&lt;/em&gt; como bloques constructores de los enteros.&lt;/p&gt;
@@ -19782,8 +20065,7 @@ GYloNUgChOcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Los-n&amp;#250;meros-primos"&gt;Los n&amp;#250;meros primos&lt;a class="anchor-link" href="#Los-n&amp;#250;meros-primos"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pero, ¿cómo es esto de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;números primos&lt;/a&gt;&lt;/em&gt; pueden ser considerados como bloques constructores de los números enteros?&lt;/p&gt;
 &lt;p&gt;Un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;número primo&lt;/a&gt;&lt;/em&gt; es un entero positivo que solo puede ser dividido en dos &lt;a href="https://es.wikipedia.org/wiki/Divisibilidad"&gt;factores&lt;/a&gt; distintos, 1 y si mismo. De esta definición se desprende que el número 1 no es un &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;número primo&lt;/a&gt;&lt;/em&gt; ya que solo puede ser dividido en un solo &lt;a href="https://es.wikipedia.org/wiki/Divisibilidad"&gt;factor&lt;/a&gt;; en cambio, el número 2 si es &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;primo&lt;/a&gt;&lt;/em&gt;, el único &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;número primo&lt;/a&gt;&lt;/em&gt; que es par.&lt;/p&gt;
@@ -19859,7 +20141,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -19895,7 +20177,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -19931,7 +20213,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
 
@@ -19947,8 +20229,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="La-conjetura-de-Goldbach-y-Python"&gt;La conjetura de Goldbach y Python&lt;a class="anchor-link" href="#La-conjetura-de-Goldbach-y-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;Conjetura de Goldbach&lt;/a&gt;&lt;/em&gt;, es otro ejemplo de como también podemos construir todos los números enteros con simples operaciones aritméticas como la suma y no más que tres &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo"&gt;números primos&lt;/a&gt;&lt;/em&gt;. Al día de hoy,  la &lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;conjetura&lt;/a&gt; continua sin poder ser demostrada; y es considerada uno de los problemas más difíciles de las matemáticas. La mayoría de los matemáticos estiman que es verdadera, ya que se ha mostrado cierta hasta por lo menos el $10^{18}$; aunque algunos dudan que sea cierta para números extremadamente grandes, el gran &lt;a href="https://es.wikipedia.org/wiki/Srinivasa_Aiyangar_Ramanujan"&gt;Ramanujan&lt;/a&gt; dicen que se incluía en este último grupo.&lt;/p&gt;
 &lt;p&gt;Obviamente, como este blog esta dedicado a &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, no podría concluir este artículo sin incluir una implementación de la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;Conjetura de Goldbach&lt;/a&gt;&lt;/em&gt; en uno de los lenguajes que mejor se lleva con las matemáticas!&lt;/p&gt;
@@ -20042,7 +20323,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20084,7 +20365,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20128,7 +20409,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20152,8 +20433,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con esto termino, el que quiera puede divertirse intentando comprobar la &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Conjetura_de_Goldbach"&gt;Conjetura de Goldbach&lt;/a&gt;&lt;/em&gt;, aunque corre el riesgo de terminar desperdiciando su tiempo como el bueno del tío Petros en la novela. Espero que les haya parecido interesante el artículo.&lt;/p&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
@@ -20166,8 +20446,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 
 &lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="programacion"></category></entry><entry><title>El dia Pi</title><link href="https://relopezbriega.github.io/blog/2015/03/14/el-dia-pi/" rel="alternate"></link><published>2015-03-14T00:00:00-03:00</published><updated>2015-03-14T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-03-14:/blog/2015/03/14/el-dia-pi/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="día Pi" title="día Pi" src="https://relopezbriega.github.io/images/pi-dia.jpg"&gt;&lt;/p&gt;
 
@@ -20175,13 +20454,11 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Hoy, 14 de Marzo se celebra el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/D%C3%ADa_de_%CF%80"&gt;día de Pi&lt;/a&gt;&lt;/em&gt;($\pi$), esta celebración fue una ocurrencia del físico Larry Shaw, quien eligió esta fecha por su semejanza con el valor de dos dígitos de Pi. (en el formato de fecha de Estados Unidos, el 14 de Marzo se escribe 3 …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="día Pi" title="día Pi" src="https://relopezbriega.github.io/images/pi-dia.jpg"&gt;&lt;/p&gt;
 
@@ -20189,8 +20466,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Hoy, 14 de Marzo se celebra el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/D%C3%ADa_de_%CF%80"&gt;día de Pi&lt;/a&gt;&lt;/em&gt;($\pi$), esta celebración fue una ocurrencia del físico Larry Shaw, quien eligió esta fecha por su semejanza con el valor de dos dígitos de Pi. (en el formato de fecha de Estados Unidos, el 14 de Marzo se escribe 3/14). Particularmente este año, se dará el fenómeno de que será el &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/D%C3%ADa_de_%CF%80"&gt;día de Pi&lt;/a&gt;&lt;/em&gt; más preciso del siglo, ya que a las 9:26:53 se formaría el número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;Pi&lt;/a&gt;&lt;/em&gt; con 9 dígitos de precisión! (3/14/15 9:26:53). En honor a su día, voy a dedicar este artículo al número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 
@@ -20198,16 +20474,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-el-n&amp;#250;mero-$\pi$?"&gt;&amp;#191;Qu&amp;#233; es el n&amp;#250;mero $\pi$?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-el-n&amp;#250;mero-$\pi$?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; es uno de los más famosos de la matemática. Mide la relación que existe entre la longitud de una &lt;a href="https://es.wikipedia.org/wiki/Circunferencia"&gt;circunferencia&lt;/a&gt; y su &lt;a href="https://es.wikipedia.org/wiki/Di%C3%A1metro"&gt;diámetro&lt;/a&gt;. No importa cual sea el tamaño de la &lt;a href="https://es.wikipedia.org/wiki/Circunferencia"&gt;circunferencia&lt;/a&gt;, esta relación siempre va a ser la misma y va a estar representada por &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;. Este tipo de propiedades, que se mantienen sin cambios cuando otros atributos varían son llamadas &lt;em&gt;constantes&lt;/em&gt;. &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; es una de las &lt;em&gt;constantes&lt;/em&gt; utilizadas con mayor frecuencia en matemática, física e ingeniería.&lt;/p&gt;
 
@@ -20215,8 +20489,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="día Pi" title="día Pi" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Pi-unrolled-720.gif"&gt;&lt;/p&gt;
 
@@ -20224,16 +20497,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Historia-del-n&amp;#250;mero-$\pi$"&gt;Historia del n&amp;#250;mero $\pi$&lt;a class="anchor-link" href="#Historia-del-n&amp;#250;mero-$\pi$"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;La primera referencia que se conoce de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; data aproximadamente del año 1650 ac en el &lt;a href="https://es.wikipedia.org/wiki/Papiro_de_Ahmes"&gt;Papiro de Ahmes&lt;/a&gt;, documento que contiene problemas matemáticos básicos, fracciones, cálculo de áreas, volúmenes, progresiones, repartos proporcionales, reglas de tres, ecuaciones lineales y trigonometría básica. El valor que se asigna a &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; en ese documento es el de 28/34 aproximadamente 3,1605.&lt;/p&gt;
 &lt;p&gt;Una de las primeras aproximaciones fue la realizada por &lt;a href="https://es.wikipedia.org/wiki/Arqu%C3%ADmedes"&gt;Arquímedes&lt;/a&gt; en el año 250 adC quien calculo que el valor estaba comprendido entre 3 10/71 y 3 1/7 (3,1408 y 3,1452) y utilizo para sus estudios el valor 211875/67441 aproximadamente 3,14163.&lt;/p&gt;
@@ -20243,16 +20514,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-hace-especial-al-n&amp;#250;mero-$\pi$?"&gt;&amp;#191;Qu&amp;#233; hace especial al n&amp;#250;mero $\pi$?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-hace-especial-al-n&amp;#250;mero-$\pi$?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Lo que convierte a &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; en un número interesante, es que se trata de un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_irracional"&gt;número irracional&lt;/a&gt;, es decir, que el mismo no puede ser expresado como una &lt;a href="https://es.wikipedia.org/wiki/Fracci%C3%B3n"&gt;fraccion&lt;/a&gt; de dos &lt;a href="https://es.wikipedia.org/wiki/Enteros"&gt;números enteros&lt;/a&gt;. Asimismo, también es un &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_trascendente"&gt;número trascendental&lt;/a&gt;, ya que no es &lt;a target="_blank" href="https://es.wikipedia.org/wiki/Ra%C3%ADz_(matem%C3%A1ticas)"&gt;raíz&lt;/a&gt; de ninguna &lt;a href="https://es.wikipedia.org/wiki/Polinomio"&gt;ecuación algebraica&lt;/a&gt; con coeficientes enteros, lo que quiere decir que tampoco puede ser expresado algebraicamente.&lt;/p&gt;
 
@@ -20260,16 +20529,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Calculando-el-valor-de-$\pi$"&gt;Calculando el valor de $\pi$&lt;a class="anchor-link" href="#Calculando-el-valor-de-$\pi$"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Si bien el número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; puede ser observado con facilidad, su cálculo es uno de los problemas más difíciles de la matemática y ha mantenido a los matemáticos ocupados por años. Actualmente se conocen hasta 10 billones de decimales del número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;, es decir, 10.000.000.000.000.&lt;/p&gt;
 
@@ -20277,16 +20544,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="La-aproximaci&amp;#243;n-de-Arqu&amp;#237;medes"&gt;La aproximaci&amp;#243;n de Arqu&amp;#237;medes&lt;a class="anchor-link" href="#La-aproximaci&amp;#243;n-de-Arqu&amp;#237;medes"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Uno de los métodos más conocidos para la aproximación del número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; es la aproximación de &lt;a href="https://es.wikipedia.org/wiki/Arqu%C3%ADmedes"&gt;Arquímedes&lt;/a&gt;; la cual consiste en circunscribir e inscribir polígonos regulares de n-lados en circunferencias y calcular el perímetro de dichos polígonos. &lt;a href="https://es.wikipedia.org/wiki/Arqu%C3%ADmedes"&gt;Arquímedes&lt;/a&gt; empezó con hexágonos circunscritos e inscritos, y fue doblando el número de lados hasta llegar a polígonos de 96 lados.&lt;/p&gt;
 
@@ -20294,8 +20559,7 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="día Pi" title="día Pi" src="https://relopezbriega.github.io/images/pi_geometric_inscribed_polygons.png" high=300 width=300&gt;&lt;/p&gt;
 
@@ -20303,16 +20567,14 @@ A pesar de que los &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAme
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="La-serie-de-Leibniz"&gt;La serie de Leibniz&lt;a class="anchor-link" href="#La-serie-de-Leibniz"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Otro método bastante popular para el cálculo de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;, es la utilización de las series infinitas de &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Leibniz"&gt;Gregory-Leibniz&lt;/a&gt;.
 Este método consiste en ir realizando operaciones matematicas sobre series infinitas de números hasta que la serie  &lt;a href="https://es.wikipedia.org/wiki/Serie_convergente"&gt;converge&lt;/a&gt; en el número &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;. Aunque no es muy eficiente, se acerca cada vez más al valor de Pi en cada repetición, produciendo con precisión hasta cinco mil decimales de Pi con 500000 repeticiones. Su formula es muy simple.&lt;/p&gt;
@@ -20321,25 +20583,21 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;$$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$&lt;/p&gt;
-
+$$\pi=(4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Calculando-$\pi$-con-Python"&gt;Calculando $\pi$ con Python&lt;a class="anchor-link" href="#Calculando-$\pi$-con-Python"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como este blog lo tengo dedicado a &lt;a href="https://python.org/"&gt;Python&lt;/a&gt;, obviamente no podía concluir este artículo sin incluir distintas formas de calcular &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; utilizando &lt;a href="https://python.org/"&gt;Python&lt;/a&gt;; el cual bien es sabido que se adapta más que bien para las matemáticas!.&lt;/p&gt;
 &lt;p&gt;Como &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; es una &lt;em&gt;constante&lt;/em&gt; con un gran número de sus dígitos ya conocidos, los principales módulos Matemáticos de &lt;a href="https://python.org/"&gt;Python&lt;/a&gt; ya incluyen su valor en una variable. Así por ejemplo, podemos ver el valor de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt; importando los módulos math o sympy.&lt;/p&gt;
@@ -20369,7 +20627,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 
 
 
@@ -20407,7 +20665,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20421,8 +20679,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Si queremos calcular alguna aproximación al valor de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%CF%80"&gt;$\pi$&lt;/a&gt;&lt;/em&gt;, podríamos implementar por ejemplo la aproximación de Arquímedes de la siguiente manera.&lt;/p&gt;
 
@@ -20493,7 +20750,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20507,8 +20764,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Por último, también podríamos implementar las series infinitas de &lt;a href="https://es.wikipedia.org/wiki/Serie_de_Leibniz"&gt;Gregory-Leibniz&lt;/a&gt;, lo cual es realmente bastante sencillo.&lt;/p&gt;
 
@@ -20559,7 +20815,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -20573,8 +20829,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como se puede observar, el método de las series infinitas de Leibniz, si bien es de fácil implementación, no es muy preciso además de ser sumamente ineficiente.&lt;/p&gt;
 &lt;p&gt;Con esto concluyo y a festejar el día de $\pi$!!&lt;/p&gt;
@@ -20583,8 +20838,7 @@ Este método consiste en ir realizando operaciones matematicas sobre series infi
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Saludos!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/PiDay.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/PiDay.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;

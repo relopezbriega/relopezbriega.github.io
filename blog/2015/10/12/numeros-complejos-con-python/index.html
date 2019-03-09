@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Números complejos con Python" title="Números complejos con Python" src="https://relopezbriega.github.io/images/imaginary.gif
 " width="500px" height="400px"></p>
@@ -301,54 +300,37 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Si bien el conjunto de los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> $\mathbb{R}$, parece contener todos los números que podríamos llegar a necesitar. Existe todavía una dificultad, el hecho de que sólo se pueden tomar raíces cuadradas de los números positivos (o cero) y no de los negativos. Desde el punto de vista matemático resultaría conveniente poder extraer raíces cuadradas de números negativos tanto como de números positivos. Por tal motivo, que tal si "inventamos" una raíz cuadrada para el número -1 y la expresamos con el símbolo "$i$", de modo que tenemos</p>
-<p>$$i^2 = -1$$</p>
-<p>La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario">números imaginarios</a> no son menos reales que los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> a los que estamos acostumbrados.</p>
+$$i^2 = -1$$<p>La cantidad $i$ no puede ser, por supuesto, un número real puesto que el producto de un número real por sí mismo es siempre positivo (o cero, si el propio número es el cero). Por esta razón se ha aplicado convencionalmente el término "imaginario" a los números cuyos cuadrados son negativos. Sin embargo, es importante resaltar el hecho de que estos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario">números imaginarios</a> no son menos reales que los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> a los que estamos acostumbrados.</p>
 <p>Cuando estos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario">números imaginarios</a> se combinan con los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> obtenemos lo que se conoce como <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>; de esta forma, los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> vienen a completar a los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a> y nos permiten realizar todo tipo de operaciones algebraicas.</p>
 <h2 id="&#191;Qu&#233;-es-un-n&#250;mero-complejo?">&#191;Qu&#233; es un n&#250;mero complejo?<a class="anchor-link" href="#&#191;Qu&#233;-es-un-n&#250;mero-complejo?">&#182;</a></h2><p>Los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> incluyen todas las raíces de los <a href="https://es.wikipedia.org/wiki/Polinomio">polinomios</a>, a diferencia de lo que pasaba cuando solo teníamos a los   <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">números reales</a>. Todo <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> puede representarse como la suma de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real">número real</a> y un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_imaginario">número imaginario</a>, el cual es un múltiplo real de la unidad imaginaria, que se indica con la letra $i$. O sea, que los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> tienen la forma</p>
-<p>$$a + bi$$</p>
-<p>donde a y b son números reales llamados <em>parte real</em> y <em>parte imaginaria</em> , respectivamente, del <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a>. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.</p>
+$$a + bi$$<p>donde a y b son números reales llamados <em>parte real</em> y <em>parte imaginaria</em> , respectivamente, del <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a>. Las reglas para sumar y multiplicar tales números se siguen de las reglas ordinarias del álgebra, con la regla añadida de que $ i^2 = -1$. Veamos las distintas operaciones matemáticas que podemos hacer con estos números.</p>
 <h2 id="Operaciones-con-n&#250;meros-complejos">Operaciones con n&#250;meros complejos<a class="anchor-link" href="#Operaciones-con-n&#250;meros-complejos">&#182;</a></h2><p>Las operaciones que podemos realizar con los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> son las siguientes:</p>
 <h3 id="Suma">Suma<a class="anchor-link" href="#Suma">&#182;</a></h3><p>Para sumar dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> simplemente sumamos cada elemento en forma separada. Es decir que:</p>
-<p>$$(a+bi) + (c+di) = (a+c) + (b+d)i$$</p>
-<p>Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.</p>
+$$(a+bi) + (c+di) = (a+c) + (b+d)i$$<p>Así, por ejemplo $(2 + 2i) + (1 + 5i) = 3 + 7i$.</p>
 <h3 id="Producto-por-escalar">Producto por escalar<a class="anchor-link" href="#Producto-por-escalar">&#182;</a></h3><p>Para calcular el producto escalar de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a>, multiplicamos al <a href="https://es.wikipedia.org/wiki/Escalar_(matem%C3%A1tica)">escalar</a> por cada una de sus partes, la real y la imaginaria. Es decir que:</p>
-<p>$$r(a+bi) = (ra) + (rb)i$$</p>
-<p>Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.</p>
+$$r(a+bi) = (ra) + (rb)i$$<p>Así, por ejemplo $ 3(2 + 3i) = 6 + 9i$.</p>
 <h3 id="Multiplicaci&#243;n">Multiplicaci&#243;n<a class="anchor-link" href="#Multiplicaci&#243;n">&#182;</a></h3><p>Para multiplicar dos  <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, debemos realizar su multiplicación <a href="https://es.wikipedia.org/wiki/Binomio">binomial</a>. Es decir que:</p>
-<p>$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$</p>
-<p>En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, que es:</p>
-<p>$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$</p>
-<p>Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.</p>
+$$(a+bi)(c+di) = ac + adi + bci + bdi^2$$<p>En este punto, debemos recordad que $i^2$ es igual a -1; lo que nos facilita la solución del cálculo de la multiplicación. También existe una formula más simple para obtener el resultado de la multiplicación de dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, que es:</p>
+$$(a+bi)(c+di) = (ac-bd) + (ad+bc)i$$<p>Así, por ejemplo $ (3 + 2i)(2 + 6i) = (3\times2 - 2\times6) + (3\times6 + 2\times2)i = -6 + 22i$.</p>
 <h3 id="Igualdad">Igualdad<a class="anchor-link" href="#Igualdad">&#182;</a></h3><p>Dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> van a ser iguales si y solo si sus partes <em>reales</em> e <em>imaginarias</em> son iguales. Es decir que:</p>
-<p>$$(a + bi) = (c + di) \iff a = c \wedge b = d$$</p>
-<p>Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.</p>
+$$(a + bi) = (c + di) \iff a = c \wedge b = d$$<p>Así, por ejemplo $ (3 + 2i) = (3 + 2i)$, ya que 3 = 3 y 2 = 2.</p>
 <h3 id="Resta">Resta<a class="anchor-link" href="#Resta">&#182;</a></h3><p>La resta de dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, funciona de forma similar a la suma.</p>
-<p>$$(a+bi) - (c+di) = (a-c) + (b-d)i$$</p>
-<p>Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.</p>
+$$(a+bi) - (c+di) = (a-c) + (b-d)i$$<p>Así, por ejemplo $(2 + 2i) - (1 + 5i) = 1 -3i$.</p>
 <h3 id="Conjugado">Conjugado<a class="anchor-link" href="#Conjugado">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a> de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> se obtiene cambiando el signo de su componente imaginario. Por lo tanto, el <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a> de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a></p>
 <p>$z = a + bi$, es $\overline{z} = a - bi$.</p>
 <p>Para expresar que estamos buscando el <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a>, escribimos una línea sobre el <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a>. Así, por ejemplo</p>
-<p>$$ \overline{ 2 + 3i} = 2 - 3i$$</p>
-<h3 id="Divisi&#243;n">Divisi&#243;n<a class="anchor-link" href="#Divisi&#243;n">&#182;</a></h3><p>Para dividir dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, debemos utilizar el <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a>; ya que para realizar la división debemos multiplicar tanto el <em>divisor</em> como el <em>dividendo</em> por el conjugado del <em>divisor</em>.
+$$ \overline{ 2 + 3i} = 2 - 3i$$<h3 id="Divisi&#243;n">Divisi&#243;n<a class="anchor-link" href="#Divisi&#243;n">&#182;</a></h3><p>Para dividir dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a>, debemos utilizar el <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a>; ya que para realizar la división debemos multiplicar tanto el <em>divisor</em> como el <em>dividendo</em> por el conjugado del <em>divisor</em>.
 Así, por ejemplo si quisiéramos dividir:</p>
-<p>$$\frac{2 + 3i}{4 - 5i}$$</p>
-<p>Debemos realizar el siguiente cálculo:</p>
-<p>$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$</p>
-<p>y teniendo en cuenta que la multiplicación de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> por su <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a>, responde a la formula:</p>
-<p>$$(a + bi)(a - bi) = a^2 + b^2$$</p>
-<p>Podemos resolver la división de la siguiente forma:</p>
-<p>$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$</p>
-<p>Lo que nos lleva al resultado final:</p>
-<p>$$ = \frac{-7}{41} + \frac{22}{41}i$$</p>
-<p>Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:</p>
-<p>$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$</p>
-<h3 id="Valor-absoluto-o-m&#243;dulo-de-un-n&#250;mero-complejo">Valor absoluto o m&#243;dulo de un n&#250;mero complejo<a class="anchor-link" href="#Valor-absoluto-o-m&#243;dulo-de-un-n&#250;mero-complejo">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_absoluto">valor absoluto</a>, módulo o <em>magnitud</em> de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> viene dado por la siguiente expresión:</p>
-<p>$$ |a + bi| = \sqrt{a^2 + b^2} $$</p>
-<p>Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.</p>
+$$\frac{2 + 3i}{4 - 5i}$$<p>Debemos realizar el siguiente cálculo:</p>
+$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i}$$<p>y teniendo en cuenta que la multiplicación de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> por su <a href="https://es.wikipedia.org/wiki/Conjugado_(matem%C3%A1tica)">conjugado</a>, responde a la formula:</p>
+$$(a + bi)(a - bi) = a^2 + b^2$$<p>Podemos resolver la división de la siguiente forma:</p>
+$$\frac{2 + 3i}{4 - 5i}\times\frac{4 + 5i}{4 + 5i} = \frac{8 + 10i + 12i + 15i^2}{16 + 25} = \frac{-7 + 22i}{41}$$<p>Lo que nos lleva al resultado final:</p>
+$$ = \frac{-7}{41} + \frac{22}{41}i$$<p>Para simplificar el procedimiento, y no tener que realizar tantos cálculos, podríamos utilizar la siguiente formula:</p>
+$$\frac{(a + bi)}{(c + di)} = {(ac+bd) + (bc-ad)i \over c^2+d^2} = \left({ac + bd \over c^2 + d^2} + {(bc - ad)i \over c^2 + d^2}\right)$$<h3 id="Valor-absoluto-o-m&#243;dulo-de-un-n&#250;mero-complejo">Valor absoluto o m&#243;dulo de un n&#250;mero complejo<a class="anchor-link" href="#Valor-absoluto-o-m&#243;dulo-de-un-n&#250;mero-complejo">&#182;</a></h3><p>El <a href="https://es.wikipedia.org/wiki/Valor_absoluto">valor absoluto</a>, módulo o <em>magnitud</em> de un <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">número complejo</a> viene dado por la siguiente expresión:</p>
+$$ |a + bi| = \sqrt{a^2 + b^2} $$<p>Así, por ejemplo $|4 + 3i| = \sqrt{16 + 9} = 5$.</p>
 <h2 id="Plano-de-los-n&#250;meros-complejos-o-Diagrama-de-Argand">Plano de los n&#250;meros complejos o Diagrama de Argand<a class="anchor-link" href="#Plano-de-los-n&#250;meros-complejos-o-Diagrama-de-Argand">&#182;</a></h2><p>El <a href="https://es.wikipedia.org/wiki/Plano_complejo">plano de Argand</a> es un plano euclídeo ordinario con coordenadas cartesianas estándar $x$ e $y$ , donde $x$ indica la distancia horizontal (positiva hacia la derecha y negativa hacia la izquierda) y donde $y$ indica la distancia vertical (positiva hacia arriba y negativa hacia abajo). El número complejo $z = x + yi$ viene representado entonces por el punto del plano de Argand cuyas coordenadas son $( x , y )$.</p>
 <p><img alt="Plano de Argand" title="Plano de Argand" src="https://relopezbriega.github.io/images/Argand1.png
 " width="500px" height="400px"></p>
@@ -383,7 +365,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -419,7 +401,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -456,7 +438,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -494,7 +476,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -530,7 +512,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -567,7 +549,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -605,7 +587,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -642,7 +624,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -679,7 +661,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -717,7 +699,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -754,7 +736,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -790,7 +772,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -826,7 +808,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -898,7 +880,7 @@ Las operaciones algebraicas básicas de la suma y multiplicación de <a href="ht
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1000,13 +982,11 @@ SUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Aplicaciones-de-los-n&#250;meros-complejos">Aplicaciones de los n&#250;meros complejos<a class="anchor-link" href="#Aplicaciones-de-los-n&#250;meros-complejos">&#182;</a></h2><p>Dado que los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> proporcionan un sistema para encontrar las raíces de <a href="https://es.wikipedia.org/wiki/Polinomio">polinomios</a> y los <a href="https://es.wikipedia.org/wiki/Polinomio">polinomios</a> se utilizan como modelos teóricos en diversos campos, los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> gozan de un gran importancia en varias áreas especializadas. Entre estas áreas especializadas se encuentran la ingeniería, la ingeniería eléctrica y la <a href="https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica">mecánica cuántica</a>. Algunos temas en los que se utilizan <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> incluyen la investigación de la corriente eléctrica, longitud de onda, el flujo de líquido en relación a los obstáculos, el análisis de la tensión en las vigas, el movimiento de los amortiguadores en automóviles, el estudio de resonancia de las estructuras, el diseño de dinamos y motores eléctricos, y la manipulación de grandes matrices utilizadas en el modelado. Por ejemplo, en ingeniería electrica para el análisis de circuitos de corriente alterna, es necesario representar cantidades multidimensionales. Con el fin de realizar esta tarea, los números escalares fueron abandonados y los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> se utilizan para expresar las dos dimensiones de frecuencia y desplazamiento de fase.</p>
 <p>Así, por ejemplo si sabemos que el voltaje en un circuito es 45 + 10j voltios y la impedancia es de 3 + 4j ohms. Si queremos saber cual es la corriente, simplemente deberíamos resolver la ecuación $E = I \dot Z$ donde E es la tensión, I es la corriente, y Z es la impedancia. Reemplazando los términos en la formula, obtenemos que:</p>
-<p>$$ I = \frac{45 + 10j}{3 + 4j}$$</p>
-
+$$ I = \frac{45 + 10j}{3 + 4j}$$
 </div>
 </div>
 </div>
@@ -1032,7 +1012,7 @@ SUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -1048,8 +1028,7 @@ SUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Por tanto, la corriente es de 7 - 6j amps.</p>
 <p>Además de todas estas aplicaciones, los <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_complejo">números complejos</a> nos permiten también realizar uno de los gráficos más hermosos de las matemáticas como es el <a href="https://es.wikipedia.org/wiki/Fractal">fractal</a> de <a href="https://es.wikipedia.org/wiki/Gaston_Julia">Julia</a>!!.</p>
@@ -1131,7 +1110,7 @@ SUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -3754,8 +3733,7 @@ GAAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>O el también famoso <a href="https://es.wikipedia.org/wiki/Conjunto_de_Mandelbrot">conjunto de Mandelbrot</a>.</p>
 
@@ -3801,7 +3779,7 @@ GAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -4812,8 +4790,7 @@ RU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Con esto termino este artículo, espero que les haya gustado y les sea de utilidad.</p>
 <p>Saludos!</p>
@@ -4825,6 +4802,10 @@ RU5ErkJggg==
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/ComplexPy.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/ComplexPy.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -4895,6 +4876,9 @@ RU5ErkJggg==
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -4905,9 +4889,6 @@ RU5ErkJggg==
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -4931,7 +4912,7 @@ RU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

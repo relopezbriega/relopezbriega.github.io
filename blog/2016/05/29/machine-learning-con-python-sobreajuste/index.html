@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Machine Learning" title="Machine Learning" src="https://relopezbriega.github.io/images/machine-learning.jpg"></p>
 
@@ -300,16 +299,14 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Uno de los conceptos más importantes en <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> es el <strong><em><a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> o <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a></em></strong> del modelo. Comprender como un modelo se <em>ajusta</em> a los datos es muy importante para entender las causas de baja precisión en las predicciones. Un modelo va a estar <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a></em> cuando vemos que se desempeña bien con los datos de entrenamiento, pero su precisión es notablemente más baja con los datos de evaluación; esto se debe a que el modelo ha memorizado los datos que ha visto y no pudo <em>generalizar</em> las reglas para predecir los datos que no ha visto. De aquí también la importancia de siempre contar con dos <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjuntos de datos</a> distintos, uno para entrenar el modelo y otro para evaluar su precisión; ya que si utilizamos el mismo <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> para las dos tareas, no tendríamos forma de determinar como el modelo se comporta con datos que nunca ha visto.</p>
 
@@ -317,8 +314,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#191;C&#243;mo-reconocer-el-sobreajuste?">&#191;C&#243;mo reconocer el sobreajuste?<a class="anchor-link" href="#&#191;C&#243;mo-reconocer-el-sobreajuste?">&#182;</a></h2><p>En líneas generales el <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a> va a estar relacionado con la complejidad del modelo, mientras más complejidad le agreguemos, mayor va a ser la tendencia a <em><a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustarse</a></em> a los datos, ya que va a contar con mayor flexibilidad para realizar las predicciones y puede ser que los patrones que encuentre estén relacionados con el <em>ruido</em> (pequeños errores aleatorios) en los datos y no con la verdadera señal o relación subyacente.</p>
 <p>No existe una regla general para establecer cual es el nivel ideal de complejidad que le podemos otorgar a nuestro modelo sin caer en el <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a>; pero podemos valernos de algunas herramientas analíticas para intentar entender como el modelo se ajusta a los datos y reconocer el <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a>. Veamos un ejemplo.</p>
@@ -327,8 +323,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#193;rboles-de-Decisi&#243;n-y-sobreajuste">&#193;rboles de Decisi&#243;n y sobreajuste<a class="anchor-link" href="#&#193;rboles-de-Decisi&#243;n-y-sobreajuste">&#182;</a></h3><p>Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Árboles de Decisión</a> pueden ser muchas veces una herramienta muy precisa, pero también con mucha tendencia al <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a>. Para construir estos modelos aplicamos un procedimiento recursivo para encontrar los atributos que nos proporcionan más información sobre distintos subconjuntos de datos, cada vez más pequeños. Si aplicamos este procedimiento en forma reiterada, eventualmente podemos llegar a un árbol en el que cada <em>hoja</em> tenga una sola instancia de nuestra variable objetivo a clasificar. En este caso extremo, el <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Árbol de Decisión</a> va a tener una pobre <em>generalización</em> y estar bastante <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a>; ya que cada instancia de los datos de entrenamiento va a encontrar el camino que lo lleve eventualmente a la hoja que lo contiene, alcanzando así una precisión del 100% con los datos de entrenamiento. Veamos un ejemplo sencillo con la ayuda de <a href="https://python.org/">Python</a>.</p>
 
@@ -401,7 +396,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -441,7 +436,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -455,8 +450,7 @@ init_mathjax();
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Logramos una precisión del 100 %, increíble, este modelo no se equivoca! deberíamos utilizarlo para jugar a la lotería y ver si ganamos algunos millones; o tal vez, no?. Veamos como se comporta con los datos de evaluación.</p>
 
@@ -485,7 +479,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -499,8 +493,7 @@ init_mathjax();
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ah, ahora nuestro modelo ya no se muestra tan preciso, esto se debe a que seguramente esta <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a>, ya que dejamos crecer el árbol hasta que cada hoja estuviera pura (es decir que solo contenga datos de una sola de las clases a predecir). Una alternativa para reducir el <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajuste</a> y ver si podemos lograr que <em>generalice</em> mejor y por tanto tenga más precisión para datos nunca vistos, es tratar de reducir la complejidad del modelo por medio de controlar la profundidad que puede alcanzar el <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Árbol de Decisión</a>.</p>
 
@@ -528,7 +521,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -544,8 +537,7 @@ init_mathjax();
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Este caso nuestro modelo tiene una profundidad de 22 nodos; veamos si reduciendo esa cantidad podemos mejorar la precisión en los datos de evaluación. Por ejemplo, pongamos un máximo de profundidad de tan solo 5 nodos.</p>
 
@@ -576,7 +568,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -616,7 +608,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -630,8 +622,7 @@ init_mathjax();
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ahora podemos ver que ya no tenemos un modelo con 100% de precisión en los datos de entrenamiento, sino que la precisión es bastante inferior, 92%, sin embargo si ahora medimos la precisión con los datos de evaluación vemos que la precisión es del 90%, 3 puntos por arriba de lo que habíamos conseguido con el primer modelo que nunca se equivocaba en los datos de entrenamiento.</p>
 
@@ -660,7 +651,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -674,8 +665,7 @@ init_mathjax();
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Esta diferencia se debe a que reducimos la complejidad del modelo para intentar ganar en generalización. También debemos tener en cuenta que si seguimos reduciendo la complejidad, podemos crear un modelo demasiado simple que en vez de estar <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a> puede tener un desempeño muy por debajo del que podría tener; podríamos decir que el modelo estaría <em>infraajustado</em> y tendría un alto nivel de <em>sesgo</em>. Para ayudarnos a encontrar el término medio entre la complejidad del modelo y su <em>ajuste</em> a los datos, podemos ayudarnos de herramientas gráficas. Por ejemplo podríamos crear diferentes modelos, con distintos grados de complejidad y luego graficar la precisión en función de la complejidad.</p>
 
@@ -720,7 +710,7 @@ init_mathjax();
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1056,8 +1046,7 @@ RU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El gráfico que acabamos de construir se llama <em>gráfico de ajuste</em> y muestra la precisión del modelo en función de su complejidad. En nuestro ejemplo, podemos ver que el punto con mayor precisión, en los datos de evaluación, lo obtenemos con un nivel de profundidad de aproximadamente 5 nodos; a partir de allí el modelo pierde en <em>generalización</em> y comienza a estar <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustado</a>. También podemos crear un gráfico similar con la ayuda de <a href="https://scikit-learn.org/stable/">Scikit-learn</a>, utilizando <code>validation_curve</code>.</p>
 
@@ -1122,7 +1111,7 @@ RU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1493,8 +1482,7 @@ knAK9iIiIgn3f15Hw7z8529EAAAAAElFTkSuQmCC
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este gráfico, también podemos ver que nuestro modelo tiene bastante <em><a href="https://es.wikipedia.org/wiki/Varianza">varianza</a></em>, representada por el área esfumada.</p>
 <h2 id="M&#233;todos-para-reducir-el-Sobreajuste">M&#233;todos para reducir el Sobreajuste<a class="anchor-link" href="#M&#233;todos-para-reducir-el-Sobreajuste">&#182;</a></h2><p>Algunas de las técnicas que podemos utilizar para reducir el <a href="https://es.wikipedia.org/wiki/Sobreajuste">Sobreajuste</a>, son:</p>
@@ -1513,8 +1501,7 @@ knAK9iIiIgn3f15Hw7z8529EAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Validaci&#243;n-cruzada">Validaci&#243;n cruzada<a class="anchor-link" href="#Validaci&#243;n-cruzada">&#182;</a></h3><p>La <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em> se inicia mediante el fraccionamiento de un <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjunto de datos</a> en un número $k$ de particiones (generalmente entre 5 y 10) llamadas <em>pliegues</em>. La <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em> luego itera entre los datos de <em>evaluación</em> y <em>entrenamiento</em> $k$ veces, de un modo particular. En cada iteración de la <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em>, un <em>pliegue</em> diferente se elige como los datos de <em>evaluación</em>. En esta iteración, los otros <em>pliegues</em> $k-1$ se combinan para formar los datos de <em>entrenamiento</em>. Por lo tanto, en cada iteración tenemos $(k-1) / k$ de los datos utilizados para el <em>entrenamiento</em> y $1 / k$ utilizado para la <em>evaluación</em>.
 Cada iteración produce un modelo, y por lo tanto una estimación del rendimiento de la <em>generalización</em>, por ejemplo, una estimación de la precisión. Una vez finalizada la <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em>, todos los ejemplos se han utilizado sólo una vez para <em>evaluar</em> pero $k -1$ veces para <em>entrenar</em>. En este punto tenemos estimaciones de rendimiento de todos los <em>pliegues</em> y podemos calcular la <a href="https://es.wikipedia.org/wiki/Media_aritm%C3%A9tica">media</a> y la <a href="https://es.wikipedia.org/wiki/Desviaci%C3%B3n_t%C3%ADpica">desviación estándar</a> de la precisión del modelo. Veamos un ejemplo</p>
@@ -1560,7 +1547,7 @@ Cada iteración produce un modelo, y por lo tanto una estimación del rendimient
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1584,8 +1571,7 @@ Precision promedio:  0.898 +/-  0.014
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este ejemplo, utilizamos el <a href="https://es.wikipedia.org/wiki/Iterador_(patr%C3%B3n_de_dise%C3%B1o)">iterador</a> <code>StratifiedKFold</code> que nos proporciona <a href="https://scikit-learn.org/stable/">Scikit-learn</a>. Este <a href="https://es.wikipedia.org/wiki/Iterador_(patr%C3%B3n_de_dise%C3%B1o)">iterador</a> es una versión mejorada de la <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em>, ya que cada <em>pliegue</em> va a estar estratificado para mantener las proporciones entre las <em>clases</em> del <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">conjunto de datos</a> original, lo que suele dar mejores estimaciones del sesgo y la varianza del modelo. También podríamos utilizar <code>cross_val_score</code> que ya nos proporciona los resultados de la precisión que tuvo el modelo en cada <em>pliegue</em>.</p>
 
@@ -1619,7 +1605,7 @@ Precision promedio:  0.898 +/-  0.014
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1635,8 +1621,7 @@ Precision promedio:  0.898 +/-  0.013
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="M&#225;s-datos-y-curvas-de-aprendizaje">M&#225;s datos y curvas de aprendizaje<a class="anchor-link" href="#M&#225;s-datos-y-curvas-de-aprendizaje">&#182;</a></h3><p>Muchas veces, reducir el <a href="https://es.wikipedia.org/wiki/Sobreajuste">Sobreajuste</a> es tan fácil como conseguir más datos, dame más datos y te predeciré el futuro!. Aunque en la vida real nunca es una tarea tan sencilla conseguir más datos. Otra herramienta analítica que nos ayuda a entender como reducimos el <a href="https://es.wikipedia.org/wiki/Sobreajuste">Sobreajuste</a> con la ayuda de más datos, son las <em>curvas de aprendizaje</em>, las cuales grafican la precisión en función del tamaño de los datos de entrenamiento. Veamos como podemos graficarlas con la ayuda de <a href="https://python.org/">Python</a>.</p>
 <p><img alt="Curva de aprendizaje" title="Curva de aprendizaje" src="https://relopezbriega.github.io/images/curva_aprendizaje.png" width="600px" height="600px" ></p>
@@ -1704,7 +1689,7 @@ Precision promedio:  0.898 +/-  0.013
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2073,8 +2058,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este gráfico podemos ver claramente como con pocos datos la precisión entre los datos de entrenamiento y los de evaluación son muy distintas y luego a medida que la cantidad de datos va aumentando, el modelo puede generalizar mucho mejor y las precisiones se comienzan a emparejar. Este gráfico también puede ser importante a la hora de decidir invertir en la obtención de más datos, ya que por ejemplo nos indica que a partir las 2500 muestras, el modelo ya no gana mucha más precisión a pesar de obtener más datos.</p>
 <h3 id="Optimizaci&#243;n-de-par&#225;metros-con-Grid-Search">Optimizaci&#243;n de par&#225;metros con Grid Search<a class="anchor-link" href="#Optimizaci&#243;n-de-par&#225;metros-con-Grid-Search">&#182;</a></h3><p>La mayoría de los modelos de <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a> cuentan con varios parámetros para ajustar su comportamiento, por lo tanto otra alternativa que tenemos para reducir el <a href="https://es.wikipedia.org/wiki/Sobreajuste">Sobreajuste</a> es optimizar estos parámetros por medio de un proceso conocido como <em>grid search</em> e intentar encontrar la combinación ideal que nos proporcione mayor precisión. El enfoque que utiliza <em>grid search</em> es bastante simple, se trata de una búsqueda exhaustiva por el paradigma de fuerza bruta en el que se especifica una lista de valores para diferentes parámetros, y la computadora evalúa el rendimiento del modelo para cada combinación de éstos parámetros para obtener el conjunto óptimo que nos brinda el mayor rendimiento.</p>
@@ -2136,7 +2120,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2173,7 +2157,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2187,8 +2171,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>En este ejemplo, primero utilizamos el objeto <code>GridSearchCV</code> que nos permite realizar <em>grid search</em> junto con <em><a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_cruzada">validación cruzada</a></em>, luego comenzamos a ajustar el modelo con las diferentes combinaciones de los valores de los parámetros <code>gamma</code> y <code>C</code>. Finalmente imprimimos el mejor resultado de precisión y los valores de los parámetros que utilizamos para obtenerlos; por último utilizamos este mejor modelo para realizar las predicciones con los datos de <em>evaluación</em>. Podemos ver que la precisión que obtuvimos con los datos de evaluación es casi idéntica a la que nos indicó <em>grid search</em>, lo que indica que el modelo <em>generaliza</em> muy bien.</p>
 <p>Aquí termina este artículo, sobre la <a href="https://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">selección de atributos</a>, pueden visitar el artículo que dedique a ese tema en este <a href="https://relopezbriega.github.io/blog/2016/04/15/ejemplo-de-machine-learning-con-python-seleccion-de-atributos/">link</a>; en cuando a modelos ensamblados y reducción de dimensiones de los datos, espero escribir sobre esos temas en artículos futuros, no se los pierdan!</p>
@@ -2201,6 +2184,10 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/MachineLearningOverfitting.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/MachineLearningOverfitting.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2273,6 +2260,9 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -2283,9 +2273,6 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -2309,7 +2296,7 @@ JKlR0glIkiRJkholnYAkSZIkqVH+B4wmwwBZg5RrAAAAAElFTkSuQmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Redes Neuronales</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/redes-neuronales.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-06-13T00:00:00-03:00</updated><entry><title>Introducción al Deep Learning</title><link href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" rel="alternate"></link><published>2017-06-13T00:00:00-03:00</published><updated>2017-06-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-06-13:/blog/2017/06/13/introduccion-al-deep-learning/</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Redes Neuronales</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/redes-neuronales.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-06-13T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Introducción al Deep Learning</title><link href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/" rel="alternate"></link><published>2017-06-13T00:00:00-03:00</published><updated>2017-06-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-06-13:/blog/2017/06/13/introduccion-al-deep-learning/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img src="https://iaarhub.github.io/images/Inteligencia-Artificial-Deep-Learning.jpg" title="Deep Learning" alt="Deep Learning"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Este artículo fue publicado originalmente en el &lt;a href="https://iaarhub.github.io/"&gt;sitio de capacitaciones de IAAR&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id="Introducci&amp;#243;n-"&gt;Introducci&amp;#243;n &lt;a name="intro-DL" /&gt;&lt;a class="anchor-link" href="#Introducci&amp;#243;n-"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt; es sin duda el área de investigación más popular dentro del campo de la &lt;a href="https://iaarhub.github.io/capacitacion/2017/04/30/introduccion-a-la-inteligencia-artificial/"&gt;inteligencia artificial&lt;/a&gt;. La mayoría de las nuevas investigaciones que se realizan, trabajan con modelos basados en las técnicas de &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img src="https://iaarhub.github.io/images/Inteligencia-Artificial-Deep-Learning.jpg" title="Deep Learning" alt="Deep Learning"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Este artículo fue publicado originalmente en el &lt;a href="https://iaarhub.github.io/"&gt;sitio de capacitaciones de IAAR&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
@@ -34,8 +32,7 @@
 &lt;li&gt;&lt;p&gt;a: La salida de la neurona. Que va a ser calculada de la siguiente forma:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;/p&gt;
-&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
+$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
 &lt;p&gt;Cada unidad neuronal está conectada con muchas otras y los enlaces entre ellas pueden incrementar o inhibir el estado de activación de las neuronas adyacentes. Estos sistemas aprenden y se forman a sí mismos, en lugar de ser programados de forma explícita, y sobresalen en áreas donde la detección de soluciones o características es difícil de expresar con la programación convencional.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://iaarhub.github.io/images/neural_network.svg"&gt;&lt;/p&gt;
 &lt;h3 id="Propagaci&amp;#243;n-hacia-atr&amp;#225;s"&gt;Propagaci&amp;#243;n hacia atr&amp;#225;s&lt;a class="anchor-link" href="#Propagaci&amp;#243;n-hacia-atr&amp;#225;s"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;propagación hacia atrás&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;backpropagation&lt;/a&gt; es un algoritmo que funciona mediante la determinación de la pérdida (o error) en la salida y luego propagándolo de nuevo hacia atrás en la red. De esta forma los pesos se van actualizando para minimizar el error resultante de cada neurona. Este algoritmo es lo que les permite a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; aprender.&lt;/p&gt;
@@ -82,8 +79,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="&amp;#191;Por-qu&amp;#233;-estos-sorprendentes-resultados-surgen-ahora?--"&gt;&amp;#191;Por qu&amp;#233; estos sorprendentes resultados surgen ahora?  &lt;a name="por-que-ahora-DL" /&gt;&lt;a class="anchor-link" href="#&amp;#191;Por-qu&amp;#233;-estos-sorprendentes-resultados-surgen-ahora?--"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Muchos de los conceptos del &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt; se desarrollaron en los años 80s y 90s, algunos incluso mucho antes. Sin embargo, los primeros resultados exitosos del &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt; surgieron en los últimos 5 años. ¿qué fue lo que cambio para lograr la popularidad y éxito de los modelos basados en &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt; en estos últimos años?&lt;/p&gt;
 &lt;p&gt;Si bien existen múltiples factores para explicar esta &lt;em&gt;revolución&lt;/em&gt; del &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt;, los dos principales componentes parecen ser la &lt;strong&gt;disponibilidad de masivos volúmenes de datos&lt;/strong&gt;, lo que actualmente se conoce bajo el nombre de &lt;a href="https://es.wikipedia.org/wiki/Big_data"&gt;Big Data&lt;/a&gt;; y el &lt;strong&gt;progreso en el poder de computo&lt;/strong&gt;, especialmente gracias a los &lt;a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico"&gt;GPUs&lt;/a&gt;. Entonces, dentro de los factores que explican esta popularidad de los modelos de &lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_profundo"&gt;Deep Learning&lt;/a&gt; podemos encontrar:&lt;/p&gt;
@@ -147,8 +143,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;Este post fue escrito por &lt;a href="https://relopezbriega.github.io/"&gt;Raúl e. López Briega&lt;/a&gt; utilizando &lt;a href="https://jupyter.org/"&gt;Jupyter notebook&lt;/a&gt;. Pueden descargar este &lt;a href="https://github.com/IAARhub/iaar_template/tree/master/content/notebooks/DeepLearning.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/IAARhub/iaar_template/tree/master/content/notebooks/DeepLearning.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
@@ -159,8 +154,7 @@
 
 &lt;/p&gt;</content></entry><entry><title>Redes neuronales convolucionales con TensorFlow</title><link href="https://relopezbriega.github.io/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/" rel="alternate"></link><published>2016-08-02T00:00:00-03:00</published><updated>2016-08-02T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-08-02:/blog/2016/08/02/redes-neuronales-convolucionales-con-tensorflow/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img title="Redes neuronales convolucionales con TensorFlow" alt="Redes neuronales convolucionales con TensorFlow" src="https://relopezbriega.github.io/images/convNetTensorFlow.jpg" high="400px" width="600px"&gt;&lt;/p&gt;
 
@@ -168,13 +162,11 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;De más esta decir que el sentido de la &lt;a href="https://es.wikipedia.org/wiki/Visi%C3%B3n"&gt;visión&lt;/a&gt; es uno de los grandes prodigios de la Naturaleza. En fracciones de segundos, podemos identificar objetos dentro de nuestro campo de visión, sin siquiera detenernos a pensar en ello. Pero no sólo podemos nombrar estos objetos que observamos, sino …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img title="Redes neuronales convolucionales con TensorFlow" alt="Redes neuronales convolucionales con TensorFlow" src="https://relopezbriega.github.io/images/convNetTensorFlow.jpg" high="400px" width="600px"&gt;&lt;/p&gt;
 
@@ -182,8 +174,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;De más esta decir que el sentido de la &lt;a href="https://es.wikipedia.org/wiki/Visi%C3%B3n"&gt;visión&lt;/a&gt; es uno de los grandes prodigios de la Naturaleza. En fracciones de segundos, podemos identificar objetos dentro de nuestro campo de visión, sin siquiera detenernos a pensar en ello. Pero no sólo podemos nombrar estos objetos que observamos, sino que también podemos percibir su profundidad, distinguir perfectamente sus contornos, y separarlos de sus fondos.
 De alguna manera los ojos captan datos de &lt;a href="https://es.wikipedia.org/wiki/P%C3%ADxel"&gt;píxeles&lt;/a&gt;, pero el cerebro transforma esa información en características más significativas - &lt;em&gt;líneas, curvas y formas&lt;/em&gt; - que podrían indicar, por ejemplo, que estamos mirando a una persona.&lt;/p&gt;
@@ -302,7 +293,7 @@ La operación realizada por esta capa también se llama &lt;em&gt;reducción de 
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -341,7 +332,7 @@ La operación realizada por esta capa también se llama &lt;em&gt;reducción de 
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -4019,7 +4010,7 @@ lIbPtgAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -10619,8 +10610,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, contamos con 5 lotes de entrenamientos de 10.000 imágenes cada uno; cada imagen esta representa por un &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensor&lt;/a&gt; de forma 32x32x3; siendo 32x32 el largo y ancho de la imagen y la profundidad de 3 se la da los valores de los colores &lt;a href="https://es.wikipedia.org/wiki/RGB"&gt;RGB&lt;/a&gt;. También podemos ver que las imágenes de cada clase son bastante variadas y en distintas posiciones, por lo que la red deberá aprender las características fundamentas de cada una de ellas para poder clasificarlas correctamente.&lt;/p&gt;
 &lt;h3 id="Construyendo-la-red-neuronal-convolucional"&gt;Construyendo la red neuronal convolucional&lt;a class="anchor-link" href="#Construyendo-la-red-neuronal-convolucional"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ahora que ya conocemos el &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;dataset&lt;/a&gt; con el que vamos a trabajar, es tiempo de pasar al armado del modelo. Enseñemos a la computadora a ver!&lt;/p&gt;
@@ -10790,8 +10780,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este bloque de código comenzamos definiendo los parámetros del modelo y algunas funciones de ayuda.
 Las funciones &lt;code&gt;inputs&lt;/code&gt; y &lt;code&gt;distorted_inputs&lt;/code&gt; las vamos a utilizar para cargar los datos de entrada y reducir su tamaño a 24x24 para no sobrecargar al equipo.
@@ -10914,7 +10903,7 @@ Por último, la función &lt;code&gt;inference&lt;/code&gt; es la que va a tener
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -10929,8 +10918,7 @@ Validation Error:&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como podemos ver, logramos una precisión del 82% entrenando a la red en tan solo 15 épocas, una precisión bastante alta, dada la complejidad del problema y tan poco entrenamiento.&lt;/p&gt;
 &lt;p&gt;Aquí termina el artículo, espero que les haya resultado interesante y los motive a explorar el fascinante mundo de las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt;.&lt;/p&gt;
@@ -10961,8 +10949,7 @@ Validation Error:&lt;/pre&gt;
 
 &lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="Machine Learning"></category><category term="Redes Neuronales"></category><category term="TensorFlow"></category></entry><entry><title>TensorFlow y Redes Neuronales</title><link href="https://relopezbriega.github.io/blog/2016/06/05/tensorflow-y-redes-neuronales/" rel="alternate"></link><published>2016-06-05T00:00:00-03:00</published><updated>2016-06-05T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-06-05:/blog/2016/06/05/tensorflow-y-redes-neuronales/</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/tensorFlowlogo.png"&gt;&lt;/p&gt;
 
@@ -10970,13 +10957,11 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Sobre-TensoFlow"&gt;Sobre TensoFlow&lt;a class="anchor-link" href="#Sobre-TensoFlow"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; es una biblioteca open source desarrollada por Google que nos permite realizar cálculos numéricos usando diagramas de flujo de datos. Los &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; representan operaciones matemáticas, mientras que los &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; representan los arreglos de datos multidimensionales (&lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt;) comunicados entre ellos. Esta arquitectura flexible nos …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/tensorFlowlogo.png"&gt;&lt;/p&gt;
 
@@ -10984,8 +10969,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Sobre-TensoFlow"&gt;Sobre TensoFlow&lt;a class="anchor-link" href="#Sobre-TensoFlow"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; es una biblioteca open source desarrollada por Google que nos permite realizar cálculos numéricos usando diagramas de flujo de datos. Los &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; representan operaciones matemáticas, mientras que los &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos&lt;/a&gt; del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; representan los arreglos de datos multidimensionales (&lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt;) comunicados entre ellos. Esta arquitectura flexible nos permite realizar los cálculos en más de un CPU o GPU utilizando la misma API.&lt;/p&gt;
 &lt;h2 id="&amp;#191;Qu&amp;#233;-es-un-diagrama-de-flujo-de-datos?"&gt;&amp;#191;Qu&amp;#233; es un diagrama de flujo de datos?&lt;a class="anchor-link" href="#&amp;#191;Qu&amp;#233;-es-un-diagrama-de-flujo-de-datos?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los diagramas de flujo de datos describen cálculos matemáticos con un &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; de &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos&lt;/a&gt;. Los &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt; normalmente implementan operaciones matemáticas, pero también pueden representar los puntos para alimentarse de datos, devolver resultados, o leer / escribir variables persistentes. Los &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos o aristas&lt;/a&gt; describen las relaciones de entrada / salida entre los &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt;. Estos &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos&lt;/a&gt; están representados por los arreglos de datos multidimensionales o &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt;. El flujo de los tensores a través del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; es de donde &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; recibe su nombre. Los &lt;a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)"&gt;nodos&lt;/a&gt; se asignan a los dispositivos computacionales y se ejecutan de forma asincrónica y en paralelo una vez que todos los &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt; en los &lt;a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)"&gt;arcos&lt;/a&gt; de entrada están disponibles.&lt;/p&gt;
@@ -10995,8 +10979,7 @@ Validation Error:&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n-a--TensorFlow"&gt;Introducci&amp;#243;n a  TensorFlow&lt;a class="anchor-link" href="#Introducci&amp;#243;n-a--TensorFlow"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para poder utilizar &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; primero es necesario entender cómo la librería:&lt;/p&gt;
 &lt;ul&gt;
@@ -11038,8 +11021,7 @@ Validation Error:&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Constantes"&gt;Constantes&lt;a class="anchor-link" href="#Constantes"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Podemos construir &lt;em&gt;ops&lt;/em&gt; de &lt;em&gt;constantes&lt;/em&gt; utilizando &lt;code&gt;constant&lt;/code&gt;, su API es bastante simple:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;constant(value, dtype=None, shape=None, name='Const')&lt;/code&gt;&lt;/p&gt;
@@ -11102,8 +11084,7 @@ Validation Error:&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Sesiones"&gt;Sesiones&lt;a class="anchor-link" href="#Sesiones"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Ahora que ya definimos algunas &lt;em&gt;ops constantes&lt;/em&gt; y algunos cálculos con ellas, debemos lanzar el &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; dentro de una &lt;em&gt;Sesión&lt;/em&gt;. Para realizar esto utilizamos el objeto &lt;code&gt;Session&lt;/code&gt;. Este objeto va a encapsular el ambiente en el que las operaciones que definimos en el &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt; van a ser ejecutadas y los &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt; son evaluados.&lt;/p&gt;
 
@@ -11139,7 +11120,7 @@ Validation Error:&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -11163,8 +11144,7 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Las &lt;em&gt;Sesiones&lt;/em&gt; deben ser cerradas para liberar los recursos, por lo que es una buena práctica incluir la &lt;em&gt;Sesión&lt;/em&gt; dentro de un bloque "with" que la cierra automáticamente cuando el bloque termina de ejecutar.&lt;/p&gt;
 &lt;p&gt;Para ejecutar las &lt;em&gt;operaciones&lt;/em&gt; y evaluar los &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt; utilizamos &lt;code&gt;Session.run()&lt;/code&gt;.&lt;/p&gt;
@@ -11173,8 +11153,7 @@ Producto de matrices:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Variables-persistentes"&gt;Variables persistentes&lt;a class="anchor-link" href="#Variables-persistentes"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Las &lt;em&gt;Variables&lt;/em&gt; mantienen el estado a través de las ejecuciones del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt;. Son buffers en memoria que contienen &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"&gt;tensores&lt;/a&gt;. Se deben inicializar explícitamente y se pueden guardar en el disco para luego restaurar su estado de necesitarlo. Se crean utilizando el objeto &lt;code&gt;Variable&lt;/code&gt;.&lt;/p&gt;
 
@@ -11223,7 +11202,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -11240,8 +11219,7 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Variables-simb&amp;#243;licas-(contenedores)"&gt;Variables simb&amp;#243;licas (contenedores)&lt;a class="anchor-link" href="#Variables-simb&amp;#243;licas-(contenedores)"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Las &lt;em&gt;Variables simbólicas&lt;/em&gt; o &lt;em&gt;Contenedores&lt;/em&gt; nos van a permitir alimentar a las operaciones con los datos durante la ejecución del &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafo&lt;/a&gt;. Estos &lt;em&gt;contenedores&lt;/em&gt; deben ser alimentados antes de ser evaluados en la sesión, sino obtendremos un error.&lt;/p&gt;
 
@@ -11279,7 +11257,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -11296,8 +11274,7 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Ahora ya conocemos en líneas generales como es la mecánica detrás del funcionamiento de &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; y como deberíamos proceder para crear las &lt;em&gt;operaciones&lt;/em&gt; dentro de los &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafos&lt;/a&gt;. Veamos si podemos implementar modelos de neuronas simples con la ayuda de esta librería.&lt;/p&gt;
 &lt;h2 id="Ejemplo-de-neuronas-simples"&gt;Ejemplo de neuronas simples&lt;a class="anchor-link" href="#Ejemplo-de-neuronas-simples"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una neurona simple, va a tener una forma similar al siguiente diagrama:&lt;/p&gt;
@@ -11313,21 +11290,18 @@ Producto de matrices:
 &lt;li&gt;&lt;p&gt;a: La salida de la neurona. Que va a ser calculada de la siguiente forma:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;/p&gt;
-&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
+$$a = f\left(\sum_{i=0}^n w_i \cdot x_i \right)$$&lt;p&gt;Aquí $f$ es la &lt;strong&gt;&lt;em&gt;función de activación&lt;/em&gt;&lt;/strong&gt; de la neurona. Esta función es la que le otorga tanta flexibilidad a las &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; y le permite estimar complejas relaciones no lineales en los datos. Puede ser tanto una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_lineal"&gt;función lineal&lt;/a&gt;, una &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_log%C3%ADstica"&gt;función logística&lt;/a&gt;, &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hiperb%C3%B3lica"&gt;hiperbólica&lt;/a&gt;, etc.&lt;/p&gt;
 &lt;p&gt;Ahora que ya conocemos como se construye una neurona tratemos de implementar con este modelo las funciones lógicas &lt;strong&gt;AND, OR y XNOR&lt;/strong&gt;. Podemos pensar a estas funciones como un problema de clasificación en el que la salida va a ser 0 o 1, de acuerdo a la combinación de las diferentes entradas.&lt;/p&gt;
 &lt;p&gt;Las podemos modelar linealmente con la siguiente función de activación:&lt;/p&gt;
-&lt;p&gt;$$f(x) = \left\{
+$$f(x) = \left\{
     \begin{array}{ll}
         0  &amp;amp; \mbox{si } x &amp;lt; 0 \\
         1 &amp;amp; \mbox{si } x \ge 0
     \end{array}
-\right.$$&lt;/p&gt;
-&lt;h3 id="Neurona-AND"&gt;Neurona AND&lt;a class="anchor-link" href="#Neurona-AND"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona AND puede ser modelada con el siguiente esquema:&lt;/p&gt;
+\right.$$&lt;h3 id="Neurona-AND"&gt;Neurona AND&lt;a class="anchor-link" href="#Neurona-AND"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona AND puede ser modelada con el siguiente esquema:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/NN_AND.png"&gt;&lt;/p&gt;
 &lt;p&gt;La salida de esta neurona entonces va a ser:&lt;/p&gt;
-&lt;p&gt;$$a = f(-1.5 + x_1 + x_2)$$&lt;/p&gt;
-&lt;p&gt;Veamos como la podemos implementar en &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;.&lt;/p&gt;
+$$a = f(-1.5 + x_1 + x_2)$$&lt;p&gt;Veamos como la podemos implementar en &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11420,7 +11394,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
 
 
 
@@ -11477,15 +11451,13 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Aquí podemos ver los datos de entrada de $x_1$ y $x_2$, el resultado de la función de activación y la decisión final que toma la neurona de acuerdo este último resultado. Como podemos ver en la tabla de verdad, la neurona nos dice que $x_1$ &lt;code&gt;and&lt;/code&gt; $x_2$ solo es verdad cuando ambos son verdaderos, lo que es correcto.&lt;/p&gt;
 &lt;h3 id="Neurona-OR"&gt;Neurona OR&lt;a class="anchor-link" href="#Neurona-OR"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La neurona OR puede ser modelada con el siguiente esquema:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://relopezbriega.github.io/images/NN_OR.png"&gt;&lt;/p&gt;
 &lt;p&gt;La salida de esta neurona entonces va a ser:&lt;/p&gt;
-&lt;p&gt;$$a = f(-0.5 + x_1 + x_2)$$&lt;/p&gt;
-&lt;p&gt;Como se puede ver a simple vista, el modelo de esta neurona es similar a la de la neurona AND, con el único cambio en el valor del &lt;em&gt;sesgo&lt;/em&gt;, por lo tanto solo tendríamos que cambiar ese valor en nuestro modelo anterior para crear esta nueva neurona.&lt;/p&gt;
+$$a = f(-0.5 + x_1 + x_2)$$&lt;p&gt;Como se puede ver a simple vista, el modelo de esta neurona es similar a la de la neurona AND, con el único cambio en el valor del &lt;em&gt;sesgo&lt;/em&gt;, por lo tanto solo tendríamos que cambiar ese valor en nuestro modelo anterior para crear esta nueva neurona.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -11533,7 +11505,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -11590,8 +11562,7 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, cambiando simplemente el peso del &lt;em&gt;sesgo&lt;/em&gt;, convertimos a nuestra neurona AND en una neurona OR. Como muestra la tabla de verdad, el único caso en que $x_1$ &lt;code&gt;OR&lt;/code&gt; $x_2$ es falso es cuando ambos son falsos.&lt;/p&gt;
 &lt;h3 id="Red-Neuronal-XNOR"&gt;Red Neuronal XNOR&lt;a class="anchor-link" href="#Red-Neuronal-XNOR"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El caso de la función XNOR, ya es más complicado y no puede modelarse utilizando una sola neurona como hicimos con los ejemplos anteriores. $x_1$ &lt;code&gt;XNOR&lt;/code&gt; $x_2$ va a ser verdadero cuando ambos son verdaderos o ambos son falsos, para implementar esta función lógica debemos crear una red con dos capas, la primer capa tendrá dos neuronas cuya salida servirá de entrada para una nueva neurona que nos dará el resultado final. Esta red la podemos modelar de acuerdo al siguiente esquema:&lt;/p&gt;
@@ -11703,7 +11674,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
 
 
 
@@ -11755,8 +11726,7 @@ Producto de matrices:
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos, la &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;red neuronal&lt;/a&gt; nos da el resultado correcto para la función lógica XNOR, solo es verdadera si ambos valores son verdaderos, o ambos son falsos.&lt;/p&gt;
 &lt;p&gt;Hasta aquí implementamos simples neuronas y les pasamos los valores de sus pesos y sesgo a mano; esto es sencillo para los ejemplos; pero en la vida real, si queremos utilizar &lt;a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial"&gt;redes neuronales&lt;/a&gt; necesitamos implementar un procesos que vaya actualizando los pesos a medida que la red vaya aprendiendo con el entrenamiento. Este proceso se conoce con el nombre de &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;propagación hacia atrás&lt;/a&gt; o &lt;a href="https://es.wikipedia.org/wiki/Propagaci%C3%B3n_hacia_atr%C3%A1s"&gt;backpropagation&lt;/a&gt;.&lt;/p&gt;
@@ -11792,7 +11762,7 @@ Producto de matrices:
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -11813,8 +11783,7 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Explorando-MNIST-dataset"&gt;Explorando MNIST dataset&lt;a class="anchor-link" href="#Explorando-MNIST-dataset"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
@@ -11841,7 +11810,7 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
 
 
 
@@ -11895,7 +11864,7 @@ Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -12143,7 +12112,7 @@ h6OEcOI7HCWEE9/hKCGc+A5HCfH/AcnmBEPrP4W7AAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
 
 
 
@@ -12208,7 +12177,7 @@ h6OEcOI7HCWEE9/hKCGc+A5HCfH/AcnmBEPrP4W7AAAAAElFTkSuQmCC
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -13566,8 +13535,7 @@ VwaFZBQoUKBAwZVBIRkFChQoUHBl+P8BTrIEcMA4kLEAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Construyendo-el-perceptron-multicapa"&gt;Construyendo el perceptron multicapa&lt;a class="anchor-link" href="#Construyendo-el-perceptron-multicapa"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ahora que ya conocemos los datos con los que vamos a trabajar, ya estamos en condiciones de construir el modelo. Vamos a construir un &lt;a href="https://es.wikipedia.org/wiki/Perceptr%C3%B3n_multicapa"&gt;peceptron multicapa&lt;/a&gt; que es una de las redes neuronales más simples. El modelo va a tener dos capas ocultas, que se van a activar con la &lt;a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_activaci%C3%B3n"&gt;función de activación&lt;/a&gt; &lt;a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)"&gt;ReLU&lt;/a&gt; y vamos a optimizar los pesos reduciendo la &lt;a href="https://es.wikipedia.org/wiki/Entrop%C3%ADa_cruzada"&gt;entropía cruzada&lt;/a&gt; utilizando el algoritmo &lt;a href="https://arxiv.org/abs/1412.6980"&gt;Adam&lt;/a&gt; que es un método para &lt;a href="https://en.wikipedia.org/wiki/Stochastic_optimization"&gt;optimización estocástica&lt;/a&gt;.&lt;/p&gt;
 
@@ -13739,7 +13707,7 @@ VwaFZBQoUKBAwZVBIRkFChQoUHBl+P8BTrIEcMA4kLEAAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -13773,8 +13741,7 @@ Luego abir https://0.0.0.0:6006/ en el navegador
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Como vemos &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; nos da mucha flexibilidad para construir el modelo, modificando muy pocas líneas podríamos cambiar el algoritmo de optimización o el calculo del error y obtener otros resultados; de esta forma vamos a poder personalizar el modelo para alcanzar mayores niveles de precisión.&lt;/p&gt;
 &lt;h2 id="TensorBoard"&gt;TensorBoard&lt;a class="anchor-link" href="#TensorBoard"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Otra gran herramienta que nos proporciona &lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt; es &lt;a href="https://www.tensorflow.org/versions/r0.8/how_tos/graph_viz/index.html"&gt;TensorBoard&lt;/a&gt; que nos permite visualizar nuestros &lt;a href="https://es.wikipedia.org/wiki/Grafo"&gt;grafos&lt;/a&gt; y nos ayudan a alcanzar un mayor entendimiento del flujo de cálculos que ocurre en nuestro modelo.&lt;/p&gt;
@@ -13789,8 +13756,7 @@ Luego abir https://0.0.0.0:6006/ en el navegador
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;Este post fue escrito utilizando IPython notebook. Pueden descargar este &lt;a href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/IntroTensorFlow.ipynb"&gt;notebook&lt;/a&gt; o ver su version estática en &lt;a href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/IntroTensorFlow.ipynb"&gt;nbviewer&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 

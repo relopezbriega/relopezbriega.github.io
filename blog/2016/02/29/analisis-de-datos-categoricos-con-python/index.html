@@ -291,8 +291,7 @@ init_mathjax();
 </div>
   <div class="entry-content"><p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Datos categóricos con Python" title="Datos categóricos con Python" src="https://relopezbriega.github.io/images/categorical_data.jpg" high=400px width=600px></p>
 
@@ -300,8 +299,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Cuando trabajamos con <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticas</a>, es importante reconocer los diferentes tipos de <a href="https://es.wikipedia.org/wiki/Dato">datos</a>: numéricos (<a href="https://es.wikipedia.org/wiki/Variable_discreta_y_variable_continua">discretos y continuos</a>), <a href="https://en.wikipedia.org/wiki/Categorical_variable">categóricos</a> y ordinales. Los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> no son más que observaciones del mundo en que vivimos, por tanto, los mismos pueden venir en diferentes formas, no solo numérica. Por ejemplo, si le preguntáramos a nuestros amigos ¿cuántas mascotas tienen? nos podrían responder: <code>0, 1, 2, 4, 3, 8</code>; esta información por sí misma puede ser útil, pero para nuestro análisis de mascotas, nos podría servir también otro tipo de información, como por ejemplo el <em>género</em> de cada uno de nuestros amigos; de esta forma obtendríamos la siguiente información: <code>hombre, mujer, mujer, mujer, hombre, mujer</code>. Como vemos, podemos incluir a los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> dentro de tres categorías fundamentales: <a href="https://es.wikipedia.org/wiki/Cantidad">datos cuantitativos</a> o numéricos, <a href="https://es.wikipedia.org/wiki/Cualidad">datos cualitativos</a> o <a href="https://en.wikipedia.org/wiki/Categorical_variable">categóricos</a> y datos ordinales.</p>
 <h3 id="Datos-cuantitativos">Datos cuantitativos<a class="anchor-link" href="#Datos-cuantitativos">&#182;</a></h3><p>Los <a href="https://es.wikipedia.org/wiki/Cantidad">datos cuantitativos</a> son representados por números; estos números van a ser significativos si representan la medida o la cantidad observada de cierta característica. Dentro de esta categoría podemos encontrar por ejemplo: cantidades de dólares, cuentas, tamaños, número de empleados, y kilómetros por hora. Con los <a href="https://es.wikipedia.org/wiki/Cantidad">datos cuantitativos</a>, se puede hacer todo tipo de tareas de procesamiento de datos numéricos, tales como sumarlos, calcular promedios, o medir su variabilidad. Asimismo, vamos a poder dividir a los <a href="https://es.wikipedia.org/wiki/Cantidad">datos cuantitativos</a> en <a href="https://es.wikipedia.org/wiki/Variable_discreta_y_variable_continua">discretos y continuos</a>, dependiendo de los valores potencialmente observables.</p>
@@ -319,8 +317,7 @@ init_mathjax();
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="An&#225;lisis-de-datos-categ&#243;ricos-con-Python">An&#225;lisis de datos categ&#243;ricos con Python<a class="anchor-link" href="#An&#225;lisis-de-datos-categ&#243;ricos-con-Python">&#182;</a></h2><p>Para ejemplificar el análisis, vamos a utilizar nuestras habituales librerías científicas <a href="https://www.numpy.org/">NumPy</a>, <a href="https://pandas.pydata.org/">Pandas</a>,  <a href="https://matplotlib.org/">Matplotlib</a> y <a href="https://stanford.edu/~mwaskom/software/seaborn/">Seaborn</a>. También vamos a utilizar la librería <a href="https://github.com/iamaziz/PyDataset">pydataset</a>, la cual nos facilita cargar los diferentes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> para analizar.</p>
 <p>La idea es realizar un análisis <a href="https://relopezbriega.github.io/tag/estadistica.html">estadístico</a> sobre los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> de los sobrevivientes a la tragedia del <a href="https://es.wikipedia.org/wiki/RMS_Titanic">Titanic</a>.</p>
@@ -394,7 +391,7 @@ Una de las razones por las que el naufragio dio lugar a semejante cantidad de mu
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -493,8 +490,7 @@ Una de las razones por las que el naufragio dio lugar a semejante cantidad de mu
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El problema con <a href="https://es.wikipedia.org/wiki/Dato">datos</a> como estos, y en general con la mayoría de las <em>tablas de <a href="https://es.wikipedia.org/wiki/Dato">datos</a></em>, es que nos presentan mucha información y no nos permiten ver que es lo que realmente sucede o sucedió. Por tanto, deberíamos procesarla de alguna manera para hacernos una imagen de lo que los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> realmente representan y nos quieren decir; y que mejor manera para hacernos una imagen de algo que utilizar <em>visualizaciones</em>. Una buena <em>visualización de los datos</em> puede revelar cosas que es probable que no podamos ver en una tabla de números y nos ayudará a pensar con claridad acerca de los patrones y relaciones que pueden estar escondidos en los <a href="https://es.wikipedia.org/wiki/Dato">datos</a>. También nos va a ayudar a encontrar las características y patrones más importantes o los casos que son realmente excepcionales y no deberíamos de encontrar.</p>
 <h3 id="Tablas-de-frecuencia">Tablas de frecuencia<a class="anchor-link" href="#Tablas-de-frecuencia">&#182;</a></h3><p>Para <em>hacernos una imagen</em> de los <a href="https://es.wikipedia.org/wiki/Dato">datos</a>, lo primero que tenemos que hacer es agruparlos. Al armar diferentes grupos nos vamos acercando a la comprensión de los <a href="https://es.wikipedia.org/wiki/Dato">datos</a>. La idea es ir amontonamos las cosas que parecen ir juntas, para poder ver como se distribuyen a través de las diferentes categorías. Para los <a href="https://en.wikipedia.org/wiki/Categorical_variable">datos categóricos</a>, agrupar es fácil; simplemente debemos contar el número de
@@ -525,7 +521,7 @@ Una forma en la que podemos agrupar nuestro <a href="https://es.wikipedia.org/wi
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -544,8 +540,7 @@ dtype: int64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Contar las cantidad de apariciones de cada categoría puede ser útil, pero a veces puede resultar más útil saber la <em>fracción o proporción</em> de los <a href="https://es.wikipedia.org/wiki/Dato">datos</a> de cada categoría, así que podríamos entonces dividir los recuentos por el total de casos para obtener los porcentajes que representa cada categoría.</p>
 <p>Una <em>tabla de <a href="https://es.wikipedia.org/wiki/Frecuencia_estad%C3%ADstica">frecuencia</a> relativa</em> muestra los porcentajes, en lugar de los recuentos de los valores en cada categoría. Ambos tipos de tablas muestran cómo los
@@ -575,7 +570,7 @@ casos se distribuyen a través de las categorías. De esta manera, ellas describ
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -594,8 +589,7 @@ dtype: float64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Gr&#225;ficos-de-tartas-y-barras">Gr&#225;ficos de tartas y barras<a class="anchor-link" href="#Gr&#225;ficos-de-tartas-y-barras">&#182;</a></h3><p>Ahora que ya conocemos a las <em>tablas de <a href="https://es.wikipedia.org/wiki/Frecuencia_estad%C3%ADstica">frecuencia</a></em> ya estamos en condiciones de crear visualizaciones que realmente nos den una imagen de los <a href="https://es.wikipedia.org/wiki/Dato">datos</a>, sus propiedades y sus relaciones. En este punto, debemos ser sumamente cuidadosos, ya que una mala visualización puede llegar a distorsionar nuestra comprensión, en lugar de ayudarnos. 
 Las mejores <em>visualizaciones de datos</em> siguen un principio fundamental llamado el <strong>principio del área</strong>. Este principio nos dice que el área ocupada por cada parte del gráfico se debe corresponder con la magnitud del valor que representa. Violaciones del <em>principio de área</em> son una forma común de mentir con <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticas</a>. Dos gráficos útiles que podemos utilizar para representar nuestros <a href="https://es.wikipedia.org/wiki/Dato">datos</a> y que cumplen con este principio son el <a href="https://es.wikipedia.org/wiki/Diagrama_de_barras">gráfico de barras</a> y el <a href="https://es.wikipedia.org/wiki/Gr%C3%A1fico_circular">gráfico de tarta</a>.</p>
@@ -626,7 +620,7 @@ Las mejores <em>visualizaciones de datos</em> siguen un principio fundamental ll
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -771,8 +765,7 @@ lpk7Grb9P+DvC9UjSbv7Q2aOAkTEi4F/iQhXCZwiZ1NLkloWEZ+l+ka58zNzS0QsBK4D5mXmIWWr
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Si quisiéramos enfocarnos en la <em>proporción relativa</em> de los pasajeros de cada una de las clases, simplemente podemos sustituir a los recuentos con porcentajes y utilizar un <em>gráfico de barras de frecuencias relativas</em>.</p>
 
@@ -801,7 +794,7 @@ lpk7Grb9P+DvC9UjSbv7Q2aOAkTEi4F/iQhXCZwiZ1NLkloWEZ+l+ka58zNzS0QsBK4D5mXmIWWr
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -928,8 +921,7 @@ pIIsXkmSCvr/mzK2WY75pLEAAAAASUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Gr&#225;fico-de-tartas">Gr&#225;fico de tartas<a class="anchor-link" href="#Gr&#225;fico-de-tartas">&#182;</a></h4><p>El <a href="https://es.wikipedia.org/wiki/Gr%C3%A1fico_circular">gráfico de tarta</a> muestra el total de casos como un círculo y luego corta este círculo en piezas cuyos tamaños son proporcionales a la fracción que cada categoría representa sobre el total de casos. Los <a href="https://es.wikipedia.org/wiki/Gr%C3%A1fico_circular">gráfico de tarta</a> dan una impresión rápida de cómo todo un grupo se divide en grupos más pequeños. Lo podríamos graficar del siguiente modo, también utilizando el método <code>plot</code>:</p>
 
@@ -959,7 +951,7 @@ pIIsXkmSCvr/mzK2WY75pLEAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1270,8 +1262,7 @@ SUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como se puede apreciar, con el <a href="https://es.wikipedia.org/wiki/Gr%C3%A1fico_circular">gráfico de tarta</a> no es tan fácil determinar que los pasajeros de tercera clase son más que el doble que los de primera clase; tampoco es fácil determinar si hay más pasajeros de primera o de segunda clase. Para este tipo de comparaciones, son mucho más útiles los <a href="https://es.wikipedia.org/wiki/Diagrama_de_barras">gráficos de barras</a>.</p>
 
@@ -1279,8 +1270,7 @@ SUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Relacionando-variables-categ&#243;ricas">Relacionando variables categ&#243;ricas<a class="anchor-link" href="#Relacionando-variables-categ&#243;ricas">&#182;</a></h3><p>Al analizar la tragedia del <a href="https://es.wikipedia.org/wiki/RMS_Titanic">Titanic</a>, una de las preguntas que podríamos hacer es ¿existe alguna relación entre la clase de pasajeros y la posibilidad de alcanzar un bote salvavidas y sobrevivir a la tragedia? Para poder responder a esta pregunta, vamos a necesitar analizar a las variables <em>class</em> y <em>survived</em> de nuestro <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos">dataset</a> en forma conjunta. Una buena forma de analizar dos <a href="https://en.wikipedia.org/wiki/Categorical_variable">variables categóricas</a> en forma conjunta, es agrupar los recuentos en una tabla de <em>doble entrada</em>; este tipo de tablas se conocen en <a href="https://relopezbriega.github.io/tag/estadistica.html">estadística</a> con el nombre de <a href="https://es.wikipedia.org/wiki/Tabla_de_contingencia">tabla de contingencia</a>. Veamos como podemos crear esta tabla utilizando la función <code>crosstab</code> de <a href="https://pandas.pydata.org/">Pandas</a>.</p>
 
@@ -1309,7 +1299,7 @@ SUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -1366,8 +1356,7 @@ SUVORK5CYII=
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Los márgenes de la tabla, tanto en la derecha y en la parte inferior, nos muestran los totales. La línea inferior de la tabla representa la distribución de <a href="https://es.wikipedia.org/wiki/Frecuencia_estad%C3%ADstica">frecuencia</a> de la clase de pasajeros. La columna derecha de la tabla es la distribución de <a href="https://es.wikipedia.org/wiki/Frecuencia_estad%C3%ADstica">frecuencia</a> de la variable supervivencia. 
 Cuando se presenta la información de este modo, cada celda de cada uno de los márgenes de la tabla representa la <em>distribución marginal</em> de esa variable en particular. Cada celda nos va a mostrar el recuento para la combinación de los valores de nuestras dos <a href="https://en.wikipedia.org/wiki/Categorical_variable">variables categóricas</a>, en este caso <em>class</em> y <em>survived</em>.</p>
@@ -1399,7 +1388,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -1456,8 +1445,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Con esta tabla podemos ver fácilmente que solo el 37.91% de los pasajeros sobrevivió a la tragedia y que este 37% se compone de la siguiente forma: del total de pasajeros sobrevivió un 15.42% de pasajeros que eran de primera clase, un 8.97% que eran de segunda clase y un 13.52% que eran pasajeros de tercera clase.</p>
 <p>Volviendo a nuestra pregunta inicial sobre la posibilidad de sobrevivir según la clase de pasajero, podría ser más útil armar la tabla de porcentajes como un porcentaje relativo sobre el total de cada fila, es decir calcular el porcentaje relativo que cada clase tiene sobre haber sobrevivido o no. Esto lo podemos realizar del siguiente modo:</p>
@@ -1488,7 +1476,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -1534,8 +1522,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aquí podemos ver que de los pasajeros que sobrevivieron a la tragedia, el 40.68% correspondían a primera clase, el 35.67% a tercera clase y el 23.65% a segunda clase. Por tanto podríamos inferir que los pasajeros de primera clase tenían más posibilidades de sobrevivir.</p>
 <p>Es más, también podríamos armar la tabla de porcentaje relativos en relación al total de cada clase de pasajero y así podríamos ver que de los pasajeros de primera clase, logró sobrevivir un 62.46%.</p>
@@ -1566,7 +1553,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -1612,8 +1599,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Este último resultado lo podríamos representar visualmente con simples <a href="https://es.wikipedia.org/wiki/Diagrama_de_barras">gráfico de barras</a> del siguiente modo:</p>
 
@@ -1643,7 +1629,7 @@ Cuando se presenta la información de este modo, cada celda de cada uno de los m
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1812,7 +1798,7 @@ kqQCWbySJBXI4pUkqUAWryRJBfr/j6AJ7KczDPsAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1975,8 +1961,7 @@ JcggliQ8Odr1AAAADUlEQVQpQQaxJEkJ+v85yXr/ve4IYAAAAABJRU5ErkJggg==
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Estas mismas manipulaciones las podemos realizar para otro tipo de combinación de <a href="https://en.wikipedia.org/wiki/Categorical_variable">variables categóricas</a>, como podría ser el <em>sexo</em> o la <em>edad</em> de los pasajeros, pero eso ya se los dejo a ustedes para que se entretengan y practiquen un rato.</p>
 <p>Con este termina esta artículo, si les gustó y están interesados en la <a href="https://relopezbriega.github.io/tag/estadistica.html">estadísticas</a>, no duden en visitar mi anterior artículo <a href="https://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/">Probabilidad y Estadística con Python</a> y seguir la novedades del blog!</p>
@@ -1989,6 +1974,10 @@ JcggliQ8Odr1AAAADUlEQVQpQQaxJEkJ+v85yXr/ve4IYAAAAABJRU5ErkJggg==
  
 
 </p></div>
+    <div class="admonition note alert alert-info">
+    Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/CategoricalPython.ipynb">Jupyter notebook</a>.
+    Presionar aquí para la versión interactiva:
+    <span class="raw-html"><a href="https://mybinder.org/v2/gh/relopezbriega/blog/master?filepath=content/notebooks/CategoricalPython.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge.svg" style="vertical-align:text-bottom"></a></span></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -2060,6 +2049,9 @@ JcggliQ8Odr1AAAADUlEQVQpQQaxJEkJ+v85yXr/ve4IYAAAAABJRU5ErkJggg==
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2019/03/09/el-sistema-de-numeracion-binario/">El sistema de numeración Binario</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2018/03/30/introduccion-a-la-teoria-de-la-informacion-con-python/">Introducción a la Teoría de la información con python</a>
       </li>
       <li class="post">
@@ -2070,9 +2062,6 @@ JcggliQ8Odr1AAAADUlEQVQpQQaxJEkJ+v85yXr/ve4IYAAAAABJRU5ErkJggg==
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/06/10/boosting-en-machine-learning-con-python/">Boosting en Machine Learning con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/05/introduccion-a-la-inteligencia-artificial/">Introducción a la Inteligencia Artificial</a>
       </li>
     </ul>
   </section>
@@ -2096,7 +2085,7 @@ JcggliQ8Odr1AAAADUlEQVQpQQaxJEkJ+v85yXr/ve4IYAAAAABJRU5ErkJggg==
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/minario.html">minario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>
