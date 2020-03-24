@@ -289,8 +289,7 @@ init_mathjax();
     <a href="" class="ssk ssk-google-plus"></a>
     <a href="" class="ssk ssk-email"></a>
 </div>
-  <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+  <div class="entry-content"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img title="Redes neuronales convolucionales con TensorFlow" alt="Redes neuronales convolucionales con TensorFlow" src="https://relopezbriega.github.io/images/convNetTensorFlow.jpg" high="400px" width="600px"></p>
@@ -347,22 +346,22 @@ La operación realizada por esta capa también se llama <em>reducción de muestr
 <div class="collapseheader inner_cell"><span style="font-weight: bold;">Ver Código</span>
 <div class="input_area" style="display:none">
 <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importamos la libreria</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">control_flow_ops</span>
 <span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">cifar10_input</span>
 <span class="n">cifar10_input</span><span class="o">.</span><span class="n">maybe_download_and_extract</span><span class="p">()</span>
 
 <span class="c1"># importamos librerías adicionales</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cPickle</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># funciones de ayuda</span>
-<span class="k">def</span> <span class="nf">unpickle</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="n">fo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">unpickle</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="n">fo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
     <span class="nb">dict</span> <span class="o">=</span> <span class="n">cPickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fo</span><span class="p">)</span>
     <span class="n">fo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
@@ -404,7 +403,7 @@ La operación realizada por esta capa también se llama <em>reducción de muestr
 <div class="inner_cell">
     <div class="input_area">
         <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># forma del dataset</span>
-<span class="k">print</span> <span class="s1">&#39;forma dataset prueba: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">&#39;forma dataset prueba: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -441,7 +440,7 @@ La operación realizada por esta capa también se llama <em>reducción de muestr
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clases</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clases</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;cifar.jpg&#39;</span><span class="p">)</span>
 </pre></div>
@@ -10758,7 +10757,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 <span class="n">display_step</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="n">NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN</span> <span class="o">=</span> <span class="mi">50000</span>
 
-<span class="k">def</span> <span class="nf">inputs</span><span class="p">(</span><span class="n">eval_data</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">inputs</span><span class="p">(</span><span class="n">eval_data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data/cifar10_data&#39;</span><span class="p">,</span> <span class="s1">&#39;cifar-10-batches-bin&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">cifar10_input</span><span class="o">.</span><span class="n">inputs</span><span class="p">(</span><span class="n">eval_data</span><span class="o">=</span><span class="n">eval_data</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
                               <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
@@ -10804,7 +10803,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
         <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span><span class="n">ema_mean</span><span class="p">,</span> <span class="n">ema_var</span><span class="p">))</span>
 
     <span class="n">normed</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">batch_norm_with_global_normalization</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span>
-        <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">normed</span>
 
 <span class="k">def</span> <span class="nf">layer_batch_norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n_out</span><span class="p">,</span> <span class="n">phase_train</span><span class="p">):</span>
@@ -10827,10 +10826,10 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 
     <span class="n">reshaped_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_out</span><span class="p">])</span>
     <span class="n">normed</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">batch_norm_with_global_normalization</span><span class="p">(</span><span class="n">reshaped_x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span>
-        <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">normed</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_out</span><span class="p">])</span>
     
-<span class="k">def</span> <span class="nf">conv2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weight_shape</span><span class="p">,</span> <span class="n">bias_shape</span><span class="p">,</span> <span class="n">phase_train</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">conv2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weight_shape</span><span class="p">,</span> <span class="n">bias_shape</span><span class="p">,</span> <span class="n">phase_train</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">incoming</span> <span class="o">=</span> <span class="n">weight_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">weight_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">weight_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">weight_init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">random_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">incoming</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s2">&quot;W&quot;</span><span class="p">,</span> <span class="n">weight_shape</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="n">weight_init</span><span class="p">)</span>
@@ -10858,7 +10857,7 @@ lixZsmTJkvfB/wWXeK9LByYuvwAAAABJRU5ErkJggg==
 <span class="k">def</span> <span class="nf">inference</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">phase_train</span><span class="p">):</span>
     
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s2">&quot;conv_1&quot;</span><span class="p">):</span>
-        <span class="n">conv_1</span> <span class="o">=</span> <span class="n">conv2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span> <span class="p">[</span><span class="mi">64</span><span class="p">],</span> <span class="n">phase_train</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">conv_1</span> <span class="o">=</span> <span class="n">conv2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span> <span class="p">[</span><span class="mi">64</span><span class="p">],</span> <span class="n">phase_train</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">pool_1</span> <span class="o">=</span> <span class="n">max_pool</span><span class="p">(</span><span class="n">conv_1</span><span class="p">)</span>
         
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s2">&quot;conv_2&quot;</span><span class="p">):</span>
@@ -10931,8 +10930,8 @@ Por último, la función <code>inference</code> es la que va a tener la estructu
         <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Lanzando el modelo</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span><span class="o">.</span><span class="n">as_default</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s2">&quot;cifar_Conv_model&quot;</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">,</span> <span class="p">[</span><span class="bp">None</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">])</span>
         <span class="n">keep_prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># dropout probability</span>
         <span class="n">phase_train</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span> <span class="c1"># training or testing</span>
 
@@ -10943,7 +10942,7 @@ Por último, la función <code>inference</code> es la que va a tener la estructu
 
         <span class="n">cost</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-        <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="n">train_op</span> <span class="o">=</span> <span class="n">training</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">global_step</span><span class="p">)</span>
 
@@ -10978,7 +10977,7 @@ Por último, la función <code>inference</code> es la que va a tener la estructu
                                        <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">train_x</span><span class="p">,</span> 
                                                   <span class="n">y</span><span class="p">:</span> <span class="n">train_y</span><span class="p">,</span>
                                                   <span class="n">keep_prob</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                                  <span class="n">phase_train</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+                                                  <span class="n">phase_train</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
                 <span class="c1"># Compute average loss</span>
                 <span class="n">avg_cost</span> <span class="o">+=</span> <span class="n">new_cost</span><span class="o">/</span><span class="n">total_batch</span>
                 <span class="c1">#print &quot;Epoch %d, minibatch %d of %d. Cost = %0.4f.&quot; %(epoch, </span>
@@ -10986,35 +10985,35 @@ Por último, la función <code>inference</code> es la que va a tener la estructu
                     
             <span class="c1"># Display logs per epoch step</span>
             <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="n">display_step</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">print</span> <span class="s2">&quot;Epoch:&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;cost =&quot;</span><span class="p">,</span> <span class="s2">&quot;{:.9f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_cost</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s2">&quot;Epoch:&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;cost =&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{:.9f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_cost</span><span class="p">)</span>
                 
                 <span class="n">val_x</span><span class="p">,</span> <span class="n">val_y</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">])</span>
                 
                 <span class="n">accuracy</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">eval_op</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">val_x</span><span class="p">,</span> 
                                                         <span class="n">y</span><span class="p">:</span> <span class="n">val_y</span><span class="p">,</span> 
                                                         <span class="n">keep_prob</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                                        <span class="n">phase_train</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+                                                        <span class="n">phase_train</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
                 
-                <span class="k">print</span> <span class="s2">&quot;Validation Error:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">accuracy</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s2">&quot;Validation Error:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">accuracy</span><span class="p">)</span>
                 
                 <span class="n">summary_str</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">summary_op</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">train_x</span><span class="p">,</span>
                                                               <span class="n">y</span><span class="p">:</span> <span class="n">train_y</span><span class="p">,</span>
                                                               <span class="n">keep_prob</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                                              <span class="n">phase_train</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+                                                              <span class="n">phase_train</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
                 <span class="n">summary_writer</span><span class="o">.</span><span class="n">add_summary</span><span class="p">(</span><span class="n">summary_str</span><span class="p">,</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">global_step</span><span class="p">))</span>
                 
                 <span class="n">saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="s2">&quot;conv_cifar_bn_logs/model-checkpoint&quot;</span><span class="p">,</span>
                            <span class="n">global_step</span><span class="o">=</span><span class="n">global_step</span><span class="p">)</span>
 
-        <span class="k">print</span> <span class="s2">&quot;Optimization Finished!&quot;</span>
+        <span class="nb">print</span> <span class="s2">&quot;Optimization Finished!&quot;</span>
         <span class="c1"># validation first 256 imgs</span>
         <span class="n">val_x</span><span class="p">,</span> <span class="n">val_y</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">])</span>
         <span class="n">accuracy</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">eval_op</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">val_x</span><span class="p">[:</span><span class="mi">256</span><span class="p">],</span> 
                                                 <span class="n">y</span><span class="p">:</span> <span class="n">val_y</span><span class="p">[:</span><span class="mi">256</span><span class="p">],</span> 
                                                 <span class="n">keep_prob</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
-                                                <span class="n">phase_train</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+                                                <span class="n">phase_train</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
 
-        <span class="k">print</span> <span class="s2">&quot;Test Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy</span>
+        <span class="nb">print</span> <span class="s2">&quot;Test Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy</span>
 </pre></div>
 
     </div>
@@ -11069,10 +11068,7 @@ Validation Error:</pre>
 
 </div>
 
-</div>
- 
-
-</p></div>
+</div></div>
     <div class="admonition note alert alert-info">
     Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/ConvTensorFlow.ipynb">Jupyter notebook</a>.
     Presionar aquí para la versión interactiva:
@@ -11149,6 +11145,9 @@ Validation Error:</pre>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/">Fractales con Python</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2019/06/09/jugando-la-copa-america-con-python/">Jugando la Copa América con Python</a>
       </li>
       <li class="post">
@@ -11159,9 +11158,6 @@ Validation Error:</pre>
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/">Procesamiento del Lenguaje Natural con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/">Introducción al Deep Learning</a>
       </li>
     </ul>
   </section>
@@ -11185,7 +11181,7 @@ Validation Error:</pre>
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/fractales.html">fractales</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

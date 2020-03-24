@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Pobabilidad y Estadistica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/pobabilidad-y-estadistica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-05-21T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Introducción a la inferencia Bayesiana con Python</title><link href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/" rel="alternate"></link><published>2017-05-21T00:00:00-03:00</published><updated>2017-05-21T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-05-21:/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Pobabilidad y Estadistica</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/pobabilidad-y-estadistica.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2017-05-21T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Introducción a la inferencia Bayesiana con Python</title><link href="https://relopezbriega.github.io/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/" rel="alternate"></link><published>2017-05-21T00:00:00-03:00</published><updated>2017-05-21T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-05-21:/blog/2017/05/21/introduccion-a-la-inferencia-bayesiana-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" &gt;&lt;/p&gt;
@@ -14,8 +13,7 @@
 &lt;blockquote&gt;&lt;p&gt;"Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad."&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace"&gt;Pierre-Simon Lapace&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id="Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;Introducci&amp;#243;n: La incertidumbre y el problema de la inducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;Introducci&amp;#243;n: La incertidumbre y el problema de la inducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-La-incertidumbre-y-el-problema-de-la-inducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" &gt;&lt;/p&gt;
@@ -148,13 +146,13 @@ En este caso, la idea es utilizar un modelo &lt;a href="https://es.wikipedia.org
 &lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
 &lt;div class="input_area" style="display:none"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;stats&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pymc3&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pm&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;theano.tensor&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;stats&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pymc3&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pm&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;theano.tensor&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tt&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.naive_bayes&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;GaussianNB&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;confusion_matrix&lt;/span&gt;
@@ -1421,11 +1419,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category><category term="Bayes"></category><category term="inferencia"></category></entry><entry><title>Introducción a los métodos de Monte-Carlo con Python</title><link href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/" rel="alternate"></link><published>2017-01-10T00:00:00-03:00</published><updated>2017-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-01-10:/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category><category term="Bayes"></category><category term="inferencia"></category></entry><entry><title>Introducción a los métodos de Monte-Carlo con Python</title><link href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/" rel="alternate"></link><published>2017-01-10T00:00:00-03:00</published><updated>2017-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2017-01-10:/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Métodos de Monte Carlo" title="Métodos de Monte Carlo" src="https://relopezbriega.github.io/images/monte-carlo-methods.jpg" &gt;&lt;/p&gt;
@@ -1436,8 +1430,7 @@ Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasada
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En el cierre de mi &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;artículo anterior&lt;/a&gt;, comentaba sobre la sorprendente influencia que han tenido los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio"&gt;números aleatorios&lt;/a&gt;, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, &lt;a href="https://relopezbriega.github.io/category/finanzas.html"&gt;finanzas&lt;/a&gt; y &lt;a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html"&gt;estadísticas …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En el cierre de mi &lt;a href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"&gt;artículo anterior&lt;/a&gt;, comentaba sobre la sorprendente influencia que han tenido los &lt;a href="https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio"&gt;números aleatorios&lt;/a&gt;, que junto con el poder de cálculo que nos proporcionan las computadoras modernas; nos han ayudado a resolver muchos de los problemas numéricos más complejos en ciencia, ingeniería, &lt;a href="https://relopezbriega.github.io/category/finanzas.html"&gt;finanzas&lt;/a&gt; y &lt;a href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html"&gt;estadísticas …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Métodos de Monte Carlo" title="Métodos de Monte Carlo" src="https://relopezbriega.github.io/images/monte-carlo-methods.jpg" &gt;&lt;/p&gt;
@@ -1631,9 +1624,9 @@ Veamos como funciona con un ejemplo, calculemos el área de un círculo de radio
 &lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
 &lt;div class="input_area" style="display:none"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; &lt;span class="c1"&gt;# importando numpy&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; &lt;span class="c1"&gt;# importando pandas&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; &lt;span class="c1"&gt;# importando numpy&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; &lt;span class="c1"&gt;# importando pandas&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stats&lt;/span&gt;
 
 &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1984&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# para poder replicar el random&lt;/span&gt;
@@ -5814,11 +5807,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category></entry><entry><title>Introducción a la teoría de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/" rel="alternate"></link><published>2016-11-26T00:00:00-03:00</published><updated>2016-11-26T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-11-26:/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category><category term="Monte-Carlo"></category><category term="MCMC"></category><category term="Metropolis"></category></entry><entry><title>Introducción a la teoría de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/" rel="alternate"></link><published>2016-11-26T00:00:00-03:00</published><updated>2016-11-26T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-11-26:/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teoría de Probabilidad" title="Teoría de Probabilidad" src="https://relopezbriega.github.io/images/probabilidad.png" &gt;&lt;/p&gt;
@@ -5832,8 +5821,7 @@ dgAAAB5JREFUREQkhlQAiIiIxJAKABERkRhSASAiIhJD/w/UIoWO2N1Y3wAAAABJRU5ErkJggg==
 &lt;blockquote&gt;&lt;p&gt;"En el fondo, la teoría de  probabilidades es sólo sentido común expresado con números"&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace"&gt;Pierre Simon de Laplace&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id="Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;Introducci&amp;#243;n: probabilidad y sentido com&amp;#250;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si todo fuera …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;Introducci&amp;#243;n: probabilidad y sentido com&amp;#250;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n:-probabilidad-y-sentido-com&amp;#250;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La incertidumbre constituye una pieza fundamental del mundo en que vivimos, en parte hace la vida mucho más interesante, ya que sería muy aburrido si todo fuera …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Teoría de Probabilidad" title="Teoría de Probabilidad" src="https://relopezbriega.github.io/images/probabilidad.png" &gt;&lt;/p&gt;
@@ -5877,9 +5865,9 @@ Si tomamos el caso clásico del lanzamiento de una moneda, no podemos predecir c
 &lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
 &lt;div class="input_area" style="display:none"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; &lt;span class="c1"&gt;# importando numpy&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; &lt;span class="c1"&gt;# importando pandas&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; &lt;span class="c1"&gt;# importando numpy&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; &lt;span class="c1"&gt;# importando pandas&lt;/span&gt;
 
 &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2131982&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# para poder replicar el random&lt;/span&gt;
 
@@ -7282,8 +7270,8 @@ Intuitivamente, es bastante sencillo que nuestra elección original (cuando hay 
         &lt;span class="c1"&gt;# Elige una puerta en forma aleatoria.&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_ganadora&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;elegir_puerta&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="c1"&gt;# variables para la puerta elegida y la puerta descartada&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_elegida&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_descartada&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_elegida&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_descartada&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
  
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;selecciona_puerta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -7318,7 +7306,7 @@ Intuitivamente, es bastante sencillo que nuestra elección original (cuando hay 
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_elegida&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;puerta_ganadora&lt;/span&gt;
             
  
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;jugar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cambiar&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;jugar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cambiar&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;        Una vez que la clase se inicio, jugar el concurso.&lt;/span&gt;
 &lt;span class="sd"&gt; &lt;/span&gt;
@@ -7469,11 +7457,7 @@ En la actualidad, la mayoría de los problemas son abordados siguiendo un enfoqu
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Distribuciones de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/" rel="alternate"></link><published>2016-06-29T00:00:00-03:00</published><updated>2016-06-29T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-06-29:/blog/2016/06/29/distribuciones-de-probabilidad-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Distribuciones de probabilidad con Python</title><link href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/" rel="alternate"></link><published>2016-06-29T00:00:00-03:00</published><updated>2016-06-29T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-06-29:/blog/2016/06/29/distribuciones-de-probabilidad-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Distribuciones estadísticas" title="Distribuciones estadísticas" src="https://relopezbriega.github.io/images/distribution.png" high=650px width=600px&gt;&lt;/p&gt;
@@ -7485,8 +7469,7 @@ En la actualidad, la mayoría de los problemas son abordados siguiendo un enfoqu
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; han llegado a desempeñar un papel importante en casi todos los campos de estudio: en la &lt;a href="https://es.wikipedia.org/wiki/F%C3%ADsica"&gt;Física&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Qu%C3%ADmica"&gt;Química&lt;/a&gt; y la &lt;a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"&gt;Ingeniería&lt;/a&gt;; y especialmente en las ciencias biológicas y sociales. Estas &lt;a href="https://es.wikipedia.org/wiki/Variable_aleatoria"&gt;variables aleatorias&lt;/a&gt; son medidas y analizadas en términos
-de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadísticas&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilísticas&lt;/a&gt;, de …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadísticas&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilísticas&lt;/a&gt;, de …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Distribuciones estadísticas" title="Distribuciones estadísticas" src="https://relopezbriega.github.io/images/distribution.png" high=650px width=600px&gt;&lt;/p&gt;
@@ -7516,10 +7499,10 @@ de sus propiedades &lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&g
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stats&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt; 
 
 &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2016&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# replicar random&lt;/span&gt;
 
@@ -16459,11 +16442,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="estadistica"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Probabilidad y Estadística con Python</title><link href="https://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/" rel="alternate"></link><published>2015-06-27T00:00:00-03:00</published><updated>2015-06-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-06-27:/blog/2015/06/27/probabilidad-y-estadistica-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="estadistica"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry><entry><title>Probabilidad y Estadística con Python</title><link href="https://relopezbriega.github.io/blog/2015/06/27/probabilidad-y-estadistica-con-python/" rel="alternate"></link><published>2015-06-27T00:00:00-03:00</published><updated>2015-06-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-06-27:/blog/2015/06/27/probabilidad-y-estadistica-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Estadistica" title="Estadistica" src="https://relopezbriega.github.io/images/stats.png" width="700"&gt;&lt;/p&gt;
@@ -16474,8 +16453,7 @@ Este proceso, lo podemos resumir en el siguiente gráfico:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Actualmente con el boom de la &lt;a href="https://es.wikipedia.org/wiki/Big_data"&gt;Big Data&lt;/a&gt;, tener nociones de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt;  se ha hecho fundamental. En los últimos años ha habido un resurgimiento de todo lo relacionado con &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; , &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico"&gt;machine learning&lt;/a&gt;&lt;/em&gt; empujados principalmente por la explosión de datos con que contamos, estos conceptos combinados …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;Actualmente con el boom de la &lt;a href="https://es.wikipedia.org/wiki/Big_data"&gt;Big Data&lt;/a&gt;, tener nociones de &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Probabilidad"&gt;probabilidad&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt;  se ha hecho fundamental. En los últimos años ha habido un resurgimiento de todo lo relacionado con &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Estad%C3%ADstica"&gt;estadística&lt;/a&gt;&lt;/em&gt; , &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt;&lt;/em&gt; y &lt;em&gt;&lt;a href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico"&gt;machine learning&lt;/a&gt;&lt;/em&gt; empujados principalmente por la explosión de datos con que contamos, estos conceptos combinados …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Estadistica" title="Estadistica" src="https://relopezbriega.github.io/images/stats.png" width="700"&gt;&lt;/p&gt;
@@ -16619,7 +16597,7 @@ $$\sigma_{xy} = \frac{\sum\limits_{i=1}^n(x_i - \mu_x)(y_i -\mu_y)}{n}$$&lt;ul&g
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Ejemplos de estadistica descriptiva con python&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; &lt;span class="c1"&gt;# importando numpy&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stats&lt;/span&gt; &lt;span class="c1"&gt;# importando scipy.stats&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stats&lt;/span&gt; &lt;span class="c1"&gt;# importando scipy.stats&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; &lt;span class="c1"&gt;# importando pandas&lt;/span&gt;
 
 &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2131982&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# para poder replicar el random&lt;/span&gt;
@@ -19061,7 +19039,7 @@ gVLIi4iIBEohLyIiEiiFvIiISKAU8iIiIoFSyIuIiATq/wMth6pQIxiv9QAAAABJRU5ErkJggg==
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# grafico de influencia&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;statsmodels.graphics.regressionplots&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;influence_plot&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;statsmodels.graphics.regressionplots&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;influence_plot&lt;/span&gt;
 
 &lt;span class="n"&gt;inf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;influence_plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;est&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -20721,7 +20699,4 @@ QmCC
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry></feed>
+&lt;/div&gt;</content><category term="python"></category><category term="estadistica"></category><category term="programacion"></category><category term="analisis de datos"></category><category term="probabilidad"></category><category term="distribuciones"></category></entry></feed>

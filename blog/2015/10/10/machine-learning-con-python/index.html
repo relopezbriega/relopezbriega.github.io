@@ -289,8 +289,7 @@ init_mathjax();
     <a href="" class="ssk ssk-google-plus"></a>
     <a href="" class="ssk ssk-email"></a>
 </div>
-  <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+  <div class="entry-content"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Machine Learning" title="Machine Learning" src="https://relopezbriega.github.io/images/machine-learning.jpg"></p>
@@ -435,7 +434,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># importando los datasets de sklearn</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 
 <span class="n">boston</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span><span class="p">()</span>
 <span class="n">boston_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
@@ -597,7 +596,7 @@ $$Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n}$$<p>Vea
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando el modelo de regresión lineal</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
 <span class="n">rl</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c1"># Creando el modelo.</span>
 <span class="n">rl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> <span class="c1"># ajustando el modelo</span>
@@ -818,7 +817,7 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Creando un dataset de ejemplo </span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_classification</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
@@ -835,7 +834,7 @@ $$f(x) = \frac{1}{1 + e^{-1}}$$<p>Veamos, aquí también un pequeño ejemplo en 
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># Importando el modelo</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
 <span class="n">rlog</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span> <span class="c1"># Creando el modelo</span>
 
@@ -923,8 +922,8 @@ Los <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_decisi%C3%B3n">Arboles 
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># Importando el arbol de decisión</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
 
 <span class="n">ad</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Creando el modelo</span>
 <span class="n">ad</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
@@ -1027,7 +1026,7 @@ Con <a href="https://python.org/">Python</a> los podemos utilizar de la siguient
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 
 <span class="c1"># Importando el random forest</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span> <span class="c1"># Creando el modelo</span>
 <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
@@ -1076,7 +1075,7 @@ del plano maximiza el margen entre los puntos más cercanos en el plano; éstos 
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importanto SVM</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
 
 <span class="c1"># importando el dataset iris</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
@@ -1701,7 +1700,7 @@ La regresión <a href="https://es.wikipedia.org/wiki/K-vecinos_m%C3%A1s_cercanos
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando KNN </span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
 
 <span class="n">knnr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Creando el modelo con 10 vecinos</span>
 <span class="n">knnr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Ajustando el modelo</span>
@@ -2159,7 +2158,7 @@ AAAAAElFTkSuQmCC
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1"># importando KMeans</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 
 <span class="c1"># Creando el modelo</span>
 <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -2679,10 +2678,7 @@ AElFTkSuQmCC
 
 </div>
 </div>
-</div>
- 
-
-</p></div>
+</div></div>
     <div class="admonition note alert alert-info">
     Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/MachineLearningPython.ipynb">Jupyter notebook</a>.
     Presionar aquí para la versión interactiva:
@@ -2758,6 +2754,9 @@ AElFTkSuQmCC
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/">Fractales con Python</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2019/06/09/jugando-la-copa-america-con-python/">Jugando la Copa América con Python</a>
       </li>
       <li class="post">
@@ -2768,9 +2767,6 @@ AElFTkSuQmCC
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/">Procesamiento del Lenguaje Natural con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/">Introducción al Deep Learning</a>
       </li>
     </ul>
   </section>
@@ -2794,7 +2790,7 @@ AElFTkSuQmCC
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/fractales.html">fractales</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>

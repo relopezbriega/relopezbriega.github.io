@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Algebra</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/algebra.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2016-09-13T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Factorización de Matrices con Python</title><link href="https://relopezbriega.github.io/blog/2016/09/13/factorizacion-de-matrices-con-python/" rel="alternate"></link><published>2016-09-13T00:00:00-03:00</published><updated>2016-09-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-09-13:/blog/2016/09/13/factorizacion-de-matrices-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Algebra</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/algebra.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2016-09-13T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Factorización de Matrices con Python</title><link href="https://relopezbriega.github.io/blog/2016/09/13/factorizacion-de-matrices-con-python/" rel="alternate"></link><published>2016-09-13T00:00:00-03:00</published><updated>2016-09-13T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-09-13:/blog/2016/09/13/factorizacion-de-matrices-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img title="Factorización de Matrices con Python" alt="Factorización de Matrices con Python" src="https://relopezbriega.github.io/images/matrix_factorization.png" high="400px" width="600px"&gt;&lt;/p&gt;
@@ -11,8 +10,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cuando trabajamos en problemas de &lt;a href="https://relopezbriega.github.io/tag/machine-learning.html"&gt;Machine Learning&lt;/a&gt;, muchas veces nos vamos a encontrar con enormes &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjuntos de datos&lt;/a&gt;, con cientos o miles de características o &lt;em&gt;features&lt;/em&gt;. Una forma simple de reducir las dimensiones de estas características es aplicar alguna técnica de &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices"&gt;Factorización de matrices&lt;/a&gt;&lt;/strong&gt;. La &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices"&gt;Factorización de matrices&lt;/a&gt;&lt;/strong&gt; tiene …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cuando trabajamos en problemas de &lt;a href="https://relopezbriega.github.io/tag/machine-learning.html"&gt;Machine Learning&lt;/a&gt;, muchas veces nos vamos a encontrar con enormes &lt;a href="https://es.wikipedia.org/wiki/Conjunto_de_datos"&gt;conjuntos de datos&lt;/a&gt;, con cientos o miles de características o &lt;em&gt;features&lt;/em&gt;. Una forma simple de reducir las dimensiones de estas características es aplicar alguna técnica de &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices"&gt;Factorización de matrices&lt;/a&gt;&lt;/strong&gt;. La &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wiki/Factorizaci%C3%B3n_de_matrices"&gt;Factorización de matrices&lt;/a&gt;&lt;/strong&gt; tiene …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img title="Factorización de Matrices con Python" alt="Factorización de Matrices con Python" src="https://relopezbriega.github.io/images/matrix_factorization.png" high="400px" width="600px"&gt;&lt;/p&gt;
@@ -42,15 +40,15 @@ $$&lt;p&gt;Los métodos de &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wi
 &lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
 &lt;div class="input_area" style="display:none"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.sparse&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;la&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.sparse&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;la&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nimfa&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.decomposition&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NMF&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PCA&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 
 &lt;span class="c1"&gt;# graficos incrustados&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
@@ -58,7 +56,7 @@ $$&lt;p&gt;Los métodos de &lt;strong&gt;&lt;a href="https://es.wikipedia.org/wi
 &lt;span class="c1"&gt;# parámetros de estilo&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;darkgrid&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;palette&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;muted&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;display.mpl_style&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;display.notebook_repr_html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;display.notebook_repr_html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;figure.figsize&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2146,11 +2144,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="programacion"></category><category term="algebra"></category><category term="Machine Learning"></category><category term="Redes Neuronales"></category><category term="matrices"></category><category term="recomendaciones"></category><category term="matematica"></category></entry><entry><title>Más Álgebra lineal con Python</title><link href="https://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/" rel="alternate"></link><published>2016-02-10T00:00:00-03:00</published><updated>2016-02-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-02-10:/blog/2016/02/10/mas-algebra-lineal-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="programacion"></category><category term="algebra"></category><category term="Machine Learning"></category><category term="Redes Neuronales"></category><category term="matrices"></category><category term="recomendaciones"></category><category term="matematica"></category></entry><entry><title>Más Álgebra lineal con Python</title><link href="https://relopezbriega.github.io/blog/2016/02/10/mas-algebra-lineal-con-python/" rel="alternate"></link><published>2016-02-10T00:00:00-03:00</published><updated>2016-02-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-02-10:/blog/2016/02/10/mas-algebra-lineal-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Algebra lineal" title="Algebra lineal" src="https://relopezbriega.github.io/images/lin-alg.jpg"&gt;&lt;/p&gt;
@@ -2161,8 +2155,7 @@ BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5BBwAAGA5/x8tbUEb6M8f2QAAAABJRU5ErkJggg==
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://relopezbriega.github.io/tag/algebra.html"&gt;Álgebra lineal&lt;/a&gt; constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el &lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional"&gt;análisis funcional&lt;/a&gt;, las &lt;a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html"&gt;ecuaciones diferenciales&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones"&gt;investigación operativa …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://relopezbriega.github.io/tag/algebra.html"&gt;Álgebra lineal&lt;/a&gt; constituye la base de gran parte de las matemáticas modernas, ya sea en su fase teórica, aplicada, o computacional. Es un área activa que tiene conexiones con muchas áreas dentro y fuera de las matemáticas, como ser: el &lt;a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_funcional"&gt;análisis funcional&lt;/a&gt;, las &lt;a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html"&gt;ecuaciones diferenciales&lt;/a&gt;, la &lt;a href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n_de_operaciones"&gt;investigación operativa …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Algebra lineal" title="Algebra lineal" src="https://relopezbriega.github.io/images/lin-alg.jpg"&gt;&lt;/p&gt;
@@ -2204,11 +2197,11 @@ $$v = \left[ \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array} \right]$$&
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.sparse&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.sparse&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.sparse.linalg&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;la&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;la&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt;
 
 &lt;span class="c1"&gt;# imprimir con notación matemática.&lt;/span&gt;
@@ -4356,11 +4349,7 @@ $$\left ( \left[\begin{matrix}\frac{8}{7}\\-4\end{matrix}\right], \quad \left[\b
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="algebra"></category><category term="ecuaciones diferenciales"></category><category term="matrices"></category><category term="vectores"></category></entry><entry><title>Algebra Lineal con Python</title><link href="https://relopezbriega.github.io/blog/2015/06/14/algebra-lineal-con-python/" rel="alternate"></link><published>2015-06-14T00:00:00-03:00</published><updated>2015-06-14T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-06-14:/blog/2015/06/14/algebra-lineal-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="algebra"></category><category term="ecuaciones diferenciales"></category><category term="matrices"></category><category term="vectores"></category></entry><entry><title>Algebra Lineal con Python</title><link href="https://relopezbriega.github.io/blog/2015/06/14/algebra-lineal-con-python/" rel="alternate"></link><published>2015-06-14T00:00:00-03:00</published><updated>2015-06-14T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-06-14:/blog/2015/06/14/algebra-lineal-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Algebra lineal" title="Algebra lineal" src="https://relopezbriega.github.io/images/lin-alg.jpg"&gt;&lt;/p&gt;
@@ -4372,8 +4361,7 @@ $$\left ( \left[\begin{matrix}\frac{8}{7}\\-4\end{matrix}\right], \quad \left[\b
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Una de las herramientas matemáticas más utilizadas en &lt;a href="https://es.wikipedia.org/wiki/Machine_learning"&gt;machine learning&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"&gt;data mining&lt;/a&gt; es el &lt;a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal"&gt;Álgebra lineal&lt;/a&gt;; por tanto, si queremos incursionar en el fascinante mundo del aprendizaje automático y el análisis de datos es importante reforzar los conceptos que forman parte de sus cimientos.&lt;/p&gt;
-&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal"&gt;Álgebra lineal&lt;/a&gt; es …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/%C3%81lgebra_lineal"&gt;Álgebra lineal&lt;/a&gt; es …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Algebra lineal" title="Algebra lineal" src="https://relopezbriega.github.io/images/lin-alg.jpg"&gt;&lt;/p&gt;
@@ -4606,7 +4594,7 @@ $$A=\begin{bmatrix}0 &amp;amp; 1&amp;amp; \\-1 &amp;amp; 2 \\ -2 &amp;amp; 3\end
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;warnings&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;filterwarnings&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;warnings&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;filterwarnings&lt;/span&gt;
 
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 &lt;span class="n"&gt;filterwarnings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ignore&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Ignorar warnings&lt;/span&gt;
@@ -6266,7 +6254,7 @@ $$x_{1} + 1.5x_{2} \leq 750$$$$2x_{1} + x_{2} \leq 1000$$$$x_{1} \geq 0$$$$x_{2}
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Resolviendo la optimizacion con pulp&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pulp&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pulp&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
 
 &lt;span class="c1"&gt;# declarando las variables&lt;/span&gt;
 &lt;span class="n"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LpVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;x1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;800&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;# 0&amp;lt;= x1 &amp;lt;= 40&lt;/span&gt;
@@ -6325,7 +6313,7 @@ $$x_{1} + 1.5x_{2} \leq 750$$$$2x_{1} + x_{2} \leq 1000$$$$x_{1} \geq 0$$$$x_{2}
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Resolviendo el problema con cvxopt&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;cvxopt&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;solvers&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;cvxopt&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;solvers&lt;/span&gt;
 
 &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;2.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="c1"&gt;# columna de x1&lt;/span&gt;
             &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt; &lt;span class="c1"&gt;# columna de x2&lt;/span&gt;
@@ -6460,7 +6448,4 @@ Optimal solution found.
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="algebra"></category><category term="programacion"></category></entry></feed>
+&lt;/div&gt;</content><category term="python"></category><category term="algebra"></category><category term="programacion"></category></entry></feed>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Calculo</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/calculo.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2016-01-27T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Ecuaciones en derivadas parciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" rel="alternate"></link><published>2016-01-27T00:00:00-03:00</published><updated>2016-01-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-27:/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Raul E. Lopez Briega - Calculo</title><link href="https://relopezbriega.github.io/" rel="alternate"></link><link href="/feeds/calculo.atom.xml" rel="self"></link><id>https://relopezbriega.github.io/</id><updated>2016-01-27T00:00:00-03:00</updated><subtitle>Matemáticas, análisis de datos y python</subtitle><entry><title>Ecuaciones en derivadas parciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/" rel="alternate"></link><published>2016-01-27T00:00:00-03:00</published><updated>2016-01-27T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-27:/blog/2016/01/27/ecuaciones-en-derivadas-parciales-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Ecuaciones en Derivadas Parciales con python" title="Ecuaciones en Derivadas Parciales con python" src="https://relopezbriega.github.io/images/PDE.png
@@ -12,8 +11,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt;. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nuestra comprensión de los procesos fundamentales de la naturaleza se basa en gran medida en &lt;a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_en_derivadas_parciales"&gt;Ecuaciones en derivadas parciales&lt;/a&gt;. Ejemplos de ello son las vibraciones de los sólidos, la dinámica de los fluidos, la difusión de los productos químicos, la propagación del calor, la estructura de las moléculas, las …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Ecuaciones en Derivadas Parciales con python" title="Ecuaciones en Derivadas Parciales con python" src="https://relopezbriega.github.io/images/PDE.png
@@ -121,9 +119,9 @@ $$u(x, t_0) = \phi(x)$$&lt;p&gt;donde $\phi(x)= \phi(x, y, z)$ es una función q
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mpl&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mpl&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; 
 
 &lt;span class="c1"&gt;# imprimir con notación matemática.&lt;/span&gt;
@@ -538,8 +536,8 @@ sudo apt-get install fenics&lt;/code&gt;&lt;/pre&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;dolfin&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mshr&lt;/span&gt;
 
-&lt;span class="n"&gt;dolfin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;reorder_dofs_serial&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-&lt;span class="n"&gt;dolfin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;allow_extrapolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;dolfin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;reorder_dofs_serial&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;dolfin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;allow_extrapolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1141,11 +1139,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category><category term="derivadas parciales"></category></entry><entry><title>Ecuaciones Diferenciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/" rel="alternate"></link><published>2016-01-10T00:00:00-03:00</published><updated>2016-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-10:/blog/2016/01/10/ecuaciones-diferenciales-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category><category term="derivadas parciales"></category></entry><entry><title>Ecuaciones Diferenciales con Python</title><link href="https://relopezbriega.github.io/blog/2016/01/10/ecuaciones-diferenciales-con-python/" rel="alternate"></link><published>2016-01-10T00:00:00-03:00</published><updated>2016-01-10T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2016-01-10:/blog/2016/01/10/ecuaciones-diferenciales-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Ecuaciones Diferenciales con python" title="Ecuaciones Diferenciales con python" src="https://relopezbriega.github.io/images/DiffEq.png
@@ -1157,8 +1151,7 @@ kpn932b2uL7HBACbUcYfAACMAistAABgFJi0AACAUWDSAgAARoFJCwAAGAUmLQAAYBSYtAAAgFFg
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vivimos en un mundo en constante cambio. La posición de la Tierra cambia con el tiempo; la velocidad de un objeto en caída libre cambia con la distancia; el área de un círculo cambia según el tamaño de su &lt;em&gt;radio&lt;/em&gt;; la trayectoria de un proyectil cambia según la velocidad …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vivimos en un mundo en constante cambio. La posición de la Tierra cambia con el tiempo; la velocidad de un objeto en caída libre cambia con la distancia; el área de un círculo cambia según el tamaño de su &lt;em&gt;radio&lt;/em&gt;; la trayectoria de un proyectil cambia según la velocidad …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Ecuaciones Diferenciales con python" title="Ecuaciones Diferenciales con python" src="https://relopezbriega.github.io/images/DiffEq.png
@@ -1241,8 +1234,8 @@ $$\frac{dy}{dx} = -3x^2y + 6x^2$$
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# importando modulos necesarios&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;integrate&lt;/span&gt;
 
@@ -1544,14 +1537,14 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$&lt;p&gt;entonces, con la ayuda de &lt;a href="h
 
 &lt;div class="collapseheader inner_cell"&gt;&lt;span style="font-weight: bold;"&gt;Ver Código&lt;/span&gt;
 &lt;div class="input_area" style="display:none"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_direction_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f_xy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x_lim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;y_lim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_direction_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f_xy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x_lim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;y_lim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Esta función dibuja el campo de dirección de una EDO&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     
     &lt;span class="n"&gt;f_np&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lambdify&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;f_xy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;numpy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;x_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_lim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;x_lim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;y_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_lim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;y_lim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subplots&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
     
     &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x_vec&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x_vec&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -3002,7 +2995,7 @@ $$y'' + 3y' + 2y = 0$$&lt;p&gt;con las siguientes condiciones iniciales: $y(0) =
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Ejemplo de transformada de Laplace&lt;/span&gt;
 &lt;span class="c1"&gt;# Defino las incognitas&lt;/span&gt;
-&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;t&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;positive&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;t&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;positive&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Defino la ecuación&lt;/span&gt;
@@ -3043,7 +3036,7 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# simbolos adicionales.&lt;/span&gt;
-&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;s, Y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;real&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;s, Y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;real&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -3059,7 +3052,7 @@ $$2 y{\left (t \right )} + 3 \frac{d}{d t} y{\left (t \right )} + \frac{d^{2}}{d
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
         &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Calculo la transformada de Laplace &lt;/span&gt;
-&lt;span class="n"&gt;L_edo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;laplace_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;edo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;noconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;L_edo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;laplace_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;edo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;noconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sympy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;L_edo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -5336,11 +5329,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category></entry><entry><title>Introducción al Cálculo con Python</title><link href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/" rel="alternate"></link><published>2015-12-02T00:00:00-03:00</published><updated>2015-12-02T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-12-02:/blog/2015/12/02/introduccion-al-calculo-con-python/</id><summary type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="ecuaciones diferenciales"></category></entry><entry><title>Introducción al Cálculo con Python</title><link href="https://relopezbriega.github.io/blog/2015/12/02/introduccion-al-calculo-con-python/" rel="alternate"></link><published>2015-12-02T00:00:00-03:00</published><updated>2015-12-02T00:00:00-03:00</updated><author><name>Raul E. Lopez Briega</name></author><id>tag:relopezbriega.github.io,2015-12-02:/blog/2015/12/02/introduccion-al-calculo-con-python/</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Cálculo con python" title="Cálculo con python" src="https://relopezbriega.github.io/images/calculus.png
@@ -5353,8 +5342,7 @@ In+7baI/q2QAAAAASUVORK5CYII=
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"&gt;Cálculo&lt;/a&gt; es una rama muy importante de la &lt;a href="https://es.wikipedia.org/wiki/Matem%C3%A1tica"&gt;Matemática&lt;/a&gt; moderna; tiene profundas raíces en problemas físicos y  gran parte de su potencia y belleza derivan de la variedad de sus aplicaciones.
-Las subramas conocidas como &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Cálculo integral&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"&gt;Cálculo diferencial&lt;/a&gt; son instrumentos naturales y poderosos para atacar múltiples …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+Las subramas conocidas como &lt;a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"&gt;Cálculo integral&lt;/a&gt; y &lt;a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"&gt;Cálculo diferencial&lt;/a&gt; son instrumentos naturales y poderosos para atacar múltiples …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img alt="Cálculo con python" title="Cálculo con python" src="https://relopezbriega.github.io/images/calculus.png
@@ -6272,8 +6260,8 @@ KeUi/w9xB0XdBcbfYwAAAABJRU5ErkJggg==
 
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.interactive&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;printing&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Limit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.interactive&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;printing&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Limit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;
 
 &lt;span class="c1"&gt;# imprimir con notación matemática.&lt;/span&gt;
 &lt;span class="n"&gt;printing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;init_printing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;use_latex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mathjax&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
@@ -6572,7 +6560,7 @@ $$\frac{d}{dy}\left(\frac{dy}{dx}\right)= \frac{d^2y}{dx^2}$$&lt;h3 id="Calculan
 
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Derivative&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;simplify&lt;/span&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Derivative&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;simplify&lt;/span&gt;
 
 &lt;span class="n"&gt;fx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Derivative&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -6895,7 +6883,7 @@ $$\int_0^3 (x^3 - 6x) dx = \left(\frac{1}{4} \cdot 3^4 - 3 \cdot 3^2 \right) - \
 
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Integral&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;integrate&lt;/span&gt;
+        &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Integral&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;integrate&lt;/span&gt;
 
 &lt;span class="n"&gt;fx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;
 &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -7097,7 +7085,4 @@ $$x^{3} - 6 x$$
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
- 
-
-&lt;/p&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="limite"></category></entry></feed>
+&lt;/div&gt;</content><category term="python"></category><category term="matematica"></category><category term="calculo"></category><category term="derivada"></category><category term="integral"></category><category term="limite"></category></entry></feed>

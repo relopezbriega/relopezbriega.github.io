@@ -289,8 +289,7 @@ init_mathjax();
     <a href="" class="ssk ssk-google-plus"></a>
     <a href="" class="ssk ssk-email"></a>
 </div>
-  <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+  <div class="entry-content"><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2><p>Es bien sabido que existen muchas formas de resolver un mismo problema, esto, llevado al mundo de la programación, a generado que existan o co-existan diferentes <em><a href="https://es.wikipedia.org/wiki/Estilo_de_programaci%C3%B3n">estilos</a></em> en los que podemos programar, los cuales son llamados generalmente <em><a href="https://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em>. Así, podemos encontrar basicamente 4 <em><a href="https://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n">paradigmas</a></em> principales de programación:</p>
@@ -505,7 +504,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#importamos pow.</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="nb">pow</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="nb">pow</span>
 </pre></div>
 
     </div>
@@ -662,7 +661,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#Suma utilizando Reduce.</span>
 <span class="c1">#Forma funcional</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span> <span class="c1">#en python3 reduce se encuentra en modulo functools</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span> <span class="c1">#en python3 reduce se encuentra en modulo functools</span>
 
 <span class="n">suma</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 <span class="n">suma</span>
@@ -1110,7 +1109,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#Lambdas al estilo scala</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">_</span>
 
 <span class="p">(</span><span class="n">_</span> <span class="o">+</span> <span class="n">_</span><span class="p">)(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -1199,7 +1198,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#Streams</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">Stream</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">Stream</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">s</span>
@@ -1378,8 +1377,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#Stream fibonacci</span>
-<span class="kn">from</span> <span class="nn">fn.iters</span> <span class="k">import</span> <span class="n">take</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">imap</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<span class="kn">from</span> <span class="nn">fn.iters</span> <span class="kn">import</span> <span class="n">take</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">imap</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
 <span class="n">fib</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">imap</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
@@ -1493,8 +1492,8 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#Funciones de orden superior</span>
-<span class="kn">from</span> <span class="nn">fn</span> <span class="k">import</span> <span class="n">F</span>
-<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c1">#operadores de suma y multiplicacion</span>
+<span class="kn">from</span> <span class="nn">fn</span> <span class="kn">import</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span> <span class="c1">#operadores de suma y multiplicacion</span>
 
 <span class="c1">#composición de funciones</span>
 <span class="n">F</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">1</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
@@ -1665,7 +1664,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">cytoolz.curried</span> <span class="k">import</span> <span class="n">pipe</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">filter</span> <span class="k">as</span> <span class="n">cfilter</span><span class="p">,</span> <span class="n">get</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">cytoolz.curried</span> <span class="kn">import</span> <span class="n">pipe</span><span class="p">,</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">filter</span> <span class="k">as</span> <span class="n">cfilter</span><span class="p">,</span> <span class="n">get</span>
 <span class="c1">#seleccionando el id y el nombre de los que tienen un balance mayor a 150</span>
 <span class="n">pipe</span><span class="p">(</span><span class="n">cuentas</span><span class="p">,</span> <span class="n">cfilter</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">sexo</span><span class="p">):</span> <span class="n">balance</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">),</span>
      <span class="n">cmap</span><span class="p">(</span><span class="n">get</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])),</span>
@@ -1742,7 +1741,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">groupby</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">cytoolz</span> <span class="kn">import</span> <span class="n">groupby</span>
 
 <span class="c1">#agrupando por sexo </span>
 <span class="n">groupby</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">cuentas</span><span class="p">)</span>
@@ -1782,7 +1781,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <div class="inner_cell">
     <div class="input_area">
         <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="c1">#utilizando reduceby</span>
-<span class="kn">from</span> <span class="nn">cytoolz</span> <span class="k">import</span> <span class="n">reduceby</span>
+<span class="kn">from</span> <span class="nn">cytoolz</span> <span class="kn">import</span> <span class="n">reduceby</span>
 
 <span class="k">def</span> <span class="nf">iseven</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
@@ -1841,11 +1840,11 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 <span class="p">]</span>
 
 <span class="k">class</span> <span class="nc">Estudiante</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">nota</span><span class="p">,</span> <span class="n">edad</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">nota</span><span class="p">,</span> <span class="n">edad</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nota</span> <span class="o">=</span> <span class="n">nota</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">edad</span> <span class="o">=</span> <span class="n">edad</span>
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nota</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">nota_ponderada</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;CBA&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nota</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
@@ -1869,7 +1868,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 <div class="inner_cell">
     <div class="input_area">
-        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
+        <div class="highlight-ipynb"><pre class="ipynb"><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
 
 <span class="c1">#ordenar por edad tupla</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">estudiantes_tupla</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -2061,10 +2060,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
 </div>
 </div>
-</div>
- 
-
-</p></div>
+</div></div>
     <div class="admonition note alert alert-info">
     Este articulo fue escrito utilizando <a class="reference external" href="https://github.com/relopezbriega/blog/tree/master/content/notebooks/FunctProgramPython.ipynb">Jupyter notebook</a>.
     Presionar aquí para la versión interactiva:
@@ -2139,6 +2135,9 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/">Fractales con Python</a>
+      </li>
+      <li class="post">
           <a href="https://relopezbriega.github.io/blog/2019/06/09/jugando-la-copa-america-con-python/">Jugando la Copa América con Python</a>
       </li>
       <li class="post">
@@ -2149,9 +2148,6 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
       </li>
       <li class="post">
           <a href="https://relopezbriega.github.io/blog/2017/09/23/procesamiento-del-lenguaje-natural-con-python/">Procesamiento del Lenguaje Natural con Python</a>
-      </li>
-      <li class="post">
-          <a href="https://relopezbriega.github.io/blog/2017/06/13/introduccion-al-deep-learning/">Introducción al Deep Learning</a>
       </li>
     </ul>
   </section>
@@ -2175,7 +2171,7 @@ Map también puede ser utilizado con funciones de más de un argumento y más de
 
   <section>
   <h1>Tags</h1>
-    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
+    <a href="https://relopezbriega.github.io/tag/python.html">python</a>,    <a href="https://relopezbriega.github.io/tag/programacion.html">programacion</a>,    <a href="https://relopezbriega.github.io/tag/matematica.html">matematica</a>,    <a href="https://relopezbriega.github.io/tag/fractales.html">fractales</a>,    <a href="https://relopezbriega.github.io/tag/futbol.html">futbol</a>,    <a href="https://relopezbriega.github.io/tag/copa-america.html">copa america</a>,    <a href="https://relopezbriega.github.io/tag/machine-learning.html">Machine Learning</a>,    <a href="https://relopezbriega.github.io/tag/binario.html">binario</a>,    <a href="https://relopezbriega.github.io/tag/numeros.html">numeros</a>,    <a href="https://relopezbriega.github.io/tag/decimales.html">decimales</a>,    <a href="https://relopezbriega.github.io/tag/multiplicar.html">multiplicar</a>,    <a href="https://relopezbriega.github.io/tag/sumar.html">sumar</a>,    <a href="https://relopezbriega.github.io/tag/restar.html">restar</a>,    <a href="https://relopezbriega.github.io/tag/dividir.html">dividir</a>,    <a href="https://relopezbriega.github.io/tag/informacion.html">informacion</a>,    <a href="https://relopezbriega.github.io/tag/incertidumbre.html">incertidumbre</a>,    <a href="https://relopezbriega.github.io/tag/entropia.html">entropia</a>,    <a href="https://relopezbriega.github.io/tag/bit.html">bit</a>,    <a href="https://relopezbriega.github.io/tag/redundancia.html">redundancia</a>,    <a href="https://relopezbriega.github.io/tag/shannon.html">shannon</a>,    <a href="https://relopezbriega.github.io/tag/estadistica.html">estadistica</a>,    <a href="https://relopezbriega.github.io/tag/probabilidad.html">probabilidad</a>,    <a href="https://relopezbriega.github.io/tag/boosting.html">boosting</a>,    <a href="https://relopezbriega.github.io/tag/xgboost.html">xgboost</a>,    <a href="https://relopezbriega.github.io/tag/adaboost.html">adaboost</a>,    <a href="https://relopezbriega.github.io/tag/gradientboost.html">gradientboost</a>,    <a href="https://relopezbriega.github.io/tag/analisis-de-datos.html">analisis de datos</a>,    <a href="https://relopezbriega.github.io/tag/inteligencia-artificial.html">Inteligencia Artificial</a>,    <a href="https://relopezbriega.github.io/tag/tensorflow.html">TensorFlow</a>,    <a href="https://relopezbriega.github.io/tag/redes-neuronales.html">Redes Neuronales</a>,    <a href="https://relopezbriega.github.io/tag/distribuciones.html">distribuciones</a>,    <a href="https://relopezbriega.github.io/tag/monte-carlo.html">Monte-Carlo</a>,    <a href="https://relopezbriega.github.io/tag/mcmc.html">MCMC</a>,    <a href="https://relopezbriega.github.io/tag/metropolis.html">Metropolis</a>,    <a href="https://relopezbriega.github.io/tag/bayes.html">Bayes</a>,    <a href="https://relopezbriega.github.io/tag/inferencia.html">inferencia</a>,    <a href="https://relopezbriega.github.io/tag/optimizacion.html">optimizacion</a>,    <a href="https://relopezbriega.github.io/tag/scipy.html">scipy</a>,    <a href="https://relopezbriega.github.io/tag/cvxopt.html">cvxopt</a>,    <a href="https://relopezbriega.github.io/tag/pulp.html">pulp</a>,    <a href="https://relopezbriega.github.io/tag/visualizaciones.html">visualizaciones</a>,    <a href="https://relopezbriega.github.io/tag/series-de-tiempo.html">series de tiempo</a>,    <a href="https://relopezbriega.github.io/tag/finanzas.html">finanzas</a>,    <a href="https://relopezbriega.github.io/tag/bokeh.html">bokeh</a>,    <a href="https://relopezbriega.github.io/tag/folium.html">folium</a>,    <a href="https://relopezbriega.github.io/tag/seaborn.html">seaborn</a>,    <a href="https://relopezbriega.github.io/tag/matplotlib.html">matplotlib</a>,    <a href="https://relopezbriega.github.io/tag/algebra.html">algebra</a>,    <a href="https://relopezbriega.github.io/tag/matrices.html">matrices</a>,    <a href="https://relopezbriega.github.io/tag/recomendaciones.html">recomendaciones</a>,    <a href="https://relopezbriega.github.io/tag/sobreajuste.html">Sobreajuste</a>,    <a href="https://relopezbriega.github.io/tag/calculo.html">calculo</a>,    <a href="https://relopezbriega.github.io/tag/ecuaciones-diferenciales.html">ecuaciones diferenciales</a>,    <a href="https://relopezbriega.github.io/tag/vectores.html">vectores</a>,    <a href="https://relopezbriega.github.io/tag/derivada.html">derivada</a>,    <a href="https://relopezbriega.github.io/tag/integral.html">integral</a>,    <a href="https://relopezbriega.github.io/tag/derivadas-parciales.html">derivadas parciales</a>,    <a href="https://relopezbriega.github.io/tag/logaritmo.html">logaritmo</a>,    <a href="https://relopezbriega.github.io/tag/limite.html">limite</a>,    <a href="https://relopezbriega.github.io/tag/infinito.html">infinito</a>,    <a href="https://relopezbriega.github.io/tag/complejos.html">complejos</a>,    <a href="https://relopezbriega.github.io/tag/conjuntos.html">conjuntos</a>,    <a href="https://relopezbriega.github.io/tag/batman.html">batman</a>,    <a href="https://relopezbriega.github.io/tag/regex.html">regex</a>,    <a href="https://relopezbriega.github.io/tag/funcional.html">funcional</a>,    <a href="https://relopezbriega.github.io/tag/pi.html">pi</a>,    <a href="https://relopezbriega.github.io/tag/map-reduce.html">map-reduce</a>  </section>
 
 
     <section>
