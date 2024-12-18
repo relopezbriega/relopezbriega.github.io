@@ -1,0 +1,3776 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-300.woff2"
+  crossorigin="anonymous"
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+  
+  
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+  
+
+
+
+
+<title>Introducción a la inferencia Bayesiana con Python</title>
+
+<meta
+  name="description"
+  content="Introducción a la inferencia Bayesiana con Python. La incertidumbre y el problema de la inducción, El teorema de Bayes, inferencia bayesiana, redes Bayesianas, Programación probabilística y PyMC3, Bayes ingenuo."
+/>
+
+<link rel="canonical" href="http://localhost:1313/blog/2017/05/21/introducci%C3%B3n-a-la-inferencia-bayesiana-con-python/" />
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introducción a la inferencia Bayesiana con Python">
+  <meta name="twitter:description" content="Introducción a la inferencia Bayesiana con Python. La incertidumbre y el problema de la inducción, El teorema de Bayes, inferencia bayesiana, redes Bayesianas, Programación probabilística y PyMC3, Bayes ingenuo.">
+
+<meta property="og:url" content="http://localhost:1313/blog/2017/05/21/introducci%C3%B3n-a-la-inferencia-bayesiana-con-python/">
+  <meta property="og:site_name" content="Raul E. Lopez Briega">
+  <meta property="og:title" content="Introducción a la inferencia Bayesiana con Python">
+  <meta property="og:description" content="Introducción a la inferencia Bayesiana con Python. La incertidumbre y el problema de la inducción, El teorema de Bayes, inferencia bayesiana, redes Bayesianas, Programación probabilística y PyMC3, Bayes ingenuo.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2017-05-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2017-05-21T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Estadistica">
+    <meta property="article:tag" content="Analisis De Datos">
+    <meta property="article:tag" content="Probabilidad">
+    <meta property="article:tag" content="Distribuciones">
+    <meta property="article:tag" content="Inferencia">
+
+
+  <meta itemprop="name" content="Introducción a la inferencia Bayesiana con Python">
+  <meta itemprop="description" content="Introducción a la inferencia Bayesiana con Python. La incertidumbre y el problema de la inducción, El teorema de Bayes, inferencia bayesiana, redes Bayesianas, Programación probabilística y PyMC3, Bayes ingenuo.">
+  <meta itemprop="datePublished" content="2017-05-21T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2017-05-21T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3725">
+  <meta itemprop="keywords" content="Python,Estadistica,Analisis De Datos,Probabilidad,Distribuciones,Inferencia,Monte Carlo,MCMC,Bayes">
+
+
+
+
+
+
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SZHL0BZZJ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6SZHL0BZZJ');
+        }
+      </script>
+    
+  
+
+
+
+
+  
+  
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+
+<style>
+   
+  /*
+  Critical CSS for above-the-fold content, delivered inline to increase first
+  paint performance
+*/
+
+/*! purgecss start ignore */
+
+/* Typefaces */
+
+/* roboto-slab-100normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Roboto Slab Thin '),
+    local('Roboto Slab-Thin'),
+    url('/fonts/roboto-slab-latin-100.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-100.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-200normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Roboto Slab Extra Light '),
+    local('Roboto Slab-Extra Light'),
+    url('/fonts/roboto-slab-latin-200.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-200.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-300normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Roboto Slab Light '),
+    local('Roboto Slab-Light'),
+    url('/fonts/roboto-slab-latin-300.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-400normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Roboto Slab Regular '),
+    local('Roboto Slab-Regular'),
+    url('/fonts/roboto-slab-latin-400.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-500normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Roboto Slab Medium '),
+    local('Roboto Slab-Medium'),
+    url('/fonts/roboto-slab-latin-500.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-600normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Roboto Slab SemiBold '),
+    local('Roboto Slab-SemiBold'),
+    url('/fonts/roboto-slab-latin-600.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-700normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Roboto Slab Bold '),
+    local('Roboto Slab-Bold'),
+    url('/fonts/roboto-slab-latin-700.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-800normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Roboto Slab ExtraBold '),
+    local('Roboto Slab-ExtraBold'),
+    url('/fonts/roboto-slab-latin-800.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-800.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-900normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Roboto Slab Black '),
+    local('Roboto Slab-Black'),
+    url('/fonts/roboto-slab-latin-900.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-900.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-300normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Fira Code Light '),
+    local('Fira Code-Light'),
+    url('/fonts/fira-code-latin-300.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-400normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Fira Code Regular '),
+    local('Fira Code-Regular'),
+    url('/fonts/fira-code-latin-400.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-500normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Fira Code Medium '),
+    local('Fira Code-Medium'),
+    url('/fonts/fira-code-latin-500.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-600normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Fira Code SemiBold '),
+    local('Fira Code-SemiBold'),
+    url('/fonts/fira-code-latin-600.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-700normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Fira Code Bold '),
+    local('Fira Code-Bold'),
+    url('/fonts/fira-code-latin-700.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* Normalize */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*! purgecss end ignore */
+
+/*! CC BY-SA 3.0 License | https://stackoverflow.com/a/36118384/1154965 */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Default license header for non-vendor CSS source code that follows */
+
+/*! MIT License | github.com/schnerring/hugo-theme-gruvbox */
+
+/*
+  Bootstrap 5 breakpoints
+  See: https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints
+*/
+
+:root[data-theme="light"] {
+  --bg: var(--bg0);
+  --bg0: #fbf1c7;
+  --bg0_h: #f9f5d7;
+  --bg0_s: #f2e5bc;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+  --fg: var(--fg1);
+  --fg0: #282828;
+  --fg1: #3c3836;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #9d0006;
+  --green1: #98971a;
+  --green2: #797403;
+  --yellow1: #d79921;
+  --yellow2: #b57614;
+  --blue1: #458588;
+  --blue2: #076678;
+  --purple1: #b16286;
+  --purple2: #8f3f71;
+  --aqua1: #689d6a;
+  --aqua2: #427b58;
+  --orange1: #d65d0e;
+  --orange2: #af3a03;
+}
+
+[data-theme="light"]:root .light--hidden {
+    display: none;
+  }
+
+:root[data-theme="dark"] {
+  --bg: var(--bg0);
+  --bg0: #282828;
+  --bg0_h: #1d2021;
+  --bg0_s: #32302f;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+  --fg: var(--fg1);
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #fb4934;
+  --green1: #98971a;
+  --green2: #b8bb26;
+  --yellow1: #d79921;
+  --yellow2: #fabd2f;
+  --blue1: #458588;
+  --blue2: #83a598;
+  --purple1: #b16286;
+  --purple2: #d3869b;
+  --aqua1: #689d6a;
+  --aqua2: #8ec07c;
+  --orange1: #d65d0e;
+  --orange2: #fe8019;
+}
+
+[data-theme="dark"]:root .dark--hidden {
+    display: none;
+  }
+
+:root {
+  
+  --primary: var(--blue1);
+  --primary-alt: var(--blue2);
+}
+
+:root {
+  --font-monospace: "Fira Code", "Lucida Console", Monaco, monospace;
+  --font-sans-serif: Verdana, Helvetica, sans-serif;
+  --font-serif: "Roboto Slab", Georgia, serif;
+}
+
+html {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.675;
+  word-wrap: break-word;
+}
+
+strong {
+  letter-spacing: 0.35px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.link--external::after {
+  /* 2009 = Thin Space */
+  content: "\2009↗";
+}
+
+img,
+video {
+  border: 2px solid var(--bg1);
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+
+*::selection {
+  color: var(--fg0);
+  background: var(--bg4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg0);
+  font-family: var(--font-monospace);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+:is(h1,h2,h3,h4,h5,h6) code {
+    font-size: 1em;
+  }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid var(--bg1);
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.875rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.375rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.375rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--bg1);
+  padding: 0.5rem;
+}
+
+hr {
+  border: none;
+  background: var(--bg1);
+  height: 1px;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+mark {
+  background: var(--yellow1);
+  color: var(--bg0);
+}
+
+abbr {
+  text-underline-offset: 0.2rem;
+}
+
+blockquote,
+code,
+kbd,
+mark,
+pre {
+  border-radius: 0.2rem;
+  padding: 0 0.2em;
+}
+
+pre code {
+  padding: 0;
+}
+
+blockquote,
+code,
+kbd,
+pre,
+th {
+  background: var(--bg1);
+}
+
+code,
+kbd,
+pre,
+th {
+  font-family: var(--font-monospace);
+}
+
+:is(code,kbd) code,:is(code,kbd) kbd {
+    background: var(--bg2);
+  }
+
+blockquote,
+pre {
+  padding: 1rem;
+}
+
+pre {
+  /* TODO is !important really needed because of Prism? */
+  background: var(--bg1) !important;
+  overflow: auto;
+}
+
+pre code {
+    background: none;
+  }
+
+blockquote,
+blockquote.twitter-tweet {
+  border-left: var(--primary-alt) 5px solid;
+  margin: 0.5rem 0;
+}
+
+:is(blockquote,blockquote.twitter-tweet) code {
+    background: var(--bg2);
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:first-of-type {
+    margin-top: 0;
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:last-of-type {
+    margin-bottom: 0;
+  }
+
+blockquote.twitter-tweet {
+  border-color: var(--blue2);
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+blockquote.twitter-tweet a {
+    color: var(--blue2);
+  }
+
+blockquote.twitter-tweet a:hover {
+    color: var(--blue1);
+    text-decoration: none !important;
+  }
+
+pre::-webkit-scrollbar {
+  height: 0.5rem;
+  scrollbar-width: auto;
+}
+
+pre::-webkit-scrollbar-track {
+  background: var(--bg2);
+  border-radius: 0.2rem;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--bg4);
+  border-radius: 0.2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+main {
+  align-items: start;
+  display: grid;
+  grid-area: main;
+  grid-template-areas: "empty content sidebar";
+  grid-template-columns: 1fr minmax(0, 650px) 4fr;
+}
+
+header {
+  background: var(--bg1);
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+main,
+footer {
+  margin: 0.5em 1.1em;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  grid-area: sidebar;
+  margin-top: 3rem;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (min-width: 992px) {
+
+.sidebar {
+    display: flex;
+}
+  }
+
+header {
+  display: grid;
+  font-family: var(--font-monospace);
+  font-size: 1.125rem;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: "heading search nav theme-toggle";
+  padding: 0.75rem;
+}
+
+.logo {
+  color: var(--fg0);
+  display: flex;
+  font-weight: 700;
+  grid-area: heading;
+}
+
+.logo:hover .logo__cursor {
+    animation: 1s blink infinite;
+    opacity: 1;
+  }
+
+.logo__chevron,
+.logo__cursor {
+  margin-left: 0.5rem;
+}
+
+.logo__cursor {
+  opacity: 0;
+}
+
+.logo__text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo__text {
+    display: block;
+  }
+}
+
+/*! purgecss start ignore */
+
+.search {
+  display: flex;
+  grid-area: search;
+  margin: 0 1rem;
+}
+
+#search__text {
+  border: 1px solid var(--bg2);
+  border-radius: 0.2rem;
+  background: var(--bg2);
+  caret-color: var(--fg);
+  color: var(--fg);
+  outline: none;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+#search__text:hover {
+    border-color: var(--bg3);
+  }
+
+#search__text:focus {
+    border-color: var(--bg4);
+  }
+
+#search__text::placeholder {
+    color: var(--fg3);
+  }
+
+#search__text[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+#search__suggestions {
+  background: var(--bg);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.5rem 1rem var(--bg1);
+  font-family: var(--font-serif);
+  left: 0;
+  margin-top: 2rem;
+  position: absolute;
+  width: 95vw;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .search {
+    position: relative;
+  }
+
+  #search__suggestions {
+    width: 60vw;
+  }
+}
+
+.search__suggestions--hidden {
+  display: none;
+}
+
+.search__suggestion-item {
+  border-bottom: 1px dashed var(--bg2);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.search__suggestion-item:focus,.search__suggestion-item:focus-visible,.search__suggestion-item:hover {
+    background: var(--bg1);
+    cursor: pointer;
+    outline: none;
+  }
+
+.search__suggestion-item:last-child {
+    border: none;
+  }
+
+.search__suggestion-title,
+.search__suggestion-description {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.search__suggestion-title {
+  font-weight: 700;
+}
+
+.search__suggestion-description {
+  border-left: 1px solid var(--bg2);
+}
+
+.search__no-results {
+  padding: 0.75rem;
+}
+
+/*! purgecss end ignore */
+
+.theme__toggle {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--yellow1);
+  cursor: pointer;
+  display: flex;
+  grid-area: theme-toggle;
+  margin: 0 1rem;
+}
+
+.theme__toggle:hover {
+    color: var(--yellow2);
+  }
+
+.theme__toggle svg {
+    height: 28px;
+    width: 28px;
+  }
+
+/* TODO: simplify deep nesting */
+
+nav#menu {
+  align-items: center;
+  display: flex;
+  grid-area: nav;
+  justify-content: flex-end;
+}
+
+nav#menu .menu__item {
+    color: var(--fg);
+  }
+
+:is(nav#menu .menu__item):hover {
+      color: var(--fg3);
+      cursor: pointer;
+    }
+
+nav#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+nav#menu ul.menu--horizontal {
+    align-items: center;
+    display: none;
+  }
+
+:is(nav#menu ul.menu--horizontal) li {
+      display: inline-block;
+      margin: 0 0.75rem;
+    }
+
+@media (min-width: 768px) {
+
+nav#menu ul.menu--horizontal {
+      display: flex;
+  }
+    }
+
+nav#menu ul.menu--vertical {
+    background: var(--fg0);
+    bottom: 0;
+    margin: 0;
+    padding: 3rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+    width: 50%;
+    z-index: 10;
+  }
+
+:is(nav#menu ul.menu--vertical) .menu__item {
+      color: var(--bg1);
+    }
+
+:is(:is(nav#menu ul.menu--vertical) .menu__item):hover {
+        color: var(--bg4);
+      }
+
+nav#menu .menu__burger {
+    display: flex;
+    height: 24px;
+    width: 24px;
+  }
+
+:is(nav#menu .menu__burger) > * {
+      position: absolute;
+    }
+
+:is(nav#menu .menu__burger) svg {
+      width: inherit;
+      z-index: 20;
+      height: inherit;
+    }
+
+:is(:is(nav#menu .menu__burger) svg) line {
+        transition-duration: 0.5s;
+        transition-property: stroke, opacity, transform;
+        transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(1) {
+        transform-origin: center 6px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(2) {
+        transform-origin: center 12px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(3) {
+        transform-origin: center 18px;
+      }
+
+:is(nav#menu .menu__burger) input {
+      height: inherit;
+      opacity: 0;
+      width: inherit;
+      z-index: 30;
+    }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ ul.menu--vertical {
+          transform: none;
+        }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ svg {
+          stroke: var(--bg1);
+        }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(1) {
+            transform: translate(0, 6px) rotate(45deg);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(2) {
+            opacity: 0;
+            transform: scale(0.2);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(3) {
+            transform: translate(0, -6px) rotate(-45deg);
+          }
+
+@media (min-width: 768px) {
+
+nav#menu .menu__burger {
+      display: none;
+  }
+    }
+
+.sidebar {
+  font-family: var(--font-monospace);
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+}
+
+.sidebar hr {
+    margin: 1.5rem auto;
+  }
+
+.sidebar svg {
+    fill: var(--fg);
+  }
+
+.sidebar__heading {
+  font-size: 1.3rem;
+}
+
+aside.toc a {
+    color: var(--primary-alt);
+  }
+
+aside.toc a:hover {
+    color: var(--primary);
+  }
+
+aside.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+:is(aside.toc ul) ul {
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+
+:is(aside.toc ul) li {
+      line-height: 1.1;
+    }
+
+:is(:is(aside.toc ul) li) a {
+        display: block;
+        padding: 0.2rem 0;
+      }
+
+.jr-basics__image {
+  background: var(--bg1);
+  border: 2px solid var(--bg2);
+}
+
+.jr-basics__summary {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  margin: 0.75rem 0;
+}
+
+.jr-basics__profile a:hover {
+    color: var(--fg3);
+  }
+
+:is(.jr-basics__profile a:hover) svg {
+      fill: var(--fg3);
+    }
+
+.tag-cloud {
+  line-height: 1.1;
+  text-align: justify;
+}
+
+.tag-cloud__tag:hover {
+  color: var(--fg3);
+}
+
+.tag-cloud__tag--active {
+  text-decoration: underline;
+}
+
+.post,
+.content-section {
+  border-bottom: 2px dotted var(--bg1);
+  padding: 2rem 0;
+}
+
+.post figure,.post img:not(figure img),.post video:not(figure video) {
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+
+.post-header,
+.post-content__read-more {
+  font-family: var(--font-monospace);
+}
+
+.post-meta__author {
+  font-weight: 700;
+}
+
+.post-content {
+  margin: 1.3rem 0;
+}
+
+.post-content__read-more {
+  color: var(--primary-alt);
+  margin-top: 1.3rem;
+}
+
+:is(.post-header,.post-content) a {
+    color: var(--primary-alt);
+  }
+
+:is(.post-header,.post-content) a:hover {
+    color: var(--primary);
+  }
+
+.post-tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1rem 0;
+}
+
+.post-tag {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.post-tag::before {
+    content: "#";
+  }
+
+.post-heading__anchor {
+  display: none;
+}
+
+:is(h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover) .post-heading__anchor {
+    display: inline-block;
+  }
+
+.jr__item-meta {
+  flex-direction: column;
+}
+
+.jr__item-meta,
+.jr-basics__image,
+.jr-basics__item,
+.jr-basics__profile-icon,
+.jr-basics__profile-item {
+  align-items: center;
+  display: flex;
+}
+
+.jr-awards__title,
+.jr-certificates__name,
+.jr-education__area,
+.jr-projects__roles,
+.jr-publications__name,
+.jr-volunteer__position,
+.jr-work__position,
+.jr-basics__name {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.jr-basics__item {
+  flex-direction: column;
+  text-align: center;
+}
+
+.jr-basics__item hr {
+  margin: 1.5rem auto;
+}
+
+.jr-basics__image {
+  border-radius: 50%;
+  height: 250px;
+  justify-content: center;
+  overflow: hidden;
+  width: 250px;
+}
+
+.jr-basics__name,
+.jr-basics__label,
+.jr-basics__summary {
+  margin-top: 0.75rem;
+}
+
+.jr-basics__profile svg {
+  height: 24px;
+  width: 24px;
+}
+
+.jr-basics__profile,
+.jr-basics__profile-item {
+  display: flex;
+}
+
+.jr-basics__profile-item {
+  display: flex;
+  padding: 0.2rem;
+}
+
+.jr-basics__profile--col {
+  flex-direction: column;
+}
+
+.jr-basics__profile--row {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.jr-basics__profile-icon {
+  padding: 0 0.75rem;
+}
+
+.jr__item-meta {
+  font-family: var(--font-monospace);
+}
+
+.jr__item-meta {
+  align-items: start;
+  flex-flow: column;
+}
+
+@media (min-width: 768px) {
+  .jr__item-meta {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .jr__date,
+  .jr__date-range,
+  .jr-work__location {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+  .jr-awards__awarder,
+  .jr-publications__publisher,
+  .jr-education__institution,
+  .jr-volunteer__organization {
+    flex-basis: 100%;
+  }
+}
+
+.social-share {
+  align-items: center;
+  border-top: 2px dotted var(--bg1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 3rem 0;
+  padding-top: 3rem;
+}
+
+.social-share svg {
+    fill: var(--fg);
+    width: 24px;
+    height: 24px;
+  }
+
+.icon-tabler:is(.social-share svg) {
+      fill: none;
+      stroke: var(--fg);
+    }
+
+.social-share__item {
+  background: var(--bg1);
+  padding: 0.5rem;
+  display: flex;
+}
+
+/* Sticky social bar left
+
+@media (--xl) {
+  .social-share {
+    align-items: flex-start;
+    border-top: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 15%;
+    left: 0;
+  }
+
+  .social-share__heading {
+    display: none;
+  }
+
+  .social-share__item {
+    transition: padding 0.2s ease-in;
+
+    &:hover {
+      padding: 0.5rem 1rem;
+    }
+
+    & svg {
+      &:hover {
+        fill: var(--fg);
+      }
+
+      &.icon-tabler {
+        fill: none;
+
+        &:hover {
+          stroke: var(--fg);
+        }
+      }
+    }
+  }
+}
+
+*/
+
+   
+</style>
+
+<link
+  rel="preload"
+  href="/css/non-critical.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+
+
+<link
+  id="prism-dark"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-dark.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  
+/>
+
+
+<link
+  id="prism-light"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-light.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  disabled
+/>
+
+<noscript>
+  
+    <link
+      rel="stylesheet"
+      href="/prism-themes/prism-gruvbox-dark.css"
+      
+    />
+  
+
+
+  <link
+    rel="stylesheet"
+    href="/css/non-critical.css"
+    
+  />
+</noscript>
+
+
+  
+
+
+
+
+<script>
+  (() => {
+  // <stdin>
+  function getTheme() {
+    if (localStorage && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+  }
+  function setTheme(theme2) {
+    document.documentElement.setAttribute("data-theme", theme2);
+    const prismDark = document.getElementById("prism-dark");
+    const prismLight = document.getElementById("prism-light");
+    prismDark.toggleAttribute("disabled", theme2 === "light");
+    prismLight.toggleAttribute("disabled", theme2 === "dark");
+    localStorage.setItem("theme", theme2);
+  }
+  var theme = getTheme();
+  if (theme) setTheme(theme);
+  function toggleTheme(e) {
+    const theme2 = e.currentTarget.classList.contains("light--hidden") ? "light" : "dark";
+    setTheme(theme2);
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleButtons = document.querySelectorAll(".theme__toggle");
+    toggleButtons.forEach((btn) => {
+      btn.addEventListener("click", toggleTheme);
+    });
+  });
+})();
+
+</script>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#282828" />
+<meta name="msapplication-TileColor" content="#282828" />
+<meta name="theme-color" content="#282828" />
+
+
+
+  
+  
+
+</head>
+
+  <body>
+    <div class="layout">
+      <header>
+  <a
+    class="logo"
+    href="/"
+  >
+    
+      <div class="logo__text">relopezbriega</div>
+    
+    <div class="logo__chevron">></div>
+    <div class="logo__cursor">█</div>
+  </a>
+
+  <div class="search">
+    <input
+      id="search__text"
+      type="search"
+      placeholder="Buscar..."
+      aria-label="Search"
+      autocomplete="off"
+    />
+    <div id="search__suggestions" class="search__suggestions--hidden"></div>
+  </div>
+
+  <nav id="menu">
+    <ul class="menu--horizontal">
+      
+        <li class="menu__item">
+          <a href="/blog">Articulos</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/conversor-fecha-juliana">Conversor-Juliana</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="https://iaarbook.github.io/">Libro</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/cv">CV</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/contacto">Contacto</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/acerca">Acerca</a>
+        </li>
+      
+    </ul>
+
+    <div class="menu__burger">
+      
+      <input class="menu__item" type="checkbox" aria-label="Open main menu" />
+
+      
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+
+
+
+      <ul class="menu--vertical">
+        
+          <li>
+            <a class="menu__item" href="/blog">Articulos</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/conversor-fecha-juliana">Conversor-Juliana</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="https://iaarbook.github.io/">Libro</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/cv">CV</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/contacto">Contacto</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/acerca">Acerca</a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <button class="theme__toggle light--hidden" aria-label="Toggle light mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-sun"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+  <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+</svg>
+
+
+  </button>
+
+  <button class="theme__toggle dark--hidden" aria-label="Toggle dark mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+</svg>
+
+
+  </button>
+</header>
+
+      <main>
+        <div class="content">
+          
+  <article class="post">
+    <div class="post-header">
+      <h1>Introducción a la inferencia Bayesiana con Python</h1>
+      <div class="post-meta"><span>2017-05-21</span><span> by </span><span class="post-meta__author">Raul E Lopez Briega</span>
+    <div class="post-tags">
+      <a class="post-tag" href="http://localhost:1313/tags/python">python</a><a class="post-tag" href="http://localhost:1313/tags/estadistica">estadistica</a><a class="post-tag" href="http://localhost:1313/tags/analisis-de-datos">analisis&#8209;de&#8209;datos</a><a class="post-tag" href="http://localhost:1313/tags/probabilidad">probabilidad</a><a class="post-tag" href="http://localhost:1313/tags/distribuciones">distribuciones</a><a class="post-tag" href="http://localhost:1313/tags/inferencia">inferencia</a><a class="post-tag" href="http://localhost:1313/tags/monte-carlo">monte&#8209;carlo</a><a class="post-tag" href="http://localhost:1313/tags/mcmc">mcmc</a><a class="post-tag" href="http://localhost:1313/tags/bayes">bayes</a>
+    </div>
+  
+
+  
+</div>
+
+    </div>
+
+    <div class="post-content">
+      <h1 id="introducción-a-la-inferencia-bayesiana-con-python">Introducción a la inferencia Bayesiana con Python<a href="#introducci%c3%b3n-a-la-inferencia-bayesiana-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h1>
+<p><em>Esta notebook fue creada originalmente como un blog post por <a
+  href="https://relopezbriega.com.ar/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Raúl E. López Briega</a> en <a
+  href="https://relopezbriega.github.io"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matemáticas, análisis de datos y python</a>. El contenido esta bajo la licencia BSD.</em></p>
+<img alt="Teorema de Bayes" title="Teorema de Bayes" src="https://relopezbriega.github.io/images/bayes.jpg" >
+<blockquote>
+<p>&ldquo;Las preguntas más importantes de la vida son, en su mayor parte, nada más que problemas de probabilidad.&rdquo;</p>
+</blockquote>
+<p><em><strong><a
+  href="https://es.wikipedia.org/wiki/Pierre-Simon_Laplace"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Pierre-Simon Lapace</a></strong></em></p>
+<h2 id="introducción-la-incertidumbre-y-el-problema-de-la-inducción">Introducción: La incertidumbre y el problema de la inducción<a href="#introducci%c3%b3n-la-incertidumbre-y-el-problema-de-la-inducci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>¿Cómo se deben evaluar las hipótesis?¿Cuál es el papel de la evidencia en este proceso?¿Cuáles son los experimentos que debemos realizar para obtener la mayor información posible?. Éstas son preguntas que están en los cimientos de toda búsqueda científica.
+Las hipótesis científicas tienen un carácter general en relación con las observaciones empíricas que se supone deben explicar, teniendo implicaciones sobre fenómenos y acontecimientos que no podemos encontrar en ninguna evidencia real. Existe, por lo tanto, un vacío lógico entre la información derivada de la observación empírica y el contenido de nuestras teorías científicas. ¿Cómo, entonces, esta información nos da una confianza razonable en esas teorías? Éste, es el tradicional <a
+  href="https://es.wikipedia.org/wiki/Problema_de_la_inducci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>problema de la inducción</a>.</p>
+<p><a
+  href="https://es.wikipedia.org/wiki/David_Hume"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>David Hume</a>, demostró correctamente, que partiendo solamente de las evidencias del pasado y del presente, no podemos inferir con seguridad nada sobre el futuro. Que hayamos visto solamente miles de cisnes blancos, no quiere decir que todos los cisnes sean blancos; siempre existirá la <em>posibilidad</em> de que podamos encontrar un cisne negro que <em>falsifique</em> toda nuestra teoría. Este problema, hace que en esencia todas las teorías tengan un carácter <a
+  href="relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+>probabilístico</a>.
+Desde hace ya tiempo se considera que las teorías científicas se extienden más allá de cualquier dato experimental y por lo tanto no pueden ser verificadas (es decir, logicamente implicadas) por ellos. Si bien existe un consenso en que la certeza absoluta no puede ser nunca alcanzable; la mayoría de los científicos coinciden en que las teorías pueden alcanzar un estado intermedio entre la certeza absoluta y la falsificación; el cual dependerá de la calidad de las observaciones y de cómo la teoría se ve afectada por nuevas evidencias. Desde esta perspectiva, entonces la pregunta crucial pasa a ser ¿cómo adaptamos nuestras creencias a medida que vamos incorporando nuevas evidencias sobre nuestras teorías? la respuesta a esta pregunta, la podemos encontrar en el <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a>.</p>
+<h2 id="el-teorema-de-bayes">El Teorema de Bayes<a href="#el-teorema-de-bayes" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p><a
+  href="https://es.wikipedia.org/wiki/Thomas_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Thomas Bayes</a> fue un ministro presbiteriano y matemático inglés que estudió la relación íntima que existe entre la <a
+  href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad</a>, la predicción y el progreso científico. Su trabajo se centró principalmente en cómo formulamos nuestras creencias probabilísticas sobre el mundo que nos rodea cuando nos encontramos con nuevos datos o evidencias. El argumento de <a
+  href="https://es.wikipedia.org/wiki/Thomas_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Bayes</a> no es que el mundo es intrínsecamente probabilístico o incierto, ya que él era un creyente en la divina perfección; sino que aprendemos sobre el mundo a través de la aproximación, acercándonos cada vez más a la verdad a medida que recogemos más evidencias. Este argumento lo expresó matemáticamente a través de su famoso <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema</a>:</p>
+$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}
+$$
+<p>En donde:</p>
+<ul>
+<li>
+<p>\(P(H)\) es el <strong><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></strong>, la forma de introducir conocimiento previo sobre los valores que puede tomar la hipótesis. A veces cuando no sabemos demasiado se suelen usar <em>a prioris</em> que asignan igual probabilidad a todos los valores de la hipótesis; otras veces se puede elegir <em>a prioris</em> que restrinjan los valores a rangos razonables, por ejemplo solo valores positivos; y otras veces contamos con información mucho más precisa, como experimentos previos o límites impuesto por alguna teoría.</p>
+</li>
+<li>
+<p>\(P(D|H)\) es el <strong>likelihood</strong>, la forma de incluir nuestros datos en el análisis. Es una expresión matemática que especifica la plausibilidad de los datos. A medida que la cantidad de datos aumenta, el <em>likelihood</em> tiene cada vez más peso en los resultados. Debemos tener en cuenta que si bien el <em>likelihood</em> se asemeja a una <em>probabilidad</em>, en realidad no lo es; el <em>likelihood</em> de una hipótesis \(H\), dados los datos \(D\) va a ser proporcional a la <em>probabilidad</em> de obtener \(D\) dado que \(H\) es verdadera. Como el <em>likelihood</em> no es una <em>probabilidad</em> tampoco tiene que respetar las leyes de las probabilidades y por lo tanto no necesariamente tiene que sumar 1.</p>
+</li>
+<li>
+<p>\(P(H|D)\) es el <strong><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a posteriori</a></strong>, la <a
+  href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>distribución de probabilidad</a> final para la hipótesis. Es la consecuencia lógica de haber usado un conjunto de datos, un <em>likelihood</em> y un <em>a priori</em>. Se lo suele pensar como la versión actualizada del <em>a priori</em> luego de que hemos agregado los datos adicionales.</p>
+</li>
+<li>
+<p>\(P(D)\) es el <strong>likelihood marginal</strong> o <strong>evidencia</strong>, la probabilidad de observar los datos \(D\) promediado sobre todas las posibles hipótesis \(H\). En general, la <em>evidencia</em> puede ser vista como una simple constante de normalización que en la mayoría de los problemas prácticos puede omitirse sin demasiada perdida de generalidad.</p>
+</li>
+</ul>
+<p>Si los fundamentos filosóficos del <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> son sorprendentemente ricos, sus matemáticas son increíblemente simples. En su forma más básica, no es más que una expresión algebraica con tres variables conocidas y una incógnita; y que trabaja con <a
+  href="https://es.wikipedia.org/wiki/Probabilidad_condicionada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidades condicionales</a>; nos dice la probabilidad de que una hipótesis \(H\) sea verdadera si algún evento \(D\) ha sucedido. El <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> es útil porque lo que normalmente sabemos es la <a
+  href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad</a> de los efectos dados las causas, pero lo que queremos saber es la <a
+  href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad</a> de las causas dadas los efectos. Por ejemplo, podemos saber cual es el porcentaje de pacientes con gripe que tiene fiebre, pero lo que realmente queremos saber es la probabilidad de que un paciente con fiebre tenga gripe. El <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> nos permite ir de uno a otro con suma facilidad.</p>
+<h2 id="la-inferencia-bayesiana">La inferencia Bayesiana<a href="#la-inferencia-bayesiana" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Toda forma de <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia</a> que realicemos sobre el mundo que nos rodea, debe indefectiblemente lidiar con la <em>incertidumbre</em>. Existen por lo menos, tres tipos de <em>incertidumbre</em> con la que nos debemos enfrentar:</p>
+<ul>
+<li><strong>Ignorancia</strong>, los límites de nuestro conocimiento nos llevan a ser ignorantes sobre muchas cosas.</li>
+<li><strong>Aleatoriedad</strong>, es imposible negar la influencia del azar en casi todo lo que nos rodea; incluso aunque podamos saber todo sobre una moneda y la forma de lanzarla, es imposible predecir con anterioridad si va a caer cara o seca.</li>
+<li><strong>Vaguedad</strong>, muchos de los conceptos que utilizamos en nuestro pensamiento tienen cierto grado de subjetividad en su definición. ¿cómo calificaríamos si una persona es valiente o no?. Cada uno de nosotros puede tener una apreciación diferente del concepto de valentía.</li>
+</ul>
+<p>La <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> es la filosofía que afirma que para entender la opinión humana como debe ser, limitada por la ignorancia y la incertidumbre; debemos utilizar al <a
+  href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>cálculo de probabilidad</a> como la herramienta más importante para representar la fortaleza de nuestras creencias.</p>
+<p>En esencia, la <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> combina nuestra experiencia previa, en la forma de la <em>probabilidad <a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></em>; con los datos observados, en la forma del <em>likelihood</em>; para interpretarlos y arribar a una <em>probabilidad <a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a posteriori</a></em>. La <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> no nos va a garantizar que podamos alcanzar la respuesta correcta. En su lugar, nos va a proporcionar la <a
+  href="https://relopezbriega.github.io/blog/2016/11/26/introduccion-a-la-teoria-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad</a> de que cada una de un número de respuestas alternativas, sea verdadera. Y luego podemos utilizar esta información para encontrar la respuesta que más probablemente sea la correcta. En otras palabras, nos proporciona un mecanismo para hacer una especie de <em>adivinación basada en información</em>.</p>
+<h3 id="bayes-en-el-diagnostico-médico">Bayes en el diagnostico médico<a href="#bayes-en-el-diagnostico-m%c3%a9dico" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Para que quede más claro, ilustremos la aplicación de la <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> con un simple ejemplo del diagnostico médico, uno de los campos dónde más éxito ha tenido. Supongamos que nos hicimos un estudio y nos ha dado positivo para una rara enfermedad que solo el 0.3 % de la población tiene. La tasa de efectividad de este estudio es del 99 %, es decir, que solo da <a
+  href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>falsos positivos</a> en el 1 % de los casos. ¿Cuán probable es que realmente tengamos la enfermedad?.</p>
+<p>En un principio, nos veríamos tentados a responder que hay un 99 % de probabilidad de que tengamos la enfermedad; pero en este caso nos estaríamos olvidando del concepto importante del <em><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></em>. Sabemos con anterioridad que la enfermedad es extremadamente rara (solo el 0.3 % la tiene); si incluimos esta información previa en nuestro cálculo de probabilidad y aplicamos el <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> podemos llegar a una conclusión totalmente distinta.</p>
+$$ P(\text{ enfermedad | pos}) = \frac{P(\text{ pos | enfermedad})P( \text{enfermedad})}{P(\text{pos})}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo simple teorema de Bayes aplicado a estimación de un sólo parámetro.</span>
+</span></span><span style="display:flex;"><span>a_priori <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.003</span>
+</span></span><span style="display:flex;"><span>likelihood <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.99</span>
+</span></span><span style="display:flex;"><span>evidencia <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a_posteriori <span style="color:#f92672">=</span> likelihood <span style="color:#f92672">*</span> a_priori <span style="color:#f92672">/</span> evidencia
+</span></span><span style="display:flex;"><span>a_posteriori
+</span></span></code></pre></div><pre><code>0.297
+</code></pre>
+<p>Como vemos, luego de aplicar el <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> llegamos a la conclusión de que en realidad nuestra probabilidad de estar realmente enfermo es de sólo 30 % y no de 99 %, ya que podemos ser uno de los <a
+  href="https://es.wikipedia.org/wiki/Errores_de_tipo_I_y_de_tipo_II"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>falsos positivos</a> del estudio y la enfermedad es realmente muy rara. Como este ejemplo demuestra, la inclusión del <em><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></em> es sumamente importante para la  <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a>, por lo cual también debemos ser sumamente cuidadosos a la hora de elegirla. <strong>Cuando nuestra <em><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></em> es fuerte, puede ser sorprendentemente resistente frente a nuevas evidencias.</strong></p>
+<h2 id="redes-bayesianas">Redes Bayesianas<a href="#redes-bayesianas" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> nos permite actualizar las probabilidades de variables cuyo estado no hemos observado dada una serie de nuevas observaciones. Las <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a> automatizan este proceso, permitiendo que el razonamiento avance en cualquier dirección a través de la red de variables. Las <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a> están constituidas por una estructura en forma de <a
+  href="https://es.wikipedia.org/wiki/Grafo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>grafo</a>, en la que cada <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> representa <a
+  href="https://es.wikipedia.org/wiki/Variable_aleatoria"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>variables aleatorias</a> (discretas o continuas) y cada <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)">arista</a> representa las conexiones directas entre ellas. Estas conexiones suelen representar relaciones de causalidad. Adicionalmente, las <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a> también modelan el peso cuantitativo de las conexiones entre las  variables, permitiendo que las <em>creencias probabilísticas</em> sobre ellas se actualicen automáticamente a medida que se disponga de nueva información.
+Al construir una <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red bayesiana</a>, los principales problemas de modelización que surgen son:</p>
+<ol>
+<li>¿Cuáles son las variables? ¿Cuáles son sus valores / estados?</li>
+<li>¿Cuál es la estructura del <a
+  href="https://es.wikipedia.org/wiki/Grafo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>grafo</a>?</li>
+<li>¿Cuáles son los parámetros (probabilidades)?</li>
+</ol>
+<p>Profundicemos un poco en cada uno de estos puntos.</p>
+<h3 id="nodos-y-variables">Nodos y variables<a href="#nodos-y-variables" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Lo primero que debemos hacer es identificar las variables de interés. Sus valores deben ser mutuamente excluyentes y exhaustivos. Los tipos de <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodos</a> discretos más comunes son:</p>
+<ul>
+<li><strong>Nodos booleanos</strong>, que representan proposiciones tomando los valores binarios Verdadero (V) y Falso (F). En el dominio del diagnóstico médico, por ejemplo, un <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> llamado &ldquo;Cáncer&rdquo; podría representar la proposición del que paciente tenga cáncer.</li>
+<li><strong>Valores ordenados</strong> Por ejemplo, un <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> &ldquo;Contaminación&rdquo; podría representar la exposición de un paciente a la contaminación del ambiente y tomar los valores {alta, baja}.</li>
+<li><strong>Valores enteros</strong>. Por ejemplo, un <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> llamado &ldquo;Edad&rdquo; puede representar la edad de un paciente y tener valores posibles de 1 a 120.</li>
+</ul>
+<p>Lo importante es elegir valores que representen el dominio de manera eficiente, pero con suficiente detalle para realizar el razonamiento requerido.</p>
+<h3 id="estructura">Estructura<a href="#estructura" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>La estructura o topología de la <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red</a> debe captar las relaciones cualitativas entre las variables. En particular, dos nodos deben conectarse directamente si uno afecta o causa al otro, con la <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)">arista</a> indicando la dirección del efecto. Por lo tanto, en nuestro ejemplo de diagnóstico médico, podríamos preguntarnos qué factores afectan la probabilidad de tener cáncer. Si la respuesta es &ldquo;Contaminación y Fumar&rdquo;, entonces deberíamos agregar <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)">aristas</a> desde &ldquo;Contaminación&rdquo; y desde &ldquo;Fumador&rdquo; hacia el <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> &ldquo;Cáncer&rdquo;. Del mismo modo, tener cáncer afectará la respiración del paciente y las posibilidades de tener un resultado positivo de rayos X. Por lo tanto, también podemos agregar <a href="https://es.wikipedia.org/wiki/Arista_(teor%C3%ADa_de_grafos)">aristas</a> de &ldquo;Cáncer&rdquo; a &ldquo;Disnea&rdquo; y &ldquo;RayosX&rdquo;.</p>
+<p>Es deseable construir <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a> lo más compactas posibles por tres razones. Primero, mientras más compacto es el <em>modelo</em>, es más fácil de manejar. Segundo, cuando las redes se vuelven demasiado densas, fallan en representar la independencia en forma explícita. Y Tercero, las redes excesivamente densas no suelen representar las dependencias causales del dominio.</p>
+<h3 id="probabilidades-condicionales">Probabilidades condicionales<a href="#probabilidades-condicionales" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Una vez que tenemos definida la estructura de la <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red bayesiana</a>, el siguiente paso es cuantificar las relaciones entre los nodos interconectados; esto se hace especificando una <a
+  href="https://es.wikipedia.org/wiki/Probabilidad_condicionada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad condicional</a> para cada nodo.
+Primero, para cada nodo necesitamos mirar todas las posibles combinaciones de valores de los nodos padres.
+Por ejemplo, continuando con el ejemplo del diagnostico del cáncer, si tomamos el <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodo</a> &ldquo;Cáncer&rdquo; con sus dos <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodos</a> padres &ldquo;Contaminación&rdquo; y &ldquo;Fumador&rdquo; podemos calcular los posibles valores conjuntos { (A, V), (A, F), (B, V), (B, F)}. La tabla de probabilidad condicional especifica para cada uno de estos casos podría ser la siguiente: {0,05, 0,02, 0,03, 0,001}. Con estos datos, ya estamos en condiciones de representar el <a
+  href="https://es.wikipedia.org/wiki/Grafo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>grafo</a> de la <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red bayesiana</a> de nuestro ejemplo.</p>
+<img alt="Red Bayesiana" title="Red Bayesiana" src="https://relopezbriega.github.io/images/red_bayes.png" >
+<h3 id="razonando-con-redes-bayesianas">Razonando con redes Bayesianas<a href="#razonando-con-redes-bayesianas" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>La tarea básica de cualquier sistema de <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia probabilística</a> es la de obtener la <a
+  href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>distribución</a> <a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a posteriori</a> para cada conjunto de <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodos</a>. Esta tarea se llama <em>actualización de creencia</em> o <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia probabilística</a>. En el caso de las <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a>, el proceso de <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia</a> es muy flexible, nueva evidencia puede ser introducida en cualquiera de los <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodos</a> mientras que las <em>creencias</em> son actualizadas en cualquiera de los otros <a href="https://es.wikipedia.org/wiki/V%C3%A9rtice_(teor%C3%ADa_de_grafos)">nodos</a>. En la práctica, la velocidad del proceso de inferencia va a depender de la estructura y complejidad de la red.</p>
+<h2 id="programación-probabilística-y-pymc3">Programación probabilística y PyMC3<a href="#programaci%c3%b3n-probabil%c3%adstica-y-pymc3" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>A pesar de que las <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>redes bayesianas</a> y demás modelos de <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> son conceptualmente simples; a menudo los cálculos de sus probabilidades conducen a expresiones que no se pueden resolver en forma analítica. Durante muchos años, este fue un gran problema y fue probablemente una de las principales razones que obstaculizaron la adopción de los métodos bayesianos. La llegada de las computadoras y el desarrollo de métodos numéricos que se pueden aplicar para calcular la distribución <em><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_posteriori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a posteriori</a></em> de casi cualquier modelo, junto con el avance en las técnicas de muestreo de los <a
+  href="https://relopezbriega.github.io/blog/2017/01/10/introduccion-a-los-metodos-de-monte-carlo-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>métodos de Monte-Carlo</a>; han transformado completamente la práctica del <a
+  href="https://relopezbriega.github.io/category/analisis-de-datos.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>análisis de datos</a> Bayesiano.</p>
+<p>La posibilidad de automatizar la <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia probabilística</a> ha conducido al desarrollo de la <a
+  href="https://en.wikipedia.org/wiki/Probabilistic_programming_language"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Programación probabilística</a>, la cuál utiliza las ventajas de los lenguajes de programación modernos y nos permite realizar una clara separación entre la creación del modelo y el proceso de  <a
+  href="https://es.wikipedia.org/wiki/Inferencia"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia</a>. En <a
+  href="https://en.wikipedia.org/wiki/Probabilistic_programming_language"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Programación probabilística</a>, especificamos un modelo probabilístico completo escribiendo unos cuantos líneas de código y luego la inferencia se realiza en forma automática.</p>
+<h3 id="pymc3">PyMC3<a href="#pymc3" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p><a
+  href="https://pymc-devs.github.io/pymc3/index.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>PyMC3</a> es un paquete para <a
+  href="https://en.wikipedia.org/wiki/Probabilistic_programming_language"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Programación probabilística</a> que utiliza el lenguaje de programación <a
+  href="https://python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>. <a
+  href="https://pymc-devs.github.io/pymc3/index.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>PyMC3</a> es lo suficientemente maduro para resolver muchos de los principales problemas estadísticos. Permite crear modelos probabilísticos usando una sintaxis intuitiva y fácil de leer que es muy similar a la sintaxis usada para describir modelos probabilísticos.</p>
+<p>Veamos algunos ejemplos:</p>
+<h4 id="el-problema-de-la-moneda">El problema de la moneda<a href="#el-problema-de-la-moneda" class="post-heading__anchor" aria-hidden="true">#</a>
+</h4>
+<p>Los problemas de monedas son clásicos cuando hablamos de <a
+  href="https://relopezbriega.github.io/category/pobabilidad-y-estadistica.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>probabilidad y estadística</a>, nos permiten ejemplificar conceptos abstractos de forma simple. Asimismo, pueden ser muchas veces conceptualmente similares a situaciones <em>reales</em>, de hecho cualquier problema en donde obtengamos resultados binarios, 0/1, enfermo/sano, spam/no-spam, puede ser pensado como si estuviéramos hablando de monedas.
+En este caso, la idea es utilizar un modelo <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>bayesiano</a> para inferir si la moneda se encuentra sesgada o no.</p>
+<p>Para este ejemplo, vamos a utilizar una <a
+  href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_binomial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>distribución binomial</a> como <em>likelihood</em> y una <a
+  href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_beta"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>distribución beta</a> como <em><a
+  href="https://es.wikipedia.org/wiki/Probabilidad_a_priori"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>a priori</a></em>. Veamos como lo podemos modelar con <a
+  href="https://pymc-devs.github.io/pymc3/index.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>PyMC3</a>.</p>
+<details>
+  <summary>Ver Código</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;!-- collapse=True --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># importando modulos necesarios</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> scipy.stats <span style="color:#66d9ef">as</span> stats
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pymc3 <span style="color:#66d9ef">as</span> pm
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> theano.tensor <span style="color:#66d9ef">as</span> tt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn <span style="color:#f92672">import</span> datasets
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.naive_bayes <span style="color:#f92672">import</span> GaussianNB
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> confusion_matrix
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">1984</span>) <span style="color:#75715e">#replicar random</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span></code></pre></div></details>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># El problema de la moneda</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># de 100 lanzamientos 80 caras</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>caras <span style="color:#f92672">=</span> <span style="color:#ae81ff">80</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Creación del modelo</span>
+</span></span><span style="display:flex;"><span>niter <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> pm<span style="color:#f92672">.</span>Model() <span style="color:#66d9ef">as</span> modelo_moneda:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># a priori</span>
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Beta(<span style="color:#e6db74">&#39;p&#39;</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, beta<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># likelihood</span>
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Binomial(<span style="color:#e6db74">&#39;y&#39;</span>, n<span style="color:#f92672">=</span>n, p<span style="color:#f92672">=</span>p, observed<span style="color:#f92672">=</span>caras)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Realizando el muestreo para la inferencia</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> modelo_moneda:
+</span></span><span style="display:flex;"><span>    trace <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>sample(niter, njobs<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span></code></pre></div><pre><code>Auto-assigning NUTS sampler...
+Initializing NUTS using advi...
+Average ELBO = -4.656: 100%|██████████| 200000/200000 [00:19&lt;00:00, 10433.82it/s] 
+Finished [100%]: Average ELBO = -4.639
+WARNING (theano.tensor.blas): We did not found a dynamic library into the library_dir of the library we use for blas. If you use ATLAS, make sure to compile it with dynamics library.
+100%|██████████| 2000/2000 [00:08&lt;00:00, 226.40it/s]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Analizando los resultados</span>
+</span></span><span style="display:flex;"><span>pm<span style="color:#f92672">.</span>traceplot(trace, varnames<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;p&#39;</span>], lines<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;p&#39;</span>:<span style="color:#ae81ff">.8</span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/BayesInf_files/BayesInf_10_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="848"
+    height="136"
+  />
+
+
+
+
+
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Información resumen. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Vemos que hay un 95% de probabilidades de que el valor de sesgo este entre</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .706 y .864</span>
+</span></span><span style="display:flex;"><span>pm<span style="color:#f92672">.</span>summary(trace)
+</span></span></code></pre></div><pre><code>p:
+
+  Mean             SD               MC Error         95% HPD interval
+  -------------------------------------------------------------------
+  
+  0.789            0.040            0.001            [0.706, 0.864]
+
+  Posterior quantiles:
+  2.5            25             50             75             97.5
+  |--------------|==============|==============|--------------|
+  
+  0.701          0.764          0.791          0.816          0.861
+</code></pre>
+<p>Como vemos el modelo nos indica que la moneda parece tener un claro sesgo hacia cara.</p>
+<h4 id="el-problema-de-la-hierba-mojada">El problema de la hierba mojada<a href="#el-problema-de-la-hierba-mojada" class="post-heading__anchor" aria-hidden="true">#</a>
+</h4>
+<p>Supongamos que hay dos eventos los cuales pueden causar que la hierba esté húmeda: que el rociador esté activado o que esté lloviendo. También supongamos que la lluvia tiene un efecto directo sobre el uso del rociador (usualmente cuando llueve el rociador se encuentra apagado). Entonces la situación puede ser modelada con la siguiente <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red bayesiana</a>.</p>
+<img alt="Red Bayesiana" title="Modelo Hierba mojada" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Red_Bayesiana_Simple.png" >
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Problema de la hierba mojada</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://es.wikipedia.org/wiki/Red_bayesiana#Ejemplo</span>
+</span></span><span style="display:flex;"><span>niter <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>  <span style="color:#75715e"># 10000</span>
+</span></span><span style="display:flex;"><span>tune <span style="color:#f92672">=</span> <span style="color:#ae81ff">5000</span>  <span style="color:#75715e"># 5000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>modelo <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Model()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> modelo:
+</span></span><span style="display:flex;"><span>    tv <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    lluvia <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Bernoulli(<span style="color:#e6db74">&#39;lluvia&#39;</span>, <span style="color:#ae81ff">0.2</span>, shape<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, testval<span style="color:#f92672">=</span>tv)
+</span></span><span style="display:flex;"><span>    rociador_p <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Deterministic(<span style="color:#e6db74">&#39;rociador_p&#39;</span>, 
+</span></span><span style="display:flex;"><span>                                  pm<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>switch(lluvia, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.40</span>))
+</span></span><span style="display:flex;"><span>    rociador <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Bernoulli(<span style="color:#e6db74">&#39;rociador&#39;</span>, rociador_p, shape<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, testval<span style="color:#f92672">=</span>tv)
+</span></span><span style="display:flex;"><span>    hierba_mojada_p <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Deterministic(<span style="color:#e6db74">&#39;hierba_mojada_p&#39;</span>, 
+</span></span><span style="display:flex;"><span>                pm<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>switch(lluvia, pm<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>switch(rociador, <span style="color:#ae81ff">0.99</span>, <span style="color:#ae81ff">0.80</span>),
+</span></span><span style="display:flex;"><span>                               pm<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>switch(rociador, <span style="color:#ae81ff">0.90</span>, <span style="color:#ae81ff">0.0</span>)))
+</span></span><span style="display:flex;"><span>    hierba_mojada <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Bernoulli(<span style="color:#e6db74">&#39;hierba_mojada&#39;</span>, hierba_mojada_p,
+</span></span><span style="display:flex;"><span>                             observed<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>]), shape<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    trace <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>sample(<span style="color:#ae81ff">20000</span>, 
+</span></span><span style="display:flex;"><span>                      step<span style="color:#f92672">=</span>[pm<span style="color:#f92672">.</span>BinaryGibbsMetropolis([lluvia, rociador])], 
+</span></span><span style="display:flex;"><span>                      tune<span style="color:#f92672">=</span>tune, random_seed<span style="color:#f92672">=</span><span style="color:#ae81ff">124</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pm.traceplot(trace)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dictionary <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;lluvia&#39;</span>: [<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> ii[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> trace[<span style="color:#e6db74">&#39;lluvia&#39;</span>]<span style="color:#f92672">.</span>tolist() ],
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;rociador&#39;</span>: [<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> ii[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> trace[<span style="color:#e6db74">&#39;rociador&#39;</span>]<span style="color:#f92672">.</span>tolist() ],
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;rociador_p&#39;</span>: [ii[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> trace[<span style="color:#e6db74">&#39;rociador_p&#39;</span>]<span style="color:#f92672">.</span>tolist()],
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;hierba_mojada_p&#39;</span>: [ii[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> trace[<span style="color:#e6db74">&#39;hierba_mojada_p&#39;</span>]<span style="color:#f92672">.</span>tolist()],
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(dictionary)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p_lluvia <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;lluvia&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)]<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">/</span> df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Probabilidad de que la hierba este mojada por la lluvia: </span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">.</span>format(p_lluvia))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p_rociador <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;rociador&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)]<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">/</span> df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Probabilidad de que la hierba este mojada por el rociador: </span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">.</span>format(p_rociador))
+</span></span></code></pre></div><pre><code> [-----------------100%-----------------] 20000 of 20000 complete in 8.8 sec
+Probabilidad de que la hierba este mojada por la lluvia: 0.38355
+Probabilidad de que la hierba este mojada por el rociador: 0.62105
+</code></pre>
+<p>De acuerdo a los resultados de la <a
+  href="https://es.wikipedia.org/wiki/Red_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red bayesiana</a>, si vemos que la hierba esta mojada, la probabilidad de que este lloviendo es alrededor del 38%.</p>
+<h2 id="clasificador-bayes-ingenuo">Clasificador Bayes ingenuo<a href="#clasificador-bayes-ingenuo" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Uno de los clasificadores más utilizados en <a
+  href="https://relopezbriega.github.io/category/machine-learning.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Machine Learning</a> por su simplicidad y rapidez, es el <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Clasificador Bayes ingenuo</a>. El cual es una técnica de clasificación supervisada basada en el <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema de Bayes</a> que asume que existe una <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a> entre los <em>atributos</em>. En términos simples, un <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Clasificador Bayes ingenuo</a> asume que la presencia de una característica particular en una clase no está relacionada con la presencia de cualquier otra característica. Por ejemplo, una fruta puede considerarse como una manzana si es roja, redonda y de aproximadamente 9 cm de diámetro. Incluso si estas características dependen unas de otras o de la existencia de otras características, todas estas propiedades contribuyen independientemente a la probabilidad de que esta fruta sea una manzana. Se lo llama <em>ingenuo</em> ya que asumir <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a> absoluta entre todos los atributos, no es algo que se suela dar en la realidad.
+El modelo <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Bayes ingenuo</a> es fácil de construir y particularmente útil para conjuntos de datos muy grandes. A pesar de su simplicidad y de su <em>irealista</em> postulado de <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a>, este clasificador se ha mostrado muy efectivo y se suele utilizar como el estándar para evaluar el rendimiento de otros modelos de <a
+  href="https://relopezbriega.github.io/category/machine-learning.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Machine Learning</a>.</p>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Clasificador Bayes ingenuo</a> se utiliza en múltiples escenarios de la vida real, tales como:</p>
+<ul>
+<li><strong>Clasificación de texto:</strong> Es uno de los algoritmos conocidos más exitosos cuando se trata de la clasificación de documentos de texto, es decir, si un documento de texto pertenece a una o más categorías (clases).</li>
+<li><strong>Detección de spam:</strong> Es un ejemplo de clasificación de texto. Se ha convertido en un mecanismo popular para distinguir el correo electrónico spam del correo electrónico legítimo.</li>
+<li><strong>Análisis de sentimientos:</strong> Puede ser utilizado para analizar el tono de tweets, comentarios y revisiones, ya sean negativos, positivos o neutrales.</li>
+<li><strong>Sistema de Recomendaciones:</strong> El algoritmo <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Bayes ingenuo</a> en combinación con el filtrado colaborativo se utiliza para construir sistemas de recomendación híbridos que ayudan a predecir si un usuario desea un recurso determinado o no.</li>
+</ul>
+<p>Veamos un ejemplo con la ayuda de <a
+  href="https://scikit-learn.org/stable/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Scikit-Learn</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo Naive Bayes usuando iris dataset</span>
+</span></span><span style="display:flex;"><span>iris <span style="color:#f92672">=</span> datasets<span style="color:#f92672">.</span>load_iris()
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> iris<span style="color:#f92672">.</span>data
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> iris<span style="color:#f92672">.</span>target
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dividir los datos en entrenamiento y evaluación</span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.7</span>, 
+</span></span><span style="display:flex;"><span>                                                    random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># inicializar el clasificador Naive Bayes</span>
+</span></span><span style="display:flex;"><span>bayes_ingenuo <span style="color:#f92672">=</span> GaussianNB()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># predicción </span>
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> bayes_ingenuo<span style="color:#f92672">.</span>fit(X_train, y_train)<span style="color:#f92672">.</span>predict(X_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Matriz de confusión</span>
+</span></span><span style="display:flex;"><span>cnf_matrix <span style="color:#f92672">=</span> confusion_matrix(y_test, y_pred)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Cantidad de errores de clasificación sobre un total de </span><span style="color:#e6db74">{0}</span><span style="color:#e6db74"> casos: </span><span style="color:#e6db74">{1}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">.</span>format(y_test<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>],(y_test <span style="color:#f92672">!=</span> y_pred)<span style="color:#f92672">.</span>sum()))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Efectividad del algoritmo: </span><span style="color:#e6db74">{0: .2f}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">.</span>format(<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> (y_test <span style="color:#f92672">!=</span> y_pred)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>y_test<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Graficando la matriz de confusión</span>
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(cnf_matrix<span style="color:#f92672">.</span>T, square<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;d&#39;</span>, cbar<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Clase verdadera&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Clase predecida&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Matriz de Confusión&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><pre><code>Cantidad de errores de clasificación sobre un total de 105 casos: 7
+Efectividad del algoritmo:  0.93
+</code></pre>
+<p>
+
+
+
+  
+  
+  <img
+    src="/BayesInf_files/BayesInf_15_1.png"
+    alt="png"
+    
+    loading="lazy"
+    width="261"
+    height="275"
+  />
+
+
+
+
+
+
+</p>
+<p>En este sencillo ejemplo, podemos ver como el <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Clasificador Bayes ingenuo</a> ha clasificado correctamente la mayoría de los casos del dataset <a
+  href="https://es.wikipedia.org/wiki/Iris_flor_conjunto_de_datos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>iris</a>, obteniendo un efectividad del 93 %.</p>
+<p>Debido a que los <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>clasificadores bayesianos ingenuos</a> hacen suposiciones tan estrictas acerca de los datos, generalmente no funcionarán tan bien con modelos más complicados. Dicho esto, tienen varias ventajas:</p>
+<ul>
+<li>Son extremadamente rápidos tanto para entrenamiento como para predicción</li>
+<li>Proporcionan una predicción probabilística directa</li>
+<li>A menudo son muy fácilmente interpretables</li>
+<li>Tienen muy pocos parámetros que necesiten optimizarse.</li>
+</ul>
+<p>Estas ventajas significan que un <a
+  href="https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>clasificador bayesiano ingenuo</a> es a menudo una buena opción como un modelo de clasificación inicial. Si obtenemos resultados satisfactorios, entonces tenemos un clasificador muy rápido, y muy fácil de interpretar. Si no funciona bien, entonces podemos comenzar a explorar modelos más sofisticados.</p>
+<p>Aquí concluye esta introducción a la <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a>; como vemos es una teoría sumamente fascinante con serias implicancias filosóficas. La <a
+  href="https://es.wikipedia.org/wiki/Teorema_de_Bayes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teoría Bayesiana</a> es mucho más que un simple teorema de probabilidad, es una lógica para razonar sobre el amplio espectro de la vida que se encuentra en las áreas grises entre la <em>verdad absoluta</em> y la <em>incertidumbre total</em>. A menudo tenemos información sobre sólo una pequeña parte de lo que nos preguntamos.
+Sin embargo, todos queremos predecir algo basado en nuestras experiencias pasadas; y adaptamos nuestras creencias a medida que adquirimos nueva información. La <a
+  href="https://es.wikipedia.org/wiki/Inferencia_bayesiana"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>inferencia bayesiana</a> nos proporciona una forma de pensar racionalmente sobre el mundo que nos rodea.</p>
+<p>Saludos!</p>
+<p><em>Este post fue escrito utilizando <a
+  href="https://jupyter.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Jupyter notebook</a>. Pueden descargar este <a
+  href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/BayesInf.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>notebook</a> o ver su version estática en <a
+  href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/BayesInf.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>nbviewer</a>.</em></p>
+
+    </div>
+
+    
+
+    
+  </article>
+
+        </div>
+        <div class="sidebar">
+  
+
+  
+  
+    <aside class="bio">
+      
+
+  <div class="jr__item jr-basics__item">
+    
+  <div class="jr-basics__image">
+    <img
+      src="https://0.gravatar.com/avatar/45973a2c27d1bafade36a201a13d784ad93ec68fbeb70d7c44c02b4ba6eaeb40?size=256"
+      alt="Picture of Raul E. Lopez Briega"
+      width="250"
+      height="250"
+    />
+  </div>
+
+
+
+    
+      <div class="jr-basics__name">Raul E. Lopez Briega</div>
+    
+
+    
+      <div class="jr-basics__label">Business Analyst</div>
+    
+
+    
+
+    
+
+    
+
+    
+      <div class="jr-basics__summary">Profesional en Contabilidad y Administración con amplia experiencia en tecnologías de la información. Especializado en integración de procesos contables y financieros con herramientas IT, y manejo de sistemas ERP como JD Edwards y SAP. Reconocido por mi enfoque en la mejora continua, liderazgo en proyectos y compromiso con la excelencia en resultados. Puedo combinar perfectamente el conocimiento contable y financiero con el conocimiento técnico funcional propio de las herramientas informáticas.</div>
+    
+
+    
+      
+
+      
+
+      
+        <div class="jr-basics__location-city">Buenos Aires, ARG</div>
+      
+
+      
+
+      
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--col">
+        
+          
+
+<a href="https://github.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+  </div>
+
+  
+    <div class="jr-basics__profile-username">relopezbriega</div>
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--row">
+        
+          
+
+<a href="https://x.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://www.linkedin.com/in/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://gravatar.com/raulezequiellopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gravatar</title><path d="M12 0c-1.326 0-2.4 1.074-2.4 2.4v8.4c0 1.324 1.074 2.398 2.4 2.398s2.4-1.074 2.4-2.398V5.21c2.795.99 4.799 3.654 4.799 6.789 0 3.975-3.225 7.199-7.199 7.199S4.801 15.975 4.801 12c0-1.989.805-3.789 2.108-5.091.938-.938.938-2.458 0-3.396s-2.458-.938-3.396 0C1.344 5.686 0 8.686 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+  </div>
+
+
+
+      
+        <hr />
+      
+    </aside>
+  
+
+  
+    <aside>
+      
+
+
+  
+  
+  
+  
+  
+  
+
+
+  <div class="tag-cloud">
+    
+      
+      
+      
+      <a
+        href="/tags/algebra"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >algebra</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/analisis-de-datos"
+        style="font-size:1.803247508777645rem"
+        class="tag-cloud__tag"
+        >analisis de datos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/batman"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >batman</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bayes"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bayes</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/binario"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >binario</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bit"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bit</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/boosting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >boosting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/calculo"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >calculo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/caos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >caos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejidad"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/conjuntos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >conjuntos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/decimales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >decimales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/deep-learning"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >deep learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivada"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >derivada</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivadas-parciales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >derivadas parciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/distribuciones"
+        style="font-size:1.3584490740351578rem"
+        class="tag-cloud__tag"
+        >distribuciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/ecuaciones-diferenciales"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >ecuaciones diferenciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/entropia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >entropia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/estadistica"
+        style="font-size:1.6641503679521246rem"
+        class="tag-cloud__tag"
+        >estadistica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/falacias"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >falacias</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/finanazas"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >finanazas</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/fractales"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >fractales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/funcional"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >funcional</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/futbol"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >futbol</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/incertidumbre"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >incertidumbre</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inferencia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inferencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/infinito"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >infinito</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/informacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >informacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/integral"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >integral</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >inteligencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia-artificial"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inteligencia artificial</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/lenguaje-natural"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >lenguaje natural</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limite"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limite</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limites"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limites</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logaritmo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logaritmo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logica"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/machine-learning"
+        style="font-size:1.7008605560822845rem"
+        class="tag-cloud__tag"
+        >machine learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/map-reduce"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >map-reduce</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matematica"
+        style="font-size:1.8154716779921016rem"
+        class="tag-cloud__tag"
+        >matematica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matplotlib"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >matplotlib</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matrices"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >matrices</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/mcmc"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >mcmc</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/metropolis"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >metropolis</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/modelos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >modelos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/monte-carlo"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >monte carlo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/numeros"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >numeros</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/optimizacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >optimizacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/overfitting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >overfitting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pensamiento"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >pensamiento</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pi"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >pi</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/probabilidad"
+        style="font-size:1.4481127759640935rem"
+        class="tag-cloud__tag"
+        >probabilidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion"
+        style="font-size:1.82723444614138rem"
+        class="tag-cloud__tag"
+        >programacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion-lineal"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >programacion lineal</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/python"
+        style="font-size:1.9932970241832564rem"
+        class="tag-cloud__tag"
+        >python</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redes-neuronales"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >redes neuronales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redundancia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >redundancia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/regex"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >regex</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/seaborn"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >seaborn</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/series-de-tiempo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >series de tiempo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sistemas-dinamicos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sistemas dinamicos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sobreajuste"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sobreajuste</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >tensores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensorflow"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >tensorflow</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/vectores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >vectores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/visualizaciones"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >visualizaciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/xgboost"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >xgboost</a
+      >
+    
+  </div>
+
+
+    </aside>
+  
+</div>
+
+      </main>
+      <footer>
+  <div class="copyright">
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" ></script>
+<script src="/js/flexsearch.js" ></script>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

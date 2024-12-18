@@ -1,0 +1,3970 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-300.woff2"
+  crossorigin="anonymous"
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+  
+  
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+  
+
+
+
+
+<title>Sistemas dinámicos, Complejidad y Caos con Python</title>
+
+<meta
+  name="description"
+  content="Sistemas dinámicos, Complejidad y Caos con Python. Introducción. ¿Qué es un sistema complejo?. ¿Qué es la teoría del caos?. El efecto mariposa. El mapa logístico. El extraño atractor de Lorenz. El juego del caos de Barnsley."
+/>
+
+<link rel="canonical" href="http://localhost:1313/blog/2020/03/26/sistemas-din%C3%A1micos-complejidad-y-caos-con-python/" />
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sistemas dinámicos, Complejidad y Caos con Python">
+  <meta name="twitter:description" content="Sistemas dinámicos, Complejidad y Caos con Python. Introducción. ¿Qué es un sistema complejo?. ¿Qué es la teoría del caos?. El efecto mariposa. El mapa logístico. El extraño atractor de Lorenz. El juego del caos de Barnsley.">
+
+<meta property="og:url" content="http://localhost:1313/blog/2020/03/26/sistemas-din%C3%A1micos-complejidad-y-caos-con-python/">
+  <meta property="og:site_name" content="Raul E. Lopez Briega">
+  <meta property="og:title" content="Sistemas dinámicos, Complejidad y Caos con Python">
+  <meta property="og:description" content="Sistemas dinámicos, Complejidad y Caos con Python. Introducción. ¿Qué es un sistema complejo?. ¿Qué es la teoría del caos?. El efecto mariposa. El mapa logístico. El extraño atractor de Lorenz. El juego del caos de Barnsley.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-03-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-03-26T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Sistemas Dinamicos">
+    <meta property="article:tag" content="Incertidumbre">
+    <meta property="article:tag" content="Matematica">
+    <meta property="article:tag" content="Caos">
+    <meta property="article:tag" content="Fractales">
+
+
+  <meta itemprop="name" content="Sistemas dinámicos, Complejidad y Caos con Python">
+  <meta itemprop="description" content="Sistemas dinámicos, Complejidad y Caos con Python. Introducción. ¿Qué es un sistema complejo?. ¿Qué es la teoría del caos?. El efecto mariposa. El mapa logístico. El extraño atractor de Lorenz. El juego del caos de Barnsley.">
+  <meta itemprop="datePublished" content="2020-03-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2020-03-26T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2883">
+  <meta itemprop="keywords" content="Python,Sistemas Dinamicos,Incertidumbre,Matematica,Caos,Fractales">
+
+
+
+
+
+
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SZHL0BZZJ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6SZHL0BZZJ');
+        }
+      </script>
+    
+  
+
+
+
+
+  
+  
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+
+<style>
+   
+  /*
+  Critical CSS for above-the-fold content, delivered inline to increase first
+  paint performance
+*/
+
+/*! purgecss start ignore */
+
+/* Typefaces */
+
+/* roboto-slab-100normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Roboto Slab Thin '),
+    local('Roboto Slab-Thin'),
+    url('/fonts/roboto-slab-latin-100.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-100.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-200normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Roboto Slab Extra Light '),
+    local('Roboto Slab-Extra Light'),
+    url('/fonts/roboto-slab-latin-200.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-200.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-300normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Roboto Slab Light '),
+    local('Roboto Slab-Light'),
+    url('/fonts/roboto-slab-latin-300.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-400normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Roboto Slab Regular '),
+    local('Roboto Slab-Regular'),
+    url('/fonts/roboto-slab-latin-400.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-500normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Roboto Slab Medium '),
+    local('Roboto Slab-Medium'),
+    url('/fonts/roboto-slab-latin-500.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-600normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Roboto Slab SemiBold '),
+    local('Roboto Slab-SemiBold'),
+    url('/fonts/roboto-slab-latin-600.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-700normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Roboto Slab Bold '),
+    local('Roboto Slab-Bold'),
+    url('/fonts/roboto-slab-latin-700.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-800normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Roboto Slab ExtraBold '),
+    local('Roboto Slab-ExtraBold'),
+    url('/fonts/roboto-slab-latin-800.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-800.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-900normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Roboto Slab Black '),
+    local('Roboto Slab-Black'),
+    url('/fonts/roboto-slab-latin-900.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-900.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-300normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Fira Code Light '),
+    local('Fira Code-Light'),
+    url('/fonts/fira-code-latin-300.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-400normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Fira Code Regular '),
+    local('Fira Code-Regular'),
+    url('/fonts/fira-code-latin-400.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-500normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Fira Code Medium '),
+    local('Fira Code-Medium'),
+    url('/fonts/fira-code-latin-500.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-600normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Fira Code SemiBold '),
+    local('Fira Code-SemiBold'),
+    url('/fonts/fira-code-latin-600.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-700normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Fira Code Bold '),
+    local('Fira Code-Bold'),
+    url('/fonts/fira-code-latin-700.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* Normalize */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*! purgecss end ignore */
+
+/*! CC BY-SA 3.0 License | https://stackoverflow.com/a/36118384/1154965 */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Default license header for non-vendor CSS source code that follows */
+
+/*! MIT License | github.com/schnerring/hugo-theme-gruvbox */
+
+/*
+  Bootstrap 5 breakpoints
+  See: https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints
+*/
+
+:root[data-theme="light"] {
+  --bg: var(--bg0);
+  --bg0: #fbf1c7;
+  --bg0_h: #f9f5d7;
+  --bg0_s: #f2e5bc;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+  --fg: var(--fg1);
+  --fg0: #282828;
+  --fg1: #3c3836;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #9d0006;
+  --green1: #98971a;
+  --green2: #797403;
+  --yellow1: #d79921;
+  --yellow2: #b57614;
+  --blue1: #458588;
+  --blue2: #076678;
+  --purple1: #b16286;
+  --purple2: #8f3f71;
+  --aqua1: #689d6a;
+  --aqua2: #427b58;
+  --orange1: #d65d0e;
+  --orange2: #af3a03;
+}
+
+[data-theme="light"]:root .light--hidden {
+    display: none;
+  }
+
+:root[data-theme="dark"] {
+  --bg: var(--bg0);
+  --bg0: #282828;
+  --bg0_h: #1d2021;
+  --bg0_s: #32302f;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+  --fg: var(--fg1);
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #fb4934;
+  --green1: #98971a;
+  --green2: #b8bb26;
+  --yellow1: #d79921;
+  --yellow2: #fabd2f;
+  --blue1: #458588;
+  --blue2: #83a598;
+  --purple1: #b16286;
+  --purple2: #d3869b;
+  --aqua1: #689d6a;
+  --aqua2: #8ec07c;
+  --orange1: #d65d0e;
+  --orange2: #fe8019;
+}
+
+[data-theme="dark"]:root .dark--hidden {
+    display: none;
+  }
+
+:root {
+  
+  --primary: var(--blue1);
+  --primary-alt: var(--blue2);
+}
+
+:root {
+  --font-monospace: "Fira Code", "Lucida Console", Monaco, monospace;
+  --font-sans-serif: Verdana, Helvetica, sans-serif;
+  --font-serif: "Roboto Slab", Georgia, serif;
+}
+
+html {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.675;
+  word-wrap: break-word;
+}
+
+strong {
+  letter-spacing: 0.35px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.link--external::after {
+  /* 2009 = Thin Space */
+  content: "\2009↗";
+}
+
+img,
+video {
+  border: 2px solid var(--bg1);
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+
+*::selection {
+  color: var(--fg0);
+  background: var(--bg4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg0);
+  font-family: var(--font-monospace);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+:is(h1,h2,h3,h4,h5,h6) code {
+    font-size: 1em;
+  }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid var(--bg1);
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.875rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.375rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.375rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--bg1);
+  padding: 0.5rem;
+}
+
+hr {
+  border: none;
+  background: var(--bg1);
+  height: 1px;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+mark {
+  background: var(--yellow1);
+  color: var(--bg0);
+}
+
+abbr {
+  text-underline-offset: 0.2rem;
+}
+
+blockquote,
+code,
+kbd,
+mark,
+pre {
+  border-radius: 0.2rem;
+  padding: 0 0.2em;
+}
+
+pre code {
+  padding: 0;
+}
+
+blockquote,
+code,
+kbd,
+pre,
+th {
+  background: var(--bg1);
+}
+
+code,
+kbd,
+pre,
+th {
+  font-family: var(--font-monospace);
+}
+
+:is(code,kbd) code,:is(code,kbd) kbd {
+    background: var(--bg2);
+  }
+
+blockquote,
+pre {
+  padding: 1rem;
+}
+
+pre {
+  /* TODO is !important really needed because of Prism? */
+  background: var(--bg1) !important;
+  overflow: auto;
+}
+
+pre code {
+    background: none;
+  }
+
+blockquote,
+blockquote.twitter-tweet {
+  border-left: var(--primary-alt) 5px solid;
+  margin: 0.5rem 0;
+}
+
+:is(blockquote,blockquote.twitter-tweet) code {
+    background: var(--bg2);
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:first-of-type {
+    margin-top: 0;
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:last-of-type {
+    margin-bottom: 0;
+  }
+
+blockquote.twitter-tweet {
+  border-color: var(--blue2);
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+blockquote.twitter-tweet a {
+    color: var(--blue2);
+  }
+
+blockquote.twitter-tweet a:hover {
+    color: var(--blue1);
+    text-decoration: none !important;
+  }
+
+pre::-webkit-scrollbar {
+  height: 0.5rem;
+  scrollbar-width: auto;
+}
+
+pre::-webkit-scrollbar-track {
+  background: var(--bg2);
+  border-radius: 0.2rem;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--bg4);
+  border-radius: 0.2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+main {
+  align-items: start;
+  display: grid;
+  grid-area: main;
+  grid-template-areas: "empty content sidebar";
+  grid-template-columns: 1fr minmax(0, 650px) 4fr;
+}
+
+header {
+  background: var(--bg1);
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+main,
+footer {
+  margin: 0.5em 1.1em;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  grid-area: sidebar;
+  margin-top: 3rem;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (min-width: 992px) {
+
+.sidebar {
+    display: flex;
+}
+  }
+
+header {
+  display: grid;
+  font-family: var(--font-monospace);
+  font-size: 1.125rem;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: "heading search nav theme-toggle";
+  padding: 0.75rem;
+}
+
+.logo {
+  color: var(--fg0);
+  display: flex;
+  font-weight: 700;
+  grid-area: heading;
+}
+
+.logo:hover .logo__cursor {
+    animation: 1s blink infinite;
+    opacity: 1;
+  }
+
+.logo__chevron,
+.logo__cursor {
+  margin-left: 0.5rem;
+}
+
+.logo__cursor {
+  opacity: 0;
+}
+
+.logo__text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo__text {
+    display: block;
+  }
+}
+
+/*! purgecss start ignore */
+
+.search {
+  display: flex;
+  grid-area: search;
+  margin: 0 1rem;
+}
+
+#search__text {
+  border: 1px solid var(--bg2);
+  border-radius: 0.2rem;
+  background: var(--bg2);
+  caret-color: var(--fg);
+  color: var(--fg);
+  outline: none;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+#search__text:hover {
+    border-color: var(--bg3);
+  }
+
+#search__text:focus {
+    border-color: var(--bg4);
+  }
+
+#search__text::placeholder {
+    color: var(--fg3);
+  }
+
+#search__text[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+#search__suggestions {
+  background: var(--bg);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.5rem 1rem var(--bg1);
+  font-family: var(--font-serif);
+  left: 0;
+  margin-top: 2rem;
+  position: absolute;
+  width: 95vw;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .search {
+    position: relative;
+  }
+
+  #search__suggestions {
+    width: 60vw;
+  }
+}
+
+.search__suggestions--hidden {
+  display: none;
+}
+
+.search__suggestion-item {
+  border-bottom: 1px dashed var(--bg2);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.search__suggestion-item:focus,.search__suggestion-item:focus-visible,.search__suggestion-item:hover {
+    background: var(--bg1);
+    cursor: pointer;
+    outline: none;
+  }
+
+.search__suggestion-item:last-child {
+    border: none;
+  }
+
+.search__suggestion-title,
+.search__suggestion-description {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.search__suggestion-title {
+  font-weight: 700;
+}
+
+.search__suggestion-description {
+  border-left: 1px solid var(--bg2);
+}
+
+.search__no-results {
+  padding: 0.75rem;
+}
+
+/*! purgecss end ignore */
+
+.theme__toggle {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--yellow1);
+  cursor: pointer;
+  display: flex;
+  grid-area: theme-toggle;
+  margin: 0 1rem;
+}
+
+.theme__toggle:hover {
+    color: var(--yellow2);
+  }
+
+.theme__toggle svg {
+    height: 28px;
+    width: 28px;
+  }
+
+/* TODO: simplify deep nesting */
+
+nav#menu {
+  align-items: center;
+  display: flex;
+  grid-area: nav;
+  justify-content: flex-end;
+}
+
+nav#menu .menu__item {
+    color: var(--fg);
+  }
+
+:is(nav#menu .menu__item):hover {
+      color: var(--fg3);
+      cursor: pointer;
+    }
+
+nav#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+nav#menu ul.menu--horizontal {
+    align-items: center;
+    display: none;
+  }
+
+:is(nav#menu ul.menu--horizontal) li {
+      display: inline-block;
+      margin: 0 0.75rem;
+    }
+
+@media (min-width: 768px) {
+
+nav#menu ul.menu--horizontal {
+      display: flex;
+  }
+    }
+
+nav#menu ul.menu--vertical {
+    background: var(--fg0);
+    bottom: 0;
+    margin: 0;
+    padding: 3rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+    width: 50%;
+    z-index: 10;
+  }
+
+:is(nav#menu ul.menu--vertical) .menu__item {
+      color: var(--bg1);
+    }
+
+:is(:is(nav#menu ul.menu--vertical) .menu__item):hover {
+        color: var(--bg4);
+      }
+
+nav#menu .menu__burger {
+    display: flex;
+    height: 24px;
+    width: 24px;
+  }
+
+:is(nav#menu .menu__burger) > * {
+      position: absolute;
+    }
+
+:is(nav#menu .menu__burger) svg {
+      width: inherit;
+      z-index: 20;
+      height: inherit;
+    }
+
+:is(:is(nav#menu .menu__burger) svg) line {
+        transition-duration: 0.5s;
+        transition-property: stroke, opacity, transform;
+        transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(1) {
+        transform-origin: center 6px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(2) {
+        transform-origin: center 12px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(3) {
+        transform-origin: center 18px;
+      }
+
+:is(nav#menu .menu__burger) input {
+      height: inherit;
+      opacity: 0;
+      width: inherit;
+      z-index: 30;
+    }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ ul.menu--vertical {
+          transform: none;
+        }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ svg {
+          stroke: var(--bg1);
+        }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(1) {
+            transform: translate(0, 6px) rotate(45deg);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(2) {
+            opacity: 0;
+            transform: scale(0.2);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(3) {
+            transform: translate(0, -6px) rotate(-45deg);
+          }
+
+@media (min-width: 768px) {
+
+nav#menu .menu__burger {
+      display: none;
+  }
+    }
+
+.sidebar {
+  font-family: var(--font-monospace);
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+}
+
+.sidebar hr {
+    margin: 1.5rem auto;
+  }
+
+.sidebar svg {
+    fill: var(--fg);
+  }
+
+.sidebar__heading {
+  font-size: 1.3rem;
+}
+
+aside.toc a {
+    color: var(--primary-alt);
+  }
+
+aside.toc a:hover {
+    color: var(--primary);
+  }
+
+aside.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+:is(aside.toc ul) ul {
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+
+:is(aside.toc ul) li {
+      line-height: 1.1;
+    }
+
+:is(:is(aside.toc ul) li) a {
+        display: block;
+        padding: 0.2rem 0;
+      }
+
+.jr-basics__image {
+  background: var(--bg1);
+  border: 2px solid var(--bg2);
+}
+
+.jr-basics__summary {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  margin: 0.75rem 0;
+}
+
+.jr-basics__profile a:hover {
+    color: var(--fg3);
+  }
+
+:is(.jr-basics__profile a:hover) svg {
+      fill: var(--fg3);
+    }
+
+.tag-cloud {
+  line-height: 1.1;
+  text-align: justify;
+}
+
+.tag-cloud__tag:hover {
+  color: var(--fg3);
+}
+
+.tag-cloud__tag--active {
+  text-decoration: underline;
+}
+
+.post,
+.content-section {
+  border-bottom: 2px dotted var(--bg1);
+  padding: 2rem 0;
+}
+
+.post figure,.post img:not(figure img),.post video:not(figure video) {
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+
+.post-header,
+.post-content__read-more {
+  font-family: var(--font-monospace);
+}
+
+.post-meta__author {
+  font-weight: 700;
+}
+
+.post-content {
+  margin: 1.3rem 0;
+}
+
+.post-content__read-more {
+  color: var(--primary-alt);
+  margin-top: 1.3rem;
+}
+
+:is(.post-header,.post-content) a {
+    color: var(--primary-alt);
+  }
+
+:is(.post-header,.post-content) a:hover {
+    color: var(--primary);
+  }
+
+.post-tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1rem 0;
+}
+
+.post-tag {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.post-tag::before {
+    content: "#";
+  }
+
+.post-heading__anchor {
+  display: none;
+}
+
+:is(h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover) .post-heading__anchor {
+    display: inline-block;
+  }
+
+.jr__item-meta {
+  flex-direction: column;
+}
+
+.jr__item-meta,
+.jr-basics__image,
+.jr-basics__item,
+.jr-basics__profile-icon,
+.jr-basics__profile-item {
+  align-items: center;
+  display: flex;
+}
+
+.jr-awards__title,
+.jr-certificates__name,
+.jr-education__area,
+.jr-projects__roles,
+.jr-publications__name,
+.jr-volunteer__position,
+.jr-work__position,
+.jr-basics__name {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.jr-basics__item {
+  flex-direction: column;
+  text-align: center;
+}
+
+.jr-basics__item hr {
+  margin: 1.5rem auto;
+}
+
+.jr-basics__image {
+  border-radius: 50%;
+  height: 250px;
+  justify-content: center;
+  overflow: hidden;
+  width: 250px;
+}
+
+.jr-basics__name,
+.jr-basics__label,
+.jr-basics__summary {
+  margin-top: 0.75rem;
+}
+
+.jr-basics__profile svg {
+  height: 24px;
+  width: 24px;
+}
+
+.jr-basics__profile,
+.jr-basics__profile-item {
+  display: flex;
+}
+
+.jr-basics__profile-item {
+  display: flex;
+  padding: 0.2rem;
+}
+
+.jr-basics__profile--col {
+  flex-direction: column;
+}
+
+.jr-basics__profile--row {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.jr-basics__profile-icon {
+  padding: 0 0.75rem;
+}
+
+.jr__item-meta {
+  font-family: var(--font-monospace);
+}
+
+.jr__item-meta {
+  align-items: start;
+  flex-flow: column;
+}
+
+@media (min-width: 768px) {
+  .jr__item-meta {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .jr__date,
+  .jr__date-range,
+  .jr-work__location {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+  .jr-awards__awarder,
+  .jr-publications__publisher,
+  .jr-education__institution,
+  .jr-volunteer__organization {
+    flex-basis: 100%;
+  }
+}
+
+.social-share {
+  align-items: center;
+  border-top: 2px dotted var(--bg1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 3rem 0;
+  padding-top: 3rem;
+}
+
+.social-share svg {
+    fill: var(--fg);
+    width: 24px;
+    height: 24px;
+  }
+
+.icon-tabler:is(.social-share svg) {
+      fill: none;
+      stroke: var(--fg);
+    }
+
+.social-share__item {
+  background: var(--bg1);
+  padding: 0.5rem;
+  display: flex;
+}
+
+/* Sticky social bar left
+
+@media (--xl) {
+  .social-share {
+    align-items: flex-start;
+    border-top: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 15%;
+    left: 0;
+  }
+
+  .social-share__heading {
+    display: none;
+  }
+
+  .social-share__item {
+    transition: padding 0.2s ease-in;
+
+    &:hover {
+      padding: 0.5rem 1rem;
+    }
+
+    & svg {
+      &:hover {
+        fill: var(--fg);
+      }
+
+      &.icon-tabler {
+        fill: none;
+
+        &:hover {
+          stroke: var(--fg);
+        }
+      }
+    }
+  }
+}
+
+*/
+
+   
+</style>
+
+<link
+  rel="preload"
+  href="/css/non-critical.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+
+
+<link
+  id="prism-dark"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-dark.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  
+/>
+
+
+<link
+  id="prism-light"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-light.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  disabled
+/>
+
+<noscript>
+  
+    <link
+      rel="stylesheet"
+      href="/prism-themes/prism-gruvbox-dark.css"
+      
+    />
+  
+
+
+  <link
+    rel="stylesheet"
+    href="/css/non-critical.css"
+    
+  />
+</noscript>
+
+
+  
+
+
+
+
+<script>
+  (() => {
+  // <stdin>
+  function getTheme() {
+    if (localStorage && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+  }
+  function setTheme(theme2) {
+    document.documentElement.setAttribute("data-theme", theme2);
+    const prismDark = document.getElementById("prism-dark");
+    const prismLight = document.getElementById("prism-light");
+    prismDark.toggleAttribute("disabled", theme2 === "light");
+    prismLight.toggleAttribute("disabled", theme2 === "dark");
+    localStorage.setItem("theme", theme2);
+  }
+  var theme = getTheme();
+  if (theme) setTheme(theme);
+  function toggleTheme(e) {
+    const theme2 = e.currentTarget.classList.contains("light--hidden") ? "light" : "dark";
+    setTheme(theme2);
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleButtons = document.querySelectorAll(".theme__toggle");
+    toggleButtons.forEach((btn) => {
+      btn.addEventListener("click", toggleTheme);
+    });
+  });
+})();
+
+</script>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#282828" />
+<meta name="msapplication-TileColor" content="#282828" />
+<meta name="theme-color" content="#282828" />
+
+
+
+  
+  
+
+</head>
+
+  <body>
+    <div class="layout">
+      <header>
+  <a
+    class="logo"
+    href="/"
+  >
+    
+      <div class="logo__text">relopezbriega</div>
+    
+    <div class="logo__chevron">></div>
+    <div class="logo__cursor">█</div>
+  </a>
+
+  <div class="search">
+    <input
+      id="search__text"
+      type="search"
+      placeholder="Buscar..."
+      aria-label="Search"
+      autocomplete="off"
+    />
+    <div id="search__suggestions" class="search__suggestions--hidden"></div>
+  </div>
+
+  <nav id="menu">
+    <ul class="menu--horizontal">
+      
+        <li class="menu__item">
+          <a href="/blog">Articulos</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/conversor-fecha-juliana">Conversor-Juliana</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="https://iaarbook.github.io/">Libro</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/cv">CV</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/contacto">Contacto</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/acerca">Acerca</a>
+        </li>
+      
+    </ul>
+
+    <div class="menu__burger">
+      
+      <input class="menu__item" type="checkbox" aria-label="Open main menu" />
+
+      
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+
+
+
+      <ul class="menu--vertical">
+        
+          <li>
+            <a class="menu__item" href="/blog">Articulos</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/conversor-fecha-juliana">Conversor-Juliana</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="https://iaarbook.github.io/">Libro</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/cv">CV</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/contacto">Contacto</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/acerca">Acerca</a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <button class="theme__toggle light--hidden" aria-label="Toggle light mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-sun"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+  <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+</svg>
+
+
+  </button>
+
+  <button class="theme__toggle dark--hidden" aria-label="Toggle dark mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+</svg>
+
+
+  </button>
+</header>
+
+      <main>
+        <div class="content">
+          
+  <article class="post">
+    <div class="post-header">
+      <h1>Sistemas dinámicos, Complejidad y Caos con Python</h1>
+      <div class="post-meta"><span>2020-03-26</span><span> by </span><span class="post-meta__author">Raul E Lopez Briega</span>
+    <div class="post-tags">
+      <a class="post-tag" href="http://localhost:1313/tags/python">python</a><a class="post-tag" href="http://localhost:1313/tags/sistemas-dinamicos">sistemas&#8209;dinamicos</a><a class="post-tag" href="http://localhost:1313/tags/incertidumbre">incertidumbre</a><a class="post-tag" href="http://localhost:1313/tags/matematica">matematica</a><a class="post-tag" href="http://localhost:1313/tags/caos">caos</a><a class="post-tag" href="http://localhost:1313/tags/fractales">fractales</a>
+    </div>
+  
+
+  
+</div>
+
+    </div>
+
+    <div class="post-content">
+      <h1 id="sistemas-dinámicos-complejidad-y-caos-con-python">Sistemas dinámicos, Complejidad y Caos con Python<a href="#sistemas-din%c3%a1micos-complejidad-y-caos-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h1>
+<p><em>Esta notebook fue creada originalmente como un blog post por <a
+  href="/cv/"
+  
+  
+>Raúl E. López Briega</a> en <a
+  href="https://relopezbriega.github.io"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matemáticas, Analisis de datos y Python</a>. El contenido esta bajo la licencia BSD.</em></p>
+<img alt="Sistemas dinámicos, complejidad y caos" title="Sistemas dinámicos, complejidad y caos" src="https://relopezbriega.github.io/images/ComplexPy.jpg" width="80%" height="80%">
+<blockquote>
+<p>&ldquo;LLamamos <em>caos</em> al orden que todavía no comprendemos&rdquo;</p>
+</blockquote>
+<p><strong><a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Edward Lorenz</a></strong></p>
+<h2 id="introducción">Introducción<a href="#introducci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Vivimos en un mundo tan bello como complejo. El enfoque tradicional de la ciencia,que busca generalmente reducir a los sistemas complejos en cada una de sus partes, comprender cada parte, y luego entender todo el sistema, parece no ser suficiente. Cuando las partes comienzan a conectarse e interactuar entre sí, las bases científicas de este enfoque comienzan a fallar, y se torna casi imposible predecir el comportamiento del sistema. Los simples supuestos como la <a
+  href="https://es.wikipedia.org/wiki/Lineal#Sistemas_lineales"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>linealidad</a>, la <a href="https://es.wikipedia.org/wiki/Independencia_(probabilidad)">independencia</a>, o la <a
+  href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>distribución normal</a> parecen no ser de mucha utilidad a la hora de modelar los fenómenos incluso más sencillos del mundo que nos rodea. Es a partir de esta realidad, que nuevos enfoques se comenzaron a desarrollar y surgieron nuevos campos de estudio multidisciplinarios como los <a
+  href="https://es.wikipedia.org/wiki/Sistema_din%C3%A1mico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>sistemas dinámicos</a>, la <a
+  href="https://es.wikipedia.org/wiki/Complejidad"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>complejidad</a>, o la <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teoría del caos</a>.</p>
+<h2 id="qué-es-un-sistema-complejo">¿Qué es un sistema complejo?<a href="#qu%c3%a9-es-un-sistema-complejo" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Es difícil definir rigurosamente que es un <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistema complejo</a>, podemos decir que es un campo de investigación interdisciplinario que busca explicar cómo un gran número de entidades relativamente simples (las cuales generalmente se denominan <em>agentes</em>) se organizan, sin el beneficio de ningún controlador central, en un todo colectivo que crea patrones, usa información y, en algunos casos, evoluciona y aprende. Es el caso típico en que <em><strong>el todo es mucho más que la suma de sus partes</strong></em>. Aunque no existe una buena definición de que es un  <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistema complejo</a>, si podemos describir algunas de las características principales que poseen estos sistemas, como ser:</p>
+<ul>
+<li>
+<p><strong>El sistema contiene una colección de muchos <em>agentes</em> que interactúan.</strong> Las interacciones entre estos <em>agentes</em> pueden surgir porque están físicamente cerca el uno del otro, o porque son miembros de algún tipo de grupo, o porque comparten alguna información común. En la medida en que los <em>agentes</em> están vinculados entre sí a través de sus interacciones, también se puede pensar que forman parte de una <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_grafos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>red o grafo</a>. Por lo que el <a
+  href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_redes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>análisis de redes</a> es una herramienta importante para comprender estos sistemas.</p>
+</li>
+<li>
+<p><strong>El comportamiento de estos <em>agentes</em> se ve afectado por una memoria o <a
+  href="https://es.wikipedia.org/wiki/Realimentaci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>retroalimentación</a>.</strong> Esto significa que algo del pasado afecta algo en el presente, o que algo que sucede en un lugar afecta lo que está sucediendo en otro, en otras palabras, una especie de efecto de arrastre. El resultado neto de que todos tengan tal memoria puede ser que el sistema como un todo también recuerde. Por lo tanto, un <em>patrón o secuencia global</em> particular puede manifestarse en el sistema.</p>
+</li>
+<li>
+<p><strong>Los <em>agentes</em> pueden adaptar sus estrategias de acuerdo a su historia.</strong> Esto simplemente significa que un <em>agente</em> puede adaptar su comportamiento por sí mismo, con la esperanza de mejorar su rendimiento.</p>
+</li>
+<li>
+<p><strong>El sistema es típicamente <em>abierto</em>.</strong> Es decir, que el sistema puede ser influenciado por su entorno.</p>
+</li>
+</ul>
+<p>Así mismo, en el comportamiento característico de los <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistemas complejos</a>, podemos observar los siguientes rasgos:</p>
+<ul>
+<li>
+<p><strong>El sistema parece estar <em>vivo</em>.</strong> El sistema evoluciona de una manera no trivial y, a menudo complicada, impulsada por una <a
+  href="https://es.wikipedia.org/wiki/Ecolog%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>ecología</a> de <em>agentes</em> que interactúan y se adaptan bajo la influencia de la <em>retroalimentación</em>.</p>
+</li>
+<li>
+<p><strong>El sistema exhibe fenómenos <em>emergentes</em> que generalmente son sorprendentes y pueden ser extremos.</strong> En terminología científica, el sistema está lejos de alcanzar un <em>equilibrio</em>. Esto básicamente significa que cualquier cosa puede suceder, y si se espera lo suficiente, generalmente lo hará. Tales fenómenos generalmente son inesperados en términos de cuándo surgen, de ahí su aspecto de sorpresa. Pero el sistema también tenderá a exhibir fenómenos emergentes que a su vez son sorprendentes en el sentido de que no podrían haber sido predichos en base al conocimiento de las propiedades de los <em>agentes</em> individuales.</p>
+</li>
+<li>
+<p><strong>Los fenómenos emergentes suelen surgir en ausencia de cualquier tipo de <em>mano invisible</em> o controlador central.</strong> En otras palabras, un <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistema complejo</a> puede evolucionar de una manera complicada por sí mismo. Por esta razón, a menudo se considera que los <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistemas complejos</a> son mucho más que la suma de sus partes.</p>
+</li>
+<li>
+<p><strong>El sistema muestra una mezcla complicada de comportamiento ordenado y desordenado.</strong> De manera más general, todos los <a
+  href="https://es.wikipedia.org/wiki/Sistema_complejo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Sistemas complejos</a> parecen poder moverse entre el <em>orden</em> y el <em>desorden</em> por su propia cuenta.</p>
+</li>
+</ul>
+<h2 id="qué-es-la-teoría-del-caos">¿Qué es la teoría del caos?<a href="#qu%c3%a9-es-la-teor%c3%ada-del-caos" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>La <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teoría del caos</a>, más que una teoría, es un <em>paradigma</em> que supuso en su momento una gran revolución científica, al reflejar que muchos sistemas que eran considerados <a
+  href="https://es.wikipedia.org/wiki/Determinismo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>deterministas</a> y previsibles tenían severos límites en dicha previsibilidad. Es decir, que no eran tan útiles como se creía a la hora de predecir eventos futuros. Iniciada por <a
+  href="https://es.wikipedia.org/wiki/Henri_Poincar%C3%A9"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Henri Poincaré</a> y popularizada gracias al trabajo del matemático y meteorólogo <a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Edward Lorenz</a>, la <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teoría del caos</a> se ha utilizado en campos como las matemáticas y la meteorología para explicar la inexactitud y la dificultad para obtener resultados previsibles de la realidad.</p>
+<h3 id="el-efecto-mariposa">El efecto mariposa<a href="#el-efecto-mariposa" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Esta teoría es ampliamente conocida por lo que se denomina el <em><strong>efecto mariposa</strong></em>, según el cual <em><strong>el débil aleteo de una mariposa puede ser la causa de un huracán a miles de kilómetros de distancia</strong></em>. Se indica de este modo que la existencia de una variable concreta puede provocar o alterar otras, influyéndose progresivamente hasta obtener un resultado fuera de lo esperado. En síntesis, podemos considerar que la <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teoría del caos</a> establece que pequeños cambios en las <em>condiciones iniciales</em> crean grandes diferencias respecto al resultado final, con lo que una gran mayoría de los sucesos y sistemas no resultan totalmente predecibles.</p>
+<p>Es importante tener en cuenta que a pesar de las apariencias, el <em>caos</em> al que se refiere esta teoría no implica una falta de orden, sino que los hechos y la realidad no se ajustan a un <a
+  href="https://es.wikipedia.org/wiki/Modelo_lineal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>modelo lineal</a>.</p>
+<h2 id="el-mapa-logístico">El mapa logístico<a href="#el-mapa-log%c3%adstico" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Para entender mejor qué es el <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a> exploremos el famoso <a
+  href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_log%C3%ADstica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>mapa logístico</a>, sin duda una de las ecuaciones más famosas en la ciencia de los sistemas dinámicos. El <a
+  href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_log%C3%ADstica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>mapa logístico</a> representa un modelo sencillo para intentar explicar la dinámica de una población de la que se ha supuesto que tiene un crecimiento cada vez más lento a medida que se acerca a una cantidad de individuos considerada como límite. El modelo simplifica al combinar los efectos de la tasa de natalidad y la tasa de mortalidad en un solo número, llamado \(R\). El tamaño de la población se reemplaza por un concepto relacionado &ldquo;fracción de la capacidad de carga&rdquo;, llamado \(x\). Su expresión matemática es la siguiente:</p>
+$$x_{t+1} = Rx_t(1 - x_t)$$
+<p>Esta ecuación define las reglas o dinámicas de nuestro sistema: \(x\) representa la población en un momento dado \(t\), y \(R\) representa la tasa de crecimiento. En otras palabras, el nivel de población en un momento dado es una función del parámetro de la tasa de crecimiento y el nivel de población del intervalo de tiempo anterior. Si la tasa de crecimiento es demasiado baja, la población se extinguirá. Las tasas de crecimiento más altas podrían establecerse hacia un valor estable o fluctuar a través de una serie de auges y declives de la población.
+Como podemos ver, es una ecuación muy simple! la más simple en capturar la esencia del <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a>!</p>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_log%C3%ADstica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>mapa logístico</a> se vuelve muy interesante a medida que vamos variando el valor de \(R\); veamos algunos ejemplos numéricos con la ayuda de <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a> y la librería <a
+  href="https://pynamical.readthedocs.io/en/latest/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>pynamical</a>.</p>
+<details>
+  <summary>Ver Código</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;!-- collapse=True --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Importando las librerías que vamos a utilizar</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fractal <span style="color:#f92672">import</span> Fern, Lorentz
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pynamical <span style="color:#f92672">import</span> simulate, bifurcation_plot, phase_diagram, phase_diagram_3d
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> warnings
+</span></span><span style="display:flex;"><span>warnings<span style="color:#f92672">.</span>filterwarnings(<span style="color:#e6db74">&#39;ignore&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># graficos incrustados</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span></code></pre></div></details>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># modelo logistico para 20 generaciones con 7 tasas de crecimiento entre 0.5 y 3.5.</span>
+</span></span><span style="display:flex;"><span>poblacion <span style="color:#f92672">=</span> simulate(num_gens<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, rate_min<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, rate_max<span style="color:#f92672">=</span><span style="color:#ae81ff">3.5</span>, num_rates<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span>poblacion<span style="color:#f92672">.</span>applymap(<span style="color:#66d9ef">lambda</span> x: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{:03.3f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(x))
+</span></span></code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0.5</th>
+      <th>1.0</th>
+      <th>1.5</th>
+      <th>2.0</th>
+      <th>2.5</th>
+      <th>3.0</th>
+      <th>3.5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>0.500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.125</td>
+      <td>0.250</td>
+      <td>0.375</td>
+      <td>0.500</td>
+      <td>0.625</td>
+      <td>0.750</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.055</td>
+      <td>0.188</td>
+      <td>0.352</td>
+      <td>0.500</td>
+      <td>0.586</td>
+      <td>0.562</td>
+      <td>0.383</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.026</td>
+      <td>0.152</td>
+      <td>0.342</td>
+      <td>0.500</td>
+      <td>0.607</td>
+      <td>0.738</td>
+      <td>0.827</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.013</td>
+      <td>0.129</td>
+      <td>0.338</td>
+      <td>0.500</td>
+      <td>0.597</td>
+      <td>0.580</td>
+      <td>0.501</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.006</td>
+      <td>0.112</td>
+      <td>0.335</td>
+      <td>0.500</td>
+      <td>0.602</td>
+      <td>0.731</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.003</td>
+      <td>0.100</td>
+      <td>0.334</td>
+      <td>0.500</td>
+      <td>0.599</td>
+      <td>0.590</td>
+      <td>0.383</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.002</td>
+      <td>0.090</td>
+      <td>0.334</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.726</td>
+      <td>0.827</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.001</td>
+      <td>0.082</td>
+      <td>0.334</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.597</td>
+      <td>0.501</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.000</td>
+      <td>0.075</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.722</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.000</td>
+      <td>0.069</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.603</td>
+      <td>0.383</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.000</td>
+      <td>0.065</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.718</td>
+      <td>0.827</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.000</td>
+      <td>0.060</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.607</td>
+      <td>0.501</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.000</td>
+      <td>0.057</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.716</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.000</td>
+      <td>0.054</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.610</td>
+      <td>0.383</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.000</td>
+      <td>0.051</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.713</td>
+      <td>0.827</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.000</td>
+      <td>0.048</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.613</td>
+      <td>0.501</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.000</td>
+      <td>0.046</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.711</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.000</td>
+      <td>0.044</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.616</td>
+      <td>0.383</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td>0.333</td>
+      <td>0.500</td>
+      <td>0.600</td>
+      <td>0.710</td>
+      <td>0.827</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Graficando los resultados</span>
+</span></span><span style="display:flex;"><span>colores <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;yellow&#39;</span>, <span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;peru&#39;</span>, <span style="color:#e6db74">&#39;black&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;grey&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> color, tasa <span style="color:#f92672">in</span> reversed(list(zip(colores, poblacion<span style="color:#f92672">.</span>columns))):
+</span></span><span style="display:flex;"><span>    ax <span style="color:#f92672">=</span> poblacion[tasa]<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;line&#39;</span>, figsize<span style="color:#f92672">=</span>[<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>], linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2.5</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.95</span>, c<span style="color:#f92672">=</span>color)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylim([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>legend(title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Tasa de Crecimiento&#39;</span>, loc<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, bbox_to_anchor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.525</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Resultados del modelo logistico por tasa de crecimiento&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Generacion&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Populacion&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/pyComplexity_files/pyComplexity_7_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="723"
+    height="387"
+  />
+
+
+
+
+
+
+</p>
+<h2 id="atractores">Atractores<a href="#atractores" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Hasta aquí, el sistema parece tener un comportamiento bastante predecible y parece ser estable.
+En los <a
+  href="https://es.wikipedia.org/wiki/Sistema_din%C3%A1mico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>sistemas dinámicos</a>, un <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> es un valor, o conjunto de valores hacia los que el sistema tienen a evolucionar en el tiempo y estabilizarse. En nuestro ejemplo, cuando el parámetro de crecimiento es 0.5, el sistema tiene un <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> de <em>punto fijo</em> en el nivel de población 0 como se muestra en la línea amarilla. En otras palabras, el valor de la población tiende a 0 con el tiempo a medida que el modelo va evolucionando. Cuando el parámetro de tasa de crecimiento es 3.5, el sistema oscila entre cuatro valores, como se muestra en la línea gris. Este otro <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> se llama de <em>ciclo límite</em>.</p>
+<p>Lo verdaderamente interesante se produce cuando aumentamos el valor de la tasa de crecimiento a un valor superior a 4, en ese momento el sistema se vuelve caótico!</p>
+<h2 id="diagrama-de-bifurcación">Diagrama de bifurcación<a href="#diagrama-de-bifurcaci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Para poder ver claramente como el sistema evoluciona hacia un comportamiento caótico, en los <a
+  href="https://es.wikipedia.org/wiki/Sistema_din%C3%A1mico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>sistemas dinámicos</a> se suele recurrir a la ayuda de un <a
+  href="https://es.wikipedia.org/wiki/Diagrama_de_bifurcaci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>diagrama de bifurcación</a>. Analizando la evolución de nuestra función, podemos ver que en las diferentes iteraciones con los valores de \(R\) entre 0.5 y 4.0; el sistema fue evolucionando hacia <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> de <em>punto fijo</em>, luego hacia otro de <em>ciclo límite</em> de 2 valores, un siguiente de 4, luego otro de 8, y así sucesivamente hasta llegar al <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a>. Cada uno de estos ciclos son llamadas <em>bifurcaciones</em>.<br>
+Estas bifurcaciones a menudo se resumen en un llamado <a
+  href="https://es.wikipedia.org/wiki/Diagrama_de_bifurcaci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>diagrama de bifurcación</a> que traza el <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> en el que termina el sistema en función del valor de un &ldquo;parámetro de control&rdquo;, que en nuestro caso es el valor de la tasa de crecimiento \(R\).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Modelo con 100 generaciones haciendo crecer R en 1000 pasos.</span>
+</span></span><span style="display:flex;"><span>pops <span style="color:#f92672">=</span> simulate(num_gens<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, rate_min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, rate_max<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, num_rates<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, num_discard<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Graficando el diagrama de bifurcación</span>
+</span></span><span style="display:flex;"><span>bifurcation_plot(pops)
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/pyComplexity_files/pyComplexity_9_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="622"
+    height="397"
+  />
+
+
+
+
+
+
+</p>
+<p>Como se puede ver en el gráfico, en algún punto más allá de un valor de \(R\) de 3.5 las bifurcaciones se vuelven caóticas y se vuelve imposible de predecir.</p>
+<h2 id="edward-lorenz-no-linealidad-y-los-atractores-extraños">Edward Lorenz, no linealidad y los atractores extraños<a href="#edward-lorenz-no-linealidad-y-los-atractores-extra%c3%b1os" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>No se puede escribir un artículo sobre <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a>, sin mencionar a
+<a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Edward Lorenz</a> quien fuera uno de sus pioneros. <a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Lorenz</a> se topó con las particularidades del <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a> al trabajar en modelos matemáticos para intentar predecir el clima (algo que ni siquiera podemos hacer bien hoy en día!). Fue el primero en notar (se podría decir que por accidente) el fenómeno de la dependencia sensible a los valores de las condiciones iniciales de algunos sistemas. La característica principal de estos sistemas es su <em>no linealidad</em>. Un sistema es <em>lineal</em> cuando podemos comprender sus partes individualmente y luego unirlas en un todo coherente. Las <em>relaciones lineales</em> se pueden capturar con una línea recta en un gráfico; son fáciles de pensar: cuanto más, mejor. Las <em>ecuaciones lineales</em> se pueden resolver, lo que las hace adecuadas para libros de texto. En cambio, un sistema <em>no lineal</em> es aquel en el que el todo es diferente de la suma de las partes; no se pueden resolver o expresar con claridad en un gráfico. Son la pesadilla de cualquier matemático.
+Profundizando en el estudio de estos sistemas <em>no lineales</em> y su <a
+  href="https://es.wikipedia.org/wiki/Complejidad"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>complejidad</a>, <a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Lorenz</a> simplificó algunas ecuaciones de dinámica de fluidos (llamadas <a
+  href="https://es.wikipedia.org/wiki/Ecuaciones_de_Navier-Stokes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>ecuaciones de Navier-Stokes</a>) y terminó con un conjunto de tres ecuaciones <em>no lineales</em>:</p>
+$$\frac{dx}{dt} = P(y-x)$$
+$$\frac{dy}{dt} = x(R-z) - y$$
+$$\frac{dz}{dt} = xy - cz$$
+<p>donde \(P\) es el <a
+  href="https://es.wikipedia.org/wiki/N%C3%BAmero_de_Prandtl"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>número de Prandtl</a> que representa la relación entre la viscosidad del fluido y su conductividad térmica; \(R\) es el <a
+  href="https://es.wikipedia.org/wiki/N%C3%BAmero_de_Rayleigh"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>número de Rayleigh</a> y representa la diferencia de temperatura entre la parte superior e inferior del sistema, . Los valores que utilizó <a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Lorenz</a> fueron \(P = 10\), \(R = 28\) y \(c = 8/3\).</p>
+<p>En la superficie, estas tres ecuaciones parecen fáciles de resolver. Sin embargo, representan un sistema dinámico extremadamente complicado. Al graficar los resultados en un <a
+  href="https://es.wikipedia.org/wiki/Espacio_f%C3%A1sico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>espacio fásico</a>; nos encontramos con lo que hoy se conoce como el <a
+  href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor de Lorenz</a>.</p>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor de Lorenz</a> es un ejemplo de un <em>atractor extraño</em>. Los <a
+  href="https://en.wikipedia.org/wiki/Attractor#Strange_attractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>atractores extraños</a> son únicos en comparación a los otros <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractores</a> mencionados, en el sentido en que uno no sabe exactamente en qué parte del <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> estará el sistema. Dos puntos en el <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor</a> que están cerca uno del otro al mismo tiempo estarán arbitrariamente separados en momentos posteriores. La única restricción es que el estado del sistema permanezca en el atractor. Los atractores extraños también son únicos porque nunca se cierran sobre sí mismos y el movimiento del sistema nunca se repite. Los <a
+  href="https://en.wikipedia.org/wiki/Attractor#Strange_attractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>atractores extraños</a> tienen una estructura <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>fractal</a>.</p>
+<img src="https://relopezbriega.github.io/images/lorentz.gif">
+<p>Esta imagen mágica del <a
+  href="https://es.wikipedia.org/wiki/Atractor_de_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractor de Lorenz</a>, que se asemeja a  las alas de una mariposa, se convirtió en un emblema para los primeros exploradores del <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a>. Reveló la fina estructura oculta dentro de un flujo desordenado de datos.</p>
+<h2 id="el-juego-del-caos">El juego del caos<a href="#el-juego-del-caos" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Siempre me han fascinado el azar y los procesos aleatorios, tal cual refleja la frase de <a
+  href="https://es.wikipedia.org/wiki/Edward_Lorenz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Lorenz</a> que abre el artículo; como a pesar de tener un comportamiento errático y que desafía toda lógica, parecen seguir un orden subyacente que no llegamos a captar del todo. Y nada mejor para captar ese sentimiento que el <a
+  href="https://en.wikipedia.org/wiki/Chaos_game"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>juego del caos</a> de <a
+  href="https://en.wikipedia.org/wiki/Michael_Barnsley"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Barnsley</a>.</p>
+<p>Para jugar al <a
+  href="https://en.wikipedia.org/wiki/Chaos_game"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>juego del caos</a> solo se necesita papel, lápiz y una moneda. Se elige un punto de partida en algún lugar del papel, no importa donde; y luego se inventan dos reglas, una regla de cara y una regla de cruz. Cada una de estas reglas nos dirán cómo dibujar nuevos puntos. Por ejemplo &ldquo;Muévase dos centímetros hacia el noreste&rdquo; o &ldquo;Muévase 25 por ciento más cerca del centro&rdquo;. Ahora solo debemos comenzar a lanzar la moneda al aire y dibujar puntos en el papel, usando la regla de cara cuando la moneda sale cara y la regla de cruz cuando sale cruz. A medida que se van acumulando los puntos en el papel, vamos a poder observar que describen una cierta figura&hellip;la cual se va haciendo más clara a medida que aumenta el número de puntos.</p>
+<p>La idea sobre la que descansa el <a
+  href="https://en.wikipedia.org/wiki/Chaos_game"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>juego del caos</a>, es hacer uso de 2 propiedades de los <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>fractales</a> (para conocer más sobre fractales pueden visitar mi <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>artículo anterior</a>). En primer lugar, que los <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>fractales</a> existen como un límite a <em>un proceso aleatorio</em>. Por analogía, uno podría imaginar un mapa de Argentina dibujado con tiza en el piso de una habitación. Un <a
+  href="https://es.wikipedia.org/wiki/Topograf%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>topógrafo</a> con herramientas estándar encontraría complicado medir el área de estas formas incómodas, con costas fractales. Pero supongamos que se arrojaran granos de arroz al aire uno por uno, lo que les permitiría caer al suelo al azar y que luego se contaran los granos que caen dentro del mapa. A medida que pasa el tiempo, el resultado comienza a acercarse al área de las formas, como el límite de un proceso aleatorio. En términos dinámicos, las formas de <a
+  href="https://en.wikipedia.org/wiki/Michael_Barnsley"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Barnsley</a> demostraron ser <a
+  href="https://es.wikipedia.org/wiki/Atractor"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Atractores</a>.
+La segunda propiedad de los <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>fractales</a> que utiliza el <a
+  href="https://en.wikipedia.org/wiki/Chaos_game"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>juego del caos</a> es esta cualidad de estar formados por pequeñas copias de la imagen principal. En este sentido, mientras más <a
+  href="https://relopezbriega.github.io/blog/2020/03/24/fractales-con-python/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>fractal</a> es la imagen, más simples van a ser las reglas subyacentes para construirlas.</p>
+<p>Para demostrar como funciona el juego del caos, podemos ayudarnos de <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a> para generar el famoso helecho de <a
+  href="https://en.wikipedia.org/wiki/Michael_Barnsley"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Barnsley</a>. Al utilizar primero 1000 puntos, podemos apreciar que parece generarse una imagen, pero su forma todavía no es nítida&hellip;cuando utilizamos 60000 puntos ya podemos ver con claridad la forma de la hoja de un helecho.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Dibujar una hoja de helecho utilizando el juego del caos de Barnsley con 10000 puntos</span>
+</span></span><span style="display:flex;"><span>fern <span style="color:#f92672">=</span> Fern()
+</span></span><span style="display:flex;"><span>fern<span style="color:#f92672">.</span>plot(<span style="color:#ae81ff">1000</span>)
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/pyComplexity_files/pyComplexity_11_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="352"
+    height="235"
+  />
+
+
+
+
+
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Dibujar una hoja de helecho utilizando el juego del caos de Barnsley con 60000 puntos</span>
+</span></span><span style="display:flex;"><span>fern <span style="color:#f92672">=</span> Fern()
+</span></span><span style="display:flex;"><span>fern<span style="color:#f92672">.</span>plot(<span style="color:#ae81ff">60000</span>)
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/pyComplexity_files/pyComplexity_12_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="352"
+    height="235"
+  />
+
+
+
+
+
+
+</p>
+<p>Con esto llegamos al final del artículo. La ida central de las ciencias que estudian la naturaleza es hacer de lo maravilloso un lugar común! Mostrar que la <a
+  href="https://es.wikipedia.org/wiki/Complejidad"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>complejidad</a>, vista correctamente, es sólo una máscara para lo simple!; y encontrar patrones escondidos en el aparente <a
+  href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_caos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>caos</a>!</p>
+<p>Saludos!</p>
+<p><em>Este post fue escrito por <a
+  href="https://relopezbriega.github.io/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Raúl e. López Briega</a> utilizando <a
+  href="https://jupyter.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Jupyter notebook</a>. Pueden descargar este <a
+  href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyComplexity.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>notebook</a> o ver su version estática en <a
+  href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyComplexity.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>nbviewer</a>.</em></p>
+
+    </div>
+
+    
+      
+
+
+  <div class="social-share">
+    <strong class="social-share__heading">Share this post: </strong>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F&amp;title=Sistemas&#43;din%C3%A1micos%2C&#43;Complejidad&#43;y&#43;Caos&#43;con&#43;Python"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit</title><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://x.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F&amp;text=Sistemas&#43;din%C3%A1micos%2C&#43;Complejidad&#43;y&#43;Caos&#43;con&#43;Python&amp;via=%7buser_id%7d&amp;hashtags=%7bhash_tags%7d"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://api.whatsapp.com/send?phone=%7bphone_number%7d&amp;text=Sistemas&#43;din%C3%A1micos%2C&#43;Complejidad&#43;y&#43;Caos&#43;con&#43;Python%20http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="mailto:?subject=Sistemas&#43;din%C3%A1micos%2C&#43;Complejidad&#43;y&#43;Caos&#43;con&#43;Python&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2020%2F03%2F26%2Fsistemas-din%25C3%25A1micos-complejidad-y-caos-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+  <path d="M3 7l9 6l9 -6" />
+</svg>
+
+
+      </a>
+    
+  </div>
+
+
+    
+
+    
+  </article>
+
+        </div>
+        <div class="sidebar">
+  
+    
+      <aside class="toc">
+        <nav>
+          <p class="sidebar__heading">Indice</p>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#qué-es-un-sistema-complejo">¿Qué es un sistema complejo?</a></li>
+    <li><a href="#qué-es-la-teoría-del-caos">¿Qué es la teoría del caos?</a></li>
+    <li><a href="#el-mapa-logístico">El mapa logístico</a></li>
+    <li><a href="#atractores">Atractores</a></li>
+    <li><a href="#diagrama-de-bifurcación">Diagrama de bifurcación</a></li>
+    <li><a href="#edward-lorenz-no-linealidad-y-los-atractores-extraños">Edward Lorenz, no linealidad y los atractores extraños</a></li>
+    <li><a href="#el-juego-del-caos">El juego del caos</a></li>
+  </ul>
+</nav>
+        </nav>
+      </aside>
+      <hr />
+    
+  
+
+  
+  
+    <aside class="bio">
+      
+
+  <div class="jr__item jr-basics__item">
+    
+  <div class="jr-basics__image">
+    <img
+      src="https://0.gravatar.com/avatar/45973a2c27d1bafade36a201a13d784ad93ec68fbeb70d7c44c02b4ba6eaeb40?size=256"
+      alt="Picture of Raul E. Lopez Briega"
+      width="250"
+      height="250"
+    />
+  </div>
+
+
+
+    
+      <div class="jr-basics__name">Raul E. Lopez Briega</div>
+    
+
+    
+      <div class="jr-basics__label">Business Analyst</div>
+    
+
+    
+
+    
+
+    
+
+    
+      <div class="jr-basics__summary">Profesional en Contabilidad y Administración con amplia experiencia en tecnologías de la información. Especializado en integración de procesos contables y financieros con herramientas IT, y manejo de sistemas ERP como JD Edwards y SAP. Reconocido por mi enfoque en la mejora continua, liderazgo en proyectos y compromiso con la excelencia en resultados. Puedo combinar perfectamente el conocimiento contable y financiero con el conocimiento técnico funcional propio de las herramientas informáticas.</div>
+    
+
+    
+      
+
+      
+
+      
+        <div class="jr-basics__location-city">Buenos Aires, ARG</div>
+      
+
+      
+
+      
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--col">
+        
+          
+
+<a href="https://github.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+  </div>
+
+  
+    <div class="jr-basics__profile-username">relopezbriega</div>
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--row">
+        
+          
+
+<a href="https://x.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://www.linkedin.com/in/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://gravatar.com/raulezequiellopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gravatar</title><path d="M12 0c-1.326 0-2.4 1.074-2.4 2.4v8.4c0 1.324 1.074 2.398 2.4 2.398s2.4-1.074 2.4-2.398V5.21c2.795.99 4.799 3.654 4.799 6.789 0 3.975-3.225 7.199-7.199 7.199S4.801 15.975 4.801 12c0-1.989.805-3.789 2.108-5.091.938-.938.938-2.458 0-3.396s-2.458-.938-3.396 0C1.344 5.686 0 8.686 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+  </div>
+
+
+
+      
+        <hr />
+      
+    </aside>
+  
+
+  
+    <aside>
+      
+
+
+  
+  
+  
+  
+  
+  
+
+
+  <div class="tag-cloud">
+    
+      
+      
+      
+      <a
+        href="/tags/algebra"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >algebra</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/analisis-de-datos"
+        style="font-size:1.803247508777645rem"
+        class="tag-cloud__tag"
+        >analisis de datos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/batman"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >batman</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bayes"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bayes</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/binario"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >binario</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bit"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bit</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/boosting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >boosting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/calculo"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >calculo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/caos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >caos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejidad"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/conjuntos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >conjuntos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/decimales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >decimales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/deep-learning"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >deep learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivada"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >derivada</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivadas-parciales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >derivadas parciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/distribuciones"
+        style="font-size:1.3584490740351578rem"
+        class="tag-cloud__tag"
+        >distribuciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/ecuaciones-diferenciales"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >ecuaciones diferenciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/entropia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >entropia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/estadistica"
+        style="font-size:1.6641503679521246rem"
+        class="tag-cloud__tag"
+        >estadistica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/falacias"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >falacias</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/finanazas"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >finanazas</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/fractales"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >fractales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/funcional"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >funcional</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/futbol"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >futbol</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/incertidumbre"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >incertidumbre</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inferencia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inferencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/infinito"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >infinito</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/informacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >informacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/integral"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >integral</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >inteligencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia-artificial"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inteligencia artificial</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/lenguaje-natural"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >lenguaje natural</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limite"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limite</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limites"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limites</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logaritmo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logaritmo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logica"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/machine-learning"
+        style="font-size:1.7008605560822845rem"
+        class="tag-cloud__tag"
+        >machine learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/map-reduce"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >map-reduce</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matematica"
+        style="font-size:1.8154716779921016rem"
+        class="tag-cloud__tag"
+        >matematica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matplotlib"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >matplotlib</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matrices"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >matrices</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/mcmc"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >mcmc</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/metropolis"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >metropolis</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/modelos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >modelos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/monte-carlo"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >monte carlo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/numeros"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >numeros</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/optimizacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >optimizacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/overfitting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >overfitting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pensamiento"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >pensamiento</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pi"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >pi</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/probabilidad"
+        style="font-size:1.4481127759640935rem"
+        class="tag-cloud__tag"
+        >probabilidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion"
+        style="font-size:1.82723444614138rem"
+        class="tag-cloud__tag"
+        >programacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion-lineal"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >programacion lineal</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/python"
+        style="font-size:1.9932970241832564rem"
+        class="tag-cloud__tag"
+        >python</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redes-neuronales"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >redes neuronales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redundancia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >redundancia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/regex"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >regex</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/seaborn"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >seaborn</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/series-de-tiempo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >series de tiempo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sistemas-dinamicos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sistemas dinamicos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sobreajuste"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sobreajuste</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >tensores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensorflow"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >tensorflow</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/vectores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >vectores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/visualizaciones"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >visualizaciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/xgboost"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >xgboost</a
+      >
+    
+  </div>
+
+
+    </aside>
+  
+</div>
+
+      </main>
+      <footer>
+  <div class="copyright">
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" ></script>
+<script src="/js/flexsearch.js" ></script>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

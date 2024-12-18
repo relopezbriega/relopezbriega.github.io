@@ -1,0 +1,4905 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/roboto-slab-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-300.woff2"
+  crossorigin="anonymous"
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-400.woff2"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/fonts/fira-code-latin-700.woff2"
+  crossorigin="anonymous"
+/>
+
+  
+  
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+  
+
+
+
+
+<title>Introducción al Cálculo con Python</title>
+
+<meta
+  name="description"
+  content="Cálculo con python. Qué es el cálculo, historia, funciones, límites, derivadas, integrales, teorema fundamental del cálculo, aplicaciones, ejemplos en python."
+/>
+
+<link rel="canonical" href="http://localhost:1313/blog/2015/12/02/introducci%C3%B3n-al-c%C3%A1lculo-con-python/" />
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introducción al Cálculo con Python">
+  <meta name="twitter:description" content="Cálculo con python. Qué es el cálculo, historia, funciones, límites, derivadas, integrales, teorema fundamental del cálculo, aplicaciones, ejemplos en python.">
+
+<meta property="og:url" content="http://localhost:1313/blog/2015/12/02/introducci%C3%B3n-al-c%C3%A1lculo-con-python/">
+  <meta property="og:site_name" content="Raul E. Lopez Briega">
+  <meta property="og:title" content="Introducción al Cálculo con Python">
+  <meta property="og:description" content="Cálculo con python. Qué es el cálculo, historia, funciones, límites, derivadas, integrales, teorema fundamental del cálculo, aplicaciones, ejemplos en python.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2015-12-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-12-02T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Matematica">
+    <meta property="article:tag" content="Calculo">
+    <meta property="article:tag" content="Derivada">
+    <meta property="article:tag" content="Integral">
+    <meta property="article:tag" content="Limite">
+
+
+  <meta itemprop="name" content="Introducción al Cálculo con Python">
+  <meta itemprop="description" content="Cálculo con python. Qué es el cálculo, historia, funciones, límites, derivadas, integrales, teorema fundamental del cálculo, aplicaciones, ejemplos en python.">
+  <meta itemprop="datePublished" content="2015-12-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2015-12-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="5404">
+  <meta itemprop="keywords" content="Python,Matematica,Calculo,Derivada,Integral,Limite">
+
+
+
+
+
+
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SZHL0BZZJ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6SZHL0BZZJ');
+        }
+      </script>
+    
+  
+
+
+
+
+  
+  
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+
+<style>
+   
+  /*
+  Critical CSS for above-the-fold content, delivered inline to increase first
+  paint performance
+*/
+
+/*! purgecss start ignore */
+
+/* Typefaces */
+
+/* roboto-slab-100normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Roboto Slab Thin '),
+    local('Roboto Slab-Thin'),
+    url('/fonts/roboto-slab-latin-100.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-100.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-200normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Roboto Slab Extra Light '),
+    local('Roboto Slab-Extra Light'),
+    url('/fonts/roboto-slab-latin-200.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-200.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-300normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Roboto Slab Light '),
+    local('Roboto Slab-Light'),
+    url('/fonts/roboto-slab-latin-300.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-400normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Roboto Slab Regular '),
+    local('Roboto Slab-Regular'),
+    url('/fonts/roboto-slab-latin-400.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-500normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Roboto Slab Medium '),
+    local('Roboto Slab-Medium'),
+    url('/fonts/roboto-slab-latin-500.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-600normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Roboto Slab SemiBold '),
+    local('Roboto Slab-SemiBold'),
+    url('/fonts/roboto-slab-latin-600.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-700normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Roboto Slab Bold '),
+    local('Roboto Slab-Bold'),
+    url('/fonts/roboto-slab-latin-700.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-800normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Roboto Slab ExtraBold '),
+    local('Roboto Slab-ExtraBold'),
+    url('/fonts/roboto-slab-latin-800.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-800.woff') format('woff'); /* Modern Browsers */
+}
+
+/* roboto-slab-900normal - latin */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Roboto Slab Black '),
+    local('Roboto Slab-Black'),
+    url('/fonts/roboto-slab-latin-900.woff2') format('woff2'), 
+    url('/fonts/roboto-slab-latin-900.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-300normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Fira Code Light '),
+    local('Fira Code-Light'),
+    url('/fonts/fira-code-latin-300.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-300.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-400normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Fira Code Regular '),
+    local('Fira Code-Regular'),
+    url('/fonts/fira-code-latin-400.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-500normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Fira Code Medium '),
+    local('Fira Code-Medium'),
+    url('/fonts/fira-code-latin-500.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-500.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-600normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Fira Code SemiBold '),
+    local('Fira Code-SemiBold'),
+    url('/fonts/fira-code-latin-600.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-600.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-700normal - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Fira Code Bold '),
+    local('Fira Code-Bold'),
+    url('/fonts/fira-code-latin-700.woff2') format('woff2'), 
+    url('/fonts/fira-code-latin-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* Normalize */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*! purgecss end ignore */
+
+/*! CC BY-SA 3.0 License | https://stackoverflow.com/a/36118384/1154965 */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Default license header for non-vendor CSS source code that follows */
+
+/*! MIT License | github.com/schnerring/hugo-theme-gruvbox */
+
+/*
+  Bootstrap 5 breakpoints
+  See: https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints
+*/
+
+:root[data-theme="light"] {
+  --bg: var(--bg0);
+  --bg0: #fbf1c7;
+  --bg0_h: #f9f5d7;
+  --bg0_s: #f2e5bc;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+  --fg: var(--fg1);
+  --fg0: #282828;
+  --fg1: #3c3836;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #9d0006;
+  --green1: #98971a;
+  --green2: #797403;
+  --yellow1: #d79921;
+  --yellow2: #b57614;
+  --blue1: #458588;
+  --blue2: #076678;
+  --purple1: #b16286;
+  --purple2: #8f3f71;
+  --aqua1: #689d6a;
+  --aqua2: #427b58;
+  --orange1: #d65d0e;
+  --orange2: #af3a03;
+}
+
+[data-theme="light"]:root .light--hidden {
+    display: none;
+  }
+
+:root[data-theme="dark"] {
+  --bg: var(--bg0);
+  --bg0: #282828;
+  --bg0_h: #1d2021;
+  --bg0_s: #32302f;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+  --fg: var(--fg1);
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+  --gray1: var(--fg4);
+  --gray2: #928374;
+  --red1: #cc241d;
+  --red2: #fb4934;
+  --green1: #98971a;
+  --green2: #b8bb26;
+  --yellow1: #d79921;
+  --yellow2: #fabd2f;
+  --blue1: #458588;
+  --blue2: #83a598;
+  --purple1: #b16286;
+  --purple2: #d3869b;
+  --aqua1: #689d6a;
+  --aqua2: #8ec07c;
+  --orange1: #d65d0e;
+  --orange2: #fe8019;
+}
+
+[data-theme="dark"]:root .dark--hidden {
+    display: none;
+  }
+
+:root {
+  
+  --primary: var(--blue1);
+  --primary-alt: var(--blue2);
+}
+
+:root {
+  --font-monospace: "Fira Code", "Lucida Console", Monaco, monospace;
+  --font-sans-serif: Verdana, Helvetica, sans-serif;
+  --font-serif: "Roboto Slab", Georgia, serif;
+}
+
+html {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.675;
+  word-wrap: break-word;
+}
+
+strong {
+  letter-spacing: 0.35px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.link--external::after {
+  /* 2009 = Thin Space */
+  content: "\2009↗";
+}
+
+img,
+video {
+  border: 2px solid var(--bg1);
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+
+*::selection {
+  color: var(--fg0);
+  background: var(--bg4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg0);
+  font-family: var(--font-monospace);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+:is(h1,h2,h3,h4,h5,h6) code {
+    font-size: 1em;
+  }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid var(--bg1);
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.875rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.375rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.375rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--bg1);
+  padding: 0.5rem;
+}
+
+hr {
+  border: none;
+  background: var(--bg1);
+  height: 1px;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+mark {
+  background: var(--yellow1);
+  color: var(--bg0);
+}
+
+abbr {
+  text-underline-offset: 0.2rem;
+}
+
+blockquote,
+code,
+kbd,
+mark,
+pre {
+  border-radius: 0.2rem;
+  padding: 0 0.2em;
+}
+
+pre code {
+  padding: 0;
+}
+
+blockquote,
+code,
+kbd,
+pre,
+th {
+  background: var(--bg1);
+}
+
+code,
+kbd,
+pre,
+th {
+  font-family: var(--font-monospace);
+}
+
+:is(code,kbd) code,:is(code,kbd) kbd {
+    background: var(--bg2);
+  }
+
+blockquote,
+pre {
+  padding: 1rem;
+}
+
+pre {
+  /* TODO is !important really needed because of Prism? */
+  background: var(--bg1) !important;
+  overflow: auto;
+}
+
+pre code {
+    background: none;
+  }
+
+blockquote,
+blockquote.twitter-tweet {
+  border-left: var(--primary-alt) 5px solid;
+  margin: 0.5rem 0;
+}
+
+:is(blockquote,blockquote.twitter-tweet) code {
+    background: var(--bg2);
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:first-of-type {
+    margin-top: 0;
+  }
+
+:is(blockquote,blockquote.twitter-tweet) p:last-of-type {
+    margin-bottom: 0;
+  }
+
+blockquote.twitter-tweet {
+  border-color: var(--blue2);
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+blockquote.twitter-tweet a {
+    color: var(--blue2);
+  }
+
+blockquote.twitter-tweet a:hover {
+    color: var(--blue1);
+    text-decoration: none !important;
+  }
+
+pre::-webkit-scrollbar {
+  height: 0.5rem;
+  scrollbar-width: auto;
+}
+
+pre::-webkit-scrollbar-track {
+  background: var(--bg2);
+  border-radius: 0.2rem;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--bg4);
+  border-radius: 0.2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+main {
+  align-items: start;
+  display: grid;
+  grid-area: main;
+  grid-template-areas: "empty content sidebar";
+  grid-template-columns: 1fr minmax(0, 650px) 4fr;
+}
+
+header {
+  background: var(--bg1);
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+main,
+footer {
+  margin: 0.5em 1.1em;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  grid-area: sidebar;
+  margin-top: 3rem;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (min-width: 992px) {
+
+.sidebar {
+    display: flex;
+}
+  }
+
+header {
+  display: grid;
+  font-family: var(--font-monospace);
+  font-size: 1.125rem;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: "heading search nav theme-toggle";
+  padding: 0.75rem;
+}
+
+.logo {
+  color: var(--fg0);
+  display: flex;
+  font-weight: 700;
+  grid-area: heading;
+}
+
+.logo:hover .logo__cursor {
+    animation: 1s blink infinite;
+    opacity: 1;
+  }
+
+.logo__chevron,
+.logo__cursor {
+  margin-left: 0.5rem;
+}
+
+.logo__cursor {
+  opacity: 0;
+}
+
+.logo__text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo__text {
+    display: block;
+  }
+}
+
+/*! purgecss start ignore */
+
+.search {
+  display: flex;
+  grid-area: search;
+  margin: 0 1rem;
+}
+
+#search__text {
+  border: 1px solid var(--bg2);
+  border-radius: 0.2rem;
+  background: var(--bg2);
+  caret-color: var(--fg);
+  color: var(--fg);
+  outline: none;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+#search__text:hover {
+    border-color: var(--bg3);
+  }
+
+#search__text:focus {
+    border-color: var(--bg4);
+  }
+
+#search__text::placeholder {
+    color: var(--fg3);
+  }
+
+#search__text[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+#search__suggestions {
+  background: var(--bg);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.5rem 1rem var(--bg1);
+  font-family: var(--font-serif);
+  left: 0;
+  margin-top: 2rem;
+  position: absolute;
+  width: 95vw;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .search {
+    position: relative;
+  }
+
+  #search__suggestions {
+    width: 60vw;
+  }
+}
+
+.search__suggestions--hidden {
+  display: none;
+}
+
+.search__suggestion-item {
+  border-bottom: 1px dashed var(--bg2);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.search__suggestion-item:focus,.search__suggestion-item:focus-visible,.search__suggestion-item:hover {
+    background: var(--bg1);
+    cursor: pointer;
+    outline: none;
+  }
+
+.search__suggestion-item:last-child {
+    border: none;
+  }
+
+.search__suggestion-title,
+.search__suggestion-description {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.search__suggestion-title {
+  font-weight: 700;
+}
+
+.search__suggestion-description {
+  border-left: 1px solid var(--bg2);
+}
+
+.search__no-results {
+  padding: 0.75rem;
+}
+
+/*! purgecss end ignore */
+
+.theme__toggle {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--yellow1);
+  cursor: pointer;
+  display: flex;
+  grid-area: theme-toggle;
+  margin: 0 1rem;
+}
+
+.theme__toggle:hover {
+    color: var(--yellow2);
+  }
+
+.theme__toggle svg {
+    height: 28px;
+    width: 28px;
+  }
+
+/* TODO: simplify deep nesting */
+
+nav#menu {
+  align-items: center;
+  display: flex;
+  grid-area: nav;
+  justify-content: flex-end;
+}
+
+nav#menu .menu__item {
+    color: var(--fg);
+  }
+
+:is(nav#menu .menu__item):hover {
+      color: var(--fg3);
+      cursor: pointer;
+    }
+
+nav#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+nav#menu ul.menu--horizontal {
+    align-items: center;
+    display: none;
+  }
+
+:is(nav#menu ul.menu--horizontal) li {
+      display: inline-block;
+      margin: 0 0.75rem;
+    }
+
+@media (min-width: 768px) {
+
+nav#menu ul.menu--horizontal {
+      display: flex;
+  }
+    }
+
+nav#menu ul.menu--vertical {
+    background: var(--fg0);
+    bottom: 0;
+    margin: 0;
+    padding: 3rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+    width: 50%;
+    z-index: 10;
+  }
+
+:is(nav#menu ul.menu--vertical) .menu__item {
+      color: var(--bg1);
+    }
+
+:is(:is(nav#menu ul.menu--vertical) .menu__item):hover {
+        color: var(--bg4);
+      }
+
+nav#menu .menu__burger {
+    display: flex;
+    height: 24px;
+    width: 24px;
+  }
+
+:is(nav#menu .menu__burger) > * {
+      position: absolute;
+    }
+
+:is(nav#menu .menu__burger) svg {
+      width: inherit;
+      z-index: 20;
+      height: inherit;
+    }
+
+:is(:is(nav#menu .menu__burger) svg) line {
+        transition-duration: 0.5s;
+        transition-property: stroke, opacity, transform;
+        transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(1) {
+        transform-origin: center 6px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(2) {
+        transform-origin: center 12px;
+      }
+
+:is(:is(nav#menu .menu__burger) svg) line:nth-of-type(3) {
+        transform-origin: center 18px;
+      }
+
+:is(nav#menu .menu__burger) input {
+      height: inherit;
+      opacity: 0;
+      width: inherit;
+      z-index: 30;
+    }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ ul.menu--vertical {
+          transform: none;
+        }
+
+:is(:is(nav#menu .menu__burger) input):checked ~ svg {
+          stroke: var(--bg1);
+        }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(1) {
+            transform: translate(0, 6px) rotate(45deg);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(2) {
+            opacity: 0;
+            transform: scale(0.2);
+          }
+
+:is(:is(:is(nav#menu .menu__burger) input):checked ~ svg) line:nth-of-type(3) {
+            transform: translate(0, -6px) rotate(-45deg);
+          }
+
+@media (min-width: 768px) {
+
+nav#menu .menu__burger {
+      display: none;
+  }
+    }
+
+.sidebar {
+  font-family: var(--font-monospace);
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+}
+
+.sidebar hr {
+    margin: 1.5rem auto;
+  }
+
+.sidebar svg {
+    fill: var(--fg);
+  }
+
+.sidebar__heading {
+  font-size: 1.3rem;
+}
+
+aside.toc a {
+    color: var(--primary-alt);
+  }
+
+aside.toc a:hover {
+    color: var(--primary);
+  }
+
+aside.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+:is(aside.toc ul) ul {
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+
+:is(aside.toc ul) li {
+      line-height: 1.1;
+    }
+
+:is(:is(aside.toc ul) li) a {
+        display: block;
+        padding: 0.2rem 0;
+      }
+
+.jr-basics__image {
+  background: var(--bg1);
+  border: 2px solid var(--bg2);
+}
+
+.jr-basics__summary {
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  margin: 0.75rem 0;
+}
+
+.jr-basics__profile a:hover {
+    color: var(--fg3);
+  }
+
+:is(.jr-basics__profile a:hover) svg {
+      fill: var(--fg3);
+    }
+
+.tag-cloud {
+  line-height: 1.1;
+  text-align: justify;
+}
+
+.tag-cloud__tag:hover {
+  color: var(--fg3);
+}
+
+.tag-cloud__tag--active {
+  text-decoration: underline;
+}
+
+.post,
+.content-section {
+  border-bottom: 2px dotted var(--bg1);
+  padding: 2rem 0;
+}
+
+.post figure,.post img:not(figure img),.post video:not(figure video) {
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+
+.post-header,
+.post-content__read-more {
+  font-family: var(--font-monospace);
+}
+
+.post-meta__author {
+  font-weight: 700;
+}
+
+.post-content {
+  margin: 1.3rem 0;
+}
+
+.post-content__read-more {
+  color: var(--primary-alt);
+  margin-top: 1.3rem;
+}
+
+:is(.post-header,.post-content) a {
+    color: var(--primary-alt);
+  }
+
+:is(.post-header,.post-content) a:hover {
+    color: var(--primary);
+  }
+
+.post-tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1rem 0;
+}
+
+.post-tag {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.post-tag::before {
+    content: "#";
+  }
+
+.post-heading__anchor {
+  display: none;
+}
+
+:is(h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover) .post-heading__anchor {
+    display: inline-block;
+  }
+
+.jr__item-meta {
+  flex-direction: column;
+}
+
+.jr__item-meta,
+.jr-basics__image,
+.jr-basics__item,
+.jr-basics__profile-icon,
+.jr-basics__profile-item {
+  align-items: center;
+  display: flex;
+}
+
+.jr-awards__title,
+.jr-certificates__name,
+.jr-education__area,
+.jr-projects__roles,
+.jr-publications__name,
+.jr-volunteer__position,
+.jr-work__position,
+.jr-basics__name {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.jr-basics__item {
+  flex-direction: column;
+  text-align: center;
+}
+
+.jr-basics__item hr {
+  margin: 1.5rem auto;
+}
+
+.jr-basics__image {
+  border-radius: 50%;
+  height: 250px;
+  justify-content: center;
+  overflow: hidden;
+  width: 250px;
+}
+
+.jr-basics__name,
+.jr-basics__label,
+.jr-basics__summary {
+  margin-top: 0.75rem;
+}
+
+.jr-basics__profile svg {
+  height: 24px;
+  width: 24px;
+}
+
+.jr-basics__profile,
+.jr-basics__profile-item {
+  display: flex;
+}
+
+.jr-basics__profile-item {
+  display: flex;
+  padding: 0.2rem;
+}
+
+.jr-basics__profile--col {
+  flex-direction: column;
+}
+
+.jr-basics__profile--row {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.jr-basics__profile-icon {
+  padding: 0 0.75rem;
+}
+
+.jr__item-meta {
+  font-family: var(--font-monospace);
+}
+
+.jr__item-meta {
+  align-items: start;
+  flex-flow: column;
+}
+
+@media (min-width: 768px) {
+  .jr__item-meta {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .jr__date,
+  .jr__date-range,
+  .jr-work__location {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+  .jr-awards__awarder,
+  .jr-publications__publisher,
+  .jr-education__institution,
+  .jr-volunteer__organization {
+    flex-basis: 100%;
+  }
+}
+
+.social-share {
+  align-items: center;
+  border-top: 2px dotted var(--bg1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 3rem 0;
+  padding-top: 3rem;
+}
+
+.social-share svg {
+    fill: var(--fg);
+    width: 24px;
+    height: 24px;
+  }
+
+.icon-tabler:is(.social-share svg) {
+      fill: none;
+      stroke: var(--fg);
+    }
+
+.social-share__item {
+  background: var(--bg1);
+  padding: 0.5rem;
+  display: flex;
+}
+
+/* Sticky social bar left
+
+@media (--xl) {
+  .social-share {
+    align-items: flex-start;
+    border-top: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 15%;
+    left: 0;
+  }
+
+  .social-share__heading {
+    display: none;
+  }
+
+  .social-share__item {
+    transition: padding 0.2s ease-in;
+
+    &:hover {
+      padding: 0.5rem 1rem;
+    }
+
+    & svg {
+      &:hover {
+        fill: var(--fg);
+      }
+
+      &.icon-tabler {
+        fill: none;
+
+        &:hover {
+          stroke: var(--fg);
+        }
+      }
+    }
+  }
+}
+
+*/
+
+   
+</style>
+
+<link
+  rel="preload"
+  href="/css/non-critical.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+
+
+<link
+  id="prism-dark"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-dark.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  
+/>
+
+
+<link
+  id="prism-light"
+  rel="preload"
+  href="/prism-themes/prism-gruvbox-light.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+  disabled
+/>
+
+<noscript>
+  
+    <link
+      rel="stylesheet"
+      href="/prism-themes/prism-gruvbox-dark.css"
+      
+    />
+  
+
+
+  <link
+    rel="stylesheet"
+    href="/css/non-critical.css"
+    
+  />
+</noscript>
+
+
+  
+
+
+
+
+<script>
+  (() => {
+  // <stdin>
+  function getTheme() {
+    if (localStorage && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+  }
+  function setTheme(theme2) {
+    document.documentElement.setAttribute("data-theme", theme2);
+    const prismDark = document.getElementById("prism-dark");
+    const prismLight = document.getElementById("prism-light");
+    prismDark.toggleAttribute("disabled", theme2 === "light");
+    prismLight.toggleAttribute("disabled", theme2 === "dark");
+    localStorage.setItem("theme", theme2);
+  }
+  var theme = getTheme();
+  if (theme) setTheme(theme);
+  function toggleTheme(e) {
+    const theme2 = e.currentTarget.classList.contains("light--hidden") ? "light" : "dark";
+    setTheme(theme2);
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleButtons = document.querySelectorAll(".theme__toggle");
+    toggleButtons.forEach((btn) => {
+      btn.addEventListener("click", toggleTheme);
+    });
+  });
+})();
+
+</script>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#282828" />
+<meta name="msapplication-TileColor" content="#282828" />
+<meta name="theme-color" content="#282828" />
+
+
+
+  
+  
+
+</head>
+
+  <body>
+    <div class="layout">
+      <header>
+  <a
+    class="logo"
+    href="/"
+  >
+    
+      <div class="logo__text">relopezbriega</div>
+    
+    <div class="logo__chevron">></div>
+    <div class="logo__cursor">█</div>
+  </a>
+
+  <div class="search">
+    <input
+      id="search__text"
+      type="search"
+      placeholder="Buscar..."
+      aria-label="Search"
+      autocomplete="off"
+    />
+    <div id="search__suggestions" class="search__suggestions--hidden"></div>
+  </div>
+
+  <nav id="menu">
+    <ul class="menu--horizontal">
+      
+        <li class="menu__item">
+          <a href="/blog">Articulos</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/conversor-fecha-juliana">Conversor-Juliana</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="https://iaarbook.github.io/">Libro</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/cv">CV</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/contacto">Contacto</a>
+        </li>
+      
+        <li class="menu__item">
+          <a href="/acerca">Acerca</a>
+        </li>
+      
+    </ul>
+
+    <div class="menu__burger">
+      
+      <input class="menu__item" type="checkbox" aria-label="Open main menu" />
+
+      
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+
+
+
+      <ul class="menu--vertical">
+        
+          <li>
+            <a class="menu__item" href="/blog">Articulos</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/conversor-fecha-juliana">Conversor-Juliana</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="https://iaarbook.github.io/">Libro</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/cv">CV</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/contacto">Contacto</a>
+          </li>
+        
+          <li>
+            <a class="menu__item" href="/acerca">Acerca</a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <button class="theme__toggle light--hidden" aria-label="Toggle light mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-sun"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+  <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+</svg>
+
+
+  </button>
+
+  <button class="theme__toggle dark--hidden" aria-label="Toggle dark mode">
+    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+</svg>
+
+
+  </button>
+</header>
+
+      <main>
+        <div class="content">
+          
+  <article class="post">
+    <div class="post-header">
+      <h1>Introducción al Cálculo con Python</h1>
+      <div class="post-meta"><span>2015-12-02</span><span> by </span><span class="post-meta__author">Raul E Lopez Briega</span>
+    <div class="post-tags">
+      <a class="post-tag" href="http://localhost:1313/tags/python">python</a><a class="post-tag" href="http://localhost:1313/tags/matematica">matematica</a><a class="post-tag" href="http://localhost:1313/tags/calculo">calculo</a><a class="post-tag" href="http://localhost:1313/tags/derivada">derivada</a><a class="post-tag" href="http://localhost:1313/tags/integral">integral</a><a class="post-tag" href="http://localhost:1313/tags/limite">limite</a>
+    </div>
+  
+
+  
+</div>
+
+    </div>
+
+    <div class="post-content">
+      <h1 id="introducción-al-cálculo-con-python">Introducción al Cálculo con Python<a href="#introducci%c3%b3n-al-c%c3%a1lculo-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h1>
+<p><em>Esta notebook fue creada originalmente como un blog post por <a
+  href="/cv/"
+  
+  
+>Raúl E. López Briega</a> en <a
+  href="https://relopezbriega.github.io"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matemáticas, análisis de datos y python</a>. El contenido esta bajo la licencia BSD.</em></p>
+<p><img alt="Cálculo con python" title="Cálculo con python" src="https://relopezbriega.github.io/images/calculus.png
+" width="500px" height="400px"></p>
+<h2 id="introducción">Introducción<a href="#introducci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a> es una rama muy importante de la <a
+  href="https://es.wikipedia.org/wiki/Matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matemática</a> moderna; tiene profundas raíces en problemas físicos y  gran parte de su potencia y belleza derivan de la variedad de sus aplicaciones.
+Las subramas conocidas como <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a> y <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo diferencial</a> son instrumentos naturales y poderosos para atacar múltiples problemas que surgen en <a
+  href="https://es.wikipedia.org/wiki/F%C3%ADsica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Física</a>, <a
+  href="https://es.wikipedia.org/wiki/Astronom%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Astronomía</a>, <a
+  href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Ingeniería</a>, <a
+  href="https://es.wikipedia.org/wiki/Qu%C3%ADmica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Química</a>, <a
+  href="https://es.wikipedia.org/wiki/Geolog%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Geología</a>, <a
+  href="https://es.wikipedia.org/wiki/Biolog%C3%ADa"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Biología</a>, y en otros campos de las ciencias.
+El <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a> no sólo es un instrumento técnico, sino que contiene una colección de ideas fascinantes y atrayentes que han ocupado el pensamiento humano durante cientos de años. Estas ideas están relacionadas con la velocidad, el área, el volumen, la razón de crecimiento, la tangente a una línea, y demás.</p>
+<h3 id="historia">Historia<a href="#historia" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>El origen del <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a> se remonta a más de 2300 años, cuando los griegos intentaban resolver el problema del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> ideando el procedimiento que llamaron <a
+  href="https://es.wikipedia.org/wiki/M%C3%A9todo_exhaustivo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>método de exhaución</a>. La idea esencial de este método consiste en intentar determinar el <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de una región por medio de aproximaciones utilizando regiones <a
+  href="https://es.wikipedia.org/wiki/Pol%C3%ADgono"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>poligonales</a> cuya <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> sea más fácil de calcular, la idea es continuar con el proceso aumentando los lados de los <a
+  href="https://es.wikipedia.org/wiki/Pol%C3%ADgono"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>polígonos</a> hasta llegar a la mejor aproximación posible de la región que queremos determinar.
+Este método fue usado satisfactoriamente por <a
+  href="https://es.wikipedia.org/wiki/Arqu%C3%ADmedes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Arquímedes</a> (287-212 A.C.) para hallar fórmulas exactas de las áreas del <a
+  href="https://es.wikipedia.org/wiki/C%C3%ADrculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>círculo</a> y de algunas otras figuras especiales. En la siguiente figura podemos ver al <a
+  href="https://es.wikipedia.org/wiki/M%C3%A9todo_exhaustivo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>método de exhaución</a> aplicado para determinar el área del <a
+  href="https://es.wikipedia.org/wiki/C%C3%ADrculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>círculo</a>.</p>
+<p><img alt="Método exhaustivo para hallar el área del círculo" title="Método exhaustivo para hallar el área del círculo" src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Archimedes_pi.svg
+" width="500px" height="400px"></p>
+<p>Desde <a
+  href="https://es.wikipedia.org/wiki/Arqu%C3%ADmedes"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Arquímedes</a>, gradualmente, el <a
+  href="https://es.wikipedia.org/wiki/M%C3%A9todo_exhaustivo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>método de exhaución</a> fue transformándose en lo que hoy se conoce como <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a>, nueva y potente disciplina que, como ya mencionamos,  tiene numerosas aplicaciones no sólo en problemas relativos a áreas y volúmenes, sino también en problemas de otras ciencias. El <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a>, que mantiene alguno de los caracteres originales del <a
+  href="https://es.wikipedia.org/wiki/M%C3%A9todo_exhaustivo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>método de exhaución</a>, recibió su mayor impulso en el siglo XVII, debido a los esfuerzos de <a
+  href="https://es.wikipedia.org/wiki/Isaac_Newton"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Isaac Newton</a> (1642-1727) y <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Gottfried Leibniz</a> (1646-1716), y su desarrollo continuó durante el siglo XIX, hasta que <a
+  href="https://es.wikipedia.org/wiki/Augustin_Louis_Cauchy"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Augustin-Louis Cauchy</a> (1789-1857) y <a
+  href="https://es.wikipedia.org/wiki/Bernhard_Riemann"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Bernhard Riemann</a> (1826-1866) le dieron una base <a
+  href="https://es.wikipedia.org/wiki/Matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>matemática</a> firme.</p>
+<h2 id="funciones">Funciones<a href="#funciones" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Las <a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Funciones</a> son los objetos fundamentales con los que tratamos en el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>. Las mismas pueden ser representadas de diferentes maneras: por una <a
+  href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>ecuación</a>, en una tabla, por un gráfico, o en palabras. Se utilizan principalmente como modelos matemáticos para representar fenómenos del mundo real.</p>
+<p>La palabra <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> fue introducida en las <a
+  href="https://es.wikipedia.org/wiki/Matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matemáticas</a> por <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Leibniz</a>, quien utilizaba este término para designar cierto tipo de fórmulas matemáticas. Una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em>  surge cada vez que una cantidad depende de otra. Más precisamente la definición de <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> es esencialmente la siguiente: Dados dos conjuntos de objetos, el conjunto X y el conjunto Y, una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> es una regla que asocia a cada objeto de X, uno y sólo un, objeto en Y. El conjunto X se denomina el <em>dominio</em> de la <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em>. Los objetos de Y, asociados con los objetos en X forman otro conjunto denominado el <em>recorrido</em> de la <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em>. Generalmente se utilizan las letras \(f, g, h, G\) y \(H\) para designarlas. Si \(f\) es una función dada y \(x\) es un objeto de su dominio, la notación \(f(x)\) se
+utiliza para designar el objeto que en el recorrido corresponde a \(x\), en la <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> \(f\), y se denomina el valor de la función \(f\) en \(x\). El símbolo \(f(x)\) se lee, «f de x».</p>
+<p>Muchas veces resulta útil pensar en una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> como si fuera una máquina. Si \(x\) está en el dominio de la función \(f\), entonces cuando \(x\) entra en la máquina, se acepta como una entrada y la máquina produce una salida \(f(x)\) de acuerdo a la regla de la función. Así, podemos pensar al <em>dominio</em> como el conjunto de todas las entradas posibles y al <em>recorrido</em> como el conjunto de todas las salidas posibles.</p>
+<p>El método más común para la visualización de una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> es su <a
+  href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>gráfica</a>. Si \(f\) es una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> con
+dominio \(D\), a continuación, su <a
+  href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>gráfica</a> es el conjunto de <a
+  href="https://es.wikipedia.org/wiki/Pares_ordenados"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>pares ordenados</a>.</p>
+$$\{(x, f(x)) \mid x \in D \} $$
+<p>Aquí debemos tener en cuenta que el par \((x, f(x))\), es un par <em>entrada-salida</em>, el valor de \(x\) representa el valor de entrada, mientras que el valor de \(f(x)\) representa la salida de la <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em>.  En otras palabras, la <a
+  href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>gráfica</a> de \(f\) se compone de todos puntos \((x, y)\) en el plano de coordenadas tal que \(y=f(x)\) y \(x\) está en el <em>dominio</em> de \(f\).
+La <a
+  href="https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_una_funci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>gráfica</a> de una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> \(f\) nos da una imagen útil del comportamiento o la &ldquo;historia de vida&rdquo; de la misma.</p>
+<p><img alt="Gráfica de funciones" title="Gráfica de funciones" src="https://relopezbriega.github.io/images/funciones_graf.png
+" width="500px" height="400px"></p>
+<h3 id="funciones-con-python">Funciones con Python<a href="#funciones-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Para definir las <a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Funciones</a> en <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a> utilizamos la instrucción <code>def</code>. Así por ejemplo si quisiéramos definir a la <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> \(f(x) = \sqrt{x + 2}\) dentro de <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, lo podríamos hacer de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>sqrt(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>En este ejemplo, primero estamos importando la librería <a
+  href="https://www.numpy.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>numpy</a>, para trabajar más fácilmente con [vectores](<a
+  href="https://es.wikipedia.org/wiki/Vector_%28inform%C3%A1tica%29"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)</a>, los cuales simplifican los cálculos numéricos.
+Luego utilizamos la instrucción <code>def</code> para definir la función, que este caso se va a llamar f y va a tener como único parámetro al objeto x. Esta función nos va a devolver el valor de la raíz cuadrada de \(x + 2\). Ahora, si por ejemplo quisiéramos saber los valores de la función \(f(x)\) para los \(x, -2, -1, 0, 2, 4\) y \(6\). podríamos invocar a esta función de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>])  <span style="color:#75715e"># Creando el vector de valores de x</span>
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> f(x)
+</span></span><span style="display:flex;"><span>y
+</span></span></code></pre></div><pre><code>array([ 0.        ,  1.        ,  1.41421356,  2.        ,  2.44948974,
+        2.82842712])
+</code></pre>
+<p>Si quisiéramos verlo en forma de tabla, podemos ayudarnos de la librería <a
+  href="https://pandas.pydata.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>pandas</a> y su <a
+  href="https://es.wikipedia.org/wiki/Estructura_de_datos"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>estructura de datos</a> <a
+  href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>DataFrame</a>, la cual tiene una forma tabular.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tabla <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame( list(zip(x, y)), columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;x&#39;</span>, <span style="color:#e6db74">&#39;f(x)&#39;</span>] )
+</span></span><span style="display:flex;"><span>tabla
+</span></span></code></pre></div><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>f(x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-2</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>1.414214</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2.449490</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>2.828427</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Por último, si quisiéramos graficar funciones con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, podemos utilizar la librería <a
+  href="https://matplotlib.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Matplotlib</a>, y pasarle los valores de \(x\) e \(y\) al método <code>plot</code> del objeto <code>pyplot</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">move_spines</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Esta funcion divide pone al eje y en el valor 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    0 de x para dividir claramente los valores positivos y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    negativos.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    fix, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> spine <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#e6db74">&#34;bottom&#34;</span>]:
+</span></span><span style="display:flex;"><span>        ax<span style="color:#f92672">.</span>spines[spine]<span style="color:#f92672">.</span>set_position(<span style="color:#e6db74">&#34;zero&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> spine <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;right&#34;</span>, <span style="color:#e6db74">&#34;top&#34;</span>]:
+</span></span><span style="display:flex;"><span>        ax<span style="color:#f92672">.</span>spines[spine]<span style="color:#f92672">.</span>set_color(<span style="color:#e6db74">&#34;none&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ax
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, num<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> move_spines()
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid()
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(x, f(x))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;Grafico de $f(x)=\sqrt{x + 2}$&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;f(x)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;x&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/pyCalculus_files/pyCalculus_11_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="358"
+    height="288"
+  />
+
+
+
+
+
+
+</p>
+<h2 id="límites">Límites<a href="#l%c3%admites" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Uno de los conceptos más importantes dentro del <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a> es el concepto de <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em>. Se dice que una función \(f\) tiende hacia el <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> \(l\) cerca de \(a\), si se puede hacer que \(f(x)\) este tan próxima como queramos de \(l\), haciendo que \(x\) esté suficientemente cerca de \(a\), pero siendo distinta de \(a\). Así por ejemplo si analizamos la función \(f(x) = x^2 - x + 2\), para los valores cercanos a 2, podríamos ver los siguientes resultados.</p>
+<details>
+  <summary>Ver Código</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;!-- collapse=True --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.9</span>, <span style="color:#ae81ff">1.95</span>, <span style="color:#ae81ff">1.99</span>, <span style="color:#ae81ff">1.999</span>, <span style="color:#ae81ff">2.001</span>, <span style="color:#ae81ff">2.05</span>, <span style="color:#ae81ff">2.1</span>, <span style="color:#ae81ff">2.2</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">3</span> ])
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> f(x)
+</span></span><span style="display:flex;"><span>tabla <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(list(zip(x, y)), columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;x&#39;</span>, <span style="color:#e6db74">&#39;f(x)&#39;</span>])
+</span></span><span style="display:flex;"><span>tabla
+</span></span></code></pre></div></details>
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>f(x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.500</td>
+      <td>2.750000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.900</td>
+      <td>3.710000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.950</td>
+      <td>3.852500</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.990</td>
+      <td>3.970100</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.999</td>
+      <td>3.997001</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2.001</td>
+      <td>4.003001</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2.050</td>
+      <td>4.152500</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2.100</td>
+      <td>4.310000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2.200</td>
+      <td>4.640000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2.500</td>
+      <td>5.750000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3.000</td>
+      <td>8.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>de acuerdo con esta tabla, podemos ver que a medida que hacemos al valor de \(x\) cercano a 2, vemos que \(f(x)\) se hace muy cercana a 4. Incluso podríamos hacer a \(f(x)\) tan cercana como queramos a 4, haciendo que \(x\) este lo suficientemente cerca de 2. Por lo tanto, podemos expresar esta propiedad diciendo que el <em>&quot;<a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a> de la función \(f(x) = x^2 - x + 2\) cuando \(x\) se acerca a 2 es igual a 4.&quot;</em> y lo podemos representar con la siguiente notación:</p>
+$$\lim_{x\to 2} \left(x^2 -x + 2\right) = 4$$
+<p>Gráficamente lo podemos ver del siguiente modo.</p>
+<details>
+  <summary>Ver Código</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;!-- collapse=True --&gt;</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, num<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> move_spines()
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid()
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(x, f(x))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>scatter(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;limite cuando x tiende a 2&#34;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;Grafico de $f(x)=x^2 -x + 2$&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;f(x)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;x&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div></details>
+<p>
+
+
+
+  
+  
+  <img
+    src="/pyCalculus_files/pyCalculus_15_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="357"
+    height="285"
+  />
+
+
+
+
+
+
+</p>
+<h3 id="las-leyes-de-los-límites">Las leyes de los límites<a href="#las-leyes-de-los-l%c3%admites" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Calcular el valor exacto de los <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em> muchas veces no suele tan fácil como reemplazar el valor de \(a\) en \(f(x)\). Es por esto que es importante conocer algunas propiedades de los <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em>, ellas son:</p>
+<ol>
+<li><strong>Ley de la suma:</strong> El límite de la suma de dos funciones es la suma de sus límites.</li>
+<li><strong>Ley de la diferencia:</strong> El límite de la diferencia de dos funciones es la diferencia de sus límites.</li>
+<li><strong>Ley del producto:</strong> El límite del producto de dos funciones es el producto de sus límites.</li>
+<li><strong>ley del múltiplo constante:</strong> El límite de una constante por una función es la constante por el límite de la función.</li>
+<li><strong>Ley del cociente:</strong> El límite del cociente de dos funciones es el cociente de sus límites, siempre que el límite del denominador sea diferente de <em>cero</em>.</li>
+</ol>
+<p>Es decir que si tenemos a la constante \(C\) y a los límites \(\lim_{x\to a} f(x)\) y \(\lim_{x\to a} g(x)\). Entonces podemos expresar estas propiedades matemáticamente de la siguiente forma:</p>
+<p>1- <strong>Ley de la suma:</strong> \(\lim_{x\to a} [f(x) + g(x)] = \lim_{x\to a} f(x) + \lim_{x\to a} g(x)\).</p>
+<p>2- <strong>Ley de la diferencia:</strong> \(\lim_{x\to a} [f(x) - g(x)] = \lim_{x\to a} f(x) - \lim_{x\to a} g(x)\).</p>
+<p>3- <strong>Ley del producto:</strong> \(\lim_{x\to a} [f(x) \cdot g(x)] = \lim_{x\to a} f(x) \cdot \lim_{x\to a} g(x)\).</p>
+<p>4- <strong>ley del multiplo constante:</strong> \(\lim_{x\to a} [C \cdot f(x)] = C \cdot \lim_{x\to a} f(x)\).</p>
+<p>5- <strong>Ley del cociente:</strong> \(\lim_{x\to a} \left[\frac{f(x)}{g(x)}\right] = \frac{\lim_{x\to a} f(x)}{\lim_{x\to a} g(x)}\), si \(\lim_{x\to a} g(x) \ne 0\).</p>
+<h3 id="calculando-límites-con-python">Calculando Límites con Python<a href="#calculando-l%c3%admites-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, podemos resolver <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em> fácilmente utilizando la librería <a
+  href="https://www.sympy.org/es/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>SymPy</a>, la cual nos proporciona el objeto <code>Limit</code> para representarlos en <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>. Su sintaxis es la siguiente: <code>Limit(función, variable, punto)</code>. Entonces para calcular el límite de \(f(x)\) cuando \(x\) tiende a 0, debemos escribir:</p>
+<p><code>Limit(f(x), x, 0)</code></p>
+<p>Lo utilizamos de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sympy.interactive <span style="color:#f92672">import</span> printing
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> Limit, limit, Symbol, S
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># imprimir con notación matemática.</span>
+</span></span><span style="display:flex;"><span>printing<span style="color:#f92672">.</span>init_printing(use_latex<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mathjax&#39;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> Symbol(<span style="color:#e6db74">&#39;x&#39;</span>) <span style="color:#75715e"># Creando el simbolo x.</span>
+</span></span><span style="display:flex;"><span>Limit(x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, x, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># Creando el objeto Limit</span>
+</span></span></code></pre></div>$$\lim_{x \to 2^+}\left(x^{2} - x + 2\right)$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Resolviendo el Limite con el metodo doit()</span>
+</span></span><span style="display:flex;"><span>Limit(x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, x, <span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>doit()
+</span></span></code></pre></div>$$4$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># La funcion limit nos da directamente el resultado</span>
+</span></span><span style="display:flex;"><span>limit(x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, x, <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div>$$4$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Resolviendo limite 1/x cuando x tiende a infinito</span>
+</span></span><span style="display:flex;"><span>Limit(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>x, x, S<span style="color:#f92672">.</span>Infinity)
+</span></span></code></pre></div>$$\lim_{x \to \infty} \frac{1}{x}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Limit(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>x, x, S<span style="color:#f92672">.</span>Infinity)<span style="color:#f92672">.</span>doit()
+</span></span></code></pre></div>$$0$$
+<p>Como vemos, primero creamos el símbolo para representar a la variable x utilizando el objeto <code>Symbol</code>, y luego creamos nuestro límite utilizando el objeto <code>Limit</code>. Por último para resolver el límite, simplemente llamamos al método <code>doit()</code> sobre el objeto <code>Limit</code> que acabamos de crear. También podemos calcular los <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em> de valores de \(x\) que tiendan hacia el <a
+  href="https://es.wikipedia.org/wiki/Infinito"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>infinito</a> utilizando la <em>clase</em> especial <code>S.Infinity</code> que nos proporciona <a
+  href="https://www.sympy.org/es/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>SymPy</a>.</p>
+<p>Ahora que ya conocemos que es una <em><a
+  href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Función</a></em> y que es un <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em>, ya estamos en condiciones de adentrarnos en el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo diferencial</a> y analizar el concepto de <a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a>.</p>
+<h2 id="derivadas">Derivadas<a href="#derivadas" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>Para poder comprender el concepto de <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> primero debemos abordar el problema de la <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>recta tangente</a></em> a un curva. La palabra <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangente</a> se deriva de la palabra griega <em>Tangens</em>, que significa &ldquo;que toca&rdquo;. Así una <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>tangente</a></em> a una curva es una línea que toca la curva. En otras palabras, una línea tangente debe tener la misma dirección que la curva en el punto de contacto. Para un círculo podríamos simplemente seguir la definición de <a
+  href="https://es.wikipedia.org/wiki/Euclides"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Euclides</a> y decir que la <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangente</a> es una línea que cruza
+el círculo una y sólo una vez (ver <em>figura a</em>). Pero para curvas más complicadas este definición es inadecuada. Por ejemplo en la <em>figura b</em> podemos ver  dos líneas \(l\) y \(t\) que pasan por el punto \(P\) en una curva \(C\) . La línea \(l\) cruza a la curva \(C\) sólo una vez, pero ciertamente no se parece a lo que pensamos como una <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangente</a>. La línea \(t\), en cambio, se parece a una <a href="https://es.wikipedia.org/wiki/Tangente_(geometr%C3%ADa)">tangente</a> pero intercepta a \(C\) dos veces.</p>
+<p><img alt="El problema de la tangente" title="El problema de la tangente" src="https://relopezbriega.github.io/images/tangente.png
+" width="500px" height="400px"></p>
+<p>El intento de resolver este problema fue lo que condujo a <a
+  href="https://es.wikipedia.org/wiki/Pierre_de_Fermat"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Fermat</a> a descubrir algunas de las ideas rudimentarias referentes a la noción de <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em>.
+Aunque la derivada se introdujo inicialmente para el estudio del problema de la tangente, pronto se vio que proporcionaba también un instrumento para el cálculo de <em>velocidades</em> y, en general para el estudio de la <em>variación o tasa de cambio</em> de una función.</p>
+<p>La <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> de una función es una medida de la rapidez con la que cambia el valor de dicha función, según cambie el valor de su <a
+  href="https://es.wikipedia.org/wiki/Variable_independiente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>variable independiente</a>. La <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> de una función es un concepto local, es decir, se calcula como el <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>límite</a></em> de la rapidez de cambio medio de la función en un cierto intervalo, cuando el intervalo considerado para la variable independiente se torna cada vez más pequeño. Por ello se habla del valor de la derivada de una cierta función en un punto dado.
+Entonces el valor de la <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> de una función en un punto puede interpretarse geométricamente, ya que se corresponde con la <strong>pendiente de la <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>recta tangente</a></em></strong> a la gráfica de la función en dicho punto. La <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>recta tangente</a></em> es a su vez la gráfica de la mejor aproximación lineal de la función alrededor de dicho punto. La noción de <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> puede generalizarse para el caso de funciones de más de una variable con la <a
+  href="https://es.wikipedia.org/wiki/Derivada_parcial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>derivada parcial</a> y el <a
+  href="https://es.wikipedia.org/wiki/Diferencial_de_una_funci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>diferencial</a>.</p>
+<p>Matemáticamente, la <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> es una caso especial de <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em>, el cual surge cada vez que queremos calcular la pendiente de la <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>recta tangente</a></em> o la <em>velocidad de cambio</em> de un objeto. Éste <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> ocurre tan frecuentemente que se le ha da un notación y un nombre determinados. Así <strong>la <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> de una función \(f\) en el punto a</strong>, representada por \(f&rsquo;(a)\), es:</p>
+$$f'(a) = \lim_{h \to 0}\frac{f(a + h) - f(a)}{h}$$
+<p>donde \(h\) representa la variación de \(a\).
+Esta misma definición, puede ser representada también del siguiente modo, utilizando la notación de <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Leibniz</a>.</p>
+$$\frac{dy}{dx} = \lim_{dx \to 0}\frac{f(x + dx) - f(x)}{dx}$$
+<p>Así, por ejemplo si quisiéramos saber cuál es la <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> de la función \(f(x) = x^3\), podemos aplicar la definición anterior del siguiente modo.</p>
+<p>Comenzamos, definiendo a \(f(x + dx) = (x + dx)^3\), luego expandimos a:</p>
+$$(x + dx)^3 = f(x + dx) = x^3 + 3x^2dx + 3xdx^2 + dx^3$$
+<p>Luego reemplazamos esta función en nuestra definición de <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em>:</p>
+$$\frac{dx}{dy} = \frac{x^3 + 3x^2dx + 3xdx^2 + dx^3 - x^3}{dx}$$
+<p>Simplificamos los términos:</p>
+$$\frac{dx}{dy} = \frac{3x^2dx + 3xdx^2 + dx^3}{dx} \Rightarrow 3x^2 + 3xdx + dx^2$$
+<p>y cuando \(dx\) tiende a cero, obtenemos finalmente la función <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em>:</p>
+$$\frac{d}{dx}x^3 = 3x^2$$
+<h3 id="reglas-de-derivación">Reglas de Derivación<a href="#reglas-de-derivaci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Si fuera siempre necesario calcular las <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em> directamente de la definición, como hicimos anteriormente, éstos cálculos podrían ser tediosos y complicados. Afortunadamente, varias reglas se han desarrollado para encontrar <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em> sin tener que usar la definición directamente. Estas fórmulas simplifican enormemente la tarea de la diferenciación y se conocen como <a
+  href="https://es.wikipedia.org/wiki/Reglas_de_derivaci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>reglas de derivación</a>. Algunas de ellas son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Funciones comunes</th>
+<th style="text-align:center">Función original</th>
+<th style="text-align:center">Función Derivada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Constantes</td>
+<td style="text-align:center">\(c\)</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(x\)</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left">Cuadrado</td>
+<td style="text-align:center">\(x^2\)</td>
+<td style="text-align:center">\(2x\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Raiz cuadrada</td>
+<td style="text-align:center">\(\sqrt{x}\)</td>
+<td style="text-align:center">\(\frac{1}{2}x^{-\frac{1}{2}}\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Exponenciales</td>
+<td style="text-align:center">\(e^x\)</td>
+<td style="text-align:center">\(e^x\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(a^x\)</td>
+<td style="text-align:center">\(a^x(\ln a)\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Logaritmicas</td>
+<td style="text-align:center">\(\ln x\)</td>
+<td style="text-align:center">\(\frac{1}{x}\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\log_{a} x\)</td>
+<td style="text-align:center">\(\frac{1}{x \ln a}\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Trigonométricas</td>
+<td style="text-align:center">\(\sin x\)</td>
+<td style="text-align:center">\(\cos x\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\cos x\)</td>
+<td style="text-align:center">\(-\sin x\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\tan x\)</td>
+<td style="text-align:center">\(\sec^2(x)\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Trigonométricas inversas</td>
+<td style="text-align:center">\(\sin^{-1}(x)\)</td>
+<td style="text-align:center">\(\frac{1}{\sqrt{1-x^2}}\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\cos^{-1}(x)\)</td>
+<td style="text-align:center">\(\frac{-1}{\sqrt{1-x^2}}\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\tan^{-1}(x)\)</td>
+<td style="text-align:center">\(\frac{1}{1-x^2}\)</td>
+</tr>
+</tbody>
+</table>
+<p>1- <strong>Regla de la función de grado n:</strong> Esta regla nos dice que una función de grado n, donde n es un exponente real, se representa por \(f(x)=x^{n}\) y su derivada es \(f&rsquo;(x)=nx^{n-1}\). Así por ejemplo, si quisiéramos saber la derivada de \(f(x) = x^5\), aplicando la regla obtenemos, \(f&rsquo;(x) = 5x^{5-1} \Rightarrow 5x^4\).</p>
+<p>2- <strong>Regla de la multiplicación por una constante:</strong> Esta regla establece que una función con la forma \(f(x) = Cx\), donde \(C\) es una constante; entonces la derivada de esta función va a ser igual a: \(f&rsquo;(x)= Cx&rsquo;\); es decir a la constante por la derivada de \(x\). Así por ejemplo si tenemos la función \(f(x)=5x^3\), primero debemos a obtener la derivada de \(x^3\), la cual aplicando la regla anterior sabemos que es \(3x^2\) y luego a esta derivada la multiplicamos por la constante 5, para obtener el resultado final \(f&rsquo;(x)=15x^2\).</p>
+<p>3- <strong>Regla de la suma:</strong> Esta regla establece que la derivada de la suma de dos funciones es igual a la suma de las derivadas de cada una de ellas. Es decir, \((f+g)&rsquo;(x)=f&rsquo;(x)+g&rsquo;(x)\). Así por ejemplo la derivada de la función \(f(x) = 5x^3 + x^2\) va a ser igual a \(f&rsquo;(x) = 15x^2 + 2x\).</p>
+<p>4- <strong>Regla de la diferencia:</strong> Esta regla establece que la derivada de la diferencia entre dos funciones es igual a la diferencia entre las derivadas de cada una de ellas. Es decir, \((f-g)&rsquo;(x)=f&rsquo;(x)-g&rsquo;(x)\). Así por ejemplo la derivada de la función \(f(x) = 5x^3 - x^2\) va a ser igual a \(f&rsquo;(x) = 15x^2 - 2x\).</p>
+<p>5- <strong>Regla del producto:</strong> Esta regla establece que la derivada de un producto de dos funciones es equivalente a la suma entre el producto de la primera función sin derivar y la derivada de la segunda función y el producto de la derivada de la primera función por la segunda función sin derivar. Es decir,  \((f\cdot g)&rsquo; = f&rsquo;\cdot g + f\cdot g&rsquo;\). Así por ejemplo si quisiéramos derivar la función \(h(x)=(2x + 1)(x^3 + 2)\), primero obtenemos las derivadas de cada termino, \(f&rsquo;(x)=2\) y \(g&rsquo;(x)=3x^2\) y luego aplicamos la formula \(h&rsquo;(x)=2(x^3 +2) + (2x + 1)3x^2\), los que nos da un resultado final de \(h&rsquo;(x)=8x^3 + 3x^2 + 4\).</p>
+<p>6- <strong>Regla del cociente:</strong> Esta regla establece que la derivada de un cociente de dos funciones es la función ubicada en el denominador por la derivada del numerador menos la derivada de la función en el denominador por la función del numerador sin derivar, todo sobre la función del denominador al cuadrado. Es decir, \(\left(\frac{f}{g}\right)&rsquo;=\frac{f&rsquo;g-fg&rsquo;}{g^{2}}\). Por ejemplo, para obtener la derivada de la función \(h(x) = \frac{3x + 1}{2x}\), aplicando la formula obtenemos que \(h&rsquo;(x) = \frac{3 \cdot (2x) - (3x + 1) \cdot 2}{2x^2}\), y simplificando llegamos al resultado final de \(h&rsquo;(x) = -\frac{1}{2x^2}\).</p>
+<p>7- <strong>Regla de la cadena:</strong> La regla de la cadena es una fórmula para calcular la derivada de la composición de dos o más funciones. Esto es, si \(f\) y \(g\) son dos funciones, entonces la regla de la cadena expresa la derivada de la función compuesta \(f(g(x))\) en términos de las derivadas de \(f\) y \(g\). Esta derivada va a ser calculada de acuerdo a la siguiente formula: \(f&rsquo;(g(x)) = f&rsquo;(g(x)) \cdot g&rsquo;(x)\). Por ejemplo, si quisiéramos saber la derivada de la función \(h(x) = \sin(x^2)\), aplicando la formula obtenemos que \(h&rsquo;(x) = \cos(g(x)) \cdot 2x\), lo que es igual a \(h&rsquo;(x) = 2x \cos(x^2)\).</p>
+<h3 id="derivadas-de-mayor-orden">Derivadas de mayor orden<a href="#derivadas-de-mayor-orden" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Si tenemos una función \(f\), de la cual podemos obtener su derivada \(f&rsquo;\), la cual también es otra función que podemos derivar, entonces podemos obtener la <em>derivada de segundo orden</em> de \(f\), la cual representaremos como \(f&rsquo;&rsquo;\). Es decir, que la derivada de segundo orden de \(f\), va a ser igual a la derivada de su derivada. Siguiendo el mismo proceso, podemos seguir subiendo en la jerarquía y obtener por ejemplo, la tercer derivada de \(f\). Utilizando la notación de <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Leibniz</a>, expresaríamos a la segunda derivada del siguiente modo:</p>
+$$\frac{d}{dy}\left(\frac{dy}{dx}\right)= \frac{d^2y}{dx^2}$$
+<h3 id="calculando-derivadas-con-python">Calculando Derivadas con Python<a href="#calculando-derivadas-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, podemos resolver <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em> utilizando nuevamente la librería <a
+  href="https://www.sympy.org/es/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>SymPy</a>. En este caso, ahora vamos a utilizar el objeto <code>Derivative</code>. Su sintaxis es la siguiente: <code>Derivative(funcion, variable, orden de derivación)</code>. Lo utilizamos de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> Derivative, diff, simplify
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fx <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>dx <span style="color:#f92672">=</span> Derivative(fx, x)<span style="color:#f92672">.</span>doit()
+</span></span><span style="display:flex;"><span>dx
+</span></span></code></pre></div>$$2 x^{3} + 3 x^{2} \left(2 x + 1\right) + 4$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># simplificando los resultados</span>
+</span></span><span style="display:flex;"><span>simplify(dx)
+</span></span></code></pre></div>$$8 x^{3} + 3 x^{2} + 4$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Derivada de segundo orden con el 3er argumento.</span>
+</span></span><span style="display:flex;"><span>Derivative(fx, x, <span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>doit()
+</span></span></code></pre></div>$$6 x \left(4 x + 1\right)$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Calculando derivada de (3x +1) / (2x)</span>
+</span></span><span style="display:flex;"><span>fx <span style="color:#f92672">=</span> (<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>x)
+</span></span><span style="display:flex;"><span>dx <span style="color:#f92672">=</span> Derivative(fx, x)<span style="color:#f92672">.</span>doit()
+</span></span><span style="display:flex;"><span>simplify(dx)
+</span></span></code></pre></div>$$- \frac{1}{2 x^{2}}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># la función diff nos da directamente el resultado</span>
+</span></span><span style="display:flex;"><span>simplify(diff(fx, x))
+</span></span></code></pre></div>$$- \frac{1}{2 x^{2}}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># con el metodo subs sustituimos el valor de x </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># para obtener el resultado numérico. Ej x = 1.</span>
+</span></span><span style="display:flex;"><span>diff(fx, x)<span style="color:#f92672">.</span>subs(x, <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div>$$- \frac{1}{2}$$
+<p>Como podemos ver, el método para calcular las <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em> con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, es muy similar al que vimos anteriormente al calcular los <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em>. En el ejemplo, también utilizamos la función <code>simplify</code>, la cual nos ayuda a simplificar los resultados; y el método <code>subs</code> para sustituir el valor de \(x\) y obtener el resultado numérico.</p>
+<p>Ahora que ya conocemos al <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo diferencial</a>, es tiempo de pasar hacia la otra rama del <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>, el <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a>, y analizar el concepto de <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integración</a>.</p>
+<h2 id="integrales">Integrales<a href="#integrales" class="post-heading__anchor" aria-hidden="true">#</a>
+</h2>
+<p>La idea de <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em> es el concepto básico del <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a>. Pero para poder comprender este concepto, primero debemos abordar el <em>problema del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a></em>. Como bien sabemos, el <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> es una medida de la extensión de una superficie. Determinar esta medida para superficies con <a
+  href="https://es.wikipedia.org/wiki/Recta"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>líneas rectas</a>, suele ser bastante fácil. Por ejemplo para un rectángulo, su <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> se define como el producto de la longitud y el ancho. O para un triángulo como la mitad de la base por la altura. El <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de cualquier otro polígono se encuentra al dividirlo en triángulos y luego sumar las áreas de cada uno ellos. Pero para los casos de las regiones con <a
+  href="https://es.wikipedia.org/wiki/Curva"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>líneas curvas</a>, el cálculo del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> ya no suele ser tan fácil. Para estos casos debemos recurrir a un método similar al de <a
+  href="https://es.wikipedia.org/wiki/M%C3%A9todo_exhaustivo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>exhaución</a> que mencionábamos en la introducción del artículo. Es decir,  que vamos a ir dividiendo la región en varios rectángulos de \(\Delta x\) de ancho y luego podemos ir calculando el <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> como la suma del las <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>áreas</a> de cada uno de estos rectángulos. A medida que vamos agregando más rectángulos, haciendo \(\Delta x\) cada vez más pequeño, nos vamos aproximando cada vez más al valor real del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de la superficie curva. Hasta el punto de que, cuando \(\Delta x\) tiende a cero, podemos alcanzar el resultado exacto del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de nuestra superficie curva. Es decir, que realizando una suma de infinitamente más angostos rectángulos, podemos determinar el resultado exacto del <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de nuestra superficie curva. Este proceso lo podemos ver más claramente en la siguiente figura.</p>
+<img alt="Proceso de integración" title="Proceso de integración" src="https://relopezbriega.github.io/images/proceso_integración.png" width="500px" height="400px">
+<p>Como vemos, al igual que pasaba con el caso de las <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em>, al querer calcular el <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a> de una superficie curva, nos encontramos ante un caso especial de <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> (aquí vemos también por qué el concepto de <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> es tan importante para el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>!). Este tipo de <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> surge en una amplia variedad de situaciones, no solo al calcular <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>áreas</a>, sino que también lo podemos encontrar al calcular la distancia recorrida por un objeto o el volumen de un sólido. Por lo tanto, se le ha dado una notación y un nombre determinado. De esta forma la definición matemática de la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em> definida, sería la siguiente:</p>
+<p>Si \(f\) es una función definida por \(a \leqslant x \leqslant b\), podemos dividir el intervalo \([a, b]\) en \(n\) subintervalos de \(\Delta x(b - a) / n\) de ancho. Dónde \(x_0(=a), x_1, x_2, \dots, x_n(=b)\) serán los puntos finales de estos subintervalos y \(x_1^<em>, x_2^</em>, \dots, x_n^<em>\), serán puntos intermedios en estos subintervalos, de tal forma que \(x_i^</em>\) se encuentre en el k-simo subintervalo \([x_{i-1}, x_i]\). Entonces la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em> definida de \(f\) entre \(a\) y \(b\), es:</p>
+$$\int_a^b f(x) dx = \lim_{n \to \infty}\sum_{i=1}^n f(x_i^*) \Delta x $$
+<p>El símbolo de la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em>, \(\int\), fue introducido por <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Leibniz</a>, viene a ser una &ldquo;S&rdquo; alargada y fue elegido ya que la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em> es en definitiva un <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límite</a></em> de sumas <a
+  href="https://es.wikipedia.org/wiki/Infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>infinitesimales</a>. En esta notación, \(a\) y \(b\) son los límites de la integración y \(dx\) indica que \(x\) es la variable independiente. La suma:</p>
+$$\sum_{i=1}^n f(x_i^*) \Delta x $$
+<p>que vemos en la definición, es conocida como la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_de_Riemann#Suma_de_Riemann"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>suma de Reimann</a></em>, en honor al matemático alemán <a
+  href="https://es.wikipedia.org/wiki/Bernhard_Riemann"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Bernhard Reimann</a> que la desarrolló.</p>
+<img alt="Integral definida" title="Integral definida" src="https://relopezbriega.github.io/images/integracion.png" width="500px" height="400px">
+<h3 id="integrales-definidas-e-indefinidas">Integrales definidas e indefinidas<a href="#integrales-definidas-e-indefinidas" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Una distinción importante que debemos hacer al hablar de <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em>, es la diferencia entre una <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral definida</a> y una <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a> o <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>antiderivada</a>. Mientras que la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral definida</a>, que representamos con el símbolo, \(\int_a^b f(x) dx\),  es un <em>número</em>, un resultado preciso de la medida de un <a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a>, distancia o volumen; la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a>, que representamos como, \(\int f(x) dx\),  es una <em>función</em> o familia de funciones. Más adelante, cuando hablemos del <a
+  href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema fundamental del cálculo</a>, veremos por qué esta distinción es tan importante. Pero antes, veamos como podemos hacer para calcular <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em>.</p>
+<h3 id="reglas-de-integración">Reglas de integración<a href="#reglas-de-integraci%c3%b3n" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Cómo podemos ver de la definición que dimos de <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em>, estas parecen sumamente complicadas de calcular. Por suerte, al igual que para el caso de <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em>, existen varias reglas que podemos utilizar para poder calcular las <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integrales indefinidas</a>, en forma más sencilla. Algunas de ellas son:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Funciones comunes</th>
+<th style="text-align:center">Función original</th>
+<th style="text-align:center">Integral indefinida (\(C\) es una constante)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Constante</td>
+<td style="text-align:center">\(\int a \ dx\)</td>
+<td style="text-align:center">\(ax + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Variable</td>
+<td style="text-align:center">\(\int x \ dx\)</td>
+<td style="text-align:center">\(\frac{x^2}{2} + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Cuadrado</td>
+<td style="text-align:center">\(\int x^2 \ dx\)</td>
+<td style="text-align:center">\(\frac{x^3}{3} + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Reciproca</td>
+<td style="text-align:center">\(\int \left(\frac{1}{x}\right) \ dx\)</td>
+<td style="text-align:center">\(\ln</td>
+</tr>
+<tr>
+<td style="text-align:left">Exponenciales</td>
+<td style="text-align:center">\(\int e^x \ dx      \)</td>
+<td style="text-align:center">\(e^x + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\int a^x \ dx\)</td>
+<td style="text-align:center">\(\frac{a^x}{\ln (a)} + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\int \ln (x) \ dx\)</td>
+<td style="text-align:center">\(x \ \ln(x) - x + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Trigonométricas</td>
+<td style="text-align:center">\(\int \sin (x) \ dx\)</td>
+<td style="text-align:center">\(- \cos (x) + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\int \cos (x) \ dx\)</td>
+<td style="text-align:center">\(\sin (x) + C\)</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\(\int \sec^2(x) \ dx\)</td>
+<td style="text-align:center">\(\tan(x) + C\)</td>
+</tr>
+</tbody>
+</table>
+<p>1- <strong>Regla de la función de grado n:</strong> Esta regla nos dice que una función de grado n, donde n es un exponente real distinto de -1, se representa por \(f(x)=x^{n}\) y su integral es \(\int x^{n} \ dx = \frac{x^{n + 1}}{n + 1} + C\). Así por ejemplo, si quisiéramos saber la integral de \(f(x) = x^3\), aplicando la regla obtenemos, \(\int x^3 \ dx = \frac{x^4}{4} + C\).</p>
+<p>2- <strong>Regla de la multiplicación por una constante:</strong> Esta regla establece que una función con la forma \(f(x) = Cx\), donde \(C\) es una constante; entonces la integral de esta función va a ser igual a: \(\int Cx \ dx = C\int x \ dx\); es decir a la constante por la integral de \(x\). Así por ejemplo si tenemos la función \(f(x)=4x^3\), primero debemos a obtener la integral de \(x^3\), la cual aplicando la regla anterior sabemos que es \(\int x^3 \ dx = \frac{x^4}{4} + C \) y luego a esta integral la multiplicamos por la constante 4, para obtener el resultado final \(\int 4 x^3 \ dx = x^4 + C\).</p>
+<p>3- <strong>Regla de la suma:</strong> Esta regla establece que la integral de la suma de dos funciones es igual a la suma de las integrales de cada una de ellas. Es decir, \(\int (f + g) \ dx = \int f \ dx + \int g \ dx\). Así por ejemplo la integral de la función \(f(x) = 4x^3 + x^2\) va a ser igual a \(\int (4x^3 + x^2) \ dx = x^4 + \frac{x^3}{3} + C\).</p>
+<p>4- <strong>Regla de la diferencia:</strong> Esta regla establece que la integral de la diferencia entre dos funciones es igual a la diferencia entre las integrales de cada una de ellas. Es decir, \(\int (f - g) \ dx = \int f \ dx - \int g \ dx\). Así por ejemplo la integral de la función \(f(x) = 4x^3 - x^2\) va a ser igual a \(\int (4x^3 - x^2) \ dx = x^4 - \frac{x^3}{3} + C\).</p>
+<p>En todos estos ejemplos, podemos ver la aparición de una misteriosa constante \(C\), esta es la que se conoce como <a
+  href="https://es.wikipedia.org/wiki/Constante_de_integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>constante de integración</a>. Esta constante expresa una ambigüedad inherente a la construcción de las integrales. Es por esta ambigüedad que cuando hablamos de la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a> decimos que expresa una familia de funciones \(f(x) + C\).</p>
+<h3 id="teorema-fundamental-del-cálculo">Teorema fundamental del Cálculo<a href="#teorema-fundamental-del-c%c3%a1lculo" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>El <a
+  href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema fundamental del cálculo</a> establece una conexión entre las dos ramas del <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>: el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo diferencial</a> y el <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a>. Como ya hemos visto, el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo diferencial</a> surgió del problema de la <em><a
+  href="https://es.wikipedia.org/wiki/Recta_tangente"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>tangente</a></em> , mientras que el <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo integral</a> surgió de un problema aparentemente sin relación con este, el problema del  <em><a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>área</a></em>. Fue <a
+  href="https://es.wikipedia.org/wiki/Isaac_Barrow"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Isaac Barrow</a>, quien descubrió que estos dos problemas están en realidad estrechamente relacionados.
+De hecho, se dio cuenta de que la <a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>derivación</a> y la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integración</a> son procesos inversos. El <a
+  href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema fundamental del cálculo</a> nos da la relación inversa precisa entre la   <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> y la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em>. Fueron <a
+  href="https://es.wikipedia.org/wiki/Isaac_Newton"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Newton</a> y <a
+  href="https://es.wikipedia.org/wiki/Gottfried_Leibniz"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Leibniz</a> quienes aprovecharon esta relación y la utilizaron para
+desarrollar el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>. En particular, vieron que esta relación les permitía calcular <em><a
+  href="https://es.wikipedia.org/wiki/%C3%81rea"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>áreas</a></em> e  <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em> con mucha facilidad y sin tener que calcularlas como límites de sumas. Es decir, que si tomamos una función \(f\), y obtenemos primero su <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em>, y luego calculamos la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em> sobre esta función <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivada</a></em> $f'(x)$. Obtenemos nuevamente función original \(f\). Lo que una hace, la otra lo deshace. El <a
+  href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema fundamental del cálculo</a> es sin duda el teorema más importante en el <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a> y, de hecho, se ubica como uno de los grandes logros de la mente humana. Matemáticamente, este teorema se suele dividir en dos partes y nos dice lo siguiente:</p>
+<p><strong>Teorema fundamental del Calculo, parte 1.</strong> si \(f\) es una función continua en el intervalo \([a, b]\), entonces la función \(g\) definida como:</p>
+$$g(x) = \int_a^x f(t) dt \qquad a \leqslant x \leqslant b $$
+<p>es continua en el intervalo \([a, b]\) y <a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>diferenciable</a> en \((a, b)\), y \(g&rsquo;(x) = f(x)\).</p>
+<p><strong>Teorema fundamental del Calculo, parte 2.</strong> si \(f\) es una función continua en el intervalo \([a, b]\), entonces:</p>
+$$\int_a^b f(x) dx = F(b) - F(a) $$
+<p>en donde \(f\) es la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>antiderivada</a> de \(f\), o sea, una función tal que F&rsquo; = f.</p>
+<p>En definitiva, lo que nos dice la primera parte es que las operaciones de <a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>derivación</a> y de <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integración</a> son operaciones inversas. La segunda parte nos proporciona un método para calcular <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integrales definidas</a>, en base a la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>antiderivada</a> o <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a>.</p>
+<p>Así, por ejemplo, si quisiéramos calcular la <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integral</a></em>:</p>
+$$\int_0^3 (x^3 - 6x) dx$$
+<p>primero obtenemos su <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a>.</p>
+$$\int (x^3 - 6x) dx = \frac{x^4}{4} - 6\frac{x^2}{2}$$
+<p>y por último aplicamos la segunda parte del <a
+  href="https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>teorema fundamental del cálculo</a> para obtener la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral definida</a> en \([0, 3]\), reemplazando estos valores en la <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_indefinida"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integral indefinida</a> que acabamos de obtener.</p>
+$$\int_0^3 (x^3 - 6x) dx = \left(\frac{1}{4} \cdot 3^4 - 3 \cdot 3^2 \right) - \left(\frac{1}{4} \cdot 0^4 - 3 \cdot 0^2 \right) = -\frac{27}{4}$$
+<h3 id="calculando-integrales-con-python">Calculando Integrales con Python<a href="#calculando-integrales-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
+</h3>
+<p>Con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, podemos resolver <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em> con la ayuda de la, en este punto ya invaluable, librería <a
+  href="https://www.sympy.org/es/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>SymPy</a>. En este caso, vamos a utilizar el objeto <code>Integral</code>. Su sintaxis es la siguiente: <code>Integral(funcion, variable)</code>. Lo utilizamos de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> Integral, integrate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fx <span style="color:#f92672">=</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span>x
+</span></span><span style="display:flex;"><span>dx <span style="color:#f92672">=</span> Integral(fx, x)<span style="color:#f92672">.</span>doit()
+</span></span><span style="display:flex;"><span>dx
+</span></span></code></pre></div>$$\frac{x^{4}}{4} - 3 x^{2}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># la función integrate nos da el mismo resultado</span>
+</span></span><span style="display:flex;"><span>integrate(fx, x)
+</span></span></code></pre></div>$$\frac{x^{4}}{4} - 3 x^{2}$$
+<p>El objeto <code>Integral</code> también nos permite calcular <a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>integrales definidas</a>. En este caso, en el segundo argumento le pasamos una tupla cuyo primer elemento es la variable de integración, su segundo elemento es el límite inferior de integración y el último es el límite superior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Calculando integral definida para [0, 3]</span>
+</span></span><span style="display:flex;"><span>Integral(fx, (x, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>))<span style="color:#f92672">.</span>doit()
+</span></span></code></pre></div>$$- \frac{27}{4}$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Comprobando Teorema fundamental del calculo.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Integración y diferenciacion son operaciones inversas.</span>
+</span></span><span style="display:flex;"><span>diff(integrate(fx))
+</span></span></code></pre></div>$$x^{3} - 6 x$$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>integrate(diff(fx))
+</span></span></code></pre></div>$$x^{3} - 6 x$$
+<p>Como podemos ver, el método para calcular las <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em> con <a
+  href="https://www.python.org/"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Python</a>, es muy similar a lo que ya veníamos utilizando al calcular <em><a
+  href="https://es.wikipedia.org/wiki/L%C3%ADmite_matem%C3%A1tico"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Límites</a></em> y <em><a
+  href="https://es.wikipedia.org/wiki/Derivada"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Derivadas</a></em>. Para calcular <em><a
+  href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Integrales</a></em> en forma numérica, también podemos recurrir al módulo <em><a
+  href="https://docs.scipy.org/doc/scipy/reference/integrate.html"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>scipy.integrate</a></em>, el cual es muy útil para resolver <a
+  href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_diferencial"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>ecuaciones diferenciales</a>, pero eso ya va a quedar para otro artículo.</p>
+<p>Con esto concluyo esta introducción por el fascinante mundo del <a
+  href="https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>Cálculo</a>, espero lo hayan disfrutado tanto como yo!</p>
+<p>Saludos!</p>
+<p><em>Este post fue escrito utilizando Jupyter notebook. Pueden descargar este <a
+  href="https://github.com/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyCalculus.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>notebook</a> o ver su version estática en <a
+  href="https://nbviewer.ipython.org/github/relopezbriega/relopezbriega.github.io/blob/master/downloads/pyCalculus.ipynb"
+  
+  
+    class="link--external" target="_blank" rel="noreferrer"
+  
+>nbviewer</a>.</em></p>
+
+    </div>
+
+    
+      
+
+
+  <div class="social-share">
+    <strong class="social-share__heading">Share this post: </strong>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F&amp;title=Introducci%C3%B3n&#43;al&#43;C%C3%A1lculo&#43;con&#43;Python"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit</title><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://x.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F&amp;text=Introducci%C3%B3n&#43;al&#43;C%C3%A1lculo&#43;con&#43;Python&amp;via=%7buser_id%7d&amp;hashtags=%7bhash_tags%7d"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="https://api.whatsapp.com/send?phone=%7bphone_number%7d&amp;text=Introducci%C3%B3n&#43;al&#43;C%C3%A1lculo&#43;con&#43;Python%20http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+
+
+      </a>
+    
+      
+      
+      
+      <a
+        class="social-share__item"
+        href="mailto:?subject=Introducci%C3%B3n&#43;al&#43;C%C3%A1lculo&#43;con&#43;Python&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fblog%2F2015%2F12%2F02%2Fintroducci%25C3%25B3n-al-c%25C3%25A1lculo-con-python%2F"
+        target="_blank"
+        rel="noreferrer"
+      >
+        
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+  <path d="M3 7l9 6l9 -6" />
+</svg>
+
+
+      </a>
+    
+  </div>
+
+
+    
+
+    
+  </article>
+
+        </div>
+        <div class="sidebar">
+  
+    
+      <aside class="toc">
+        <nav>
+          <p class="sidebar__heading">Indice</p>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#funciones">Funciones</a></li>
+    <li><a href="#límites">Límites</a></li>
+    <li><a href="#derivadas">Derivadas</a></li>
+    <li><a href="#integrales">Integrales</a></li>
+  </ul>
+</nav>
+        </nav>
+      </aside>
+      <hr />
+    
+  
+
+  
+  
+    <aside class="bio">
+      
+
+  <div class="jr__item jr-basics__item">
+    
+  <div class="jr-basics__image">
+    <img
+      src="https://0.gravatar.com/avatar/45973a2c27d1bafade36a201a13d784ad93ec68fbeb70d7c44c02b4ba6eaeb40?size=256"
+      alt="Picture of Raul E. Lopez Briega"
+      width="250"
+      height="250"
+    />
+  </div>
+
+
+
+    
+      <div class="jr-basics__name">Raul E. Lopez Briega</div>
+    
+
+    
+      <div class="jr-basics__label">Business Analyst</div>
+    
+
+    
+
+    
+
+    
+
+    
+      <div class="jr-basics__summary">Profesional en Contabilidad y Administración con amplia experiencia en tecnologías de la información. Especializado en integración de procesos contables y financieros con herramientas IT, y manejo de sistemas ERP como JD Edwards y SAP. Reconocido por mi enfoque en la mejora continua, liderazgo en proyectos y compromiso con la excelencia en resultados. Puedo combinar perfectamente el conocimiento contable y financiero con el conocimiento técnico funcional propio de las herramientas informáticas.</div>
+    
+
+    
+      
+
+      
+
+      
+        <div class="jr-basics__location-city">Buenos Aires, ARG</div>
+      
+
+      
+
+      
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--col">
+        
+          
+
+<a href="https://github.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+  </div>
+
+  
+    <div class="jr-basics__profile-username">relopezbriega</div>
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+
+    
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--row">
+        
+          
+
+<a href="https://x.com/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://www.linkedin.com/in/relopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+          
+
+<a href="https://gravatar.com/raulezequiellopezbriega" target="_blank" rel="noreferrer me">
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gravatar</title><path d="M12 0c-1.326 0-2.4 1.074-2.4 2.4v8.4c0 1.324 1.074 2.398 2.4 2.398s2.4-1.074 2.4-2.398V5.21c2.795.99 4.799 3.654 4.799 6.789 0 3.975-3.225 7.199-7.199 7.199S4.801 15.975 4.801 12c0-1.989.805-3.789 2.108-5.091.938-.938.938-2.458 0-3.396s-2.458-.938-3.396 0C1.344 5.686 0 8.686 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0"/></svg>
+  </div>
+
+  
+</div>
+
+
+</a>
+
+        
+      </div>
+    
+  </div>
+
+
+
+      
+        <hr />
+      
+    </aside>
+  
+
+  
+    <aside>
+      
+
+
+  
+  
+  
+  
+  
+  
+
+
+  <div class="tag-cloud">
+    
+      
+      
+      
+      <a
+        href="/tags/algebra"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >algebra</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/analisis-de-datos"
+        style="font-size:1.803247508777645rem"
+        class="tag-cloud__tag"
+        >analisis de datos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/batman"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >batman</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bayes"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bayes</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/binario"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >binario</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/bit"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >bit</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/boosting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >boosting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/calculo"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >calculo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/caos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >caos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejidad"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/complejos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >complejos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/conjuntos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >conjuntos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/decimales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >decimales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/deep-learning"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >deep learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivada"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >derivada</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/derivadas-parciales"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >derivadas parciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/distribuciones"
+        style="font-size:1.3584490740351578rem"
+        class="tag-cloud__tag"
+        >distribuciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/ecuaciones-diferenciales"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >ecuaciones diferenciales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/entropia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >entropia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/estadistica"
+        style="font-size:1.6641503679521246rem"
+        class="tag-cloud__tag"
+        >estadistica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/falacias"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >falacias</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/finanazas"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >finanazas</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/fractales"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >fractales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/funcional"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >funcional</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/futbol"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >futbol</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/incertidumbre"
+        style="font-size:1.2320751839760624rem"
+        class="tag-cloud__tag"
+        >incertidumbre</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inferencia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inferencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/infinito"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >infinito</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/informacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >informacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/integral"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >integral</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >inteligencia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/inteligencia-artificial"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >inteligencia artificial</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/lenguaje-natural"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >lenguaje natural</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limite"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limite</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/limites"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >limites</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logaritmo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logaritmo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/logica"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >logica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/machine-learning"
+        style="font-size:1.7008605560822845rem"
+        class="tag-cloud__tag"
+        >machine learning</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/map-reduce"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >map-reduce</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matematica"
+        style="font-size:1.8154716779921016rem"
+        class="tag-cloud__tag"
+        >matematica</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matplotlib"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >matplotlib</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/matrices"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >matrices</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/mcmc"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >mcmc</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/metropolis"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >metropolis</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/modelos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >modelos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/monte-carlo"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >monte carlo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/numeros"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >numeros</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/optimizacion"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >optimizacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/overfitting"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >overfitting</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pensamiento"
+        style="font-size:1.0160375919880311rem"
+        class="tag-cloud__tag"
+        >pensamiento</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/pi"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >pi</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/probabilidad"
+        style="font-size:1.4481127759640935rem"
+        class="tag-cloud__tag"
+        >probabilidad</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion"
+        style="font-size:1.82723444614138rem"
+        class="tag-cloud__tag"
+        >programacion</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/programacion-lineal"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >programacion lineal</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/python"
+        style="font-size:1.9932970241832564rem"
+        class="tag-cloud__tag"
+        >python</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redes-neuronales"
+        style="font-size:1.406494197217072rem"
+        class="tag-cloud__tag"
+        >redes neuronales</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/redundancia"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >redundancia</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/regex"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >regex</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/seaborn"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >seaborn</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/series-de-tiempo"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >series de tiempo</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sistemas-dinamicos"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sistemas dinamicos</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/sobreajuste"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >sobreajuste</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >tensores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/tensorflow"
+        style="font-size:1.1424114820471267rem"
+        class="tag-cloud__tag"
+        >tensorflow</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/vectores"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >vectores</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/visualizaciones"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >visualizaciones</a
+      >
+    
+      
+      
+      
+      <a
+        href="/tags/xgboost"
+        style="font-size:0.8rem"
+        class="tag-cloud__tag"
+        >xgboost</a
+      >
+    
+  </div>
+
+
+    </aside>
+  
+</div>
+
+      </main>
+      <footer>
+  <div class="copyright">
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" ></script>
+<script src="/js/flexsearch.js" ></script>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
