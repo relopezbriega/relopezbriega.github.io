@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Ecuaciones diferenciales con python. Qué es una ecuación diferencial, clasificación, series de potencia, campos de direcciones, transformada de Laplace, soluciones analíticas y numéricas, ejemplos en python.">
   <meta itemprop="datePublished" content="2016-01-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2016-01-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="5486">
+  <meta itemprop="wordCount" content="5501">
   <meta itemprop="keywords" content="Python,Matematica,Calculo,Derivada,Integral,Ecuaciones Diferenciales">
 
 
@@ -723,13 +723,16 @@ $$F = m\frac{d^2u}{dt^2}$$
     class="link--external" target="_blank" rel="noreferrer"
   
 >Ecuaciones diferenciales parciales</a>:</p>
-$$\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
+$$
+\begin{array}
+\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2} = 0;
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial w}{\partial t};
 \\
 \\
 a^2\left(\frac{\partial^2 w}{\partial x^2} +  \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) = \frac{\partial^2 w}{\partial t^2}.
+\end{array}
 $$
 <p>En esta caso, el símbolo \(\partial\), es la notación matemática para expresar que estamos derivando parcialmente, así por ejemplo, si queremos expresar que vamos a derivar z con respecto a x, escribimos \(\partial z / \partial x\).</p>
 <p>Estos ejemplos, tienen una gran aplicación en <a
@@ -1353,7 +1356,12 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Solución con serie de potencias</span>
 </span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> y(x)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>sympy<span style="color:#f92672">.</span>dsolve(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">-</span> f)
-</span></span></code></pre></div>$$y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 1\right) + \frac{x^{5}}{60} \left(C_{1} \left(4 C_{1} - 7\right) + 10 C_{1} - 6\right) + C_{1} + C_{1} x + C_{1} x^{2} + \frac{C_{1} x^{4}}{12} + \mathcal{O}\left(x^{6}\right)$$
+</span></span></code></pre></div>$$
+\begin{array}
+y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 1\right) + \frac{x^{5}}{60} \left(C_{1} \left(4 C_{1} - 7\right) + 10 C_{1} - 6\right) + \\
+C_{1} + C_{1} x + C_{1} x^{2} + \frac{C_{1} x^{4}}{12} + \mathcal{O}\left(x^{6}\right)
+\end{array}
+$$
 <h3 id="campos-de-direcciones">Campos de direcciones<a href="#campos-de-direcciones" class="post-heading__anchor" aria-hidden="true">#</a>
 </h3>
 <p>Los <a
@@ -1829,8 +1837,12 @@ $$\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0)$$
   
 >Transformada de Laplace</a> de derivadas de orden superior</strong></em>: Esta propiedad es la generalización de la propiedad anterior para derivadas de orden n. Su formula es:</li>
 </ul>
-$$\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
-= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$$
+$$
+\begin{array}
+\mathcal{L}\{f^{(n)}(t)\} = s^n\mathcal{L}\{f(t)\} - s^{n-1}f(0) - \dots -f^{(n-1)}(0) \\
+= s^n\mathcal{L}\{f(t)\} - \sum_{i=1}^n s^{n-i}f^{(i-1)}(0)
+\end{array}
+$$
 <h4 id="resolviendo-ecuaciones-diferenciales-con-la-transformada-de-laplace">Resolviendo ecuaciones diferenciales con la transformada de Laplace<a href="#resolviendo-ecuaciones-diferenciales-con-la-transformada-de-laplace" class="post-heading__anchor" aria-hidden="true">#</a>
 </h4>
 <p>La principal ventaja de utilizar <a
@@ -2116,10 +2128,13 @@ $$y_n = y_{n -1} + f(x_{n - 1}, y_{n - 1})h$$
 >relación de recurrencia</a> va a estar dada por un promedio ponderado de términos de la siguiente manera:</p>
 $$y_{k + 1} = y_k + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$
 <p>en dónde:</p>
-$$k_1 = f(x_k, y_k)h_k, \\
+$$
+\begin{array}
+k_1 = f(x_k, y_k)h_k, \\
 k_2 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_1}{2}\right)h_k, \\
 k_3 = f\left(x_k + \frac{h_k}{2}, y_k + \frac{k_2}{2}\right)h_k, \\
 k_4 = f\left(x_k + h_k, y_k + k_3\right)h_k. \\
+\end{array}
 $$
 <h4 id="soluciones-numéricas-con-python">Soluciones numéricas con Python<a href="#soluciones-num%c3%a9ricas-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
 </h4>
