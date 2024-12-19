@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Simulación de Monte-Carlo con Python. Números aleatorios, cadenas de Markov, algoritmo Metropolis-Hastings, métodos MCMC.">
   <meta itemprop="datePublished" content="2017-01-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2017-01-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="3121">
+  <meta itemprop="wordCount" content="3123">
   <meta itemprop="keywords" content="Python,Estadistica,Programacion,Analisis De Datos,Probabilidad,Distribuciones,Matematica,Monte Carlo,Metropolis">
 
 
@@ -1257,19 +1257,22 @@ $$
     class="link--external" target="_blank" rel="noreferrer"
   
 >distribución invariante</a>.</p>
-$$ p_3 = p_2 P = \begin{bmatrix}
+$$ 
+\begin{eqnarray} 
+p_3 = p_2 P = \begin{bmatrix}
 0.332 & 0.304 & 0.364 
-\end{bmatrix}, \\  
+\end{bmatrix}, \\\  
 p_4 = p_3 P = \begin{bmatrix}
 0.3304 & 0.3032 & 0.3664 
-\end{bmatrix}, \\ 
+\end{bmatrix}, \\\
 p_5 = p_4 P = \begin{bmatrix}
 0.33032 & 0.3036 &  0.36608 
-\end{bmatrix}, \\ 
-\dots \hspace{1cm} \dots \\
+\end{bmatrix}, \\\
+\dots \hspace{1cm} \dots \\\
 p_{10} = p_9 P = \begin{bmatrix}
 0.330357 & 0.303571 & 0.366072 
 \end{bmatrix}
+\end{eqnarray}
 $$
 <p>Veamos el ejemplo con la ayuda de <a
   href="https://www.python.org/"
