@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Ecuaciones diferenciales con python. Qué es una ecuación diferencial, clasificación, series de potencia, campos de direcciones, transformada de Laplace, soluciones analíticas y numéricas, ejemplos en python.">
   <meta itemprop="datePublished" content="2016-01-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2016-01-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="5501">
+  <meta itemprop="wordCount" content="5518">
   <meta itemprop="keywords" content="Python,Matematica,Calculo,Derivada,Integral,Ecuaciones Diferenciales">
 
 
@@ -995,7 +995,7 @@ $$y = Ce^{-x^3} +2 $$
   
 >serie</a>, generalmente infinita, que posee la siguiente forma:</p>
 $$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$
-<p>En dónde \(x\) es una variable y las $C_n$ son <em>constantes</em> o los <em>coeficientes</em> de la serie. Una <a
+<p>En dónde \(x\) es una variable y las \(C_n\) son <em>constantes</em> o los <em>coeficientes</em> de la serie. Una <a
   href="https://es.wikipedia.org/wiki/Serie_de_potencias"
   
   
@@ -1026,7 +1026,11 @@ $$\sum_{n=0}^{\infty} C_nX^n = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots $$
     class="link--external" target="_blank" rel="noreferrer"
   
 >función</a>.</p>
-$$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$
+$$\begin{array}
+f(x) = C_0 + C_1X + C_2X^2 + \\
+C_3X^3 + \dots + C_nX^n + \dots
+\end{array}
+$$
 <p>El <em>dominio</em> de esta <a
   href="https://es.wikipedia.org/wiki/Funci%C3%B3n_matem%C3%A1tica"
   
@@ -1087,7 +1091,11 @@ $$f(x) = C_0 + C_1X + C_2X^2 + C_3X^3 + \dots + C_nX^n + \dots$$
 >funciones</a>. Su definición matemática es la siguiente:</p>
 $$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x - a)^n$$
 <p>Lo que es equivalente a decir:</p>
-$$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(a)}{3!}(x -a)^3 + \dots$$
+$$\begin{array}
+f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \\
+\frac{f'''(a)}{3!}(x -a)^3 + \dots
+\end{array}
+$$
 <p>Una de las razones de que las <a
   href="https://es.wikipedia.org/wiki/Serie_de_Taylor"
   
@@ -1124,7 +1132,7 @@ $$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(
   
     class="link--external" target="_blank" rel="noreferrer"
   
->integrando</a> la serie término a término. Por ejemplo, la función $f(x) = e^{-x^2}$, no puede ser integrada por los métodos normales del <a
+>integrando</a> la serie término a término. Por ejemplo, la función \(f(x) = e^{-x^2}\), no puede ser integrada por los métodos normales del <a
   href="https://es.wikipedia.org/wiki/Integraci%C3%B3n"
   
   
@@ -1149,8 +1157,11 @@ $$f(x) = f(a) + \frac{f'(a)}{1!}(x -a) + \frac{f''(a)}{2!}(x -a)^2 + \frac{f'''(
     class="link--external" target="_blank" rel="noreferrer"
   
 >Serie de Taylor</a> de esta función, del siguiente modo:</p>
-$$e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} =
-1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots$$
+$$\begin{array}
+e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{n!} = \\
+1 - \frac{x^2}{1!} + \frac{x^4}{2!} -\frac{x^6}{3!} + \dots
+\end{array}
+$$
 <h2 id="resolviendo-ecuaciones-diferenciales-con-python">Resolviendo Ecuaciones diferenciales con Python<a href="#resolviendo-ecuaciones-diferenciales-con-python" class="post-heading__anchor" aria-hidden="true">#</a>
 </h2>
 <p>Mientras que algunos problemas de <a
@@ -1358,7 +1369,8 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$
 </span></span><span style="display:flex;"><span>sympy<span style="color:#f92672">.</span>dsolve(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">-</span> f)
 </span></span></code></pre></div>$$
 \begin{array}
-y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 1\right) + \frac{x^{5}}{60} \left(C_{1} \left(4 C_{1} - 7\right) + 10 C_{1} - 6\right) + \\
+y{\left (x \right )} = \frac{x^{3}}{3} \left(C_{1} \left(3 C_{1} - 1\right) + 1\right) +  \\
+\frac{x^{5}}{60} \left(C_{1} \left(4 C_{1} - 7\right) + 10 C_{1} - 6\right) + \\
 C_{1} + C_{1} x + C_{1} x^{2} + \frac{C_{1} x^{4}}{12} + \mathcal{O}\left(x^{6}\right)
 \end{array}
 $$
@@ -1602,7 +1614,7 @@ $$\frac{dy}{dx} = x^2 + y^2 -1$$
   
     class="link--external" target="_blank" rel="noreferrer"
   
->campo de direcciones</a> para los valores de \(x\) entre $-1.5$ y $1.5$, luego comienza a desviarse, lo que nos indica que la solución aproximada ya no sería válida. En el panel de la derecha podemos ver una solución que se adapta mucho mejor con el <a
+>campo de direcciones</a> para los valores de \(x\) entre \(-1.5\) y \(1.5\), luego comienza a desviarse, lo que nos indica que la solución aproximada ya no sería válida. En el panel de la derecha podemos ver una solución que se adapta mucho mejor con el <a
   href="https://es.wikipedia.org/wiki/Campo_de_direcciones"
   
   
@@ -1819,7 +1831,7 @@ $$\mathcal{L}\{c_1f_1(t) + c_2f_2(t)\}=c_1\mathcal{L}\{f_1(t)\} + c_2\mathcal{L}
   
     class="link--external" target="_blank" rel="noreferrer"
   
->Transformada de Laplace</a> de la primer derivada</strong></em>: Esta propiedad nos dice que si \(f(t)\) es continua y $f'(t)$ es continua en el intervalo $0 \le t \le \alpha$. Entonces la <a
+>Transformada de Laplace</a> de la primer derivada</strong></em>: Esta propiedad nos dice que si \(f(t)\) es continua y \(f&rsquo;(t)\) es continua en el intervalo \(0 \le t \le \alpha\). Entonces la <a
   href="https://es.wikipedia.org/wiki/Transformada_de_Laplace"
   
   
@@ -1951,7 +1963,11 @@ $$y'' + 3y' + 2y = 0$$
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># de derivadas</span>
 </span></span><span style="display:flex;"><span>L_edo_2 <span style="color:#f92672">=</span> laplace_transform_derivatives(L_edo)
 </span></span><span style="display:flex;"><span>sympy<span style="color:#f92672">.</span>Eq(L_edo_2)
-</span></span></code></pre></div>$$s^{2} \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 s \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) - s y{\left (0 \right )} + 2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) - 3 y{\left (0 \right )} - \left. \frac{d}{d t} y{\left (t \right )} \right|_{\substack{ t=0 }} = 0$$
+</span></span></code></pre></div>$$\begin{array}
+s^{2} \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) + 3 s \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) - s y{\left (0 \right )} + \\
+ 2 \mathcal{L}_{t}\left[y{\left (t \right )}\right]\left(s\right) - 3 y{\left (0 \right )} - \left. \frac{d}{d t} y{\left (t \right )} \right|_{\substack{ t=0 }} = 0
+\end{array}
+$$
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># reemplazamos la transfomada de Laplace de y(t) por la incognita Y</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># para facilitar la lectura de la ecuación.</span>
 </span></span><span style="display:flex;"><span>L_edo_3 <span style="color:#f92672">=</span> L_edo_2<span style="color:#f92672">.</span>subs(sympy<span style="color:#f92672">.</span>laplace_transform(y(t), t, s), Y)

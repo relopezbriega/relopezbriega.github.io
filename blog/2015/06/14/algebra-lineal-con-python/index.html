@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Algebra lineal con python. Escalares, vectores, matrices, tensores, operaciones básicas, sistemas de ecuaciones lineales, programación lineal, librerías de python para algebra lineal, ejemplos en python.">
   <meta itemprop="datePublished" content="2015-06-14T00:00:00+00:00">
   <meta itemprop="dateModified" content="2015-06-14T00:00:00+00:00">
-  <meta itemprop="wordCount" content="4065">
+  <meta itemprop="wordCount" content="4073">
   <meta itemprop="keywords" content="Python,Matematica,Calculo,Matrices,Programacion Lineal,Tensores">
 
 
@@ -519,19 +519,18 @@
 $$f=\begin{bmatrix}0&1&-1\end{bmatrix} ;       c=\begin{bmatrix}0\\1\\-1\end{bmatrix}$$
 </li>
 <li>
-<p><strong>Las <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">Matrices</a></strong>: Una <em>matriz</em> es un arreglo bidimensional de números (llamados entradas de la matriz) ordenados en filas (o renglones) y columnas, donde una fila es cada una de las líneas horizontales de la matriz y una columna es cada una de las líneas verticales. En una <em>matriz</em> cada elemento puede ser identificado utilizando dos índices, uno para la fila y otro para la columna en que se encuentra. Las podemos representar de la siguiente manera, <em>A</em> es una matriz de 3x2.
-</p>
-$$A=\begin{bmatrix}0 & 1& \\-1 & 2 \\ -2 & 3\end{bmatrix}$$
+<p><strong>Las <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">Matrices</a></strong>: Una <em>matriz</em> es un arreglo bidimensional de números (llamados entradas de la matriz) ordenados en filas (o renglones) y columnas, donde una fila es cada una de las líneas horizontales de la matriz y una columna es cada una de las líneas verticales. En una <em>matriz</em> cada elemento puede ser identificado utilizando dos índices, uno para la fila y otro para la columna en que se encuentra. Las podemos representar de la siguiente manera, <em>A</em> es una matriz de 3x2.</p>
 </li>
-<li>
-<p><strong>Los <a
+</ul>
+$$A=\begin{bmatrix}0 & 1& \\-1 & 2 \\ -2 & 3\end{bmatrix}$$
+<ul>
+<li><strong>Los <a
   href="https://es.wikipedia.org/wiki/C%C3%A1lculo_tensorial"
   
   
     class="link--external" target="_blank" rel="noreferrer"
   
->Tensores</a></strong>:En algunos casos necesitaremos una matriz con más de dos ejes. En general, una serie de números dispuestos en una cuadrícula regular con un número variable de ejes es conocido como un <em>tensor</em>.</p>
-</li>
+>Tensores</a></strong>:En algunos casos necesitaremos una matriz con más de dos ejes. En general, una serie de números dispuestos en una cuadrícula regular con un número variable de ejes es conocido como un <em>tensor</em>.</li>
 </ul>
 <p>Sobre estos objetos podemos realizar las operaciones matemáticas básicas, como ser <a
   href="https://es.wikipedia.org/wiki/Adici%C3%B3n"
@@ -1036,7 +1035,7 @@ $$\begin{split}\gamma A
     \gamma a_{n1} & \cdots & \gamma a_{nk} \\
 \end{array}
 \right]\end{split}$$
-<p>Suma de matrices: </p>
+<p>Suma de matrices:</p>
 $$\begin{split}A + B = \left[
 \begin{array}{ccc}
     a_{11} & \cdots & a_{1k} \\
@@ -1052,7 +1051,7 @@ $$\begin{split}A + B = \left[
     b_{n1} & \cdots & b_{nk} \\
 \end{array}
 \right]
-:=
+:= \\
 \left[
 \begin{array}{ccc}
     a_{11} + b_{11} &  \cdots & a_{1k} + b_{1k} \\
@@ -1060,7 +1059,7 @@ $$\begin{split}A + B = \left[
     a_{n1} + b_{n1} &  \cdots & a_{nk} + b_{nk} \\
 \end{array}
 \right]\end{split}$$
-<p>Resta de matrices: </p>
+<p>Resta de matrices:</p>
 $$\begin{split}A - B = \left[
 \begin{array}{ccc}
     a_{11} & \cdots & a_{1k} \\
@@ -1074,13 +1073,15 @@ $$\begin{split}A - B = \left[
     \vdots & \vdots & \vdots \\
     b_{n1} & \cdots & b_{nk} \\
 \end{array}
-\right] := \left[
+\right] := \\
+\left[
 \begin{array}{ccc}
     a_{11} - b_{11} &  \cdots & a_{1k} - b_{1k} \\
     \vdots & \vdots & \vdots \\
     a_{n1} - b_{n1} &  \cdots & a_{nk} - b_{nk} \\
 \end{array}
-\right]\end{split}$$
+\right]\end{split}
+$$
 <p>Para los casos de suma y resta, hay que tener en cuenta que solo se pueden sumar o restar <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a> que tengan las mismas dimensiones, es decir que si tengo una <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> A de dimensión 3x2 (3 filas y 2 columnas) solo voy a poder sumar o restar la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> B si esta también tiene 3 filas y 2 columnas.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo en Python</span>
 </span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>],
@@ -1281,7 +1282,7 @@ $$I=\begin{bmatrix}1 & 0 & 0 & \\0 & 1 & 0\\ 0 & 0 & 1\end{bmatrix}$$
   
     class="link--external" target="_blank" rel="noreferrer"
   
->matriz cuadrada</a> que hace que la multiplicación \(A$x$A^{-1}\) sea igual a la <a
+>matriz cuadrada</a> que hace que la multiplicación \(A\)x\(A^{-1}\) sea igual a la <a
   href="https://es.wikipedia.org/wiki/Matriz_identidad"
   
   
@@ -1304,7 +1305,10 @@ $$A × A^{-1} = A^{-1} × A = I$$
   
 >matrices cuadradas</a>. Se calcula como la suma de los productos de las diagonales de la matriz en una dirección menos la suma de los productos de las diagonales en la otra dirección. Se represente con el símbolo |A|.</p>
 $$A=\begin{bmatrix}a_{11} & a_{12} & a_{13} & \\a_{21} & a_{22} & a_{23} & \\ a_{31} & a_{32} & a_{33} & \end{bmatrix}$$
-$$|A| = (a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} ) - (a_{31} a_{22} a_{13} + a_{32} a_{23} a_{11} + a_{33} a_{21} a_{12})
+$$\begin{eqnarray}
+|A| = (a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} ) - \\
+(a_{31} a_{22} a_{13} + a_{32} a_{23} a_{11} + a_{33} a_{21} a_{12})
+\end{eqnarray}
  $$
 <p>Por último, la <a
   href="https://es.wikipedia.org/wiki/Matriz_transpuesta"
@@ -1312,8 +1316,10 @@ $$|A| = (a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} ) - 
   
     class="link--external" target="_blank" rel="noreferrer"
   
->matriz transpuesta</a> es aquella en que las filas se transforman en columnas y las columnas en filas. Se representa con el símbolo $A^\intercal$</p>
-$$\begin{bmatrix}a & b & \\c & d & \\ e & f & \end{bmatrix}^T:=\begin{bmatrix}a & c & e &\\b & d & f & \end{bmatrix}$$
+>matriz transpuesta</a> es aquella en que las filas se transforman en columnas y las columnas en filas. Se representa con el símbolo \(A^\intercal\)</p>
+$$
+\begin{bmatrix}a & b & \\c & d & \\ e & f & \end{bmatrix}^T:=\begin{bmatrix}a & c & e &\\b & d & f & \end{bmatrix}
+$$
 <p>Ejemplos en <a
   href="https://python.org/"
   
@@ -1439,7 +1445,7 @@ $$3x + 2y = 11$$
 <p>Luego de haber graficado las funciones, podemos ver que ambas rectas se cruzan en el punto (3, 1), es decir que la solución de nuestro sistema sería \(x=3\) e \(y=1\). En este caso, al tratarse de un sistema simple y con solo dos incógnitas, la solución gráfica puede ser de utilidad, pero para sistemas más complicados se necesita una solución numérica, es aquí donde entran a jugar las <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matrices</a>.</p>
 <p>Ese mismo sistema se podría representar como una ecuación matricial de la siguiente forma:</p>
 $$\begin{bmatrix}1 & -2 & \\3 & 2 & \end{bmatrix} \begin{bmatrix}x & \\y & \end{bmatrix} = \begin{bmatrix}1 & \\11 & \end{bmatrix}$$
-<p>Lo que es lo mismo que decir que la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> A por la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> $x$ nos da como resultado el <a
+<p>Lo que es lo mismo que decir que la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> A por la <a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">matriz</a> \(x\) nos da como resultado el <a
   href="https://es.wikipedia.org/wiki/Vector"
   
   
@@ -1447,7 +1453,7 @@ $$\begin{bmatrix}1 & -2 & \\3 & 2 & \end{bmatrix} \begin{bmatrix}x & \\y & \end{
   
 >vector</a> b.</p>
 $$ Ax = b$$
-<p>En este caso, ya sabemos el resultado de $x$, por lo que podemos comprobar que nuestra solución es correcta realizando la <a
+<p>En este caso, ya sabemos el resultado de \(x\), por lo que podemos comprobar que nuestra solución es correcta realizando la <a
   href="https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices"
   
   
