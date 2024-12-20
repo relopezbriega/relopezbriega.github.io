@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Visualización de datos con python. Análisis de datos, cómo elegir la visualización adecuada, librerías de python, bokeh, folium, seaborn, matplotlib.">
   <meta itemprop="datePublished" content="2016-09-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2016-09-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1788">
+  <meta itemprop="wordCount" content="1781">
   <meta itemprop="keywords" content="Python,Programacion,Analisis De Datos,Machine Learning,Probabilidad,Estadistica,Distribuciones,Visualizaciones,Seaborn,Matplotlib">
 
 
@@ -754,7 +754,27 @@
 </span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>spines[<span style="color:#e6db74">&#39;left&#39;</span>]<span style="color:#f92672">.</span>set_position((<span style="color:#e6db74">&#39;data&#39;</span>,<span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># mostrando el resultado</span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_6_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_6_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="460"
+    height="361"
+  />
+
+
+
+
+
+
+</p>
 <p>En este primer ejemplo vemos como podemos acceder a la API de <a
   href="https://matplotlib.org/gallery.html"
   
@@ -838,7 +858,27 @@
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;largo del pétalo&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;cuenta largo del pétalo&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_10_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_10_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="608"
+    height="504"
+  />
+
+
+
+
+
+
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo diagrama de dispersion entre Petal.Length y Petal.Width</span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">8</span>))
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(setosa[<span style="color:#e6db74">&#39;Petal.Length&#39;</span>], setosa[<span style="color:#e6db74">&#39;Petal.Width&#39;</span>], 
@@ -852,7 +892,27 @@
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Ancho del pétalo (cm)&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;top_left&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_11_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_11_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="616"
+    height="504"
+  />
+
+
+
+
+
+
+</p>
 <h3 id="bokeh">Bokeh<a href="#bokeh" class="post-heading__anchor" aria-hidden="true">#</a>
 </h3>
 <p><a
@@ -1168,7 +1228,27 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo gráfico de distribuciones</span>
 </span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
 </span></span><span style="display:flex;"><span>dist<span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>distplot(x)
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_16_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_16_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="372"
+    height="258"
+  />
+
+
+
+
+
+
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo gráfico regresión con tips dataset</span>
 </span></span><span style="display:flex;"><span>tips<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div><div>
@@ -1240,14 +1320,74 @@
 </table>
 </div>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>reg <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>regplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;total_bill&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tip&#34;</span>, data<span style="color:#f92672">=</span>tips)
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_18_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_18_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="388"
+    height="273"
+  />
+
+
+
+
+
+
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo pairplot con datase iris</span>
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>pairplot(iris, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Species&#34;</span>, diag_kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hist&#34;</span>)  
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_19_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_19_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="798"
+    height="713"
+  />
+
+
+
+
+
+
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo FacetGrid con iris</span>
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>FacetGrid(iris, col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Species&#34;</span>)
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>map(plt<span style="color:#f92672">.</span>scatter, <span style="color:#e6db74">&#34;Petal.Length&#34;</span>, <span style="color:#e6db74">&#34;Petal.Width&#34;</span>)
-</span></span></code></pre></div><p>![png](/(DataViz_files/DataViz_20_0.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+  
+  
+  <img
+    src="/DataViz_files/DataViz_20_0.png"
+    alt="png"
+    
+    loading="lazy"
+    width="641"
+    height="210"
+  />
+
+
+
+
+
+
+</p>
 <h3 id="folium">Folium<a href="#folium" class="post-heading__anchor" aria-hidden="true">#</a>
 </h3>
 <p>Por último, veamos un ejemplo de como utilizar <a

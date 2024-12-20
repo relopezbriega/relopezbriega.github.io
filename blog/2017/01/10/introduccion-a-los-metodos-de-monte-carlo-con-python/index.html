@@ -98,7 +98,7 @@
   <meta itemprop="description" content="Simulación de Monte-Carlo con Python. Números aleatorios, cadenas de Markov, algoritmo Metropolis-Hastings, métodos MCMC.">
   <meta itemprop="datePublished" content="2017-01-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2017-01-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="3123">
+  <meta itemprop="wordCount" content="3134">
   <meta itemprop="keywords" content="Python,Estadistica,Programacion,Analisis De Datos,Probabilidad,Distribuciones,Matematica,Monte Carlo,Metropolis">
 
 
@@ -1392,7 +1392,7 @@ El problema básico que intenta resolver el <a
   
     class="link--external" target="_blank" rel="noreferrer"
   
->algoritmo Metropolis-Hastings</a>, la generación de \(x_{n + 1}\) <strong>es un proceso en dos etapas</strong>. La <strong>primera etapa</strong> consiste en generar un <em>candidato</em>, que denominaremos \(x^<em>\). El valor de \(x^</em>\) se genera a partir de la <em><a
+>algoritmo Metropolis-Hastings</a>, la generación de \(x_{n + 1}\) <strong>es un proceso en dos etapas</strong>. La <strong>primera etapa</strong> consiste en generar un <em>candidato</em>, que denominaremos \(x^* \). El valor de \(x^* \) se genera a partir de la <em><a
   href="https://relopezbriega.github.io/blog/2016/06/29/distribuciones-de-probabilidad-con-python/"
   
   
@@ -1427,13 +1427,13 @@ $$ x^*|x_n \sim Normal(x_n, \sigma^2)$$
 >probabilidad</a> de aceptación \(A(x_n \rightarrow x^*)\), la cual estará dada por:</p>
 $$A(x_n \rightarrow x^*) = \min \left(1, \frac{P(x^*)}{P(x_n)} \cdot \frac{Q(x_n | x^*)}{Q(x^* | x_n)} \right)
 $$
-<p>Muy bien. Ahora que tenemos el <em>candidato</em> \(x^<em>\) y hemos calculado la <a
+<p>Muy bien. Ahora que tenemos el <em>candidato</em> \(x^* \) y hemos calculado la <a
   href="https://relopezbriega.github.io/tag/probabilidad.html"
   
   
     class="link--external" target="_blank" rel="noreferrer"
   
->probabilidad</a> de aceptación \(A(x_n \rightarrow x^</em>)\), es tiempo de decidir <em>aceptar</em> al candidato (en cuyo caso se establecemos \(x_{n + 1} = x^*\)); o <em>rechazar</em> al candidato (en cuyo caso estableceremos \(x_{n + 1} = x_n\)). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos \(u\). Entonces:</p>
+>probabilidad</a> de aceptación \( A(x_n \rightarrow x^* ) \), es tiempo de decidir <em>aceptar</em> al candidato (en cuyo caso se establecemos \( x_{n + 1} = x^*  \) ); o <em>rechazar</em> al candidato (en cuyo caso estableceremos \( x_{n + 1} = x_n \)). Para tomar esta decisión, generamos un número aleatorio (uniformemente distribuido) entre 0 y 1, que denominaremos \(u\). Entonces:</p>
 $$x_{n + 1} = \left\{
     \begin{array}{ll}
             x^*  & \mbox{si } u \leq A(x_n \rightarrow x^*)\\
