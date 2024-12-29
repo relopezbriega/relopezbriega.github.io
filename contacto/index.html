@@ -239,15 +239,7 @@
 <meta name="theme-color" content="#282828" />
 
 
-<style>
-  textarea {  
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; 
-    width: 100%;
-    height: 280px;
-    }
-</style>
+
   
   
 
@@ -448,15 +440,52 @@
     </fieldset>
     <fieldset>
         <strong><label for="message">Mensaje</label></strong><br>
-        <textarea name="message" rows="1" placeholder="Mensaje" ></textarea>
+        <textarea name="message" rows="1" placeholder="Mensaje"></textarea>
     </fieldset>
     <input class="hidden" type="text" name="_gotcha" style="display:none">
     <input class="hidden" type="hidden" name="_subject" value="Message via http://domain.com">
 
-    <input class="button submit" type="submit" value="Enviar">
+    <input class="button-submit" type="submit" value="Enviar">
 </form>
 
+<style>
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 280px;
+    border-radius:12px;
+}
 
+input {
+    border-radius:12px;
+}
+
+.button-submit {
+    background: #2563eb;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    margin-left: 12px;
+}
+
+.button-submit:hover {
+    background:rgb(70, 111, 199);
+}
+
+fieldset {
+    border-radius: 12px;
+    margin-bottom: 0.3rem;
+    border-color: var(--bg2);
+}
+</style>
     </div>
 
     
@@ -1001,7 +1030,7 @@
       
       <a
         href="/tags/machine-learning"
-        style="font-size:1.7008605560822845rem"
+        style="font-size:1.717712030944057rem"
         class="tag-cloud__tag"
         >machine learning</a
       >
@@ -1021,7 +1050,7 @@
       
       <a
         href="/tags/matematica"
-        style="font-size:1.7905242580112204rem"
+        style="font-size:1.7772594321952253rem"
         class="tag-cloud__tag"
         >matematica</a
       >
