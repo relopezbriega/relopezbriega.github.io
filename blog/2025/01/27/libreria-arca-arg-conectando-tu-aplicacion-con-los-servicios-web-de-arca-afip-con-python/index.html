@@ -477,7 +477,7 @@
   
     class="link--external" target="_blank" rel="noreferrer"
   
->servicios web de ARCA</a> puede ser un dolor de cabeza. Documentación confusa, autenticación engorrosa y pelear contra estrucuturas de datos inconsistentes entre cada servicio. Como estaba armando un proyecto personal y no encontré ninguna librería que sea efectiva para solucionar estos problemas; decidí escribir una propia.</p>
+>servicios web de ARCA</a> puede ser un dolor de cabeza. Documentación confusa, autenticación engorrosa y pelear contra estructuras de datos inconsistentes entre cada servicio. Como estaba armando un proyecto personal y no encontré ninguna librería que sea efectiva para solucionar estos problemas; decidí escribir una propia.</p>
 <p>Si necesitas integrar tu aplicación con los <a
   href="https://www.afip.gob.ar/ws/"
   
@@ -499,13 +499,13 @@
   
     class="link--external" target="_blank" rel="noreferrer"
   
->Arca Arg</a> es un cliente en Python para acceder a los servicios web de ARCA (Administración Federal de Ingresos Públicos de Argentina). Maneja la autenticación y la comunicación con los servicios SOAP de ARCA de forma sencilla y permite cominicarse con todos los servicios web de ARCA](<a
+>Arca Arg</a> es un cliente en Python para acceder a los servicios web de ARCA (Administración Federal de Ingresos Públicos de Argentina). Maneja la autenticación y la comunicación con los servicios SOAP de ARCA de forma sencilla y permite comunicarse con todos los <a
   href="https://www.afip.gob.ar/ws/"
   
   
     class="link--external" target="_blank" rel="noreferrer"
   
->https://www.afip.gob.ar/ws/</a>) utilizando la misma interfase.</p>
+>servicios web de ARCA</a> utilizando la misma interfase.</p>
 <h3 id="ventajas">Ventajas<a href="#ventajas" class="post-heading__anchor" aria-hidden="true">#</a>
 </h3>
 <p>Algunas de las ventajas que vas a encontrar al utilizar mi librería son:</p>
@@ -525,7 +525,7 @@
     class="link--external" target="_blank" rel="noreferrer"
   
 >servicios web de ARCA</a> y te permite interactuar con ellos utilizando los mismos métodos.</li>
-<li><strong>Totalmente gratis:</strong> No tienes que pagar absolutamente nada por utlizar mi librería. Es gratis, con licencia MIT y open source; puedes ver todo el código en el <a
+<li><strong>Totalmente gratis:</strong> No tienes que pagar absolutamente nada por utilizar mi librería. Es gratis, con licencia MIT y open source; puedes ver todo el código en el <a
   href="https://github.com/relopezbriega/arca_arg"
   
   
@@ -707,7 +707,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
   
     class="link--external" target="_blank" rel="noreferrer"
   
->servicios web de ARCA</a> con nuestro certificado recién creado; debemos generar la autorización. Esto lo podemos hacer desde la misma aplicación que utilizamos para generar el certificao <em>«WSASS - Autogestión Certificados Homologación»</em>.</li>
+>servicios web de ARCA</a> con nuestro certificado recién creado; debemos generar la autorización. Esto lo podemos hacer desde la misma aplicación que utilizamos para generar el certificado <em>«WSASS - Autogestión Certificados Homologación»</em>.</li>
 </ol>
 <p>
 
@@ -734,7 +734,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 <p>Desde esta misma aplicación, podemos también acceder a <code>«Autorizaciones»</code> para verificar que se creó la autorización correctamente</p>
 <h2 id="explorando-las-principales-funcionalidades-de-arca-arg">Explorando las Principales Funcionalidades de Arca Arg<a href="#explorando-las-principales-funcionalidades-de-arca-arg" class="post-heading__anchor" aria-hidden="true">#</a>
 </h2>
-<p>Bien, luego de estos laboriosos pasos, ya podemos comenzar a codear y utilizar la liberería. Veamos como utilizarla con un ejemplo del servicio de factura electrónica(WSFE).</p>
+<p>Bien, luego de estos laboriosos pasos, ya podemos comenzar a codear y utilizar la librería. Veamos como utilizarla con un ejemplo del servicio de factura electrónica(WSFE).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Instalar librería</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>pip install arca_arg
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Importar las variables de configuración</span>
@@ -780,7 +780,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Servicio de Factuara Electrónica</span>
 </span></span><span style="display:flex;"><span>arca <span style="color:#f92672">=</span> ArcaWebService(WSDL_FEV1_HOM, <span style="color:#e6db74">&#39;wsfe&#39;</span>, enable_logging<span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>) 
-</span></span></code></pre></div><p>Para inicar el serviocio utilizamos el objeto <code>ArcaWebService</code> con la url del WSDL del servicio (que en este caso ya la recuperamos desde las constantes de las configuraciones de la libería); el nombre del servico (que es uno de los nombres de la lista de ayuda); y tenemos un parámetro opcional para habilitar/desabilitar el logging(está habilitado por defecto).</p>
+</span></span></code></pre></div><p>Para iniciar el servicio utilizamos el objeto <code>ArcaWebService</code> con la url del WSDL del servicio (que en este caso ya la recuperamos desde las constantes de las configuraciones de la librería); el nombre del servico (que es uno de los nombres de la lista de ayuda); y tenemos un parámetro opcional para habilitar/deshabilitar el logging(está habilitado por defecto).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># listamos los request que podemos realizar en el servicio</span>
 </span></span><span style="display:flex;"><span>print(arca<span style="color:#f92672">.</span>listMethods())
 </span></span></code></pre></div><pre><code>['FECAESolicitar', 'FECompTotXRequest', 'FEDummy', 'FECompUltimoAutorizado', 'FECompConsultar', 'FECAEARegInformativo', 'FECAEASolicitar', 'FECAEASinMovimientoConsultar', 'FECAEASinMovimientoInformar', 'FECAEAConsultar', 'FEParamGetCotizacion', 'FEParamGetTiposTributos', 'FEParamGetTiposMonedas', 'FEParamGetTiposIva', 'FEParamGetTiposOpcional', 'FEParamGetTiposConcepto', 'FEParamGetPtosVenta', 'FEParamGetTiposCbte', 'FEParamGetCondicionIvaReceptor', 'FEParamGetTiposDoc', 'FEParamGetTiposPaises', 'FEParamGetActividades', 'FECAESolicitar', 'FECompTotXRequest', 'FEDummy', 'FECompUltimoAutorizado', 'FECompConsultar', 'FECAEARegInformativo', 'FECAEASolicitar', 'FECAEASinMovimientoConsultar', 'FECAEASinMovimientoInformar', 'FECAEAConsultar', 'FEParamGetCotizacion', 'FEParamGetTiposTributos', 'FEParamGetTiposMonedas', 'FEParamGetTiposIva', 'FEParamGetTiposOpcional', 'FEParamGetTiposConcepto', 'FEParamGetPtosVenta', 'FEParamGetTiposCbte', 'FEParamGetCondicionIvaReceptor', 'FEParamGetTiposDoc', 'FEParamGetTiposPaises', 'FEParamGetActividades']
