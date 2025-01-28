@@ -97,7 +97,7 @@
   <meta itemprop="description" content="Descubre cómo la librería Arca Arg facilita la conexión con los servicios web de ARCA AFIP. Aprende a integrarla en tu aplicación de forma sencilla.">
   <meta itemprop="datePublished" content="2025-01-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-01-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1944">
+  <meta itemprop="wordCount" content="1943">
   <meta itemprop="keywords" content="Python,Programacion,AFIP,Servicos Web,ARCA">
 
 
@@ -580,7 +580,7 @@
 >OpenSSL</a>, el cual ya viene ya instalado en los sistemas Linux. Desde la consola podemos ejecutar:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out <span style="color:#f92672">[</span>nombre_tu_key<span style="color:#f92672">]</span>.key <span style="color:#ae81ff">2048</span>
-</span></span></code></pre></div><p>Este archivo key es muy importante porque representa la <em>contraseña</em> con la que va a funcionar el certificado así que no debemos guardalo en un lugar seguro y no perderlo.</p>
+</span></span></code></pre></div><p>Este archivo key es muy importante porque representa la <em>contraseña</em> con la que va a funcionar el certificado así que debemos guardarlo en un lugar seguro y no perderlo.</p>
 <ol start="2">
 <li><strong>Generar el Certificate Signing Request (csr):</strong> Una vez generada la key estamos listos para generar el CSR. Para ello recurrimos una vez más a <a
   href="https://www.openssl.org/"
@@ -782,12 +782,12 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 </span></span><span style="display:flex;"><span>arca <span style="color:#f92672">=</span> ArcaWebService(WSDL_FEV1_HOM, <span style="color:#e6db74">&#39;wsfe&#39;</span>, enable_logging<span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>) 
 </span></span></code></pre></div><p>Para iniciar el servicio utilizamos el objeto <code>ArcaWebService</code> con la url del WSDL del servicio (que en este caso ya la recuperamos desde las constantes de las configuraciones de la librería); el nombre del servico (que es uno de los nombres de la lista de ayuda); y tenemos un parámetro opcional para habilitar/deshabilitar el logging(está habilitado por defecto).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># listamos los request que podemos realizar en el servicio</span>
-</span></span><span style="display:flex;"><span>print(arca<span style="color:#f92672">.</span>listMethods())
+</span></span><span style="display:flex;"><span>print(arca<span style="color:#f92672">.</span>list_methods())
 </span></span></code></pre></div><pre><code>['FECAESolicitar', 'FECompTotXRequest', 'FEDummy', 'FECompUltimoAutorizado', 'FECompConsultar', 'FECAEARegInformativo', 'FECAEASolicitar', 'FECAEASinMovimientoConsultar', 'FECAEASinMovimientoInformar', 'FECAEAConsultar', 'FEParamGetCotizacion', 'FEParamGetTiposTributos', 'FEParamGetTiposMonedas', 'FEParamGetTiposIva', 'FEParamGetTiposOpcional', 'FEParamGetTiposConcepto', 'FEParamGetPtosVenta', 'FEParamGetTiposCbte', 'FEParamGetCondicionIvaReceptor', 'FEParamGetTiposDoc', 'FEParamGetTiposPaises', 'FEParamGetActividades', 'FECAESolicitar', 'FECompTotXRequest', 'FEDummy', 'FECompUltimoAutorizado', 'FECompConsultar', 'FECAEARegInformativo', 'FECAEASolicitar', 'FECAEASinMovimientoConsultar', 'FECAEASinMovimientoInformar', 'FECAEAConsultar', 'FEParamGetCotizacion', 'FEParamGetTiposTributos', 'FEParamGetTiposMonedas', 'FEParamGetTiposIva', 'FEParamGetTiposOpcional', 'FEParamGetTiposConcepto', 'FEParamGetPtosVenta', 'FEParamGetTiposCbte', 'FEParamGetCondicionIvaReceptor', 'FEParamGetTiposDoc', 'FEParamGetTiposPaises', 'FEParamGetActividades']
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Si queremos utilizar FECAESolicitar</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># podemos usar la ayuda para revisar sus parámetros.</span>
-</span></span><span style="display:flex;"><span>arca<span style="color:#f92672">.</span>methodHelp(<span style="color:#e6db74">&#39;FECAESolicitar&#39;</span>)
+</span></span><span style="display:flex;"><span>arca<span style="color:#f92672">.</span>method_help(<span style="color:#e6db74">&#39;FECAESolicitar&#39;</span>)
 </span></span></code></pre></div><pre><code>'FECAESolicitar(Auth: ns0:FEAuthRequest, FeCAEReq: ns0:FECAERequest) -&gt; FECAESolicitarResult: ns0:FECAEResponse'
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Vemos que tiene un tipo FEAuthRequest y un tipo FECAERequest</span>
@@ -845,7 +845,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;FeCAEReq&#39;</span>: { <span style="color:#e6db74">&#39;FeCabReq&#39;</span>: FeCabReq, <span style="color:#e6db74">&#39;FeDetReq&#39;</span>: {<span style="color:#e6db74">&#39;FECAEDetRequest&#39;</span>: FECAEDetRequest}}
 </span></span><span style="display:flex;"><span>       }
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Enviamos el request y obtenemos la respuesta del servicio</span>
-</span></span><span style="display:flex;"><span>arca<span style="color:#f92672">.</span>sendRequest(<span style="color:#e6db74">&#39;FECAESolicitar&#39;</span>, data)
+</span></span><span style="display:flex;"><span>arca<span style="color:#f92672">.</span>send_request(<span style="color:#e6db74">&#39;FECAESolicitar&#39;</span>, data)
 </span></span></code></pre></div><pre><code>{
     'FeCabResp': {
         'Cuit': 20293188204,
@@ -886,11 +886,11 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 <p>Como podemos ver, es bastante simple y fácil utilizar la libería. Veamos otro ejemplo con otro servicio para demostrar que la interface es exactamente igual.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> arca_arg.settings <span style="color:#f92672">import</span> WSDL_CONSTANCIA_HOM
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arca2 <span style="color:#f92672">=</span> ArcaWebService(WSDL_CONSTANCIA_HOM, <span style="color:#e6db74">&#39;ws_sr_constancia_inscripcion&#39;</span>, enable_logging<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>listMethods()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>list_methods()
 </span></span></code></pre></div><pre><code>['getPersona', 'getPersonaList', 'getPersona_v2', 'dummy', 'getPersonaList_v2']
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Request dummy para verificar el estado del servicio</span>
-</span></span><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>sendRequest(<span style="color:#e6db74">&#39;dummy&#39;</span>, {})
+</span></span><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>send_request(<span style="color:#e6db74">&#39;dummy&#39;</span>, {})
 </span></span></code></pre></div><pre><code>{
     'appserver': 'OK',
     'authserver': 'OK',
@@ -898,7 +898,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 }
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># ver que necesitamos para usar getPersona_v2</span>
-</span></span><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>methodHelp(<span style="color:#e6db74">&#39;getPersona_v2&#39;</span>)
+</span></span><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>method_help(<span style="color:#e6db74">&#39;getPersona_v2&#39;</span>)
 </span></span></code></pre></div><pre><code>'getPersona_v2(token: xsd:string, sign: xsd:string, cuitRepresentada: xsd:long, idPersona: xsd:long) -&gt; personaReturn: ns0:personaReturn'
 </code></pre>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># En este caso no hay tipos complejos podemos armar los datos directamente</span>
@@ -908,7 +908,7 @@ Y luego en el punto <code>3. Solicitud de certificado en formato PKCS#10</code> 
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;cuitRepresentada&#39;</span>: arca2<span style="color:#f92672">.</span>cuit,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;idPersona&#39;</span>:<span style="color:#ae81ff">20224107030</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>sendRequest(<span style="color:#e6db74">&#39;getPersona_v2&#39;</span>, data)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arca2<span style="color:#f92672">.</span>send_request(<span style="color:#e6db74">&#39;getPersona_v2&#39;</span>, data)
 </span></span></code></pre></div><pre><code>{
     'datosGenerales': {
         'apellido': 'FRANCO AGUSTIN',
